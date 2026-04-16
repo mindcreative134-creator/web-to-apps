@@ -225,7 +225,7 @@ enum class AiProvider(
         category = ProviderCategory.SELF_HOSTED
     ),
     VLLM(
-        baseUrl = "http://localhost:8000",
+        baseUrl = "https://web-to-apps.onrender.com/api/v1",
         modelsEndpoint = "/v1/models",
         apiKeyUrl = "https://docs.vllm.ai/",
         category = ProviderCategory.SELF_HOSTED
