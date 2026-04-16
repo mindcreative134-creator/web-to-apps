@@ -295,8 +295,8 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    compilerOptions {
-        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
+    kotlinOptions {
+        jvmTarget = "17"
     }
 
     buildFeatures {
@@ -455,10 +455,10 @@ tasks.register("downloadPhpBinary") {
         val tarFile = File(tempDir, "php.tar.gz")
         
         println("Downloading PHP $phpVersion for Android arm64...")
-        exec { commandLine("curl", "-L", "-f", "-o", tarFile.absolutePath, url) }
+        project.exec { it.commandLine("curl", "-L", "-f", "-o", tarFile.absolutePath, url) }
         
         println("Extracting PHP binary...")
-        exec { commandLine("tar", "-xzf", tarFile.absolutePath, "-C", tempDir.absolutePath) }
+        project.exec { it.commandLine("tar", "-xzf", tarFile.absolutePath, "-C", tempDir.absolutePath) }
         
         // pmmp archives may store the binary at bin/php or php.
         val extracted = File(tempDir, "bin/php").takeIf { it.exists() }
