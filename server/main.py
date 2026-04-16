@@ -11,7 +11,7 @@ app = FastAPI(title="WebToApp API", version="1.0.0")
 # CORS Configuration for Admin Panel communication
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, specify the actual admin domain
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -22,7 +22,17 @@ app.add_middleware(
 def read_root():
     return {"message": "Welcome to WebToApp API"}
 
+# API v1 Level Success Message
+@app.get("/api/v1")
+def api_v1_root():
+    return {
+        "status": "success",
+        "message": "WebToApp API v1 is live",
+        "docs": "/docs"
+    }
+
 # Include routers
+# admin_router already has prefix "/admin", so this becomes "/api/v1/admin/..."
 app.include_router(admin_router, prefix="/api/v1")
 
 if __name__ == "__main__":
