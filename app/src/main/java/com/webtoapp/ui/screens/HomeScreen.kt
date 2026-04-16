@@ -167,17 +167,17 @@ fun HomeScreen(
         val onClick: () -> Unit
     )
     val createActionItems = listOf(
-        CreateActionItem(AppStringsProvider.current().appTypeWeb, R.drawable.ic_type_web, onCreateApp),
-        CreateActionItem(AppStringsProvider.current().appTypeMultiWeb, R.drawable.ic_type_web, onCreateMultiWebApp),
-        CreateActionItem(AppStringsProvider.current().appTypeHtml, R.drawable.ic_type_html, onCreateHtmlApp),
-        CreateActionItem(AppStringsProvider.current().appTypeFrontend, R.drawable.ic_type_frontend, onCreateFrontendApp),
-        CreateActionItem(AppStringsProvider.current().appTypePhp, R.drawable.ic_type_php, onCreatePhpApp),
-        CreateActionItem(AppStringsProvider.current().appTypeWordPress, R.drawable.ic_type_wordpress, onCreateWordPressApp),
-        CreateActionItem(AppStringsProvider.current().appTypeNodeJs, R.drawable.ic_type_nodejs, onCreateNodeJsApp),
-        CreateActionItem(AppStringsProvider.current().appTypePython, R.drawable.ic_type_python, onCreatePythonApp),
-        CreateActionItem(AppStringsProvider.current().appTypeGo, R.drawable.ic_type_go, onCreateGoApp),
-        CreateActionItem(AppStringsProvider.current().createMediaApp, R.drawable.ic_type_media, onCreateMediaApp),
-        CreateActionItem(AppStringsProvider.current().appTypeGallery, R.drawable.ic_type_gallery, onCreateGalleryApp)
+        CreateActionItem(AppStringsProvider.current().common.appTypeWeb, R.drawable.ic_type_web, onCreateApp),
+        CreateActionItem(AppStringsProvider.current().common.appTypeMultiWeb, R.drawable.ic_type_web, onCreateMultiWebApp),
+        CreateActionItem(AppStringsProvider.current().common.appTypeHtml, R.drawable.ic_type_html, onCreateHtmlApp),
+        CreateActionItem(AppStringsProvider.current().common.appTypeFrontend, R.drawable.ic_type_frontend, onCreateFrontendApp),
+        CreateActionItem(AppStringsProvider.current().common.appTypePhp, R.drawable.ic_type_php, onCreatePhpApp),
+        CreateActionItem(AppStringsProvider.current().common.appTypeWordPress, R.drawable.ic_type_wordpress, onCreateWordPressApp),
+        CreateActionItem(AppStringsProvider.current().common.appTypeNodeJs, R.drawable.ic_type_nodejs, onCreateNodeJsApp),
+        CreateActionItem(AppStringsProvider.current().common.appTypePython, R.drawable.ic_type_python, onCreatePythonApp),
+        CreateActionItem(AppStringsProvider.current().common.appTypeGo, R.drawable.ic_type_go, onCreateGoApp),
+        CreateActionItem(AppStringsProvider.current().common.createMediaApp, R.drawable.ic_type_media, onCreateMediaApp),
+        CreateActionItem(AppStringsProvider.current().common.appTypeGallery, R.drawable.ic_type_gallery, onCreateGalleryApp)
     )
     
     Scaffold(

@@ -4,7 +4,6 @@ import org.w3c.dom.Element
 
 plugins {
     id("com.android.application")
-    id("org.jetbrains.kotlin.android")
     id("com.google.devtools.ksp")
     id("org.jetbrains.kotlin.plugin.compose")
 }
@@ -209,7 +208,7 @@ val generateAppStringsAccessors = tasks.register("generateAppStringsAccessors") 
 }
 
 android {
-    sourceSets.getByName("main").java.srcDir(generatedAppStringsDir)
+    sourceSets.getByName("main").java.directories.add(generatedAppStringsDir.get().asFile.absolutePath)
 
     signingConfigs {
         create("shiaho") {
@@ -263,7 +262,7 @@ android {
     }
 
     buildTypes {
-        release {
+        getByName("release") {
             // Keep shrinkers on, but preserve class names for template reuse.
             isMinifyEnabled = true
             isShrinkResources = true
@@ -295,10 +294,6 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    kotlinOptions {
-        jvmTarget = "17"
-    }
-
     buildFeatures {
         compose = true
     }
@@ -326,6 +321,12 @@ android {
     }
     androidResources {
         ignoreAssetsPattern = ""
+    }
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
     }
 }
 
@@ -361,9 +362,9 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
 
     // Room Database
-    implementation("androidx.room:room-runtime:2.6.1")
-    implementation("androidx.room:room-ktx:2.6.1")
-    ksp("androidx.room:room-compiler:2.6.1")
+    implementation("androidx.room:room-runtime:2.8.4")
+    implementation("androidx.room:room-ktx:2.8.4")
+    ksp("androidx.room:room-compiler:2.8.4")
 
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
@@ -455,10 +456,10 @@ tasks.register("downloadPhpBinary") {
         val tarFile = File(tempDir, "php.tar.gz")
         
         println("Downloading PHP $phpVersion for Android arm64...")
-        project.exec { it.commandLine("curl", "-L", "-f", "-o", tarFile.absolutePath, url) }
+        project.providers.exec { commandLine("curl", "-L", "-f", "-o", tarFile.absolutePath, url) }
         
         println("Extracting PHP binary...")
-        project.exec { it.commandLine("tar", "-xzf", tarFile.absolutePath, "-C", tempDir.absolutePath) }
+        project.providers.exec { commandLine("tar", "-xzf", tarFile.absolutePath, "-C", tempDir.absolutePath) }
         
         // pmmp archives may store the binary at bin/php or php.
         val extracted = File(tempDir, "bin/php").takeIf { it.exists() }
