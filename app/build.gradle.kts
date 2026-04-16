@@ -212,7 +212,10 @@ android {
 
     signingConfigs {
         create("shiaho") {
-            storeFile = file(localProperties.getProperty("signing.storeFile", ""))
+            val storeFilePath = localProperties.getProperty("signing.storeFile")
+            if (!storeFilePath.isNullOrBlank()) {
+                storeFile = file(storeFilePath)
+            }
             storePassword = localProperties.getProperty("signing.storePassword", "")
             keyAlias = localProperties.getProperty("signing.keyAlias", "")
             keyPassword = localProperties.getProperty("signing.keyPassword", "")
