@@ -6,6 +6,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.devtools.ksp")
+    id("org.jetbrains.kotlin.plugin.compose")
 }
 
 ksp {
@@ -282,9 +283,6 @@ android {
     }
     
     // Keep dot-prefixed assets such as .pypackages.
-    aaptOptions {
-        ignoreAssetsPattern = ""
-    }
 
     bundle {
         language {
@@ -297,8 +295,8 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    kotlinOptions {
-        jvmTarget = "17"
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
     }
 
     buildFeatures {
@@ -309,10 +307,6 @@ android {
         unitTests {
             isIncludeAndroidResources = true
         }
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.14"
     }
 
     packaging {
@@ -329,6 +323,9 @@ android {
             excludes += "**/libmozavutil.so"
             excludes += "**/libmozavcodec.so"
         }
+    }
+    androidResources {
+        ignoreAssetsPattern = ""
     }
 }
 
@@ -458,10 +455,10 @@ tasks.register("downloadPhpBinary") {
         val tarFile = File(tempDir, "php.tar.gz")
         
         println("Downloading PHP $phpVersion for Android arm64...")
-        project.exec { commandLine("curl", "-L", "-f", "-o", tarFile.absolutePath, url) }
+        exec { commandLine("curl", "-L", "-f", "-o", tarFile.absolutePath, url) }
         
         println("Extracting PHP binary...")
-        project.exec { commandLine("tar", "-xzf", tarFile.absolutePath, "-C", tempDir.absolutePath) }
+        exec { commandLine("tar", "-xzf", tarFile.absolutePath, "-C", tempDir.absolutePath) }
         
         // pmmp archives may store the binary at bin/php or php.
         val extracted = File(tempDir, "bin/php").takeIf { it.exists() }
