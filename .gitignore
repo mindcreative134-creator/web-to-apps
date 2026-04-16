@@ -94,10 +94,6 @@ bugreport-*.zip
 test-haze.kt
 restore
 
-# 后端和管理后台（含敏感信息，不推送）
-server/
-admin/
-
 # Node.js
 node_modules/
 
