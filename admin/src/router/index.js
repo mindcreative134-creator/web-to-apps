@@ -18,6 +18,7 @@ const routes = [
             { path: 'activation', name: 'Activation', component: () => import('../views/Activation.vue') },
             { path: 'announcements', name: 'Announcements', component: () => import('../views/Announcements.vue') },
             { path: 'versions', name: 'Versions', component: () => import('../views/Versions.vue') },
+            { path: 'credentials', name: 'Credentials', component: () => import('../views/Credentials.vue') },
             { path: 'config', name: 'Config', component: () => import('../views/RemoteConfig.vue') },
             { path: 'projects', name: 'Projects', component: () => import('../views/Projects.vue') },
             { path: 'projects/:id', name: 'ProjectDetail', component: () => import('../views/ProjectDetail.vue'), props: true },

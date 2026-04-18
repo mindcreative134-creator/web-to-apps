@@ -687,7 +687,7 @@ fun AiCodingScreen(
                 title = {
                     Column {
                         Text(
-                            currentSession?.title?.takeIf { it.isNotBlank() } ?: AppStringsProvider.current().aiCodingAssistant,
+                            currentSession?.title?.takeIf { it.isNotBlank() } ?: AppStringsProvider.current().assistantCodingAssistant,
                             style = MaterialTheme.typography.titleMedium
                         )
                         currentSession?.let {
@@ -1259,7 +1259,7 @@ private fun AiCodingWelcomeContent(
         Spacer(modifier = Modifier.height(20.dp))
         
         Text(
-            AppStringsProvider.current().aiCodingAssistant,
+            AppStringsProvider.current().assistantCodingAssistant,
             style = MaterialTheme.typography.headlineMedium,
             fontWeight = FontWeight.Bold
         )
@@ -1267,7 +1267,7 @@ private fun AiCodingWelcomeContent(
         Spacer(modifier = Modifier.height(8.dp))
         
         Text(
-            AppStringsProvider.current().aiCodingWelcome,
+            AppStringsProvider.current().assistantCodingWelcome,
             style = MaterialTheme.typography.bodyLarge,
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )

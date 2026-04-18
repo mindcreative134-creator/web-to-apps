@@ -227,6 +227,12 @@ class ShellActivity : AppCompatActivity() {
         // Initialize system( initialize)
         ShellActivityInit.initLogger(this)
         
+        // Fail-safe: Ensure ShellRuntimeServices is initialized
+        if (!com.webtoapp.core.shell.ShellRuntimeServices.isInitialized()) {
+             AppLogger.e("ShellActivity", "ShellRuntimeServices not initialized, attempting fallback")
+             // Here we could attempt a minimal fallback if needed
+        }
+
         // Enable display( content system area)
         try {
             enableEdgeToEdge()
@@ -238,12 +244,43 @@ class ShellActivity : AppCompatActivity() {
         
         super.onCreate(savedInstanceState)
 
-        val config = ShellRuntimeServices.shellMode.getConfig()
+        val shellModeManager = ShellRuntimeServices.shellMode
+        AppLogger.i("ShellActivity", "initLogger done")
+
+        val config = try {
+            shellModeManager.getConfig()
+        } catch (e: Exception) {
+            AppLogger.e("ShellActivity", "Failed to load config", e)
+            null
+        }
+
         if (config == null) {
-            AppLogger.e("ShellActivity", "配置加载失败，无法启动应用")
-            com.webtoapp.core.shell.ShellLogger.e("ShellActivity", "配置加载失败，无法启动应用")
-            Toast.makeText(this, AppStringsProvider.current().appConfigLoadFailed, Toast.LENGTH_LONG).show()
-            finish()
+            AppLogger.e("ShellActivity", "Config is null")
+            try {
+                if (ShellRuntimeServices.isInitialized() && ShellRuntimeServices.shellMode.isShellMode()) {
+                    AppLogger.d("ShellActivity", "Showing error screen: config load failed")
+                    setContent {
+                        ShellTheme {
+                            com.webtoapp.ui.shared.ErrorScreen(
+                                message = AppStringsProvider.current().appConfigLoadFailed,
+                                onRetry = { 
+                                    shellModeManager.reload()
+                                    recreate() 
+                                },
+                                onExit = { finish() }
+                            )
+                        }
+                    }
+                } else {
+                    // Fail-safe for non-shell mode or uninitialized state
+                    AppLogger.e("ShellActivity", "Shell mode check failed or config missing in non-shell mode")
+                    // If it's the main app and somehow config is missing, we might want to finish or show generic error
+                    finish()
+                }
+            } catch (e: Exception) {
+                AppLogger.e("ShellActivity", "Critical failure in error handling", e)
+                finish()
+            }
             return
         }
         

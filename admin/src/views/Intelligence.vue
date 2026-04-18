@@ -1,35 +1,35 @@
 <template>
   <div class="view-page">
     <div class="page-header">
-      <h1>安全中心</h1>
-      <p class="page-desc">威胁检测、熔断器状态和安全分析</p>
+      <h1>{{ $t('intelligence.title') }}</h1>
+      <p class="page-desc">{{ $t('intelligence.subtitle') }}</p>
     </div>
 
-    <!-- 安全概览 -->
+    <!-- Security Overview -->
     <div class="stats-row">
       <div class="stat-card" :class="dashboard.threat_level === 'low' ? 'success' : 'warning'">
         <div class="stat-value">{{ dashboard.threat_level || '...' }}</div>
-        <div class="stat-label">威胁等级</div>
+        <div class="stat-label">{{ $t('intelligence.stats.threat_level') }}</div>
       </div>
       <div class="stat-card accent">
         <div class="stat-value">{{ dashboard.active_threats ?? 0 }}</div>
-        <div class="stat-label">活跃威胁</div>
+        <div class="stat-label">{{ $t('intelligence.stats.active_threats') }}</div>
       </div>
       <div class="stat-card">
         <div class="stat-value">{{ dashboard.blocked_requests_24h ?? 0 }}</div>
-        <div class="stat-label">24h 拦截请求</div>
+        <div class="stat-label">{{ $t('intelligence.stats.blocked_24h') }}</div>
       </div>
       <div class="stat-card">
         <div class="stat-value">{{ dashboard.circuit_breakers_open ?? 0 }}</div>
-        <div class="stat-label">开路熔断器</div>
+        <div class="stat-label">{{ $t('intelligence.stats.open_breakers') }}</div>
       </div>
     </div>
 
-    <!-- 熔断器面板 -->
+    <!-- Circuit Breakers Panel -->
     <div class="card">
-      <h2 class="card-title">熔断器状态</h2>
+      <h2 class="card-title">{{ $t('intelligence.breakers.title') }}</h2>
       <div v-if="circuitBreakers.length === 0" class="empty-state">
-        <p>暂无熔断器数据</p>
+        <p>{{ $t('intelligence.breakers.no_data') }}</p>
       </div>
       <div v-for="cb in circuitBreakers" :key="cb.name" class="cb-row">
         <div class="cb-info">
@@ -37,28 +37,28 @@
           <span class="cb-status" :class="cb.state">{{ cb.state }}</span>
         </div>
         <div class="cb-meta">
-          <span>失败率: {{ cb.failure_rate ?? '-' }}%</span>
-          <span>请求数: {{ cb.request_count ?? 0 }}</span>
+          <span>{{ $t('intelligence.breakers.failure_rate') }}: {{ cb.failure_rate ?? '-' }}%</span>
+          <span>{{ $t('intelligence.breakers.req_count') }}: {{ cb.request_count ?? 0 }}</span>
         </div>
         <button v-if="cb.state === 'open'" class="btn btn-sm btn-ghost"
-          @click="resetCB(cb.name)">重置</button>
+          @click="resetCB(cb.name)">{{ $t('intelligence.breakers.reset') }}</button>
       </div>
     </div>
 
-    <!-- 最近威胁 -->
+    <!-- Recent Threats -->
     <div class="card">
-      <h2 class="card-title">最近威胁</h2>
+      <h2 class="card-title">{{ $t('intelligence.threats.title') }}</h2>
       <div v-if="threats.length === 0" class="empty-state">
-        <p>🎉 暂无检测到的威胁</p>
+        <p>🎉 {{ $t('intelligence.threats.no_data') }}</p>
       </div>
       <table v-else class="data-table">
         <thead>
           <tr>
-            <th>IP</th>
-            <th>类型</th>
-            <th>评分</th>
-            <th>状态</th>
-            <th>时间</th>
+            <th>{{ $t('intelligence.threats.table.ip') }}</th>
+            <th>{{ $t('intelligence.threats.table.type') }}</th>
+            <th>{{ $t('intelligence.threats.table.score') }}</th>
+            <th>{{ $t('intelligence.threats.table.status') }}</th>
+            <th>{{ $t('intelligence.threats.table.time') }}</th>
           </tr>
         </thead>
         <tbody>
@@ -71,7 +71,7 @@
             <td>
               <span class="threat-status" :class="t.status">{{ t.status }}</span>
             </td>
-            <td class="text-muted">{{ t.detected_at }}</td>
+            <td class="text-muted">{{ formatDate(t.detected_at) }}</td>
           </tr>
         </tbody>
       </table>
@@ -82,7 +82,9 @@
 <script setup>
 import { ref, reactive, inject, onMounted } from 'vue'
 import { intelligenceApi } from '../api/index.js'
+import { useI18n } from 'vue-i18n'
 
+const { t, locale } = useI18n()
 const showToast = inject('showToast')
 const dashboard = reactive({ threat_level: '', active_threats: 0, blocked_requests_24h: 0, circuit_breakers_open: 0 })
 const circuitBreakers = ref([])
@@ -97,8 +99,8 @@ function getScoreClass(score) {
 
 async function loadDashboard() {
   try {
-    const { data } = await intelligenceApi.dashboard()
-    const d = data?.data || {}
+    const res = await intelligenceApi.dashboard()
+    const d = res.data || {}
     Object.assign(dashboard, d)
   } catch {
     dashboard.threat_level = 'unknown'
@@ -107,8 +109,8 @@ async function loadDashboard() {
 
 async function loadCircuitBreakers() {
   try {
-    const { data } = await intelligenceApi.circuitBreakers()
-    circuitBreakers.value = data?.data?.breakers || []
+    const res = await intelligenceApi.circuitBreakers()
+    circuitBreakers.value = res.data?.breakers || res.data || []
   } catch {
     circuitBreakers.value = []
   }
@@ -116,8 +118,8 @@ async function loadCircuitBreakers() {
 
 async function loadThreats() {
   try {
-    const { data } = await intelligenceApi.threats({ page: 1, size: 20 })
-    threats.value = data?.data?.threats || []
+    const res = await intelligenceApi.threats({ page: 1, size: 20 })
+    threats.value = res.data?.threats || res.data || []
   } catch {
     threats.value = []
   }
@@ -126,12 +128,15 @@ async function loadThreats() {
 async function resetCB(name) {
   try {
     await intelligenceApi.resetCircuitBreaker(name)
-    showToast(`熔断器 ${name} 已重置`)
+    showToast(t('intelligence.breakers.reset_success', { name }))
     loadCircuitBreakers()
   } catch {
-    showToast('重置失败', 'error')
+    showToast(t('common.failed'), 'error')
   }
 }
+
+const dateLocaleMap = { en: 'en-US', zh: 'zh-CN', hi: 'hi-IN' }
+function formatDate(d) { return d ? new Date(d).toLocaleString(dateLocaleMap[locale.value] || 'en-US') : '-' }
 
 onMounted(() => {
   loadDashboard()

@@ -24,9 +24,9 @@ private fun String.escapeForJsTemplate(): String =
         .replace("\r", "\\r")
 
 /**
- * Shell 模式管理器
- * 检测应用是否以 Shell 模式运行（独立 WebApp）
- * 支持加密和非加密配置文件
+ * Shell Mode Manager
+ * Detects if the app is running in Shell mode (standalone WebApp)
+ * Supports encrypted and non-encrypted configuration files
  */
 class ShellModeManager(private val context: Context) {
 
@@ -43,21 +43,21 @@ class ShellModeManager(private val context: Context) {
     private val assetDecryptor = AssetDecryptor(context)
 
     /**
-     * 检查是否为 Shell 模式（存在有效的配置文件）
+     * Check if in Shell mode (valid configuration file exists)
      */
     fun isShellMode(): Boolean {
         return loadConfig() != null
     }
 
     /**
-     * 获取 Shell 配置
+     * Get Shell configuration
      */
     fun getConfig(): ShellConfig? {
         return loadConfig()
     }
 
     /**
-     * 加载配置文件（支持加密和非加密）
+     * Load configuration file (supports encrypted and non-encrypted)
      */
     private fun loadConfig(): ShellConfig? {
         if (configLoaded) return cachedConfig
@@ -67,32 +67,32 @@ class ShellModeManager(private val context: Context) {
 
             configLoaded = true
             cachedConfig = try {
-            AppLogger.d(TAG, "尝试加载配置文件: $CONFIG_FILE")
+            AppLogger.d(TAG, "Attempting to load configuration file: $CONFIG_FILE")
             
             // 使用 AssetDecryptor 自动处理加密/非加密配置
             val jsonStr = try {
                 assetDecryptor.loadAssetAsString(CONFIG_FILE)
             } catch (e: Exception) {
-                AppLogger.e(TAG, "AssetDecryptor 加载失败，尝试直接读取", e)
-                // 回退：直接从 assets 读取（非加密模式）
+                AppLogger.e(TAG, "AssetDecryptor load failed, attempting direct read", e)
+                // Fallback: read directly from assets (non-encrypted mode)
                 try {
                     context.assets.open(CONFIG_FILE).bufferedReader().use { it.readText() }
                 } catch (e2: Exception) {
-                    AppLogger.e(TAG, "直接读取也失败", e2)
+                    AppLogger.e(TAG, "Direct read also failed", e2)
                     throw e2
                 }
             }
             
-            AppLogger.d(TAG, "配置文件内容长度: ${jsonStr.length}")
+            AppLogger.d(TAG, "Configuration file content length: ${jsonStr.length}")
             val config = gson.fromJson(jsonStr, ShellConfig::class.java)
             val normalizedAppType = config?.appType?.trim()?.uppercase() ?: ""
-            AppLogger.d(TAG, "解析结果: appType=${config?.appType} (normalized=$normalizedAppType)")
+            AppLogger.d(TAG, "Parsing result: appType=${config?.appType} (normalized=$normalizedAppType)")
             val isDebuggable = (context.applicationInfo.flags and android.content.pm.ApplicationInfo.FLAG_DEBUGGABLE) != 0
             if (isDebuggable) {
-                // 调试模式下输出详细配置信息，Release 构建不会泄露敏感配置
-                AppLogger.d(TAG, "WebView UA配置: userAgentMode=${config?.webViewConfig?.userAgentMode}")
-                AppLogger.d(TAG, "注入脚本: ${config?.webViewConfig?.injectScripts?.size ?: 0} 个")
-                AppLogger.d(TAG, "扩展模块: extensionModuleIds=${config?.extensionModuleIds?.size ?: 0}, embeddedExtensionModules=${config?.embeddedExtensionModules?.size ?: 0}")
+                // Output detailed configuration info in debug mode; won't leak in release builds
+                AppLogger.d(TAG, "WebView UA config: userAgentMode=${config?.webViewConfig?.userAgentMode}")
+                AppLogger.d(TAG, "Injected scripts: ${config?.webViewConfig?.injectScripts?.size ?: 0}")
+                AppLogger.d(TAG, "Extension modules: extensionModuleIds=${config?.extensionModuleIds?.size ?: 0}, embeddedExtensionModules=${config?.embeddedExtensionModules?.size ?: 0}")
             }
             // Verify配置有效性
             // HTML/FRONTEND应用不需要targetUrl，使用嵌入的HTML文件
@@ -114,18 +114,18 @@ class ShellModeManager(private val context: Context) {
                 else -> !config?.targetUrl.isNullOrBlank() // WEB应用需要targetUrl
             }
             if (!isValid) {
-                AppLogger.w(TAG, "配置无效: appType=${config?.appType}, targetUrl=${config?.targetUrl}")
+                AppLogger.w(TAG, "Invalid configuration: appType=${config?.appType}, targetUrl=${config?.targetUrl}")
                 null
             } else {
-                AppLogger.d(TAG, "配置有效，进入 Shell 模式, appType=${config?.appType}")
+                AppLogger.d(TAG, "Configuration valid, entering Shell mode, appType=${config?.appType}")
                 config
             }
         } catch (e: Exception) {
-            AppLogger.e(TAG, "加载配置文件失败", e)
+            AppLogger.e(TAG, "Failed to load configuration file", e)
             null
         } catch (e: Error) {
-            // 捕获所有 Error（包括 NoClassDefFoundError 等）
-            AppLogger.e(TAG, "加载配置文件时发生严重错误", e)
+            // Catch all Errors (including NoClassDefFoundError etc.)
+            AppLogger.e(TAG, "Serious error occurred while loading configuration", e)
             null
         }
 
@@ -134,7 +134,7 @@ class ShellModeManager(private val context: Context) {
     }
     
     /**
-     * 重新加载配置
+     * Reload configuration
      */
     fun reload() {
         synchronized(this) {
@@ -351,9 +351,9 @@ data class ShellConfig(
     @SerializedName("disguiseConfig")
     val disguiseConfig: com.webtoapp.core.disguise.DisguiseConfig? = null,
     
-    // 界面语言配置
+    // UI language configuration
     @SerializedName("language")
-    val language: String = "CHINESE",  // CHINESE, ENGLISH, ARABIC
+    val language: String = "ENGLISH",  // CHINESE, ENGLISH, ARABIC
     
     // Gallery 画廊应用配置
     @SerializedName("galleryConfig")

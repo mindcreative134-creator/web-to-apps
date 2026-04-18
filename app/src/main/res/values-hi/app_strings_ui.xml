@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="appstr_ui_accent_color" formatted="false">एक्सेंट</string>
+    <string name="appstr_ui_add" formatted="false">जोड़ें</string>
+    <string name="appstr_ui_add_category" formatted="false">श्रेणी जोड़ें</string>
+    <string name="appstr_ui_all_apps" formatted="false">सभी</string>
+    <string name="appstr_ui_all_schemes_btn" formatted="false">सभी योजनाएं</string>
+    <string name="appstr_ui_animation_disabled" formatted="false">एनीमेशन अक्षम</string>
+    <string name="appstr_ui_animation_speed" formatted="false">एनीमेशन गति</string>
+    <string name="appstr_ui_animation_style" formatted="false">एनीमेशन शैली</string>
+    <string name="appstr_ui_blob_download_failed" formatted="false">फ़ाइल डेटा प्राप्त करने में असमर्थ, पुनः प्रयास करें</string>
+    <string name="appstr_ui_blob_download_processing" formatted="false">डाउनलोड प्रसंस्करण...</string>
+    <string name="appstr_ui_brief_describe_scheme_hint" formatted="false">योजना के उद्देश्य का संक्षेप में वर्णन करें</string>
+    <string name="appstr_ui_built_in_schemes" formatted="false">📦 बिल्ट-इन योजनाएं</string>
+    <string name="appstr_ui_button" formatted="false">बटन</string>
+    <string name="appstr_ui_cancel" formatted="false">रद्द करें</string>
+    <string name="appstr_ui_cannot_open_browser" formatted="false">ब्राउज़र नहीं खुल सकता</string>
+    <string name="appstr_ui_cannot_open_in_browser" formatted="false">बाहरी ब्राउज़र में नहीं खोला जा सकता</string>
+    <string name="appstr_ui_cannot_open_link" formatted="false">लिंक नहीं खुल सकता</string>
+    <string name="appstr_ui_category_color" formatted="false">श्रेणी का रंग</string>
+    <string name="appstr_ui_category_icon" formatted="false">श्रेणी आइकन</string>
+    <string name="appstr_ui_category_name" formatted="false">श्रेणी का नाम</string>
+    <string name="appstr_ui_category_name_placeholder" formatted="false">श्रेणी का नाम दर्ज करें</string>
+    <string name="appstr_ui_category_name_required" formatted="false">कृपया श्रेणी का नाम दर्ज करें</string>
+    <string name="appstr_ui_changelog" formatted="false">चेंजलॉग (बदलाव)</string>
+    <string name="appstr_ui_clear" formatted="false">साफ़ करें</string>
+    <string name="appstr_ui_close" formatted="false">बंद करें</string>
+    <string name="appstr_ui_color_scheme" formatted="false">रंग योजना</string>
+    <string name="appstr_ui_contact_author_description" formatted="false">प्रतिक्रिया, परामर्श, सुझाव 💬</string>
+    <string name="appstr_ui_contains_modules" formatted="false">%d मॉड्यूल शामिल हैं</string>
+    <string name="appstr_ui_copied" formatted="false">कॉपी किया गया</string>
+    <string name="appstr_ui_copied_all_logs" formatted="false">सभी लॉग कॉपी किए गए</string>
+    <string name="appstr_ui_copied_to_clipboard" formatted="false">क्लिपबोर्ड पर कॉपी किया गया</string>
+    <string name="appstr_ui_copy" formatted="false">कॉपी करें</string>
+    <string name="appstr_ui_corner_radius" formatted="false">कोने की त्रिज्या (Corner Radius)</string>
+    <string name="appstr_ui_current_theme_anim_style" formatted="false">वर्तमान थीम एनीमेशन शैली</string>
+    <string name="appstr_ui_current_version_is" formatted="false">v%s नवीनतम संस्करण है</string>
+    <string name="appstr_ui_dark_mode" formatted="false">डार्क मोड</string>
+    <string name="appstr_ui_dark_mode_hint" formatted="false">हमेशा डार्क थीम का उपयोग करें</string>
+    <string name="appstr_ui_delete_category" formatted="false">श्रेणी हटाएं</string>
+    <string name="appstr_ui_delete_category_confirm" formatted="false">क्या आप वाकई इस श्रेणी को हटाना चाहते हैं? इसके अंतर्गत आने वाले ऐप्स अवर्गीकृत हो जाएंगे।</string>
+    <string name="appstr_ui_deleted" formatted="false">हटा दिया गया</string>
+    <string name="appstr_ui_description_optional_label" formatted="false">विवरण (वैकल्पिक)</string>
+    <string name="appstr_ui_disable" formatted="false">अक्षम करें</string>
+    <string name="appstr_ui_disabled" formatted="false">अक्षम है</string>
+    <string name="appstr_ui_done" formatted="false">हो गया</string>
+    <string name="appstr_ui_download" formatted="false">डाउनलोड</string>
+    <string name="appstr_ui_download_failed_try_browser" formatted="false">डाउनलोड विफल रहा, ब्राउज़र का उपयोग करके देखें</string>
+    <string name="appstr_ui_download_failed_with_reason" formatted="false">डाउनलोड विफल: %s</string>
+    <string name="appstr_ui_download_link_not_found" formatted="false">डाउनलोड लिंक नहीं मिला</string>
+    <string name="appstr_ui_download_start_failed" formatted="false">डाउनलोड शुरू नहीं हो सका</string>
+    <string name="appstr_ui_downloading_video" formatted="false">वीडियो डाउनलोड हो रहा है...</string>
+    <string name="appstr_ui_duplicated" formatted="false">कॉपी किया गया</string>
+    <string name="appstr_ui_edit" formatted="false">संपादित करें</string>
+    <string name="appstr_ui_edit_category" formatted="false">श्रेणी संपादित करें</string>
+    <string name="appstr_ui_effects" formatted="false">प्रभाव</string>
+    <string name="appstr_ui_enable" formatted="false">सक्षम करें</string>
+    <string name="appstr_ui_enable_animations" formatted="false">एनीमेशन सक्षम करें</string>
+    <string name="appstr_ui_enable_animations_hint" formatted="false">परिवर्तन और प्रतिक्रिया सक्षम करें</string>
+    <string name="appstr_ui_enabled" formatted="false">सक्षम है</string>
+    <string name="appstr_ui_enter_scheme_name_hint" formatted="false">योजना का नाम दर्ज करें</string>
+    <string name="appstr_ui_error" formatted="false">त्रुटि</string>
+    <string name="appstr_ui_exchange_learning_updates" formatted="false">आदान-प्रदान, सीखना, अपडेट</string>
+    <string name="appstr_ui_feedback_consultation" formatted="false">प्रतिक्रिया और परामर्श</string>
+    <string name="appstr_ui_file_not_found" formatted="false">फ़ाइल नहीं मिली</string>
+    <string name="appstr_ui_follow_system" formatted="false">सिस्टम का पालन करें</string>
+    <string name="appstr_ui_follow_system_hint" formatted="false">सिस्टम सेटिंग्स के आधार पर स्वतः बदलें</string>
+    <string name="appstr_ui_glassmorphism" formatted="false">ग्लासमॉर्फिज्म (कांच जैसी शैली)</string>
+    <string name="appstr_ui_glow" formatted="false">चमक (Glow)</string>
+    <string name="appstr_ui_glow_effect" formatted="false">चमक प्रभाव</string>
+    <string name="appstr_ui_grant_permission" formatted="false">अनुमति दें</string>
+    <string name="appstr_ui_haptic_feedback" formatted="false">हैप्टिक फीडबैक (कंपन)</string>
+    <string name="appstr_ui_haptic_feedback_hint" formatted="false">बातचीत पर कंपन फीडबैक प्रदान करें</string>
+    <string name="appstr_ui_hold_to_experience" formatted="false">अनुभव के लिए दबाए रखें</string>
+    <string name="appstr_ui_image_saved_to_gallery" formatted="false">चित्र गैलरी में सहेजा गया</string>
+    <string name="appstr_ui_info" formatted="false">जानकारी</string>
+    <string name="appstr_ui_interaction_method" formatted="false">इंटरैक्शन विधि</string>
+    <string name="appstr_ui_interaction_style" formatted="false">इंटरैक्शन शैली</string>
+    <string name="appstr_ui_international_access" formatted="false">अंतर्राष्ट्रीय पहुँच</string>
+    <string name="appstr_ui_international_user_group" formatted="false">अंतर्राष्ट्रीय उपयोगकर्ता समूह</string>
+    <string name="appstr_ui_invalid_format" formatted="false">अमान्य प्रारूप</string>
+    <string name="appstr_ui_join_community_group" formatted="false">कम्युनिटी ग्रुप से जुड़ें</string>
+    <string name="appstr_ui_latest_tag" formatted="false">नवीनतम</string>
+    <string name="appstr_ui_latest_version" formatted="false">पहले से ही नवीनतम संस्करण</string>
+    <string name="appstr_ui_legal_disclaimer_acceptance" formatted="false">जारी रखने का मतलब है: आपकी उम्र 18+ है; सभी शर्तें पढ़ ली हैं; स्थानीय कानूनों से सहमत हैं; जोखिम स्वीकार करते हैं।</string>
+    <string name="appstr_ui_legal_disclaimer_content1" formatted="false">यह सॉफ्टवेयर ओपन सोर्स अनुसंधान और शिक्षा के लिए है। यह ऐप तकनीक दिखाने के लिए सार्वजनिक API का उपयोग करता है। अवैध उपयोग को प्रोत्साहित नहीं किया जाता है।</string>
+    <string name="appstr_ui_legal_disclaimer_content2" formatted="false">[hi] 用户应确保在合法、正当的场景下使用本软件，包括但不限于：自我管理用于个人专注力训练、学习时间管理；企业展示用于展会、商场等场景的展示终端；家长监护在未成年人知情同意下的合理使用；教育研究用于技术学习和安全研究。严禁将本软件用于任何侵犯他人人身自由、隐私权、财产权等合法权益的行为。</string>
+    <string name="appstr_ui_legal_disclaimer_content3" formatted="false">[hi] 本软件包含的「强制运行」及相关硬件控制功能（以下简称「高级功能」）属于技术演示性质：1.【知情同意原则】高级功能仅应在设备所有者或使用者完全知情并明确同意的情况下启用；2.【自主控制原则】所有功能均提供紧急退出机制，用户可通过密码随时终止；3.【技术中立原则】功能本身不具有违法性，其合法性取决于使用者的具体使用方式和目的；4.【风险自担原则】启用高级功能可能造成设备发热、电池消耗加快等情况，用户需自行承担相关风险。</string>
+    <string name="appstr_ui_legal_disclaimer_content4" formatted="false">[hi] 1.本软件按「现状」提供，开发者不对软件的适用性、可靠性、安全性作任何明示或暗示的保证；2.用户因违反法律法规或本声明使用本软件所产生的一切法律责任，由用户自行承担，与开发者无关；3.开发者不对因使用本软件导致的任何直接、间接、偶然、特殊或惩罚性损害承担责任；4.任何第三方利用本软件源代码进行的修改、分发行为，其法律责任由该第三方自行承担。</string>
+    <string name="appstr_ui_legal_disclaimer_content5" formatted="false">[hi] 为确保合法合规使用，建议用户：在使用前获取设备实际使用者的书面或电子形式同意；在企业场景下制定相应的使用规范和管理制度；在教育场景下确保符合相关教育法规要求；定期检查并遵守当地法律法规的最新要求。</string>
+    <string name="appstr_ui_legal_disclaimer_content6" formatted="false">[hi] 本软件基于 The Unlicense 发布，已明确贡献到公共领域。任何人均可为任何目的自由使用、修改、分发或出售本软件。本软件按“现状”提供，不附带任何形式的明示或默示担保。</string>
+    <string name="appstr_ui_legal_disclaimer_footer" formatted="false">[hi] 本声明自发布之日起生效，开发者保留随时修改本声明的权利。最后更新：2026 年 1 月</string>
+    <string name="appstr_ui_legal_disclaimer_title1" formatted="false">I. सॉफ्टवेयर की प्रकृति और उद्देश्य</string>
+    <string name="appstr_ui_legal_disclaimer_title2" formatted="false">[hi] 二、用户责任与义务</string>
+    <string name="appstr_ui_legal_disclaimer_title3" formatted="false">[hi] 三、高级功能特别声明</string>
+    <string name="appstr_ui_legal_disclaimer_title4" formatted="false">[hi] 四、免责条款</string>
+    <string name="appstr_ui_legal_disclaimer_title5" formatted="false">[hi] 五、合规使用指引</string>
+    <string name="appstr_ui_legal_disclaimer_title6" formatted="false">[hi] 六、知识产权声明</string>
+    <string name="appstr_ui_light_mode" formatted="false">लाइट मोड</string>
+    <string name="appstr_ui_light_mode_hint" formatted="false">हमेशा लाइट थीम का उपयोग करें</string>
+    <string name="appstr_ui_loading" formatted="false">लोड हो रहा है...</string>
+    <string name="appstr_ui_long_press_to_edit" formatted="false">संपादित करने या हटाने के लिए देर तक दबाएं</string>
+    <string name="appstr_ui_made_with_love" formatted="false">Shiaho द्वारा प्यार से बनाया गया</string>
+    <string name="appstr_ui_move_to_category" formatted="false">श्रेणी में ले जाएं</string>
+    <string name="appstr_ui_msg_app_created" formatted="false">ऐप सफलतापूर्वक बनाया गया</string>
+    <string name="appstr_ui_msg_app_deleted" formatted="false">ऐप हटा दिया गया</string>
+    <string name="appstr_ui_msg_copied" formatted="false">कॉपी किया गया</string>
+    <string name="appstr_ui_msg_deleted" formatted="false">हटा दिया गया</string>
+    <string name="appstr_ui_msg_export_failed" formatted="false">APK एक्सपोर्ट विफल रहा</string>
+    <string name="appstr_ui_msg_export_success" formatted="false">APK सफलतापूर्वक एक्सपोर्ट हुआ</string>
+    <string name="appstr_ui_msg_import_failed" formatted="false">आयात विफल रहा</string>
+    <string name="appstr_ui_msg_import_success" formatted="false">आयात सफल रहा</string>
+    <string name="appstr_ui_msg_language_changed" formatted="false">भाषा बदल दी गई है</string>
+    <string name="appstr_ui_msg_loading" formatted="false">लोड हो रहा है...</string>
+    <string name="appstr_ui_msg_no_apps" formatted="false">अभी तक कोई ऐप नहीं है</string>
+    <string name="appstr_ui_my_schemes" formatted="false">⭐ मेरी योजनाएं</string>
+    <string name="appstr_ui_network_error" formatted="false">नेटवर्क त्रुटि</string>
+    <string name="appstr_ui_new_update" formatted="false">नया अपडेट मिला</string>
+    <string name="appstr_ui_new_version_found" formatted="false">नया संस्करण मिला</string>
+    <string name="appstr_ui_no" formatted="false">नहीं</string>
+    <string name="appstr_ui_no_data" formatted="false">कोई डेटा नहीं</string>
+    <string name="appstr_ui_no_file_path_available" formatted="false">कोई फ़ाइल पथ उपलब्ध नहीं है</string>
+    <string name="appstr_ui_off" formatted="false">बंद</string>
+    <string name="appstr_ui_on" formatted="false">चालू</string>
+    <string name="appstr_ui_open_action" formatted="false">खोलें</string>
+    <string name="appstr_ui_operation_failed" formatted="false">ऑपरेशन विफल रहा</string>
+    <string name="appstr_ui_operation_success" formatted="false">ऑपरेशन सफल रहा</string>
+    <string name="appstr_ui_optional_label" formatted="false">वैकल्पिक</string>
+    <string name="appstr_ui_particle_effect" formatted="false">कण प्रभाव (Particle Effect)</string>
+    <string name="appstr_ui_particle_effects" formatted="false">कण प्रभाव</string>
+    <string name="appstr_ui_particle_effects_hint" formatted="false">थीम-विशिष्ट पृष्ठभूमि कण एनीमेशन दिखाएं</string>
+    <string name="appstr_ui_particle_not_supported" formatted="false">वर्तमान थीम कण प्रभाव का समर्थन नहीं करती है</string>
+    <string name="appstr_ui_particles" formatted="false">कण</string>
+    <string name="appstr_ui_permission_denied" formatted="false">अनुमति अस्वीकृत</string>
+    <string name="appstr_ui_please_wait" formatted="false">कृपया प्रतीक्षा करें...</string>
+    <string name="appstr_ui_preparing_share" formatted="false">साझा करने की तैयारी हो रही है...</string>
+    <string name="appstr_ui_preset_saved" formatted="false">योजना सहेजी गई</string>
+    <string name="appstr_ui_preview_effect" formatted="false">पूर्वावलोकन प्रभाव</string>
+    <string name="appstr_ui_primary_color" formatted="false">प्राथमिक रंग</string>
+    <string name="appstr_ui_processing" formatted="false">प्रसंस्करण हो रहा है...</string>
+    <string name="appstr_ui_qq_group_label" formatted="false">QQ ग्रुप</string>
+    <string name="appstr_ui_quick_schemes" formatted="false">त्वरित योजनाएं</string>
+    <string name="appstr_ui_remove" formatted="false">हटाएं</string>
+    <string name="appstr_ui_save_failed" formatted="false">सहेजना विफल रहा</string>
+    <string name="appstr_ui_save_failed_with_reason" formatted="false">सहेजना विफल: %s</string>
+    <string name="appstr_ui_saved" formatted="false">सहेजा गया</string>
+    <string name="appstr_ui_saved_to" formatted="false">यहाँ सहेजा गया: %s</string>
+    <string name="appstr_ui_saving_image" formatted="false">चित्र सहेजा जा रहा है...</string>
+    <string name="appstr_ui_saving_image_to_gallery" formatted="false">[hi] 正在保存图片到相册...</string>
+    <string name="appstr_ui_saving_to_gallery" formatted="false">[hi] 正在保存到相册...</string>
+    <string name="appstr_ui_saving_video" formatted="false">वीडियो सहेजा जा रहा है...</string>
+    <string name="appstr_ui_saving_video_to_gallery" formatted="false">[hi] 正在保存视频到相册...</string>
+    <string name="appstr_ui_scheme_name_label" formatted="false">योजना का नाम</string>
+    <string name="appstr_ui_scheme_tip" formatted="false">💡 युक्ति: कस्टम कॉन्फ़िगरेशन सहेजने के लिए \'योजना के रूप में सहेजें\' पर टैप करें</string>
+    <string name="appstr_ui_screen_awake_timed_status_desc_format" formatted="false">[hi] 定时常亮 %d 分钟后自动息屏</string>
+    <string name="appstr_ui_screen_awake_timeout_hours_minutes_format" formatted="false">[hi] %d 小时 %d 分</string>
+    <string name="appstr_ui_screen_awake_timeout_hours_only_format" formatted="false">[hi] %d 小时</string>
+    <string name="appstr_ui_screen_awake_timeout_minutes_format" formatted="false">[hi] %d 分钟</string>
+    <string name="appstr_ui_secondary_color" formatted="false">द्वितीयक रंग</string>
+    <string name="appstr_ui_select_file" formatted="false">फ़ाइल चुनें</string>
+    <string name="appstr_ui_select_folder" formatted="false">फ़ोल्डर चुनें</string>
+    <string name="appstr_ui_select_icon_title" formatted="false">आइकन चुनें</string>
+    <string name="appstr_ui_select_ui_style" formatted="false">UI शैली चुनें</string>
+    <string name="appstr_ui_share" formatted="false">साझा करें</string>
+    <string name="appstr_ui_share_code_copied_msg" formatted="false">साझाकरण कोड कॉपी किया गया</string>
+    <string name="appstr_ui_share_failed" formatted="false">साझा करना विफल रहा</string>
+    <string name="appstr_ui_sound_feedback" formatted="false">ध्वनि फीडबैक</string>
+    <string name="appstr_ui_sound_feedback_hint" formatted="false">बातचीत पर ध्वनि प्रभाव बजाएं</string>
+    <string name="appstr_ui_speed_fast" formatted="false">ते तेज़</string>
+    <string name="appstr_ui_speed_instant" formatted="false">तुरुंत</string>
+    <string name="appstr_ui_speed_normal" formatted="false">सामान्य</string>
+    <string name="appstr_ui_speed_slow" formatted="false">धीमा</string>
+    <string name="appstr_ui_ssl_security_error" formatted="false">SSL सुरक्षा त्रुटि</string>
+    <string name="appstr_ui_start_download" formatted="false">डाउनलोड शुरू हो रहा है: %s</string>
+    <string name="appstr_ui_start_download_check_notification" formatted="false">डाउनलोड शुरू, नोटिफिकेशन बार देखें</string>
+    <string name="appstr_ui_stats_active_apps" formatted="false">सक्रिय ऐप्स</string>
+    <string name="appstr_ui_stats_days_ago" formatted="false">[hi] 天前</string>
+    <string name="appstr_ui_stats_hours_ago" formatted="false">[hi] 小时前</string>
+    <string name="appstr_ui_stats_just_now" formatted="false">[hi] 刚刚</string>
+    <string name="appstr_ui_stats_launches" formatted="false">[hi] 次</string>
+    <string name="appstr_ui_stats_minutes_ago" formatted="false">[hi] 分钟前</string>
+    <string name="appstr_ui_stats_most_time" formatted="false">[hi] 使用最久</string>
+    <string name="appstr_ui_stats_most_used" formatted="false">[hi] 最常使用</string>
+    <string name="appstr_ui_stats_never_used" formatted="false">[hi] 从未使用</string>
+    <string name="appstr_ui_stats_no_data" formatted="false">[hi] 暂无使用数据</string>
+    <string name="appstr_ui_stats_recently_used" formatted="false">[hi] 最近使用</string>
+    <string name="appstr_ui_stats_title" formatted="false">उपयोग आँकड़े</string>
+    <string name="appstr_ui_stats_total_launches" formatted="false">[hi] 总启动次数</string>
+    <string name="appstr_ui_stats_total_usage" formatted="false">[hi] 总使用时长</string>
+    <string name="appstr_ui_success" formatted="false">सफल</string>
+    <string name="appstr_ui_telegram_group_label" formatted="false">Telegram ग्रुप</string>
+    <string name="appstr_ui_testing_modules" formatted="false">[hi] 测试 {0} 个模块</string>
+    <string name="appstr_ui_theme" formatted="false">थीम</string>
+    <string name="appstr_ui_theme_features" formatted="false">थीम सुविधाएँ</string>
+    <string name="appstr_ui_theme_settings" formatted="false">थीम सेटिंग्स</string>
+    <string name="appstr_ui_tip" formatted="false">सूचना</string>
+    <string name="appstr_ui_uncategorized" formatted="false">अवर्गीकृत</string>
+    <string name="appstr_ui_unknown_error" formatted="false">अज्ञात त्रुटि</string>
+    <string name="appstr_ui_update_now" formatted="false">अभी अपडेट करें</string>
+    <string name="appstr_ui_update_recommendation" formatted="false">बेहतर अनुभव के लिए अपडेट की अनुशंसा है</string>
+    <string name="appstr_ui_video_saved_to_gallery" formatted="false">वीडियो गैलरी में सहेजा गया</string>
+    <string name="appstr_ui_warning" formatted="false">चेतावनी</string>
+    <string name="appstr_ui_welcome_star_support" formatted="false">हमारा समर्थन करने के लिए स्टार ⭐ दें!</string>
+    <string name="appstr_ui_will_save_modules" formatted="false">[hi] 将保存 %d 个模块到此方案</string>
+    <string name="appstr_ui_yes" formatted="false">हाँ</string>
+</resources>

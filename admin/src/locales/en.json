@@ -1,0 +1,685 @@
+{
+  "common": {
+    "dashboard": "Dashboard",
+    "analytics": "Analytics",
+    "users": "Users",
+    "activation": "Activation",
+    "projects": "Projects",
+    "announcements": "Announcements",
+    "versions": "Versions",
+    "credentials": "Credentials",
+    "config": "Config",
+    "store": "Store",
+    "moderation": "Moderation",
+    "push": "Push",
+    "maintenance": "Maintenance",
+    "intelligence": "Security Center",
+    "logout": "Logout",
+    "loading": "Loading...",
+    "search": "Search email or username",
+    "all": "All",
+    "status": "Status",
+    "active": "Active",
+    "inactive": "Inactive",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "actions": "Actions",
+    "created_at": "Created At",
+    "no_data": "No item found",
+    "success": "Success",
+    "failed": "Failed",
+    "save_success": "Saved successfully",
+    "save_failed": "Save failed"
+  },
+  "dashboard": {
+    "title": "Overview",
+    "subtitle": "Platform operational data at a glance",
+    "total_users": "Total Users",
+    "pro_users": "Pro Users",
+    "ultra_users": "Ultra Users",
+    "mrr": "Est. MRR",
+    "active_today": "Active Today",
+    "cloud_projects": "Cloud Projects",
+    "active": "Active",
+    "today": "Today",
+    "trends": "Activity Trends",
+    "last_7_days": "Last 7 Days",
+    "quick_nav": "Quick Navigation",
+    "manage_users": "Manage Users",
+    "activation_mgmt": "Activation Mgmt",
+    "package_config": "Package & Config"
+  },
+  "users": {
+    "title": "User Management",
+    "subtitle": "Manage all users and subscriptions on the platform",
+    "table": {
+      "user": "User",
+      "password": "Password",
+      "duration": "Duration",
+      "package": "Package",
+      "expiry": "Expiry",
+      "status": "Status"
+    },
+    "search_placeholder": "Search email or username...",
+    "all_packages": "All Packages",
+    "all_statuses": "All Statuses",
+    "user_count": "{count} user | {count} users",
+    "password_hint": "Captured on login",
+    "lifetime": "Lifetime",
+    "forever": "Forever",
+    "banned": "Banned",
+    "details": "Details",
+    "modal": {
+      "basic_info": "Basic Info",
+      "subscription": "Subscription Management",
+      "email": "Email",
+      "google_account": "Google Account",
+      "password": "Password",
+      "registered": "Registered",
+      "last_login": "Last Login",
+      "login_count": "Login Count",
+      "online_duration": "Online Duration",
+      "apps_created": "Apps Created",
+      "apks_built": "APKs Built",
+      "plan": "Plan",
+      "expiry": "Expiry Date",
+      "max_devices": "Max Devices",
+      "project_limit": "Project Limit",
+      "account_status": "Account Active",
+      "save_changes": "Save Changes",
+      "show_pw": "Show",
+      "hide_pw": "Hide"
+    },
+    "plans": {
+      "free": "Free",
+      "pro_monthly": "Pro Monthly",
+      "pro_yearly": "Pro Yearly",
+      "pro_lifetime": "Pro Lifetime",
+      "ultra_monthly": "Ultra Monthly",
+      "ultra_yearly": "Ultra Yearly",
+      "ultra_lifetime": "Ultra Lifetime",
+      "legacy_lifetime": "Lifetime (Legacy)"
+    },
+    "duration": {
+      "days": "d",
+      "hours": "h",
+      "minutes": "m"
+    }
+  },
+  "activation": {
+    "title": "Activation Management",
+    "generate": {
+      "title": "Generate Codes",
+      "tier": "Membership Tier",
+      "plan_type": "Plan Type",
+      "count": "Count",
+      "note": "Note (Optional)",
+      "note_placeholder": "e.g. Gumroad 2026-03",
+      "btn_generate": "Generate Activation Codes",
+      "generating": "Generating...",
+      "success": "{count} code generated | {count} codes generated",
+      "copy_all": "Copy All",
+      "copied": "Copied to clipboard"
+    },
+    "stats": {
+      "total": "Total",
+      "unused": "Unused",
+      "used": "Used",
+      "usage_rate": "Usage Rate"
+    },
+    "list": {
+      "title": "Activation Codes",
+      "export": "Export CSV",
+      "no_codes": "No activation codes found",
+      "prev": "Prev",
+      "next": "Next",
+      "disable_confirm": "Are you sure you want to disable this code?",
+      "disabled_msg": "Disabled"
+    },
+    "table": {
+      "code": "Code",
+      "type": "Type",
+      "days": "Days",
+      "status": "Status",
+      "user": "User",
+      "batch": "Batch",
+      "actions": "Actions"
+    },
+    "types": {
+      "monthly": "Monthly (Legacy)",
+      "pro_monthly": "Pro Monthly",
+      "pro_yearly": "Pro Yearly",
+      "pro_lifetime": "Pro Lifetime",
+      "ultra_monthly": "Ultra Monthly",
+      "ultra_yearly": "Ultra Yearly",
+      "ultra_lifetime": "Ultra Lifetime",
+      "quarterly": "Quarterly (Legacy)",
+      "yearly": "Yearly (Legacy)",
+      "lifetime": "Lifetime (Legacy)",
+      "days_30": "30 Days",
+      "days_365": "365 Days"
+    }
+  },
+  "login": {
+    "title": "Admin Console",
+    "email": "Email",
+    "password": "Password",
+    "password_placeholder": "Enter password",
+    "btn_login": "Login",
+    "logging_in": "Logging in...",
+    "no_permission": "Account has no admin permissions",
+    "failed": "Login failed"
+  },
+  "analytics": {
+    "title": "Analytics",
+    "subtitle": "Multi-dimensional trend data for growth insights",
+    "market_apps": "Market Apps",
+    "market_modules": "Market Modules",
+    "loading_trends": "Loading trend data...",
+    "active_trends": "Active User Trends",
+    "paid_trends": "Paid Customer Trends",
+    "store_trends": "Market Content Trends",
+    "unique_users": "Unique Active Users",
+    "new_paid": "New Paid Users",
+    "new_content": "New Apps & Modules",
+    "no_data": "No statistical data",
+    "scopes": {
+      "daily": "Daily (30d)",
+      "monthly": "Monthly (12m)",
+      "yearly": "Yearly",
+      "all": "All Time",
+      "daily_label": "Daily",
+      "monthly_label": "Monthly",
+      "yearly_label": "Yearly",
+      "all_label": "History"
+    }
+  },
+  "config": {
+    "title": "Remote Config",
+    "subtitle": "Manage global configuration parameters for the platform",
+    "btn_add": "New Config",
+    "table": {
+      "key": "Key Name",
+      "value": "Value",
+      "type": "Type",
+      "audience": "Audience"
+    },
+    "modal": {
+      "edit": "Edit Configuration",
+      "create": "New Configuration",
+      "key_placeholder": "e.g. build_limit",
+      "value_placeholder": "Value",
+      "desc": "Description",
+      "desc_placeholder": "Config explanation"
+    }
+  },
+  "projects": {
+    "title": "Cloud Projects",
+    "subtitle": "Manage all apps created by users",
+    "search_placeholder": "Search project name or key...",
+    "no_projects": "No Cloud Projects Yet",
+    "description_hint": "After creating a project, you can provide activation codes, announcements, version updates, and remote configuration services for your built apps.",
+    "btn_create_first": "Create First Project",
+    "no_package": "No package name set",
+    "no_desc": "No description",
+    "modal": {
+      "title": "New Cloud Project",
+      "name": "Project Name",
+      "package": "Package Name (Optional)",
+      "desc": "Description (Optional)",
+      "btn_create": "Create Project",
+      "creating": "Creating..."
+    },
+    "table": {
+      "name": "Project Name",
+      "key": "Project Key",
+      "type": "Type",
+      "user": "Creator",
+      "created": "Created At"
+    },
+    "types": {
+      "web": "Web App",
+      "html": "HTML App",
+      "image": "Image App",
+      "video": "Video App"
+    },
+    "details": {
+      "back": "Back",
+      "share": "Share Download Page",
+      "tabs": {
+        "codes": "Activation Codes",
+        "announcements": "Announcements",
+        "versions": "Version Release",
+        "configs": "Remote Config",
+        "analytics": "Statistics",
+        "webhooks": "Webhooks",
+        "backups": "Project Backup"
+      },
+      "codes": {
+        "title": "Activation Codes",
+        "count": "Quantity",
+        "label": "Note Label (Optional)",
+        "btn_generate": "Generate",
+        "no_codes": "No activation codes",
+        "table": {
+          "code": "Code",
+          "label": "Label",
+          "status": "Status",
+          "device": "Device ID",
+          "time": "Activated At"
+        }
+      },
+      "ann": {
+        "title": "Announcements",
+        "btn_add": "New Announcement",
+        "no_anns": "No announcements",
+        "form": {
+          "title": "Title",
+          "content": "Content",
+          "type": "Display Type",
+          "btn_publish": "Publish Now",
+          "types": {
+            "popup": "Popup",
+            "banner": "Banner",
+            "fullscreen": "Fullscreen"
+          }
+        },
+        "table": {
+          "title": "Title",
+          "type": "Type",
+          "status": "Status",
+          "actions": "Actions",
+          "active": "Active",
+          "inactive": "Stopped",
+          "btn_enable": "Enable",
+          "btn_disable": "Stop"
+        }
+      },
+      "ver": {
+        "title": "Version Release",
+        "btn_add": "New Version",
+        "no_vers": "No versions",
+        "form": {
+          "code": "Version Code (Int)",
+          "name": "Version Name (e.g. 1.0.0)",
+          "changelog": "Changelog",
+          "force": "Force Update",
+          "upload_to": "Upload To",
+          "btn_publish": "Publish Version",
+          "publishing": "Uploading...",
+          "targets": {
+            "both": "GitHub+Gitee",
+            "github": "Only GitHub",
+            "gitee": "Only Gitee"
+          }
+        },
+        "table": {
+          "version": "Version",
+          "size": "Size",
+          "github": "GitHub",
+          "gitee": "Gitee",
+          "force": "Force",
+          "time": "Time",
+          "download": "Download"
+        }
+      },
+      "cfg": {
+        "title": "Remote Config",
+        "btn_add": "Add Config",
+        "no_cfgs": "No configuration",
+        "form": {
+          "key": "Config Key",
+          "value": "Config Value",
+          "type": "Value Type",
+          "btn_add": "Add Now"
+        },
+        "table": {
+          "key": "Key Name",
+          "value": "Current Value",
+          "type": "Type",
+          "actions": "Actions"
+        }
+      },
+      "analytics": {
+        "title": "Analytics",
+        "days": "Last {n} Days",
+        "summary": {
+          "opens": "Total Opens",
+          "installs": "Installs",
+          "active": "Avg Daily Active",
+          "crashes": "Crashes"
+        },
+        "dist": {
+          "country": "Region Distribution",
+          "device": "Device Models",
+          "os": "OS Versions",
+          "version": "App Versions"
+        }
+      },
+      "wh": {
+        "title": "Webhooks",
+        "btn_add": "Add Webhook",
+        "no_whs": "No webhooks",
+        "form": {
+          "url": "Push URL (https://...)",
+          "secret": "Secret (Optional)",
+          "events": "Listen Events",
+          "btn_add": "Add",
+          "event_types": {
+            "activated": "Code Activated",
+            "published": "Version Published",
+            "report": "Daily Report",
+            "announcement": "Announcement Created"
+          }
+        },
+        "table": {
+          "url": "URL",
+          "events": "Events",
+          "status": "Status",
+          "last": "Last Trigger",
+          "failed": "Failures",
+          "never": "Never"
+        }
+      },
+      "bkp": {
+        "title": "Project Backup",
+        "platform": "Platform",
+        "btn_upload": "Upload Backup",
+        "no_bkps": "No backup history",
+        "backing": "Uploading...",
+        "table": {
+          "platform": "Platform",
+          "size": "Size",
+          "status": "Status",
+          "link": "Repo Link",
+          "time": "Backup Time",
+          "view": "View"
+        }
+      }
+    }
+  },
+  "store": {
+    "title": "Store Management",
+    "subtitle": "Manage application and module marketplace",
+    "apps": "Market Apps",
+    "modules": "Market Modules",
+    "btn_add_app": "Add App",
+    "btn_add_module": "Add Module",
+    "stats": {
+      "total": "Total Items",
+      "apps": "Apps",
+      "modules": "Modules",
+      "featured": "Featured",
+      "pending": "Pending",
+      "downloads": "Total DL"
+    },
+    "filters": {
+      "search": "Search name, desc, or tags",
+      "type_all": "All Types",
+      "status_all": "All Statuses",
+      "sort_created": "Created Time",
+      "sort_downloads": "Downloads",
+      "sort_rating": "Rating",
+      "sort_likes": "Likes",
+      "sort_views": "Views"
+    },
+    "batch": {
+      "selected": "{count} items selected",
+      "approve": "Approve",
+      "feature": "Feature",
+      "delete": "Delete"
+    },
+    "table": {
+      "item": "Item",
+      "type": "Type",
+      "category": "Category",
+      "data": "Metrics",
+      "status": "Status",
+      "author": "Author",
+      "created": "Created At"
+    },
+    "types": {
+      "app": "App",
+      "extension": "Extension",
+      "browser_extension": "Browser Ext"
+    },
+    "status": {
+      "approved": "Approved",
+      "pending": "Pending",
+      "featured": "Featured",
+      "reject": "Reject / Revoke"
+    },
+    "details": {
+      "info": "Item Basic Info",
+      "admin_actions": "Admin Actions",
+      "id": "Item ID",
+      "publisher": "Publisher",
+      "cat": "Category",
+      "ver": "Version",
+      "pkg": "Package/ID",
+      "tags": "Tags",
+      "dl": "Total Downloads",
+      "views": "View Count",
+      "likes": "Like Count",
+      "rate": "Rating",
+      "comments": "Comment Count",
+      "created": "Upload Time",
+      "updated": "Last Update",
+      "screenshots": "Screenshots",
+      "desc": "Detailed Description"
+    }
+  },
+  "moderation": {
+    "title": "Content Moderation",
+    "subtitle": "Review and manage user-generated community content",
+    "stats": {
+      "pending_reports": "Pending Reports",
+      "pending_modules": "Pending Reviews",
+      "resolved_today": "Resolved Today",
+      "banned_users": "Banned Users"
+    },
+    "tabs": {
+      "reports": "Reports",
+      "modules": "Module Reviews",
+      "activity": "Activity Log"
+    },
+    "empty": {
+      "reports": "No pending reports",
+      "modules": "No modules pending review"
+    },
+    "reports": {
+      "no_details": "No detailed explanation",
+      "reporter": "Reporter",
+      "module": "Module",
+      "resolution": {
+        "resolved": "Report Resolved",
+        "action_taken": "Action Taken",
+        "dismissed": "Report Dismissed"
+      }
+    },
+    "modules": {
+      "author": "Author",
+      "reject_prompt": "Please enter the reason for rejecting \"{name}\":"
+    },
+    "actions": {
+      "approve": "Pass",
+      "punish": "Punish",
+      "dismiss": "Dismiss"
+    }
+  },
+  "push": {
+    "title": "Push Notifications",
+    "subtitle": "Send notification messages to users",
+    "btn_send": "Send Message",
+    "history": "Push History",
+    "no_history": "No push history",
+    "form": {
+      "title": "Title",
+      "body": "Body",
+      "content_placeholder": "Notification content",
+      "target": "Target Audience",
+      "type": "Message Type",
+      "btn_push": "Push Now",
+      "sending": "Sending...",
+      "targets": {
+        "all": "All Users",
+        "pro": "Pro Users",
+        "ultra": "Ultra Users",
+        "free": "Free Users"
+      },
+      "types": {
+        "info": "Information",
+        "announcement": "Announcement",
+        "update": "Update",
+        "promotion": "Promotion"
+      }
+    },
+    "table": {
+      "delivered": "Delivered"
+    }
+  },
+  "versions": {
+    "title": "Version Update Management",
+    "btn_create": "Release New Version",
+    "no_data": "No version records found",
+    "table": {
+      "code": "Ver Code",
+      "name": "Ver Name",
+      "title": "Title",
+      "force": "Force Update",
+      "status": "Status"
+    },
+    "modal": {
+      "title": "Release New Version",
+      "code": "Version Code (int)",
+      "name": "Version Name (e.g. 1.0.0)",
+      "update_title": "Update Title",
+      "changelog": "Changelog",
+      "url": "Download URL",
+      "size": "File Size (bytes)",
+      "min_code": "Min Version Code",
+      "force": "Force Update"
+    },
+    "status": {
+      "published": "Published",
+      "draft": "Draft",
+      "publish": "Publish",
+      "unpublish": "Unpublish"
+    }
+  },
+  "announcements": {
+    "title": "Global Announcements",
+    "btn_create": "New Announcement",
+    "no_data": "No announcements found",
+    "table": {
+      "title": "Title",
+      "type": "Type",
+      "audience": "Audience",
+      "status": "Status",
+      "start": "Start Time"
+    },
+    "modal": {
+      "create_title": "New Global Announcement",
+      "edit_title": "Edit Announcement",
+      "title": "Announcement Title",
+      "content": "Content (Markdown Support)",
+      "content_en": "English Content (Optional)",
+      "display_type": "Display Type",
+      "audience": "Target Audience",
+      "start": "Start Time",
+      "end": "End Time (Optional)",
+      "action_url": "Action Link (Optional)",
+      "activate": "Activate Immediately",
+      "dismissible": "Dismissible"
+    },
+    "audiences": {
+      "all": "All Users",
+      "free": "Free Users",
+      "pro": "Pro Users",
+      "ultra": "Ultra Users"
+    }
+  },
+  "credentials": {
+    "title": "Credential Management",
+    "subtitle": "Manage system credentials and access secrets",
+    "btn_new": "New Credential",
+    "modal": {
+      "hint": "Give your credential a unique username or label. This helps identifying the service."
+    },
+    "table": {
+      "name": "Username",
+      "secret": "Password / Secret",
+      "label": "Label",
+      "created": "Created"
+    }
+  },
+  "maintenance": {
+    "title": "System Maintenance",
+    "subtitle": "System health checks, cache management, and database maintenance",
+    "stats": {
+      "health": "System Health",
+      "uptime": "Uptime",
+      "db_conn": "DB Connections",
+      "memory": "Memory Usage"
+    },
+    "actions": {
+      "cache_title": "Clear Cache",
+      "cache_desc": "Clear all server-side cached data",
+      "backup_title": "DB Backup",
+      "backup_desc": "Create a full backup of the current database",
+      "cleanup_title": "Data Cleanup",
+      "cleanup_desc": "Cleanup expired tokens, logs, and temp files",
+      "health_title": "Health Check",
+      "health_desc": "Check the health status of all system components",
+      "exec": "Execute",
+      "running": "Running...",
+      "recheck": "Recheck",
+      "confirm_cleanup": "Are you sure you want to perform data cleanup? This will delete expired tokens and logs."
+    },
+    "backups": {
+      "title": "Backup Management",
+      "summary": "{count} backups · {size}",
+      "no_data": "No backup files found",
+      "confirm_delete": "Are you sure you want to delete backup \"{name}\"? This action cannot be undone."
+    },
+    "stats_title": "System Statistics",
+    "export": {
+      "title": "Data Export",
+      "users_title": "Export Users",
+      "users_desc": "Export all user account information to CSV",
+      "projects_title": "Export Projects",
+      "projects_desc": "Export all cloud project information to CSV"
+    }
+  },
+  "intelligence": {
+    "title": "Security Center",
+    "subtitle": "Threat detection, circuit breaker status, and security analysis",
+    "stats": {
+      "threat_level": "Threat Level",
+      "active_threats": "Active Threats",
+      "blocked_24h": "24h Blocked",
+      "open_breakers": "Open Breakers"
+    },
+    "breakers": {
+      "title": "Circuit Breakers",
+      "no_data": "No circuit breaker data",
+      "failure_rate": "Failure Rate",
+      "req_count": "Requests",
+      "reset": "Reset",
+      "reset_success": "Circuit breaker {name} reset"
+    },
+    "threats": {
+      "title": "Recent Threats",
+      "no_data": "No threats detected",
+      "table": {
+        "ip": "IP Address",
+        "type": "Type",
+        "score": "Score",
+        "status": "Status",
+        "time": "Time"
+      }
+    }
+  }
+}

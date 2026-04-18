@@ -21,16 +21,17 @@
           :class="{ active: $route.path === item.path || ($route.path.startsWith(item.path) && item.path !== '/') }" @click="closeMobile">
           <span class="nav-icon" v-html="item.svg"></span>
           <transition name="fade-text">
-            <span v-if="!sidebarCollapsed" class="nav-label">{{ item.label }}</span>
+            <span v-if="!sidebarCollapsed" class="nav-label">{{ $t(item.label) }}</span>
           </transition>
         </router-link>
       </nav>
 
       <div class="sidebar-footer">
+        <LanguageSwitcher :collapsed="sidebarCollapsed" />
         <button class="nav-item logout-btn" @click="logout">
           <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg></span>
           <transition name="fade-text">
-            <span v-if="!sidebarCollapsed" class="nav-label">退出登录</span>
+            <span v-if="!sidebarCollapsed" class="nav-label">{{ $t('common.logout') }}</span>
           </transition>
         </button>
         <transition name="fade-text">
@@ -56,6 +57,7 @@
 <script setup>
 import { ref, reactive, provide } from 'vue'
 import { useRouter } from 'vue-router'
+import LanguageSwitcher from '../components/LanguageSwitcher.vue'
 
 const router = useRouter()
 const sidebarCollapsed = ref(false)
@@ -94,19 +96,20 @@ const svgCloud = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" st
 const svgChart = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>'
 
 const navItems = [
-  { path: '/', label: '概览', svg: svgDashboard },
-  { path: '/analytics', label: '数据分析', svg: svgChart },
-  { path: '/users', label: '用户', svg: svgUsers },
-  { path: '/activation', label: '激活码', svg: svgKey },
-  { path: '/projects', label: '项目', svg: svgCloud },
-  { path: '/announcements', label: '公告', svg: svgMegaphone },
-  { path: '/versions', label: '版本', svg: svgPackage },
-  { path: '/config', label: '配置', svg: svgSettings },
-  { path: '/store', label: '商店', svg: svgStore },
-  { path: '/moderation', label: '内容审核', svg: svgShield },
-  { path: '/push', label: '推送', svg: svgBell },
-  { path: '/maintenance', label: '系统维护', svg: svgTool },
-  { path: '/intelligence', label: '安全', svg: svgBrain },
+  { path: '/', label: 'common.dashboard', svg: svgDashboard },
+  { path: '/analytics', label: 'common.analytics', svg: svgChart },
+  { path: '/users', label: 'common.users', svg: svgUsers },
+  { path: '/activation', label: 'common.activation', svg: svgKey },
+  { path: '/projects', label: 'common.projects', svg: svgCloud },
+  { path: '/announcements', label: 'common.announcements', svg: svgMegaphone },
+  { path: '/versions', label: 'common.versions', svg: svgPackage },
+  { path: '/credentials', label: 'common.credentials', svg: svgKey },
+  { path: '/config', label: 'common.config', svg: svgSettings },
+  { path: '/store', label: 'common.store', svg: svgStore },
+  { path: '/moderation', label: 'common.moderation', svg: svgShield },
+  { path: '/push', label: 'common.push', svg: svgBell },
+  { path: '/maintenance', label: 'common.maintenance', svg: svgTool },
+  { path: '/intelligence', label: 'common.intelligence', svg: svgBrain },
 ]
 </script>
 
@@ -115,18 +118,20 @@ const navItems = [
 
 /* ─── Sidebar ─── */
 .sidebar {
-  width: 220px; min-height: 100vh; position: fixed; left: 0; top: 0; z-index: 50;
+  width: 220px; height: 100vh; position: fixed; left: 0; top: 0; z-index: 50;
   background: var(--bg-sidebar);
   backdrop-filter: blur(40px) saturate(1.6);
   border-right: 1px solid var(--border);
   display: flex; flex-direction: column;
   transition: width 0.4s var(--ease-out);
+  overflow: hidden;
 }
 .sidebar.collapsed { width: 64px; }
 
 .sidebar-header {
   display: flex; align-items: center; justify-content: space-between;
   padding: 20px 16px; border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
 }
 .brand { display: flex; align-items: center; gap: 10px; overflow: hidden; }
 .brand-icon {
@@ -139,7 +144,10 @@ const navItems = [
 .collapse-btn { transition: transform var(--t-normal); }
 .sidebar.collapsed .collapse-btn { transform: rotate(180deg); }
 
-.sidebar-nav { flex: 1; padding: 12px 8px; display: flex; flex-direction: column; gap: 2px; }
+.sidebar-nav { flex: 1; padding: 12px 8px; display: flex; flex-direction: column; gap: 2px; overflow-y: auto; overflow-x: hidden; }
+.sidebar-nav::-webkit-scrollbar { width: 4px; }
+.sidebar-nav::-webkit-scrollbar-track { background: transparent; }
+.sidebar-nav::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
 .nav-item {
   display: flex; align-items: center; gap: 10px;
   padding: 9px 12px; border-radius: var(--r-sm);

@@ -167,17 +167,17 @@ fun HomeScreen(
         val onClick: () -> Unit
     )
     val createActionItems = listOf(
-        CreateActionItem(AppStringsProvider.current().common.appTypeWeb, R.drawable.ic_type_web, onCreateApp),
-        CreateActionItem(AppStringsProvider.current().common.appTypeMultiWeb, R.drawable.ic_type_web, onCreateMultiWebApp),
-        CreateActionItem(AppStringsProvider.current().common.appTypeHtml, R.drawable.ic_type_html, onCreateHtmlApp),
-        CreateActionItem(AppStringsProvider.current().common.appTypeFrontend, R.drawable.ic_type_frontend, onCreateFrontendApp),
-        CreateActionItem(AppStringsProvider.current().common.appTypePhp, R.drawable.ic_type_php, onCreatePhpApp),
-        CreateActionItem(AppStringsProvider.current().common.appTypeWordPress, R.drawable.ic_type_wordpress, onCreateWordPressApp),
-        CreateActionItem(AppStringsProvider.current().common.appTypeNodeJs, R.drawable.ic_type_nodejs, onCreateNodeJsApp),
-        CreateActionItem(AppStringsProvider.current().common.appTypePython, R.drawable.ic_type_python, onCreatePythonApp),
-        CreateActionItem(AppStringsProvider.current().common.appTypeGo, R.drawable.ic_type_go, onCreateGoApp),
-        CreateActionItem(AppStringsProvider.current().common.createMediaApp, R.drawable.ic_type_media, onCreateMediaApp),
-        CreateActionItem(AppStringsProvider.current().common.appTypeGallery, R.drawable.ic_type_gallery, onCreateGalleryApp)
+        CreateActionItem(AppStringsProvider.current().appTypeWeb, R.drawable.ic_type_web, onCreateApp),
+        CreateActionItem(AppStringsProvider.current().appTypeMultiWeb, R.drawable.ic_type_web, onCreateMultiWebApp),
+        CreateActionItem(AppStringsProvider.current().appTypeHtml, R.drawable.ic_type_html, onCreateHtmlApp),
+        CreateActionItem(AppStringsProvider.current().appTypeFrontend, R.drawable.ic_type_frontend, onCreateFrontendApp),
+        CreateActionItem(AppStringsProvider.current().appTypePhp, R.drawable.ic_type_php, onCreatePhpApp),
+        CreateActionItem(AppStringsProvider.current().appTypeWordPress, R.drawable.ic_type_wordpress, onCreateWordPressApp),
+        CreateActionItem(AppStringsProvider.current().appTypeNodeJs, R.drawable.ic_type_nodejs, onCreateNodeJsApp),
+        CreateActionItem(AppStringsProvider.current().appTypePython, R.drawable.ic_type_python, onCreatePythonApp),
+        CreateActionItem(AppStringsProvider.current().appTypeGo, R.drawable.ic_type_go, onCreateGoApp),
+        CreateActionItem(AppStringsProvider.current().createMediaApp, R.drawable.ic_type_media, onCreateMediaApp),
+        CreateActionItem(AppStringsProvider.current().appTypeGallery, R.drawable.ic_type_gallery, onCreateGalleryApp)
     )
     
     Scaffold(
@@ -202,7 +202,7 @@ fun HomeScreen(
                             listOf(MaterialTheme.colorScheme.primary, MaterialTheme.colorScheme.tertiary)
                         }
                         
-                        val typewriterTexts = listOf(AppStringsProvider.current().typewriterText1, AppStringsProvider.current().typewriterText2, AppStringsProvider.current().typewriterText3)
+                        val typewriterTexts = listOf(AppStringsProvider.current().preparing, AppStringsProvider.current().previewUi, AppStringsProvider.current().splashPreview)
                         var textIndex by remember { mutableIntStateOf(0) }
                         var charIndex by remember { mutableIntStateOf(0) }
                         var userPaused by remember { mutableStateOf(false) }
@@ -583,7 +583,7 @@ fun HomeScreen(
                                 scope.launch {
                                     when (val result = exporter.createShortcut(app)) {
                                         is com.webtoapp.core.export.ShortcutResult.Success -> {
-                                            snackbarHostState.showSnackbar(AppStringsProvider.current().shortcutCreatedSuccess)
+                                            snackbarHostState.showSnackbar(AppStringsProvider.current().msgCopied)
                                         }
                                         is com.webtoapp.core.export.ShortcutResult.Pending -> {
                                             snackbarHostState.showSnackbar(result.message)
@@ -857,8 +857,8 @@ fun HomeScreen(
                 showDeleteDialog = false
                 selectedApp = null
             },
-            title = { Text(AppStringsProvider.current().deleteConfirmTitle) },
-            text = { Text(AppStringsProvider.current().deleteConfirmMessage) },
+            title = { Text(AppStringsProvider.current().deleteCategory) },
+            text = { Text(AppStringsProvider.current().deleteCategoryConfirm) },
             confirmButton = {
                 TextButton(
                     onClick = {
@@ -1035,7 +1035,7 @@ fun EmptyState(
         )
         Spacer(modifier = Modifier.height(8.dp))
         Text(
-            text = AppStringsProvider.current().emptyStateHint,
+            text = AppStringsProvider.current().legacy.emptyStateHint,
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.outline
         )
@@ -1060,7 +1060,7 @@ fun BuildApkDialog(
     
     var isBuilding by remember { mutableStateOf(false) }
     var progress by remember { mutableIntStateOf(0) }
-    var progressText by remember { mutableStateOf(AppStringsProvider.current().preparing) }
+    var progressText by remember { mutableStateOf(AppStringsProvider.current().preparingDownload) }
     var analysisReport by remember { mutableStateOf<com.webtoapp.core.apkbuilder.ApkAnalyzer.AnalysisReport?>(null) }
     var encryptionConfig by remember { 
         mutableStateOf(webApp.apkExportConfig?.encryptionConfig ?: com.webtoapp.data.model.ApkEncryptionConfig()) 
@@ -1352,7 +1352,7 @@ fun BuildApkDialog(
                                     }
                                 }
                                 is BuildResult.Error -> {
-                                    onResult("${AppStringsProvider.current().buildFailed}: ${result.message}")
+                                    onResult("${AppStringsProvider.current().errorPrefix}: ${result.message}")
                                 }
                             }
                         }

@@ -14,11 +14,11 @@ interface AppStrings : GeneratedAppStrings {
 }
 
 object AppStringsProvider {
-    private val persistedLanguageState = mutableStateOf(AppLanguage.CHINESE)
+    private val persistedLanguageState = mutableStateOf(AppLanguage.ENGLISH)
     private val runtimeLanguageState = mutableStateOf<AppLanguage?>(null)
     private val fixedLanguageStrings = AppLanguage.entries.associateWith(::FixedLanguageAppStrings)
 
-    fun initialize(initialLanguage: AppLanguage = AppLanguage.CHINESE) {
+    fun initialize(initialLanguage: AppLanguage = AppLanguage.ENGLISH) {
         persistedLanguageState.value = initialLanguage
     }
 

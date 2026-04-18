@@ -25,6 +25,10 @@
     <string name="activation_required">مطلوب رمز التفعيل للاستخدام</string>
     <string name="enter_activation_code">الرجاء إدخال رمز التفعيل</string>
     <string name="invalid_activation_code">رمز التفعيل غير صالح</string>
+    <string name="too_many_attempts_with_countdown">محاولات كثيرة جداً. يرجى المحاولة مرة أخرى بعد %1$s</string>
+    <string name="invalid_time_limit_config">تكوين مهلة زمنية غير صالح</string>
+    <string name="invalid_usage_limit_config">تكوين حد الاستخدام غير صالح</string>
+    <string name="batch_generated_note">تم التوليد دفعة واحدة</string>
     <string name="activation_success">تم التفعيل بنجاح</string>
 
     <!-- الإعلانات -->

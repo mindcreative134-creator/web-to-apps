@@ -59,18 +59,28 @@ class HtmlPreviewActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AppLogger.lifecycle("HtmlPreviewActivity", "onCreate", "intent extras=${intent.extras?.keySet()?.joinToString()}")
         
         val filePath = intent.getStringExtra(EXTRA_FILE_PATH)
         val htmlContent = intent.getStringExtra(EXTRA_HTML_CONTENT)
         val title = intent.getStringExtra(EXTRA_TITLE) ?: "预览"
         
+        if (filePath == null && htmlContent == null) {
+            AppLogger.e("HtmlPreviewActivity", "Both filePath and htmlContent are null, finishing activity")
+            finish()
+            return
+        }
+
         setContent {
             WebToAppTheme { _ ->
                 HtmlPreviewScreen(
                     filePath = filePath,
                     htmlContent = htmlContent,
                     title = title,
-                    onBack = { finish() }
+                    onBack = { 
+                        AppLogger.i("HtmlPreviewActivity", "Back pressed, finishing activity")
+                        finish() 
+                    }
                 )
             }
         }
@@ -337,7 +347,18 @@ private fun WebView.setupWebView(
     webViewClient = object : WebViewClient() {
         override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
             super.onPageStarted(view, url, favicon)
+            AppLogger.d("HtmlPreviewActivity", "onPageStarted: $url")
             url?.let { onPageStarted(it) }
+        }
+        
+        override fun onReceivedError(view: WebView?, request: WebResourceRequest?, error: WebResourceError?) {
+            super.onReceivedError(view, request, error)
+            AppLogger.e("HtmlPreviewActivity", "onReceivedError: ${error?.errorCode} - ${error?.description} for ${request?.url}")
+        }
+
+        override fun onReceivedHttpError(view: WebView?, request: WebResourceRequest?, errorResponse: WebResourceResponse?) {
+            super.onReceivedHttpError(view, request, errorResponse)
+            AppLogger.e("HtmlPreviewActivity", "onReceivedHttpError: ${errorResponse?.statusCode} for ${request?.url}")
         }
         
         override fun onPageFinished(view: WebView?, url: String?) {

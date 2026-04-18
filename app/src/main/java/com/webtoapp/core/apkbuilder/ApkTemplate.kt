@@ -91,261 +91,250 @@ class ApkTemplate(private val context: Context) {
      * Note: brief English comment.
      */
     fun createConfigJson(config: ApkConfig): String {
-        return """
-        {
-            "appName": "${escapeJson(config.appName)}",
-            "packageName": "${escapeJson(config.packageName)}",
-            "targetUrl": "${escapeJson(config.targetUrl)}",
-            "versionCode": ${config.versionCode},
-            "versionName": "${escapeJson(config.versionName)}",
-            "activationEnabled": ${config.activationEnabled},
-            "activationCodes": [${config.activationCodes.joinToString(",") { "\"${escapeJson(it)}\"" }}],
-            "activationRequireEveryTime": ${config.activationRequireEveryTime},
-            "activationDialogTitle": "${escapeJson(config.activationDialogTitle)}",
-            "activationDialogSubtitle": "${escapeJson(config.activationDialogSubtitle)}",
-            "activationDialogInputLabel": "${escapeJson(config.activationDialogInputLabel)}",
-            "activationDialogButtonText": "${escapeJson(config.activationDialogButtonText)}",
-            "adBlockEnabled": ${config.adBlockEnabled},
-            "adBlockRules": [${config.adBlockRules.joinToString(",") { "\"${escapeJson(it)}\"" }}],
-            "announcementEnabled": ${config.announcementEnabled},
-            "announcementTitle": "${escapeJson(config.announcementTitle)}",
-            "announcementContent": "${escapeJson(config.announcementContent)}",
-            "announcementLink": "${escapeJson(config.announcementLink)}",
-            "announcementLinkText": "${escapeJson(config.announcementLinkText)}",
-            "announcementTemplate": "${config.announcementTemplate}",
-            "announcementShowEmoji": ${config.announcementShowEmoji},
-            "announcementAnimationEnabled": ${config.announcementAnimationEnabled},
-            "announcementShowOnce": ${config.announcementShowOnce},
-            "announcementRequireConfirmation": ${config.announcementRequireConfirmation},
-            "announcementAllowNeverShow": ${config.announcementAllowNeverShow},
-            "splashEnabled": ${config.splashEnabled},
-            "splashType": "${config.splashType}",
-            "splashDuration": ${config.splashDuration},
-            "splashClickToSkip": ${config.splashClickToSkip},
-            "splashVideoStartMs": ${config.splashVideoStartMs},
-            "splashVideoEndMs": ${config.splashVideoEndMs},
-            "splashLandscape": ${config.splashLandscape},
-            "splashFillScreen": ${config.splashFillScreen},
-            "splashEnableAudio": ${config.splashEnableAudio},
-            "webViewConfig": {
-                "javaScriptEnabled": ${config.javaScriptEnabled},
-                "domStorageEnabled": ${config.domStorageEnabled},
-                "zoomEnabled": ${config.zoomEnabled},
-                "desktopMode": ${config.desktopMode},
-                "userAgent": ${config.userAgent?.let { "\"${escapeJson(it)}\"" } ?: "null"},
-                "userAgentMode": "${config.userAgentMode}",
-                "customUserAgent": ${config.customUserAgent?.let { "\"${escapeJson(it)}\"" } ?: "null"},
-                "orientationMode": "${config.orientationMode}",
-                "keyboardAdjustMode": "${config.keyboardAdjustMode}",
-                "swipeRefreshEnabled": ${config.swipeRefreshEnabled},
-                "fullscreenEnabled": ${config.fullscreenEnabled},
-                "hideToolbar": ${config.hideToolbar},
-                "hideBrowserToolbar": ${config.hideBrowserToolbar},
-                "showStatusBarInFullscreen": ${config.showStatusBarInFullscreen},
-                "showNavigationBarInFullscreen": ${config.showNavigationBarInFullscreen},
-                "showToolbarInFullscreen": ${config.showToolbarInFullscreen},
-                "landscapeMode": ${config.landscapeMode},
-                "injectScripts": [${config.injectScripts.joinToString(",") { script ->
-                    """{"name":"${escapeJson(script.name)}","code":"${escapeJson(script.code)}","enabled":${script.enabled},"runAt":"${script.runAt.name}"}"""
-                }}],
-                "statusBarColorMode": "${config.statusBarColorMode}",
-                "statusBarColor": ${config.statusBarColor?.let { "\"${escapeJson(it)}\"" } ?: "null"},
-                "statusBarDarkIcons": ${config.statusBarDarkIcons ?: "null"},
-                "statusBarBackgroundType": "${config.statusBarBackgroundType}",
-                "statusBarBackgroundImage": ${if (config.statusBarBackgroundType == "IMAGE" && !config.statusBarBackgroundImage.isNullOrEmpty()) "\"statusbar_background.png\"" else "null"},
-                "statusBarBackgroundAlpha": ${config.statusBarBackgroundAlpha},
-                "statusBarHeightDp": ${config.statusBarHeightDp},
-                "statusBarColorModeDark": "${config.statusBarColorModeDark}",
-                "statusBarColorDark": ${config.statusBarColorDark?.let { "\"${escapeJson(it)}\"" } ?: "null"},
-                "statusBarDarkIconsDark": ${config.statusBarDarkIconsDark ?: "null"},
-                "statusBarBackgroundTypeDark": "${config.statusBarBackgroundTypeDark}",
-                "statusBarBackgroundImageDark": ${if (config.statusBarBackgroundTypeDark == "IMAGE" && !config.statusBarBackgroundImageDark.isNullOrEmpty()) "\"statusbar_background_dark.png\"" else "null"},
-                "statusBarBackgroundAlphaDark": ${config.statusBarBackgroundAlphaDark},
-                "longPressMenuEnabled": ${config.longPressMenuEnabled},
-                "longPressMenuStyle": "${config.longPressMenuStyle}",
-                "adBlockToggleEnabled": ${config.adBlockToggleEnabled},
-                "popupBlockerEnabled": ${config.popupBlockerEnabled},
-                "popupBlockerToggleEnabled": ${config.popupBlockerToggleEnabled},
-                "openExternalLinks": ${config.openExternalLinks},
-                "initialScale": ${config.initialScale},
-                "viewportMode": "${config.viewportMode}",
-                "newWindowBehavior": "${config.newWindowBehavior}",
-                "enablePaymentSchemes": ${config.enablePaymentSchemes},
-                "enableShareBridge": ${config.enableShareBridge},
-                "enableZoomPolyfill": ${config.enableZoomPolyfill},
-                "enableCrossOriginIsolation": ${config.enableCrossOriginIsolation},
-                "disableShields": ${config.disableShields},
-                "keepScreenOn": ${config.keepScreenOn},
-                "screenAwakeMode": "${config.screenAwakeMode}",
-                "screenAwakeTimeoutMinutes": ${config.screenAwakeTimeoutMinutes},
-                "screenBrightness": ${config.screenBrightness},
-                "performanceOptimization": ${config.performanceOptimization},
-                "pwaOfflineEnabled": ${config.pwaOfflineEnabled},
-                "pwaOfflineStrategy": "${config.pwaOfflineStrategy}",
-                "showFloatingBackButton": ${config.showFloatingBackButton},
-                "floatingWindowConfig": {
-                    "enabled": ${config.floatingWindowEnabled},
-                    "windowSizePercent": ${config.floatingWindowSizePercent},
-                    "widthPercent": ${config.floatingWindowWidthPercent},
-                    "heightPercent": ${config.floatingWindowHeightPercent},
-                    "lockAspectRatio": ${config.floatingWindowLockAspectRatio},
-                    "opacity": ${config.floatingWindowOpacity},
-                    "cornerRadius": ${config.floatingWindowCornerRadius},
-                    "borderStyle": "${config.floatingWindowBorderStyle}",
-                    "showTitleBar": ${config.floatingWindowShowTitleBar},
-                    "autoHideTitleBar": ${config.floatingWindowAutoHideTitleBar},
-                    "startMinimized": ${config.floatingWindowStartMinimized},
-                    "rememberPosition": ${config.floatingWindowRememberPosition},
-                    "edgeSnapping": ${config.floatingWindowEdgeSnapping},
-                    "showResizeHandle": ${config.floatingWindowShowResizeHandle},
-                    "lockPosition": ${config.floatingWindowLockPosition}
-                },
-                "errorPageConfig": {
-                    "mode": "${config.errorPageMode}",
-                    "builtInStyle": "${config.errorPageBuiltInStyle}",
-                    "showMiniGame": ${config.errorPageShowMiniGame},
-                    "miniGameType": "${config.errorPageMiniGameType}",
-                    "autoRetrySeconds": ${config.errorPageAutoRetrySeconds}
-                }
-            },
-            "appType": "${config.appType}",
-            "mediaConfig": {
-                "enableAudio": ${config.mediaEnableAudio},
-                "loop": ${config.mediaLoop},
-                "autoPlay": ${config.mediaAutoPlay},
-                "fillScreen": ${config.mediaFillScreen},
-                "landscape": ${config.mediaLandscape},
-                "keepScreenOn": ${config.mediaKeepScreenOn}
-            },
-            "htmlConfig": {
-                "entryFile": "${escapeJson(config.htmlEntryFile)}",
-                "enableJavaScript": ${config.htmlEnableJavaScript},
-                "enableLocalStorage": ${config.htmlEnableLocalStorage},
-                "landscapeMode": ${config.htmlLandscapeMode}
-            },
-            "galleryConfig": {
-                "items": [${config.galleryItems.joinToString(",") { item ->
-                    """{"id":"${escapeJson(item.id)}","assetPath":"${escapeJson(item.assetPath)}","type":"${item.type}","name":"${escapeJson(item.name)}","duration":${item.duration},"thumbnailPath":${item.thumbnailPath?.let { "\"${escapeJson(it)}\"" } ?: "null"}}"""
-                }}],
-                "playMode": "${config.galleryPlayMode}",
-                "imageInterval": ${config.galleryImageInterval},
-                "loop": ${config.galleryLoop},
-                "autoPlay": ${config.galleryAutoPlay},
-                "backgroundColor": "${escapeJson(config.galleryBackgroundColor)}",
-                "showThumbnailBar": ${config.galleryShowThumbnailBar},
-                "showMediaInfo": ${config.galleryShowMediaInfo},
-                "orientation": "${config.galleryOrientation}",
-                "enableAudio": ${config.galleryEnableAudio},
-                "videoAutoNext": ${config.galleryVideoAutoNext}
-            },
-            "bgmEnabled": ${config.bgmEnabled},
-            "bgmPlaylist": [${config.bgmPlaylist.joinToString(",") { item ->
-                """{"id":"${escapeJson(item.id)}","name":"${escapeJson(item.name)}","assetPath":"${escapeJson(item.assetPath)}","lrcAssetPath":${item.lrcAssetPath?.let { "\"${escapeJson(it)}\"" } ?: "null"},"sortOrder":${item.sortOrder}}"""
-            }}],
-            "bgmPlayMode": "${config.bgmPlayMode}",
-            "bgmVolume": ${config.bgmVolume},
-            "bgmAutoPlay": ${config.bgmAutoPlay},
-            "bgmShowLyrics": ${config.bgmShowLyrics},
-            "bgmLrcTheme": ${config.bgmLrcTheme?.let { theme ->
-                """{"id":"${escapeJson(theme.id)}","name":"${escapeJson(theme.name)}","fontSize":${theme.fontSize},"textColor":"${escapeJson(theme.textColor)}","highlightColor":"${escapeJson(theme.highlightColor)}","backgroundColor":"${escapeJson(theme.backgroundColor)}","animationType":"${theme.animationType}","position":"${theme.position}"}"""
-            } ?: "null"},
-            "themeType": "${config.themeType}",
-            "darkMode": "${config.darkMode}",
-            "translateEnabled": ${config.translateEnabled},
-            "translateTargetLanguage": "${config.translateTargetLanguage}",
-            "translateShowButton": ${config.translateShowButton},
-            "extensionFabIcon": "${escapeJson(config.extensionFabIcon)}",
-            "extensionModuleIds": [${config.extensionModuleIds.joinToString(",") { "\"${escapeJson(it)}\"" }}],
-            "embeddedExtensionModules": [${config.embeddedExtensionModules.joinToString(",") { module ->
-                """{"id":"${escapeJson(module.id)}","name":"${escapeJson(module.name)}","description":"${escapeJson(module.description)}","icon":"${escapeJson(module.icon)}","category":"${module.category}","code":"${escapeJson(module.code)}","cssCode":"${escapeJson(module.cssCode)}","runAt":"${module.runAt}","urlMatches":[${module.urlMatches.joinToString(",") { rule ->
-                    """{"pattern":"${escapeJson(rule.pattern)}","isRegex":${rule.isRegex},"exclude":${rule.exclude}}"""
-                }}],"configValues":{${module.configValues.entries.joinToString(",") { (k, v) ->
-                    "\"${escapeJson(k)}\":\"${escapeJson(v)}\""
-                }}},"enabled":${module.enabled}}"""
-            }}],
-            "autoStartConfig": ${if (config.bootStartEnabled || config.scheduledStartEnabled) {
-                """{"bootStartEnabled":${config.bootStartEnabled},"scheduledStartEnabled":${config.scheduledStartEnabled},"scheduledTime":"${config.scheduledTime}","scheduledDays":[${config.scheduledDays.joinToString(",")}]}"""
-            } else "null"},
-            "forcedRunConfig": ${gson.toJson(config.forcedRunConfig)},
-            "isolationEnabled": ${config.isolationEnabled},
-            "isolationConfig": ${if (config.isolationEnabled && config.isolationConfig != null) {
-                val ic = config.isolationConfig
-                val fc = ic.fingerprintConfig
-                val hc = ic.headerConfig
-                val ipc = ic.ipSpoofConfig
-                """{"enabled":${ic.enabled},"fingerprintConfig":{"randomize":${fc.randomize},"regenerateOnLaunch":${fc.regenerateOnLaunch},"customUserAgent":${fc.customUserAgent?.let { "\"${escapeJson(it)}\"" } ?: "null"},"randomUserAgent":${fc.randomUserAgent},"fingerprintId":"${escapeJson(fc.fingerprintId)}"},"headerConfig":{"enabled":${hc.enabled},"randomizeOnRequest":${hc.randomizeOnRequest},"dnt":${hc.dnt},"spoofClientHints":${hc.spoofClientHints},"refererPolicy":"${hc.refererPolicy.name}"},"ipSpoofConfig":{"enabled":${ipc.enabled},"spoofMethod":"${ipc.spoofMethod.name}","customIp":${ipc.customIp?.let { "\"${escapeJson(it)}\"" } ?: "null"},"randomIpRange":"${ipc.randomIpRange.name}","searchKeyword":${ipc.searchKeyword?.let { "\"${escapeJson(it)}\"" } ?: "null"},"xForwardedFor":${ipc.xForwardedFor},"xRealIp":${ipc.xRealIp},"clientIp":${ipc.clientIp}},"storageIsolation":${ic.storageIsolation},"blockWebRTC":${ic.blockWebRTC},"protectCanvas":${ic.protectCanvas},"protectAudio":${ic.protectAudio},"protectWebGL":${ic.protectWebGL},"protectFonts":${ic.protectFonts},"spoofTimezone":${ic.spoofTimezone},"customTimezone":${ic.customTimezone?.let { "\"${escapeJson(it)}\"" } ?: "null"},"spoofLanguage":${ic.spoofLanguage},"customLanguage":${ic.customLanguage?.let { "\"${escapeJson(it)}\"" } ?: "null"},"spoofScreen":${ic.spoofScreen},"customScreenWidth":${ic.customScreenWidth ?: "null"},"customScreenHeight":${ic.customScreenHeight ?: "null"}}"""
-            } else "null"},
-            "backgroundRunEnabled": ${config.backgroundRunEnabled},
-            "backgroundRunConfig": ${if (config.backgroundRunEnabled && config.backgroundRunConfig != null) {
-                val bc = config.backgroundRunConfig
-                """{"notificationTitle":"${escapeJson(bc.notificationTitle)}","notificationContent":"${escapeJson(bc.notificationContent)}","showNotification":${bc.showNotification},"keepCpuAwake":${bc.keepCpuAwake}}"""
-            } else "null"},
-            "blackTechConfig": ${gson.toJson(config.blackTechConfig)},
-            "disguiseConfig": ${gson.toJson(config.disguiseConfig)},
-            "language": "${config.language}",
-            "engineType": "${config.engineType}",
-            "wordpressConfig": {
-                "siteTitle": "${escapeJson(config.wordpressSiteTitle)}",
-                "phpPort": ${config.wordpressPhpPort},
-                "landscapeMode": ${config.wordpressLandscapeMode}
-            },
-            "nodejsConfig": {
-                "mode": "${config.nodejsMode}",
-                "port": ${config.nodejsPort},
-                "entryFile": "${escapeJson(config.nodejsEntryFile)}",
-                "envVars": {${config.nodejsEnvVars.entries.joinToString(",") { (k, v) ->
-                    "\"${escapeJson(k)}\":\"${escapeJson(v)}\""
-                }}},
-                "landscapeMode": ${config.nodejsLandscapeMode}
-            },
-            "deepLinkEnabled": ${config.deepLinkEnabled},
-            "deepLinkHosts": [${config.deepLinkHosts.joinToString(",") { "\"${escapeJson(it)}\"" }}],
-            "phpAppConfig": {
-                "framework": "${escapeJson(config.phpAppFramework)}",
-                "documentRoot": "${escapeJson(config.phpAppDocumentRoot)}",
-                "entryFile": "${escapeJson(config.phpAppEntryFile)}",
-                "port": ${config.phpAppPort},
-                "envVars": {${config.phpAppEnvVars.entries.joinToString(",") { (k, v) ->
-                    "\"${escapeJson(k)}\":\"${escapeJson(v)}\""
-                }}},
-                "landscapeMode": ${config.phpAppLandscapeMode}
-            },
-            "pythonAppConfig": {
-                "framework": "${escapeJson(config.pythonAppFramework)}",
-                "entryFile": "${escapeJson(config.pythonAppEntryFile)}",
-                "entryModule": "${escapeJson(config.pythonAppEntryModule)}",
-                "serverType": "${escapeJson(config.pythonAppServerType)}",
-                "port": ${config.pythonAppPort},
-                "envVars": {${config.pythonAppEnvVars.entries.joinToString(",") { (k, v) ->
-                    "\"${escapeJson(k)}\":\"${escapeJson(v)}\""
-                }}},
-                "landscapeMode": ${config.pythonAppLandscapeMode}
-            },
-            "goAppConfig": {
-                "framework": "${escapeJson(config.goAppFramework)}",
-                "binaryName": "${escapeJson(config.goAppBinaryName)}",
-                "port": ${config.goAppPort},
-                "staticDir": "${escapeJson(config.goAppStaticDir)}",
-                "envVars": {${config.goAppEnvVars.entries.joinToString(",") { (k, v) ->
-                    "\"${escapeJson(k)}\":\"${escapeJson(v)}\""
-                }}},
-                "landscapeMode": ${config.goAppLandscapeMode}
-            },
-            "multiWebConfig": {
-                "sites": [${config.multiWebSites.joinToString(",") { site ->
-                    """{"id":"${escapeJson(site.id)}","name":"${escapeJson(site.name)}","url":"${escapeJson(site.url)}","iconEmoji":"${escapeJson(site.iconEmoji)}","category":"${escapeJson(site.category)}","cssSelector":"${escapeJson(site.cssSelector)}","linkSelector":"${escapeJson(site.linkSelector)}","enabled":${site.enabled}}"""
-                }}],
-                "displayMode": "${escapeJson(config.multiWebDisplayMode)}",
-                "refreshInterval": ${config.multiWebRefreshInterval},
-                "showSiteIcons": ${config.multiWebShowSiteIcons},
-                "landscapeMode": ${config.multiWebLandscapeMode}
-            },
-            "cloudSdkConfig": ${if (config.cloudSdkConfig.enabled) {
-                val sdk = config.cloudSdkConfig
-                """{"enabled":true,"projectKey":"${escapeJson(sdk.projectKey)}","apiBaseUrl":"${escapeJson(sdk.apiBaseUrl)}","updateCheckEnabled":${sdk.updateCheckEnabled},"announcementEnabled":${sdk.announcementEnabled},"remoteConfigEnabled":${sdk.remoteConfigEnabled},"activationCodeEnabled":${sdk.activationCodeEnabled},"statsReportEnabled":${sdk.statsReportEnabled},"fcmPushEnabled":${sdk.fcmPushEnabled},"remoteScriptEnabled":${sdk.remoteScriptEnabled},"updateCheckInterval":${sdk.updateCheckInterval},"forceUpdateEnabled":${sdk.forceUpdateEnabled},"updateDialogTitle":"${escapeJson(sdk.updateDialogTitle)}","updateDialogButtonText":"${escapeJson(sdk.updateDialogButtonText)}","announcementTemplate":"${sdk.announcementTemplate}","announcementShowOnce":${sdk.announcementShowOnce},"statsReportInterval":${sdk.statsReportInterval},"reportCrashes":${sdk.reportCrashes},"activationBindDevice":${sdk.activationBindDevice},"activationDialogTitle":"${escapeJson(sdk.activationDialogTitle)}","activationDialogSubtitle":"${escapeJson(sdk.activationDialogSubtitle)}","fcmSenderId":"${escapeJson(sdk.fcmSenderId)}","fcmChannelId":"${escapeJson(sdk.fcmChannelId)}","fcmChannelName":"${escapeJson(sdk.fcmChannelName)}"}"""
-            } else "{\"enabled\":false}"}
+        val root = mutableMapOf<String, Any?>()
+        
+        root["appName"] = config.appName
+        root["packageName"] = config.packageName
+        root["targetUrl"] = config.targetUrl
+        root["versionCode"] = config.versionCode
+        root["versionName"] = config.versionName
+        root["activationEnabled"] = config.activationEnabled
+        root["activationCodes"] = config.activationCodes
+        root["activationRequireEveryTime"] = config.activationRequireEveryTime
+        root["activationDialogTitle"] = config.activationDialogTitle
+        root["activationDialogSubtitle"] = config.activationDialogSubtitle
+        root["activationDialogInputLabel"] = config.activationDialogInputLabel
+        root["activationDialogButtonText"] = config.activationDialogButtonText
+        root["adBlockEnabled"] = config.adBlockEnabled
+        root["adBlockRules"] = config.adBlockRules
+        root["announcementEnabled"] = config.announcementEnabled
+        root["announcementTitle"] = config.announcementTitle
+        root["announcementContent"] = config.announcementContent
+        root["announcementLink"] = config.announcementLink
+        root["announcementLinkText"] = config.announcementLinkText
+        root["announcementTemplate"] = config.announcementTemplate
+        root["announcementShowEmoji"] = config.announcementShowEmoji
+        root["announcementAnimationEnabled"] = config.announcementAnimationEnabled
+        root["announcementShowOnce"] = config.announcementShowOnce
+        root["announcementRequireConfirmation"] = config.announcementRequireConfirmation
+        root["announcementAllowNeverShow"] = config.announcementAllowNeverShow
+        root["splashEnabled"] = config.splashEnabled
+        root["splashType"] = config.splashType
+        root["splashDuration"] = config.splashDuration
+        root["splashClickToSkip"] = config.splashClickToSkip
+        root["splashVideoStartMs"] = config.splashVideoStartMs
+        root["splashVideoEndMs"] = config.splashVideoEndMs
+        root["splashLandscape"] = config.splashLandscape
+        root["splashFillScreen"] = config.splashFillScreen
+        root["splashEnableAudio"] = config.splashEnableAudio
+        
+        val webViewConfig = mutableMapOf<String, Any?>()
+        webViewConfig["javaScriptEnabled"] = config.javaScriptEnabled
+        webViewConfig["domStorageEnabled"] = config.domStorageEnabled
+        webViewConfig["zoomEnabled"] = config.zoomEnabled
+        webViewConfig["desktopMode"] = config.desktopMode
+        webViewConfig["userAgent"] = config.userAgent
+        webViewConfig["userAgentMode"] = config.userAgentMode
+        webViewConfig["customUserAgent"] = config.customUserAgent
+        webViewConfig["orientationMode"] = config.orientationMode
+        webViewConfig["keyboardAdjustMode"] = config.keyboardAdjustMode
+        webViewConfig["swipeRefreshEnabled"] = config.swipeRefreshEnabled
+        webViewConfig["fullscreenEnabled"] = config.fullscreenEnabled
+        webViewConfig["hideToolbar"] = config.hideToolbar
+        webViewConfig["hideBrowserToolbar"] = config.hideBrowserToolbar
+        webViewConfig["showStatusBarInFullscreen"] = config.showStatusBarInFullscreen
+        webViewConfig["showNavigationBarInFullscreen"] = config.showNavigationBarInFullscreen
+        webViewConfig["showToolbarInFullscreen"] = config.showToolbarInFullscreen
+        webViewConfig["landscapeMode"] = config.landscapeMode
+        webViewConfig["injectScripts"] = config.injectScripts.map { script ->
+            mapOf(
+                "name" to script.name,
+                "code" to script.code,
+                "enabled" to script.enabled,
+                "runAt" to script.runAt.name
+            )
         }
-        """.trimIndent()
+        webViewConfig["statusBarColorMode"] = config.statusBarColorMode
+        webViewConfig["statusBarColor"] = config.statusBarColor
+        webViewConfig["statusBarDarkIcons"] = config.statusBarDarkIcons
+        webViewConfig["statusBarBackgroundType"] = config.statusBarBackgroundType
+        webViewConfig["statusBarBackgroundImage"] = if (config.statusBarBackgroundType == "IMAGE" && !config.statusBarBackgroundImage.isNullOrEmpty()) "statusbar_background.png" else null
+        webViewConfig["statusBarBackgroundAlpha"] = config.statusBarBackgroundAlpha
+        webViewConfig["statusBarHeightDp"] = config.statusBarHeightDp
+        webViewConfig["statusBarColorModeDark"] = config.statusBarColorModeDark
+        webViewConfig["statusBarColorDark"] = config.statusBarColorDark
+        webViewConfig["statusBarDarkIconsDark"] = config.statusBarDarkIconsDark
+        webViewConfig["statusBarBackgroundTypeDark"] = config.statusBarBackgroundTypeDark
+        webViewConfig["statusBarBackgroundImageDark"] = if (config.statusBarBackgroundTypeDark == "IMAGE" && !config.statusBarBackgroundImageDark.isNullOrEmpty()) "statusbar_background_dark.png" else null
+        webViewConfig["statusBarBackgroundAlphaDark"] = config.statusBarBackgroundAlphaDark
+        webViewConfig["longPressMenuEnabled"] = config.longPressMenuEnabled
+        webViewConfig["longPressMenuStyle"] = config.longPressMenuStyle
+        webViewConfig["adBlockToggleEnabled"] = config.adBlockToggleEnabled
+        webViewConfig["popupBlockerEnabled"] = config.popupBlockerEnabled
+        webViewConfig["popupBlockerToggleEnabled"] = config.popupBlockerToggleEnabled
+        webViewConfig["openExternalLinks"] = config.openExternalLinks
+        webViewConfig["initialScale"] = config.initialScale
+        webViewConfig["viewportMode"] = config.viewportMode
+        webViewConfig["newWindowBehavior"] = config.newWindowBehavior
+        webViewConfig["enablePaymentSchemes"] = config.enablePaymentSchemes
+        webViewConfig["enableShareBridge"] = config.enableShareBridge
+        webViewConfig["enableZoomPolyfill"] = config.enableZoomPolyfill
+        webViewConfig["enableCrossOriginIsolation"] = config.enableCrossOriginIsolation
+        webViewConfig["disableShields"] = config.disableShields
+        webViewConfig["keepScreenOn"] = config.keepScreenOn
+        webViewConfig["screenAwakeMode"] = config.screenAwakeMode
+        webViewConfig["screenAwakeTimeoutMinutes"] = config.screenAwakeTimeoutMinutes
+        webViewConfig["screenBrightness"] = config.screenBrightness
+        webViewConfig["performanceOptimization"] = config.performanceOptimization
+        webViewConfig["pwaOfflineEnabled"] = config.pwaOfflineEnabled
+        webViewConfig["pwaOfflineStrategy"] = config.pwaOfflineStrategy
+        webViewConfig["showFloatingBackButton"] = config.showFloatingBackButton
+        
+        val floatingWindowConfig = mutableMapOf<String, Any?>()
+        floatingWindowConfig["enabled"] = config.floatingWindowEnabled
+        floatingWindowConfig["windowSizePercent"] = config.floatingWindowSizePercent
+        floatingWindowConfig["widthPercent"] = config.floatingWindowWidthPercent
+        floatingWindowConfig["heightPercent"] = config.floatingWindowHeightPercent
+        floatingWindowConfig["lockAspectRatio"] = config.floatingWindowLockAspectRatio
+        floatingWindowConfig["opacity"] = config.floatingWindowOpacity
+        floatingWindowConfig["cornerRadius"] = config.floatingWindowCornerRadius
+        floatingWindowConfig["borderStyle"] = config.floatingWindowBorderStyle
+        floatingWindowConfig["showTitleBar"] = config.floatingWindowShowTitleBar
+        floatingWindowConfig["autoHideTitleBar"] = config.floatingWindowAutoHideTitleBar
+        floatingWindowConfig["startMinimized"] = config.floatingWindowStartMinimized
+        floatingWindowConfig["rememberPosition"] = config.floatingWindowRememberPosition
+        floatingWindowConfig["edgeSnapping"] = config.floatingWindowEdgeSnapping
+        floatingWindowConfig["showResizeHandle"] = config.floatingWindowShowResizeHandle
+        floatingWindowConfig["lockPosition"] = config.floatingWindowLockPosition
+        webViewConfig["floatingWindowConfig"] = floatingWindowConfig
+        
+        val errorPageConfig = mutableMapOf<String, Any?>()
+        errorPageConfig["mode"] = config.errorPageMode
+        errorPageConfig["builtInStyle"] = config.errorPageBuiltInStyle
+        errorPageConfig["showMiniGame"] = config.errorPageShowMiniGame
+        errorPageConfig["miniGameType"] = config.errorPageMiniGameType
+        errorPageConfig["autoRetrySeconds"] = config.errorPageAutoRetrySeconds
+        webViewConfig["errorPageConfig"] = errorPageConfig
+        
+        root["webViewConfig"] = webViewConfig
+        root["appType"] = config.appType
+        root["mediaConfig"] = mapOf(
+            "enableAudio" to config.mediaEnableAudio,
+            "loop" to config.mediaLoop,
+            "autoPlay" to config.mediaAutoPlay,
+            "fillScreen" to config.mediaFillScreen,
+            "landscape" to config.mediaLandscape,
+            "keepScreenOn" to config.mediaKeepScreenOn
+        )
+        root["htmlConfig"] = mapOf(
+            "entryFile" to config.htmlEntryFile,
+            "enableJavaScript" to config.htmlEnableJavaScript,
+            "enableLocalStorage" to config.htmlEnableLocalStorage,
+            "landscapeMode" to config.htmlLandscapeMode
+        )
+        root["galleryConfig"] = mapOf(
+            "items" to config.galleryItems.map { item ->
+                mapOf(
+                    "id" to item.id,
+                    "assetPath" to item.assetPath,
+                    "type" to item.type,
+                    "name" to item.name,
+                    "duration" to item.duration,
+                    "thumbnailPath" to item.thumbnailPath
+                )
+            },
+            "playMode" to config.galleryPlayMode,
+            "imageInterval" to config.galleryImageInterval,
+            "loop" to config.galleryLoop,
+            "autoPlay" to config.galleryAutoPlay,
+            "backgroundColor" to config.galleryBackgroundColor,
+            "showThumbnailBar" to config.galleryShowThumbnailBar,
+            "showMediaInfo" to config.galleryShowMediaInfo,
+            "orientation" to config.galleryOrientation,
+            "enableAudio" to config.galleryEnableAudio,
+            "videoAutoNext" to config.galleryVideoAutoNext
+        )
+        root["bgmEnabled"] = config.bgmEnabled
+        root["bgmPlaylist"] = config.bgmPlaylist
+        root["bgmPlayMode"] = config.bgmPlayMode
+        root["bgmVolume"] = config.bgmVolume
+        root["bgmAutoPlay"] = config.bgmAutoPlay
+        root["bgmShowLyrics"] = config.bgmShowLyrics
+        root["bgmLrcTheme"] = config.bgmLrcTheme
+        root["themeType"] = config.themeType
+        root["darkMode"] = config.darkMode
+        root["translateEnabled"] = config.translateEnabled
+        root["translateTargetLanguage"] = config.translateTargetLanguage
+        root["translateShowButton"] = config.translateShowButton
+        root["extensionFabIcon"] = config.extensionFabIcon
+        root["extensionModuleIds"] = config.extensionModuleIds
+        root["embeddedExtensionModules"] = config.embeddedExtensionModules
+        root["autoStartConfig"] = if (config.bootStartEnabled || config.scheduledStartEnabled) {
+            mapOf(
+                "bootStartEnabled" to config.bootStartEnabled,
+                "scheduledStartEnabled" to config.scheduledStartEnabled,
+                "scheduledTime" to config.scheduledTime,
+                "scheduledDays" to config.scheduledDays
+            )
+        } else null
+        root["forcedRunConfig"] = config.forcedRunConfig
+        root["isolationEnabled"] = config.isolationEnabled
+        root["isolationConfig"] = config.isolationConfig
+        root["backgroundRunEnabled"] = config.backgroundRunEnabled
+        root["backgroundRunConfig"] = config.backgroundRunConfig
+        root["blackTechConfig"] = config.blackTechConfig
+        root["disguiseConfig"] = config.disguiseConfig
+        root["language"] = config.language
+        root["engineType"] = config.engineType
+        root["deepLinkEnabled"] = config.deepLinkEnabled
+        root["deepLinkHosts"] = config.deepLinkHosts
+        root["wordpressConfig"] = mapOf(
+            "siteTitle" to config.wordpressSiteTitle,
+            "phpPort" to config.wordpressPhpPort,
+            "landscapeMode" to config.wordpressLandscapeMode
+        )
+        root["nodejsConfig"] = mapOf(
+            "mode" to config.nodejsMode,
+            "port" to config.nodejsPort,
+            "entryFile" to config.nodejsEntryFile,
+            "envVars" to config.nodejsEnvVars,
+            "landscapeMode" to config.nodejsLandscapeMode
+        )
+        root["phpAppConfig"] = mapOf(
+            "framework" to config.phpAppFramework,
+            "documentRoot" to config.phpAppDocumentRoot,
+            "entryFile" to config.phpAppEntryFile,
+            "port" to config.phpAppPort,
+            "envVars" to config.phpAppEnvVars,
+            "landscapeMode" to config.phpAppLandscapeMode
+        )
+        root["pythonAppConfig"] = mapOf(
+            "framework" to config.pythonAppFramework,
+            "entryFile" to config.pythonAppEntryFile,
+            "entryModule" to config.pythonAppEntryModule,
+            "serverType" to config.pythonAppServerType,
+            "port" to config.pythonAppPort,
+            "envVars" to config.pythonAppEnvVars,
+            "landscapeMode" to config.pythonAppLandscapeMode
+        )
+        root["goAppConfig"] = mapOf(
+            "framework" to config.goAppFramework,
+            "binaryName" to config.goAppBinaryName,
+            "port" to config.goAppPort,
+            "staticDir" to config.goAppStaticDir,
+            "envVars" to config.goAppEnvVars,
+            "landscapeMode" to config.goAppLandscapeMode
+        )
+        root["multiWebConfig"] = mapOf(
+            "sites" to config.multiWebSites,
+            "displayMode" to config.multiWebDisplayMode,
+            "refreshInterval" to config.multiWebRefreshInterval,
+            "showSiteIcons" to config.multiWebShowSiteIcons,
+            "landscapeMode" to config.multiWebLandscapeMode
+        )
+        root["cloudSdkConfig"] = config.cloudSdkConfig
+        
+        return gson.toJson(root)
     }
 
     /**
@@ -693,7 +682,7 @@ data class ApkConfig(
     val disguiseConfig: com.webtoapp.core.disguise.DisguiseConfig? = null,
     
     // Note: brief English comment.
-    val language: String = "CHINESE",  // CHINESE, ENGLISH, ARABIC
+    val language: String = "ENGLISH",  // CHINESE, ENGLISH, ARABIC
     
     // Note: brief English comment.
     val engineType: String = "SYSTEM_WEBVIEW",  // SYSTEM_WEBVIEW, GECKOVIEW

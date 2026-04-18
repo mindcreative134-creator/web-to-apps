@@ -36,6 +36,10 @@ object ShellRuntimeServices {
         adBlocker = null
     }
 
+    fun isInitialized(): Boolean {
+        return shellModeManager != null
+    }
+
     val shellMode: ShellModeManager
         get() = requireNotNull(shellModeManager) { "ShellRuntimeServices 尚未初始化 shellMode" }
 

@@ -1,0 +1,677 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="about" formatted="false">के बारे में</string>
+    <string name="about_app_description" formatted="false">WebToApp एक ऐसा टूल है जिसे मैंने स्वतंत्र रूप से विकसित किया है जो वेबसाइटों, छवियों और वीडियो को जल्दी से स्वतंत्र Android अनुप्रयोगों में बदल सकता है।\n\nयदि आपके कोई प्रश्न, सुझाव या विचार हैं, तो कृपया बेझिझक मुझसे संपर्क करें!</string>
+    <string name="about_file_reference" formatted="false">फ़ाइल संदर्भ के बारे में</string>
+    <string name="about_this_app" formatted="false">इस ऐप के बारे में</string>
+    <string name="accent_color" formatted="false">एक्सेंट रंग</string>
+    <string name="accessibility_not_enabled" formatted="false">कृपया पहले एक्सेसिबिलिटी सेवा सक्षम करें</string>
+    <string name="accessibility_service_description" formatted="false">जबरन चलाने से सुरक्षा सेवा। सक्षम होने पर, यह उपयोगकर्ताओं को अन्य ऐप्स पर स्विच करने से रोकता है जब ऐप फोर्स्ड रन मोड में होता है, जिससे केंद्रित उपयोग सुनिश्चित होता है। यह सेवा केवल तभी प्रभावी होती है जब आप सक्रिय रूप से फोर्स्ड रन फ़ंक्शन चालू करते हैं।</string>
+    <string name="activation_code" formatted="false">सक्रियण कोड</string>
+    <string name="activation_code_announcement_ad_block" formatted="false">सक्रियण कोड, घोषणा, विज्ञापन ब्लॉक</string>
+    <string name="activation_code_hint" formatted="false">सक्षम होने पर, ऐप का उपयोग करने के लिए उपयोगकर्ताओं को एक सही सक्रियण कोड दर्ज करना होगा</string>
+    <string name="activation_code_verify" formatted="false">सक्रियण कोड सत्यापन</string>
+    <string name="activation_codes" formatted="false">सक्रियण कोड</string>
+    <string name="activation_required" formatted="false">उपयोग करने के लिए सक्रियण कोड आवश्यक</string>
+    <string name="activation_success" formatted="false">सक्रियण सफल</string>
+    <string name="ad_banner" formatted="false">बैनर विज्ञापन</string>
+    <string name="ad_block_rule_hint" formatted="false">जैसे, ads.example.com</string>
+    <string name="ad_block_rules" formatted="false">ब्लॉकिंग नियम</string>
+    <string name="ad_blocking" formatted="false">विज्ञापन ब्लॉक</string>
+    <string name="ad_interstitial" formatted="false">इंटरस्टिशियल विज्ञापन</string>
+    <string name="ad_splash" formatted="false">स्पलैश विज्ञापन</string>
+    <string name="ad_type" formatted="false">विज्ञापन प्रकार</string>
+    <string name="ad_unit_id" formatted="false">विज्ञापन यूनिट ID</string>
+    <string name="add" formatted="false">जोड़ें</string>
+    <string name="add_activation_code" formatted="false">सक्रियण कोड जोड़ें</string>
+    <string name="add_module" formatted="false">मॉड्यूल जोड़ें</string>
+    <string name="add_new_rule" formatted="false">नया नियम जोड़ें...</string>
+    <string name="add_this_module" formatted="false">इस मॉड्यूल को जोड़ें</string>
+    <string name="advanced_encryption" formatted="false">उन्नत</string>
+    <string name="ai_analyzing" formatted="false">आवश्यकताओं का विश्लेषण किया जा रहा है...</string>
+    <string name="ai_analyzing_status" formatted="false">आवश्यकताओं का विश्लेषण किया जा रहा है...</string>
+    <string name="ai_checking" formatted="false">सिंटैक्स चेक किया जा रहा है...</string>
+    <string name="ai_coding" formatted="false">कोड जनरेट किया जा रहा है...</string>
+    <string name="ai_coding_status" formatted="false">कोड जनरेट किया जा रहा है...</string>
+    <string name="ai_completed" formatted="false">जनरेशन पूरा हुआ</string>
+    <string name="ai_completed_status" formatted="false">जनरेशन पूरा हुआ</string>
+    <string name="ai_develop" formatted="false">AI विकास</string>
+    <string name="ai_error" formatted="false">AI त्रुटि</string>
+    <string name="ai_fixing" formatted="false">त्रुटियों को ऑटो-फिक्स किया जा रहा है...</string>
+    <string name="ai_generating" formatted="false">AI जनरेट कर रहा है...</string>
+    <string name="ai_generating_status" formatted="false">AI जनरेट कर रहा है...</string>
+    <string name="ai_module_developer" formatted="false">AI मॉड्यूल विकास</string>
+    <string name="ai_module_developer_label" formatted="false">AI मॉड्यूल विकास</string>
+    <string name="ai_planning" formatted="false">विकास योजना बनाई जा रही है...</string>
+    <string name="ai_planning_status" formatted="false">विकास योजना बनाई जा रही है...</string>
+    <string name="ai_scanning" formatted="false">सुरक्षा स्कैनिंग...</string>
+    <string name="alias" formatted="false">उपनाम (Alias)</string>
+    <string name="alias_optional" formatted="false">उपनाम (वैकल्पिक)</string>
+    <string name="all" formatted="false">सभी</string>
+    <string name="all_schemes" formatted="false">सभी योजनाएं</string>
+    <string name="always_use_dark_theme" formatted="false">हमेशा डार्क थीम का उपयोग करें</string>
+    <string name="always_use_light_theme" formatted="false">हमेशा लाइट थीम का उपयोग करें</string>
+    <string name="animation_disabled" formatted="false">एनिमेशन अक्षम</string>
+    <string name="animation_speed" formatted="false">एनिमेशन गति</string>
+    <string name="animation_style" formatted="false">एनिमेशन शैली</string>
+    <string name="announcement_content" formatted="false">घोषणा सामग्री</string>
+    <string name="announcement_content_label" formatted="false">घोषणा सामग्री</string>
+    <string name="announcement_title" formatted="false">घोषणा शीर्षक</string>
+    <string name="announcement_title_label" formatted="false">घोषणा शीर्षक</string>
+    <string name="announcement_url" formatted="false">घोषणा URL</string>
+    <string name="app_config" formatted="false">ऐप कॉन्फ़िगरेशन</string>
+    <string name="app_description" formatted="false">किसी भी वेबसाइट को स्टैंडअलोन ऐप में बदलें</string>
+    <string name="app_name" formatted="false">WebToApp</string>
+    <string name="appearance" formatted="false">दिखावट (Appearance)</string>
+    <string name="author" formatted="false">लेखक</string>
+    <string name="auto_detect" formatted="false">ऑटो डिटेक्ट</string>
+    <string name="auto_detect_category_hint" formatted="false">AI को आवश्यकताओं के आधार पर श्रेणियों को ऑटो-सेलेक्ट करने दें</string>
+    <string name="auto_fix_hint" formatted="false">ऐप स्वचालित रूप से पथ समस्याओं और इनलाइन CSS/JS को ठीक कर देगा, लेकिन पुष्टि के लिए विवरण देखने की सिफारिश की जाती है</string>
+    <string name="auto_play" formatted="false">ऑटो प्ले</string>
+    <string name="auto_play_hint" formatted="false">ऐप खोलते समय स्वचालित रूप से खेलना शुरू करें</string>
+    <string name="auto_process_hint" formatted="false">ऐप स्वचालित रूप से प्रोसेस करेगा: पाथ फिक्सिंग, CSS/JS इनलाइनिंग, एनकोडिंग रूपांतरण, व्यूपोर्ट अनुकूलन</string>
+    <string name="auto_switch_by_system" formatted="false">सिस्टम सेटिंग्स के आधार पर ऑटो स्विच</string>
+    <string name="auto_translate" formatted="false">ऑटो अनुवाद</string>
+    <string name="auto_translate_label" formatted="false">वेब पेज ऑटो अनुवाद</string>
+    <string name="background_music" formatted="false">पृष्ठभूमि संगीत</string>
+    <string name="basic_encryption" formatted="false">बेसिक</string>
+    <string name="batch_generated_note" formatted="false">बैच जनरेट किया गया</string>
+    <string name="bgm_description" formatted="false">ऐप में बैकग्राउंड म्यूजिक जोड़ें, लूप या क्रमिक प्लेबैक का समर्थन करता है</string>
+    <string name="bgm_title" formatted="false">पृष्ठभूमि संगीत</string>
+    <string name="brief_description_hint" formatted="false">योजना के उद्देश्य का संक्षेप में वर्णन करें</string>
+    <string name="brief_module_description" formatted="false">मॉड्यूल कार्यों का संक्षेप में वर्णन करें</string>
+    <string name="btn_cancel" formatted="false">रद्द करें</string>
+    <string name="btn_create" formatted="false">ऐप बनाएं</string>
+    <string name="btn_delete" formatted="false">हटाएं</string>
+    <string name="btn_edit" formatted="false">संपादित करें</string>
+    <string name="btn_export" formatted="false">APK एक्सपोर्ट करें</string>
+    <string name="btn_launch" formatted="false">सुरु करें</string>
+    <string name="btn_preview" formatted="false">पूर्वावलोकन</string>
+    <string name="btn_save" formatted="false">सहेजें</string>
+    <string name="btn_select_icon" formatted="false">आइकन चुनें</string>
+    <string name="btn_shortcut" formatted="false">शॉर्टकट बनाएं</string>
+    <string name="build_environment" formatted="false">बिल्ड वातावरण</string>
+    <string name="build_project" formatted="false">प्रोजेक्ट बिल्ड करें</string>
+    <string name="build_tools" formatted="false">बिल्ड टूल</string>
+    <string name="building" formatted="false">बिल्डिंग...</string>
+    <string name="built_in" formatted="false">इन-बिल्ट</string>
+    <string name="built_in_engine_ready" formatted="false">इन-बिल्ट बिल्ड इंजन तैयार है। यह पहले से बने प्रोजेक्ट को इंपोर्ट करने या साधारण बिल्ड के लिए esbuild का उपयोग करने का समर्थन करता है। कंप्यूटर पर जटिल प्रोजेक्ट का बिल्ड पूरा करने की सिफारिश की जाती है।</string>
+    <string name="built_in_packager" formatted="false">इन-बिल्ट पैकेजर</string>
+    <string name="built_in_packager_ready" formatted="false">इन-बिल्ट पैकेजर तैयार है</string>
+    <string name="button" formatted="false">बटन</string>
+    <string name="cache" formatted="false">कैश</string>
+    <string name="can_build_frontend" formatted="false">फ्रंटएंड प्रोजेक्ट बिल्ड किए जा सकते हैं</string>
+    <string name="cancel" formatted="false">रद्द करें</string>
+    <string name="cannot_exit_forced_run" formatted="false">फोकस मोड में बाहर नहीं निकल सकते</string>
+    <string name="cannot_open_image" formatted="false">छवि नहीं खोल सकते</string>
+    <string name="cannot_parse_image" formatted="false">छवि पार्स नहीं कर सकते</string>
+    <string name="check_update" formatted="false">अपडेट चेक करें</string>
+    <string name="check_update_failed" formatted="false">अपडेट के लिए जांच विफल रही</string>
+    <string name="checking" formatted="false">जांच की जा रही है...</string>
+    <string name="checking_env" formatted="false">पर्यावरण की जांच की जा रही है...</string>
+    <string name="clean" formatted="false">साफ़ करें</string>
+    <string name="clear_all" formatted="false">सभी साफ़ करें</string>
+    <string name="clear_cache_confirm" formatted="false">यह बिल्ड कैश और अस्थायी फ़ाइलों को साफ़ कर देगा।</string>
+    <string name="clear_cache_title" formatted="false">कैश साफ़ करें</string>
+    <string name="clear_file" formatted="false">साफ़ करें</string>
+    <string name="click_button_to_experience" formatted="false">प्रभाव का अनुभव करने के लिए नीचे दिए गए बटन पर क्लिक करें</string>
+    <string name="click_to_select_file" formatted="false">फ़ाइल चुनने के लिए क्लिक करें</string>
+    <string name="click_to_select_image" formatted="false">छवि चुनने के लिए क्लिक करें</string>
+    <string name="click_to_select_video" formatted="false">वीडियो चुनने के लिए क्लिक करें</string>
+    <string name="close" formatted="false">बंद करें</string>
+    <string name="collapse" formatted="false">समेटें (Collapse)</string>
+    <string name="common_about" formatted="false">के बारे में</string>
+    <string name="common_about_app_description" formatted="false">WebToApp एक ऐसा टूल है जिसे मैंने स्वतंत्र रूप से विकसित किया है जो वेबसाइटों, छवियों और वीडियो को जल्दी से स्वतंत्र Android अनुप्रयोगों में बदल सकता है।\n\nयदि आपके कोई प्रश्न, सुझाव या विचार हैं, तो कृपया बेझिझक मुझसे संपर्क करें!</string>
+    <string name="common_about_this_app" formatted="false">इस ऐप के बारे में</string>
+    <string name="common_activated" formatted="false">सक्रिय</string>
+    <string name="common_activation_expired" formatted="false">सक्रियण समाप्त हो गया</string>
+    <string name="common_activation_success" formatted="false">सक्रियण सफल!</string>
+    <string name="common_activation_success_detail" formatted="false">आपका सक्रियण कोड सफलतापूर्वक सत्यापित हो गया है, ऐप सुविधाएं अनलॉक हो गई हैं</string>
+    <string name="common_activation_success_hint" formatted="false">सक्रियण कोड सत्यापित, जल्द ही ऐप में प्रवेश कर रहे हैं</string>
+    <string name="common_activation_time" formatted="false">सक्रियण समय</string>
+    <string name="common_activation_type_combined" formatted="false">संयुक्त सीमा</string>
+    <string name="common_activation_type_combined_desc" formatted="false">समय और उपयोग दोनों सीमाओं का समर्थन करता है</string>
+    <string name="common_activation_type_device_bound" formatted="false">डिवाइस बाउंड</string>
+    <string name="common_activation_type_device_bound_desc" formatted="false">सक्रियण के बाद वर्तमान डिवाइस से बंधा हुआ</string>
+    <string name="common_activation_type_permanent" formatted="false">स्थायी सक्रियण</string>
+    <string name="common_activation_type_permanent_desc" formatted="false">सक्रियण के बाद स्थायी रूप से वैध, कोई प्रतिबंध नहीं</string>
+    <string name="common_activation_type_time_limited" formatted="false">समय सीमा</string>
+    <string name="common_activation_type_time_limited_desc" formatted="false">सक्रियण के बाद निर्दिष्ट समय के भीतर वैध</string>
+    <string name="common_activation_type_usage_limited" formatted="false">उपयोग सीमा</string>
+    <string name="common_activation_type_usage_limited_desc" formatted="false">सक्रियण के बाद निर्दिष्ट संख्या में उपयोग किया जा सकता है</string>
+    <string name="common_add_image" formatted="false">छवि जोड़ें</string>
+    <string name="common_all_codes_copied" formatted="false">सभी सक्रियण कोड क्लिपबोर्ड पर कॉपी किए गए</string>
+    <string name="common_app_already_activated" formatted="false">ऐप सक्रिय है</string>
+    <string name="common_app_config" formatted="false">ऐप कॉन्फ़िगरेशन</string>
+    <string name="common_app_created_successfully" formatted="false">%1$s ऐप सफलतापूर्वक बनाया गया</string>
+    <string name="common_app_deleted" formatted="false">ऐप हटाया गया</string>
+    <string name="common_app_running_in_background" formatted="false">पृष्ठभूमि में चल रहा है</string>
+    <string name="common_app_saved_successfully" formatted="false">ऐप सफलतापूर्वक सहेजा गया</string>
+    <string name="common_app_updated_successfully" formatted="false">%1$s ऐप सफलतापूर्वक अपडेट किया गया</string>
+    <string name="common_appearance" formatted="false">दिखावट</string>
+    <string name="common_applied" formatted="false">लागू किया गया</string>
+    <string name="common_author" formatted="false">लेखक</string>
+    <string name="common_auto_check_update" formatted="false">अपडेट के लिए ऑटो चेक करें</string>
+    <string name="common_check_update" formatted="false">अपडेट चेक करें</string>
+    <string name="common_checking" formatted="false">जांच की जा रही है...</string>
+    <string name="common_contact_author" formatted="false">लेखक से संपर्क करें</string>
+    <string name="common_current_version" formatted="false">वर्तमान संस्करण</string>
+    <string name="common_custom_color" formatted="false">कस्टम रंग</string>
+    <string name="common_delete_all_codes" formatted="false">सभी साफ़ करें</string>
+    <string name="common_delete_all_codes_confirm" formatted="false">क्या आप निश्चित रूप से सभी सक्रियण कोड साफ़ करना चाहते हैं? इस क्रिया को पूर्ववत नहीं किया जा सकता है।</string>
+    <string name="common_download_complete" formatted="false">डाउनलोड पूरा हुआ, इंस्टॉल किया जा रहा है...</string>
+    <string name="common_download_failed" formatted="false">डाउनलोड विफल रहा, कृपया पुनः प्रयास करें</string>
+    <string name="common_downloading" formatted="false">डाउनलोड हो रहा है...</string>
+    <string name="common_email_contact" formatted="false">ईमेल संपर्क</string>
+    <string name="common_exchange_group" formatted="false">एक्सचेंज ग्रुप</string>
+    <string name="common_expire_time" formatted="false">समाप्ति समय</string>
+    <string name="common_feedback_cooperation" formatted="false">प्रतिक्रिया, सहयोग, सुझाव 💬</string>
+    <string name="common_help" formatted="false">सहायता</string>
+    <string name="common_import" formatted="false">इंपोर्ट</string>
+    <string name="common_international_group" formatted="false">अंतर्राष्ट्रीय उपयोगकर्ता एक्सचेंज ग्रुप</string>
+    <string name="common_invalid_activation_code" formatted="false">अमान्य सक्रियण कोड</string>
+    <string name="common_join_exchange_group" formatted="false">एक्सचेंज ग्रुप में शामिल हों</string>
+    <string name="common_loading_image" formatted="false">छवि लोड हो रही है...</string>
+    <string name="common_menu_about" formatted="false">के बारे में</string>
+    <string name="common_menu_ai_settings" formatted="false">AI सेटिंग्स</string>
+    <string name="common_menu_theme_settings" formatted="false">थीम सेटिंग्स</string>
+    <string name="common_ok_button" formatted="false">ठीक है</string>
+    <string name="common_open_source_repo" formatted="false">ओपन सोर्स रेपो</string>
+    <string name="common_please_enter_activation_code" formatted="false">कृपया सक्रियण कोड दर्ज करें</string>
+    <string name="common_remaining_time" formatted="false">शेष समय</string>
+    <string name="common_remaining_usage" formatted="false">शेष उपयोग</string>
+    <string name="common_save" formatted="false">सहेजें</string>
+    <string name="common_search_history" formatted="false">खोज इतिहास</string>
+    <string name="common_searching" formatted="false">खोजा जा रहा है...</string>
+    <string name="common_social_media" formatted="false">सोशल मीडिया</string>
+    <string name="common_tab_home" formatted="false">होम</string>
+    <string name="common_tab_more" formatted="false">अधिक</string>
+    <string name="common_tab_profile" formatted="false">प्रोफ़ाइल</string>
+    <string name="common_tab_store" formatted="false">स्टोर</string>
+    <string name="common_update_later" formatted="false">बाद में अपडेट करें</string>
+    <string name="common_video_tutorial" formatted="false">वीडियो ट्यूटोरियल</string>
+    <string name="community_developer_role" formatted="false">डेवलपर</string>
+    <string name="community_difficulty_advanced" formatted="false">उन्नत</string>
+    <string name="community_difficulty_beginner" formatted="false">शुरुआती</string>
+    <string name="community_difficulty_intermediate" formatted="false">मध्यवर्ती</string>
+    <string name="community_difficulty_label" formatted="false">कठिनाई</string>
+    <string name="community_import" formatted="false">इंपोर्ट</string>
+    <string name="community_import_count" formatted="false">%1$d इंपोर्ट</string>
+    <string name="community_import_recipe_one_tap" formatted="false">वन-टैप इंपोर्ट रेसिपी</string>
+    <string name="community_post_type_question" formatted="false">प्रश्न</string>
+    <string name="community_post_type_showcase" formatted="false">शोकेस</string>
+    <string name="community_post_type_tutorial" formatted="false">ट्यूटोरियल</string>
+    <string name="community_post_type_update" formatted="false">अपडेट</string>
+    <string name="community_question_content_placeholder" formatted="false">अपने प्रश्न का विस्तार से वर्णन करें...</string>
+    <string name="community_question_title_placeholder" formatted="false">प्रश्न शीर्षक *</string>
+    <string name="community_recipe_imported" formatted="false">रेसिपी इंपोर्ट की गई</string>
+    <string name="community_recipe_json_supporting" formatted="false">प्रोजेक्ट कॉन्फ़िगरेशन JSON पेस्ट करें, अन्य उपयोगकर्ता एक टैप से इंपोर्ट कर सकते हैं</string>
+    <string name="community_resolved" formatted="false">सुलझा हुआ</string>
+    <string name="community_showcase_content_placeholder" formatted="false">अपने काम का परिचय दें...</string>
+    <string name="community_source_format" formatted="false">स्रोत: %1$s</string>
+    <string name="community_source_frontend" formatted="false">फ्रंटएंड फ्रेमवर्क</string>
+    <string name="community_source_html" formatted="false">HTML</string>
+    <string name="community_source_media" formatted="false">मल्टीमीडिया</string>
+    <string name="community_source_server" formatted="false">सर्वर साइड</string>
+    <string name="community_source_website" formatted="false">वेबसाइट</string>
+    <string name="community_tutorial_content_placeholder" formatted="false">ट्यूटोरियल सामग्री लिखें...</string>
+    <string name="community_tutorial_title_placeholder" formatted="false">ट्यूटोरियल शीर्षक *</string>
+    <string name="community_work_default" formatted="false">काम</string>
+    <string name="completed" formatted="false">पूरा हुआ</string>
+    <string name="config_description" formatted="false">विवरण</string>
+    <string name="config_description_hint" formatted="false">कॉन्फ़िगरेशन आइटम के लिए विवरण टेक्स्ट</string>
+    <string name="config_type" formatted="false">प्रकार</string>
+    <string name="confirm" formatted="false">पुष्टि करें</string>
+    <string name="contact_author" formatted="false">लेखक से संपर्क करें</string>
+    <string name="copied" formatted="false">कॉपी किया गया</string>
+    <string name="copy" formatted="false">कॉपी</string>
+    <string name="copy_share_code" formatted="false">शेयर कोड कॉपी करें</string>
+    <string name="copying_project_files" formatted="false">प्रोजेक्ट फ़ाइलें कॉपी की जा रही हैं</string>
+    <string name="corner_radius" formatted="false">कॉर्नर रेडियस</string>
+    <string name="country_region" formatted="false">देश/क्षेत्र</string>
+    <string name="country_region_hint" formatted="false">जैसे, जापान, कोरिया, यूके...</string>
+    <string name="create_first_module" formatted="false">पहला मॉड्यूल बनाएं</string>
+    <string name="create_html_app" formatted="false">HTML ऐप</string>
+    <string name="create_html_app_title" formatted="false">HTML ऐप बनाएं</string>
+    <string name="create_media_app" formatted="false">मीडिया ऐप</string>
+    <string name="create_media_app_title" formatted="false">मीडिया ऐप बनाएं</string>
+    <string name="create_module" formatted="false">मॉड्यूल बनाएं</string>
+    <string name="create_module_label" formatted="false">मॉड्यूल बनाएं</string>
+    <string name="create_web_app" formatted="false">वेब ऐप</string>
+    <string name="css_file" formatted="false">CSS स्टाइल फ़ाइल</string>
+    <string name="current_theme_anim_style" formatted="false">वर्तमान थीम एनिमेशन शैली</string>
+    <string name="current_version" formatted="false">वर्तमान संस्करण</string>
+    <string name="custom_package_name" formatted="false">कस्टम पैकेज नाम</string>
+    <string name="custom_rules" formatted="false">कस्टम नियम</string>
+    <string name="dark_mode" formatted="false">डार्क मोड</string>
+    <string name="dark_mode_hint" formatted="false">हमेशा डार्क थीम का उपयोग करें</string>
+    <string name="day_fri" formatted="false">शुक्र</string>
+    <string name="day_mon" formatted="false">सोम</string>
+    <string name="day_sat" formatted="false">शनि</string>
+    <string name="day_sun" formatted="false">रवि</string>
+    <string name="day_thu" formatted="false">गुरु</string>
+    <string name="day_tue" formatted="false">मंगल</string>
+    <string name="day_wed" formatted="false">बुध</string>
+    <string name="default_value" formatted="false">डिफ़ॉल्ट मान</string>
+    <string name="delete" formatted="false">हटाएं</string>
+    <string name="delete_account_button" formatted="false">खाता स्थायी रूप से हटाएं</string>
+    <string name="delete_account_confirm_label" formatted="false">पुष्टि करने के लिए DELETE टाइप करें</string>
+    <string name="delete_account_password_label" formatted="false">पुष्टि करने के लिए कृपया पासवर्ड दर्ज करें</string>
+    <string name="delete_account_reason_label" formatted="false">रद्द करने का कारण (वैकल्पिक)</string>
+    <string name="delete_account_title" formatted="false">खाता हटाएं</string>
+    <string name="delete_account_warning" formatted="false">यह क्रिया अपरिवर्तनीय है। आपका सारा डेटा स्थायी रूप से हटा दिया जाएगा।</string>
+    <string name="delete_module" formatted="false">मॉड्यूल हटाएं</string>
+    <string name="dependency_count" formatted="false">निर्भरता संख्या</string>
+    <string name="describe_html_page" formatted="false">अपनी पसंद के HTML पेज का वर्णन करें...</string>
+    <string name="description" formatted="false">विवरण</string>
+    <string name="description_optional" formatted="false">विवरण (वैकल्पिक)</string>
+    <string name="desktop_mode" formatted="false">डेस्कटॉप मोड</string>
+    <string name="detected_issues" formatted="false">पकड़े गए मुद्दे</string>
+    <string name="disabled" formatted="false">अक्षम</string>
+    <string name="disguise_count_hint" formatted="false">सुझाया गया 2-10</string>
+    <string name="disguise_count_label" formatted="false">मात्रा</string>
+    <string name="disguise_enable_multi_icon" formatted="false">मल्टी-आइकन सक्षम करें</string>
+    <string name="disguise_enable_multi_icon_desc" formatted="false">इंस्टालेशन के बाद डेस्कटॉप पर कई ऐप आइकन प्रदर्शित करें</string>
+    <string name="disguise_hide_main_icon" formatted="false">मुख्य आइकन छिपाएं</string>
+    <string name="disguise_hide_main_icon_desc" formatted="false">केवल उपनाम आइकन रखें, मुख्य गतिविधि आइकन छिपाएं</string>
+    <string name="disguise_icon_count_desc" formatted="false">इंस्टालेशन के बाद प्रदर्शित आइकनों की संख्या निर्धारित करें (प्रत्येक ऐप शुरू करता है)</string>
+    <string name="disguise_icon_count_format" formatted="false">%d आइकन</string>
+    <string name="disguise_icon_count_title" formatted="false">डेस्कटॉप आइकन संख्या</string>
+    <string name="disguise_multi_icon_tip" formatted="false">मल्टी-आइकन फ़ंक्शन मूल गतिविधि-उपनाम तंत्र का उपयोग करता है; स्थापना के बाद कई आइकन स्वचालित रूप से प्रदर्शित होते हैं।</string>
+    <string name="disguise_multi_icon_title" formatted="false">मल्टी डेस्कटॉप आइकन</string>
+    <string name="disguise_not_enabled" formatted="false">सक्षम नहीं</string>
+    <string name="display_frequency" formatted="false">प्रदर्शन आवृत्ति</string>
+    <string name="display_name_hint" formatted="false">जैसे, फ़ॉन्ट आकार</string>
+    <string name="display_name_required" formatted="false">प्रदर्शित नाम *</string>
+    <string name="done" formatted="false">हो गया</string>
+    <string name="done_with_count" formatted="false">हो गया (%d)</string>
+    <string name="download" formatted="false">डाउनलोड</string>
+    <string name="download_complete" formatted="false">डाउनलोड पूरा हुआ, इंस्टॉल किया जा रहा है...</string>
+    <string name="download_file" formatted="false">डाउनलोड</string>
+    <string name="downloading" formatted="false">डाउनलोड हो रहा है...</string>
+    <string name="duplicate" formatted="false">डुप्लिकेट</string>
+    <string name="edit" formatted="false">संपादित करें</string>
+    <string name="edit_app" formatted="false">ऐप संपादित करें</string>
+    <string name="edit_module" formatted="false">मॉड्यूल संपादित करें</string>
+    <string name="effects" formatted="false">प्रभाव</string>
+    <string name="email_contact" formatted="false">ईमेल संपर्क</string>
+    <string name="emergency_exit" formatted="false">आपातकालीन निकास</string>
+    <string name="enable_activation" formatted="false">सक्रियण कोड सक्षम करें</string>
+    <string name="enable_ad_block" formatted="false">विज्ञापन अवरोधन सक्षम करें</string>
+    <string name="enable_ad_block_label" formatted="false">विज्ञापन ब्लॉक सक्षम करें</string>
+    <string name="enable_ads" formatted="false">विज्ञापन सक्षम करें</string>
+    <string name="enable_animation" formatted="false">एनिमेशन सक्षम करें</string>
+    <string name="enable_animations" formatted="false">एनिमेशन सक्षम करें</string>
+    <string name="enable_animations_hint" formatted="false">इंटरफ़ेस ट्रांज़िशन एनिमेशन और इंटरेक्शन फीडबैक चालू करें</string>
+    <string name="enable_announcement" formatted="false">घोषणा सक्षम करें</string>
+    <string name="enable_audio" formatted="false">ऑडियो सक्षम करें</string>
+    <string name="enable_audio_hint" formatted="false">वीडियो चलाते समय ध्वनि शामिल करें</string>
+    <string name="enable_encryption" formatted="false">एन्क्रिप्शन सक्षम करें</string>
+    <string name="enable_isolation" formatted="false">अलगाव (Isolation) सक्षम करें</string>
+    <string name="enable_javascript" formatted="false">JavaScript सक्षम करें</string>
+    <string name="enable_js_hint" formatted="false">HTML में JavaScript कोड निष्पादन की अनुमति दें</string>
+    <string name="enable_local_storage" formatted="false">लोकल स्टोरेज सक्षम करें</string>
+    <string name="enable_local_storage_hint" formatted="false">डेटा बचाने के लिए localStorage का उपयोग करने की अनुमति दें</string>
+    <string name="enabled" formatted="false">सक्षम</string>
+    <string name="enabled_modules" formatted="false">सक्षम %d</string>
+    <string name="encoding_and_size" formatted="false">एन्कोडिंग: %1$s | आकार: %2$s</string>
+    <string name="encryption_hint" formatted="false">सुरक्षा के लिए ऐप संसाधनों को एन्क्रिप्ट करें</string>
+    <string name="encryption_level" formatted="false">एन्क्रिप्शन स्तर</string>
+    <string name="encryption_settings" formatted="false">एन्क्रिप्शन सेटिंग्स</string>
+    <string name="enhanced_mode" formatted="false">उन्नत मोड</string>
+    <string name="enhanced_mode_enabled" formatted="false">उन्नत मोड सक्षम</string>
+    <string name="enjoy_immersive_experience" formatted="false">%s इमर्सिव विजुअल अनुभव का आनंद लें</string>
+    <string name="enter_activation_code" formatted="false">कृपया सक्रियण कोड दर्ज करें</string>
+    <string name="enter_emergency_password" formatted="false">कृपया आपातकालीन निकास पासवर्ड दर्ज करें</string>
+    <string name="entry_file" formatted="false">एंट्री फ़ाइल</string>
+    <string name="env_downloading" formatted="false">डाउनलोड हो रहा है</string>
+    <string name="env_installing" formatted="false">इंस्टॉल हो रहा है</string>
+    <string name="env_not_installed" formatted="false">उपलब्ध</string>
+    <string name="env_ready" formatted="false">पर्यावरण तैयार है</string>
+    <string name="error" formatted="false">त्रुटि</string>
+    <string name="errors_count" formatted="false">%d त्रुटियां</string>
+    <string name="every_launch" formatted="false">प्रत्येक लॉन्च</string>
+    <string name="exchange_group" formatted="false">एक्सचेंज ग्रुप</string>
+    <string name="exchange_learning" formatted="false">एक्सचेंज और लर्निंग, समाचार अपडेट</string>
+    <string name="expand" formatted="false">विस्तार करें</string>
+    <string name="export_all" formatted="false">सभी एक्सपोर्ट करें</string>
+    <string name="export_data" formatted="false">डेटा एक्सपोर्ट करें</string>
+    <string name="export_text" formatted="false">एक्सपोर्ट</string>
+    <string name="extension_module" formatted="false">एक्सटेंशन मॉड्यूल</string>
+    <string name="extension_module_title" formatted="false">एक्सटेंशन मॉड्यूल</string>
+    <string name="failed" formatted="false">विफल</string>
+    <string name="feature_tip" formatted="false">Light सक्रियण कोड, बैकग्राउंड संगीत आदि को प्रोजेक्ट निर्माण के बाद "संपादित करें" पर क्लिक करके कॉन्फ़िगर किया जा सकता है।</string>
+    <string name="feedback_cooperation" formatted="false">समस्या प्रतिक्रिया, सहयोग, सुझाव</string>
+    <string name="feedback_cooperation_short" formatted="false">प्रतिक्रिया, सहयोग</string>
+    <string name="file_info" formatted="false">फ़ाइल जानकारी</string>
+    <string name="file_label" formatted="false">फ़ाइल: %s</string>
+    <string name="file_not_found" formatted="false">फ़ाइल नहीं मिली</string>
+    <string name="file_reference_hint" formatted="false">ऐप स्वचालित रूप से CSS/JS को HTML में इनलाइन करता है। पूर्ण पथ परिवर्तित हो जाते हैं। सापेक्ष पथों का उपयोग करने की सिफारिश की जाती है।</string>
+    <string name="fill_screen" formatted="false">स्क्रीन भरें</string>
+    <string name="fill_screen_hint" formatted="false">पूरी स्क्रीन भरने के लिए स्वचालित रूप से क्रॉप करें</string>
+    <string name="fingerprint_spoofing" formatted="false">फिंगरप्रिंट स्पूफिंग</string>
+    <string name="follow_system" formatted="false">सिस्टम का पालन करें</string>
+    <string name="follow_system_hint" formatted="false">सिस्टम सेटिंग्स के आधार पर ऑटो स्विच</string>
+    <string name="forced_run_active" formatted="false">फोकस मोड सक्रिय</string>
+    <string name="forced_run_protection_level" formatted="false">सुरक्षा स्तर</string>
+    <string name="forced_run_remaining" formatted="false">शेष समय: %s</string>
+    <string name="forced_run_service_name" formatted="false">फोकस मोड सुरक्षा</string>
+    <string name="framework" formatted="false">फ्रेमवर्क</string>
+    <string name="fullscreen_display_image" formatted="false">चयनित छवि को पूर्ण स्क्रीन में प्रदर्शित करें</string>
+    <string name="fullscreen_mode" formatted="false">पूर्ण स्क्रीन मोड</string>
+    <string name="fullscreen_play_video" formatted="false">चयनित वीडियो को पूर्ण स्क्रीन में चलाएं</string>
+    <string name="glassmorphism" formatted="false">ग्लासमॉर्फिज्म</string>
+    <string name="glow" formatted="false">चमक (Glow)</string>
+    <string name="glow_effect" formatted="false">चमक प्रभाव</string>
+    <string name="go_back_to_modify" formatted="false">संशोधित करने के लिए वापस जाएं</string>
+    <string name="got_it" formatted="false">समझ गया</string>
+    <string name="grant_permission" formatted="false">अनुमति दें</string>
+    <string name="haptic_feedback" formatted="false">हैप्टिक फीडबैक</string>
+    <string name="haptic_feedback_hint" formatted="false">इंटरेक्शन कंपन फीडबैक</string>
+    <string name="help" formatted="false">सहायता</string>
+    <string name="help_auto_check" formatted="false">ऑटो चेक</string>
+    <string name="help_auto_check_content" formatted="false">AI स्वचालित रूप से सिंटैक्स/सुरक्षा की जांच करता है ताकि यह सुनिश्चित हो सके कि जनरेट किया गया कोड सुरक्षित रूप से चलता है।</string>
+    <string name="help_category_selection" formatted="false">श्रेणी चयन</string>
+    <string name="help_category_selection_content" formatted="false">मैन्युअल रूप से श्रेणियां चुनें या सटीक जनरेशन के लिए AI को ऑटो-डिटेक्ट करने दें।</string>
+    <string name="help_code_edit" formatted="false">कोड संपादन</string>
+    <string name="help_code_edit_content" formatted="false">जनरेट किए गए कोड को सीधे संपादित किया जा सकता है और परिवर्तनों के साथ सहेजा जाएगा।</string>
+    <string name="help_how_to_use" formatted="false">कैसे उपयोग करें</string>
+    <string name="help_how_to_use_content" formatted="false">प्राकृतिक भाषा में सुविधाओं का वर्णन करें और AI विस्तार कोड उत्पन्न करेगा।</string>
+    <string name="help_model_selection" formatted="false">मॉडल चयन</string>
+    <string name="help_model_selection_content" formatted="false">कोड जनरेशन के लिए अलग-अलग AI मॉडल चुनें, जिनमें से प्रत्येक की गति और प्रभाव अलग-अलग होंगे।</string>
+    <string name="help_requirement_tips" formatted="false">आवश्यकताओं के लिए सुझाव</string>
+    <string name="help_requirement_tips_content" formatted="false">विशिष्ट कार्यों का वर्णन करें, लक्ष्य साइट या पृष्ठ प्रकार निर्दिष्ट करें।</string>
+    <string name="help_save_module" formatted="false">मॉड्यूल सहेजें</string>
+    <string name="help_save_module_content" formatted="false">एक बार जनरेशन पूरा हो जाने पर, भविष्य के उपयोग के लिए इसे अपनी मॉड्यूल लाइब्रेरी में जोड़ने के लिए सहेजें पर क्लिक करें।</string>
+    <string name="high_perf_build_tool" formatted="false">उच्च प्रदर्शन बिल्ड टूल</string>
+    <string name="hold_to_experience" formatted="false">अनुभव के लिए दबाए रखें</string>
+    <string name="html_app" formatted="false">HTML ऐप</string>
+    <string name="html_app_tip" formatted="false">सुझाव: HTML आवश्यक है, CSS और JS वैकल्पिक हैं। यदि आपका HTML उन्हें संदर्भित करता है, तो कृपया उन फ़ाइलों को भी चुनें।</string>
+    <string name="html_file" formatted="false">HTML फ़ाइल</string>
+    <string name="i_understand" formatted="false">मैं समझता हूँ</string>
+    <string name="icon_library" formatted="false">आइकन लाइब्रेरी</string>
+    <string name="image" formatted="false">छवि</string>
+    <string name="image_app" formatted="false">छवि ऐप</string>
+    <string name="import_data" formatted="false">डेटा इंपोर्ट करें</string>
+    <string name="import_from_file" formatted="false">फ़ाइल से इंपोर्ट करें</string>
+    <string name="import_from_share_code" formatted="false">शेयर कोड से इंपोर्ट करें</string>
+    <string name="import_frontend_project" formatted="false">फ्रंटएंड प्रोजेक्ट इंपोर्ट करें</string>
+    <string name="import_logs" formatted="false">इंपोर्ट लॉग्स</string>
+    <string name="import_module" formatted="false">मॉड्यूल इंपोर्ट करें</string>
+    <string name="import_project" formatted="false">प्रोजेक्ट इंपोर्ट करें</string>
+    <string name="import_text" formatted="false">इंपोर्ट</string>
+    <string name="importing" formatted="false">इंपोर्ट किया जा रहा है...</string>
+    <string name="independent_developer" formatted="false">स्वतंत्र डेवलपर / AI उत्साही</string>
+    <string name="info" formatted="false">जानकारी</string>
+    <string name="input_activation_code_hint" formatted="false">सक्रियण कोड दर्ज करें</string>
+    <string name="input_app_name" formatted="false">एप्लिकेशन प्रदर्शन नाम दर्ज करें</string>
+    <string name="input_module_name" formatted="false">मॉड्यूल नाम दर्ज करें</string>
+    <string name="input_scheme_name" formatted="false">योजना का नाम दर्ज करें</string>
+    <string name="install_advanced_build_tool" formatted="false">उन्नत बिल्ड टूल (esbuild) इंस्टॉल करें</string>
+    <string name="installed" formatted="false">इंस्टॉल किया गया</string>
+    <string name="installing_deps" formatted="false">निर्भरताएँ इंस्टॉल की जा रही हैं</string>
+    <string name="interaction_method" formatted="false">इंटरेक्शन विधि</string>
+    <string name="interaction_style" formatted="false">इंटरेक्शन शैली</string>
+    <string name="interaction_style_label" formatted="false">इंटरेक्शन शैली: %s</string>
+    <string name="international_email" formatted="false">अंतर्राष्ट्रीय ईमेल</string>
+    <string name="international_group" formatted="false">अंतर्राष्ट्रीय उपयोगकर्ता समूह</string>
+    <string name="invalid_activation_code" formatted="false">अमान्य सक्रियण कोड</string>
+    <string name="invalid_format" formatted="false">अमान्य प्रारूप</string>
+    <string name="invalid_time_limit_config" formatted="false">अमान्य समय सीमा कॉन्फ़िगरेशन</string>
+    <string name="invalid_usage_limit_config" formatted="false">अमान्य उपयोग सीमा कॉन्फ़िगरेशन</string>
+    <string name="ip_spoofing" formatted="false">IP स्पूफिंग</string>
+    <string name="isolation_hint" formatted="false">पर्यावरण अलगाव सक्षम करें</string>
+    <string name="isolation_settings" formatted="false">अलगाव सेटिंग्स</string>
+    <string name="join_exchange_group" formatted="false">एक्सचेंज ग्रुप में शामिल हों</string>
+    <string name="js_file" formatted="false">JavaScript फ़ाइल</string>
+    <string name="key_name_hint" formatted="false">जैसे, fontSize</string>
+    <string name="key_name_required" formatted="false">कुंजी नाम *</string>
+    <string name="label_activation" formatted="false">सक्रियण कोड</string>
+    <string name="label_ad_block" formatted="false">विज्ञापन अवरोधन</string>
+    <string name="label_ads" formatted="false">विज्ञापन सेटिंग्स</string>
+    <string name="label_announcement" formatted="false">घोषणा</string>
+    <string name="label_app_name" formatted="false">ऐप का नाम</string>
+    <string name="label_icon" formatted="false">ऐप आइकन</string>
+    <string name="label_url" formatted="false">वेबसाइट URL</string>
+    <string name="landscape_mode" formatted="false">लैंडस्केप मोड</string>
+    <string name="landscape_mode_hint" formatted="false">लैंडस्केप मोड में सामग्री प्रदर्शित करें</string>
+    <string name="landscape_mode_hint_html" formatted="false">ऐप सामग्री को लैंडस्केप ओरिएंटेशन में प्रदर्शित करें</string>
+    <string name="landscape_mode_label" formatted="false">लैंडस्केप</string>
+    <string name="language_arabic" formatted="false">अरबी</string>
+    <string name="language_changed" formatted="false">भाषा बदल दी गई है, कृपया ऐप को पुनरारंभ करें</string>
+    <string name="language_chinese" formatted="false">चीनी</string>
+    <string name="language_english" formatted="false">अंग्रेजी</string>
+    <string name="language_settings" formatted="false">भाषा</string>
+    <string name="latest_version" formatted="false">नवीनतम संस्करण</string>
+    <string name="launch_time" formatted="false">लॉन्च समय</string>
+    <string name="learn_progress_together" formatted="false">एक साथ सीखें और प्रगति करें, समाचार अपडेट आदि।</string>
+    <string name="light_mode" formatted="false">लाइट मोड</string>
+    <string name="light_mode_hint" formatted="false">हमेशा लाइट थीम का उपयोग करें</string>
+    <string name="link_button_text" formatted="false">लिंक बटन टेक्स्ट</string>
+    <string name="link_url" formatted="false">लिंक URL (वैकल्पिक)</string>
+    <string name="load_image_failed" formatted="false">छवि लोड करना विफल: %s</string>
+    <string name="loading" formatted="false">लोड हो रहा है...</string>
+    <string name="logs" formatted="false">लॉग्स</string>
+    <string name="loop_play" formatted="false">लूप प्ले</string>
+    <string name="loop_play_hint" formatted="false">लूप प्ले वीडियो/ऑडियो</string>
+    <string name="loop_playback" formatted="false">लूप प्लेबैक</string>
+    <string name="manual_create" formatted="false">मैनुअल निर्माण</string>
+    <string name="media_app_hint" formatted="false">बनाया गया एप्लिकेशन %s होगा, जो डिजिटल फोटो फ्रेम, विज्ञापन या वीडियो वॉलपेपर के लिए उपयुक्त है।</string>
+    <string name="menu_about" formatted="false">के बारे में</string>
+    <string name="menu_ai_coding" formatted="false">AI कोडिंग</string>
+    <string name="menu_ai_html_coding" formatted="false">AI HTML कोडिंग</string>
+    <string name="menu_ai_settings" formatted="false">AI सेटिंग्स</string>
+    <string name="menu_app_modifier" formatted="false">ऐप संशोधक (Modifier)</string>
+    <string name="menu_extension_modules" formatted="false">एक्सटेंशन</string>
+    <string name="menu_linux_environment" formatted="false">Linux पर्यावरण</string>
+    <string name="menu_more" formatted="false">अधिक</string>
+    <string name="menu_search" formatted="false">खोजें</string>
+    <string name="menu_theme_settings" formatted="false">थीम सेटिंग्स</string>
+    <string name="model_id" formatted="false">मॉडल ID</string>
+    <string name="model_id_hint" formatted="false">जैसे, gpt-4o-mini</string>
+    <string name="modify_config" formatted="false">कॉन्फ़िगरेशन संशोधित करें</string>
+    <string name="module_description" formatted="false">मॉड्यूल विवरण</string>
+    <string name="module_disabled" formatted="false">अक्षम</string>
+    <string name="module_enabled" formatted="false">सक्षम</string>
+    <string name="module_name" formatted="false">मॉड्यूल नाम</string>
+    <string name="module_name_required" formatted="false">मॉड्यूल नाम *</string>
+    <string name="module_schemes" formatted="false">मॉड्यूल योजनाएं</string>
+    <string name="modules_selected" formatted="false">चयनित %d मॉड्यूल</string>
+    <string name="msg_app_created" formatted="false">ऐप सफलतापूर्वक बनाया गया</string>
+    <string name="msg_app_deleted" formatted="false">ऐप हटाया गया</string>
+    <string name="msg_export_failed" formatted="false">APK एक्सपोर्ट विफल रहा</string>
+    <string name="msg_export_success" formatted="false">APK सफलतापूर्वक एक्सपोर्ट किया गया</string>
+    <string name="msg_import_failed" formatted="false">मॉड्यूल इंपोर्ट विफल: %s</string>
+    <string name="msg_import_success" formatted="false">मॉड्यूल %s सफलतापूर्वक इंपोर्ट किया गया</string>
+    <string name="msg_loading" formatted="false">लोड हो रहा है...</string>
+    <string name="msg_name_required" formatted="false">कृपया ऐप का नाम दर्ज करें</string>
+    <string name="msg_no_apps" formatted="false">अभी तक कोई ऐप नहीं है। बनाने के लिए + पर क्लिक करें</string>
+    <string name="msg_shortcut_created" formatted="false">शॉर्टकट बनाया गया</string>
+    <string name="msg_url_invalid" formatted="false">कृपया एक वैध URL दर्ज करें</string>
+    <string name="network_error" formatted="false">नेटवर्क त्रुटि</string>
+    <string name="new_update" formatted="false">नया संस्करण उपलब्ध है</string>
+    <string name="next_step" formatted="false">अगला</string>
+    <string name="next_step_time_align" formatted="false">अगला: समय संरेखण</string>
+    <string name="njs_package_json_not_found" formatted="false">package.json नहीं मिला, एक वैध Node.js प्रोजेक्ट निर्देशिका चुनें</string>
+    <string name="no" formatted="false">नहीं</string>
+    <string name="no_data" formatted="false">कोई डेटा नहीं</string>
+    <string name="no_module_selected" formatted="false">कोई मॉड्यूल नहीं चुना गया</string>
+    <string name="no_modules_found" formatted="false">कोई मिलान मॉड्यूल नहीं मिला</string>
+    <string name="no_modules_yet" formatted="false">अभी कोई मॉड्यूल नहीं है</string>
+    <string name="not_installed" formatted="false">इंस्टॉल नहीं है</string>
+    <string name="ok" formatted="false">ठीक है</string>
+    <string name="only_on_matching_urls" formatted="false">केवल %d मिलान वाले URL पर प्रभावी होता है</string>
+    <string name="open" formatted="false">खोलें</string>
+    <string name="open_settings" formatted="false">सेटिंग्स खोलें</string>
+    <string name="open_source_repo" formatted="false">ओपन सोर्स रेपो</string>
+    <string name="operation_failed" formatted="false">संचालन विफल रहा</string>
+    <string name="operation_success" formatted="false">संचालन सफल रहा</string>
+    <string name="optional_esbuild_hint" formatted="false">वैकल्पिक: बेहतर प्रदर्शन के लिए esbuild इंस्टॉल करें</string>
+    <string name="original_image" formatted="false">मूल छवि</string>
+    <string name="output_dir" formatted="false">आउटपुट निर्देशिका</string>
+    <string name="package_manager" formatted="false">पैकेज प्रबंधक</string>
+    <string name="particle_effect" formatted="false">कण प्रभाव</string>
+    <string name="particle_effects" formatted="false">कण प्रभाव</string>
+    <string name="particle_effects_enhanced_hint" formatted="false">एन्हांस्ड मोड में इमर्सिव बैकग्राउंड प्रभाव</string>
+    <string name="particle_effects_hint" formatted="false">थीम-विशिष्ट पृष्ठभूमि कण एनिमेशन दिखाएं</string>
+    <string name="particles" formatted="false">कण (Particles)</string>
+    <string name="password_incorrect" formatted="false">पासवर्ड त्रुटि</string>
+    <string name="paste" formatted="false">पेस्ट करें</string>
+    <string name="paste_from_clipboard" formatted="false">क्लिपबोर्ड से पेस्ट करें</string>
+    <string name="paste_share_code" formatted="false">साझा मॉड्यूल कोड पेस्ट करें</string>
+    <string name="paste_share_code_hint" formatted="false">शेयर कोड पेस्ट करें...</string>
+    <string name="permission_denied" formatted="false">अनुमति अस्वीकृत</string>
+    <string name="please_select_text_model" formatted="false">कृपया पहले एक टेक्स्ट मॉडल चुनें</string>
+    <string name="please_wait" formatted="false">कृपया प्रतीक्षा करें...</string>
+    <string name="popup_announcement" formatted="false">पॉपअप घोषणा</string>
+    <string name="preview_announcement_effect" formatted="false">घोषणा प्रभाव का पूर्वावलोकन करें</string>
+    <string name="preview_effect" formatted="false">पूर्वावलोकन प्रभाव</string>
+    <string name="previous_step" formatted="false">पिछला</string>
+    <string name="primary_color" formatted="false">प्राथमिक रंग</string>
+    <string name="processing" formatted="false">प्रोसेसिंग...</string>
+    <string name="processing_output" formatted="false">आउटपुट प्रोसेस किया जा रहा है...</string>
+    <string name="project_analysis" formatted="false">प्रोजेक्ट विश्लेषण</string>
+    <string name="project_analysis_result" formatted="false">प्रोजेक्ट विश्लेषण परिणाम</string>
+    <string name="project_issues_detected" formatted="false">प्रोजेक्ट के मुद्दों का पता चला</string>
+    <string name="project_template_export" formatted="false">प्रोजेक्ट टेम्पलेट एक्सपोर्ट</string>
+    <string name="protection_level_basic" formatted="false">बेसिक (केवल बैक की को ब्लॉक करें)</string>
+    <string name="protection_level_maximum" formatted="false">अधिकतम (एक्सेसिबिलिटी + उपयोग एक्सेस आवश्यक)</string>
+    <string name="protection_level_standard" formatted="false">मानक (एक्सेसिबिलिटी आवश्यक)</string>
+    <string name="provider" formatted="false">प्रदाता (Provider)</string>
+    <string name="pure_kotlin_impl" formatted="false">शुद्ध कोटलिन कार्यान्वयन, कोई बाहरी निर्भरता नहीं</string>
+    <string name="quick_experience" formatted="false">त्वरित अनुभव</string>
+    <string name="quick_experience_frontend" formatted="false">त्वरित अनुभव फ्रंटएंड प्रोजेक्ट इंपोर्ट</string>
+    <string name="ready" formatted="false">तैयार</string>
+    <string name="regenerate_on_launch" formatted="false">लॉन्च पर पुन: उत्पन्न करें</string>
+    <string name="requires_sensitive_permissions" formatted="false">संवेदनशील अनुमतियों की आवश्यकता है</string>
+    <string name="reset_env_confirm" formatted="false">यह डाउनलोड किए गए बिल्ड टूल को हटा देगा। जारी रखें?</string>
+    <string name="reset_environment" formatted="false">पर्यावरण रीसेट करें</string>
+    <string name="retry" formatted="false">पुनः प्रयास करें</string>
+    <string name="run" formatted="false">चलायें</string>
+    <string name="sample_projects" formatted="false">नमूना प्रोजेक्ट</string>
+    <string name="save" formatted="false">सहेजें</string>
+    <string name="save_as_scheme" formatted="false">योजना के रूप में सहेजें</string>
+    <string name="save_lrc" formatted="false">LRC सहेजें</string>
+    <string name="saved" formatted="false">सहेजा गया</string>
+    <string name="scanning_project" formatted="false">प्रोजेक्ट स्कैन किया जा रहा है...</string>
+    <string name="scheme_name" formatted="false">योजना का नाम</string>
+    <string name="search_code_snippets" formatted="false">कोड स्निपेट खोजें...</string>
+    <string name="search_modules" formatted="false">मॉड्यूल खोजें...</string>
+    <string name="search_modules_hint" formatted="false">नाम, विवरण या टैग के आधार पर खोजें...</string>
+    <string name="search_placeholder" formatted="false">खोजें...</string>
+    <string name="secondary_color" formatted="false">द्वितीयक रंग</string>
+    <string name="select_extension_modules" formatted="false">एक्सटेंशन मॉड्यूल चुनें</string>
+    <string name="select_file" formatted="false">फ़ाइल चुनें</string>
+    <string name="select_files" formatted="false">फ़ाइलें चुनें</string>
+    <string name="select_files_hint" formatted="false">HTML, CSS, JS आदि चुनें (CSS/JS वैकल्पिक)</string>
+    <string name="select_folder" formatted="false">फ़ोल्डर चुनें</string>
+    <string name="select_icon" formatted="false">आइकन चुनें</string>
+    <string name="select_image" formatted="false">छवि चुनें</string>
+    <string name="select_launch_time" formatted="false">लॉन्च समय चुनें</string>
+    <string name="select_media_type" formatted="false">मीडिया प्रकार चुनें</string>
+    <string name="select_module_category" formatted="false">मॉड्यूल श्रेणी चुनें</string>
+    <string name="select_modules" formatted="false">मॉड्यूल चुनें</string>
+    <string name="select_music" formatted="false">संगीत चुनें</string>
+    <string name="select_project" formatted="false">प्रोजेक्ट चुनें</string>
+    <string name="select_project_folder" formatted="false">प्रोजेक्ट फ़ोल्डर चुनें</string>
+    <string name="select_project_hint" formatted="false">प्रोजेक्ट रूट या बिल्ड आउटपुट निर्देशिका (dist/build) चुनें</string>
+    <string name="select_theme" formatted="false">थीम चुनें</string>
+    <string name="select_ui_style" formatted="false">UI स्टाइल चुनें</string>
+    <string name="select_ui_style_hint" formatted="false">विजुअल इंटरफ़ेस स्टाइल चुनें</string>
+    <string name="select_video" formatted="false">वीडियो चुनें</string>
+    <string name="select_wtamod_file" formatted="false">.wtamod या .wtapkg फ़ाइल चुनें</string>
+    <string name="selected_duration" formatted="false">अवधि: %.1f s</string>
+    <string name="selected_image" formatted="false">चयनित छवि</string>
+    <string name="selected_music_count" formatted="false">चयनित %d आइटम</string>
+    <string name="sequential_playback" formatted="false">क्रमिक प्लेबैक</string>
+    <string name="share" formatted="false">साझा करें</string>
+    <string name="share_code" formatted="false">शेयर कोड</string>
+    <string name="share_code_copied" formatted="false">शेयर कोड कॉपी किया गया</string>
+    <string name="share_module" formatted="false">मॉड्यूल साझा करें</string>
+    <string name="show_emoji" formatted="false">इमोजी दिखाएं</string>
+    <string name="show_once" formatted="false">केवल एक बार दिखाएं</string>
+    <string name="show_once_only" formatted="false">केवल एक बार दिखाएं</string>
+    <string name="shuffle_playback" formatted="false">शफल प्लेबैक</string>
+    <string name="social_media" formatted="false">सोशल मीडिया</string>
+    <string name="sound_feedback" formatted="false">ध्वनि फीडबैक</string>
+    <string name="sound_feedback_hint" formatted="false">इंटरेक्शन ध्वनि फीडबैक (कंपन)</string>
+    <string name="splash_screen" formatted="false">स्पलैश स्क्रीन</string>
+    <string name="standard_encryption" formatted="false">मानक</string>
+    <string name="start_test" formatted="false">परीक्षण शुरू करें</string>
+    <string name="static_website" formatted="false">स्थिर वेबसाइट</string>
+    <string name="status_bar_background" formatted="false">स्टेटस बार बैकग्राउंड</string>
+    <string name="storage_isolation" formatted="false">स्टोरेज आइसोलेशन</string>
+    <string name="storage_permission_required" formatted="false">स्टोरेज अनुमति आवश्यक है</string>
+    <string name="storage_usage" formatted="false">स्टोरेज उपयोग</string>
+    <string name="store_get_download_link_failed" formatted="false">डाउनलोड लिंक प्राप्त करना विफल: %1$s</string>
+    <string name="store_network_error" formatted="false">नेटवर्क त्रुटि: %1$s</string>
+    <string name="store_report_failed" formatted="false">रिपोर्ट विफल: %1$s</string>
+    <string name="success" formatted="false">सफलता</string>
+    <string name="suggestions" formatted="false">सुझाव</string>
+    <string name="support_vue_react_vite" formatted="false">Vue, React, Vite बिल्ड आउटपुट का समर्थन करें</string>
+    <string name="supported_features" formatted="false">समर्थित विशेषताएं</string>
+    <string name="tags" formatted="false">टैग</string>
+    <string name="tags_hint" formatted="false">कोमा से अलग, जैसे, विज्ञापन, ब्लॉक, टूल</string>
+    <string name="tap_to_mark" formatted="false">मार्क करने के लिए टैप करें</string>
+    <string name="tech_description" formatted="false">तकनीकी विवरण</string>
+    <string name="test_module" formatted="false">परीक्षण मॉड्यूल</string>
+    <string name="theme" formatted="false">थीम</string>
+    <string name="theme_dark" formatted="false">डार्क थीम</string>
+    <string name="theme_features" formatted="false">थीम विशेषताएं</string>
+    <string name="theme_light" formatted="false">लाइट थीम</string>
+    <string name="theme_settings_title" formatted="false">थीम सेटिंग्स</string>
+    <string name="thinking" formatted="false">सोच रहा हूँ</string>
+    <string name="thinking_dots" formatted="false">सोच रहा हूँ...</string>
+    <string name="title_create_app" formatted="false">ऐप बनाएं</string>
+    <string name="title_my_apps" formatted="false">मेरे ऐप्स</string>
+    <string name="title_settings" formatted="false">सेटिंग्स</string>
+    <string name="too_many_attempts_with_countdown" formatted="false">बहुत अधिक प्रयास। %1$s के बाद पुनः प्रयास करें</string>
+    <string name="total_duration_label" formatted="false">अवधि: %.1f s</string>
+    <string name="total_files" formatted="false">कुल %d फ़ाइलें</string>
+    <string name="total_files_count" formatted="false">कुल %d फ़ाइलें</string>
+    <string name="total_modules" formatted="false">कुल %d मॉड्यूल</string>
+    <string name="translate_enabled" formatted="false">अनुवाद सक्षम</string>
+    <string name="translate_target_language" formatted="false">लक्ष्य भाषा</string>
+    <string name="translate_to" formatted="false">में अनुवाद करें</string>
+    <string name="trim_range_hint" formatted="false">ट्रिम रेंज (सेकंड)</string>
+    <string name="ui_mode" formatted="false">UI मोड</string>
+    <string name="unknown_error" formatted="false">अज्ञात त्रुटि</string>
+    <string name="unknown_file" formatted="false">अज्ञात फ़ाइल</string>
+    <string name="update_later" formatted="false">बाद में</string>
+    <string name="update_now" formatted="false">अभी</string>
+    <string name="upload" formatted="false">अपलोड</string>
+    <string name="url_to_shortcut_basic" formatted="false">URL से शॉर्टकट बुनियादी कार्यक्षमता</string>
+    <string name="usage_access_not_enabled" formatted="false">कृपया पहले उपयोग एक्सेस अनुमति अधिकृत करें</string>
+    <string name="usage_help" formatted="false">उपयोग सहायता</string>
+    <string name="usage_steps" formatted="false">उपयोग के चरण</string>
+    <string name="usage_steps_content" formatted="false">1. कंप्यूटर पर प्रोजेक्ट बिल्ड करें: npm run build. 2. बिल्ड आउटपुट (dist/build) को फोन पर कॉपी करें. 3. इंपोर्ट करने के लिए प्रोजेक्ट फ़ोल्डर चुनें।</string>
+    <string name="user_agent_spoofing" formatted="false">यूजर एजेंट स्पूफिंग</string>
+    <string name="version" formatted="false">संस्करण</string>
+    <string name="version_code" formatted="false">संस्करण कोड</string>
+    <string name="version_code_label" formatted="false">संस्करण कोड</string>
+    <string name="version_name" formatted="false">संस्करण नाम</string>
+    <string name="version_name_label" formatted="false">संस्करण नाम</string>
+    <string name="video" formatted="false">वीडियो</string>
+    <string name="video_app" formatted="false">वीडियो ऐप</string>
+    <string name="video_file_not_exist" formatted="false">वीडियो फ़ाइल नहीं मिली</string>
+    <string name="video_preview" formatted="false">वीडियो पूर्वावलोकन</string>
+    <string name="video_selected" formatted="false">वीडियो चयनित</string>
+    <string name="video_tutorial" formatted="false">वीडियो ट्यूटोरियल</string>
+    <string name="view_analysis_result" formatted="false">विश्लेषण परिणाम देखें</string>
+    <string name="view_details" formatted="false">विवरण देखें</string>
+    <string name="volume_percent" formatted="false">ध्वनि: %d%%</string>
+    <string name="warning" formatted="false">चेतावनी</string>
+    <string name="warnings_count" formatted="false">%d चेतावनी</string>
+    <string name="webview_advanced_settings" formatted="false">WebView उन्नत सेटिंग्स</string>
+    <string name="webview_back" formatted="false">पीछे</string>
+    <string name="webview_cannot_open_link" formatted="false">लिंक नहीं खोल सकते</string>
+    <string name="webview_error" formatted="false">पेज लोड होने में विफल रहा</string>
+    <string name="webview_forward" formatted="false">आगे</string>
+    <string name="webview_open_browser" formatted="false">ब्राउज़र में खोलें</string>
+    <string name="webview_refresh" formatted="false">रिफ्रेश</string>
+    <string name="webview_retry" formatted="false">पुनः प्रयास करें</string>
+    <string name="webview_share" formatted="false">साझा करें</string>
+    <string name="webview_ssl_error" formatted="false">SSL सुरक्षा त्रुटि</string>
+    <string name="yes" formatted="false">हाँ</string>
+    <string name="your_name" formatted="false">आपका नाम</string>
+</resources>

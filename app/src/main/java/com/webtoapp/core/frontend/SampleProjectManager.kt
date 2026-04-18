@@ -24,6 +24,7 @@ object SampleProjectManager {
             AppLanguage.CHINESE -> "" // 中文使用原始项目（无后缀）
             AppLanguage.ENGLISH -> "-en"
             AppLanguage.ARABIC -> "-ar"
+            AppLanguage.HINDI -> "-hi"
         }
     }
     

@@ -64,6 +64,23 @@ object RandomAppNameGenerator {
         "القاعدة", "النقطة", "القلب", "الموقع", "المكان", "الموضع", "الموقف", "المكتب", "اللوحة", "الوسادة"
     )
     
+    // ==================== HINDI ====================
+    private val hindiPrefixes = listOf(
+        "त्वरित", "स्मार्ट", "आसान", "सुपर", "जादुई", "अल्ट्रा", "प्रो", "नियो", "मैक्स", "प्राइम",
+        "फ्लैश", "टर्बो", "स्विफ्ट", "रैपिड", "इंस्टेंट", "फास्ट", "स्पीड", "ज़ूम", "रश", "ब्लिट्ज",
+        "पावर", "मेगा", "गीगा", "हाइपर", "ओम्नी", "मल्टी", "पॉली", "मेटा", "साइबर", "टेक",
+        "स्टार", "नोवा", "लूना", "सोलर", "कोस्मिक", "गैलेक्सी", "ऑर्बिट", "स्काई", "क्लाउड", "एयर",
+        "ड्रीम", "विज़न", "माइंड", "सोल", "स्पिरिट", "हार्ट", "कोर", "प्योर", "ट्रू", "रियल"
+    )
+    
+    private val hindiSuffixes = listOf(
+        "ऐप", "टूल", "किट", "बॉक्स", "हब", "लैब", "प्रो", "गो", "नाउ", "वन",
+        "हेल्पर", "मास्टर", "जीनियस", "विज़ार्ड", "एक्सपर्ट", "गाइड", "बडी", "पाल", "मेट", "फ्रेंड",
+        "स्पेस", "वर्ल्ड", "ज़ोन", "लैंड", "रेल्म", "स्फीयर", "फील्ड", "अखाड़ा", "स्टूडियो", "वर्क्स",
+        "लिंक", "कनेक्ट", "ब्रिज", "पाथ", "वे", "गेट", "डोर", "पोर्टल", "चैनल", "स्ट्रीम",
+        "बेस", "सेंटर", "कोर", "पॉइंट", "स्पॉट", "प्लेस", "साइट", "डेस्क", "बोर्ड", "पैड"
+    )
+    
     /**
      * Note.
      */
@@ -72,6 +89,7 @@ object RandomAppNameGenerator {
             AppLanguage.CHINESE -> generateChinese()
             AppLanguage.ENGLISH -> generateEnglish()
             AppLanguage.ARABIC -> generateArabic()
+            AppLanguage.HINDI -> generateHindi()
         }
     }
     
@@ -83,6 +101,7 @@ object RandomAppNameGenerator {
             AppLanguage.CHINESE -> generateChinese()
             AppLanguage.ENGLISH -> generateEnglish()
             AppLanguage.ARABIC -> generateArabic()
+            AppLanguage.HINDI -> generateHindi()
         }
     }
     
@@ -101,6 +120,12 @@ object RandomAppNameGenerator {
     private fun generateArabic(): String {
         val prefix = arabicPrefixes[Random.nextInt(arabicPrefixes.size)]
         val suffix = arabicSuffixes[Random.nextInt(arabicSuffixes.size)]
+        return "$prefix $suffix"
+    }
+
+    private fun generateHindi(): String {
+        val prefix = hindiPrefixes[Random.nextInt(hindiPrefixes.size)]
+        val suffix = hindiSuffixes[Random.nextInt(hindiSuffixes.size)]
         return "$prefix $suffix"
     }
 }

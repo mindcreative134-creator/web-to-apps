@@ -1,27 +1,30 @@
 <template>
   <div class="login-page">
     <div class="login-bg"></div>
+    <div class="login-lang">
+      <LanguageSwitcher direction="down" />
+    </div>
     <div class="login-card">
       <div class="login-brand">
         <div class="login-logo">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
         </div>
         <h1>WebToApp</h1>
-        <p class="text-sm text-muted">管理控制台</p>
+        <p class="text-sm text-muted">{{ $t('login.title') }}</p>
       </div>
 
       <form @submit.prevent="handleLogin" class="login-form">
         <div class="form-group">
-          <label class="form-label">邮箱</label>
+          <label class="form-label">{{ $t('login.email') }}</label>
           <input v-model="email" type="email" class="input" placeholder="admin@example.com" required autofocus />
         </div>
         <div class="form-group">
-          <label class="form-label">密码</label>
-          <input v-model="password" type="password" class="input" placeholder="输入密码" required />
+          <label class="form-label">{{ $t('login.password') }}</label>
+          <input v-model="password" type="password" class="input" :placeholder="$t('login.password_placeholder')" required />
         </div>
         <button type="submit" class="btn btn-primary login-btn" :disabled="loading">
           <span v-if="loading" class="spinner-inline"></span>
-          <span v-else>登录</span>
+          <span v-else>{{ $t('login.btn_login') }}</span>
         </button>
         <p v-if="error" class="error-text">{{ error }}</p>
       </form>
@@ -32,8 +35,11 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 import { authApi } from '../api'
+import LanguageSwitcher from '../components/LanguageSwitcher.vue'
 
+const { t } = useI18n()
 const router = useRouter()
 const email = ref(''), password = ref(''), error = ref(''), loading = ref(false)
 
@@ -41,12 +47,12 @@ async function handleLogin() {
   loading.value = true; error.value = ''
   try {
     const res = await authApi.login({ account: email.value, password: password.value })
-    const user = res.data.user || res.data
-    const tokens = res.data.tokens || res.data
+    const user = res.user
+    const tokens = res.tokens
 
-    // 验证管理员权限
+    // Verify admin permissions
     if (!user.is_admin) {
-      error.value = '此账号无管理员权限'
+      error.value = t('login.no_permission')
       return
     }
 
@@ -55,7 +61,7 @@ async function handleLogin() {
     localStorage.setItem('user', JSON.stringify(user))
     router.push('/')
   } catch (e) {
-    error.value = e?.detail || '登录失败'
+    error.value = e?.detail || t('login.failed')
   } finally { loading.value = false }
 }
 </script>
@@ -71,6 +77,12 @@ async function handleLogin() {
     radial-gradient(ellipse at 20% 50%, rgba(99,102,241,0.08) 0%, transparent 60%),
     radial-gradient(ellipse at 80% 20%, rgba(167,139,250,0.06) 0%, transparent 50%),
     radial-gradient(ellipse at 50% 80%, rgba(244,114,182,0.05) 0%, transparent 50%);
+}
+.login-lang {
+  position: absolute; top: 24px; right: 32px; z-index: 10;
+  background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+  border-radius: var(--r-md); padding: 2px 12px;
+  backdrop-filter: blur(10px);
 }
 .login-card {
   position: relative; z-index: 1;

@@ -65,12 +65,12 @@ fun ManualLrcAlignerDialog(
     
     // Parse
     var lyricLines by remember { 
-        mutableStateOf(existingLrc?.lines?.map { it.text } ?: emptyList()) 
+        mutableStateOf<List<String>>(existingLrc?.lines?.map { it.text } ?: emptyList()) 
     }
     
     // Note
     var timestamps by remember { 
-        mutableStateOf(existingLrc?.lines?.map { it.startTime } ?: emptyList<Long>()) 
+        mutableStateOf<List<Long>>(existingLrc?.lines?.map { it.startTime } ?: emptyList()) 
     }
     
     // ( timestamp > 0, from 0ms)
@@ -213,7 +213,7 @@ fun ManualLrcAlignerDialog(
     
     // Build LrcData
     fun buildLrcData(): LrcData {
-        val lines = lyricLines.mapIndexed { index, text ->
+        val lines = (lyricLines as List<String>).mapIndexed { index, text ->
             val startTime = timestamps.getOrElse(index) { 0L }
             val endTime = timestamps.getOrElse(index + 1) { startTime + 5000L }
             LrcLine(startTime = startTime, endTime = endTime, text = text)
@@ -297,10 +297,11 @@ fun ManualLrcAlignerDialog(
                                 val lineCount = lyricsText.lines().filter { it.trim().isNotEmpty() }.size
                                 TextButton(
                                     onClick = {
-                                        lyricLines = lyricsText.lines()
+                                        val lines = lyricsText.lines()
                                             .map { it.trim() }
                                             .filter { it.isNotEmpty() }
-                                        timestamps = List(lyricLines.size) { 0L }
+                                        lyricLines = lines
+                                        timestamps = List(lines.size) { 0L }
                                         alignedIndices = emptySet()
                                         currentAlignIndex = 0
                                         currentStep = 2

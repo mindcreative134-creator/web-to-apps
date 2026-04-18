@@ -237,7 +237,11 @@ class MainViewModel(
     }
     suspend fun saveAndPreview(): Long? {
         val state = _editState.value
-        if (state.name.isBlank() && state.url.isBlank()) return null
+        AppLogger.i("MainViewModel", "saveAndPreview started: name='${state.name}', type=${state.appType}")
+        if (state.name.isBlank() && state.url.isBlank()) {
+            AppLogger.w("MainViewModel", "saveAndPreview: name and url are both blank")
+            return null
+        }
 
         return try {
             val iconPath = state.savedIconPath ?: state.iconUri?.toString()
@@ -251,15 +255,18 @@ class MainViewModel(
                 iconPath = iconPath
             )
 
-            if (_currentApp.value != null) {
+            val savedId = if (_currentApp.value != null) {
                 repository.updateWebApp(webApp)
+                AppLogger.i("MainViewModel", "saveAndPreview: updated existing app id=${webApp.id}")
                 _currentApp.value = webApp
                 webApp.id
             } else {
-                val savedId = repository.createWebApp(webApp)
-                _currentApp.value = webApp.copy(id = savedId)
-                savedId
+                val id = repository.createWebApp(webApp)
+                AppLogger.i("MainViewModel", "saveAndPreview: created new app id=$id")
+                _currentApp.value = webApp.copy(id = id)
+                id
             }
+            savedId
         } catch (e: Exception) {
             AppLogger.e("MainViewModel", "saveAndPreview failed", e)
             null

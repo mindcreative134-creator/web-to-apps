@@ -28,13 +28,14 @@ enum class AppLanguage(
     val locale: Locale,
     val isRtl: Boolean = false
 ) {
-    CHINESE("zh", "Chinese", "中文", Locale.CHINESE),
     ENGLISH("en", "English", "English", Locale.ENGLISH),
-    ARABIC("ar", "Arabic", "العربية", Locale.forLanguageTag("ar"), isRtl = true);
-    
+    CHINESE("zh", "Chinese", "中文", Locale.CHINESE),
+    ARABIC("ar", "Arabic", "العربية", Locale("ar"), true),
+    HINDI("hi", "Hindi", "हिन्दी", Locale("hi"));
+
     companion object {
         fun fromCode(code: String): AppLanguage {
-            return entries.find { it.code == code } ?: CHINESE
+            return entries.find { it.code == code } ?: ENGLISH
         }
     }
 }
@@ -79,8 +80,7 @@ class LanguageManager(private val context: Context) {
     private fun getSystemLanguageCode(): String {
         val systemLocale = Locale.getDefault()
         return when {
-            systemLocale.language == "zh" -> "zh"
-            systemLocale.language == "ar" -> "ar"
+            systemLocale.language == "hi" -> "hi"
             else -> "en"
         }
     }

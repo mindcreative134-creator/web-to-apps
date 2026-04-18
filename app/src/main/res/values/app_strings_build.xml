@@ -1,2 +1,72 @@
 <?xml version='1.0' encoding='utf-8'?>
-<resources><string name="appstr_build_anti_debug_protection" formatted="false">反调试保护</string><string name="appstr_build_anti_debug_protection_hint" formatted="false">检测并阻止调试器附加</string><string name="appstr_build_anti_tamper_protection" formatted="false">防篡改保护</string><string name="appstr_build_anti_tamper_protection_hint" formatted="false">检测代码和资源修改</string><string name="appstr_build_auto_detect" formatted="false">自动识别</string><string name="appstr_build_auto_detect_category_hint" formatted="false">让 AI 根据需求自动选择分类</string><string name="appstr_build_bgm_encryption" formatted="false">背景音乐</string><string name="appstr_build_bgm_encryption_hint" formatted="false">加密 BGM 文件</string><string name="appstr_build_btn_build" formatted="false">构建</string><string name="appstr_build_btn_cancel" formatted="false">取消</string><string name="appstr_build_btn_clear_cache" formatted="false">清理缓存</string><string name="appstr_build_btn_confirm" formatted="false">确认</string><string name="appstr_build_btn_create" formatted="false">创建应用</string><string name="appstr_build_btn_delete" formatted="false">删除</string><string name="appstr_build_btn_edit" formatted="false">编辑</string><string name="appstr_build_btn_export" formatted="false">导出APK</string><string name="appstr_build_btn_import" formatted="false">导入</string><string name="appstr_build_btn_launch" formatted="false">启动</string><string name="appstr_build_btn_ok" formatted="false">确定</string><string name="appstr_build_btn_preview" formatted="false">预览</string><string name="appstr_build_btn_reset" formatted="false">重置</string><string name="appstr_build_btn_retry" formatted="false">重试</string><string name="appstr_build_btn_save" formatted="false">保存</string><string name="appstr_build_btn_shortcut" formatted="false">创建快捷方式</string><string name="appstr_build_btn_start_build" formatted="false">开始构建</string><string name="appstr_build_config_file_encryption" formatted="false">配置文件</string><string name="appstr_build_config_file_encryption_hint" formatted="false">加密 app_config.json</string><string name="appstr_build_current_signing_status" formatted="false">当前签名状态</string><string name="appstr_build_custom_signing" formatted="false">自定义签名</string><string name="appstr_build_custom_signing_desc" formatted="false">导入自己的签名证书，使打包的 APK 使用您的签名</string><string name="appstr_build_custom_signing_note" formatted="false">自定义签名为全局设置，导入后所有新打包的 APK 都将使用此证书签名</string><string name="appstr_build_edit_common_config" formatted="false">编辑通用配置</string><string name="appstr_build_edit_core_config" formatted="false">编辑核心配置</string><string name="appstr_build_encryption_description" formatted="false">加密后的资源无法被直接查看或提取，可有效保护您的代码和内容。加密基于 AES-256-GCM 算法，密钥与应用签名绑定。</string><string name="appstr_build_encryption_strength" formatted="false">加密强度</string><string name="appstr_build_export_keystore" formatted="false">导出签名文件</string><string name="appstr_build_export_password" formatted="false">导出密码</string><string name="appstr_build_export_password_hint" formatted="false">设置导出文件的密码</string><string name="appstr_build_help" formatted="false">帮助</string><string name="appstr_build_html_css_js_encryption" formatted="false">HTML/CSS/JS</string><string name="appstr_build_html_css_js_encryption_hint" formatted="false">加密网页代码文件</string><string name="appstr_build_i_understand" formatted="false">我知道了</string><string name="appstr_build_import_keystore" formatted="false">导入签名文件</string><string name="appstr_build_integrity_check" formatted="false">完整性检查</string><string name="appstr_build_integrity_check_hint" formatted="false">验证 APK 是否被篡改</string><string name="appstr_build_keystore_export_failed" formatted="false">签名证书导出失败</string><string name="appstr_build_keystore_export_success" formatted="false">签名证书导出成功</string><string name="appstr_build_keystore_import_failed" formatted="false">签名证书导入失败，请检查密码是否正确</string><string name="appstr_build_keystore_import_success" formatted="false">签名证书导入成功</string><string name="appstr_build_keystore_password" formatted="false">密钥库密码</string><string name="appstr_build_keystore_password_hint" formatted="false">请输入签名文件的密码</string><string name="appstr_build_keystore_remove_confirm" formatted="false">确定要删除自定义签名证书吗？删除后将使用自动生成的证书进行签名。</string><string name="appstr_build_keystore_remove_success" formatted="false">已删除自定义证书，将使用自动生成的证书</string><string name="appstr_build_media_file_encryption" formatted="false">媒体文件</string><string name="appstr_build_media_file_encryption_hint" formatted="false">加密图片和视频</string><string name="appstr_build_pbkdf2_iterations" formatted="false">PBKDF2 迭代</string><string name="appstr_build_remove_custom_keystore" formatted="false">删除自定义证书</string><string name="appstr_build_security_protection" formatted="false">安全保护</string><string name="appstr_build_security_warning" formatted="false">安全保护可能影响在模拟器或已 Root 设备上的运行</string><string name="appstr_build_select_module_category" formatted="false">选择模块分类</string><string name="appstr_build_signing_type_android_key_store" formatted="false">Android 系统密钥库</string><string name="appstr_build_signing_type_auto_generated" formatted="false">自动生成的证书</string><string name="appstr_build_signing_type_custom" formatted="false">自定义证书</string><string name="appstr_build_splash_encryption" formatted="false">启动画面</string><string name="appstr_build_splash_encryption_hint" formatted="false">加密启动画面资源</string><string name="appstr_build_string_obfuscation" formatted="false">字符串混淆</string><string name="appstr_build_string_obfuscation_hint" formatted="false">混淆敏感字符串（实验性）</string><string name="appstr_build_supported_keystore_formats" formatted="false">支持 .p12 / .pfx / .jks / .keystore 格式</string><string name="appstr_build_usage_help" formatted="false">使用帮助</string></resources>
+<resources>
+    <string name="appstr_build_anti_debug_protection" formatted="false">Anti-Debug Protection</string>
+    <string name="appstr_build_anti_debug_protection_hint" formatted="false">Detect and block debugger attachments</string>
+    <string name="appstr_build_anti_tamper_protection" formatted="false">Anti-Tamper Protection</string>
+    <string name="appstr_build_anti_tamper_protection_hint" formatted="false">Detect code and resource modifications</string>
+    <string name="appstr_build_auto_detect" formatted="false">Auto Detect</string>
+    <string name="appstr_build_auto_detect_category_hint" formatted="false">Let AI automatically select category based on requirement</string>
+    <string name="appstr_build_bgm_encryption" formatted="false">BGM Encryption</string>
+    <string name="appstr_build_bgm_encryption_hint" formatted="false">Encrypt BGM files</string>
+    <string name="appstr_build_btn_build" formatted="false">Build</string>
+    <string name="appstr_build_btn_cancel" formatted="false">Cancel</string>
+    <string name="appstr_build_btn_clear_cache" formatted="false">Clear Cache</string>
+    <string name="appstr_build_btn_confirm" formatted="false">Confirm</string>
+    <string name="appstr_build_btn_create" formatted="false">Create App</string>
+    <string name="appstr_build_btn_delete" formatted="false">Delete</string>
+    <string name="appstr_build_btn_edit" formatted="false">Edit</string>
+    <string name="appstr_build_btn_export" formatted="false">Export APK</string>
+    <string name="appstr_build_btn_import" formatted="false">Import</string>
+    <string name="appstr_build_btn_launch" formatted="false">Launch</string>
+    <string name="appstr_build_btn_ok" formatted="false">OK</string>
+    <string name="appstr_build_btn_preview" formatted="false">Preview</string>
+    <string name="appstr_build_btn_reset" formatted="false">Reset</string>
+    <string name="appstr_build_btn_retry" formatted="false">Retry</string>
+    <string name="appstr_build_btn_save" formatted="false">Save</string>
+    <string name="appstr_build_btn_shortcut" formatted="false">Create Shortcut</string>
+    <string name="appstr_build_btn_start_build" formatted="false">Start Build</string>
+    <string name="appstr_build_config_file_encryption" formatted="false">Config File Encryption</string>
+    <string name="appstr_build_config_file_encryption_hint" formatted="false">Encrypt app_config.json</string>
+    <string name="appstr_build_current_signing_status" formatted="false">Current Signing Status</string>
+    <string name="appstr_build_custom_signing" formatted="false">Custom Signing</string>
+    <string name="appstr_build_custom_signing_desc" formatted="false">Import your own signature certificate to sign packed APKs</string>
+    <string name="appstr_build_custom_signing_note" formatted="false">Custom signing is a global setting; all new APKs will use this certificate once imported</string>
+    <string name="appstr_build_edit_common_config" formatted="false">Edit Common Config</string>
+    <string name="appstr_build_edit_core_config" formatted="false">Edit Core Config</string>
+    <string name="appstr_build_encryption_description" formatted="false">Encrypted resources cannot be directly viewed or extracted, effectively protecting your code and content. Encryption uses the AES-256-GCM algorithm, with the key bound to the app signature.</string>
+    <string name="appstr_build_encryption_strength" formatted="false">Encryption Strength</string>
+    <string name="appstr_build_export_keystore" formatted="false">Export Keystore</string>
+    <string name="appstr_build_export_password" formatted="false">Export Password</string>
+    <string name="appstr_build_export_password_hint" formatted="false">Set a password for the export file</string>
+    <string name="appstr_build_help" formatted="false">Help</string>
+    <string name="appstr_build_html_css_js_encryption" formatted="false">HTML/CSS/JS Encryption</string>
+    <string name="appstr_build_html_css_js_encryption_hint" formatted="false">Encrypt web code files</string>
+    <string name="appstr_build_i_understand" formatted="false">I understand</string>
+    <string name="appstr_build_import_keystore" formatted="false">Import Keystore</string>
+    <string name="appstr_build_integrity_check" formatted="false">Integrity Check</string>
+    <string name="appstr_build_integrity_check_hint" formatted="false">Verify if the APK has been tampered with</string>
+    <string name="appstr_build_keystore_export_failed" formatted="false">Keystore export failed</string>
+    <string name="appstr_build_keystore_export_success" formatted="false">Keystore exported successfully</string>
+    <string name="appstr_build_keystore_import_failed" formatted="false">Keystore import failed; please check the password</string>
+    <string name="appstr_build_keystore_import_success" formatted="false">Keystore imported successfully</string>
+    <string name="appstr_build_keystore_password" formatted="false">Keystore Password</string>
+    <string name="appstr_build_keystore_password_hint" formatted="false">Enter the password for the signature file</string>
+    <string name="appstr_build_keystore_remove_confirm" formatted="false">Are you sure you want to remove the custom signature certificate? An auto-generated certificate will be used instead.</string>
+    <string name="appstr_build_keystore_remove_success" formatted="false">Custom certificate removed; using auto-generated certificate</string>
+    <string name="appstr_build_media_file_encryption" formatted="false">Media File Encryption</string>
+    <string name="appstr_build_media_file_encryption_hint" formatted="false">Encrypt images and videos</string>
+    <string name="appstr_build_pbkdf2_iterations" formatted="false">PBKDF2 Iterations</string>
+    <string name="appstr_build_remove_custom_keystore" formatted="false">Remove Custom Keystore</string>
+    <string name="appstr_build_security_protection" formatted="false">Security Protection</string>
+    <string name="appstr_build_security_warning" formatted="false">Security protection might affect running on emulators or rooted devices</string>
+    <string name="appstr_build_select_module_category" formatted="false">Select Module Category</string>
+    <string name="appstr_build_signing_type_android_key_store" formatted="false">Android Keystore</string>
+    <string name="appstr_build_signing_type_auto_generated" formatted="false">Auto-generated Certificate</string>
+    <string name="appstr_build_signing_type_custom" formatted="false">Custom Certificate</string>
+    <string name="appstr_build_splash_encryption" formatted="false">Splash Screen Encryption</string>
+    <string name="appstr_build_splash_encryption_hint" formatted="false">Encrypt splash screen resources</string>
+    <string name="appstr_build_string_obfuscation" formatted="false">String Obfuscation</string>
+    <string name="appstr_build_string_obfuscation_hint" formatted="false">Obfuscate sensitive strings (Experimental)</string>
+    <string name="appstr_build_supported_keystore_formats" formatted="false">Supports .p12 / .pfx / .jks / .keystore formats</string>
+    <string name="appstr_build_usage_help" formatted="false">Usage Help</string>
+</resources>

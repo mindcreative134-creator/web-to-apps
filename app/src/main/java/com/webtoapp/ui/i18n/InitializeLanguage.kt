@@ -14,7 +14,7 @@ import org.koin.compose.koinInject
 fun InitializeLanguage() {
     val languageManager: LanguageManager = koinInject()
     val extensionManager: ExtensionManager = koinInject()
-    val language by languageManager.currentLanguageFlow.collectAsState(initial = AppLanguage.CHINESE)
+    val language by languageManager.currentLanguageFlow.collectAsState(initial = AppLanguage.ENGLISH)
 
     LaunchedEffect(language) {
         AppStringsProvider.syncLanguage(language)

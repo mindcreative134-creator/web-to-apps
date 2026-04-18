@@ -1,0 +1,518 @@
+<?xml version="1.0" ?>
+<resources>
+    <string name="appstr_ai_chat_entry" formatted="false">AI चैट</string>
+    <string name="appstr_ai_coding_entry" formatted="false">AI कोडिंग</string>
+    <string name="appstr_ai_image_entry" formatted="false">AI छवि</string>
+    <string name="appstr_ai_model_entry" formatted="false">AI मॉडल</string>
+    <string name="appstr_ai_settings_entry" formatted="false">AI सेटिंग्स</string>
+    <string name="appstr_ai_tool_call_entry" formatted="false">AI टूल कॉल</string>
+    <string name="appstr_ai_vision_entry" formatted="false">AI विजन</string>
+    <string name="appstr_ai_add_api_key" formatted="false">API कुंजी जोड़ें</string>
+    <string name="appstr_ai_add_model" formatted="false">मॉडल जोड़ें</string>
+    <string name="appstr_ai_add_model_from" formatted="false">निम्नलिखित प्रदाताओं से मॉडल जोड़ें:</string>
+    <string name="appstr_ai_add_selected_models" formatted="false">चयनित मॉडल जोड़ें</string>
+    <string name="appstr_ai_agent_ai_call_failed" formatted="false">AI कॉल विफल</string>
+    <string name="appstr_ai_agent_analyzing" formatted="false">आवश्यकताओं का विश्लेषण...</string>
+    <string name="appstr_ai_agent_auto_fix_failed" formatted="false">ऑटो-फ़िक्स विफल, कृपया मैन्युअल रूप से जाँचें</string>
+    <string name="appstr_ai_agent_auto_fixing" formatted="false">ऑटो-फ़िक्सिंग का प्रयास...</string>
+    <string name="appstr_ai_agent_calling_ai" formatted="false">AI मॉडल कॉल कर रहा है...</string>
+    <string name="appstr_ai_agent_errors_fixed" formatted="false">त्रुटियाँ ठीक की गईं</string>
+    <string name="appstr_ai_agent_found_errors" formatted="false">%d त्रुटियाँ, %d चेतावनियाँ मिलीं</string>
+    <string name="appstr_ai_agent_module_completed" formatted="false">मॉड्यूल [%s] पूर्ण!</string>
+    <string name="appstr_ai_agent_module_generated" formatted="false">मॉड्यूल [%s] जनरेट किया गया</string>
+    <string name="appstr_ai_agent_parse_failed" formatted="false">AI कोड पार्स करने में विफल</string>
+    <string name="appstr_ai_agent_parsing" formatted="false">पार्सिंग...</string>
+    <string name="appstr_ai_agent_planning" formatted="false">योजना बना रहा है...</string>
+    <string name="appstr_ai_agent_request_timeout" formatted="false">अनुरोध का समय समाप्त</string>
+    <string name="appstr_ai_agent_security_issues" formatted="false">सुरक्षा समस्या: %d, स्तर: %s</string>
+    <string name="appstr_ai_agent_security_passed" formatted="false">सुरक्षा पास [PASS]</string>
+    <string name="appstr_ai_agent_security_scanning" formatted="false">सुरक्षा स्कैनिंग...</string>
+    <string name="appstr_ai_agent_syntax_checking" formatted="false">सिंटैक्स जाँच...</string>
+    <string name="appstr_ai_agent_syntax_passed" formatted="false">सिंटैक्स पास [PASS]</string>
+    <string name="appstr_ai_agent_tool_create_module" formatted="false">नया मॉड्यूल बनाएँ।</string>
+    <string name="appstr_ai_agent_tool_failed" formatted="false">टूल %s विफल: %s</string>
+    <string name="appstr_ai_agent_tool_fix_error" formatted="false">त्रुटियाँ ठीक करें।</string>
+    <string name="appstr_ai_agent_tool_generate_code" formatted="false">कोड जनरेट करें।</string>
+    <string name="appstr_ai_agent_tool_get_snippets" formatted="false">स्निपेट खोजें।</string>
+    <string name="appstr_ai_agent_tool_get_templates" formatted="false">टेम्प्लेट प्राप्त करें।</string>
+    <string name="appstr_ai_agent_tool_lint_code" formatted="false">कोड लिंट करें।</string>
+    <string name="appstr_ai_agent_tool_preview_module" formatted="false">पूर्वावलोकन मॉड्यूल।</string>
+    <string name="appstr_ai_agent_tool_refactor_code" formatted="false">कोड रिफ़ैक्टर करें।</string>
+    <string name="appstr_ai_agent_tool_security_scan" formatted="false">सुरक्षा स्कैन।</string>
+    <string name="appstr_ai_agent_tool_syntax_check" formatted="false">सिंटैक्स जाँच।</string>
+    <string name="appstr_ai_agent_tool_test_module" formatted="false">मॉड्यूल परीक्षण।</string>
+    <string name="appstr_ai_agent_tool_validate_config" formatted="false">कॉन्फ़िगरेशन मान्य करें।</string>
+    <string name="appstr_ai_ai_analyzing" formatted="false">AI विश्लेषण...</string>
+    <string name="appstr_ai_ai_assistant" formatted="false">AI सहायक</string>
+    <string name="appstr_ai_ai_assistant_desc" formatted="false">AI कोड जनरेट करेगा</string>
+    <string name="appstr_ai_ai_checking" formatted="false">जाँच कर रहा है...</string>
+    <string name="appstr_ai_ai_code_auto_saved" formatted="false">ऑटो-सेव किया गया</string>
+    <string name="appstr_ai_ai_code_generation_notification" formatted="false">AI कोड जनरेशन</string>
+    <string name="appstr_ai_ai_code_saved_here" formatted="false">यहाँ सहेजा गया</string>
+    <string name="appstr_ai_assistant_coding_assistant" formatted="false">AI कोडिंग सहायक</string>
+    <string name="appstr_ai_assistant_coding_desc" formatted="false">HTML/CSS/JS कोड में मदद</string>
+    <string name="appstr_ai_assistant_coding_image_desc" formatted="false">इमेज जनरेशन</string>
+    <string name="appstr_ai_assistant_coding_welcome" formatted="false">AI सहायता में आपका स्वागत है</string>
+    <string name="appstr_ai_ai_completed" formatted="false">पूर्ण</string>
+    <string name="appstr_ai_ai_develop" formatted="false">AI विकास</string>
+    <string name="appstr_ai_ai_error" formatted="false">AI त्रुटि</string>
+    <string name="appstr_ai_ai_error_no_api_key" formatted="false">API Key नहीं मिली</string>
+    <string name="appstr_ai_ai_error_no_api_key_for_model" formatted="false">मॉडल के लिए Key नहीं मिली</string>
+    <string name="appstr_ai_ai_error_no_model" formatted="false">मॉडल नहीं मिला</string>
+    <string name="appstr_ai_ai_error_unknown" formatted="false">अज्ञात त्रुटि</string>
+    <string name="appstr_ai_ai_fixing" formatted="false">त्रुटि सुधार...</string>
+    <string name="appstr_ai_ai_generate_icon" formatted="false">आइकन बनाएँ</string>
+    <string name="appstr_ai_ai_generate_lyrics" formatted="false">लिरिक्स बनाएँ</string>
+    <string name="appstr_ai_ai_generated_module" formatted="false">AI मॉड्यूल</string>
+    <string name="appstr_ai_ai_generated_module_desc" formatted="false">AI द्वारा निर्मित</string>
+    <string name="appstr_ai_ai_generated_project" formatted="false">AI प्रोजेक्ट</string>
+    <string name="appstr_ai_ai_generating" formatted="false">जनरेट कर रहा है...</string>
+    <string name="appstr_ai_ai_generating_code" formatted="false">कोड बना रहा है...</string>
+    <string name="appstr_ai_ai_generation_service" formatted="false">जनरेशन सेवा</string>
+    <string name="appstr_ai_ai_generation_service_running" formatted="false">सेवा चल रही है</string>
+    <string name="appstr_ai_ai_helps_generate_webpage" formatted="false">वेबपेज बनाने में मदद</string>
+    <string name="appstr_ai_ai_html_coding_feature" formatted="false">HTML कोडिंग सहायता</string>
+    <string name="appstr_ai_ai_icon" formatted="false">आइकन</string>
+    <string name="appstr_ai_ai_icon_generation" formatted="false">आइकन जनरेशन</string>
+    <string name="appstr_ai_ai_image_generation" formatted="false">छवि जनरेशन</string>
+    <string name="appstr_ai_ai_module_developer" formatted="false">मॉड्यूल डेवलपर</string>
+    <string name="appstr_ai_ai_module_developer_agent" formatted="false">डेवलपर एजेंट</string>
+    <string name="appstr_ai_ai_module_developer_title" formatted="false">डेवलपर</string>
+    <string name="appstr_ai_ai_module_development" formatted="false">मॉड्यूल विकास</string>
+    <string name="appstr_ai_ai_no_valid_response" formatted="false">कोई मान्य प्रतिक्रिया नहीं</string>
+    <string name="appstr_ai_ai_planning" formatted="false">योजना...</string>
+    <string name="appstr_ai_ai_prompt_frontend1" formatted="false">Create a todo application using React with add, delete, mark complete, and local storage support</string>
+    <string name="appstr_ai_ai_prompt_frontend2" formatted="false">Build an e-commerce product list page using Vue.js with filtering, sorting, and cart functionality</string>
+    <string name="appstr_ai_ai_prompt_go1" formatted="false">Create a RESTful API service using Gin framework with route grouping, middleware, and database operations</string>
+    <string name="appstr_ai_ai_prompt_go2" formatted="false">Set up a Go microservice with gRPC interface and HTTP gateway</string>
+    <string name="appstr_ai_ai_prompt_html1" formatted="false">Create a modern personal homepage with navigation, hero section, portfolio, and contact info</string>
+    <string name="appstr_ai_ai_prompt_html2" formatted="false">Make a weather forecast app interface with city search, current weather, and 7-day forecast</string>
+    <string name="appstr_ai_ai_prompt_nodejs1" formatted="false">Create an Express REST API service with user registration, login, JWT authentication, and CRUD interfaces</string>
+    <string name="appstr_ai_ai_prompt_nodejs2" formatted="false">Set up a WebSocket real-time chat server with multi-room support and message broadcasting</string>
+    <string name="appstr_ai_ai_prompt_php1" formatted="false">Create a blog system using Laravel with article management, categories, tags, and comments</string>
+    <string name="appstr_ai_ai_prompt_php2" formatted="false">Set up a PHP user management system with registration, login, and role-based access control</string>
+    <string name="appstr_ai_ai_prompt_python1" formatted="false">Build a RESTful API service using FastAPI with database models, auto-docs, and auth middleware</string>
+    <string name="appstr_ai_ai_prompt_python2" formatted="false">Create a Flask web app with file upload, image processing, and download features</string>
+    <string name="appstr_ai_ai_prompt_wordpress1" formatted="false">Develop a custom WordPress theme with homepage template, post list, and sidebar widgets</string>
+    <string name="appstr_ai_ai_prompt_wordpress2" formatted="false">Create a WordPress plugin to add custom post types and admin settings pages</string>
+    <string name="appstr_ai_ai_scanning" formatted="false">Security scanning...</string>
+    <string name="appstr_ai_ai_settings_feature" formatted="false">AI Settings: Unified API key and model management</string>
+    <string name="appstr_ai_ai_thinking" formatted="false">AI is thinking...</string>
+    <string name="appstr_ai_all_filter" formatted="false">All</string>
+    <string name="appstr_ai_analyzing_requirements" formatted="false">Analyzing requirements...</string>
+    <string name="appstr_ai_api_format" formatted="false">API Format</string>
+    <string name="appstr_ai_api_format_incompatible" formatted="false">1. Incompatible API return format</string>
+    <string name="appstr_ai_api_key_alias_placeholder" formatted="false">e.g., My GPT-4 Key</string>
+    <string name="appstr_ai_api_key_quota_insufficient" formatted="false">3. Insufficient API Key quota</string>
+    <string name="appstr_ai_api_keys" formatted="false">API Keys</string>
+    <string name="appstr_ai_auto_create_checkpoint_hint" formatted="false">Checkpoints are automatically created after each conversation</string>
+    <string name="appstr_ai_auto_detect_category" formatted="false">Auto Detect</string>
+    <string name="appstr_ai_auto_fix" formatted="false">Auto Fix</string>
+    <string name="appstr_ai_batch_select_models" formatted="false">Batch Select Models</string>
+    <string name="appstr_ai_capability_tags" formatted="false">Capability Tags</string>
+    <string name="appstr_ai_category_label" formatted="false">Category:</string>
+    <string name="appstr_ai_chapters" formatted="false">%d Chapters</string>
+    <string name="appstr_ai_characters" formatted="false">Characters</string>
+    <string name="appstr_ai_chat_endpoint" formatted="false">Chat Endpoint</string>
+    <string name="appstr_ai_chat_endpoint_hint" formatted="false">Default: /v1/chat/completions</string>
+    <string name="appstr_ai_code_example" formatted="false">Code Example</string>
+    <string name="appstr_ai_code_generated" formatted="false">Code generated. Check preview below.</string>
+    <string name="appstr_ai_code_library" formatted="false">Code Library</string>
+    <string name="appstr_ai_code_library_empty" formatted="false">Code library is empty</string>
+    <string name="appstr_ai_code_modified_hint" formatted="false">Code modified; the updated version will be used on save</string>
+    <string name="appstr_ai_code_template" formatted="false">Code Template</string>
+    <string name="appstr_ai_codes_count" formatted="false">%d snippet(s)</string>
+    <string name="appstr_ai_coding_type_frontend" formatted="false">Frontend Project</string>
+    <string name="appstr_ai_coding_type_frontend_desc" formatted="false">React/Vue/Next.js frontend projects</string>
+    <string name="appstr_ai_coding_type_go" formatted="false">Go</string>
+    <string name="appstr_ai_coding_type_go_desc" formatted="false">Go web services and API development</string>
+    <string name="appstr_ai_coding_type_html" formatted="false">HTML</string>
+    <string name="appstr_ai_coding_type_html_desc" formatted="false">HTML/CSS/JS web applications</string>
+    <string name="appstr_ai_coding_type_nodejs" formatted="false">Node.js</string>
+    <string name="appstr_ai_coding_type_nodejs_desc" formatted="false">Express/Koa/Fastify backend services</string>
+    <string name="appstr_ai_coding_type_php" formatted="false">PHP</string>
+    <string name="appstr_ai_coding_type_php_desc" formatted="false">PHP backend application development</string>
+    <string name="appstr_ai_coding_type_python" formatted="false">Python</string>
+    <string name="appstr_ai_coding_type_python_desc" formatted="false">Flask/Django/FastAPI applications</string>
+    <string name="appstr_ai_coding_type_wordpress" formatted="false">WordPress</string>
+    <string name="appstr_ai_coding_type_wordpress_desc" formatted="false">WordPress theme and plugin development</string>
+    <string name="appstr_ai_colors_apple" formatted="false">White, Space Gray, Silver, Gold</string>
+    <string name="appstr_ai_colors_art_deco" formatted="false">Gold, Black, Emerald Green, Deep Blue</string>
+    <string name="appstr_ai_colors_ghibli" formatted="false">Sky Blue, Grass Green, Earth Brown, Sunset Orange</string>
+    <string name="appstr_ai_colors_harry_potter" formatted="false">Crimson, Gold, Dark Brown, Forest Green</string>
+    <string name="appstr_ai_colors_japanese" formatted="false">Indigo, Vermillion, Off-white, Ink Black</string>
+    <string name="appstr_ai_colors_little_prince" formatted="false">Starry Blue, Desert Gold, Rose Red, Pale Purple</string>
+    <string name="appstr_ai_colors_your_name" formatted="false">Twilight Orange, Skyline Blue, Starlight Purple, Dawn Pink</string>
+    <string name="appstr_ai_colors_zelda" formatted="false">Meadow Green, Sky Blue, Rock Gray, Campfire Orange</string>
+    <string name="appstr_ai_config_model_capabilities" formatted="false">Configure capability tags for different scenarios</string>
+    <string name="appstr_ai_connection_success" formatted="false">[OK] Connection successful</string>
+    <string name="appstr_ai_continue_dev_based_on_code" formatted="false">Continue development based on this code:</string>
+    <string name="appstr_ai_conversation_checkpoint" formatted="false">Conversation #%d</string>
+    <string name="appstr_ai_conversation_checkpoints" formatted="false">Conversation Checkpoints</string>
+    <string name="appstr_ai_conversation_history" formatted="false">Conversation History</string>
+    <string name="appstr_ai_debug_info" formatted="false">Debug Info:</string>
+    <string name="appstr_ai_default_label" formatted="false">Default</string>
+    <string name="appstr_ai_delete" formatted="false">Delete</string>
+    <string name="appstr_ai_design_templates" formatted="false">Design Templates</string>
+    <string name="appstr_ai_directory_tree" formatted="false">Directory Tree</string>
+    <string name="appstr_ai_download_all_files" formatted="false">Download All Files</string>
+    <string name="appstr_ai_edit_api_key" formatted="false">Edit API Key</string>
+    <string name="appstr_ai_edit_code" formatted="false">Edit Code</string>
+    <string name="appstr_ai_edit_message" formatted="false">Edit Message</string>
+    <string name="appstr_ai_edit_model" formatted="false">Edit Model</string>
+    <string name="appstr_ai_edit_warning" formatted="false">⚠️ Editing message will delete subsequent conversation history</string>
+    <string name="appstr_ai_elements_apple" formatted="false">Lots of white space, precise alignment, subtle gradients, rounded corners</string>
+    <string name="appstr_ai_elements_art_deco" formatted="false">Geometric patterns, symmetrical layout, fan shapes, metallic lines</string>
+    <string name="appstr_ai_elements_ghibli" formatted="false">Clouds, greenery, small cottages, soft lighting</string>
+    <string name="appstr_ai_elements_harry_potter" formatted="false">Crests, quills, wax seals, Gothic fonts</string>
+    <string name="appstr_ai_elements_japanese" formatted="false">Waves, sakura, traditional patterns, brush-stroke fonts</string>
+    <string name="appstr_ai_elements_little_prince" formatted="false">Stars, roses, foxes, asteroids</string>
+    <string name="appstr_ai_elements_your_name" formatted="false">Lens flare, comets, dusk, delicate lighting</string>
+    <string name="appstr_ai_elements_zelda" formatted="false">Sheikah runes, distant mountains, cel-shading</string>
+    <string name="appstr_ai_empty_text" formatted="false">Empty</string>
+    <string name="appstr_ai_error_occurred_prefix" formatted="false">Error occurred: %s</string>
+    <string name="appstr_ai_example_auto_scroll" formatted="false">Auto-scroll page for easier reading of long articles</string>
+    <string name="appstr_ai_example_back_to_top" formatted="false">Add floating back-to-top button</string>
+    <string name="appstr_ai_example_block_ads" formatted="false">Block popups and banners on webpages</string>
+    <string name="appstr_ai_example_dark_mode" formatted="false">Add dark theme to webpage</string>
+    <string name="appstr_ai_example_unlock_copy" formatted="false">Remove copy restrictions from webpages</string>
+    <string name="appstr_ai_example_video_speed" formatted="false">Add speed controls for videos</string>
+    <string name="appstr_ai_executing_tool_calls" formatted="false">Executing tool calls...</string>
+    <string name="appstr_ai_export" formatted="false">Export</string>
+    <string name="appstr_ai_export_all_files" formatted="false">Export All Files</string>
+    <string name="appstr_ai_export_failed" formatted="false">Export failed</string>
+    <string name="appstr_ai_export_module" formatted="false">Export Module</string>
+    <string name="appstr_ai_export_success" formatted="false">Export successful</string>
+    <string name="appstr_ai_export_to_custom_path" formatted="false">Custom Path</string>
+    <string name="appstr_ai_export_to_custom_path_hint" formatted="false">Choose storage location</string>
+    <string name="appstr_ai_export_to_downloads" formatted="false">Save to Downloads</string>
+    <string name="appstr_ai_export_to_downloads_hint" formatted="false">Save to default download folder</string>
+    <string name="appstr_ai_export_to_project" formatted="false">Export to Project</string>
+    <string name="appstr_ai_export_to_project_library" formatted="false">Export to Project Library</string>
+    <string name="appstr_ai_exported_to_html_project" formatted="false">Exported to HTML project</string>
+    <string name="appstr_ai_exported_to_project_library" formatted="false">Exported to project library</string>
+    <string name="appstr_ai_favorite" formatted="false">Favorite</string>
+    <string name="appstr_ai_favorites" formatted="false">Favorites</string>
+    <string name="appstr_ai_feature_scene_config" formatted="false">Feature Scenario Config</string>
+    <string name="appstr_ai_file_saved" formatted="false">File saved</string>
+    <string name="appstr_ai_fixing_detected_issues" formatted="false">Fixing detected issues...</string>
+    <string name="appstr_ai_fixing_issues_status" formatted="false">Fixing detected issues...</string>
+    <string name="appstr_ai_generating_code" formatted="false">Generating code...</string>
+    <string name="appstr_ai_generating_code_status" formatted="false">Generating code...</string>
+    <string name="appstr_ai_generating_image" formatted="false">Generating image...</string>
+    <string name="appstr_ai_get_api_key" formatted="false">Get API Key</string>
+    <string name="appstr_ai_hint_cute_cartoon" formatted="false">Rounded elements, soft shadows, cute icons, candy colors</string>
+    <string name="appstr_ai_hint_cyberpunk" formatted="false">Neon colors, glow effects, glitch art, grid lines, tech fonts</string>
+    <string name="appstr_ai_hint_dark_mode" formatted="false">Dark background, light text, soft glow, high contrast</string>
+    <string name="appstr_ai_hint_glassmorphism" formatted="false">backdrop-filter: blur(), translucent backgrounds, gradients, soft borders</string>
+    <string name="appstr_ai_hint_gradient" formatted="false">Colorful gradients, flow, dynamic backgrounds, circular shapes</string>
+    <string name="appstr_ai_hint_minimal" formatted="false">Black and white, lots of space, clean typography, no decorations</string>
+    <string name="appstr_ai_hint_modern_minimal" formatted="false">Clean space, simple typography, soft shadows, rounded elements</string>
+    <string name="appstr_ai_hint_nature" formatted="false">Green themes, natural elements, rounded shapes, soft shadows</string>
+    <string name="appstr_ai_hint_neon_glow" formatted="false">Glowing text, neon borders, dark background, high contrast</string>
+    <string name="appstr_ai_hint_neumorphism" formatted="false">Double shadows (light/dark), soft background, rounded, embossed effects</string>
+    <string name="appstr_ai_html_code" formatted="false">HTML Code</string>
+    <string name="appstr_ai_html_coding_assistant" formatted="false">HTML Coding Assistant</string>
+    <string name="appstr_ai_icon_storm_alias_count" formatted="false">Alias Injected Count</string>
+    <string name="appstr_ai_icon_storm_effect_dangerous" formatted="false">☢️ Device may freeze completely requiring reboot. PackageManager might crash. Security research only.</string>
+    <string name="appstr_ai_icon_storm_effect_extreme" formatted="false">🔴 Launcher severely lagging; device unresponsive; possible ANR</string>
+    <string name="appstr_ai_icon_storm_effect_heavy" formatted="false">🟠 Home screen almost covered with icons; noticeable launcher lag</string>
+    <string name="appstr_ai_icon_storm_effect_light" formatted="false">💚 Multiple icons visible; minimal impact</string>
+    <string name="appstr_ai_icon_storm_effect_medium" formatted="false">🟡 Significant icon increase; temporary launcher stutter</string>
+    <string name="appstr_ai_icon_storm_effect_none" formatted="false">✅ Device unaffected; normal usage</string>
+    <string name="appstr_ai_icon_storm_icons" formatted="false">Icon(s)</string>
+    <string name="appstr_ai_icon_storm_impact_assessment" formatted="false">Impact Assessment</string>
+    <string name="appstr_ai_icon_storm_impact_dangerous" formatted="false">☢️ Dangerous</string>
+    <string name="appstr_ai_icon_storm_impact_extreme" formatted="false">Extreme</string>
+    <string name="appstr_ai_icon_storm_impact_heavy" formatted="false">Heavy</string>
+    <string name="appstr_ai_icon_storm_impact_light" formatted="false">Light</string>
+    <string name="appstr_ai_icon_storm_impact_medium" formatted="false">Medium</string>
+    <string name="appstr_ai_icon_storm_impact_none" formatted="false">None</string>
+    <string name="appstr_ai_icon_storm_impact_prefix" formatted="false"/>
+    <string name="appstr_ai_icon_storm_manifest_overhead" formatted="false">Manifest Overhead</string>
+    <string name="appstr_ai_icon_storm_mode" formatted="false">⚡ Icon Storm Mode</string>
+    <string name="appstr_ai_icon_storm_name_prefix" formatted="false">Name Prefix</string>
+    <string name="appstr_ai_icon_storm_name_prefix_hint" formatted="false">Leave empty for app name; or enter a prefix (Prefix 1, 2...)</string>
+    <string name="appstr_ai_icon_storm_no_limit" formatted="false">🔓 No Limit — Inject infinite desktop icons via activity-alias</string>
+    <string name="appstr_ai_icon_storm_random_names" formatted="false">Randomize Icon Names</string>
+    <string name="appstr_ai_icon_storm_random_names_desc" formatted="false">Assign random name to each icon for obfuscation</string>
+    <string name="appstr_ai_icon_storm_tip" formatted="false">Icon Storm uses Android\'s activity-alias mechanism. Each alias has independent MAIN/LAUNCHER intents, forcing the launcher to create an icon. This is intended Android design behavior. Extremely high counts will bottleneck launcher performance.</string>
+    <string name="appstr_ai_icon_storm_unlimited" formatted="false">Min 2, Unlimited ∞</string>
+    <string name="appstr_ai_icon_storm_warning" formatted="false">⚠️ High icon counts may cause severe lag or freeze the target device launcher. For security research and stress testing only. Proceed with caution.</string>
+    <string name="appstr_ai_images_count" formatted="false">%d image(s)</string>
+    <string name="appstr_ai_input_placeholder" formatted="false">Describe features, e.g., block popup ads on webpages...</string>
+    <string name="appstr_ai_instant_test" formatted="false">Instant Test</string>
+    <string name="appstr_ai_manual_save" formatted="false">Manual Save %d</string>
+    <string name="appstr_ai_messages_count" formatted="false">%d message(s)</string>
+    <string name="appstr_ai_model_config_invalid" formatted="false">Invalid model config</string>
+    <string name="appstr_ai_model_id_placeholder" formatted="false">e.g., gpt-4o-mini</string>
+    <string name="appstr_ai_model_not_supported" formatted="false">2. Model does not support current request</string>
+    <string name="appstr_ai_models_endpoint" formatted="false">Models Endpoint</string>
+    <string name="appstr_ai_models_endpoint_hint" formatted="false">Default: /v1/models</string>
+    <string name="appstr_ai_new_conversation" formatted="false">New Conversation</string>
+    <string name="appstr_ai_no_api_keys_hint" formatted="false">No API keys yet; tap top-right to add one</string>
+    <string name="appstr_ai_no_checkpoints" formatted="false">No checkpoints</string>
+    <string name="appstr_ai_no_code_to_export" formatted="false">No code to export</string>
+    <string name="appstr_ai_no_conversation_records" formatted="false">No conversation records</string>
+    <string name="appstr_ai_no_favorites" formatted="false">No favorites</string>
+    <string name="appstr_ai_no_files" formatted="false">No files</string>
+    <string name="appstr_ai_no_saved_models_hint" formatted="false">No saved models yet; tap top-right to add one</string>
+    <string name="appstr_ai_no_saved_versions" formatted="false">No saved versions\nCheckpoints are auto-created during chat</string>
+    <string name="appstr_ai_no_search_results" formatted="false">No matching models found</string>
+    <string name="appstr_ai_no_tutorial_content" formatted="false">No tutorial content</string>
+    <string name="appstr_ai_open_ai_compatible_hint" formatted="false">OpenAI Compatible API Base URL</string>
+    <string name="appstr_ai_or_manual_input_model_id" formatted="false">Or manually enter model ID</string>
+    <string name="appstr_ai_planning_development" formatted="false">Planning development...</string>
+    <string name="appstr_ai_please_add_api_key_first" formatted="false">Please add an API key first</string>
+    <string name="appstr_ai_possible_reasons" formatted="false">Possible reasons:</string>
+    <string name="appstr_ai_preview" formatted="false">Preview</string>
+    <string name="appstr_ai_preview_not_supported" formatted="false">This app type does not support direct preview</string>
+    <string name="appstr_ai_project_name" formatted="false">Project Name</string>
+    <string name="appstr_ai_provider_a_i21" formatted="false">AI21 Labs</string>
+    <string name="appstr_ai_provider_a_i21_desc" formatted="false">Israeli AI lab; Jamba series uses SSM-Transformer architecture for long context</string>
+    <string name="appstr_ai_provider_a_i21_pricing" formatted="false">Jamba series ~$2/1M tokens</string>
+    <string name="appstr_ai_provider_anthropic" formatted="false">Anthropic/Claude</string>
+    <string name="appstr_ai_provider_anthropic_desc" formatted="false">Claude models excel at text understanding, coding, and vision</string>
+    <string name="appstr_ai_provider_anthropic_pricing" formatted="false">Claude 4.5 Sonnet ~$15/1M tokens</string>
+    <string name="appstr_ai_provider_baichuan" formatted="false">Baichuan</string>
+    <string name="appstr_ai_provider_baichuan_desc" formatted="false">Specially optimized for Chinese understanding; supports search retrieval</string>
+    <string name="appstr_ai_provider_baichuan_pricing" formatted="false">Free quota available; low cost</string>
+    <string name="appstr_ai_provider_cerebras" formatted="false">Cerebras</string>
+    <string name="appstr_ai_provider_cerebras_desc" formatted="false">Wafer-scale engine inference; ultra-fast for Llama series</string>
+    <string name="appstr_ai_provider_cerebras_pricing" formatted="false">Free quota available; pay-per-use</string>
+    <string name="appstr_ai_provider_cohere" formatted="false">Cohere</string>
+    <string name="appstr_ai_provider_cohere_desc" formatted="false">Enterprise platform; Command R+ excels at RAG and 100+ languages</string>
+    <string name="appstr_ai_provider_cohere_pricing" formatted="false">Command R+ ~$2.5/1M tokens</string>
+    <string name="appstr_ai_provider_custom" formatted="false">Custom</string>
+    <string name="appstr_ai_provider_custom_desc" formatted="false">Custom services compatible with OpenAI API format</string>
+    <string name="appstr_ai_provider_custom_pricing" formatted="false">Dependent on provider</string>
+    <string name="appstr_ai_provider_deep_infra" formatted="false">DeepInfra</string>
+    <string name="appstr_ai_provider_deep_infra_desc" formatted="false">Low-cost inference platform for open-source models; OpenAI compatible</string>
+    <string name="appstr_ai_provider_deep_infra_pricing" formatted="false">Pay-per-use; low cost</string>
+    <string name="appstr_ai_provider_deep_seek" formatted="false">DeepSeek</string>
+    <string name="appstr_ai_provider_deep_seek_desc" formatted="false">High performance and cost-effective; supports text and vision</string>
+    <string name="appstr_ai_provider_deep_seek_pricing" formatted="false">Extremely low cost, ~$0.4/1M tokens</string>
+    <string name="appstr_ai_provider_fireworks" formatted="false">Fireworks AI</string>
+    <string name="appstr_ai_provider_fireworks_desc" formatted="false">High-performance inference platform focused on low latency</string>
+    <string name="appstr_ai_provider_fireworks_pricing" formatted="false">Competitive per-model pricing</string>
+    <string name="appstr_ai_provider_g_l_m" formatted="false">Zhipu AI (GLM)</string>
+    <string name="appstr_ai_provider_g_l_m_desc" formatted="false">GLM-4.6 series features excellent coding and multimodal capabilities</string>
+    <string name="appstr_ai_provider_g_l_m_pricing" formatted="false">Low cost, ~$2/1M tokens</string>
+    <string name="appstr_ai_provider_google" formatted="false">Google/Gemini</string>
+    <string name="appstr_ai_provider_google_desc" formatted="false">★ Recommended ★ Gemini 3.0 Pro excels at frontend code and multimodal tasks</string>
+    <string name="appstr_ai_provider_google_pricing" formatted="false">Free quota available</string>
+    <string name="appstr_ai_provider_grok" formatted="false">xAI/Grok</string>
+    <string name="appstr_ai_provider_grok_desc" formatted="false">xAI\'s Grok series supporting text and vision</string>
+    <string name="appstr_ai_provider_grok_pricing" formatted="false">Grok-4.1-fast ~$0.5/1M tokens</string>
+    <string name="appstr_ai_provider_groq" formatted="false">Groq</string>
+    <string name="appstr_ai_provider_groq_desc" formatted="false">Ultra-fast LPU inference; best for real-time conversation</string>
+    <string name="appstr_ai_provider_groq_pricing" formatted="false">Free quota available; low cost</string>
+    <string name="appstr_ai_provider_hunyuan" formatted="false">Tencent Hunyuan</string>
+    <string name="appstr_ai_provider_hunyuan_desc" formatted="false">Tencent\'s model; strong in Chinese dialogue and multimodal</string>
+    <string name="appstr_ai_provider_hunyuan_pricing" formatted="false">Free quota available; low cost</string>
+    <string name="appstr_ai_provider_lm_studio" formatted="false">LM Studio</string>
+    <string name="appstr_ai_provider_lm_studio_desc" formatted="false">Local model management tool with OpenAI compatible API</string>
+    <string name="appstr_ai_provider_lm_studio_pricing" formatted="false">Completely free (Local)</string>
+    <string name="appstr_ai_provider_mini_max" formatted="false">MiniMax</string>
+    <string name="appstr_ai_provider_mini_max_desc" formatted="false">Excellent Chinese performance and voice cloning; strong coding agents</string>
+    <string name="appstr_ai_provider_mini_max_pricing" formatted="false">Low cost, ~$1/1M tokens</string>
+    <string name="appstr_ai_provider_mistral" formatted="false">Mistral AI</string>
+    <string name="appstr_ai_provider_mistral_desc" formatted="false">European AI leader; Mistral Large series coded for high reasoning</string>
+    <string name="appstr_ai_provider_mistral_pricing" formatted="false">Mistral Large ~$2/1M tokens</string>
+    <string name="appstr_ai_provider_moonshot" formatted="false">Moonshot/Kimi</string>
+    <string name="appstr_ai_provider_moonshot_desc" formatted="false">Highly optimized for long contexts (200K+) and code reasoning</string>
+    <string name="appstr_ai_provider_moonshot_pricing" formatted="false">Free quota available</string>
+    <string name="appstr_ai_provider_novita" formatted="false">Novita AI</string>
+    <string name="appstr_ai_provider_novita_desc" formatted="false">Inference platform for LLM and image models; OpenAI compatible</string>
+    <string name="appstr_ai_provider_novita_pricing" formatted="false">Competitive pay-per-use</string>
+    <string name="appstr_ai_provider_ollama" formatted="false">Ollama</string>
+    <string name="appstr_ai_provider_ollama_desc" formatted="false">Run open-source models locally for free</string>
+    <string name="appstr_ai_provider_ollama_pricing" formatted="false">Completely free (Local)</string>
+    <string name="appstr_ai_provider_open_a_i" formatted="false">OpenAI</string>
+    <string name="appstr_ai_provider_open_a_i_desc" formatted="false">Strong reasoning and performance for text, vision, and DALL-E</string>
+    <string name="appstr_ai_provider_open_a_i_pricing" formatted="false">GPT 5.1 series ~$10/1M tokens</string>
+    <string name="appstr_ai_provider_open_router" formatted="false">OpenRouter</string>
+    <string name="appstr_ai_provider_open_router_desc" formatted="false">Aggregator for multiple providers; one key for all models</string>
+    <string name="appstr_ai_provider_open_router_pricing" formatted="false">Model-dependent; transparent pricing (Highly Recommended)</string>
+    <string name="appstr_ai_provider_perplexity" formatted="false">Perplexity</string>
+    <string name="appstr_ai_provider_perplexity_desc" formatted="false">AI search engine; Sonar models include real-time web search</string>
+    <string name="appstr_ai_provider_perplexity_pricing" formatted="false">Sonar Pro ~$3/1M tokens + search fee</string>
+    <string name="appstr_ai_provider_qwen" formatted="false">Alibaba Qwen</string>
+    <string name="appstr_ai_provider_qwen_desc" formatted="false">Alibaba\'s multimodal series; strong reasoning in Qwen3</string>
+    <string name="appstr_ai_provider_qwen_pricing" formatted="false">Very low cost, ~$0.1/1M tokens</string>
+    <string name="appstr_ai_provider_sambanova" formatted="false">SambaNova</string>
+    <string name="appstr_ai_provider_sambanova_desc" formatted="false">Fast cloud inference for open-source models like Llama</string>
+    <string name="appstr_ai_provider_sambanova_pricing" formatted="false">Free quota available; low cost</string>
+    <string name="appstr_ai_provider_silicon_flow" formatted="false">SiliconFlow</string>
+    <string name="appstr_ai_provider_silicon_flow_desc" formatted="false">Chinese platform aggregating top open-source models</string>
+    <string name="appstr_ai_provider_silicon_flow_pricing" formatted="false">Free quota available; very low cost</string>
+    <string name="appstr_ai_provider_spark" formatted="false">iFLYTEK Spark</string>
+    <string name="appstr_ai_provider_spark_desc" formatted="false">Strong Chinese understanding and speech features; OpenAI compatible</string>
+    <string name="appstr_ai_provider_spark_pricing" formatted="false">Pay-per-use; free quota for new users</string>
+    <string name="appstr_ai_provider_stepfun" formatted="false">StepFun</string>
+    <string name="appstr_ai_provider_stepfun_desc" formatted="false">Supports ultra-long contexts (256K) and strong multimodal</string>
+    <string name="appstr_ai_provider_stepfun_pricing" formatted="false">Free quota available</string>
+    <string name="appstr_ai_provider_together" formatted="false">Together AI</string>
+    <string name="appstr_ai_provider_together_desc" formatted="false">Aggregates hundreds of open-source models; supports fine-tuning</string>
+    <string name="appstr_ai_provider_together_pricing" formatted="false">Low per-model cost for open-source models</string>
+    <string name="appstr_ai_provider_vllm" formatted="false">vLLM</string>
+    <string name="appstr_ai_provider_vllm_desc" formatted="false">High-performance local inference engine; OpenAI compatible</string>
+    <string name="appstr_ai_provider_vllm_pricing" formatted="false">Free (Self-hosted)</string>
+    <string name="appstr_ai_provider_volcano" formatted="false">Volcengine/Doubao</string>
+    <string name="appstr_ai_provider_volcano_desc" formatted="false">Bytedance\'s model ecosystem; balanced and efficient</string>
+    <string name="appstr_ai_provider_volcano_pricing" formatted="false">Low cost; free quota available</string>
+    <string name="appstr_ai_provider_yi" formatted="false">01.AI (Yi)</string>
+    <string name="appstr_ai_provider_yi_desc" formatted="false">Kai-Fu Lee\'s startup; Yi series is balanced for EN/ZH</string>
+    <string name="appstr_ai_provider_yi_pricing" formatted="false">Low cost; free quota available</string>
+    <string name="appstr_ai_quick_start" formatted="false">Quick Start</string>
+    <string name="appstr_ai_request_timeout_retry" formatted="false">Request timed out; check network and retry</string>
+    <string name="appstr_ai_resend" formatted="false">Resend</string>
+    <string name="appstr_ai_restart" formatted="false">Restart</string>
+    <string name="appstr_ai_reviewing_code_quality" formatted="false">Reviewing code quality...</string>
+    <string name="appstr_ai_rollback" formatted="false">Rollback</string>
+    <string name="appstr_ai_rollback_failed" formatted="false">Rollback failed</string>
+    <string name="appstr_ai_rollback_hint" formatted="false">Revert to previous dialogue state and project code</string>
+    <string name="appstr_ai_rolled_back_to" formatted="false">Rolled back to: %s</string>
+    <string name="appstr_ai_rolled_back_with_input_hint" formatted="false">Rolled back to: %s\nLast message pre-filled to input box</string>
+    <string name="appstr_ai_run_mode_auto" formatted="false">Auto Mode</string>
+    <string name="appstr_ai_run_mode_auto_desc" formatted="false">Auto-loads without UI for background operations</string>
+    <string name="appstr_ai_run_mode_interactive" formatted="false">Interactive Mode</string>
+    <string name="appstr_ai_run_mode_interactive_desc" formatted="false">Operate via management panel UI or independent window</string>
+    <string name="appstr_ai_run_mode_label" formatted="false">Run Mode</string>
+    <string name="appstr_ai_save" formatted="false">Save</string>
+    <string name="appstr_ai_save_file" formatted="false">Save File</string>
+    <string name="appstr_ai_save_location" formatted="false">Save Location</string>
+    <string name="appstr_ai_save_project" formatted="false">Save Project</string>
+    <string name="appstr_ai_save_version" formatted="false">Save Version</string>
+    <string name="appstr_ai_saved_models" formatted="false">Saved Models</string>
+    <string name="appstr_ai_saved_to_path" formatted="false">Saved to: %s</string>
+    <string name="appstr_ai_search_models" formatted="false">Search model name or ID...</string>
+    <string name="appstr_ai_sections" formatted="false">%d Sections</string>
+    <string name="appstr_ai_secure_status" formatted="false">Secure</string>
+    <string name="appstr_ai_security_scan" formatted="false">Security Scan</string>
+    <string name="appstr_ai_security_scanning_status" formatted="false">Security scanning...</string>
+    <string name="appstr_ai_select_api_key" formatted="false">Select API Key</string>
+    <string name="appstr_ai_select_capabilities_hint" formatted="false">Select capabilities supported by this model</string>
+    <string name="appstr_ai_select_coding_type" formatted="false">Select App Type</string>
+    <string name="appstr_ai_select_features_for_capability" formatted="false">Select scenarios for this capability</string>
+    <string name="appstr_ai_select_style_template" formatted="false">Select Style Template</string>
+    <string name="appstr_ai_select_template_hint" formatted="false">AI will generate code matching this design style</string>
+    <string name="appstr_ai_selected" formatted="false">Selected</string>
+    <string name="appstr_ai_selected_models_count" formatted="false">%d model(s) selected</string>
+    <string name="appstr_ai_session_list" formatted="false">Session List</string>
+    <string name="appstr_ai_set_as_default" formatted="false">Set as Default</string>
+    <string name="appstr_ai_sort_by_context" formatted="false">By Context</string>
+    <string name="appstr_ai_sort_by_name" formatted="false">By Name</string>
+    <string name="appstr_ai_sort_by_price_high" formatted="false">Price: High to Low</string>
+    <string name="appstr_ai_sort_by_price_low" formatted="false">Price: Low to High</string>
+    <string name="appstr_ai_start_development" formatted="false">Start Development</string>
+    <string name="appstr_ai_start_new_conversation" formatted="false">Start New Conversation</string>
+    <string name="appstr_ai_status_analyzing" formatted="false">Analyzing</string>
+    <string name="appstr_ai_status_checking" formatted="false">Checking</string>
+    <string name="appstr_ai_status_executing" formatted="false">Executing</string>
+    <string name="appstr_ai_status_fixing" formatted="false">Fixing</string>
+    <string name="appstr_ai_status_generating" formatted="false">Generating</string>
+    <string name="appstr_ai_status_planning" formatted="false">Planning</string>
+    <string name="appstr_ai_status_processing" formatted="false">Processing</string>
+    <string name="appstr_ai_status_reviewing" formatted="false">Reviewing</string>
+    <string name="appstr_ai_status_scanning" formatted="false">Scanning</string>
+    <string name="appstr_ai_stream_content" formatted="false">Streaming Content</string>
+    <string name="appstr_ai_stream_response_incomplete" formatted="false">Streaming response did not complete normally</string>
+    <string name="appstr_ai_style_references" formatted="false">Style References</string>
+    <string name="appstr_ai_suggestion_change_model" formatted="false">Suggestion: Try another model or check API settings</string>
+    <string name="appstr_ai_syntax_check" formatted="false">Syntax Check</string>
+    <string name="appstr_ai_syntax_checking_status" formatted="false">Checking syntax...</string>
+    <string name="appstr_ai_tag_selected_text" formatted="false">Selected</string>
+    <string name="appstr_ai_template_audio_controller" formatted="false">Audio Controller</string>
+    <string name="appstr_ai_template_audio_controller_desc" formatted="false">Unified control for all audio on page</string>
+    <string name="appstr_ai_template_auto_refresh" formatted="false">Auto Refresh</string>
+    <string name="appstr_ai_template_auto_refresh_desc" formatted="false">Regularly auto-refresh the page</string>
+    <string name="appstr_ai_template_console_logger" formatted="false">Console Logger</string>
+    <string name="appstr_ai_template_console_logger_desc" formatted="false">Display console logs on the page</string>
+    <string name="appstr_ai_template_data_extractor" formatted="false">Data Extractor</string>
+    <string name="appstr_ai_template_data_extractor_desc" formatted="false">Extract and display page data</string>
+    <string name="appstr_ai_template_data_selector" formatted="false">Data Selector</string>
+    <string name="appstr_ai_template_default_speed" formatted="false">Default Speed</string>
+    <string name="appstr_ai_template_default_volume" formatted="false">Default Volume (%)</string>
+    <string name="appstr_ai_template_dom_inspector" formatted="false">DOM Inspector</string>
+    <string name="appstr_ai_template_dom_inspector_desc" formatted="false">Hover to view element info</string>
+    <string name="appstr_ai_template_extract_attribute" formatted="false">Extract Attribute</string>
+    <string name="appstr_ai_template_filter_keyword" formatted="false">Keyword Filter</string>
+    <string name="appstr_ai_template_fingerprint_protector" formatted="false">Fingerprint Protector</string>
+    <string name="appstr_ai_template_fingerprint_protector_desc" formatted="false">Prevent browser fingerprint tracking</string>
+    <string name="appstr_ai_template_image_grabber" formatted="false">Image Grabber</string>
+    <string name="appstr_ai_template_image_grabber_desc" formatted="false">Collect all images from the page</string>
+    <string name="appstr_ai_template_image_zoomer" formatted="false">Image Zoomer</string>
+    <string name="appstr_ai_template_image_zoomer_desc" formatted="false">Click images to zoom and view</string>
+    <string name="appstr_ai_template_link_collector" formatted="false">Link Collector</string>
+    <string name="appstr_ai_template_link_collector_desc" formatted="false">Collect all links from the page</string>
+    <string name="appstr_ai_template_max_logs" formatted="false">Max Logs</string>
+    <string name="appstr_ai_template_min_size" formatted="false">Min Size (px)</string>
+    <string name="appstr_ai_template_network_monitor" formatted="false">Network Monitor</string>
+    <string name="appstr_ai_template_network_monitor_desc" formatted="false">Monitor webpage network requests</string>
+    <string name="appstr_ai_template_notification_blocker" formatted="false">Notification Blocker</string>
+    <string name="appstr_ai_template_notification_blocker_desc" formatted="false">Block site permission requests for notifications</string>
+    <string name="appstr_ai_template_refresh_interval" formatted="false">Refresh Interval (s)</string>
+    <string name="appstr_ai_template_scroll_to_top" formatted="false">Back to Top</string>
+    <string name="appstr_ai_template_scroll_to_top_desc" formatted="false">Add floating back-to-top button</string>
+    <string name="appstr_ai_template_show_after_scroll" formatted="false">Show after scroll (px)</string>
+    <string name="appstr_ai_template_show_control_panel" formatted="false">Show Control Panel</string>
+    <string name="appstr_ai_template_show_countdown" formatted="false">Show Countdown</string>
+    <string name="appstr_ai_template_tracking_blocker" formatted="false">Tracking Blocker</string>
+    <string name="appstr_ai_template_tracking_blocker_desc" formatted="false">Block common tracking scripts</string>
+    <string name="appstr_ai_template_video_enhancer" formatted="false">Video Enhancer</string>
+    <string name="appstr_ai_template_video_enhancer_desc" formatted="false">Add speed control and PiP to videos</string>
+    <string name="appstr_ai_templates" formatted="false">Templates</string>
+    <string name="appstr_ai_test" formatted="false">Test</string>
+    <string name="appstr_ai_testing" formatted="false">Testing...</string>
+    <string name="appstr_ai_text_content" formatted="false">Text Content</string>
+    <string name="appstr_ai_thinking_content" formatted="false">Thinking Content</string>
+    <string name="appstr_ai_tips" formatted="false">Tips</string>
+    <string name="appstr_ai_tool_type_create_module" formatted="false">Create Module</string>
+    <string name="appstr_ai_tool_type_create_module_desc" formatted="false">Create new extension module</string>
+    <string name="appstr_ai_tool_type_fix_error" formatted="false">Fix Error</string>
+    <string name="appstr_ai_tool_type_fix_error_desc" formatted="false">Auto-fix detected errors</string>
+    <string name="appstr_ai_tool_type_generate_code" formatted="false">Generate Code</string>
+    <string name="appstr_ai_tool_type_generate_code_desc" formatted="false">Generate code based on requirements</string>
+    <string name="appstr_ai_tool_type_get_snippets" formatted="false">Get Snippets</string>
+    <string name="appstr_ai_tool_type_get_snippets_desc" formatted="false">Retrieve available code snippets</string>
+    <string name="appstr_ai_tool_type_get_templates" formatted="false">Get Templates</string>
+    <string name="appstr_ai_tool_type_get_templates_desc" formatted="false">Retrieve relevant code templates</string>
+    <string name="appstr_ai_tool_type_lint_code" formatted="false">Code Linting</string>
+    <string name="appstr_ai_tool_type_lint_code_desc" formatted="false">Check code style and best practices</string>
+    <string name="appstr_ai_tool_type_preview_module" formatted="false">Preview Module</string>
+    <string name="appstr_ai_tool_type_preview_module_desc" formatted="false">Preview module effects</string>
+    <string name="appstr_ai_tool_type_refactor_code" formatted="false">Refactor Code</string>
+    <string name="appstr_ai_tool_type_refactor_code_desc" formatted="false">Optimize and refactor code</string>
+    <string name="appstr_ai_tool_type_search_docs" formatted="false">Search Docs</string>
+    <string name="appstr_ai_tool_type_search_docs_desc" formatted="false">Search related documentation and examples</string>
+    <string name="appstr_ai_tool_type_security_scan" formatted="false">Security Scan</string>
+    <string name="appstr_ai_tool_type_security_scan_desc" formatted="false">Check for potential security issues</string>
+    <string name="appstr_ai_tool_type_syntax_check" formatted="false">Syntax Check</string>
+    <string name="appstr_ai_tool_type_syntax_check_desc" formatted="false">Check JS/CSS syntax errors</string>
+    <string name="appstr_ai_tool_type_test_module" formatted="false">Test Module</string>
+    <string name="appstr_ai_tool_type_test_module_desc" formatted="false">Run module on test page</string>
+    <string name="appstr_ai_tool_type_update_module" formatted="false">Update Module</string>
+    <string name="appstr_ai_tool_type_update_module_desc" formatted="false">Update existing module</string>
+    <string name="appstr_ai_tool_type_validate_config" formatted="false">Validate Config</string>
+    <string name="appstr_ai_tool_type_validate_config_desc" formatted="false">Verify module configuration</string>
+    <string name="appstr_ai_total_style_references" formatted="false">Total %d style reference(s)</string>
+    <string name="appstr_ai_total_templates" formatted="false">Total %d template(s)</string>
+    <string name="appstr_ai_try_asking_prompts" formatted="false">Try these prompts</string>
+    <string name="appstr_ai_try_these_examples" formatted="false">Try these examples</string>
+    <string name="appstr_ai_tutorial" formatted="false">Tutorial</string>
+    <string name="appstr_ai_unfavorite" formatted="false">Unfavorite</string>
+    <string name="appstr_ai_usage_tutorial" formatted="false">Usage Tutorial</string>
+    <string name="appstr_ai_use" formatted="false">Use</string>
+    <string name="appstr_ai_version_management" formatted="false">Version Management</string>
+    <string name="appstr_ai_version_multi_ui" formatted="false">Supports multiple UI types</string>
+    <string name="appstr_ai_version_v4_ui" formatted="false">Interactive/Auto modes and independent windows</string>
+    <string name="appstr_ai_will_save_files" formatted="false">Will save %d file(s)</string>
+    <string name="appstr_ai_write_tool_desc_frontend" formatted="false">Create/Overwrite files for React/Vue/Next.js projects (JSX/TSX/CSS/JSON, etc.).</string>
+    <string name="appstr_ai_write_tool_desc_go" formatted="false">Create/Overwrite files for Go projects (.go/go.mod/templates, etc.).</string>
+    <string name="appstr_ai_write_tool_desc_html" formatted="false">Create/Overwrite files for HTML/CSS/JS/JSON/SVG projects.</string>
+    <string name="appstr_ai_write_tool_desc_nodejs" formatted="false">Create/Overwrite files for Node.js projects (JS/TS/JSON, etc.).</string>
+    <string name="appstr_ai_write_tool_desc_php" formatted="false">Create/Overwrite files for PHP projects (PHP/HTML/CSS, etc.).</string>
+    <string name="appstr_ai_write_tool_desc_python" formatted="false">Create/Overwrite files for Python projects (.py/requirements/templates, etc.).</string>
+    <string name="appstr_ai_write_tool_desc_wordpress" formatted="false">Create/Overwrite files for WordPress themes and plugins (PHP/CSS/JS, etc.).</string>
+</resources>

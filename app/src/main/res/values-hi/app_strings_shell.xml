@@ -1,0 +1,691 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="appstr_shell_access_days" formatted="false">पहुँच के दिन</string>
+    <string name="appstr_shell_access_end_time" formatted="false">पहुँच समाप्ति समय</string>
+    <string name="appstr_shell_access_start_time" formatted="false">पहुँच प्रारंभ समय</string>
+    <string name="appstr_shell_active_days" formatted="false">सक्रिय दिन</string>
+    <string name="appstr_shell_add_script" formatted="false">स्क्रिप्ट जोड़ें</string>
+    <string name="appstr_shell_advanced_options" formatted="false">उन्नत विकल्प</string>
+    <string name="appstr_shell_allow_emergency_exit" formatted="false">आपातकालीन निकास की अनुमति दें</string>
+    <string name="appstr_shell_anti_debug_multi_layer" formatted="false">बहु-स्तरीय एंटी-डीबग</string>
+    <string name="appstr_shell_anti_debug_multi_layer_hint" formatted="false">ptrace/टाइमिंग/सिग्नल/थ्रेड डिटेक्शन</string>
+    <string name="appstr_shell_anti_frida_advanced" formatted="false">उन्नत Frida डिटेक्शन</string>
+    <string name="appstr_shell_anti_frida_advanced_hint" formatted="false">पोर्ट/मेमोरी/प्रोसेस/थ्रेड नाम/फीचर कोड डिटेक्शन</string>
+    <string name="appstr_shell_anti_magisk_detect" formatted="false">Magisk/Shamiko डिटेक्शन</string>
+    <string name="appstr_shell_anti_magisk_detect_hint" formatted="false">MagiskHide/Shamiko छिपी हुई गतिविधियों का पता लगाएं</string>
+    <string name="appstr_shell_anti_memory_dump" formatted="false">एंटी-मेमोरी डंप</string>
+    <string name="appstr_shell_anti_memory_dump_hint" formatted="false">रनटाइम मेमोरी निकालने से रोकें</string>
+    <string name="appstr_shell_anti_reverse" formatted="false">एंटी-रिवर्स इंजीनियरिंग</string>
+    <string name="appstr_shell_anti_screen_capture" formatted="false">एंटी-स्क्रीन कैप्चर/रिकॉर्डिंग</string>
+    <string name="appstr_shell_anti_screen_capture_hint" formatted="false">FLAG_SECURE स्क्रीन सामग्री कैप्चर होने से रोकता है</string>
+    <string name="appstr_shell_anti_tamper" formatted="false">एंटी-टैम्पर</string>
+    <string name="appstr_shell_anti_xposed_deep" formatted="false">डीप Xposed/LSPosed डिटेक्शन</string>
+    <string name="appstr_shell_anti_xposed_deep_hint" formatted="false">ART हुक डिटेक्शन + स्टैक फ्रेम विश्लेषण</string>
+    <string name="appstr_shell_apk_checksum" formatted="false">APK चेकसम सत्यापन</string>
+    <string name="appstr_shell_apk_checksum_hint" formatted="false">DEX + संसाधन + मेनिफेस्ट अखंडता जांच</string>
+    <string name="appstr_shell_audio_protection" formatted="false">ऑडियो सुरक्षा</string>
+    <string name="appstr_shell_audio_protection_hint" formatted="false">AudioContext फिंगरप्रिंटिंग को रोकें</string>
+    <string name="appstr_shell_auto_start_description" formatted="false">बूट या निर्धारित समय पर ऐप को स्वतः प्रारंभ करें</string>
+    <string name="appstr_shell_auto_start_note" formatted="false">स्वतः प्रारंभ सुविधा केवल निर्यात किए गए APK में काम करती है। कुछ उपकरणों को सिस्टम सेटिंग्स में मैन्युअल अनुमति की आवश्यकता होती है।</string>
+    <string name="appstr_shell_auto_start_permission_ready" formatted="false">✅ सभी अनुमतियां तैयार हैं, स्वतः प्रारंभ सामान्य रूप से काम करेगा</string>
+    <string name="appstr_shell_auto_start_settings" formatted="false">स्वतः प्रारंभ सेटिंग्स</string>
+    <string name="appstr_shell_background_run_description" formatted="false">बाहर निकलने के बाद बैकग्राउंड में चलना जारी रखें</string>
+    <string name="appstr_shell_background_run_keep_cpu_awake" formatted="false">CPU को जगाए रखें</string>
+    <string name="appstr_shell_background_run_keep_cpu_awake_desc" formatted="false">बैकग्राउंड कार्यों को चालू रखने के लिए सिस्टम को सोने से रोकें</string>
+    <string name="appstr_shell_background_run_notification_content" formatted="false">नोटिफिकेशन सामग्री</string>
+    <string name="appstr_shell_background_run_notification_content_placeholder" formatted="false">डिफ़ॉल्ट के लिए खाली छोड़ें</string>
+    <string name="appstr_shell_background_run_notification_title" formatted="false">नोटिफिकेशन शीर्षक</string>
+    <string name="appstr_shell_background_run_notification_title_placeholder" formatted="false">डिफ़ॉल्ट के लिए खाली छोड़ें</string>
+    <string name="appstr_shell_background_run_show_notification" formatted="false">नोटिफिकेशन दिखाएं</string>
+    <string name="appstr_shell_background_run_show_notification_desc" formatted="false">नोटिफिकेशन बार में रनिंग स्थिति प्रदर्शित करें</string>
+    <string name="appstr_shell_background_run_title" formatted="false">बैकग्राउंड रन</string>
+    <string name="appstr_shell_battery_optimization_hint" formatted="false">🔋 विश्वसनीय स्वतः प्रारंभ के लिए बैटरी अनुकूलन अक्षम करें, सेटिंग्स पर जाने के लिए क्लिक करें</string>
+    <string name="appstr_shell_black_tech_description" formatted="false">वॉल्यूम, लाइट, परफॉरमेंस आदि पर जबरन नियंत्रण</string>
+    <string name="appstr_shell_black_tech_features" formatted="false">उन्नत नियंत्रण कार्य</string>
+    <string name="appstr_shell_black_tech_final_warning" formatted="false">⚠️ चेतावनी: इन सुविधाओं को सक्षम करने से ओवरहीटिंग और बैटरी तेजी से खत्म हो सकती है। सावधानी से उपयोग करें। कुछ सुविधाओं के लिए विशेष अनुमतियों की आवश्यकता होती है।</string>
+    <string name="appstr_shell_black_tech_warning" formatted="false">निम्नलिखित सुविधाएं डिवाइस को प्रभावित कर सकती हैं, सावधानी से उपयोग करें। केवल कुछ उपकरणों पर समर्थित।</string>
+    <string name="appstr_shell_block_back_button" formatted="false">बैक बटन को ब्लॉक करें</string>
+    <string name="appstr_shell_block_home_button" formatted="false">होम बटन को ब्लॉक करें</string>
+    <string name="appstr_shell_block_system_u_i" formatted="false">सिस्टम UI को ब्लॉक करें</string>
+    <string name="appstr_shell_boot_auto_start" formatted="false">बूट स्वतः प्रारंभ</string>
+    <string name="appstr_shell_boot_auto_start_hint" formatted="false">डिवाइस बूट के बाद इस ऐप को स्वतः प्रारंभ करें</string>
+    <string name="appstr_shell_boot_delay" formatted="false">बूट विलंब</string>
+    <string name="appstr_shell_browser_brave" formatted="false">Brave</string>
+    <string name="appstr_shell_browser_brave_desc" formatted="false">बिल्ट-इन विज्ञापन ब्लॉक, गोपनीयता पहले</string>
+    <string name="appstr_shell_browser_chrome" formatted="false">Google Chrome</string>
+    <string name="appstr_shell_browser_chrome_desc" formatted="false">अधिकारी Google ब्राउज़र, उत्कृष्ट प्रदर्शन</string>
+    <string name="appstr_shell_browser_disguise_active_vectors" formatted="false">सक्रिय वैक्टर</string>
+    <string name="appstr_shell_browser_disguise_advanced" formatted="false">उन्नत वेक्टर नियंत्रण</string>
+    <string name="appstr_shell_browser_disguise_audio" formatted="false">AudioContext शोर</string>
+    <string name="appstr_shell_browser_disguise_audio_desc" formatted="false">ऑडियो विश्लेषण में छोटे आवृत्ति ऑफसेट डालें</string>
+    <string name="appstr_shell_browser_disguise_battery" formatted="false">बैटरी API सुरक्षा</string>
+    <string name="appstr_shell_browser_disguise_battery_desc" formatted="false">निश्चित बैटरी जानकारी लौटाएं (100%, चार्जिंग)</string>
+    <string name="appstr_shell_browser_disguise_canvas_noise" formatted="false">Canvas फिंगरप्रिंट शोर</string>
+    <string name="appstr_shell_browser_disguise_canvas_noise_desc" formatted="false">toDataURL/getImageData में सब-पिक्सेल शोर डालें</string>
+    <string name="appstr_shell_browser_disguise_client_rects" formatted="false">ClientRects ऑफसेट</string>
+    <string name="appstr_shell_browser_disguise_client_rects_desc" formatted="false">DOMRect गणना फिंगरप्रिंटिंग रोकें</string>
+    <string name="appstr_shell_browser_disguise_connection_desc" formatted="false">navigator.connection API को स्पूफ करें</string>
+    <string name="appstr_shell_browser_disguise_connection_title" formatted="false">नेटवर्क कनेक्शन स्पूफिंग</string>
+    <string name="appstr_shell_browser_disguise_coverage" formatted="false">कवरेज</string>
+    <string name="appstr_shell_browser_disguise_coverage_title" formatted="false">फिंगरप्रिंट कवरेज</string>
+    <string name="appstr_shell_browser_disguise_css_media_desc" formatted="false">prefers-color-scheme / prefers-reduced-motion को स्पूफ करें</string>
+    <string name="appstr_shell_browser_disguise_css_media_title" formatted="false">CSS मीडिया क्वेरी स्पूफिंग</string>
+    <string name="appstr_shell_browser_disguise_diag_desc" formatted="false">वर्तमान फिंगरप्रिंट आयाम दिखाने के लिए नैदानिक पृष्ठ खोलें</string>
+    <string name="appstr_shell_browser_disguise_diag_title" formatted="false">🔬 फिंगरप्रिंट नैदानिक उपकरण</string>
+    <string name="appstr_shell_browser_disguise_enable" formatted="false">ब्राउज़र भेस सक्षम करें</string>
+    <string name="appstr_shell_browser_disguise_enable_desc" formatted="false">WebView का पता लगाने से रोकने के लिए बहु-स्तरीय तकनीक</string>
+    <string name="appstr_shell_browser_disguise_engine_status" formatted="false">इंजन स्थिति</string>
+    <string name="appstr_shell_browser_disguise_fonts" formatted="false">फ़ॉन्ट गणना इंटरसेप्ट</string>
+    <string name="appstr_shell_browser_disguise_fonts_desc" formatted="false">फ़ॉन्ट फिंगरप्रिंटिंग रोकने के लिए measureText में शोर डालें</string>
+    <string name="appstr_shell_browser_disguise_hardware" formatted="false">CPU कोर स्पूफिंग</string>
+    <string name="appstr_shell_browser_disguise_hardware_desc" formatted="false">navigator.hardwareConcurrency को ओवरराइड करें</string>
+    <string name="appstr_shell_browser_disguise_iframe" formatted="false">iframe प्रसार</string>
+    <string name="appstr_shell_browser_disguise_iframe_desc" formatted="false">स्वतः ही नए iframe में भेस प्रसारित करें</string>
+    <string name="appstr_shell_browser_disguise_l2_title" formatted="false">स्तर 2 · फिंगरप्रिंट वेक्टर भेस</string>
+    <string name="appstr_shell_browser_disguise_l3_title" formatted="false">स्तर 3 · पर्यावरण भेस</string>
+    <string name="appstr_shell_browser_disguise_l4_title" formatted="false">स्तर 4 · गहरा भेस</string>
+    <string name="appstr_shell_browser_disguise_l5_title" formatted="false">स्तर 5 · प्रोटोटाइप चैन सुरक्षा</string>
+    <string name="appstr_shell_browser_disguise_language" formatted="false">भाषा स्पूफिंग</string>
+    <string name="appstr_shell_browser_disguise_language_desc" formatted="false">navigator.language को ओवरराइड करें</string>
+    <string name="appstr_shell_browser_disguise_media_devices" formatted="false">मीडिया डिवाइस स्पूफिंग</string>
+    <string name="appstr_shell_browser_disguise_media_devices_desc" formatted="false">enumerateDevices परिणामों को गुमनाम करें</string>
+    <string name="appstr_shell_browser_disguise_memory" formatted="false">डिवाइस मेमोरी स्पूफिंग</string>
+    <string name="appstr_shell_browser_disguise_memory_desc" formatted="false">navigator.deviceMemory को ओवरराइड करें</string>
+    <string name="appstr_shell_browser_disguise_notification_desc" formatted="false">लापता Notification API प्रदान करें और अनुमति स्थिति स्पूफ करें</string>
+    <string name="appstr_shell_browser_disguise_notification_title" formatted="false">नोटिफिकेशन API पूर्णता</string>
+    <string name="appstr_shell_browser_disguise_performance_desc" formatted="false">timing हमलों को रोकने के लिए सटीकता कम करें</string>
+    <string name="appstr_shell_browser_disguise_performance_title" formatted="false">टाइमिंग शोर इंजेक्शन</string>
+    <string name="appstr_shell_browser_disguise_permissions_desc" formatted="false">अनुमति API को स्पूफ करें</string>
+    <string name="appstr_shell_browser_disguise_permissions_title" formatted="false">अनुमति API स्पूफिंग</string>
+    <string name="appstr_shell_browser_disguise_platform" formatted="false">प्लेटफॉर्म स्पूफिंग</string>
+    <string name="appstr_shell_browser_disguise_platform_desc" formatted="false">Win32/MacIntel आदि के रूप में प्लेटफॉर्म स्पूफ करें</string>
+    <string name="appstr_shell_browser_disguise_preset" formatted="false">भेस प्रीसेट</string>
+    <string name="appstr_shell_browser_disguise_prototype" formatted="false">toString सुरक्षा</string>
+    <string name="appstr_shell_browser_disguise_prototype_desc" formatted="false">हुक फंक्शन [native code] लौटाएंगे</string>
+    <string name="appstr_shell_browser_disguise_run_diag" formatted="false">नैदानिक चलाएं</string>
+    <string name="appstr_shell_browser_disguise_screen" formatted="false">स्क्रीन रिज़ॉल्यूशन स्पूफिंग</string>
+    <string name="appstr_shell_browser_disguise_screen_desc" formatted="false">screen.width/height को स्पूफ करें</string>
+    <string name="appstr_shell_browser_disguise_storage_desc" formatted="false">स्टोरेज अनुमान स्पूफिंग</string>
+    <string name="appstr_shell_browser_disguise_storage_title" formatted="false">स्टोरेज अनुमान स्पूफिंग</string>
+    <string name="appstr_shell_browser_disguise_timezone" formatted="false">समय क्षेत्र स्पूफिंग</string>
+    <string name="appstr_shell_browser_disguise_timezone_desc" formatted="false">समय क्षेत्र ओवरराइड करें</string>
+    <string name="appstr_shell_browser_disguise_tip" formatted="false">भेस इंजन ब्राउज़र फिंगरप्रिंट को संशोधित करता है। स्तर 1 हमेशा सक्रिय रहता है। उच्च स्तरों में अधिक शोर और सुरक्षा होती है।</string>
+    <string name="appstr_shell_browser_disguise_title" formatted="false">🕶️ ब्राउज़र भेस</string>
+    <string name="appstr_shell_browser_disguise_vectors" formatted="false">वैक्टर</string>
+    <string name="appstr_shell_browser_disguise_web_g_l" formatted="false">WebGL रेंडरर स्पूफिंग</string>
+    <string name="appstr_shell_browser_disguise_web_g_l_desc" formatted="false">GPU विवरण को मानक मानों से बदलें</string>
+    <string name="appstr_shell_browser_disguise_web_r_t_c" formatted="false">WebRTC IP सुरक्षा</string>
+    <string name="appstr_shell_browser_disguise_web_r_t_c_desc" formatted="false">स्थानीय IP रिसाव को रोकें</string>
+    <string name="appstr_shell_browser_edge" formatted="false">Microsoft Edge</string>
+    <string name="appstr_shell_browser_edge_desc" formatted="false">अधिकारी Microsoft ब्राउज़र</string>
+    <string name="appstr_shell_browser_firefox" formatted="false">Mozilla Firefox</string>
+    <string name="appstr_shell_browser_firefox_desc" formatted="false">गोपनीयता पर केंद्रित ओपन-सोर्स ब्राउज़र</string>
+    <string name="appstr_shell_browser_kernel_subtitle" formatted="false">WebView कर्नेल और ब्राउज़र प्रबंधित करें</string>
+    <string name="appstr_shell_browser_kernel_title" formatted="false">ब्राउज़र कर्नेल सेटिंग्स</string>
+    <string name="appstr_shell_browser_via" formatted="false">Via ब्राउज़र</string>
+    <string name="appstr_shell_browser_via_desc" formatted="false">हल्का और तेज़ ब्राउज़र</string>
+    <string name="appstr_shell_browser_x5" formatted="false">Tencent X5 कर्नेल</string>
+    <string name="appstr_shell_browser_x5_desc" formatted="false">अच्छी संगतता के साथ Tencent WebView समाधान</string>
+    <string name="appstr_shell_call_indirection" formatted="false">विधि कॉल परोक्षता</string>
+    <string name="appstr_shell_call_indirection_hint" formatted="false">महत्वपूर्ण कॉल के लिए रिफ्लेक्शन + प्रॉक्सी</string>
+    <string name="appstr_shell_can_be_web_view_provider" formatted="false">WebView प्रदाता हो सकता है</string>
+    <string name="appstr_shell_cannot_exit_during_forced_run" formatted="false">जबरन चलने के दौरान बाहर नहीं निकल सकते</string>
+    <string name="appstr_shell_canvas_protection" formatted="false">Canvas सुरक्षा</string>
+    <string name="appstr_shell_canvas_protection_hint" formatted="false">Canvas फिंगरप्रिंट ट्रैकिंग को रोकें</string>
+    <string name="appstr_shell_certificate_pinning" formatted="false">सर्टिफिकेट पिनिंग</string>
+    <string name="appstr_shell_certificate_pinning_hint" formatted="false">MITM हमलों को रोकने के लिए सर्वर सर्टिफिकेट लॉक करें</string>
+    <string name="appstr_shell_change_web_view_provider" formatted="false">WebView प्रदाता बदलें</string>
+    <string name="appstr_shell_change_web_view_provider_desc" formatted="false">डिफ़ॉल्ट WebView बदलने के लिए सिस्टम सेटिंग्स खोलें</string>
+    <string name="appstr_shell_class_name_obfuscation" formatted="false">क्लास नाम अस्पष्टता</string>
+    <string name="appstr_shell_class_name_obfuscation_hint" formatted="false">विश्लेषण को कठिन बनाने के लिए वर्ण प्रतिस्थापन</string>
+    <string name="appstr_shell_clear_hosts_confirm" formatted="false">क्या आप वाकई सभी होस्ट नियमों को मिटाना चाहते हैं?</string>
+    <string name="appstr_shell_clear_hosts_rules" formatted="false">सभी होस्ट नियम मिटाएं</string>
+    <string name="appstr_shell_code_obfuscation" formatted="false">कोड अस्पष्टता</string>
+    <string name="appstr_shell_collapse" formatted="false">समेटें</string>
+    <string name="appstr_shell_configured" formatted="false">कॉन्फ़िगर किया गया</string>
+    <string name="appstr_shell_countdown_duration" formatted="false">उलटी गिनती की अवधि</string>
+    <string name="appstr_shell_countdown_mode" formatted="false">उलटी गिनती मोड</string>
+    <string name="appstr_shell_countdown_mode_hint" formatted="false">शून्य होने पर ऐप स्वतः बंद हो जाएगा</string>
+    <string name="appstr_shell_current_web_view_info" formatted="false">वर्तमान WebView जानकारी</string>
+    <string name="appstr_shell_currently_using" formatted="false">वर्तमान में उपयोग में</string>
+    <string name="appstr_shell_custom" formatted="false">कस्टम</string>
+    <string name="appstr_shell_custom_alarm" formatted="false">कस्टम अलार्म</string>
+    <string name="appstr_shell_custom_alarm_desc" formatted="false">कस्टम फ्लैश + कंपन पैटर्न</string>
+    <string name="appstr_shell_custom_alarm_pattern" formatted="false">लय पैटर्न</string>
+    <string name="appstr_shell_custom_alarm_pattern_hint" formatted="false">प्रारूप: on_ms,off_ms,...</string>
+    <string name="appstr_shell_custom_alarm_vib_sync" formatted="false">कंपन सिंक</string>
+    <string name="appstr_shell_custom_alarm_vib_sync_desc" formatted="false">कंपन को फ्लैश लय के साथ सिंक करें</string>
+    <string name="appstr_shell_daily_installs" formatted="false">दैनिक इंस्टालेशन</string>
+    <string name="appstr_shell_delete_script" formatted="false">स्क्रिप्ट हटाएं</string>
+    <string name="appstr_shell_delete_script_confirm" formatted="false">क्या आप वाकई इस स्क्रिप्ट को हटाना चाहते हैं?</string>
+    <string name="appstr_shell_dep_all_ready" formatted="false">सभी रनटाइम तैयार हैं</string>
+    <string name="appstr_shell_dep_clear_all" formatted="false">सभी कैश साफ़ करें</string>
+    <string name="appstr_shell_dep_clear_confirm" formatted="false">यह सभी डाउनलोड किए गए रनटाइम और कैश को हटा देगा। जारी रखें?</string>
+    <string name="appstr_shell_dep_clear_done" formatted="false">साफ़ किया गया</string>
+    <string name="appstr_shell_dep_clear_go_cache" formatted="false">Go कैश साफ़ करें</string>
+    <string name="appstr_shell_dep_clear_node_cache" formatted="false">Node.js कैश साफ़ करें</string>
+    <string name="appstr_shell_dep_clear_php_cache" formatted="false">PHP कैश साफ़ करें</string>
+    <string name="appstr_shell_dep_clear_python_cache" formatted="false">Python कैश साफ़ करें</string>
+    <string name="appstr_shell_dep_clear_sqlite_cache" formatted="false">SQLite कैश साफ़ करें</string>
+    <string name="appstr_shell_dep_clear_wp_cache" formatted="false">WordPress कैश साफ़ करें</string>
+    <string name="appstr_shell_dep_docs_projects" formatted="false">दस्तावेज़ साइटें</string>
+    <string name="appstr_shell_dep_download_all" formatted="false">सभी रनटाइम डाउनलोड करें</string>
+    <string name="appstr_shell_dep_download_all_desc" formatted="false">सभी गायब घटकों को डाउनलोड करें (~50MB)</string>
+    <string name="appstr_shell_dep_go_desc" formatted="false">किसी रनटाइम की आवश्यकता नहीं</string>
+    <string name="appstr_shell_dep_go_info" formatted="false">Go एप्लिकेशन</string>
+    <string name="appstr_shell_dep_go_projects" formatted="false">Go प्रोजेक्ट्स</string>
+    <string name="appstr_shell_dep_install" formatted="false">इन्सटाल करें</string>
+    <string name="appstr_shell_dep_mirror_auto" formatted="false">ऑटो</string>
+    <string name="appstr_shell_dep_mirror_c_n" formatted="false">चीन मिरर</string>
+    <string name="appstr_shell_dep_mirror_desc" formatted="false">PHP/WP/NodeJS के लिए डाउनलोड गति को प्रभावित करता है</string>
+    <string name="appstr_shell_dep_mirror_global" formatted="false">वैश्विक स्रोत</string>
+    <string name="appstr_shell_dep_mirror_source" formatted="false">डाउनलोड मिरर स्रोत</string>
+    <string name="appstr_shell_dep_node_desc" formatted="false">बैकएंड/API के लिए Node.js समर्थन</string>
+    <string name="appstr_shell_dep_node_projects" formatted="false">Node.js प्रोजेक्ट्स</string>
+    <string name="appstr_shell_dep_node_runtime" formatted="false">Node.js रनटाइम</string>
+    <string name="appstr_shell_dep_php_desc" formatted="false">PHP समर्थन</string>
+    <string name="appstr_shell_dep_php_runtime" formatted="false">PHP रनटाइम</string>
+    <string name="appstr_shell_dep_project_files" formatted="false">प्रोजेक्ट फ़ाइलें</string>
+    <string name="appstr_shell_dep_python_desc" formatted="false">Python समर्थन</string>
+    <string name="appstr_shell_dep_python_projects" formatted="false">Python प्रोजेक्ट्स</string>
+    <string name="appstr_shell_dep_python_runtime" formatted="false">Python रनटाइम</string>
+    <string name="appstr_shell_dep_section_download" formatted="false">मिरर और डाउनलोड</string>
+    <string name="appstr_shell_dep_section_projects" formatted="false">प्रोजेक्ट फ़ाइलें</string>
+    <string name="appstr_shell_dep_section_runtime_plugins" formatted="false">रनटाइम प्लगइन्स</string>
+    <string name="appstr_shell_dep_section_runtimes" formatted="false">रनटाइम वातावरण</string>
+    <string name="appstr_shell_dep_section_storage" formatted="false">स्टोरेज स्पेस</string>
+    <string name="appstr_shell_dep_some_not_ready" formatted="false">कुछ रनटाइम स्थापित नहीं हैं</string>
+    <string name="appstr_shell_dep_sqlite_desc" formatted="false">WordPress SQLite एकीकरण</string>
+    <string name="appstr_shell_dep_sqlite_plugin" formatted="false">SQLite डेटाबेस प्लगइन</string>
+    <string name="appstr_shell_dep_status_downloading" formatted="false">डाउनलोड हो रहा है...</string>
+    <string name="appstr_shell_dep_status_not_installed" formatted="false">स्थापित नहीं है</string>
+    <string name="appstr_shell_dep_status_ready" formatted="false">तैयार है</string>
+    <string name="appstr_shell_dep_total_storage" formatted="false">कुल उपयोग किया गया स्टोरेज</string>
+    <string name="appstr_shell_dep_wp_core" formatted="false">WordPress कोर</string>
+    <string name="appstr_shell_dep_wp_core_desc" formatted="false">WordPress कोर वातावरण फ़ाइलें</string>
+    <string name="appstr_shell_dep_wp_projects" formatted="false">WordPress प्रोजेक्ट्स</string>
+    <string name="appstr_shell_detect_developer_options" formatted="false">डेवलपर विकल्प डिटेक्शन</string>
+    <string name="appstr_shell_detect_developer_options_hint" formatted="false">पता लगाएं कि क्या डेवलपर विकल्प सक्षम हैं</string>
+    <string name="appstr_shell_detect_emulator_advanced" formatted="false">उन्नत एमुलेटर डिटेक्शन</string>
+    <string name="appstr_shell_detect_emulator_advanced_hint" formatted="false">हार्डवेयर फिंगरप्रिंट बहु-आयामी पता लगाना</string>
+    <string name="appstr_shell_detect_u_s_b_debugging" formatted="false">USB डिबगिंग डिटेक्शन</string>
+    <string name="appstr_shell_detect_u_s_b_debugging_hint" formatted="false">ADB डिबग स्थिति का पता लगाएं</string>
+    <string name="appstr_shell_detect_v_p_n" formatted="false">VPN/प्रॉक्सी डिटेक्शन</string>
+    <string name="appstr_shell_detect_v_p_n_hint" formatted="false">नेटवर्क प्रॉक्सी और VPN कनेक्शन का पता लगाएं</string>
+    <string name="appstr_shell_detect_virtual_app" formatted="false">वर्चुअल वातावरण डिटेक्शन</string>
+    <string name="appstr_shell_detect_virtual_app_hint" formatted="false">VirtualXposed/Dual Apps का पता लगाएं</string>
+    <string name="appstr_shell_developer_options_steps" formatted="false">सेटिंग्स -&gt; फोन के बारे में -&gt; \'बिल्ड नंबर\' पर 7 बार टैप करें</string>
+    <string name="appstr_shell_device_capability" formatted="false">डिवाइस क्षमता जांच</string>
+    <string name="appstr_shell_device_capability_desc" formatted="false">इस डिवाइस पर समर्थित उन्नत सुविधाओं की जाँच करें</string>
+    <string name="appstr_shell_device_current_disguise" formatted="false">वर्तमान भेस</string>
+    <string name="appstr_shell_device_custom_apply" formatted="false">कस्टम कॉन्फ़िगरेशन लागू करें</string>
+    <string name="appstr_shell_device_custom_density" formatted="false">पिक्सेल घनत्व (DPR)</string>
+    <string name="appstr_shell_device_custom_device" formatted="false">कस्टम डिवाइस</string>
+    <string name="appstr_shell_device_custom_device_hint" formatted="false">डिवाइस का नाम, मॉडल और रिज़ॉल्यूशन मैन्युअल रूप से कॉन्फ़िगर करें</string>
+    <string name="appstr_shell_device_custom_height" formatted="false">ऊंचाई px</string>
+    <string name="appstr_shell_device_custom_model_id" formatted="false">डिवाइस मॉडल ID</string>
+    <string name="appstr_shell_device_custom_name" formatted="false">डिवाइस का नाम</string>
+    <string name="appstr_shell_device_custom_u_a" formatted="false">कस्टम User-Agent</string>
+    <string name="appstr_shell_device_custom_u_a_hint" formatted="false">स्वचालित जनरेशन को ओवरराइड करने के लिए पूरा UA स्ट्रिंग दर्ज करें</string>
+    <string name="appstr_shell_device_custom_width" formatted="false">चौड़ाई px</string>
+    <string name="appstr_shell_device_desktop_viewport" formatted="false">डेस्कटॉप व्यूपोर्ट बाध्य करें</string>
+    <string name="appstr_shell_device_desktop_viewport_hint" formatted="false">डेस्कटॉप चौड़ाई के साथ पेज लोड करें</string>
+    <string name="appstr_shell_device_disguise_active" formatted="false">भेस बदला हुआ है:</string>
+    <string name="appstr_shell_device_disguise_hint" formatted="false">फिंगरप्रिंट और UA स्वतः उत्पन्न करने के लिए एक उपकरण चुनें।</string>
+    <string name="appstr_shell_device_disguise_off" formatted="false">बंद · वास्तविक डिवाइस का उपयोग करें</string>
+    <string name="appstr_shell_device_disguise_subtitle" formatted="false">अपनी डिवाइस जानकारी स्पूफ करें</string>
+    <string name="appstr_shell_device_disguise_title" formatted="false">डिवाइस भेस</string>
+    <string name="appstr_shell_device_generated_u_a" formatted="false">उत्पन्न User-Agent</string>
+    <string name="appstr_shell_device_popular_presets" formatted="false">लोकप्रिय प्रीसेट</string>
+    <string name="appstr_shell_device_quick_select" formatted="false">त्वरित चयन</string>
+    <string name="appstr_shell_device_type_desktop" formatted="false">डेस्कटॉप</string>
+    <string name="appstr_shell_device_type_laptop" formatted="false">लैपटॉप</string>
+    <string name="appstr_shell_device_type_phone" formatted="false">फोन</string>
+    <string name="appstr_shell_device_type_t_v" formatted="false">TV</string>
+    <string name="appstr_shell_device_type_tablet" formatted="false">टेबलेट</string>
+    <string name="appstr_shell_device_type_watch" formatted="false">घड़ी</string>
+    <string name="appstr_shell_dex_control_flow" formatted="false">कंट्रोल फ्लो फ्लैटनिंग</string>
+    <string name="appstr_shell_dex_control_flow_hint" formatted="false">स्थिर विश्लेषण को रोकने के लिए निष्पादन प्रवाह को अव्यवस्थित करें</string>
+    <string name="appstr_shell_dex_crc_verify" formatted="false">DEX CRC सत्यापन</string>
+    <string name="appstr_shell_dex_crc_verify_hint" formatted="false">DEX फ़ाइलों के लिए रनटाइम अखंडता जांच</string>
+    <string name="appstr_shell_dex_encryption" formatted="false">DEX एन्क्रिप्शन (पैकर)</string>
+    <string name="appstr_shell_dex_encryption_hint" formatted="false">classes.dex को एन्क्रिप्ट करें</string>
+    <string name="appstr_shell_dex_protection" formatted="false">DEX सुरक्षा</string>
+    <string name="appstr_shell_dex_splitting" formatted="false">DEX शार्ड लोडिंग</string>
+    <string name="appstr_shell_dex_splitting_hint" formatted="false">DEX को एन्क्रिप्टेड शार्ड्स में विभाजित करें</string>
+    <string name="appstr_shell_dex_vmp" formatted="false">VMP वर्चुअल मशीन सुरक्षा</string>
+    <string name="appstr_shell_dex_vmp_hint" formatted="false">कोड को कस्टम निर्देश सेट में परिवर्तित करें</string>
+    <string name="appstr_shell_disguise_as_system_app" formatted="false">सिस्टम ऐप के रूप में भेस बदलें</string>
+    <string name="appstr_shell_disguise_as_system_app_desc" formatted="false">ऐप को अनइंस्टॉल करना कठिन बनाता है</string>
+    <string name="appstr_shell_disguise_count_hint" formatted="false">कोई सीमा नहीं</string>
+    <string name="appstr_shell_disguise_count_label" formatted="false">संख्या</string>
+    <string name="appstr_shell_disguise_enable_multi_icon" formatted="false">बहु-आइकन सक्षम करें</string>
+    <string name="appstr_shell_disguise_enable_multi_icon_desc" formatted="false">इंस्टालेशन के बाद होम स्क्रीन पर कई आइकन दिखाएं</string>
+    <string name="appstr_shell_disguise_icon_count_desc" formatted="false">होम स्क्रीन आइकन की संख्या सेट करें</string>
+    <string name="appstr_shell_disguise_icon_count_format" formatted="false">%d आइकन</string>
+    <string name="appstr_shell_disguise_icon_count_title" formatted="false">आइकन संख्या</string>
+    <string name="appstr_shell_disguise_multi_icon_description" formatted="false">होम स्क्रीन आइकन और भेस सुविधाएं</string>
+    <string name="appstr_shell_disguise_multi_icon_tip" formatted="false">अतिरिक्त अनुमतियों के बिना कई लॉन्च पॉइंट बनाने के लिए activity-alias का उपयोग करता है।</string>
+    <string name="appstr_shell_disguise_multi_icon_title" formatted="false">आइकन और एप्लिकेशन</string>
+    <string name="appstr_shell_disguise_not_enabled" formatted="false">सक्षम नहीं है</string>
+    <string name="appstr_shell_download_and_import" formatted="false">डाउनलोड करें और आयात करें</string>
+    <string name="appstr_shell_edit_script" formatted="false">स्क्रिप्ट संपादित करें</string>
+    <string name="appstr_shell_embedded_engine_desc" formatted="false">निर्यात किए गए APK में एक स्टैंडअलोन ब्राउज़र इंजन एम्बेड करें</string>
+    <string name="appstr_shell_embedded_engine_title" formatted="false">एम्बेडेड ब्राउज़र इंजन</string>
+    <string name="appstr_shell_emergency_exit_hint" formatted="false">आपातकालीन पासवर्ड का उपयोग करके ऐप से बाहर निकलें</string>
+    <string name="appstr_shell_emergency_password" formatted="false">आपातकालीन पासवर्ड</string>
+    <string name="appstr_shell_emergency_password_hint" formatted="false">4-8 अंक दर्ज करें</string>
+    <string name="appstr_shell_enable_forced_run" formatted="false">जबरन चलाना सक्षम करें</string>
+    <string name="appstr_shell_enable_honeypot" formatted="false">हनीपोट ट्रैप</string>
+    <string name="appstr_shell_enable_honeypot_hint" formatted="false">रिवर्स इंजीनियरों को भ्रमित करने के लिए नकली डेटा डालें</string>
+    <string name="appstr_shell_enable_self_destruct" formatted="false">स्व-विनाश तंत्र</string>
+    <string name="appstr_shell_enable_self_destruct_hint" formatted="false">खतरा अधिक होने पर संवेदनशील डेटा साफ़ करें</string>
+    <string name="appstr_shell_enabled_scripts_count" formatted="false">%d सक्षम</string>
+    <string name="appstr_shell_enabled_sources" formatted="false">सक्षम स्रोत</string>
+    <string name="appstr_shell_engine_apk_size_warning" formatted="false">GeckoView APK के आकार में ~%s MB जोड़ता है</string>
+    <string name="appstr_shell_engine_cancel_download" formatted="false">डाउनलोड रद्द करें</string>
+    <string name="appstr_shell_engine_current_size" formatted="false">उपयोग किया गया स्थान</string>
+    <string name="appstr_shell_engine_default" formatted="false">डिफ़ॉल्ट</string>
+    <string name="appstr_shell_engine_delete_btn" formatted="false">इंजन हटाएं</string>
+    <string name="appstr_shell_engine_delete_confirm" formatted="false">क्या आप वाकई डाउनलोड किए गए इंजन को हटाना चाहते हैं?</string>
+    <string name="appstr_shell_engine_download_btn" formatted="false">इंजन डाउनलोड करें</string>
+    <string name="appstr_shell_engine_download_complete" formatted="false">डाउनलोड पूरा हुआ</string>
+    <string name="appstr_shell_engine_download_failed" formatted="false">डाउनलोड विफल रहा</string>
+    <string name="appstr_shell_engine_downloaded" formatted="false">डाउनलोड किया गया</string>
+    <string name="appstr_shell_engine_downloading" formatted="false">डाउनलोड हो रहा है...</string>
+    <string name="appstr_shell_engine_estimated_size" formatted="false">अनुमानित आकार</string>
+    <string name="appstr_shell_engine_gecko_not_downloaded" formatted="false">GeckoView इंजन डाउनलोड नहीं हुआ</string>
+    <string name="appstr_shell_engine_gecko_view" formatted="false">GeckoView (Firefox)</string>
+    <string name="appstr_shell_engine_gecko_view_desc" formatted="false">गोपनीयता और विज्ञापन ब्लॉक के साथ एम्बेडेड Firefox इंजन</string>
+    <string name="appstr_shell_engine_not_downloaded" formatted="false">डाउनलोड नहीं हुआ</string>
+    <string name="appstr_shell_engine_ready" formatted="false">तैयार है</string>
+    <string name="appstr_shell_engine_retry" formatted="false">पुनः प्रयास करें</string>
+    <string name="appstr_shell_engine_select_desc" formatted="false">निर्यात किए गए APK के लिए ब्राउज़र इंजन चुनें</string>
+    <string name="appstr_shell_engine_select_title" formatted="false">ब्राउज़र इंजन</string>
+    <string name="appstr_shell_engine_system_web_view" formatted="false">सिस्टम WebView</string>
+    <string name="appstr_shell_engine_system_web_view_desc" formatted="false">डिवाइस के बिल्ट-इन Android WebView का उपयोग करें</string>
+    <string name="appstr_shell_engine_version_label" formatted="false">संस्करण</string>
+    <string name="appstr_shell_enter_emergency_password" formatted="false">आपातकालीन पासवर्ड दर्ज करें</string>
+    <string name="appstr_shell_environment_detection" formatted="false">पर्यावरण डिटेक्शन</string>
+    <string name="appstr_shell_error_page_auto_retry_desc" formatted="false">हर %d सेकंड में स्वतः पुन: प्रयास करें</string>
+    <string name="appstr_shell_error_page_auto_retry_label" formatted="false">स्वतः पुन: प्रयास</string>
+    <string name="appstr_shell_error_page_auto_retry_off" formatted="false">बंद</string>
+    <string name="appstr_shell_error_page_custom_html_hint" formatted="false">पूरा HTML कोड दर्ज करें...</string>
+    <string name="appstr_shell_error_page_custom_media_hint" formatted="false">छवि या वीडियो का पथ दर्ज करें...</string>
+    <string name="appstr_shell_error_page_game_breakout" formatted="false">ब्रेकआउट</string>
+    <string name="appstr_shell_error_page_game_ink_zen" formatted="false">इंक ज़ेन</string>
+    <string name="appstr_shell_error_page_game_maze" formatted="false">मेज़ रनर</string>
+    <string name="appstr_shell_error_page_game_random" formatted="false">रैंडम</string>
+    <string name="appstr_shell_error_page_game_star_catch" formatted="false">स्टार कैच</string>
+    <string name="appstr_shell_error_page_lang_arabic" formatted="false">अरबी</string>
+    <string name="appstr_shell_error_page_lang_chinese" formatted="false">चीनी</string>
+    <string name="appstr_shell_error_page_lang_english" formatted="false">अंग्रेज़ी</string>
+    <string name="appstr_shell_error_page_language_label" formatted="false">त्रुटि पृष्ठ भाषा</string>
+    <string name="appstr_shell_error_page_mini_game_desc" formatted="false">नेटवर्क की प्रतीक्षा करते समय मिनी गेम खेलें</string>
+    <string name="appstr_shell_error_page_mini_game_label" formatted="false">एम्बेडेड मिनी गेम्स</string>
+    <string name="appstr_shell_error_page_mode_built_in" formatted="false">सुंदर बिल्ट-इन स्टाइल</string>
+    <string name="appstr_shell_error_page_mode_built_in_desc" formatted="false">अच्छी तरह से डिज़ाइन किए गए त्रुटि पृष्ठ शैलियों में से चुनें</string>
+    <string name="appstr_shell_error_page_mode_custom_html" formatted="false">कस्टम HTML</string>
+    <string name="appstr_shell_error_page_mode_custom_html_desc" formatted="false">अपना खुद का HTML कोड दर्ज करें</string>
+    <string name="appstr_shell_error_page_mode_custom_media" formatted="false">कस्टम मीडिया</string>
+    <string name="appstr_shell_error_page_mode_custom_media_desc" formatted="false">कस्टम छवि या वीडियो प्रदर्शित करें</string>
+    <string name="appstr_shell_error_page_mode_default" formatted="false">सिस्टम डिफ़ॉल्ट</string>
+    <string name="appstr_shell_error_page_mode_default_desc" formatted="false">ब्राउज़र के डिफ़ॉल्ट त्रुटि पृष्ठ का उपयोग करें</string>
+    <string name="appstr_shell_error_page_retry_interval_label" formatted="false">पुनः प्रयास अंतराल (सेकंड)</string>
+    <string name="appstr_shell_error_page_style_forest" formatted="false">जुगनू जंगल</string>
+    <string name="appstr_shell_error_page_style_label" formatted="false">शैली चुनें</string>
+    <string name="appstr_shell_error_page_style_material" formatted="false">मटेरियल डिज़ाइन</string>
+    <string name="appstr_shell_error_page_style_minimal" formatted="false">मिनिमलिस्ट</string>
+    <string name="appstr_shell_error_page_style_neon" formatted="false">साइबर नियॉन</string>
+    <string name="appstr_shell_error_page_style_ocean" formatted="false">गहरा सागर</string>
+    <string name="appstr_shell_error_page_style_satellite" formatted="false">अंतरिक्ष उपग्रह</string>
+    <string name="appstr_shell_error_page_subtitle" formatted="false">नेटवर्क ऑफ़लाइन होने पर दिखाया जाने वाला पृष्ठ</string>
+    <string name="appstr_shell_error_page_title" formatted="false">कस्टम ऑफ़लाइन पृष्ठ</string>
+    <string name="appstr_shell_exact_alarm_permission_hint" formatted="false">⚠ सटीक समय के लिए सटीक अलार्म अनुमति की आवश्यकता है</string>
+    <string name="appstr_shell_expand" formatted="false">विस्तार करें</string>
+    <string name="appstr_shell_expand_all" formatted="false">सभी का विस्तार करें</string>
+    <string name="appstr_shell_export_script" formatted="false">स्क्रिप्ट निर्यात करें</string>
+    <string name="appstr_shell_feature_perf_optimize" formatted="false">पूर्ण प्रदर्शन अनुकूलन</string>
+    <string name="appstr_shell_fingerprint_protection" formatted="false">फिंगरप्रिंट सुरक्षा</string>
+    <string name="appstr_shell_fixed_time_mode" formatted="false">निश्चित समय अवधि</string>
+    <string name="appstr_shell_fixed_time_mode_hint" formatted="false">निर्धारित समय के दौरान जबरन चलाना</string>
+    <string name="appstr_shell_font_protection" formatted="false">फ़ॉन्ट सुरक्षा</string>
+    <string name="appstr_shell_font_protection_hint" formatted="false">फ़ॉन्ट फिंगरप्रिंट डिटेक्शन को रोकें</string>
+    <string name="appstr_shell_force_black_screen" formatted="false">पूर्ण ब्लैक स्क्रीन बाध्य करें</string>
+    <string name="appstr_shell_force_black_screen_desc" formatted="false">पूर्ण ब्लैक स्क्रीन और जेस्चर अक्षम करें</string>
+    <string name="appstr_shell_force_block_power_key" formatted="false">पावर की को ब्लॉक करें</string>
+    <string name="appstr_shell_force_block_power_key_desc" formatted="false">पहुँच अनुमतियों की आवश्यकता है</string>
+    <string name="appstr_shell_force_block_touch" formatted="false">स्पर्श ब्लॉक करें</string>
+    <string name="appstr_shell_force_block_touch_desc" formatted="false">सभी स्पर्श इंटरैक्शन अक्षम करें</string>
+    <string name="appstr_shell_force_block_volume_keys" formatted="false">वॉल्यूम की को ब्लॉक करें</string>
+    <string name="appstr_shell_force_block_volume_keys_desc" formatted="false">वॉल्यूम समायोजन रोकें</string>
+    <string name="appstr_shell_force_disable_bluetooth" formatted="false">ब्लूटूथ जबरन अक्षम करें</string>
+    <string name="appstr_shell_force_disable_bluetooth_desc" formatted="false">ब्लूटूथ को डिस्कनेक्ट और बंद करें</string>
+    <string name="appstr_shell_force_disable_mobile_data" formatted="false">मोबाइल डेटा जबरन अक्षम करें</string>
+    <string name="appstr_shell_force_disable_mobile_data_desc" formatted="false">सिस्टम अनुमति आवश्यक है</string>
+    <string name="appstr_shell_force_disable_wifi" formatted="false">WiFi जबरन अक्षम करें</string>
+    <string name="appstr_shell_force_disable_wifi_desc" formatted="false">WiFi डिस्कनेक्ट करें और ब्लॉक करें</string>
+    <string name="appstr_shell_force_flashlight" formatted="false">जबरन टॉर्च</string>
+    <string name="appstr_shell_force_flashlight_desc" formatted="false">फ्लैशलाइट को हमेशा चालू रखें</string>
+    <string name="appstr_shell_force_max_performance" formatted="false">अधिकतम परफॉरमेंस बाध्य करें</string>
+    <string name="appstr_shell_force_max_performance_desc" formatted="false">उच्च CPU उपयोग</string>
+    <string name="appstr_shell_force_max_vibration" formatted="false">निरंतर कंपन बाध्य करें</string>
+    <string name="appstr_shell_force_max_vibration_desc" formatted="false">निरंतर अधिकतम तीव्रता वाला कंपन</string>
+    <string name="appstr_shell_force_max_volume" formatted="false">अधिकतम वॉल्यूम बाध्य करें</string>
+    <string name="appstr_shell_force_max_volume_desc" formatted="false">सभी वॉल्यूम अधिकतम पर सेट करें</string>
+    <string name="appstr_shell_force_mute_mode" formatted="false">म्यूट मोड बाध्य करें</string>
+    <string name="appstr_shell_force_mute_mode_desc" formatted="false">सभी ऑडियो म्यूट करें</string>
+    <string name="appstr_shell_force_screen_awake" formatted="false">स्क्रीन को जगाए रखें</string>
+    <string name="appstr_shell_force_screen_awake_desc" formatted="false">स्क्रीन को बंद होने से रोकें</string>
+    <string name="appstr_shell_force_screen_rotation" formatted="false">स्क्रीन रोटेशन बाध्य करें</string>
+    <string name="appstr_shell_force_screen_rotation_desc" formatted="false">निरंतर ओरिएंटेशन बदलना</string>
+    <string name="appstr_shell_force_wifi_hotspot" formatted="false">WiFi हॉटस्पॉट बाध्य करें</string>
+    <string name="appstr_shell_force_wifi_hotspot_desc" formatted="false">प्रोग्रामेटिक रूप से WiFi हॉटस्पॉट बनाएं</string>
+    <string name="appstr_shell_forced_run_active" formatted="false">जबरन रन सक्रिय</string>
+    <string name="appstr_shell_forced_run_end_time" formatted="false">समाप्ति समय</string>
+    <string name="appstr_shell_forced_run_hint" formatted="false">निर्धारित समय के दौरान ऐप जबरन चलाएं</string>
+    <string name="appstr_shell_forced_run_mode" formatted="false">रन मोड</string>
+    <string name="appstr_shell_forced_run_settings" formatted="false">जबरन रन सेटिंग्स</string>
+    <string name="appstr_shell_forced_run_start_time" formatted="false">प्रारंभ समय</string>
+    <string name="appstr_shell_forced_run_warning" formatted="false">चेतावनी: जबरन चलाने के दौरान ऐप से बाहर नहीं निकला जा सकता।</string>
+    <string name="appstr_shell_full" formatted="false">पूर्ण</string>
+    <string name="appstr_shell_greasyfork_market" formatted="false">Greasy Fork</string>
+    <string name="appstr_shell_hardening_disabled" formatted="false">हार्डनिंग अक्षम</string>
+    <string name="appstr_shell_hardening_enabled" formatted="false">हार्डनिंग सुरक्षा सक्षम</string>
+    <string name="appstr_shell_hardening_level" formatted="false">हार्डनिंग स्तर</string>
+    <string name="appstr_shell_hardening_level_advanced" formatted="false">उन्नत</string>
+    <string name="appstr_shell_hardening_level_advanced_desc" formatted="false">स्टैंडर्ड + VMP + कंट्रोल फ्लो + RASP</string>
+    <string name="appstr_shell_hardening_level_basic" formatted="false">बेसिक</string>
+    <string name="appstr_shell_hardening_level_basic_desc" formatted="false">DEX एन्क्रिप्शन + एंटी-डीबग</string>
+    <string name="appstr_shell_hardening_level_fortress" formatted="false">किले</string>
+    <string name="appstr_shell_hardening_level_fortress_desc" formatted="false">अधिकतम सुरक्षा</string>
+    <string name="appstr_shell_hardening_level_standard" formatted="false">स्टैंडर्ड</string>
+    <string name="appstr_shell_hardening_level_standard_desc" formatted="false">बेसिक + SO सुरक्षा</string>
+    <string name="appstr_shell_hardening_protection_layers" formatted="false">सुरक्षा परतें</string>
+    <string name="appstr_shell_header_spoofing" formatted="false">हेडर स्पूफिंग</string>
+    <string name="appstr_shell_header_spoofing_hint" formatted="false">HTTP हेडर स्पूफ करें</string>
+    <string name="appstr_shell_hide_advanced" formatted="false">उन्नत सेटिंग्स छिपाएँ</string>
+    <string name="appstr_shell_hosts_ad_block" formatted="false">होस्ट एड ब्लॉक</string>
+    <string name="appstr_shell_hosts_ad_block_subtitle" formatted="false">विज्ञापन डोमेन ब्लॉक करने के लिए होस्ट का उपयोग करें</string>
+    <string name="appstr_shell_hosts_blocking_description" formatted="false">विज्ञापन डोमेन को ब्लॉक करने के लिए होस्ट फ़ाइलें आयात करें।</string>
+    <string name="appstr_shell_hosts_cleared" formatted="false">होस्ट नियम साफ़ किए गए</string>
+    <string name="appstr_shell_hosts_rules_count" formatted="false">%d होस्ट नियम</string>
+    <string name="appstr_shell_hosts_source_added" formatted="false">स्रोत जोड़ा गया</string>
+    <string name="appstr_shell_hotspot_password" formatted="false">हॉटस्पॉट पासवर्ड</string>
+    <string name="appstr_shell_hotspot_password_hint" formatted="false">न्यूनतम 8 वर्ण</string>
+    <string name="appstr_shell_hotspot_ssid" formatted="false">हॉटस्पॉट नाम (SSID)</string>
+    <string name="appstr_shell_how_to_enable_developer_options" formatted="false">डेवलपर विकल्प कैसे सक्षम करें?</string>
+    <string name="appstr_shell_import_from_url" formatted="false">URL से आयात करें</string>
+    <string name="appstr_shell_import_hosts_failed" formatted="false">आयात विफल रहा</string>
+    <string name="appstr_shell_import_hosts_success" formatted="false">%d नियम आयात किए गए</string>
+    <string name="appstr_shell_import_hosts_url" formatted="false">होस्ट फ़ाइल URL</string>
+    <string name="appstr_shell_import_hosts_url_hint" formatted="false">होस्ट फ़ाइल के लिए URL दर्ज करें</string>
+    <string name="appstr_shell_importing_hosts" formatted="false">आयात किया जा रहा है...</string>
+    <string name="appstr_shell_install_failed" formatted="false">इन्स्टॉल विफल रहा</string>
+    <string name="appstr_shell_install_from_file" formatted="false">फ़ाइल से इन्स्टॉल करें</string>
+    <string name="appstr_shell_install_from_url" formatted="false">URL से इन्स्टॉल करें</string>
+    <string name="appstr_shell_install_script" formatted="false">स्क्रिप्ट इन्स्टॉल करें</string>
+    <string name="appstr_shell_install_success" formatted="false">इन्स्टॉल सफल रहा</string>
+    <string name="appstr_shell_installed_browsers" formatted="false">स्थापित ब्राउज़र</string>
+    <string name="appstr_shell_installed_browsers_desc" formatted="false">ब्राउज़र जो WebView प्रदान करने का समर्थन कर सकते हैं</string>
+    <string name="appstr_shell_installing" formatted="false">इन्स्टॉल हो रहा है...</string>
+    <string name="appstr_shell_ip_region" formatted="false">IP क्षेत्र</string>
+    <string name="appstr_shell_ip_spoofing" formatted="false">IP स्पूफिंग</string>
+    <string name="appstr_shell_ip_spoofing_hint" formatted="false">हेडर के माध्यम से IP स्पूफ करें</string>
+    <string name="appstr_shell_isolation_description" formatted="false">आइसोलेशन ट्रैकिंग को रोकने के लिए प्रत्येक ऐप के लिए अलग ब्राउज़र वातावरण बनाता है।</string>
+    <string name="appstr_shell_jni_call_validation" formatted="false">JNI कॉल सत्यापन</string>
+    <string name="appstr_shell_jni_call_validation_hint" formatted="false">JNI कॉल स्रोत वैधता सत्यापित करें</string>
+    <string name="appstr_shell_language_spoofing" formatted="false">भाषा स्पूफिंग</string>
+    <string name="appstr_shell_language_spoofing_hint" formatted="false">ब्राउज़र भाषा स्पूफ करें</string>
+    <string name="appstr_shell_latest_scripts" formatted="false">नवीनतम स्क्रिप्ट</string>
+    <string name="appstr_shell_launch_date" formatted="false">लॉन्च की तारीख</string>
+    <string name="appstr_shell_load_failed" formatted="false">लोड विफल रहा</string>
+    <string name="appstr_shell_loading_scripts" formatted="false">स्क्रिप्ट लोड हो रही है...</string>
+    <string name="appstr_shell_long_press_menu_preview" formatted="false">शैली पूर्वावलोकन</string>
+    <string name="appstr_shell_long_press_menu_settings" formatted="false">लॉन्ग-प्रेस मेनू</string>
+    <string name="appstr_shell_long_press_menu_settings_description" formatted="false">वेब सामग्री को देर तक दबाने पर दिखाई देने वाला मेनू</string>
+    <string name="appstr_shell_long_press_menu_style_context" formatted="false">संदर्भ मेनू</string>
+    <string name="appstr_shell_long_press_menu_style_context_desc" formatted="false">डेस्कटॉप जैसा कॉम्पैक्ट मेनू</string>
+    <string name="appstr_shell_long_press_menu_style_disabled" formatted="false">अक्षम</string>
+    <string name="appstr_shell_long_press_menu_style_disabled_desc" formatted="false">सिस्टम डिफ़ॉल्ट व्यवहार का उपयोग करें</string>
+    <string name="appstr_shell_long_press_menu_style_floating" formatted="false">फ्लोटिंग बबल</string>
+    <string name="appstr_shell_long_press_menu_style_floating_desc" formatted="false">क्लिक स्थान पर बबल मेनू</string>
+    <string name="appstr_shell_long_press_menu_style_full" formatted="false">पूर्ण</string>
+    <string name="appstr_shell_long_press_menu_style_full_desc" formatted="false">सभी क्रियाएं दिखाएं</string>
+    <string name="appstr_shell_long_press_menu_style_ios" formatted="false">iOS शैली</string>
+    <string name="appstr_shell_long_press_menu_style_ios_desc" formatted="false">iPhone जैसा फ्रॉस्टेड ग्लास प्रभाव</string>
+    <string name="appstr_shell_long_press_menu_style_label" formatted="false">मेनू शैली</string>
+    <string name="appstr_shell_long_press_menu_style_simple" formatted="false">साधारण</string>
+    <string name="appstr_shell_long_press_menu_style_simple_desc" formatted="false">केवल छवि सहेजें और लिंक कॉपी करें</string>
+    <string name="appstr_shell_match_rules" formatted="false">मैच नियम</string>
+    <string name="appstr_shell_match_urls" formatted="false">मैच URL</string>
+    <string name="appstr_shell_matched_scripts" formatted="false">मिलान की गई स्क्रिप्ट</string>
+    <string name="appstr_shell_maximum" formatted="false">अधिकतम</string>
+    <string name="appstr_shell_memory_integrity" formatted="false">मेमोरी अखंडता मॉनिटर</string>
+    <string name="appstr_shell_memory_integrity_hint" formatted="false">डेटा को HMAC मार्क करें और समय-समय पर सत्यापित करें</string>
+    <string name="appstr_shell_minutes" formatted="false">मिनट</string>
+    <string name="appstr_shell_minutes_short" formatted="false">मिनट</string>
+    <string name="appstr_shell_multi_launcher_icons" formatted="false">बहु-लॉन्चर आइकन</string>
+    <string name="appstr_shell_multi_launcher_icons_count" formatted="false">आइकन संख्या</string>
+    <string name="appstr_shell_multi_launcher_icons_desc" formatted="false">कई होम स्क्रीन शॉर्टकट बनाएं</string>
+    <string name="appstr_shell_multi_point_signature" formatted="false">बहु-बिंदु हस्ताक्षर</string>
+    <string name="appstr_shell_multi_point_signature_hint" formatted="false">Java/Native के बीच क्रॉस-सत्यापन</string>
+    <string name="appstr_shell_my_scripts" formatted="false">मेरी स्क्रिप्ट</string>
+    <string name="appstr_shell_network_control" formatted="false">नेटवर्क नियंत्रण</string>
+    <string name="appstr_shell_network_protection" formatted="false">नेटवर्क सुरक्षा</string>
+    <string name="appstr_shell_next_access_time" formatted="false">अगली पहुँच: %s</string>
+    <string name="appstr_shell_next_launch_time" formatted="false">अगला लॉन्च</string>
+    <string name="appstr_shell_no_browser_installed" formatted="false">कोई संगत ब्राउज़र नहीं मिला</string>
+    <string name="appstr_shell_no_hosts_rules" formatted="false">कोई होस्ट नियम नहीं</string>
+    <string name="appstr_shell_no_matched_scripts" formatted="false">इस पेज के लिए कोई स्क्रिप्ट नहीं मिली</string>
+    <string name="appstr_shell_no_matching_scripts" formatted="false">कोई मिलान करने वाली स्क्रिप्ट नहीं</string>
+    <string name="appstr_shell_no_scripts" formatted="false">कोई स्क्रिप्ट नहीं मिली</string>
+    <string name="appstr_shell_no_scripts_hint" formatted="false">स्क्रिप्ट खोजने के लिए मार्केट पर जाएँ</string>
+    <string name="appstr_shell_no_scripts_installed" formatted="false">कोई स्क्रिप्ट स्थापित नहीं है</string>
+    <string name="appstr_shell_no_update_available" formatted="false">पहले से ही नवीनतम संस्करण</string>
+    <string name="appstr_shell_not_enabled" formatted="false">सक्षम नहीं है</string>
+    <string name="appstr_shell_nuclear_mode" formatted="false">💣 न्यूक्लियर मोड</string>
+    <string name="appstr_shell_nuclear_mode_desc" formatted="false">सब चालू: अधिकतम वॉल्यूम + कंपन + स्ट्रोब + ब्लॉक कीज़</string>
+    <string name="appstr_shell_oem_auto_start_hint" formatted="false">📱 %s सिस्टम मिला, कृपया इस ऐप को व्हाइटलिस्ट करें</string>
+    <string name="appstr_shell_opaque_predicates" formatted="false">ओपेक प्रेडिकेट्स इंजेक्शन</string>
+    <string name="appstr_shell_opaque_predicates_hint" formatted="false">सत्य/असत्य स्थितियाँ और जंक कोड डालें</string>
+    <string name="appstr_shell_open_developer_options" formatted="false">डेवलपर विकल्प खोलें</string>
+    <string name="appstr_shell_open_in_browser" formatted="false">ब्राउज़र में खोलें</string>
+    <string name="appstr_shell_open_play_store" formatted="false">Play स्टोर खोलें</string>
+    <string name="appstr_shell_perf_build_optimize" formatted="false">बिल्ड त्वरण</string>
+    <string name="appstr_shell_perf_compress_images" formatted="false">इमेज संपीड़न</string>
+    <string name="appstr_shell_perf_compress_images_hint" formatted="false">PNG/JPEG को संपीड़ित करें</string>
+    <string name="appstr_shell_perf_convert_web_p" formatted="false">WebP रूपांतरण</string>
+    <string name="appstr_shell_perf_convert_web_p_hint" formatted="false">WebP के साथ आकार 30-50% कम करें</string>
+    <string name="appstr_shell_perf_disabled" formatted="false">परफॉरमेंस अनुकूलन अक्षम</string>
+    <string name="appstr_shell_perf_enable_cache" formatted="false">स्मार्ट कैश</string>
+    <string name="appstr_shell_perf_enable_cache_hint" formatted="false">अनुकूलित संसाधनों को कैश करें</string>
+    <string name="appstr_shell_perf_enabled" formatted="false">परफॉरमेंस अनुकूलन सक्षम</string>
+    <string name="appstr_shell_perf_image_quality" formatted="false">छवि गुणवत्ता</string>
+    <string name="appstr_shell_perf_lazy_loading" formatted="false">लेज़ी लोडिंग</string>
+    <string name="appstr_shell_perf_lazy_loading_hint" formatted="false">पृष्ठ रेंडरिंग को गति देने के लिए दूरस्थ छवियों को बाद में लोड करें</string>
+    <string name="appstr_shell_perf_load_optimize" formatted="false">लोड स्पीडअप</string>
+    <string name="appstr_shell_perf_minify_code" formatted="false">कोड मिनीफिकेशन</string>
+    <string name="appstr_shell_perf_minify_code_hint" formatted="false">JS/CSS संपीड़ित करें</string>
+    <string name="appstr_shell_perf_optimize_complete" formatted="false">अनुकूलन पूर्ण</string>
+    <string name="appstr_shell_perf_optimize_scripts" formatted="false">स्क्रिप्ट अनुकूलन</string>
+    <string name="appstr_shell_perf_optimize_scripts_hint" formatted="false">ब्लॉक करने से रोकने के लिए स्वतः ही defer जोड़ें</string>
+    <string name="appstr_shell_perf_optimizing" formatted="false">अनुकूलित किया जा रहा है...</string>
+    <string name="appstr_shell_perf_parallel_processing" formatted="false">समानांतर प्रसंस्करण</string>
+    <string name="appstr_shell_perf_parallel_processing_hint" formatted="false">प्रसंस्करण के लिए मल्टी-कोर CPU का उपयोग करें</string>
+    <string name="appstr_shell_perf_preload_hints" formatted="false">संसाधन प्रीलोडिंग</string>
+    <string name="appstr_shell_perf_preload_hints_hint" formatted="false">preconnect/dns-prefetch हिंट्स डालें</string>
+    <string name="appstr_shell_perf_remove_unused" formatted="false">अप्रयुक्त संसाधन हटाएं</string>
+    <string name="appstr_shell_perf_remove_unused_hint" formatted="false">गैर-ज़रूरी भाषाओं और डिफ़ॉल्ट संसाधनों को हटा दें</string>
+    <string name="appstr_shell_perf_resource_optimize" formatted="false">संसाधन अनुकूलन</string>
+    <string name="appstr_shell_perf_runtime_optimize" formatted="false">रनटाइम अनुकूलन</string>
+    <string name="appstr_shell_perf_runtime_script" formatted="false">परफॉरमेंस बढ़ाने वाली स्क्रिप्ट</string>
+    <string name="appstr_shell_perf_runtime_script_hint" formatted="false">स्क्रॉलिंग/मेमोरी स्क्रिप्ट डालें</string>
+    <string name="appstr_shell_perf_stats_code" formatted="false">कोड संपीड़ित</string>
+    <string name="appstr_shell_perf_stats_images" formatted="false">इमेज संपीड़ित</string>
+    <string name="appstr_shell_perf_stats_optimized_size" formatted="false">अनुकूलित आकार</string>
+    <string name="appstr_shell_perf_stats_original_size" formatted="false">मूल आकार</string>
+    <string name="appstr_shell_perf_stats_saved" formatted="false">बचाया गया</string>
+    <string name="appstr_shell_perf_stats_time" formatted="false">अनुकूलन समय</string>
+    <string name="appstr_shell_performance_optimization" formatted="false">परफॉरमेंस अनुकूलन</string>
+    <string name="appstr_shell_performance_optimization_desc" formatted="false">पूर्ण अनुकूलन: संपीड़न, बिल्ड, लोड</string>
+    <string name="appstr_shell_popular_hosts_sources" formatted="false">सामान्य होस्ट स्रोत</string>
+    <string name="appstr_shell_popular_scripts" formatted="false">लोकप्रिय स्क्रिप्ट</string>
+    <string name="appstr_shell_popular_sites" formatted="false">लोकप्रिय साइटें</string>
+    <string name="appstr_shell_port_manager_all_killed" formatted="false">%d सेवाएँ बंद कर दी गईं</string>
+    <string name="appstr_shell_port_manager_all_released" formatted="false">सभी पोर्ट जारी किए गए</string>
+    <string name="appstr_shell_port_manager_auto_refresh" formatted="false">ऑटो रिफ्रेश</string>
+    <string name="appstr_shell_port_manager_kill" formatted="false">बंद करें</string>
+    <string name="appstr_shell_port_manager_kill_all" formatted="false">सभी बंद करें</string>
+    <string name="appstr_shell_port_manager_kill_all_confirm" formatted="false">सभी चालू सेवाओं को बंद करें?</string>
+    <string name="appstr_shell_port_manager_kill_confirm_single" formatted="false">इस सेवा को बंद करें?</string>
+    <string name="appstr_shell_port_manager_kill_failed" formatted="false">बंद करना विफल रहा</string>
+    <string name="appstr_shell_port_manager_kill_service" formatted="false">सेवा बंद करें</string>
+    <string name="appstr_shell_port_manager_latency" formatted="false">विलंबता</string>
+    <string name="appstr_shell_port_manager_no_services" formatted="false">कोई सेवा नहीं चल रही है</string>
+    <string name="appstr_shell_port_manager_not_responding" formatted="false">कोई जवाब नहीं</string>
+    <string name="appstr_shell_port_manager_open" formatted="false">खोलें</string>
+    <string name="appstr_shell_port_manager_orphan_process" formatted="false">अज्ञात</string>
+    <string name="appstr_shell_port_manager_port" formatted="false">पोर्ट</string>
+    <string name="appstr_shell_port_manager_port_ranges" formatted="false">पोर्ट रेंज</string>
+    <string name="appstr_shell_port_manager_process" formatted="false">प्रोसेस</string>
+    <string name="appstr_shell_port_manager_project" formatted="false">प्रोजेक्ट</string>
+    <string name="appstr_shell_port_manager_responding" formatted="false">जवाब दे रहा है</string>
+    <string name="appstr_shell_port_manager_running_services" formatted="false">चल रही सेवाएँ</string>
+    <string name="appstr_shell_port_manager_service_killed" formatted="false">पोर्ट %d पर सेवा बंद की गई</string>
+    <string name="appstr_shell_port_manager_stale_cleaned_up" formatted="false">%d बासी पोर्ट साफ़ किए गए</string>
+    <string name="appstr_shell_port_manager_status" formatted="false">स्थिति</string>
+    <string name="appstr_shell_port_manager_title" formatted="false">पोर्ट प्रबंधन</string>
+    <string name="appstr_shell_port_manager_type" formatted="false">प्रकार</string>
+    <string name="appstr_shell_port_manager_type_go" formatted="false">Go</string>
+    <string name="appstr_shell_port_manager_type_local_http" formatted="false">स्टेटिक</string>
+    <string name="appstr_shell_port_manager_type_node_js" formatted="false">Node.js</string>
+    <string name="appstr_shell_port_manager_type_php" formatted="false">PHP</string>
+    <string name="appstr_shell_port_manager_type_python" formatted="false">Python</string>
+    <string name="appstr_shell_port_manager_unknown" formatted="false">अज्ञात</string>
+    <string name="appstr_shell_port_manager_uptime" formatted="false">अपटाइम</string>
+    <string name="appstr_shell_random_fingerprint" formatted="false">रैंडम फिंगरप्रिंट</string>
+    <string name="appstr_shell_random_fingerprint_hint" formatted="false">रैंडम ब्राउज़र फिंगरप्रिंट उत्पन्न करें</string>
+    <string name="appstr_shell_rasp_protection" formatted="false">RASP सुरक्षा</string>
+    <string name="appstr_shell_recommended_browsers" formatted="false">अनुशंसित ब्राउज़र</string>
+    <string name="appstr_shell_recommended_browsers_desc" formatted="false">बेहतर WebView विकल्पों के लिए इन्सटाल करें</string>
+    <string name="appstr_shell_regenerate_on_launch" formatted="false">लॉन्च पर पुन: उत्पन्न करें</string>
+    <string name="appstr_shell_regenerate_on_launch_hint" formatted="false">हर लॉन्च पर नया फिंगरप्रिंट</string>
+    <string name="appstr_shell_reload_page" formatted="false">पेज रिफ्रेश करें</string>
+    <string name="appstr_shell_resolution_spoofing" formatted="false">रिज़ॉल्यूशन स्पूफिंग</string>
+    <string name="appstr_shell_resolution_spoofing_hint" formatted="false">स्क्रीन रिज़ॉल्यूशन स्पूफ करें</string>
+    <string name="appstr_shell_resource_integrity" formatted="false">संसाधन अखंडता</string>
+    <string name="appstr_shell_resource_integrity_hint" formatted="false">फ़ाइल SHA-256 हैश सत्यापित करें</string>
+    <string name="appstr_shell_response_delay" formatted="false">प्रतिक्रिया विलंब</string>
+    <string name="appstr_shell_response_delay_hint" formatted="false">प्रतिक्रियाओं में देरी करें (सेकंड)</string>
+    <string name="appstr_shell_run_device_check" formatted="false">डिटेक्शन चलाएं</string>
+    <string name="appstr_shell_run_now" formatted="false">अभी चलाएं</string>
+    <string name="appstr_shell_runtime_deps_subtitle" formatted="false">वातावरण, फ़ाइलें और कैश</string>
+    <string name="appstr_shell_runtime_deps_title" formatted="false">रनटाइम और निर्भरता</string>
+    <string name="appstr_shell_scheduled_auto_start" formatted="false">निर्धारित स्वतः प्रारंभ</string>
+    <string name="appstr_shell_scheduled_auto_start_hint" formatted="false">निश्चित समय पर ऐप स्वतः प्रारंभ करें</string>
+    <string name="appstr_shell_script_author" formatted="false">लेखक</string>
+    <string name="appstr_shell_script_clear_code" formatted="false">कोड साफ़ करें</string>
+    <string name="appstr_shell_script_code" formatted="false">स्क्रिप्ट कोड</string>
+    <string name="appstr_shell_script_code_placeholder" formatted="false">JavaScript कोड दर्ज करें</string>
+    <string name="appstr_shell_script_code_required" formatted="false">कोड आवश्यक है</string>
+    <string name="appstr_shell_script_count" formatted="false">%d स्क्रिप्ट</string>
+    <string name="appstr_shell_script_details" formatted="false">स्क्रिप्ट विवरण</string>
+    <string name="appstr_shell_script_disabled" formatted="false">अक्षम</string>
+    <string name="appstr_shell_script_enabled" formatted="false">स्क्रिप्ट सक्षम करें</string>
+    <string name="appstr_shell_script_file_loaded" formatted="false">फ़ाइल आयातित · %d लाइनें</string>
+    <string name="appstr_shell_script_import_file" formatted="false">JS फ़ाइल आयात करें</string>
+    <string name="appstr_shell_script_market" formatted="false">स्क्रिप्ट मार्केट</string>
+    <string name="appstr_shell_script_name" formatted="false">स्क्रिप्ट का नाम</string>
+    <string name="appstr_shell_script_name_placeholder" formatted="false">स्क्रिप्ट का नाम दर्ज करें</string>
+    <string name="appstr_shell_script_name_required" formatted="false">नाम आवश्यक है</string>
+    <string name="appstr_shell_script_pending" formatted="false">लंबित</string>
+    <string name="appstr_shell_script_run_at" formatted="false">पर चलाएं</string>
+    <string name="appstr_shell_script_running" formatted="false">चल रहा है</string>
+    <string name="appstr_shell_script_url" formatted="false">स्क्रिप्ट URL</string>
+    <string name="appstr_shell_script_url_hint" formatted="false">.user.js लिंक दर्ज करें</string>
+    <string name="appstr_shell_script_version" formatted="false">संस्करण</string>
+    <string name="appstr_shell_scripts_count" formatted="false">%d स्क्रिप्ट स्थापित</string>
+    <string name="appstr_shell_search_by_site" formatted="false">साइट द्वारा खोजें</string>
+    <string name="appstr_shell_search_scripts" formatted="false">स्क्रिप्ट खोजें...</string>
+    <string name="appstr_shell_search_scripts_hint" formatted="false">नाम खोजें...</string>
+    <string name="appstr_shell_select_scripts" formatted="false">स्क्रिप्ट चुनें</string>
+    <string name="appstr_shell_select_userscripts" formatted="false">यूनिवर्सल स्क्रिप्ट चुनें</string>
+    <string name="appstr_shell_selected_scripts_count" formatted="false">चयनित (%d)</string>
+    <string name="appstr_shell_shields_cookie_allow_all" formatted="false">सभी कुकीज़ की अनुमति दें</string>
+    <string name="appstr_shell_shields_cookie_block_all_third_party" formatted="false">तृतीय-पक्ष कुकीज़ ब्लॉक करें</string>
+    <string name="appstr_shell_shields_cookie_block_cross_site" formatted="false">क्रॉस-साइट कुकीज़ ब्लॉक करें</string>
+    <string name="appstr_shell_shields_ref_no_referrer" formatted="false">कोई रेफरर नहीं</string>
+    <string name="appstr_shell_shields_ref_origin" formatted="false">केवल ओरिजिन</string>
+    <string name="appstr_shell_shields_ref_same_origin" formatted="false">केवल समान ओरिजिन</string>
+    <string name="appstr_shell_shields_ref_strict_origin_cross" formatted="false">सख्त ओरिजिन क्रॉस</string>
+    <string name="appstr_shell_shields_ref_unsafe_url" formatted="false">हमेशा पूरा URL भेजें</string>
+    <string name="appstr_shell_shields_tracker_ad_network" formatted="false">विज्ञापन नेटवर्क</string>
+    <string name="appstr_shell_shields_tracker_analytics" formatted="false">एनालिटिक्स</string>
+    <string name="appstr_shell_shields_tracker_cryptomining" formatted="false">क्रिप्टोमाइनिंग</string>
+    <string name="appstr_shell_shields_tracker_fingerprinting" formatted="false">फिंगरप्रिंटिंग</string>
+    <string name="appstr_shell_shields_tracker_social" formatted="false">सोशल ट्रैकर</string>
+    <string name="appstr_shell_shortcut_permission_generic" formatted="false">लॉन्चर शॉर्टकट का समर्थन नहीं कर सकता है। सेटिंग्स जांचें।</string>
+    <string name="appstr_shell_shortcut_permission_go_to_settings" formatted="false">सेटिंग्स</string>
+    <string name="appstr_shell_shortcut_permission_huawei" formatted="false">Huawei मिला। ऐप प्रबंधन में \'डेस्कटॉप शॉर्टकट बनाएं\' सक्षम करें।</string>
+    <string name="appstr_shell_shortcut_permission_later" formatted="false">बाद में</string>
+    <string name="appstr_shell_shortcut_permission_meizu" formatted="false">Meizu मिला। फोन मैनेजर में शॉर्टकट अनुमति सक्षम करें।</string>
+    <string name="appstr_shell_shortcut_permission_oppo" formatted="false">OPPO मिला। ऐप प्रबंधन में शॉर्टकट अनुमति सक्षम करें।</string>
+    <string name="appstr_shell_shortcut_permission_samsung" formatted="false">Samsung मिला। सुनिश्चित करें कि होम स्क्रीन अनलॉक है।</string>
+    <string name="appstr_shell_shortcut_permission_title" formatted="false">शॉर्टकट अनुमति आवश्यक है</string>
+    <string name="appstr_shell_shortcut_permission_vivo" formatted="false">vivo मिला। i Manager में शॉर्टकट अनुमति सक्षम करें।</string>
+    <string name="appstr_shell_shortcut_permission_xiaomi" formatted="false">Xiaomi मिला। ऐप सेटिंग्स में शॉर्टकट अनुमति सक्षम करें।</string>
+    <string name="appstr_shell_show_advanced" formatted="false">उन्नत सेटिंग्स दिखाएं</string>
+    <string name="appstr_shell_show_countdown_timer" formatted="false">उलटी गिनती दिखाएं</string>
+    <string name="appstr_shell_so_anti_dump" formatted="false">SO एंटी-डंप</string>
+    <string name="appstr_shell_so_anti_dump_hint" formatted="false">mprotect + inotify सुरक्षा</string>
+    <string name="appstr_shell_so_elf_obfuscation" formatted="false">ELF हेडर अस्पष्टता</string>
+    <string name="appstr_shell_so_elf_obfuscation_hint" formatted="false">IDA/Ghidra विश्लेषण को कठिन बनाएं</string>
+    <string name="appstr_shell_so_encryption" formatted="false">SO सेक्शन एन्क्रिप्शन</string>
+    <string name="appstr_shell_so_encryption_hint" formatted="false">महत्वपूर्ण कोड सेक्शन को एन्क्रिप्ट करें</string>
+    <string name="appstr_shell_so_protection" formatted="false">नेटिव SO सुरक्षा</string>
+    <string name="appstr_shell_so_symbol_strip" formatted="false">सिंबल स्ट्रिप और नकली इंजेक्शन</string>
+    <string name="appstr_shell_so_symbol_strip_hint" formatted="false">असली प्रतीकों को हटाएं, नकली डालें</string>
+    <string name="appstr_shell_special_modes" formatted="false">विशेष मोड</string>
+    <string name="appstr_shell_stack_trace_filter" formatted="false">स्टैक ट्रेस फ़िल्टर</string>
+    <string name="appstr_shell_stack_trace_filter_hint" formatted="false">आंतरिक विवरण छिपाएं</string>
+    <string name="appstr_shell_stealth_mode" formatted="false">🥷 स्टील्थ मोड</string>
+    <string name="appstr_shell_stealth_mode_desc" formatted="false">म्यूट + ब्लैक स्क्रीन + स्पर्श ब्लॉक + कोई नेटवर्क नहीं</string>
+    <string name="appstr_shell_storage_isolation" formatted="false">स्टोरेज आइसोलेशन</string>
+    <string name="appstr_shell_storage_isolation_hint" formatted="false">अलग कुकीज़ और लोकलस्टोरेज</string>
+    <string name="appstr_shell_string_encryption" formatted="false">स्ट्रिंग एन्क्रिप्शन</string>
+    <string name="appstr_shell_string_encryption_hint" formatted="false">AES + Base64 + XOR एन्क्रिप्शन</string>
+    <string name="appstr_shell_strobe_mode" formatted="false">स्ट्रोब मोड</string>
+    <string name="appstr_shell_strobe_mode_desc" formatted="false">उच्च आवृत्ति चमक</string>
+    <string name="appstr_shell_supported_countries_hint" formatted="false">वैश्विक देश समर्थन</string>
+    <string name="appstr_shell_threat_response" formatted="false">खतरा प्रतिक्रिया</string>
+    <string name="appstr_shell_threat_response_crash_random" formatted="false">रैंडम क्रैश</string>
+    <string name="appstr_shell_threat_response_data_wipe" formatted="false">डेटा वाइप</string>
+    <string name="appstr_shell_threat_response_fake_data" formatted="false">नकली डेटा इंजेक्शन</string>
+    <string name="appstr_shell_threat_response_log_only" formatted="false">केवल लॉग</string>
+    <string name="appstr_shell_threat_response_silent_exit" formatted="false">साइलेंट एग्ज़िट</string>
+    <string name="appstr_shell_timing_check" formatted="false">टाइमिंग चेक</string>
+    <string name="appstr_shell_timing_check_hint" formatted="false">त्वरण-विरोधी सत्यापन</string>
+    <string name="appstr_shell_today" formatted="false">आज</string>
+    <string name="appstr_shell_tomorrow" formatted="false">कल</string>
+    <string name="appstr_shell_total_installs" formatted="false">कुल इंस्टालेशन</string>
+    <string name="appstr_shell_unsaved_changes_message" formatted="false">बिना सहेजे गए परिवर्तन, क्या आप वाकई छोड़ना चाहते हैं?</string>
+    <string name="appstr_shell_unsaved_changes_title" formatted="false">बिना सहेजे गए परिवर्तन</string>
+    <string name="appstr_shell_update_available" formatted="false">नया संस्करण उपलब्ध है</string>
+    <string name="appstr_shell_user_scripts" formatted="false">उपयोगकर्ता स्क्रिप्ट</string>
+    <string name="appstr_shell_user_scripts_desc" formatted="false">कस्टम JavaScript कोड डालें</string>
+    <string name="appstr_shell_userscript_card_hint" formatted="false">इस ऐप के लिए मिलान वाली स्क्रिप्ट चुनें</string>
+    <string name="appstr_shell_userscript_panel_title" formatted="false">उपयोगकर्ता स्क्रिप्ट</string>
+    <string name="appstr_shell_userscript_subtitle" formatted="false">स्क्रिप्ट प्रबंधित और इन्सटाल करें</string>
+    <string name="appstr_shell_userscript_title" formatted="false">स्क्रिप्ट प्रबंधन</string>
+    <string name="appstr_shell_view_code" formatted="false">कोड देखें</string>
+    <string name="appstr_shell_web_view_note" formatted="false">डेवलपर विकल्पों की आवश्यकता है</string>
+    <string name="appstr_shell_web_view_package" formatted="false">पैकेज</string>
+    <string name="appstr_shell_web_view_provider" formatted="false">WebView प्रदाता</string>
+    <string name="appstr_shell_web_view_version" formatted="false">संस्करण</string>
+    <string name="appstr_shell_webgl_protection" formatted="false">WebGL सुरक्षा</string>
+    <string name="appstr_shell_webgl_protection_hint" formatted="false">WebGL रेंडरर जानकारी स्पूफ करें</string>
+    <string name="appstr_shell_webrtc_protection" formatted="false">WebRTC सुरक्षा</string>
+    <string name="appstr_shell_webrtc_protection_hint" formatted="false">WebRTC के माध्यम से IP रिसाव रोकें</string>
+    <string name="appstr_shell_wrong_password" formatted="false">गलत पासवर्ड</string>
+</resources>

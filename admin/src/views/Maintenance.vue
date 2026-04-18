@@ -1,80 +1,80 @@
 <template>
   <div class="view-page">
     <div class="page-header">
-      <h1>系统维护</h1>
-      <p class="page-desc">系统健康检查、缓存管理和数据库维护</p>
+      <h1>{{ $t('maintenance.title') }}</h1>
+      <p class="page-desc">{{ $t('maintenance.subtitle') }}</p>
     </div>
 
-    <!-- 系统健康状态 -->
+    <!-- System Health -->
     <div class="stats-row">
       <div class="stat-card" :class="health.status === 'healthy' ? 'success' : 'warning'">
         <div class="stat-value">{{ health.status || '...' }}</div>
-        <div class="stat-label">系统状态</div>
+        <div class="stat-label">{{ $t('maintenance.stats.health') }}</div>
       </div>
       <div class="stat-card">
         <div class="stat-value">{{ health.uptime || '-' }}</div>
-        <div class="stat-label">运行时间</div>
+        <div class="stat-label">{{ $t('maintenance.stats.uptime') }}</div>
       </div>
       <div class="stat-card">
         <div class="stat-value">{{ health.dbConnections ?? '-' }}</div>
-        <div class="stat-label">数据库连接</div>
+        <div class="stat-label">{{ $t('maintenance.stats.db_conn') }}</div>
       </div>
       <div class="stat-card">
         <div class="stat-value">{{ health.memoryUsage || '-' }}</div>
-        <div class="stat-label">内存使用</div>
+        <div class="stat-label">{{ $t('maintenance.stats.memory') }}</div>
       </div>
     </div>
 
-    <!-- 维护操作 -->
+    <!-- Maintenance Actions -->
     <div class="actions-grid">
       <div class="action-card">
         <div class="action-icon">🧹</div>
-        <h3>清理缓存</h3>
-        <p>清除所有服务端缓存数据</p>
+        <h3>{{ $t('maintenance.actions.cache_title') }}</h3>
+        <p>{{ $t('maintenance.actions.cache_desc') }}</p>
         <button class="btn btn-primary" @click="clearCache" :disabled="running.cache">
-          {{ running.cache ? '清理中...' : '执行清理' }}
+          {{ running.cache ? $t('maintenance.actions.running') : $t('maintenance.actions.exec') }}
         </button>
       </div>
 
       <div class="action-card">
         <div class="action-icon">💾</div>
-        <h3>数据库备份</h3>
-        <p>创建当前数据库的完整备份</p>
+        <h3>{{ $t('maintenance.actions.backup_title') }}</h3>
+        <p>{{ $t('maintenance.actions.backup_desc') }}</p>
         <button class="btn btn-primary" @click="dbBackup" :disabled="running.backup">
-          {{ running.backup ? '备份中...' : '创建备份' }}
+          {{ running.backup ? $t('maintenance.actions.running') : $t('maintenance.actions.backup_title') }}
         </button>
       </div>
 
       <div class="action-card">
         <div class="action-icon">🗑️</div>
-        <h3>数据清理</h3>
-        <p>清理过期 Token、日志和临时文件</p>
+        <h3>{{ $t('maintenance.actions.cleanup_title') }}</h3>
+        <p>{{ $t('maintenance.actions.cleanup_desc') }}</p>
         <button class="btn btn-warning" @click="cleanup" :disabled="running.cleanup">
-          {{ running.cleanup ? '清理中...' : '执行清理' }}
+          {{ running.cleanup ? $t('maintenance.actions.running') : $t('maintenance.actions.exec') }}
         </button>
       </div>
 
       <div class="action-card">
         <div class="action-icon">🔄</div>
-        <h3>健康检查</h3>
-        <p>检查所有系统组件的健康状态</p>
+        <h3>{{ $t('maintenance.actions.health_title') }}</h3>
+        <p>{{ $t('maintenance.actions.health_desc') }}</p>
         <button class="btn btn-ghost" @click="healthCheck" :disabled="running.health">
-          {{ running.health ? '检查中...' : '重新检查' }}
+          {{ running.health ? $t('maintenance.actions.running') : $t('maintenance.actions.recheck') }}
         </button>
       </div>
     </div>
 
-    <!-- 备份管理 -->
+    <!-- Backup Management -->
     <div class="card mb-24">
       <div class="card-header-row">
-        <h2 class="card-title">💾 备份管理</h2>
+        <h2 class="card-title">💾 {{ $t('maintenance.backups.title') }}</h2>
         <span v-if="backupData.total_size" class="text-xs text-muted">
-          共 {{ backupData.count }} 个备份 · {{ backupData.total_size }}
+          {{ $t('maintenance.backups.summary', { count: backupData.count, size: backupData.total_size }) }}
         </span>
       </div>
 
-      <div v-if="loadingBackups" class="empty-hint">加载中...</div>
-      <div v-else-if="!backups.length" class="empty-hint">暂无备份文件</div>
+      <div v-if="loadingBackups" class="empty-hint">{{ $t('common.loading') }}</div>
+      <div v-else-if="!backups.length" class="empty-hint">{{ $t('maintenance.backups.no_data') }}</div>
       <div v-else class="backup-list">
         <div class="backup-item" v-for="b in backups" :key="b.filename">
           <div class="backup-info">
@@ -82,25 +82,25 @@
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
               {{ b.filename }}
             </span>
-            <span class="backup-meta">{{ b.size }} · {{ b.created_at }}</span>
+            <span class="backup-meta">{{ b.size }} · {{ formatDate(b.created_at) }}</span>
           </div>
           <div class="backup-actions">
-            <button class="btn btn-ghost btn-xs" @click="downloadBackup(b.filename)" title="下载">
+            <button class="btn btn-ghost btn-xs" @click="downloadBackup(b.filename)" :title="$t('projects.details.ver.table.download')">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              下载
+              {{ $t('projects.details.ver.table.download') }}
             </button>
-            <button class="btn btn-danger btn-xs" @click="deleteBackup(b.filename)" title="删除">
+            <button class="btn btn-danger btn-xs" @click="deleteBackup(b.filename)" :title="$t('common.delete')">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-              删除
+              {{ $t('common.delete') }}
             </button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- 系统统计 -->
+    <!-- System Stats -->
     <div class="card" v-if="systemStats">
-      <h2 class="card-title">📊 系统统计</h2>
+      <h2 class="card-title">📊 {{ $t('maintenance.stats_title') }}</h2>
       <div class="stats-list">
         <div class="stats-item" v-for="(val, key) in systemStats" :key="key">
           <span class="stats-key">{{ key }}</span>
@@ -109,24 +109,24 @@
       </div>
     </div>
 
-    <!-- 数据导出 -->
+    <!-- Data Export -->
     <div class="card mt-24" style="margin-top:24px">
-      <h2 class="card-title">📥 数据导出</h2>
+      <h2 class="card-title">📥 {{ $t('maintenance.export.title') }}</h2>
       <div class="export-grid">
         <div class="action-card">
           <div class="action-icon">👤</div>
-          <h3>导出用户数据</h3>
-          <p>导出所有用户账号信息为 CSV 文件</p>
+          <h3>{{ $t('maintenance.export.users_title') }}</h3>
+          <p>{{ $t('maintenance.export.users_desc') }}</p>
           <button class="btn btn-primary" @click="exportUsers" :disabled="running.exportUsers">
-            {{ running.exportUsers ? '导出中...' : '导出用户' }}
+            {{ running.exportUsers ? $t('maintenance.actions.running') : $t('maintenance.actions.exec') }}
           </button>
         </div>
         <div class="action-card">
           <div class="action-icon">📁</div>
-          <h3>导出项目数据</h3>
-          <p>导出所有云项目信息为 CSV 文件</p>
+          <h3>{{ $t('maintenance.export.projects_title') }}</h3>
+          <p>{{ $t('maintenance.export.projects_desc') }}</p>
           <button class="btn btn-primary" @click="exportProjects" :disabled="running.exportProjects">
-            {{ running.exportProjects ? '导出中...' : '导出项目' }}
+            {{ running.exportProjects ? $t('maintenance.actions.running') : $t('maintenance.actions.exec') }}
           </button>
         </div>
       </div>
@@ -137,7 +137,9 @@
 <script setup>
 import { ref, reactive, inject, onMounted } from 'vue'
 import { maintenanceApi } from '../api/index.js'
+import { useI18n } from 'vue-i18n'
 
+const { t, locale } = useI18n()
 const showToast = inject('showToast')
 const health = reactive({ status: '', uptime: '', dbConnections: 0, memoryUsage: '' })
 const systemStats = ref(null)
@@ -157,7 +159,7 @@ async function healthCheck() {
     health.memoryUsage = d.memory_usage || '-'
   } catch {
     health.status = 'error'
-    showToast('健康检查失败', 'error')
+    showToast(t('common.loading') + ' ' + t('common.failed'), 'error')
   } finally {
     running.health = false
   }
@@ -167,9 +169,9 @@ async function clearCache() {
   running.cache = true
   try {
     const res = await maintenanceApi.clearCache()
-    showToast(res?.message || '缓存已清除')
+    showToast(t('common.active'))
   } catch {
-    showToast('清除失败', 'error')
+    showToast(t('common.failed'), 'error')
   } finally {
     running.cache = false
   }
@@ -180,26 +182,26 @@ async function dbBackup() {
   try {
     const res = await maintenanceApi.dbBackup()
     if (res?.success === false) {
-      showToast(res.message || '备份失败', 'error')
+      showToast(res.message || t('common.failed'), 'error')
     } else {
-      showToast(res?.message || '备份已创建')
+      showToast(t('common.active'))
       loadBackups()
     }
   } catch {
-    showToast('备份失败', 'error')
+    showToast(t('common.failed'), 'error')
   } finally {
     running.backup = false
   }
 }
 
 async function cleanup() {
-  if (!confirm('确定执行数据清理？此操作将删除过期的 Token 和日志。')) return
+  if (!confirm(t('maintenance.actions.confirm_cleanup'))) return
   running.cleanup = true
   try {
     const res = await maintenanceApi.cleanup()
-    showToast(res?.message || '清理完成')
+    showToast(t('common.active'))
   } catch {
-    showToast('清理失败', 'error')
+    showToast(t('common.failed'), 'error')
   } finally {
     running.cleanup = false
   }
@@ -234,13 +236,13 @@ function downloadBackup(filename) {
 }
 
 async function deleteBackup(filename) {
-  if (!confirm(`确定删除备份 "${filename}"？此操作不可撤销。`)) return
+  if (!confirm(t('maintenance.backups.confirm_delete', { name: filename }))) return
   try {
     await maintenanceApi.deleteBackup(filename)
-    showToast('已删除')
+    showToast(t('common.active'))
     loadBackups()
   } catch {
-    showToast('删除失败', 'error')
+    showToast(t('common.failed'), 'error')
   }
 }
 
@@ -252,9 +254,9 @@ async function exportUsers() {
     const a = document.createElement('a')
     a.href = url; a.download = 'users_export.csv'; a.click()
     URL.revokeObjectURL(url)
-    showToast('用户数据已导出')
+    showToast(t('common.active'))
   } catch {
-    showToast('导出失败', 'error')
+    showToast(t('common.failed'), 'error')
   } finally {
     running.exportUsers = false
   }
@@ -268,13 +270,16 @@ async function exportProjects() {
     const a = document.createElement('a')
     a.href = url; a.download = 'projects_export.csv'; a.click()
     URL.revokeObjectURL(url)
-    showToast('项目数据已导出')
+    showToast(t('common.active'))
   } catch {
-    showToast('导出失败', 'error')
+    showToast(t('common.failed'), 'error')
   } finally {
     running.exportProjects = false
   }
 }
+
+const dateLocaleMap = { en: 'en-US', zh: 'zh-CN', hi: 'hi-IN' }
+function formatDate(d) { return d ? new Date(d).toLocaleString(dateLocaleMap[locale.value] || 'en-US') : '-' }
 
 onMounted(() => {
   healthCheck()

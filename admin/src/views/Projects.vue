@@ -1,17 +1,17 @@
 <template>
   <div>
     <div class="flex items-center justify-between mb-20">
-      <h2 class="page-title">☁️ 云项目管理</h2>
-      <button class="btn btn-primary" @click="showCreate = true">+ 新建项目</button>
+      <h2 class="page-title">☁️ {{ $t('projects.title') }}</h2>
+      <button class="btn btn-primary" @click="showCreate = true">+ {{ $t('projects.modal.btn_create') }}</button>
     </div>
 
     <div v-if="loading" class="spinner"></div>
 
     <div v-else-if="!projects.length" class="empty-hero">
       <div class="empty-icon">☁️</div>
-      <h3>还没有云项目</h3>
-      <p>创建项目后，你可以为构建的 APP 提供激活码、公告推送、版本更新和远程配置服务</p>
-      <button class="btn btn-primary" @click="showCreate = true">创建第一个项目</button>
+      <h3>{{ $t('projects.no_projects') }}</h3>
+      <p>{{ $t('projects.description_hint') }}</p>
+      <button class="btn btn-primary" @click="showCreate = true">{{ $t('projects.btn_create_first') }}</button>
     </div>
 
     <div v-else class="projects-grid">
@@ -20,40 +20,40 @@
           <div class="project-icon">{{ p.project_name[0]?.toUpperCase() }}</div>
           <div>
             <h3>{{ p.project_name }}</h3>
-            <span class="text-muted" style="font-size:12px">{{ p.package_name || '未设置包名' }}</span>
+            <span class="text-muted" style="font-size:12px">{{ p.package_name || $t('projects.no_package') }}</span>
           </div>
         </div>
-        <p class="project-desc">{{ p.description || '暂无描述' }}</p>
+        <p class="project-desc">{{ p.description || $t('projects.no_desc') }}</p>
         <div class="project-meta">
           <code class="project-key">{{ p.project_key }}</code>
           <span :class="['badge', p.is_active ? 'badge-success' : 'badge-danger']">
-            {{ p.is_active ? '活跃' : '禁用' }}
+            {{ p.is_active ? $t('common.active') : $t('common.inactive') }}
           </span>
         </div>
-        <div class="project-date text-muted">创建于 {{ formatDate(p.created_at) }}</div>
+        <div class="project-date text-muted">{{ $t('projects.table.created') }} {{ formatDate(p.created_at) }}</div>
       </div>
     </div>
 
     <!-- Create Modal -->
     <div v-if="showCreate" class="modal-overlay" @click.self="showCreate = false">
       <div class="modal">
-        <h3 class="modal-title">新建云项目</h3>
+        <h3 class="modal-title">{{ $t('projects.modal.title') }}</h3>
         <div class="form-group">
-          <label class="form-label">项目名称</label>
-          <input v-model="form.project_name" class="input" placeholder="例如：CoolApp" />
+          <label class="form-label">{{ $t('projects.modal.name') }}</label>
+          <input v-model="form.project_name" class="input" :placeholder="$t('projects.modal.name')" />
         </div>
         <div class="form-group">
-          <label class="form-label">包名 (可选)</label>
-          <input v-model="form.package_name" class="input" placeholder="例如：com.example.coolapp" />
+          <label class="form-label">{{ $t('projects.modal.package') }}</label>
+          <input v-model="form.package_name" class="input" :placeholder="$t('projects.modal.package')" />
         </div>
         <div class="form-group">
-          <label class="form-label">描述 (可选)</label>
-          <textarea v-model="form.description" class="textarea" placeholder="项目简介"></textarea>
+          <label class="form-label">{{ $t('projects.modal.desc') }}</label>
+          <textarea v-model="form.description" class="textarea" :placeholder="$t('projects.modal.desc')"></textarea>
         </div>
         <div class="form-actions">
-          <button class="btn btn-secondary" @click="showCreate = false">取消</button>
+          <button class="btn btn-secondary" @click="showCreate = false">{{ $t('common.cancel') }}</button>
           <button class="btn btn-primary" @click="createProject" :disabled="creating">
-            {{ creating ? '创建中...' : '创建项目' }}
+            {{ creating ? $t('projects.modal.creating') : $t('projects.modal.btn_create') }}
           </button>
         </div>
       </div>
@@ -64,7 +64,9 @@
 <script setup>
 import { ref, inject, onMounted } from 'vue'
 import { projectApi } from '../api'
+import { useI18n } from 'vue-i18n'
 
+const { t, locale } = useI18n()
 const showToast = inject('showToast')
 const projects = ref([])
 const loading = ref(true)
@@ -77,24 +79,28 @@ async function loadProjects() {
   try {
     const res = await projectApi.list()
     projects.value = res.data
-  } catch (e) { console.error(e) }
+  } catch (e) { 
+    console.error(e)
+    showToast(t('common.loading') + ' ' + t('common.failed'), 'error')
+  }
   finally { loading.value = false }
 }
 
 async function createProject() {
-  if (!form.value.project_name) return showToast('请输入项目名称', 'error')
+  if (!form.value.project_name) return showToast(t('projects.modal.name') + '?', 'error')
   creating.value = true
   try {
     await projectApi.create(form.value)
-    showToast('项目已创建')
+    showToast(t('common.active'))
     showCreate.value = false
     form.value = { project_name: '', package_name: '', description: '' }
     loadProjects()
-  } catch (e) { showToast(e?.detail || '创建失败', 'error') }
+  } catch (e) { showToast(e?.detail || t('common.failed'), 'error') }
   finally { creating.value = false }
 }
 
-function formatDate(d) { return d ? new Date(d).toLocaleDateString('zh-CN') : '-' }
+const dateLocaleMap = { en: 'en-US', zh: 'zh-CN', hi: 'hi-IN' }
+function formatDate(d) { return d ? new Date(d).toLocaleDateString(dateLocaleMap[locale.value] || 'en-US') : '-' }
 
 onMounted(loadProjects)
 </script>

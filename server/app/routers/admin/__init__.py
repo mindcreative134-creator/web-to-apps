@@ -17,6 +17,8 @@ from app.routers.admin.notifications import router as notifications_router
 from app.routers.admin.maintenance import router as maintenance_router
 from app.routers.admin.store_management import router as store_management_router
 from app.routers.admin.analytics import router as analytics_router
+from app.routers.admin.activation import router as activation_router
+from app.routers.admin.credentials import router as credentials_router
 
 router = APIRouter(prefix="/admin", tags=["Admin"])
 
@@ -27,3 +29,5 @@ router.include_router(notifications_router)
 router.include_router(maintenance_router)
 router.include_router(store_management_router)
 router.include_router(analytics_router)
+router.include_router(activation_router)
+router.include_router(credentials_router)

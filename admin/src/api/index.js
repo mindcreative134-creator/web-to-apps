@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-    baseURL: import.meta.env.VITE_API_URL || 'https://web-to-apps.onrender.com/api/v1',
+    baseURL: import.meta.env.VITE_API_URL || '/api/v1',
     timeout: 15000,
     headers: { 'Content-Type': 'application/json' },
 })
@@ -161,7 +161,7 @@ export const maintenanceApi = {
     listBackups: () => api.get('/admin/backups'),
     downloadBackup: (filename) => {
         const token = localStorage.getItem('access_token')
-        const base = import.meta.env.VITE_API_URL || 'https://api.shiaho.sbs/api/v1'
+        const base = import.meta.env.VITE_API_URL || 'http://localhost:8000/api/v1'
         window.open(`${base}/admin/backups/${encodeURIComponent(filename)}?token=${token}`, '_blank')
     },
     deleteBackup: (filename) => api.delete(`/admin/backups/${encodeURIComponent(filename)}`),
@@ -191,6 +191,13 @@ export const storeApi = {
 // ─── Analytics (Admin) ───
 export const analyticsApi = {
     trends: (scope = 'daily') => api.get('/admin/analytics/trends', { params: { scope } }),
+}
+
+// ─── Credentials (Admin) ───
+export const credentialApi = {
+    list: () => api.get('/admin/credentials'),
+    create: (data) => api.post('/admin/credentials', data),
+    remove: (id) => api.delete(`/admin/credentials/${id}`),
 }
 
 export default api

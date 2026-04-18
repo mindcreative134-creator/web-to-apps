@@ -1,69 +1,69 @@
 <template>
   <div class="view-page">
     <div class="page-header">
-      <h1>推送通知</h1>
-      <p class="page-desc">向用户发送通知消息</p>
+      <h1>{{ $t('push.title') }}</h1>
+      <p class="page-desc">{{ $t('push.subtitle') }}</p>
     </div>
 
-    <!-- 发送表单 -->
+    <!-- Send Form -->
     <div class="card send-card">
-      <h2 class="card-title">发送推送</h2>
+      <h2 class="card-title">{{ $t('push.btn_send') }}</h2>
       <div class="form-group">
-        <label>标题</label>
-        <input v-model="form.title" type="text" class="input" placeholder="通知标题" />
+        <label>{{ $t('push.form.title') }}</label>
+        <input v-model="form.title" type="text" class="input" :placeholder="$t('push.form.title')" />
       </div>
       <div class="form-group">
-        <label>内容</label>
-        <textarea v-model="form.content" class="input textarea" rows="3" placeholder="通知内容"></textarea>
+        <label>{{ $t('push.form.body') }}</label>
+        <textarea v-model="form.content" class="input textarea" rows="3" :placeholder="$t('push.form.content_placeholder')"></textarea>
       </div>
       <div class="form-row">
         <div class="form-group flex-1">
-          <label>目标</label>
+          <label>{{ $t('push.form.target') }}</label>
           <select v-model="form.target" class="input">
-            <option value="all">所有用户</option>
-            <option value="pro">Pro 用户</option>
-            <option value="ultra">Ultra 用户</option>
-            <option value="free">免费用户</option>
+            <option value="all">{{ $t('push.form.targets.all') }}</option>
+            <option value="pro">{{ $t('push.form.targets.pro') }}</option>
+            <option value="ultra">{{ $t('push.form.targets.ultra') }}</option>
+            <option value="free">{{ $t('push.form.targets.free') }}</option>
           </select>
         </div>
         <div class="form-group flex-1">
-          <label>类型</label>
+          <label>{{ $t('push.form.type') }}</label>
           <select v-model="form.type" class="input">
-            <option value="info">信息</option>
-            <option value="announcement">公告</option>
-            <option value="update">更新</option>
-            <option value="promotion">促销</option>
+            <option value="info">{{ $t('push.form.types.info') }}</option>
+            <option value="announcement">{{ $t('push.form.types.announcement') }}</option>
+            <option value="update">{{ $t('push.form.types.update') }}</option>
+            <option value="promotion">{{ $t('push.form.types.promotion') }}</option>
           </select>
         </div>
       </div>
       <button class="btn btn-primary" @click="sendPush" :disabled="sending">
-        {{ sending ? '发送中...' : '发送推送' }}
+        {{ sending ? $t('push.form.sending') : $t('push.form.btn_push') }}
       </button>
     </div>
 
-    <!-- 推送历史 -->
+    <!-- Push History -->
     <div class="card">
-      <h2 class="card-title">推送历史</h2>
+      <h2 class="card-title">{{ $t('push.history') }}</h2>
       <div v-if="history.length === 0" class="empty-state">
-        <p>暂无推送记录</p>
+        <p>{{ $t('push.no_history') }}</p>
       </div>
       <table v-else class="data-table">
         <thead>
           <tr>
-            <th>标题</th>
-            <th>类型</th>
-            <th>目标</th>
-            <th>送达数</th>
-            <th>时间</th>
+            <th>{{ $t('push.form.title') }}</th>
+            <th>{{ $t('push.form.type') }}</th>
+            <th>{{ $t('push.form.target') }}</th>
+            <th>{{ $t('push.table.delivered') }}</th>
+            <th>{{ $t('common.created_at') }}</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="item in history" :key="item.id">
             <td>{{ item.title }}</td>
-            <td><span class="type-badge" :class="item.type">{{ item.type }}</span></td>
-            <td>{{ item.target }}</td>
+            <td><span class="type-badge" :class="item.type">{{ $t('push.form.types.' + item.type) }}</span></td>
+            <td>{{ $t('push.form.targets.' + item.target) }}</td>
             <td>{{ item.delivered_count ?? '-' }}</td>
-            <td class="text-muted">{{ item.created_at }}</td>
+            <td class="text-muted">{{ formatDate(item.created_at) }}</td>
           </tr>
         </tbody>
       </table>
@@ -74,7 +74,9 @@
 <script setup>
 import { ref, reactive, inject, onMounted } from 'vue'
 import { pushApi } from '../api/index.js'
+import { useI18n } from 'vue-i18n'
 
+const { t, locale } = useI18n()
 const showToast = inject('showToast')
 const sending = ref(false)
 const history = ref([])
@@ -87,15 +89,15 @@ const form = reactive({
 })
 
 async function sendPush() {
-  if (!form.title || !form.content) { showToast('请填写标题和内容', 'error'); return }
+  if (!form.title || !form.content) { showToast(t('push.form.title') + ' & ' + t('push.form.body') + '?', 'error'); return }
   sending.value = true
   try {
     await pushApi.send({ ...form })
-    showToast('推送已发送')
+    showToast(t('common.active'))
     form.title = ''; form.content = ''
     loadHistory()
   } catch {
-    showToast('发送失败', 'error')
+    showToast(t('common.failed'), 'error')
   } finally {
     sending.value = false
   }
@@ -109,6 +111,9 @@ async function loadHistory() {
     history.value = []
   }
 }
+
+const dateLocaleMap = { en: 'en-US', zh: 'zh-CN', hi: 'hi-IN' }
+function formatDate(d) { return d ? new Date(d).toLocaleString(dateLocaleMap[locale.value] || 'en-US') : '-' }
 
 onMounted(loadHistory)
 </script>

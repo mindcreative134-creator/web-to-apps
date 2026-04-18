@@ -2,8 +2,8 @@
   <div class="slide-up">
     <div class="page-header">
       <div>
-        <h1>商店管理</h1>
-        <p class="text-secondary text-sm">管理应用商店和模块商店中的所有项目</p>
+        <h1>{{ $t('store.title') }}</h1>
+        <p class="text-secondary text-sm">{{ $t('store.subtitle') }}</p>
       </div>
     </div>
 
@@ -24,34 +24,34 @@
     <div class="filter-row mt-20">
       <div class="search-wrap">
         <svg class="search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <input v-model="search" class="input search-input" placeholder="搜索名称、描述或标签" @input="debouncedLoad" />
+        <input v-model="search" class="input search-input" :placeholder="$t('store.filters.search')" @input="debouncedLoad" />
       </div>
       <select v-model="typeFilter" class="select" style="width:140px" @change="page=1;loadItems()">
-        <option value="">所有类型</option>
-        <option value="app">应用</option>
-        <option value="extension">扩展模块</option>
-        <option value="browser_extension">浏览器扩展</option>
+        <option value="">{{ $t('store.filters.type_all') }}</option>
+        <option value="app">{{ $t('store.types.app') }}</option>
+        <option value="extension">{{ $t('store.types.extension') }}</option>
+        <option value="browser_extension">{{ $t('store.types.browser_extension') }}</option>
       </select>
-      <select v-model="statusFilter" class="select" style="width:120px" @change="page=1;loadItems()">
-        <option value="">全部状态</option>
-        <option value="approved">已通过</option>
-        <option value="pending">待审核</option>
-        <option value="featured">推荐</option>
+      <select v-model="statusFilter" class="select" style="width:140px" @change="page=1;loadItems()">
+        <option value="">{{ $t('store.filters.status_all') }}</option>
+        <option value="approved">{{ $t('store.status.approved') }}</option>
+        <option value="pending">{{ $t('store.status.pending') }}</option>
+        <option value="featured">{{ $t('store.status.featured') }}</option>
       </select>
-      <select v-model="sortField" class="select" style="width:120px" @change="loadItems()">
-        <option value="created_at">创建时间</option>
-        <option value="downloads">下载量</option>
-        <option value="rating">评分</option>
-        <option value="like_count">点赞数</option>
-        <option value="view_count">浏览量</option>
+      <select v-model="sortField" class="select" style="width:140px" @change="loadItems()">
+        <option value="created_at">{{ $t('store.filters.sort_created') }}</option>
+        <option value="downloads">{{ $t('store.filters.sort_downloads') }}</option>
+        <option value="rating">{{ $t('store.filters.sort_rating') }}</option>
+        <option value="like_count">{{ $t('store.filters.sort_likes') }}</option>
+        <option value="view_count">{{ $t('store.filters.sort_views') }}</option>
       </select>
 
       <!-- Batch Actions -->
       <div v-if="selectedIds.length" class="batch-actions">
-        <span class="batch-count">已选 {{ selectedIds.length }} 项</span>
-        <button class="btn btn-sm btn-primary" @click="batchAction('approve')">批准</button>
-        <button class="btn btn-sm btn-secondary" @click="batchAction('feature')">推荐</button>
-        <button class="btn btn-sm btn-danger" @click="batchAction('delete')">删除</button>
+        <span class="batch-count">{{ $t('store.batch.selected', { count: selectedIds.length }) }}</span>
+        <button class="btn btn-sm btn-primary" @click="batchAction('approve')">{{ $t('store.batch.approve') }}</button>
+        <button class="btn btn-sm btn-secondary" @click="batchAction('feature')">{{ $t('store.batch.feature') }}</button>
+        <button class="btn btn-sm btn-danger" @click="batchAction('delete')">{{ $t('store.batch.delete') }}</button>
       </div>
     </div>
 
@@ -62,13 +62,13 @@
         <table>
           <thead><tr>
             <th style="width:36px"><input type="checkbox" :checked="allSelected" @change="toggleAll" class="check-all" /></th>
-            <th>项目</th>
-            <th>类型</th>
-            <th>分类</th>
-            <th>数据</th>
-            <th>状态</th>
-            <th>作者</th>
-            <th>创建时间</th>
+            <th>{{ $t('store.table.item') }}</th>
+            <th>{{ $t('store.table.type') }}</th>
+            <th>{{ $t('store.table.category') }}</th>
+            <th>{{ $t('store.table.data') }}</th>
+            <th>{{ $t('store.table.status') }}</th>
+            <th>{{ $t('store.table.author') }}</th>
+            <th>{{ $t('store.table.created') }}</th>
             <th style="width:100px"></th>
           </tr></thead>
           <tbody>
@@ -85,36 +85,36 @@
                   </div>
                 </div>
               </td>
-              <td><span :class="['badge', typeBadge(item.module_type)]">{{ typeLabel(item.module_type) }}</span></td>
+              <td><span :class="['badge', typeBadge(item.module_type)]">{{ $t('store.types.' + item.module_type) }}</span></td>
               <td class="text-sm">{{ item.category || '—' }}</td>
               <td>
                 <div class="metrics-mini">
-                  <span title="下载">⬇ {{ fmtNum(item.downloads) }}</span>
-                  <span title="浏览">👁 {{ fmtNum(item.view_count) }}</span>
-                  <span title="评分">⭐ {{ (item.rating || 0).toFixed(1) }}</span>
+                  <span :title="$t('store.filters.sort_downloads')">⬇ {{ fmtNum(item.downloads) }}</span>
+                  <span :title="$t('store.filters.sort_views')">👁 {{ fmtNum(item.view_count) }}</span>
+                  <span :title="$t('store.filters.sort_rating')">⭐ {{ (item.rating || 0).toFixed(1) }}</span>
                 </div>
               </td>
               <td>
                 <div class="status-tags">
-                  <span v-if="item.is_featured" class="badge badge-warning">推荐</span>
+                  <span v-if="item.is_featured" class="badge badge-warning">{{ $t('store.status.featured') }}</span>
                   <span :class="['badge', item.is_approved ? 'badge-success' : 'badge-danger']">
-                    {{ item.is_approved ? '已通过' : '待审核' }}
+                    {{ item.is_approved ? $t('store.status.approved') : $t('store.status.pending') }}
                   </span>
                 </div>
               </td>
               <td class="text-sm">{{ item.author_name }}</td>
-              <td class="text-sm text-muted">{{ fmtDate(item.created_at) }}</td>
+              <td class="text-sm text-muted">{{ formatDate(item.created_at) }}</td>
               <td>
                 <div class="action-btns">
-                  <button class="btn btn-ghost btn-sm" @click="toggleFeatured(item)" :title="item.is_featured ? '取消推荐' : '设为推荐'">
+                  <button class="btn btn-ghost btn-sm" @click="toggleFeatured(item)" :title="item.is_featured ? $t('store.status.reject') : $t('store.status.featured')">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" :stroke="item.is_featured ? '#fbbf24' : 'currentColor'" stroke-width="2">
                       <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
                     </svg>
                   </button>
-                  <button class="btn btn-ghost btn-sm" @click="openDetail(item)" title="查看详情">
+                  <button class="btn btn-ghost btn-sm" @click="openDetail(item)" :title="$t('users.details')">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
                   </button>
-                  <button class="btn btn-ghost btn-sm" @click="deleteItem(item)" title="删除">
+                  <button class="btn btn-ghost btn-sm" @click="deleteItem(item)" :title="$t('common.delete')">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
                   </button>
                 </div>
@@ -122,7 +122,7 @@
             </tr>
           </tbody>
         </table>
-        <div v-if="!items.length" class="empty-state"><p>暂无项目</p></div>
+        <div v-if="!items.length" class="empty-state"><p>{{ $t('common.no_data') }}</p></div>
       </div>
       <div v-if="totalPages > 1" class="pagination">
         <button class="btn btn-ghost btn-sm" :disabled="page <= 1" @click="page--; loadItems()">
@@ -141,7 +141,7 @@
         <div class="flex justify-between items-center" style="margin-bottom:20px">
           <div>
             <h2 class="modal-title">{{ detailItem.name }}</h2>
-            <span :class="['badge', typeBadge(detailItem.module_type)]" style="margin-top:6px">{{ typeLabel(detailItem.module_type) }}</span>
+            <span :class="['badge', typeBadge(detailItem.module_type)]" style="margin-top:6px">{{ $t('store.types.' + detailItem.module_type) }}</span>
           </div>
           <button class="btn-icon" @click="detailItem = null">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
@@ -151,59 +151,59 @@
         <div class="detail-grid">
           <!-- Left: Info -->
           <div class="detail-section">
-            <h4 class="section-label">项目信息</h4>
+            <h4 class="section-label">{{ $t('store.details.info') }}</h4>
             <div class="info-list">
-              <div class="info-item"><span>ID</span><span># {{ detailItem.id }}</span></div>
-              <div class="info-item"><span>作者</span><span>{{ detailItem.author_name }} (#{{ detailItem.author_id }})</span></div>
-              <div class="info-item"><span>分类</span><span>{{ detailItem.category || '—' }}</span></div>
-              <div class="info-item"><span>版本</span><span>{{ detailItem.version_name || '—' }} ({{ detailItem.version_code }})</span></div>
-              <div class="info-item"><span>包名</span><span>{{ detailItem.package_name || '—' }}</span></div>
-              <div class="info-item"><span>标签</span><span>{{ detailItem.tags || '—' }}</span></div>
-              <div class="info-item"><span>下载量</span><span class="text-success">{{ detailItem.downloads }}</span></div>
-              <div class="info-item"><span>浏览量</span><span>{{ detailItem.view_count }}</span></div>
-              <div class="info-item"><span>点赞</span><span>{{ detailItem.like_count }}</span></div>
-              <div class="info-item"><span>评分</span><span>⭐ {{ (detailItem.rating || 0).toFixed(2) }} ({{ detailItem.rating_count }} 评价)</span></div>
-              <div class="info-item"><span>评论数</span><span>{{ detailItem.comment_count }}</span></div>
-              <div class="info-item"><span>创建时间</span><span>{{ fmtDate(detailItem.created_at) }}</span></div>
-              <div class="info-item"><span>更新时间</span><span>{{ fmtDate(detailItem.updated_at) }}</span></div>
+              <div class="info-item"><span>{{ $t('store.details.id') }}</span><span># {{ detailItem.id }}</span></div>
+              <div class="info-item"><span>{{ $t('store.details.publisher') }}</span><span>{{ detailItem.author_name }} (#{{ detailItem.author_id }})</span></div>
+              <div class="info-item"><span>{{ $t('store.details.cat') }}</span><span>{{ detailItem.category || '—' }}</span></div>
+              <div class="info-item"><span>{{ $t('store.details.ver') }}</span><span>{{ detailItem.version_name || '—' }} ({{ detailItem.version_code }})</span></div>
+              <div class="info-item"><span>{{ $t('store.details.pkg') }}</span><span>{{ detailItem.package_name || '—' }}</span></div>
+              <div class="info-item"><span>{{ $t('store.details.tags') }}</span><span>{{ detailItem.tags || '—' }}</span></div>
+              <div class="info-item"><span>{{ $t('store.details.dl') }}</span><span class="text-success">{{ detailItem.downloads }}</span></div>
+              <div class="info-item"><span>{{ $t('store.details.views') }}</span><span>{{ detailItem.view_count }}</span></div>
+              <div class="info-item"><span>{{ $t('store.details.likes') }}</span><span>{{ detailItem.like_count }}</span></div>
+              <div class="info-item"><span>{{ $t('store.details.rate') }}</span><span>⭐ {{ (detailItem.rating || 0).toFixed(2) }} ({{ detailItem.rating_count }} {{ $t('store.details.comments') }})</span></div>
+              <div class="info-item"><span>{{ $t('store.details.comments') }}</span><span>{{ detailItem.comment_count }}</span></div>
+              <div class="info-item"><span>{{ $t('store.details.created') }}</span><span>{{ formatDate(detailItem.created_at) }}</span></div>
+              <div class="info-item"><span>{{ $t('store.details.updated') }}</span><span>{{ formatDate(detailItem.updated_at) }}</span></div>
             </div>
           </div>
 
           <!-- Right: Edit -->
           <div class="detail-section">
-            <h4 class="section-label">管理操作</h4>
+            <h4 class="section-label">{{ $t('store.details.admin_actions') }}</h4>
             <div class="form-group">
-              <label class="form-label">名称</label>
+              <label class="form-label">{{ $t('store.modal.name') }}</label>
               <input v-model="editForm.name" class="input" />
             </div>
             <div class="form-group">
-              <label class="form-label">分类</label>
+              <label class="form-label">{{ $t('store.details.cat') }}</label>
               <select v-model="editForm.category" class="select">
-                <option value="">未分类</option>
+                <option value="">{{ $t('common.all') }}</option>
                 <option v-for="c in categories" :key="c" :value="c">{{ c }}</option>
               </select>
             </div>
             <div class="form-group">
-              <label class="form-label">标签</label>
-              <input v-model="editForm.tags" class="input" placeholder="逗号分隔" />
+              <label class="form-label">{{ $t('store.details.tags') }}</label>
+              <input v-model="editForm.tags" class="input" :placeholder="$t('store.modal.tags')" />
             </div>
             <div class="form-group">
-              <label class="form-label">版本名</label>
+              <label class="form-label">{{ $t('store.details.ver') }}</label>
               <input v-model="editForm.version_name" class="input" />
             </div>
             <div class="flex gap-16 mt-8">
-              <label class="toggle-label"><input type="checkbox" v-model="editForm.is_approved" class="toggle" /> 审核通过</label>
-              <label class="toggle-label"><input type="checkbox" v-model="editForm.is_featured" class="toggle" /> 推荐</label>
+              <label class="toggle-label"><input type="checkbox" v-model="editForm.is_approved" class="toggle" /> {{ $t('store.status.approved') }}</label>
+              <label class="toggle-label"><input type="checkbox" v-model="editForm.is_featured" class="toggle" /> {{ $t('store.status.featured') }}</label>
             </div>
-            <button class="btn btn-primary btn-sm mt-16" @click="saveItem" :disabled="saving" style="width:100%">保存修改</button>
+            <button class="btn btn-primary btn-sm mt-16" @click="saveItem" :disabled="saving" style="width:100%">{{ $t('common.save') }}</button>
 
             <!-- Quick Actions -->
             <div class="quick-actions mt-16">
               <button v-if="!detailItem.is_approved" class="btn btn-sm" style="background:var(--green);color:#fff;width:100%" @click="quickApprove">
-                ✓ 通过审核
+                ✓ {{ $t('store.status.approved') }}
               </button>
               <button v-else class="btn btn-sm btn-danger" style="width:100%" @click="quickReject">
-                ✗ 撤回审核
+                ✗ {{ $t('store.status.reject') }}
               </button>
             </div>
           </div>
@@ -211,13 +211,13 @@
 
         <!-- Description preview -->
         <div v-if="detailItem.description" class="desc-preview mt-16">
-          <h4 class="section-label">描述内容</h4>
+          <h4 class="section-label">{{ $t('store.details.desc') }}</h4>
           <div class="desc-content">{{ detailItem.description }}</div>
         </div>
 
         <!-- Screenshots -->
         <div v-if="detailItem.screenshots?.length" class="screenshots-section mt-16">
-          <h4 class="section-label">截图 ({{ detailItem.screenshots.length }})</h4>
+          <h4 class="section-label">{{ $t('store.details.screenshots') }} ({{ detailItem.screenshots.length }})</h4>
           <div class="screenshots-grid">
             <img v-for="(url, i) in detailItem.screenshots" :key="i" :src="url" class="screenshot-img" @error="$event.target.style.display='none'" />
           </div>
@@ -230,7 +230,9 @@
 <script setup>
 import { ref, computed, inject, onMounted, reactive } from 'vue'
 import { storeApi } from '../api'
+import { useI18n } from 'vue-i18n'
 
+const { t, locale } = useI18n()
 const showToast = inject('showToast')
 const items = ref([])
 const loading = ref(true)
@@ -259,12 +261,12 @@ const allSelected = computed(() =>
 const statCards = computed(() => {
   const s = stats.value
   return [
-    { label: '总项目', value: s.total_items || 0, bg: 'linear-gradient(135deg, rgba(99,102,241,0.15), rgba(99,102,241,0.05))', svg: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="1.8"><path d="M16.5 9.4l-9-5.19"/><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>' },
-    { label: '应用', value: s.total_apps || 0, bg: 'linear-gradient(135deg, rgba(52,211,153,0.15), rgba(52,211,153,0.05))', svg: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>' },
-    { label: '扩展模块', value: s.total_extensions || 0, bg: 'linear-gradient(135deg, rgba(96,165,250,0.15), rgba(96,165,250,0.05))', svg: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>' },
-    { label: '推荐', value: s.total_featured || 0, bg: 'linear-gradient(135deg, rgba(251,191,36,0.15), rgba(251,191,36,0.05))', svg: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>' },
-    { label: '待审核', value: s.pending_count || 0, bg: 'linear-gradient(135deg, rgba(248,113,113,0.15), rgba(248,113,113,0.05))', svg: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>' },
-    { label: '总下载', value: fmtNum(s.total_downloads || 0), bg: 'linear-gradient(135deg, rgba(167,139,250,0.15), rgba(167,139,250,0.05))', svg: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.8"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>' },
+    { label: t('store.stats.total'), value: s.total_items || 0, bg: 'linear-gradient(135deg, rgba(99,102,241,0.15), rgba(99,102,241,0.05))', svg: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="1.8"><path d="M16.5 9.4l-9-5.19"/><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>' },
+    { label: t('store.stats.apps'), value: s.total_apps || 0, bg: 'linear-gradient(135deg, rgba(52,211,153,0.15), rgba(52,211,153,0.05))', svg: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>' },
+    { label: t('store.stats.modules'), value: s.total_extensions || 0, bg: 'linear-gradient(135deg, rgba(96,165,250,0.15), rgba(96,165,250,0.05))', svg: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>' },
+    { label: t('store.stats.featured'), value: s.total_featured || 0, bg: 'linear-gradient(135deg, rgba(251,191,36,0.15), rgba(251,191,36,0.05))', svg: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>' },
+    { label: t('store.stats.pending'), value: s.pending_count || 0, bg: 'linear-gradient(135deg, rgba(248,113,113,0.15), rgba(248,113,113,0.05))', svg: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>' },
+    { label: t('store.stats.downloads'), value: fmtNum(s.total_downloads || 0), bg: 'linear-gradient(135deg, rgba(167,139,250,0.15), rgba(167,139,250,0.05))', svg: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.8"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>' },
   ]
 })
 
@@ -311,76 +313,74 @@ async function openDetail(item) {
       is_approved: res.data.is_approved,
       is_featured: res.data.is_featured,
     }
-  } catch { showToast('加载失败', 'error') }
+  } catch { showToast(t('common.failed'), 'error') }
 }
 
 async function saveItem() {
   saving.value = true
   try {
     await storeApi.updateItem(detailItem.value.id, editForm.value)
-    showToast('已保存')
+    showToast(t('common.active'))
     loadItems()
     loadStats()
-    // Refresh detail
     const res = await storeApi.getItem(detailItem.value.id)
     detailItem.value = res.data
-  } catch { showToast('保存失败', 'error') }
+  } catch { showToast(t('common.failed'), 'error') }
   finally { saving.value = false }
 }
 
 async function quickApprove() {
   try {
     await storeApi.updateItem(detailItem.value.id, { is_approved: true })
-    showToast('已通过审核')
+    showToast(t('store.status.approved'))
     detailItem.value.is_approved = true
     editForm.value.is_approved = true
     loadItems(); loadStats()
-  } catch { showToast('操作失败', 'error') }
+  } catch { showToast(t('common.failed'), 'error') }
 }
 
 async function quickReject() {
-  if (!confirm('确定撤回审核？项目将不再在商店中显示。')) return
+  if (!confirm(t('store.status.reject') + '?')) return
   try {
     await storeApi.updateItem(detailItem.value.id, { is_approved: false })
-    showToast('已撤回')
+    showToast(t('common.active'))
     detailItem.value.is_approved = false
     editForm.value.is_approved = false
     loadItems(); loadStats()
-  } catch { showToast('操作失败', 'error') }
+  } catch { showToast(t('common.failed'), 'error') }
 }
 
 async function toggleFeatured(item) {
   try {
     await storeApi.updateItem(item.id, { is_featured: !item.is_featured })
-    showToast(item.is_featured ? '已取消推荐' : '已设为推荐')
+    showToast(t('common.active'))
     loadItems(); loadStats()
-  } catch { showToast('操作失败', 'error') }
+  } catch { showToast(t('common.failed'), 'error') }
 }
 
 async function deleteItem(item) {
-  if (!confirm(`确定删除「${item.name}」？此操作不可撤销。`)) return
+  if (!confirm(t('common.delete') + ` 「${item.name}」?`)) return
   try {
     await storeApi.deleteItem(item.id)
-    showToast('已删除')
+    showToast(t('common.active'))
     loadItems(); loadStats()
-  } catch { showToast('删除失败', 'error') }
+  } catch { showToast(t('common.failed'), 'error') }
 }
 
 async function batchAction(action) {
   if (!selectedIds.value.length) return
-  const labels = { approve: '批准', feature: '推荐', delete: '删除' }
-  if (action === 'delete' && !confirm(`确定删除选中的 ${selectedIds.value.length} 个项目？`)) return
+  if (action === 'delete' && !confirm(t('common.delete') + ` ${selectedIds.value.length} ?`)) return
   try {
     await storeApi.batch({ ids: selectedIds.value, action })
-    showToast(`已${labels[action]} ${selectedIds.value.length} 个项目`)
+    showToast(t('common.active'))
     selectedIds.value = []
     loadItems(); loadStats()
-  } catch { showToast('批量操作失败', 'error') }
+  } catch { showToast(t('common.failed'), 'error') }
 }
 
-function typeLabel(t) {
-  return { app: '应用', extension: '扩展', browser_extension: '浏览器扩展' }[t] || t
-}
+const dateLocaleMap = { en: 'en-US', zh: 'zh-CN', hi: 'hi-IN' }
+function formatDate(d) { return d ? new Date(d).toLocaleString(dateLocaleMap[locale.value] || 'en-US') : '-' }
+
 function typeBadge(t) {
   return { app: 'badge-success', extension: 'badge-info', browser_extension: 'badge-warning' }[t] || 'badge-secondary'
 }
@@ -392,12 +392,9 @@ function typeGradient(t) {
   }[t] || 'linear-gradient(135deg, #6366f1, #4f46e5)'
 }
 function fmtNum(n) {
-  if (n >= 10000) return (n / 10000).toFixed(1) + '万'
+  if (locale.value === 'zh' && n >= 10000) return (n / 10000).toFixed(1) + '万'
   if (n >= 1000) return (n / 1000).toFixed(1) + 'k'
   return String(n)
-}
-function fmtDate(d) {
-  return d ? new Date(d).toLocaleString('zh-CN', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }) : ''
 }
 
 onMounted(() => { loadStats(); loadItems() })

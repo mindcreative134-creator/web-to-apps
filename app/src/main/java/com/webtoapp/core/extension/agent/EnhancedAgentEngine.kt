@@ -492,6 +492,11 @@ Category description: ${it.getDescription()}
 يريد المستخدم إنشاء وحدة من نوع "${it.getDisplayName()}".
 وصف الفئة: ${it.getDescription()}
                 """.trimIndent()
+                AppLanguage.HINDI -> """
+## लक्षित श्रेणी
+उपयोगकर्ता "${it.getDisplayName()}" प्रकार का मॉड्यूल बनाना चाहता है।
+श्रेणी विवरण: ${it.getDescription()}
+                """.trimIndent()
             }
         } ?: ""
         
@@ -514,6 +519,13 @@ $it
                 AppLanguage.ARABIC -> """
 ## الكود الحالي
 قدم المستخدم كودًا موجودًا، يرجى التعديل أو التحسين بناءً على هذا:
+```javascript
+$it
+```
+                """.trimIndent()
+                AppLanguage.HINDI -> """
+## मौजूदा कोड
+उपयोगकर्ता ने मौजूदा कोड प्रदान किया है, कृपया इसके आधार पर संशोधित या अनुकूलित करें:
 ```javascript
 $it
 ```

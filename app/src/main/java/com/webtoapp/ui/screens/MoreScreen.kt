@@ -21,6 +21,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -28,6 +29,11 @@ import com.webtoapp.R
 import com.webtoapp.core.i18n.AppStringsProvider
 import com.webtoapp.ui.components.ThemedBackgroundBox
 import com.webtoapp.ui.components.EnhancedElevatedCard
+
+import com.webtoapp.core.i18n.LanguageManager
+import com.webtoapp.ui.components.LanguageSelectionDialog
+import kotlinx.coroutines.launch
+import org.koin.compose.koinInject
 
 /**
  * " " Tab- & settings
@@ -48,6 +54,23 @@ fun MoreScreen(
     onOpenStats: () -> Unit = {},
     onOpenAbout: () -> Unit = {},
 ) {
+    val languageManager: LanguageManager = koinInject()
+    val scope = rememberCoroutineScope()
+    var showLanguageDialog by remember { mutableStateOf(false) }
+
+    if (showLanguageDialog) {
+        LanguageSelectionDialog(
+            currentLanguage = AppStringsProvider.currentLanguage,
+            onLanguageSelected = { lang ->
+                scope.launch {
+                    languageManager.setLanguage(lang)
+                    showLanguageDialog = false
+                }
+            },
+            onDismiss = { showLanguageDialog = false }
+        )
+    }
+
     Scaffold(
         containerColor = Color.Transparent,
         topBar = {
@@ -141,6 +164,11 @@ fun MoreScreen(
                         title = AppStringsProvider.current().menuStats,
                         icon = painterResource(R.drawable.ic_sidebar_stats),
                         onClick = onOpenStats
+                    )
+                    MoreMenuItem(
+                        title = stringResource(R.string.language_settings),
+                        icon = painterResource(R.drawable.ic_sidebar_account),
+                        onClick = { showLanguageDialog = true }
                     )
                 }
 

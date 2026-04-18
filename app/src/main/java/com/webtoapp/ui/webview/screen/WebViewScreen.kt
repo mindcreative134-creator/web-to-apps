@@ -310,8 +310,10 @@ fun WebViewScreen(
         
         if (appId > 0) {
             val app = repository.getWebApp(appId)
-            webApp = app
+            AppLogger.d("WebViewScreen", "Loaded webApp for appId=$appId: found=${app != null}")
             if (app != null) {
+                webApp = app
+                // ...
                 // Configure intercept
                 if (app.adBlockEnabled) {
                     adBlocker.initialize(app.adBlockRules, useDefaultRules = true)
@@ -616,6 +618,7 @@ fun WebViewScreen(
     val webViewCallbacks = remember {
         object : WebViewCallbacks {
             override fun onPageStarted(url: String?) {
+                AppLogger.d("WebViewScreen", "onPageStarted: $url")
                 // Skip about:blank to avoid flashing it in the toolbar during
                 // WebView init and cleanup transitions
                 if (url == "about:blank") return
@@ -692,9 +695,14 @@ fun WebViewScreen(
             override fun onIconReceived(icon: Bitmap?) {}
 
             override fun onError(errorCode: Int, description: String) {
+                AppLogger.e("WebViewScreen", "onError: $errorCode - $description")
                 errorMessage = description
                 isLoading = false
                 isRefreshing = false
+            }
+
+            fun onReceivedError(view: WebView?, request: WebResourceRequest?, error: WebResourceError?) {
+                AppLogger.e("WebViewScreen", "onReceivedError: ${error?.errorCode} - ${error?.description} for ${request?.url}")
             }
 
             override fun onSslError(error: String) {
@@ -854,85 +862,42 @@ fun WebViewScreen(
     
     // apptype URL
     val targetUrl = remember(directUrl, webApp, testUrl) {
-        val app = webApp  // support
-        when {
+        val app = webApp
+        val url = when {
             // modeprefer
             !testUrl.isNullOrBlank() -> normalizeWebUrlForSecurity(testUrl)
             !directUrl.isNullOrBlank() -> normalizeWebUrlForSecurity(directUrl)
-            app?.appType == com.webtoapp.data.model.AppType.WORDPRESS -> {
-                // WordPress app: display about: blank, PHP LaunchedEffect load
-                "about:blank"
-            }
-            app?.appType == com.webtoapp.data.model.AppType.PHP_APP -> {
-                // PHP app: display about: blank, PHP LaunchedEffect load
-                "about:blank"
-            }
-            app?.appType == com.webtoapp.data.model.AppType.PYTHON_APP -> {
-                // Python app: display about: blank, LaunchedEffect load
-                "about:blank"
-            }
-            app?.appType == com.webtoapp.data.model.AppType.NODEJS_APP -> {
-                // Node. js app: display about: blank, LaunchedEffect load
-                "about:blank"
-            }
-            app?.appType == com.webtoapp.data.model.AppType.GO_APP -> {
-                // Go app: display about: blank, LaunchedEffect load
-                "about:blank"
-            }
+            app?.appType == com.webtoapp.data.model.AppType.WORDPRESS -> "about:blank"
+            app?.appType == com.webtoapp.data.model.AppType.PHP_APP -> "about:blank"
+            app?.appType == com.webtoapp.data.model.AppType.PYTHON_APP -> "about:blank"
+            app?.appType == com.webtoapp.data.model.AppType.NODEJS_APP -> "about:blank"
+            app?.appType == com.webtoapp.data.model.AppType.GO_APP -> "about:blank"
             app?.appType == com.webtoapp.data.model.AppType.MULTI_WEB -> {
-                // load URL
                 app.multiWebConfig?.sites?.firstOrNull { it.enabled && it.url.isNotBlank() }?.url ?: "about:blank"
             }
             app?.appType == com.webtoapp.data.model.AppType.HTML ||
             app?.appType == com.webtoapp.data.model.AppType.FRONTEND -> {
-                // HTML/FRONTEND app: local HTTP
                 val projectId = app.htmlConfig?.projectId ?: ""
                 val entryFile = app.htmlConfig?.getValidEntryFile() ?: "index.html"
                 val htmlDir = File(context.filesDir, "html_projects/$projectId")
                 
-                // Note
-                AppLogger.d("WebViewActivity", "========== HTML App Debug Info ==========")
-                AppLogger.d("WebViewActivity", "projectId: '$projectId'")
-                AppLogger.d("WebViewActivity", "entryFile: '$entryFile'")
-                AppLogger.d("WebViewActivity", "htmlDir: ${htmlDir.absolutePath}")
-                AppLogger.d("WebViewActivity", "htmlDir.exists(): ${htmlDir.exists()}")
-                AppLogger.d("WebViewActivity", "htmlConfig: ${app.htmlConfig}")
-                AppLogger.d("WebViewActivity", "htmlConfig.files: ${app.htmlConfig?.files}")
-                
-                // directorycontent
-                if (htmlDir.exists()) {
-                    val files = htmlDir.listFiles()
-                    AppLogger.d("WebViewActivity", "目录文件列表 (${files?.size ?: 0} 个):")
-                    files?.forEach { file ->
-                        AppLogger.d("WebViewActivity", "  - ${file.name} (${file.length()} bytes)")
-                    }
-                    
-                    // check file
-                    val entryFilePath = File(htmlDir, entryFile)
-                    AppLogger.d("WebViewActivity", "入口文件路径: ${entryFilePath.absolutePath}")
-                    AppLogger.d("WebViewActivity", "入口文件存在: ${entryFilePath.exists()}")
-                }
-                AppLogger.d("WebViewActivity", "=========================================")
-                
                 if (htmlDir.exists()) {
                     try {
-                        // Startlocal and URL
                         val baseUrl = localHttpServer.start(htmlDir)
-                        val targetUrl = "$baseUrl/$entryFile"
-                        AppLogger.d("WebViewActivity", "目标 URL: $targetUrl")
-                        targetUrl
+                        "$baseUrl/$entryFile"
                     } catch (e: Exception) {
-                        AppLogger.e("WebViewActivity", "启动本地服务器失败", e)
-                        // file: //
+                        AppLogger.e("WebViewScreen", "Failed to start local server", e)
                         "file://${htmlDir.absolutePath}/$entryFile"
                     }
                 } else {
-                    AppLogger.w("WebViewActivity", "HTML项目目录不存在: ${htmlDir.absolutePath}")
+                    AppLogger.w("WebViewScreen", "HTML directory not found: ${htmlDir.absolutePath}")
                     ""
                 }
             }
             else -> normalizeWebUrlForSecurity(app?.url)
         }
+        AppLogger.i("WebViewScreen", "Calculated targetUrl: '$url' for appType=${app?.appType}")
+        url
     }
     
     // Cleanup: local

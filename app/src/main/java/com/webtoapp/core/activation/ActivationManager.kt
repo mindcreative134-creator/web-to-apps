@@ -10,7 +10,7 @@ import androidx.datastore.preferences.core.longPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import com.webtoapp.core.logging.AppLogger
-import com.webtoapp.core.i18n.AppStringsProvider
+import com.webtoapp.R
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
@@ -68,7 +68,7 @@ class ActivationManager(private val context: Context) {
         if (lockoutRemaining > 0) {
             AppLogger.w(TAG, "Verification blocked: app=$appId is locked out for ${formatLockoutRemaining(lockoutRemaining)}")
             return ActivationResult.Invalid(
-                AppStringsProvider.current().tooManyAttemptsWithCountdown(formatLockoutRemaining(lockoutRemaining))
+                context.getString(R.string.too_many_attempts_with_countdown, formatLockoutRemaining(lockoutRemaining))
             )
         }
 
@@ -98,7 +98,7 @@ class ActivationManager(private val context: Context) {
         if (lockoutRemaining > 0) {
             AppLogger.w(TAG, "Verification blocked: app=$appId is locked out")
             return ActivationResult.Invalid(
-                AppStringsProvider.current().tooManyAttemptsWithCountdown(formatLockoutRemaining(lockoutRemaining))
+                context.getString(R.string.too_many_attempts_with_countdown, formatLockoutRemaining(lockoutRemaining))
             )
         }
 
@@ -126,10 +126,10 @@ class ActivationManager(private val context: Context) {
             AppLogger.w(TAG, "Verification failed: app=$appId, lockout=${newLockout}ms")
             return if (newLockout > 0) {
                 ActivationResult.Invalid(
-                    AppStringsProvider.current().tooManyAttemptsWithCountdown(formatLockoutRemaining(newLockout))
+                    context.getString(R.string.too_many_attempts_with_countdown, formatLockoutRemaining(newLockout))
                 )
             } else {
-                ActivationResult.Invalid(AppStringsProvider.current().invalidActivationCode)
+                ActivationResult.Invalid(context.getString(R.string.invalid_activation_code))
             }
         }
 
@@ -197,7 +197,7 @@ class ActivationManager(private val context: Context) {
             code.type == ActivationCodeType.COMBINED
         ) {
             if (code.timeLimitMs == null || code.timeLimitMs <= 0) {
-                return ActivationResult.Invalid(AppStringsProvider.current().invalidTimeLimitConfig)
+                return ActivationResult.Invalid(context.getString(R.string.invalid_time_limit_config))
             }
         }
 
@@ -206,7 +206,7 @@ class ActivationManager(private val context: Context) {
             code.type == ActivationCodeType.COMBINED
         ) {
             if (code.usageLimit == null || code.usageLimit <= 0) {
-                return ActivationResult.Invalid(AppStringsProvider.current().invalidUsageLimitConfig)
+                return ActivationResult.Invalid(context.getString(R.string.invalid_usage_limit_config))
             }
         }
 
@@ -406,7 +406,7 @@ class ActivationManager(private val context: Context) {
                 type = type,
                 timeLimitMs = timeLimitMs,
                 usageLimit = usageLimit,
-                note = "${AppStringsProvider.current().batchGeneratedNote} #$index",
+                note = "${context.getString(R.string.batch_generated_note)} #$index",
                 length = length
             )
         }

@@ -1,0 +1,401 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="appstr_common_about" formatted="false">के बारे में</string>
+    <string name="appstr_common_about_app_description" formatted="false">WebToApp मेरे द्वारा स्वतंत्र रूप से विकसित एक उपकरण है जो वेबसाइटों, छवियों और वीडियो को तेजी से स्वतंत्र एंड्रॉइड एप्लिकेशन में बदल सकता है।\n\nयदि आपके पास कोई प्रश्न, सुझाव या विचार हैं, तो बेझिझक मुझसे संपर्क करें!</string>
+    <string name="appstr_common_about_this_app" formatted="false">इस ऐप के बारे में</string>
+    <string name="appstr_common_activated" formatted="false">सक्रिय</string>
+    <string name="appstr_common_activation_expired" formatted="false">सक्रियण समाप्त</string>
+    <string name="appstr_common_activation_success" formatted="false">सक्रियण सफल!</string>
+    <string name="appstr_common_activation_success_detail" formatted="false">आपका सक्रियण कोड सफलतापूर्वक सत्यापित हो गया है, और ऐप की विशेषताएं अनलॉक हो गई हैं।</string>
+    <string name="appstr_common_activation_success_hint" formatted="false">सक्रियण कोड सत्यापित, जल्द ही ऐप में प्रवेश कर रहे हैं</string>
+    <string name="appstr_common_activation_time" formatted="false">सक्रियण समय</string>
+    <string name="appstr_common_activation_type_combined" formatted="false">संयुक्त सीमा</string>
+    <string name="appstr_common_activation_type_combined_desc" formatted="false">समय और उपयोग दोनों सीमाओं का समर्थन करता है</string>
+    <string name="appstr_common_activation_type_device_bound" formatted="false">डिवाइस बाध्य</string>
+    <string name="appstr_common_activation_type_device_bound_desc" formatted="false">सक्रियण के बाद वर्तमान डिवाइस पर बाध्य</string>
+    <string name="appstr_common_activation_type_permanent" formatted="false">स्थायी सक्रियण</string>
+    <string name="appstr_common_activation_type_permanent_desc" formatted="false">सक्रियण के बाद बिना किसी सीमा के स्थायी रूप से मान्य</string>
+    <string name="appstr_common_activation_type_time_limited" formatted="false">समय सीमित</string>
+    <string name="appstr_common_activation_type_time_limited_desc" formatted="false">सक्रियण के बाद निर्दिष्ट समय के भीतर मान्य</string>
+    <string name="appstr_common_activation_type_usage_limited" formatted="false">उपयोग सीमित</string>
+    <string name="appstr_common_activation_type_usage_limited_desc" formatted="false">सक्रियण के बाद एक निर्दिष्ट संख्या में उपयोग किया जा सकता है</string>
+    <string name="appstr_common_add_image" formatted="false">छवि जोड़ें</string>
+    <string name="appstr_common_add_image_gen_model_hint" formatted="false">कृपया「AI सेटिंग्स」में एक मॉडल जोड़ें और「छवि निर्माण」क्षमता को चिह्नित करें</string>
+    <string name="appstr_common_alignment_hint" formatted="false">ऑडियो चलाएं और प्रत्येक गीत के शुरू होने पर「टैप」बटन पर क्लिक करें</string>
+    <string name="appstr_common_all_codes_copied" formatted="false">सभी सक्रियण कोड क्लिपबोर्ड पर कॉपी किए गए</string>
+    <string name="appstr_common_allow_click_to_skip" formatted="false">स्किप करने के लिए क्लिक की अनुमति दें</string>
+    <string name="appstr_common_already_activated_detail" formatted="false">पुनः सक्रिय करने की आवश्यकता नहीं है, आप सीधे सभी सुविधाओं का उपयोग कर सकते हैं</string>
+    <string name="appstr_common_apk_architecture_feature" formatted="false">APK आर्किटेक्चर चयन जोड़ा गया</string>
+    <string name="appstr_common_apk_encryption_protection" formatted="false">APK एन्क्रिप्शन: कॉन्फ़िगरेशन और संसाधन फ़ाइल एन्क्रिप्शन</string>
+    <string name="appstr_common_app_already_activated" formatted="false">ऐप सक्रिय</string>
+    <string name="appstr_common_app_already_activated_hint" formatted="false">यह ऐप मान्य कोड के साथ सक्रिय किया गया है</string>
+    <string name="appstr_common_app_category_feature" formatted="false">ऐप श्रेणी कार्यक्षमता जोड़ी गई</string>
+    <string name="appstr_common_app_config" formatted="false">ऐप कॉन्फ़िगरेशन</string>
+    <string name="appstr_common_app_config_load_failed" formatted="false">कॉन्फ़िगरेशन लोड विफल, कृपया पुनः इंस्टॉल करें</string>
+    <string name="appstr_common_app_created_successfully" formatted="false">%s ऐप सफलतापूर्वक बनाया गया</string>
+    <string name="appstr_common_app_deleted" formatted="false">ऐप हटा दिया गया</string>
+    <string name="appstr_common_app_disguise_section" formatted="false">ऐप वेष</string>
+    <string name="appstr_common_app_hardening" formatted="false">ऐप सुदृढ़ीकरण (Hardening)</string>
+    <string name="appstr_common_app_hardening_desc" formatted="false">एंटरप्राइज-लेवल सुदृढ़ीकरण सुरक्षा</string>
+    <string name="appstr_common_app_icon_modifier" formatted="false">ऐप संशोधक</string>
+    <string name="appstr_common_app_modifier_feature" formatted="false">ऐप संशोधक: आइकन और नाम बदलें</string>
+    <string name="appstr_common_app_needs_activation" formatted="false">ऐप को सक्रियण की आवश्यकता है</string>
+    <string name="appstr_common_app_not_accessible_now" formatted="false">वर्तमान में ऐप में प्रवेश करने में असमर्थ</string>
+    <string name="appstr_common_app_running_in_background" formatted="false">पृष्ठभूमि में चल रहा है</string>
+    <string name="appstr_common_app_saved_successfully" formatted="false">ऐप सफलतापूर्वक सहेजा गया</string>
+    <string name="appstr_common_app_type_docs_site" formatted="false">दस्तावेज़</string>
+    <string name="appstr_common_app_type_frontend" formatted="false">फ्रंटएंड</string>
+    <string name="appstr_common_app_type_gallery" formatted="false">गैलरी</string>
+    <string name="appstr_common_app_type_go" formatted="false">Go</string>
+    <string name="appstr_common_app_type_html" formatted="false">HTML</string>
+    <string name="appstr_common_app_type_image" formatted="false">छवि</string>
+    <string name="appstr_common_app_type_multi_web" formatted="false">मल्टी-साइट</string>
+    <string name="appstr_common_app_type_node_js" formatted="false">Node.js</string>
+    <string name="appstr_common_app_type_php" formatted="false">PHP</string>
+    <string name="appstr_common_app_type_python" formatted="false">Python</string>
+    <string name="appstr_common_app_type_video" formatted="false">वीडियो</string>
+    <string name="appstr_common_app_type_web" formatted="false">वेब</string>
+    <string name="appstr_common_app_type_word_press" formatted="false">WordPress</string>
+    <string name="appstr_common_app_updated_successfully" formatted="false">%s सफलतापूर्वक अपडेट किया गया</string>
+    <string name="appstr_common_appearance" formatted="false">सूरत (Appearance)</string>
+    <string name="appstr_common_applied" formatted="false">लागू किया गया</string>
+    <string name="appstr_common_applied_preset" formatted="false">लागू प्रीसेट</string>
+    <string name="appstr_common_apply_theme" formatted="false">थीम लागू करें</string>
+    <string name="appstr_common_author" formatted="false">लेखक</string>
+    <string name="appstr_common_author_avatar" formatted="false">लेखक अवतार</string>
+    <string name="appstr_common_author_tagline" formatted="false">स्वतंत्र डेवलपर · AI उत्साही</string>
+    <string name="appstr_common_auto_check_update" formatted="false">अपडेट के लिए ऑटो-चेक</string>
+    <string name="appstr_common_auto_check_update_desc" formatted="false">स्टार्टअप पर नए वर्शन का स्वतः पता लगाएं</string>
+    <string name="appstr_common_background_alpha" formatted="false">पृष्ठभूमि अल्फा (Alpha)</string>
+    <string name="appstr_common_background_color" formatted="false">पृष्ठभूमि का रंग</string>
+    <string name="appstr_common_batch_count" formatted="false">बैच संख्या</string>
+    <string name="appstr_common_batch_generate" formatted="false">बैच जनरेट किया गया</string>
+    <string name="appstr_common_bgm_lrc_feature" formatted="false">बैकग्राउंड संगीत: सिंक BGM + LRC प्रदर्शन</string>
+    <string name="appstr_common_boot_auto_start_and_scheduled" formatted="false">बूट ऑटो-स्टार्ट और शेड्यूल्ड स्टार्ट सुविधाएँ</string>
+    <string name="appstr_common_browser_engine_feature" formatted="false">नई ब्राउज़र कोर सुविधाएँ</string>
+    <string name="appstr_common_browser_spoofing_feature" formatted="false">नई ब्राउज़र स्पूफिंग (Spoofing) सुविधाएँ</string>
+    <string name="appstr_common_change_image" formatted="false">छवि बदलें</string>
+    <string name="appstr_common_check_update" formatted="false">अपडेट के लिए जाँचें</string>
+    <string name="appstr_common_check_update_failed" formatted="false">अपडेट जाँच विफल</string>
+    <string name="appstr_common_checking" formatted="false">जाँच हो रही है...</string>
+    <string name="appstr_common_clear_image" formatted="false">छवि साफ़ करें</string>
+    <string name="appstr_common_click_to_change_or_clear" formatted="false">बदलने या साफ़ करने के लिए क्लिक करें</string>
+    <string name="appstr_common_clone_install_feature" formatted="false">क्लोन इंस्टाल: स्वतंत्र पैकेज नामों के साथ ऐप क्लोन करें</string>
+    <string name="appstr_common_clone_install_warning" formatted="false">क्लोन इंस्टाल केवल बिना हस्ताक्षर सत्यापन वाले ऐप्स के लिए काम करता है। \"शॉर्टकट\" का उपयोग करने की सलाह दी जाती है।</string>
+    <string name="appstr_common_color_amber" formatted="false">एम्बर (Amber)</string>
+    <string name="appstr_common_color_black" formatted="false">काला</string>
+    <string name="appstr_common_color_blue" formatted="false">नीला</string>
+    <string name="appstr_common_color_blue_grey" formatted="false">नीला ग्रे</string>
+    <string name="appstr_common_color_brown" formatted="false">भूरा</string>
+    <string name="appstr_common_color_cyan" formatted="false">स्यान (Cyan)</string>
+    <string name="appstr_common_color_dark_theme" formatted="false">डार्क थीम</string>
+    <string name="appstr_common_color_deep_orange" formatted="false">गहरा नारंगी</string>
+    <string name="appstr_common_color_deep_purple" formatted="false">गहरा बैंगनी</string>
+    <string name="appstr_common_color_green" formatted="false">हरा</string>
+    <string name="appstr_common_color_grey" formatted="false">ग्रे</string>
+    <string name="appstr_common_color_indigo" formatted="false">इंडिगो</string>
+    <string name="appstr_common_color_light_blue" formatted="false">हल्का नीला</string>
+    <string name="appstr_common_color_light_green" formatted="false">हल्का हरा</string>
+    <string name="appstr_common_color_light_theme" formatted="false">लाइट थीम</string>
+    <string name="appstr_common_color_lime" formatted="false">चूना (Lime)</string>
+    <string name="appstr_common_color_orange" formatted="false">नारंगी</string>
+    <string name="appstr_common_color_pink" formatted="false">गुलाबी</string>
+    <string name="appstr_common_color_purple" formatted="false">बैंगनी</string>
+    <string name="appstr_common_color_red" formatted="false">लाल</string>
+    <string name="appstr_common_color_selected" formatted="false">चयनित</string>
+    <string name="appstr_common_color_teal" formatted="false">टील (Teal)</string>
+    <string name="appstr_common_color_transparent" formatted="false">पारदर्शी</string>
+    <string name="appstr_common_color_white" formatted="false">सफेद</string>
+    <string name="appstr_common_color_yellow" formatted="false">पीला</string>
+    <string name="appstr_common_contact_author" formatted="false">लेखक से संपर्क करें</string>
+    <string name="appstr_common_cookies_persistence_feature" formatted="false">नई कुकीज़ दृढ़ता</string>
+    <string name="appstr_common_copy_activation_code" formatted="false">सक्रियण कोड कॉपी करें</string>
+    <string name="appstr_common_copy_all_codes" formatted="false">सब कॉपी करें</string>
+    <string name="appstr_common_crop_size" formatted="false">क्रॉप साइज</string>
+    <string name="appstr_common_current_selection" formatted="false">वर्तमान चयन</string>
+    <string name="appstr_common_current_version" formatted="false">वर्तमान वर्शन</string>
+    <string name="appstr_common_custom_color" formatted="false">कस्टम रंग</string>
+    <string name="appstr_common_custom_status_bar_bg_color" formatted="false">कस्टम स्टेटस बार बैकग्राउंड कलर समर्थित</string>
+    <string name="appstr_common_data_backup_export_import" formatted="false">डेटा बैकअप: सभी डेटा निर्यात/आयात करें</string>
+    <string name="appstr_common_days" formatted="false">दिन</string>
+    <string name="appstr_common_delete_all_codes" formatted="false">सभी साफ़ करें</string>
+    <string name="appstr_common_delete_all_codes_confirm" formatted="false">क्या आप वाकई सभी सक्रियण कोड साफ़ करना चाहते हैं? यह क्रिया अपरिवर्तनीय है।</string>
+    <string name="appstr_common_dep_project_count_plural" formatted="false">%d प्रोजेक्ट</string>
+    <string name="appstr_common_dep_project_count_singular" formatted="false">%d प्रोजेक्ट</string>
+    <string name="appstr_common_desktop_mode_feature" formatted="false">डेस्कटॉप मोड: डेस्कटॉप वर्शन के लिए बाध्य करें</string>
+    <string name="appstr_common_device_bound" formatted="false">डिवाइस बाइंड: सक्षम</string>
+    <string name="appstr_common_device_mismatch_detail" formatted="false">यह कोड किसी अन्य डिवाइस से जुड़ा है और यहाँ उपयोग नहीं किया जा सकता</string>
+    <string name="appstr_common_device_mismatch_suggestion" formatted="false">कृपया बाइंड डिवाइस का उपयोग करें या नए कोड के लिए डेवलपर से संपर्क करें।</string>
+    <string name="appstr_common_download_complete" formatted="false">डाउनलोड पूरा हुआ, इंस्टॉल हो रहा है...</string>
+    <string name="appstr_common_download_failed" formatted="false">डाउनलोड विफल, कृपया पुनः प्रयास करें</string>
+    <string name="appstr_common_downloaded" formatted="false">डाउनलोड किया गया</string>
+    <string name="appstr_common_downloading" formatted="false">डाउनलोड हो रहा है...</string>
+    <string name="appstr_common_drag_to_select_area" formatted="false">क्षेत्र चुनने के लिए ऊपर/नीचे खींचें</string>
+    <string name="appstr_common_duration" formatted="false">अवधि</string>
+    <string name="appstr_common_duration_mode" formatted="false">समय-सीमित पहुंच</string>
+    <string name="appstr_common_duration_mode_hint" formatted="false">पहुंच केवल विशिष्ट समय अवधि के दौरान अनुमत है</string>
+    <string name="appstr_common_element_blocker_module" formatted="false">तत्व अवरोधक (Element Blocker): वेब तत्वों को विजुअल रूप से ब्लॉक करें</string>
+    <string name="appstr_common_email_contact" formatted="false">ईमेल संपर्क</string>
+    <string name="appstr_common_enable_audio_label" formatted="false">ऑडियो सक्षम करें</string>
+    <string name="appstr_common_exchange_group" formatted="false">एक्सचेंज ग्रुप</string>
+    <string name="appstr_common_exchange_learning" formatted="false">सीखना, अपडेट और बहुत कुछ</string>
+    <string name="appstr_common_expire_time" formatted="false">समाप्ति समय</string>
+    <string name="appstr_common_expired_detail" formatted="false">यह सक्रियण कोड समाप्त हो गया है</string>
+    <string name="appstr_common_expired_suggestion" formatted="false">कृपया नए कोड या नवीनीकरण के लिए डेवलपर से संपर्क करें।</string>
+    <string name="appstr_common_favicon_fetch_feature" formatted="false">नया वेब ऐप आइकन लाना</string>
+    <string name="appstr_common_feedback_cooperation" formatted="false">प्रतिक्रिया, सहयोग, या सुझाव 💬</string>
+    <string name="appstr_common_feedback_cooperation_short" formatted="false">प्रतिक्रिया और सहयोग</string>
+    <string name="appstr_common_fix_activation_code_language" formatted="false">सक्रियण कोड भाषा प्रदर्शन ठीक किया गया</string>
+    <string name="appstr_common_fix_ai_html_tool_call_failed" formatted="false">AI HTML टूल कॉल विफलता ठीक की गई</string>
+    <string name="appstr_common_fix_ai_image_invalid" formatted="false">AI छवि निर्माण अमान्य मुद्दा ठीक किया गया</string>
+    <string name="appstr_common_fix_ai_module_code_overlay" formatted="false">AI मॉड्यूल कोड ब्लॉक ओवरले ठीक किया गया</string>
+    <string name="appstr_common_fix_announcement_jump" formatted="false">घोषणा जंप मुद्दा ठीक किया गया</string>
+    <string name="appstr_common_fix_apk_icon_crop" formatted="false">APK आइकन क्रॉपिंग मुद्दा ठीक किया गया</string>
+    <string name="appstr_common_fix_apk_package_conflict" formatted="false">APK पैकेज/अनुमति संघर्ष ठीक किया गया</string>
+    <string name="appstr_common_fix_app_name_spaces" formatted="false">ऐप नामों में अतिरिक्त स्पेस ठीक किया गया</string>
+    <string name="appstr_common_fix_background_run_crash" formatted="false">बैकग्राउंड रन क्रैश मुद्दा ठीक किया गया</string>
+    <string name="appstr_common_fix_blob_export_failed" formatted="false">Blob फ़ाइल निर्यात विफलता ठीक की गई</string>
+    <string name="appstr_common_fix_core_config_edit_app_type" formatted="false">कुछ ऐप प्रकारों के लिए कोर कॉन्फ़िगरेशन संपादन ठीक किया गया</string>
+    <string name="appstr_common_fix_device_crash_issue" formatted="false">कुछ मॉडलों/सिम्युलेटरों पर क्रैश ठीक किया गया</string>
+    <string name="appstr_common_fix_download_error" formatted="false">डाउनलोड त्रुटि मुद्दा ठीक किया गया</string>
+    <string name="appstr_common_fix_downloader_player_cooperation" formatted="false">डाउनलोडर और प्लेयर इंटरैक्शन ठीक किया गया</string>
+    <string name="appstr_common_fix_element_blocker" formatted="false">तत्व अवरोधक मुद्दे ठीक किए गए</string>
+    <string name="appstr_common_fix_empty_app_name" formatted="false">कुछ सिस्टम पर खाली ऐप नाम प्रदर्शन ठीक किया गया</string>
+    <string name="appstr_common_fix_external_browser_crash" formatted="false">बाहरी ब्राउज़र कॉल करते समय क्रैश ठीक किया गया</string>
+    <string name="appstr_common_fix_frontend_gallery_filename" formatted="false">फ्रंटएंड और गैलरी ऐप्स में फ़ाइल नाम प्रदर्शन ठीक किया गया</string>
+    <string name="appstr_common_fix_fullscreen_status_bar_issue" formatted="false">फुलस्क्रीन में स्टेटस बार मुद्दे ठीक किए गए</string>
+    <string name="appstr_common_fix_gallery_build_path" formatted="false">गैलरी ऐप बिल्ड पाथ ठीक किया गया</string>
+    <string name="appstr_common_fix_html_css_js_not_working" formatted="false">HTML CSS/JS मुद्दे ठीक किए गए</string>
+    <string name="appstr_common_fix_html_long_press_copy" formatted="false">HTML प्रोजेक्ट्स में लॉन्ग-प्रेस कॉपी ठीक किया गया</string>
+    <string name="appstr_common_fix_html_status_bar" formatted="false">HTML ऐप्स में छिपा स्टेटस बार ठीक किया गया</string>
+    <string name="appstr_common_fix_i18n_string_adaptation" formatted="false">i18n स्ट्रिंग अनुकूलन मुद्दे ठीक किए गए</string>
+    <string name="appstr_common_fix_js_file_selector_compat" formatted="false">JS फ़ाइल चयनकर्ता अनुकूलता ठीक की गई</string>
+    <string name="appstr_common_fix_keyboard_init_issue" formatted="false">कीबोर्ड इनिशियलाइजेशन मुद्दा ठीक किया गया</string>
+    <string name="appstr_common_fix_known_issues" formatted="false">दर्जनों ज्ञात मुद्दे ठीक किए गए</string>
+    <string name="appstr_common_fix_microphone_permission" formatted="false">माइक्रोफ़ोन अनुमति मुद्दा ठीक किया गया</string>
+    <string name="appstr_common_fix_module_edit_crash" formatted="false">मॉड्यूल संपादित करते समय क्रैश ठीक किया गया</string>
+    <string name="appstr_common_fix_release_icon_not_working" formatted="false">रिलीज आइकन प्रभावी न होने का मुद्दा ठीक किया गया</string>
+    <string name="appstr_common_fix_shortcut_icon_error" formatted="false">शॉर्टकट आइकन त्रुटियाँ ठीक की गई</string>
+    <string name="appstr_common_fix_status_bar_text_visibility" formatted="false">स्टेटस बार टेक्स्ट विजिबिलिटी मुद्दे ठीक किए गए</string>
+    <string name="appstr_common_fix_task_list_duplicate_name" formatted="false">टास्क लिस्ट में डुप्लीकेट नाम प्रदर्शन ठीक किया गया</string>
+    <string name="appstr_common_fix_video_fullscreen_rotation" formatted="false">वीडियो फुलस्क्रीन रोटेशन मुद्दा ठीक किया गया</string>
+    <string name="appstr_common_fix_xhs_image_save" formatted="false">कुछ साइटों पर लॉन्ग-प्रेस इमेज सेव ठीक किया गया</string>
+    <string name="appstr_common_fix_zoom_property_not_working" formatted="false">CSS जूम प्रॉपर्टी काम न करना ठीक किया गया</string>
+    <string name="appstr_common_forced_run_feature" formatted="false">फोर्स्ड रन: फोर्स्ड एग्जिट मोड में ऐप्स का समर्थन करें</string>
+    <string name="appstr_common_frontend_framework_to_apk" formatted="false">Vue/React/Vite से APK सुविधाएँ</string>
+    <string name="appstr_common_fullscreen_mode_feature" formatted="false">फुलस्क्रीन: टूलबार छिपाएं</string>
+    <string name="appstr_common_fullscreen_show_status_bar" formatted="false">फुलस्क्रीन में स्टेटस बार दिखाएं</string>
+    <string name="appstr_common_fullscreen_status_bar_overlay" formatted="false">फुलस्क्रीन स्टेटस बार पारदर्शी ओवरले</string>
+    <string name="appstr_common_generated_icon" formatted="false">जनरेट किया गया आइकन</string>
+    <string name="appstr_common_hex_color_format" formatted="false">6 (RGB) या 8 (ARGB) हेक्स अक्षर</string>
+    <string name="appstr_common_hide_url_preview_feature" formatted="false">\"URL पूर्वावलोकन छिपाएं\" सुविधा जोड़ी गई</string>
+    <string name="appstr_common_hosts_block_feature" formatted="false">नई Hosts ब्लॉकिंग सुविधा</string>
+    <string name="appstr_common_hot_search" formatted="false">हॉट सर्च</string>
+    <string name="appstr_common_hours" formatted="false">घंटे</string>
+    <string name="appstr_common_html_app_feature" formatted="false">HTML ऐप: HTML/CSS/JS से स्वतंत्र ऐप</string>
+    <string name="appstr_common_image_selected" formatted="false">छवि चयनित</string>
+    <string name="appstr_common_independent_developer" formatted="false">स्वतंत्र डेवलपर · AI उत्साही</string>
+    <string name="appstr_common_input_lyrics" formatted="false">बोल (Lyrics) दर्ज करें</string>
+    <string name="appstr_common_input_lyrics_hint" formatted="false">कृपया गीत के बोल दर्ज करें (प्रति पंक्ति एक वाक्य):</string>
+    <string name="appstr_common_international_email" formatted="false">अंतरराष्ट्रीय ईमेल</string>
+    <string name="appstr_common_international_group" formatted="false">अंतरराष्ट्रीय यूजर ग्रुप</string>
+    <string name="appstr_common_invalid_activation_code" formatted="false">अमान्य सक्रियण कोड</string>
+    <string name="appstr_common_invalid_code_suggestion" formatted="false">टाइपोस और केस सेंसिटिविटी की जाँच करें। बहुत अधिक विफलताओं से इनपुट लॉक हो सकता है।</string>
+    <string name="appstr_common_join_exchange_group" formatted="false">एक्सचेंज ग्रुप में शामिल हों</string>
+    <string name="appstr_common_learn_progress_together" formatted="false">साथ मिलकर सीखें और अपडेट प्राप्त करें 🚀</string>
+    <string name="appstr_common_linux_one_click_build" formatted="false">फ्रंटएंड के लिए लिनक्स वन-क्लिक बिल्ड</string>
+    <string name="appstr_common_loading_image" formatted="false">छवि लोड हो रही है...</string>
+    <string name="appstr_common_long_press_menu_feature" formatted="false">नई लॉन्ग-प्रेस मेनू सुविधा</string>
+    <string name="appstr_common_lyrics_placeholder" formatted="false">यहाँ गीत के बोल पेस्ट करें या दर्ज करें...\n\nउदाहरण:\n♪ प्रस्तावना (Prelude)\nपहला वाक्य\nदूसरा वाक्य\n♪ अंतराल (Interlude)\nबोल जारी रखें...</string>
+    <string name="appstr_common_market_tab_apps" formatted="false">ऐप्स</string>
+    <string name="appstr_common_market_tab_modules" formatted="false">मॉड्यूल</string>
+    <string name="appstr_common_media_app_feature" formatted="false">मीडिया ऐप: छवियों/वीडियो से स्वतंत्र ऐप</string>
+    <string name="appstr_common_media_gallery_feature" formatted="false">नई मीडिया गैलरी सुविधा</string>
+    <string name="appstr_common_menu_about" formatted="false">के बारे में</string>
+    <string name="appstr_common_menu_account" formatted="false">खाता</string>
+    <string name="appstr_common_menu_ai_coding" formatted="false">AI कोडिंग</string>
+    <string name="appstr_common_menu_ai_settings" formatted="false">AI सेटिंग्स</string>
+    <string name="appstr_common_menu_app_modifier" formatted="false">ऐप संशोधक</string>
+    <string name="appstr_common_menu_batch_import" formatted="false">बैच आयात</string>
+    <string name="appstr_common_menu_browser_kernel" formatted="false">ब्राउज़र कोर</string>
+    <string name="appstr_common_menu_extension_modules" formatted="false">एक्सटेंशन मॉड्यूल</string>
+    <string name="appstr_common_menu_hosts_ad_block" formatted="false">Hosts ब्लॉकिंग</string>
+    <string name="appstr_common_menu_language" formatted="false">भाषा</string>
+    <string name="appstr_common_menu_linux_environment" formatted="false">लिनक्स एनवायरमेंट</string>
+    <string name="appstr_common_menu_login_register" formatted="false">लॉगिन / पंजीकरण</string>
+    <string name="appstr_common_menu_port_manager" formatted="false">पोर्ट प्रबंधक</string>
+    <string name="appstr_common_menu_runtime_deps" formatted="false">रनटाइम निर्भरताएँ</string>
+    <string name="appstr_common_menu_stats" formatted="false">आँकड़े</string>
+    <string name="appstr_common_menu_theme_settings" formatted="false">थीम सेटिंग्स</string>
+    <string name="appstr_common_menu_userscript" formatted="false">यूजरस्क्रिप्ट्स</string>
+    <string name="appstr_common_model_name_search_feature" formatted="false">नई मॉडल खोज सुविधा</string>
+    <string name="appstr_common_more_section_ai_tools" formatted="false">AI उपकरण</string>
+    <string name="appstr_common_more_section_appearance" formatted="false">सूरत और डेटा</string>
+    <string name="appstr_common_more_section_browser" formatted="false">ब्राउज़र और नेटवर्क</string>
+    <string name="appstr_common_more_section_dev_tools" formatted="false">देव उपकरण</string>
+    <string name="appstr_common_multi_api_key_management" formatted="false">नया मल्टी-API-की प्रबंधन</string>
+    <string name="appstr_common_multi_app_icon_feature" formatted="false">नई मल्टी-ऐप आइकन सुविधा</string>
+    <string name="appstr_common_multi_language_support" formatted="false">बहु-भाषा: अंग्रेजी, हिंदी, अरबी, चीनी</string>
+    <string name="appstr_common_music_source" formatted="false">संगीत स्रोत: NetEase संगीत</string>
+    <string name="appstr_common_new_xhs_image_downloader" formatted="false">नया इमेज डाउनलोडर मॉड्यूल</string>
+    <string name="appstr_common_no_activation_codes" formatted="false">अभी तक कोई सक्रियण कोड नहीं है</string>
+    <string name="appstr_common_no_image_gen_model" formatted="false">कोई छवि निर्माण मॉडल नहीं मिला</string>
+    <string name="appstr_common_no_image_selected" formatted="false">कोई छवि नहीं चुनी गई</string>
+    <string name="appstr_common_note" formatted="false">नोट</string>
+    <string name="appstr_common_ok_button" formatted="false">ठीक है</string>
+    <string name="appstr_common_one_click_build_apk" formatted="false">स्वतंत्र APK वन-क्लिक बिल्ड</string>
+    <string name="appstr_common_online_music_search" formatted="false">ऑनलाइन संगीत: BGM खोजें और डाउनलोड करें</string>
+    <string name="appstr_common_opaque" formatted="false">अपारदर्शी</string>
+    <string name="appstr_common_open_source_repo" formatted="false">रेपो (Repo)</string>
+    <string name="appstr_common_open_source_repository" formatted="false">ओपन सोर्स रेपो</string>
+    <string name="appstr_common_optimize_about_page_ui" formatted="false">अनुकूलित \'अबाउट\' पेज UI</string>
+    <string name="appstr_common_optimize_ai_agent_arch" formatted="false">अनुकूलित AI एजेंट आर्किटेक्चर</string>
+    <string name="appstr_common_optimize_ai_html_prompt" formatted="false">अनुकूलित AI HTML संकेत और अनुकूलता</string>
+    <string name="appstr_common_optimize_api_config_test" formatted="false">अनुकूलित API परीक्षण प्रवाह</string>
+    <string name="appstr_common_optimize_black_tech" formatted="false">अनुकूलित उन्नत सुविधाएँ</string>
+    <string name="appstr_common_optimize_custom_api_endpoint" formatted="false">अनुकूलित कस्टम API एंडपॉइंट्स</string>
+    <string name="appstr_common_optimize_data_backup" formatted="false">अनुकूलित डेटा बैकअप सुविधाएँ</string>
+    <string name="appstr_common_optimize_english_arabic_translation" formatted="false">अनुकूलित EN/AR अनुवाद</string>
+    <string name="appstr_common_optimize_extension_module" formatted="false">अनुकूलित एक्सटेंशन मॉड्यूल</string>
+    <string name="appstr_common_optimize_model_name_display" formatted="false">अनुकूलित मॉडल नाम प्रदर्शन</string>
+    <string name="appstr_common_optimize_multi_language_adaptation" formatted="false">अनुकूलित i18n अनुकूलन</string>
+    <string name="appstr_common_optimize_theme_feature" formatted="false">अनुकूलित थीम सिस्टम</string>
+    <string name="appstr_common_optimize_theme_interaction" formatted="false">थीम इंटरैक्शन और प्रदर्शन बढ़ाया गया</string>
+    <string name="appstr_common_original_size" formatted="false">मूल आकार</string>
+    <string name="appstr_common_pause" formatted="false">रोकें</string>
+    <string name="appstr_common_permanent_valid" formatted="false">स्थायी रूप से मान्य</string>
+    <string name="appstr_common_play" formatted="false">चलाएं</string>
+    <string name="appstr_common_please_enter_activation_code" formatted="false">कृपया सक्रियण कोड दर्ज करें</string>
+    <string name="appstr_common_popup_blocker_feature" formatted="false">नई पॉपअप ब्लॉकर सुविधाएँ</string>
+    <string name="appstr_common_preset_colors" formatted="false">प्रीसेट्स</string>
+    <string name="appstr_common_preview_confirm" formatted="false">पूर्वावलोकन की पुष्टि करें</string>
+    <string name="appstr_common_progress" formatted="false">प्रगति</string>
+    <string name="appstr_common_random_app_name_feature" formatted="false">नई रैंडम ऐप नाम सुविधा</string>
+    <string name="appstr_common_random_recommend" formatted="false">रैंडम रिक</string>
+    <string name="appstr_common_re_tap" formatted="false">पुनः टैप करें</string>
+    <string name="appstr_common_redo" formatted="false">फिर से करें</string>
+    <string name="appstr_common_reference_images" formatted="false">संदर्भ चित्र (वैकल्पिक, अधिकतम 3)</string>
+    <string name="appstr_common_remaining_time" formatted="false">शेष समय</string>
+    <string name="appstr_common_remaining_usage" formatted="false">शेष उपयोग</string>
+    <string name="appstr_common_restore_default" formatted="false">डिफ़ॉल्ट पुनर्स्थापित करें</string>
+    <string name="appstr_common_rewind3s" formatted="false">3 सेकंड पीछे</string>
+    <string name="appstr_common_search_history" formatted="false">खोज इतिहास</string>
+    <string name="appstr_common_searching" formatted="false">खोज रहे हैं...</string>
+    <string name="appstr_common_seconds" formatted="false">सेकंड</string>
+    <string name="appstr_common_select_background_image" formatted="false">पृष्ठभूमि छवि चुनें</string>
+    <string name="appstr_common_share_apk_feature" formatted="false">APK शेयरिंग: बनी हुई APK फ़ाइलें शेयर करें</string>
+    <string name="appstr_common_social_media" formatted="false">सोशल मीडिया</string>
+    <string name="appstr_common_splash_screen_feature" formatted="false">स्पलैश (Splash): छवि/वीडियो एनिमेशन</string>
+    <string name="appstr_common_status_bar_follow_theme" formatted="false">स्टेटस बार: डिफ़ॉल्ट रूप से थीम रंगों का पालन करें</string>
+    <string name="appstr_common_status_bar_height" formatted="false">स्टेटस ऊंचाई</string>
+    <string name="appstr_common_status_bar_preview" formatted="false">स्टेटस पूर्वावलोकन</string>
+    <string name="appstr_common_status_bar_style_config" formatted="false">स्टेटस स्टाइल: ऊंचाई/BG/अल्फा कस्टम करें</string>
+    <string name="appstr_common_support_android6" formatted="false">Android 6.0 अनुकूलता</string>
+    <string name="appstr_common_tab_home" formatted="false">होम</string>
+    <string name="appstr_common_tab_more" formatted="false">अधिक</string>
+    <string name="appstr_common_tab_profile" formatted="false">प्रोफ़ाइल</string>
+    <string name="appstr_common_tab_store" formatted="false">बाज़ार</string>
+    <string name="appstr_common_team_add_contributor" formatted="false">योगदानकर्ता जोड़ें</string>
+    <string name="appstr_common_team_associate" formatted="false">टीम को जोड़ें</string>
+    <string name="appstr_common_team_contribution" formatted="false">योगदान</string>
+    <string name="appstr_common_team_contribution_desc" formatted="false">विवरण</string>
+    <string name="appstr_common_team_contribution_points" formatted="false">अंक (Points)</string>
+    <string name="appstr_common_team_create" formatted="false">टीम बनाएं</string>
+    <string name="appstr_common_team_delete" formatted="false">टीम हटाएं</string>
+    <string name="appstr_common_team_desc" formatted="false">टीम प्रोफ़ाइल</string>
+    <string name="appstr_common_team_discover" formatted="false">टीमें खोजें</string>
+    <string name="appstr_common_team_empty" formatted="false">अभी तक कोई टीम नहीं है।\nअपनी पहली टीम बनाएं।</string>
+    <string name="appstr_common_team_invite" formatted="false">सदस्य को आमंत्रित करें</string>
+    <string name="appstr_common_team_join" formatted="false">शामिल होने का अनुरोध</string>
+    <string name="appstr_common_team_join_approve" formatted="false">स्वीकार करें</string>
+    <string name="appstr_common_team_join_message" formatted="false">नोट (वैकल्पिक)</string>
+    <string name="appstr_common_team_join_no_requests" formatted="false">कोई लंबित अनुरोध नहीं</string>
+    <string name="appstr_common_team_join_pending" formatted="false">लंबित</string>
+    <string name="appstr_common_team_join_reject" formatted="false">अस्वीकार करें</string>
+    <string name="appstr_common_team_join_requests" formatted="false">अनुरोध</string>
+    <string name="appstr_common_team_join_sent" formatted="false">अनुरोध भेज दिया गया है, अनुमोदन की प्रतीक्षा है</string>
+    <string name="appstr_common_team_joined" formatted="false">शामिल हुए</string>
+    <string name="appstr_common_team_lead" formatted="false">टीम लीड</string>
+    <string name="appstr_common_team_member_role" formatted="false">सदस्य</string>
+    <string name="appstr_common_team_members" formatted="false">सदस्य</string>
+    <string name="appstr_common_team_my_teams" formatted="false">मेरी टीमें</string>
+    <string name="appstr_common_team_name" formatted="false">टीम का नाम</string>
+    <string name="appstr_common_team_no_teams" formatted="false">आप अभी तक किसी भी टीम में शामिल नहीं हुए हैं</string>
+    <string name="appstr_common_team_quota" formatted="false">कोटा (Quota)</string>
+    <string name="appstr_common_team_ranking" formatted="false">रैंकिंग</string>
+    <string name="appstr_common_team_role" formatted="false">भूमिका</string>
+    <string name="appstr_common_team_role_admin" formatted="false">व्यवस्थापक</string>
+    <string name="appstr_common_team_role_editor" formatted="false">संपादक</string>
+    <string name="appstr_common_team_role_owner" formatted="false">मालिक</string>
+    <string name="appstr_common_team_role_viewer" formatted="false">दर्शक</string>
+    <string name="appstr_common_team_search" formatted="false">टीम खोजें</string>
+    <string name="appstr_common_team_search_empty" formatted="false">कोई मिलान करने वाली टीमें नहीं मिलीं</string>
+    <string name="appstr_common_team_select_team" formatted="false">टीम चुनें</string>
+    <string name="appstr_common_team_title" formatted="false">टीमें</string>
+    <string name="appstr_common_team_username" formatted="false">उपयोगकर्ता नाम</string>
+    <string name="appstr_common_team_works" formatted="false">काम (Works)</string>
+    <string name="appstr_common_theme_anohana" formatted="false">सीक्रेट बेस (Secret Base)</string>
+    <string name="appstr_common_theme_anohana_desc" formatted="false">मुलायम गिरती पंखुड़ियों के साथ एक गर्म गर्मी की यादें</string>
+    <string name="appstr_common_theme_aurora" formatted="false">ऑरोरा ड्रीम (Aurora Dream)</string>
+    <string name="appstr_common_theme_aurora_desc" formatted="false">ध्रुवीय आकाश की तरह स्वप्निल उत्तरी प्रकाश ग्रेडिएंट्स</string>
+    <string name="appstr_common_theme_boonie_bear_desc" formatted="false">चंचल वन धूप और सुनहरे रोमांच</string>
+    <string name="appstr_common_theme_boonie_bears" formatted="false">बूनी बियर्स</string>
+    <string name="appstr_common_theme_cyberpunk" formatted="false">साइबरपंक</string>
+    <string name="appstr_common_theme_cyberpunk_desc" formatted="false">हाई-टेक विद्रोह के साथ नियॉन चमकता भविष्य</string>
+    <string name="appstr_common_theme_death_note" formatted="false">डेथ नोट</string>
+    <string name="appstr_common_theme_death_note_desc" formatted="false">अंधेरे में भाग्य लिखने वाली लाल आंखों वाली दृष्टि</string>
+    <string name="appstr_common_theme_forest" formatted="false">फ़ॉरेस्ट मॉर्निंग</string>
+    <string name="appstr_common_theme_forest_desc" formatted="false">ताजा प्रकृति की सांसों के साथ पत्तियों के माध्यम से धूप</string>
+    <string name="appstr_common_theme_frost" formatted="false">बर्फीला क्षेत्र</string>
+    <string name="appstr_common_theme_frost_desc" formatted="false">बर्फ की दुनिया से शुद्ध रोशनी और पारभासी भव्यता</string>
+    <string name="appstr_common_theme_galaxy" formatted="false">आकाशगंगा (Galaxy)</string>
+    <string name="appstr_common_theme_galaxy_desc" formatted="false">गहरे अंतरिक्ष में अनंत रोमांस और शानदार सितारे</string>
+    <string name="appstr_common_theme_kimi_no_nawa" formatted="false">तुम्हारा नाम (Your Name)</string>
+    <string name="appstr_common_theme_kimi_no_nawa_desc" formatted="false">शाम के आकाश में धूमकेतु की राह</string>
+    <string name="appstr_common_theme_lavender" formatted="false">लैवेंडर फील्ड</string>
+    <string name="appstr_common_theme_lavender_desc" formatted="false">सुगंधित उपचार के लिए प्रोवेंस में एक बैंगनी समुद्र</string>
+    <string name="appstr_common_theme_minimal" formatted="false">न्यूनतावाद (Minimalism)</string>
+    <string name="appstr_common_theme_minimal_desc" formatted="false">सरल लेकिन उत्तम विवरणों के साथ शुद्ध सौंदर्य</string>
+    <string name="appstr_common_theme_naruto" formatted="false">नारुतो</string>
+    <string name="appstr_common_theme_naruto_desc" formatted="false">हार न मानने वाले जज्बे के साथ जलता हुआ लकड़ी का पत्ता नारंगी</string>
+    <string name="appstr_common_theme_neon_tokyo" formatted="false">नियॉन टोक्यो</string>
+    <string name="appstr_common_theme_neon_tokyo_desc" formatted="false">भविष्य के टोक्यो में बारिश की रातों में नियॉन प्रतिबिंब</string>
+    <string name="appstr_common_theme_ocean" formatted="false">गहरा नीला</string>
+    <string name="appstr_common_theme_ocean_desc" formatted="false">चमकती शांति के साथ रहस्यमयी गहरी चमक</string>
+    <string name="appstr_common_theme_one_piece" formatted="false">वन पीस</string>
+    <string name="appstr_common_theme_one_piece_desc" formatted="false">स्वतंत्रता और खजाने का पीछा करते हुए गहरे नीले समुद्र की यात्रा</string>
+    <string name="appstr_common_theme_sakura" formatted="false">सकुरा स्टोरी</string>
+    <string name="appstr_common_theme_sakura_desc" formatted="false">काव्यात्मक ज़ेन सौंदर्यशास्त्र के साथ नाचती गुलाबी पंखुड़ियाँ</string>
+    <string name="appstr_common_theme_sunset" formatted="false">गोधूलि सूर्यास्त</string>
+    <string name="appstr_common_theme_sunset_desc" formatted="false">काव्यात्मक शाम के वाइब्स के साथ डूबते सूरज की गर्म आलिंगन</string>
+    <string name="appstr_common_theme_system_feature" formatted="false">थीम सिस्टम: कई थीम + डार्क मोड</string>
+    <string name="appstr_common_theme_tom_and_jerry" formatted="false">टॉम एंड जेरी</string>
+    <string name="appstr_common_theme_tom_and_jerry_desc" formatted="false">रंगों का पीछा करते हुए बचपन की क्लासिक आनंदमय यादें</string>
+    <string name="appstr_common_theme_volcano" formatted="false">लावा हार्ट</string>
+    <string name="appstr_common_theme_volcano_desc" formatted="false">जलती हुई जीवन शक्ति के साथ गर्म लावा ऊर्जा</string>
+    <string name="appstr_common_theme_will_and_representation" formatted="false">इच्छा और प्रतिनिधित्व (Will and Representation)</string>
+    <string name="appstr_common_theme_will_and_representation_desc" formatted="false">गहरे और मूडी सौंदर्यशास्त्र के साथ दार्शनिक गहराई</string>
+    <string name="appstr_common_theme_zarathustra" formatted="false">इस प्रकार जरथुस्त्र ने कहा (Thus Spoke Zarathustra)</string>
+    <string name="appstr_common_theme_zarathustra_desc" formatted="false">इच्छा को जगाती पर्वत शिखर की सुनहरी रोशनी</string>
+    <string name="appstr_common_time" formatted="false">समय</string>
+    <string name="appstr_common_time_alignment" formatted="false">समय संरेखण</string>
+    <string name="appstr_common_times" formatted="false">बार</string>
+    <string name="appstr_common_timezone_spoofing" formatted="false">टाइमज़ोन स्पूफिंग (Timezone Spoofing)</string>
+    <string name="appstr_common_timezone_spoofing_hint" formatted="false">सिस्टम टाइमज़ोन को स्पूफ करें</string>
+    <string name="appstr_common_too_many_attempts_with_countdown_format" formatted="false">बहुत सारे प्रयास। %s के बाद पुनः प्रयास करें</string>
+    <string name="appstr_common_total_codes" formatted="false">कुल %d कोड</string>
+    <string name="appstr_common_total_lyrics_lines" formatted="false">कुल %d पंक्तियाँ</string>
+    <string name="appstr_common_transparent" formatted="false">पारदर्शी</string>
+    <string name="appstr_common_undo" formatted="false">पूर्ववत करें</string>
+    <string name="appstr_common_unknown_artist" formatted="false">अज्ञात कलाकार</string>
+    <string name="appstr_common_update_later" formatted="false">बाद में अपडेट करें</string>
+    <string name="appstr_common_update_later_button" formatted="false">शायद बाद में</string>
+    <string name="appstr_common_usage_exceeded_detail" formatted="false">सक्रियण उपयोग सीमा पूरी हो गई</string>
+    <string name="appstr_common_usage_exceeded_suggestion" formatted="false">कृपया नए कोड के लिए डेवलपर से संपर्क करें।</string>
+    <string name="appstr_common_user_script_injection" formatted="false">स्क्रिप्ट इंजेक्शन: कस्टम JS स्क्रिप्ट</string>
+    <string name="appstr_common_validity_period" formatted="false">वैधता अवधि</string>
+    <string name="appstr_common_video_trim_feature" formatted="false">वीडियो ट्रिमिंग: विजुअल क्लिप चयन</string>
+    <string name="appstr_common_video_tutorial" formatted="false">ट्यूटोरियल</string>
+    <string name="appstr_common_video_tutorial_label" formatted="false">वीडियो ट्यूटोरियल</string>
+    <string name="appstr_common_web_auto_translate" formatted="false">वेब अनुवाद: स्वचालित सामग्री अनुवाद</string>
+</resources>

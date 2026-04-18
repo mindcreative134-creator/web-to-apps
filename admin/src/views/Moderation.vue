@@ -1,31 +1,31 @@
 <template>
   <div class="view-page">
     <div class="page-header">
-      <h1>内容审核</h1>
-      <p class="page-desc">审核社区模块和处理用户举报</p>
+      <h1>{{ $t('moderation.title') }}</h1>
+      <p class="page-desc">{{ $t('moderation.subtitle') }}</p>
     </div>
 
-    <!-- 统计卡片 -->
+    <!-- Stats Cards -->
     <div class="stats-row">
       <div class="stat-card accent">
         <div class="stat-value">{{ stats.pendingReports }}</div>
-        <div class="stat-label">待处理举报</div>
+        <div class="stat-label">{{ $t('moderation.stats.pending_reports') }}</div>
       </div>
       <div class="stat-card warning">
         <div class="stat-value">{{ stats.pendingModules }}</div>
-        <div class="stat-label">待审核模块</div>
+        <div class="stat-label">{{ $t('moderation.stats.pending_modules') }}</div>
       </div>
       <div class="stat-card success">
         <div class="stat-value">{{ stats.resolvedToday }}</div>
-        <div class="stat-label">今日已处理</div>
+        <div class="stat-label">{{ $t('moderation.stats.resolved_today') }}</div>
       </div>
       <div class="stat-card">
         <div class="stat-value">{{ stats.bannedUsers }}</div>
-        <div class="stat-label">已封禁用户</div>
+        <div class="stat-label">{{ $t('moderation.stats.banned_users') }}</div>
       </div>
     </div>
 
-    <!-- Tab 切换 -->
+    <!-- Tab Switching -->
     <div class="tab-bar">
       <button v-for="tab in tabs" :key="tab.key"
         :class="['tab-btn', { active: activeTab === tab.key }]"
@@ -35,49 +35,49 @@
       </button>
     </div>
 
-    <!-- 举报列表 -->
+    <!-- Report List -->
     <div v-if="activeTab === 'reports'" class="content-section">
       <div v-if="reports.length === 0" class="empty-state">
-        <p>🎉 暂无待处理举报</p>
+        <p>🎉 {{ $t('moderation.empty.reports') }}</p>
       </div>
       <div v-for="report in reports" :key="report.id" class="report-card">
         <div class="report-header">
           <span class="report-type" :class="report.reason">{{ report.reason }}</span>
-          <span class="report-time">{{ report.created_at }}</span>
+          <span class="report-time">{{ formatDate(report.created_at) }}</span>
         </div>
-        <p class="report-detail">{{ report.details || '无详细说明' }}</p>
+        <p class="report-detail">{{ report.details || $t('moderation.reports.no_details') }}</p>
         <div class="report-meta">
-          <span>举报人: #{{ report.reporter_id }}</span>
-          <span>模块: #{{ report.module_id }}</span>
+          <span>{{ $t('moderation.reports.reporter') }}: #{{ report.reporter_id }}</span>
+          <span>{{ $t('moderation.reports.module') }}: #{{ report.module_id }}</span>
         </div>
         <div class="report-actions">
           <button class="btn btn-sm btn-success" @click="resolveReport(report.id, 'resolved')">
-            通过
+            {{ $t('moderation.actions.approve') }}
           </button>
           <button class="btn btn-sm btn-danger" @click="resolveReport(report.id, 'action_taken')">
-            处罚
+            {{ $t('moderation.actions.punish') }}
           </button>
           <button class="btn btn-sm btn-ghost" @click="resolveReport(report.id, 'dismissed')">
-            驳回
+            {{ $t('moderation.actions.dismiss') }}
           </button>
         </div>
       </div>
     </div>
 
-    <!-- 模块审核列表 -->
+    <!-- Module Review List -->
     <div v-if="activeTab === 'modules'" class="content-section">
       <div v-if="pendingModules.length === 0" class="empty-state">
-        <p>🎉 暂无待审核模块</p>
+        <p>🎉 {{ $t('moderation.empty.modules') }}</p>
       </div>
       <div v-for="mod in pendingModules" :key="mod.id" class="module-review-card">
         <div class="module-info">
           <h3>{{ mod.name }}</h3>
-          <p>{{ mod.description || '无描述' }}</p>
-          <span class="module-author">作者: {{ mod.author_name }}</span>
+          <p>{{ mod.description || $t('projects.no_desc') }}</p>
+          <span class="module-author">{{ $t('moderation.modules.author') }}: {{ mod.author_name }}</span>
         </div>
         <div class="module-actions">
-          <button class="btn btn-sm btn-success" @click="approveModule(mod.id)">批准</button>
-          <button class="btn btn-sm btn-danger" @click="showRejectDialog(mod)">拒绝</button>
+          <button class="btn btn-sm btn-success" @click="approveModule(mod.id)">{{ $t('store.batch.approve') }}</button>
+          <button class="btn btn-sm btn-danger" @click="showRejectDialog(mod)">{{ $t('store.status.reject') }}</button>
         </div>
       </div>
     </div>
@@ -87,7 +87,9 @@
 <script setup>
 import { ref, reactive, computed, inject, onMounted } from 'vue'
 import { moderationApi } from '../api/index.js'
+import { useI18n } from 'vue-i18n'
 
+const { t, locale } = useI18n()
 const showToast = inject('showToast')
 const activeTab = ref('reports')
 const reports = ref([])
@@ -101,8 +103,8 @@ const stats = reactive({
 })
 
 const tabs = computed(() => [
-  { key: 'reports', label: '举报', badge: stats.pendingReports || null },
-  { key: 'modules', label: '模块审核', badge: stats.pendingModules || null },
+  { key: 'reports', label: t('moderation.tabs.reports'), badge: stats.pendingReports || null },
+  { key: 'modules', label: t('moderation.tabs.modules'), badge: stats.pendingModules || null },
 ])
 
 async function loadReports() {
@@ -132,40 +134,43 @@ async function loadStats() {
     stats.resolvedToday = d.resolved_today || 0
     stats.bannedUsers = d.banned_users || 0
   } catch {
-    // fallback — use local counts
+    // fallback
   }
 }
 
 async function resolveReport(id, resolution) {
   try {
     await moderationApi.resolveReport(id, { resolution })
-    showToast('举报已处理')
+    showToast(t('common.active'))
     loadReports()
     loadStats()
   } catch {
-    showToast('操作失败', 'error')
+    showToast(t('common.failed'), 'error')
   }
 }
 
 async function approveModule(id) {
   try {
     await moderationApi.approveModule(id)
-    showToast('模块已批准')
+    showToast(t('common.active'))
     loadPendingModules()
     loadStats()
   } catch {
-    showToast('操作失败', 'error')
+    showToast(t('common.failed'), 'error')
   }
 }
 
 function showRejectDialog(mod) {
-  const reason = prompt(`请输入拒绝 "${mod.name}" 的原因:`)
+  const reason = prompt(t('moderation.modules.reject_prompt', { name: mod.name }))
   if (reason) {
     moderationApi.rejectModule(mod.id, { reason })
-      .then(() => { showToast('模块已拒绝'); loadPendingModules(); loadStats() })
-      .catch(() => showToast('操作失败', 'error'))
+      .then(() => { showToast(t('common.active')); loadPendingModules(); loadStats() })
+      .catch(() => showToast(t('common.failed'), 'error'))
   }
 }
+
+const dateLocaleMap = { en: 'en-US', zh: 'zh-CN', hi: 'hi-IN' }
+function formatDate(d) { return d ? new Date(d).toLocaleString(dateLocaleMap[locale.value] || 'en-US') : '-' }
 
 onMounted(() => {
   loadStats()

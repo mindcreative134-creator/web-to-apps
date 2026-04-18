@@ -1,8 +1,8 @@
 <template>
   <div class="slide-up">
     <div class="page-header">
-      <h1>概览</h1>
-      <p class="text-secondary text-sm">平台运营数据一览</p>
+      <h1>{{ $t('dashboard.title') }}</h1>
+      <p class="text-secondary text-sm">{{ $t('dashboard.subtitle') }}</p>
     </div>
 
     <div v-if="loading" class="spinner"></div>
@@ -15,7 +15,7 @@
           </div>
           <div class="metric-body">
             <span class="metric-value">{{ m.value }}</span>
-            <span class="metric-label">{{ m.label }}</span>
+            <span class="metric-label">{{ $t(m.label) }}</span>
           </div>
           <span v-if="m.sub" class="metric-sub">{{ m.sub }}</span>
         </div>
@@ -24,8 +24,8 @@
       <!-- Chart -->
       <div class="card mt-24 slide-up" style="animation-delay:200ms">
         <div class="section-header">
-          <h3>活跃趋势</h3>
-          <span class="text-xs text-muted">近 7 日</span>
+          <h3>{{ $t('dashboard.trends') }}</h3>
+          <span class="text-xs text-muted">{{ $t('dashboard.last_7_days') }}</span>
         </div>
         <div class="chart-wrap">
           <Line :data="chartData" :options="chartOptions" />
@@ -36,7 +36,7 @@
       <div class="quick-grid mt-24">
         <router-link v-for="q in quickLinks" :key="q.to" :to="q.to" class="quick-card slide-up" :style="{ animationDelay: q.delay }">
           <span class="quick-icon" v-html="q.svg"></span>
-          <span class="quick-label">{{ q.label }}</span>
+          <span class="quick-label">{{ $t(q.label) }}</span>
           <svg class="quick-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
         </router-link>
       </div>
@@ -47,30 +47,32 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue'
 import { Line } from 'vue-chartjs'
+import { useI18n } from 'vue-i18n'
 import { Chart, CategoryScale, LinearScale, PointElement, LineElement, Filler, Tooltip } from 'chart.js'
 import { adminApi } from '../api'
 
 Chart.register(CategoryScale, LinearScale, PointElement, LineElement, Filler, Tooltip)
 
+const { t } = useI18n()
 const loading = ref(true)
 const stats = ref({})
 
 const metrics = computed(() => {
   const s = stats.value
   return [
-    { label: '总用户', value: s.total_users || 0, sub: s.new_users_today ? `今日 +${s.new_users_today}` : '', bg: 'linear-gradient(135deg, rgba(99,102,241,0.15), rgba(99,102,241,0.05))', svg: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2"/><circle cx="9" cy="7" r="4"/></svg>' },
-    { label: 'Pro 用户', value: s.pro_users || 0, sub: `${s.pro_rate || 0}%`, bg: 'linear-gradient(135deg, rgba(96,165,250,0.15), rgba(96,165,250,0.05))', svg: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>' },
-    { label: 'Ultra 用户', value: s.ultra_users || 0, bg: 'linear-gradient(135deg, rgba(251,191,36,0.15), rgba(251,191,36,0.05))', svg: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>' },
-    { label: '月预估收入', value: `$${s.mrr || 0}`, bg: 'linear-gradient(135deg, rgba(52,211,153,0.15), rgba(52,211,153,0.05))', svg: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>' },
-    { label: '今日活跃', value: s.active_today || 0, bg: 'linear-gradient(135deg, rgba(167,139,250,0.15), rgba(167,139,250,0.05))', svg: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>' },
-    { label: '云项目', value: s.total_projects || 0, sub: `活跃 ${s.active_projects || 0}`, bg: 'linear-gradient(135deg, rgba(244,114,182,0.15), rgba(244,114,182,0.05))', svg: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f472b6" stroke-width="1.8"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg>' },
+    { label: 'dashboard.total_users', value: s.total_users || 0, sub: s.new_users_today ? `${t('dashboard.today')} +${s.new_users_today}` : '', bg: 'linear-gradient(135deg, rgba(99,102,241,0.15), rgba(99,102,241,0.05))', svg: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2"/><circle cx="9" cy="7" r="4"/></svg>' },
+    { label: 'dashboard.pro_users', value: s.pro_users || 0, sub: `${s.pro_rate || 0}%`, bg: 'linear-gradient(135deg, rgba(96,165,250,0.15), rgba(96,165,250,0.05))', svg: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>' },
+    { label: 'dashboard.ultra_users', value: s.ultra_users || 0, bg: 'linear-gradient(135deg, rgba(251,191,36,0.15), rgba(251,191,36,0.05))', svg: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>' },
+    { label: 'dashboard.mrr', value: `$${s.mrr || 0}`, bg: 'linear-gradient(135deg, rgba(52,211,153,0.15), rgba(52,211,153,0.05))', svg: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>' },
+    { label: 'dashboard.active_today', value: s.active_today || 0, bg: 'linear-gradient(135deg, rgba(167,139,250,0.15), rgba(167,139,250,0.05))', svg: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>' },
+    { label: 'dashboard.cloud_projects', value: s.total_projects || 0, sub: `${t('dashboard.active')} ${s.active_projects || 0}`, bg: 'linear-gradient(135deg, rgba(244,114,182,0.15), rgba(244,114,182,0.05))', svg: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f472b6" stroke-width="1.8"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg>' },
   ]
 })
 
 const chartData = computed(() => ({
   labels: (stats.value.login_trend || []).map(d => d.date),
   datasets: [{
-    label: '活跃用户',
+    label: t('dashboard.active_today'),
     data: (stats.value.login_trend || []).map(d => d.count),
     borderColor: '#6366f1', backgroundColor: 'rgba(99,102,241,0.06)',
     tension: 0.4, fill: true, pointRadius: 3, pointBackgroundColor: '#6366f1',
@@ -85,10 +87,10 @@ const chartOptions = {
 }
 
 const quickLinks = [
-  { to: '/analytics', label: '数据分析', svg: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>', delay: '250ms' },
-  { to: '/users', label: '管理用户', svg: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2"/><circle cx="9" cy="7" r="4"/></svg>', delay: '310ms' },
-  { to: '/activation', label: '激活码管理', svg: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.78 7.78 5.5 5.5 0 017.78-7.78z"/></svg>', delay: '370ms' },
-  { to: '/config', label: '套餐与配置', svg: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33"/></svg>', delay: '430ms' },
+  { to: '/analytics', label: 'common.analytics', svg: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>', delay: '250ms' },
+  { to: '/users', label: 'dashboard.manage_users', svg: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2"/><circle cx="9" cy="7" r="4"/></svg>', delay: '310ms' },
+  { to: '/activation', label: 'dashboard.activation_mgmt', svg: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.78 7.78 5.5 5.5 0 017.78-7.78z"/></svg>', delay: '370ms' },
+  { to: '/config', label: 'dashboard.package_config', svg: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33"/></svg>', delay: '430ms' },
 ]
 
 onMounted(async () => {

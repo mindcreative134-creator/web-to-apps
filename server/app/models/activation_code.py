@@ -19,4 +19,11 @@ class ActivationCode(Base):
     id = Column(BigInteger, primary_key=True, autoincrement=True)
     code = Column(String(100), unique=True, index=True)
     status = Column(Enum("unused", "used", "disabled", name="code_status_enum"), default="unused")
-    # Add other fields as needed based on logic
+    plan_type = Column(String(50), default="pro") # pro, premium, etc.
+    duration_days = Column(Integer, default=30)
+    used_by = Column(BigInteger, ForeignKey("users.id", ondelete="SET NULL"), nullable=True)
+    batch_id = Column(String(100), index=True, nullable=True)
+    created_at = Column(DateTime, default=func.now())
+    used_at = Column(DateTime, nullable=True)
+
+    user = relationship("User", foreign_keys=[used_by])

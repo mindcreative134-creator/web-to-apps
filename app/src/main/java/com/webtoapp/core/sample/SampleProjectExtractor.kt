@@ -38,6 +38,7 @@ object SampleProjectExtractor {
             AppLanguage.CHINESE -> ""
             AppLanguage.ENGLISH -> "-en"
             AppLanguage.ARABIC -> "-ar"
+            AppLanguage.HINDI -> "-hi"
         }
     }
     

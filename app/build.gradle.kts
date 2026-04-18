@@ -115,8 +115,8 @@ val generateAppStringsAccessors = tasks.register("generateAppStringsAccessors") 
     val valuesZhDir = project.file("src/main/res/values-zh")
     inputs.files(fileTree(valuesDir) { include("app_strings_*.xml") })
     inputs.files(fileTree(valuesZhDir) { include("app_strings_*.xml") })
-    inputs.files(fileTree(project.file("src/main/res/values-en")) { include("app_strings_*.xml") })
     inputs.files(fileTree(project.file("src/main/res/values-ar")) { include("app_strings_*.xml") })
+    inputs.files(fileTree(project.file("src/main/res/values-hi")) { include("app_strings_*.xml") })
     outputs.dir(generatedAppStringsDir)
 
     doLast {
@@ -127,28 +127,35 @@ val generateAppStringsAccessors = tasks.register("generateAppStringsAccessors") 
             .map { defaultFile ->
                 val groupId = defaultFile.name.removePrefix("app_strings_").removeSuffix(".xml")
                 val prefix = "appstr_${groupId}_"
-                val zhMap = parseStringXml(defaultFile)
+                
+                // defaultFile is in src/main/res/values and is now English (after translation)
+                val enMap = parseStringXml(defaultFile)
+                
                 val zhFile = project.file("src/main/res/values-zh/${defaultFile.name}")
-                val enFile = project.file("src/main/res/values-en/${defaultFile.name}")
                 val arFile = project.file("src/main/res/values-ar/${defaultFile.name}")
+                val hiFile = project.file("src/main/res/values-hi/${defaultFile.name}")
+                
                 require(zhFile.exists()) { "Missing Chinese locale file for ${defaultFile.name}" }
-                require(enFile.exists()) { "Missing English locale file for ${defaultFile.name}" }
                 require(arFile.exists()) { "Missing Arabic locale file for ${defaultFile.name}" }
-                val zhVariantMap = parseStringXml(zhFile)
-                val enMap = parseStringXml(enFile)
+                require(hiFile.exists()) { "Missing Hindi locale file for ${defaultFile.name}" }
+                
+                val zhMap = parseStringXml(zhFile)
                 val arMap = parseStringXml(arFile)
-                require(zhMap.keys == zhVariantMap.keys) { "Key mismatch between values and values-zh for ${defaultFile.name}" }
-                require(zhMap.keys == enMap.keys) { "Key mismatch between values and values-en for ${defaultFile.name}" }
-                require(zhMap.keys == arMap.keys) { "Key mismatch between values and values-ar for ${defaultFile.name}" }
+                val hiMap = parseStringXml(hiFile)
+                
+                require(enMap.keys == zhMap.keys) { "Key mismatch between values and values-zh for ${defaultFile.name}" }
+                require(enMap.keys == arMap.keys) { "Key mismatch between values and values-ar for ${defaultFile.name}" }
+                require(enMap.keys == hiMap.keys) { "Key mismatch between values and values-hi for ${defaultFile.name}" }
 
-                val properties = zhMap.keys.sorted().map { key ->
+                val properties = enMap.keys.sorted().map { key ->
                     require(key.startsWith(prefix)) { "Unexpected key '$key' in ${defaultFile.name}" }
                     AppStringsProperty(
                         propertyName = snakeToCamel(key.removePrefix(prefix)),
                         translations = mapOf(
                             "zh" to zhMap.getValue(key),
                             "en" to enMap.getValue(key),
-                            "ar" to arMap.getValue(key)
+                            "ar" to arMap.getValue(key),
+                            "hi" to hiMap.getValue(key)
                         )
                     )
                 }
@@ -196,6 +203,7 @@ val generateAppStringsAccessors = tasks.register("generateAppStringsAccessors") 
                         appendLine("            AppLanguage.CHINESE -> ${kotlinStringLiteral(property.translations.getValue("zh"))}")
                         appendLine("            AppLanguage.ENGLISH -> ${kotlinStringLiteral(property.translations.getValue("en"))}")
                         appendLine("            AppLanguage.ARABIC -> ${kotlinStringLiteral(property.translations.getValue("ar"))}")
+                        appendLine("            AppLanguage.HINDI -> ${kotlinStringLiteral(property.translations.getValue("hi"))}")
                         appendLine("        }")
                         appendLine()
                     }
@@ -206,9 +214,21 @@ val generateAppStringsAccessors = tasks.register("generateAppStringsAccessors") 
         )
     }
 }
-
 android {
-    sourceSets.getByName("main").java.directories.add(generatedAppStringsDir.get().asFile.absolutePath)
+    tasks.register("printKotlinSourceSets") {
+        doLast {
+            println("--- Java Source Sets (main) ---")
+            android.sourceSets.getByName("main").java.directories.forEach { println(it) }
+        }
+    }
+
+    androidComponents {
+        onVariants { variant ->
+            // Register the generated directory for each variant
+            // This is the correct way in AGP 8.0+ to add generated sources
+            variant.sources.java?.addStaticSourceDirectory(generatedAppStringsDir.get().asFile.absolutePath)
+        }
+    }
 
     signingConfigs {
         create("shiaho") {
@@ -437,6 +457,15 @@ dependencies {
 //
 // Run: ./gradlew downloadPhpBinary
 // This only needs to run once (the binary is gitignored).
+
+// Wire string generation task as a dependency of ALL Kotlin compilation tasks.
+// Without this, incremental builds may compile Kotlin before (re)generating the strings,
+// causing hundreds of "Unresolved reference" errors for generated string properties.
+afterEvaluate {
+    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+        dependsOn(generateAppStringsAccessors)
+    }
+}
 
 tasks.register("downloadPhpBinary") {
     description = "Downloads pre-built PHP binary for Android arm64 and bundles it as native library"

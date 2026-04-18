@@ -2,8 +2,8 @@
   <div class="analytics-page slide-up">
     <div class="page-header">
       <div>
-        <h1>📊 数据分析</h1>
-        <p class="page-desc">多维度趋势数据，洞察平台增长</p>
+        <h1>📊 {{ $t('analytics.title') }}</h1>
+        <p class="page-desc">{{ $t('analytics.subtitle') }}</p>
       </div>
     </div>
 
@@ -12,7 +12,7 @@
       <button v-for="s in scopes" :key="s.value"
         :class="['scope-btn', { active: scope === s.value }]"
         @click="switchScope(s.value)">
-        {{ s.label }}
+        {{ $t(s.label) }}
       </button>
     </div>
 
@@ -24,7 +24,7 @@
         </div>
         <div class="summary-info">
           <span class="summary-value">{{ summary.pro_total }}</span>
-          <span class="summary-label">Pro 用户</span>
+          <span class="summary-label">{{ $t('dashboard.pro_users') }}</span>
         </div>
       </div>
       <div class="summary-card ultra">
@@ -33,7 +33,7 @@
         </div>
         <div class="summary-info">
           <span class="summary-value">{{ summary.ultra_total }}</span>
-          <span class="summary-label">Ultra 用户</span>
+          <span class="summary-label">{{ $t('dashboard.ultra_users') }}</span>
         </div>
       </div>
       <div class="summary-card apps">
@@ -42,7 +42,7 @@
         </div>
         <div class="summary-info">
           <span class="summary-value">{{ summary.store_apps_total }}</span>
-          <span class="summary-label">市场应用</span>
+          <span class="summary-label">{{ $t('analytics.market_apps') }}</span>
         </div>
       </div>
       <div class="summary-card modules">
@@ -51,14 +51,14 @@
         </div>
         <div class="summary-info">
           <span class="summary-value">{{ summary.store_modules_total }}</span>
-          <span class="summary-label">市场模块</span>
+          <span class="summary-label">{{ $t('analytics.market_modules') }}</span>
         </div>
       </div>
     </div>
 
     <div v-if="loading" class="loading-state">
       <div class="spinner"></div>
-      <span>加载趋势数据...</span>
+      <span>{{ $t('analytics.loading_trends') }}</span>
     </div>
 
     <template v-else>
@@ -66,15 +66,15 @@
       <div class="chart-card slide-up" style="animation-delay:100ms">
         <div class="chart-header">
           <div>
-            <h3>活跃用户趋势</h3>
-            <span class="chart-sub">{{ scopeLabel }}独立活跃用户数</span>
+            <h3>{{ $t('analytics.active_trends') }}</h3>
+            <span class="chart-sub">{{ scopeLabel }} · {{ $t('analytics.unique_users') }}</span>
           </div>
           <div class="chart-legend">
-            <span class="legend-dot" style="background:#818cf8"></span> 活跃用户
+            <span class="legend-dot" style="background:#818cf8"></span> {{ $t('dashboard.active') }}
           </div>
         </div>
         <div class="chart-body">
-          <Line :data="activeChartData" :options="chartOpts('活跃用户')" />
+          <Line :data="activeChartData" :options="chartOpts($t('dashboard.active'))" />
         </div>
       </div>
 
@@ -82,8 +82,8 @@
       <div class="chart-card slide-up" style="animation-delay:200ms">
         <div class="chart-header">
           <div>
-            <h3>付费用户趋势</h3>
-            <span class="chart-sub">{{ scopeLabel }}新增付费用户</span>
+            <h3>{{ $t('analytics.paid_trends') }}</h3>
+            <span class="chart-sub">{{ scopeLabel }} · {{ $t('analytics.new_paid') }}</span>
           </div>
           <div class="chart-legend">
             <span class="legend-dot" style="background:#60a5fa"></span> Pro
@@ -91,7 +91,7 @@
           </div>
         </div>
         <div class="chart-body">
-          <Line :data="paidChartData" :options="chartOpts('付费用户')" />
+          <Line :data="paidChartData" :options="chartOpts(t('analytics.paid_trends'))" />
         </div>
       </div>
 
@@ -99,16 +99,16 @@
       <div class="chart-card slide-up" style="animation-delay:300ms">
         <div class="chart-header">
           <div>
-            <h3>市场内容趋势</h3>
-            <span class="chart-sub">{{ scopeLabel }}新增应用与模块</span>
+            <h3>{{ $t('analytics.store_trends') }}</h3>
+            <span class="chart-sub">{{ scopeLabel }} · {{ $t('analytics.new_content') }}</span>
           </div>
           <div class="chart-legend">
-            <span class="legend-dot" style="background:#f472b6"></span> 应用
-            <span class="legend-dot" style="background:#34d399"></span> 模块
+            <span class="legend-dot" style="background:#f472b6"></span> {{ $t('analytics.market_apps') }}
+            <span class="legend-dot" style="background:#34d399"></span> {{ $t('analytics.market_modules') }}
           </div>
         </div>
         <div class="chart-body">
-          <Line :data="storeChartData" :options="chartOpts('市场')" />
+          <Line :data="storeChartData" :options="chartOpts(t('analytics.store_trends'))" />
         </div>
       </div>
     </template>
@@ -117,6 +117,7 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { Line } from 'vue-chartjs'
 import {
   Chart, CategoryScale, LinearScale, PointElement, LineElement,
@@ -126,20 +127,21 @@ import { analyticsApi } from '../api'
 
 Chart.register(CategoryScale, LinearScale, PointElement, LineElement, Filler, Tooltip, Legend)
 
+const { t } = useI18n()
 const scope = ref('daily')
 const loading = ref(true)
 const trendData = ref({})
 const summary = ref(null)
 
 const scopes = [
-  { value: 'daily', label: '每日 (30天)' },
-  { value: 'monthly', label: '每月 (12月)' },
-  { value: 'yearly', label: '每年' },
-  { value: 'all', label: '全部历史' },
+  { value: 'daily', label: 'analytics.scopes.daily' },
+  { value: 'monthly', label: 'analytics.scopes.monthly' },
+  { value: 'yearly', label: 'analytics.scopes.yearly' },
+  { value: 'all', label: 'analytics.scopes.all' },
 ]
 
 const scopeLabel = computed(() => {
-  return { daily: '每日', monthly: '每月', yearly: '每年', all: '历史' }[scope.value] || ''
+  return t(`analytics.scopes.${scope.value}_label`)
 })
 
 async function loadData() {
@@ -180,7 +182,7 @@ function makeDataset(label, data, color, fill = true) {
 const activeChartData = computed(() => ({
   labels: (trendData.value.active || []).map(d => d.label),
   datasets: [
-    makeDataset('活跃用户', trendData.value.active, 'rgb(129,140,248)'),
+    makeDataset(t('dashboard.active'), trendData.value.active, 'rgb(129,140,248)'),
   ],
 }))
 
@@ -195,8 +197,8 @@ const paidChartData = computed(() => ({
 const storeChartData = computed(() => ({
   labels: (trendData.value.store_apps || []).map(d => d.label),
   datasets: [
-    makeDataset('应用', trendData.value.store_apps, 'rgb(244,114,182)'),
-    makeDataset('模块', trendData.value.store_modules, 'rgb(52,211,153)'),
+    makeDataset(t('analytics.market_apps'), trendData.value.store_apps, 'rgb(244,114,182)'),
+    makeDataset(t('analytics.market_modules'), trendData.value.store_modules, 'rgb(52,211,153)'),
   ],
 }))
 

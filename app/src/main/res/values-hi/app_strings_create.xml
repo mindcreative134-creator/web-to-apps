@@ -1,0 +1,392 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="appstr_create_about_file_reference" formatted="false">फ़ाइल संदर्भ के बारे में</string>
+    <string name="appstr_create_activate" formatted="false">सक्रिय करें</string>
+    <string name="appstr_create_activate_app" formatted="false">ऐप सक्रिय करें</string>
+    <string name="appstr_create_activation_code" formatted="false">सक्रियण कोड</string>
+    <string name="appstr_create_activation_code_announcement_ad_block" formatted="false">सक्रियण/घोषणा/विज्ञापन अवरोधन</string>
+    <string name="appstr_create_activation_code_bound_to_other_device" formatted="false">यह कोड दूसरे डिवाइस से जुड़ा है</string>
+    <string name="appstr_create_activation_code_copied" formatted="false">सक्रियण कोड कॉपी किया गया</string>
+    <string name="appstr_create_activation_code_example" formatted="false">4-16 अक्षरों और अंकों का समर्थन करता है</string>
+    <string name="appstr_create_activation_code_expired" formatted="false">सक्रियण कोड समाप्त हो गया</string>
+    <string name="appstr_create_activation_code_hint" formatted="false">ऐप उपयोग के लिए सक्रियण कोड की आवश्यकता को सक्षम करें</string>
+    <string name="appstr_create_activation_code_type" formatted="false">सक्रियण कोड का प्रकार</string>
+    <string name="appstr_create_activation_code_usage_exceeded" formatted="false">उपयोग सीमा समाप्त</string>
+    <string name="appstr_create_activation_code_verify" formatted="false">सक्रियण सत्यापन</string>
+    <string name="appstr_create_add_activation_code" formatted="false">सक्रियण कोड जोड़ें</string>
+    <string name="appstr_create_announcement_advanced_options" formatted="false">उन्नत विकल्प</string>
+    <string name="appstr_create_announcement_agree_and_continue" formatted="false">मैंने पढ़ लिया और सहमत हूँ</string>
+    <string name="appstr_create_announcement_allow_never_show_hint" formatted="false">उपयोगकर्ताओं को इसे फिर से न दिखाने का विकल्प दें</string>
+    <string name="appstr_create_announcement_allow_never_show_label" formatted="false">बंद करने योग्य</string>
+    <string name="appstr_create_announcement_animation_hint" formatted="false">घोषणा के लिए एनीमेशन चलाएं</string>
+    <string name="appstr_create_announcement_content" formatted="false">घोषणा सामग्री</string>
+    <string name="appstr_create_announcement_content_section" formatted="false">सामग्री</string>
+    <string name="appstr_create_announcement_emoji_hint" formatted="false">घोषणा में सजावटी इमोजी दिखाएं</string>
+    <string name="appstr_create_announcement_high_priority" formatted="false">उच्च प्राथमिकता</string>
+    <string name="appstr_create_announcement_interval_disabled" formatted="false">अक्षम</string>
+    <string name="appstr_create_announcement_link_section" formatted="false">लिंक सेटिंग्स</string>
+    <string name="appstr_create_announcement_never_show" formatted="false">फिर से न दिखाएं</string>
+    <string name="appstr_create_announcement_please_confirm" formatted="false">जारी रखने के लिए सहमत हों</string>
+    <string name="appstr_create_announcement_require_confirm_hint" formatted="false">बंद करने के लिए क्लिक आवश्यक</string>
+    <string name="appstr_create_announcement_require_confirm_label" formatted="false">पुष्टि आवश्यक</string>
+    <string name="appstr_create_announcement_subtitle" formatted="false">स्टार्टअप घोषणा कस्टमाइज़ करें</string>
+    <string name="appstr_create_announcement_templates" formatted="false">घोषणा टेम्पलेट: 10 डिज़ाइन</string>
+    <string name="appstr_create_announcement_title" formatted="false">घोषणा शीर्षक</string>
+    <string name="appstr_create_announcement_trigger_interval" formatted="false">नियत समय पर पॉपअप</string>
+    <string name="appstr_create_announcement_trigger_interval_hint" formatted="false">हर अंतराल पर दिखाएं</string>
+    <string name="appstr_create_announcement_trigger_interval_include_launch" formatted="false">लॉन्च पर भी दिखाएं</string>
+    <string name="appstr_create_announcement_trigger_on_launch" formatted="false">लॉन्च पर दिखाएं</string>
+    <string name="appstr_create_announcement_trigger_on_launch_hint" formatted="false">ऐप शुरू होने पर दिखाएं</string>
+    <string name="appstr_create_announcement_trigger_on_no_network" formatted="false">ऑफलाइन होने पर दिखाएं</string>
+    <string name="appstr_create_announcement_trigger_on_no_network_hint" formatted="false">नेटवर्क जाने पर दिखाएं</string>
+    <string name="appstr_create_announcement_trigger_settings" formatted="false">ट्रिगर तंत्र</string>
+    <string name="appstr_create_announcement_triggers_active" formatted="false">ट्रिगर सक्रिय</string>
+    <string name="appstr_create_auto_fix_hint" formatted="false">पाथ और CSS/JS को ऑटो-फिक्स करें</string>
+    <string name="appstr_create_auto_process_hint" formatted="false">प्रोसेसिंग: पाथ फिक्स, इनलाइन CSS/JS...</string>
+    <string name="appstr_create_batch_generated_note" formatted="false">बैच जनरेट किया गया</string>
+    <string name="appstr_create_block_system_navigation_gesture_hint" formatted="false">सिस्टम जेस्चर ब्लॉक करें</string>
+    <string name="appstr_create_block_system_navigation_gesture_label" formatted="false">नेविगेशन जेस्चर ब्लॉक</string>
+    <string name="appstr_create_build_environment" formatted="false">निर्माण वातावरण</string>
+    <string name="appstr_create_build_project" formatted="false">प्रोजेक्ट बनाएं</string>
+    <string name="appstr_create_build_tools" formatted="false">बिल्ड टूल्स</string>
+    <string name="appstr_create_building" formatted="false">बनाया जा रहा है...</string>
+    <string name="appstr_create_built_in_engine_ready" formatted="false">इंजन तैयार है</string>
+    <string name="appstr_create_built_in_packager" formatted="false">बिल्ट-इन पैकेजर</string>
+    <string name="appstr_create_built_in_packager_ready" formatted="false">पैकेजर तैयार है</string>
+    <string name="appstr_create_cache" formatted="false">कैश</string>
+    <string name="appstr_create_can_build_frontend" formatted="false">फ्रंटएंड बना सकते हैं</string>
+    <string name="appstr_create_chars" formatted="false">अक्षर</string>
+    <string name="appstr_create_checking_env" formatted="false">वातावरण की जाँच हो रही है...</string>
+    <string name="appstr_create_clean" formatted="false">साफ़ करें</string>
+    <string name="appstr_create_clear_cache_confirm" formatted="false">कैश साफ़ करें?</string>
+    <string name="appstr_create_clear_cache_title" formatted="false">कैश साफ़ करें</string>
+    <string name="appstr_create_code_length" formatted="false">कोड की लंबाई</string>
+    <string name="appstr_create_code_too_short" formatted="false">कम से कम 4 अक्षर आवश्यक</string>
+    <string name="appstr_create_completed" formatted="false">पूरा हुआ</string>
+    <string name="appstr_create_copying_project_files" formatted="false">फ़ाइलें कॉपी हो रही हैं</string>
+    <string name="appstr_create_create_app" formatted="false">ऐप बनाएं</string>
+    <string name="appstr_create_create_docs_site" formatted="false">दस्तावेज़ साइट</string>
+    <string name="appstr_create_create_first_module" formatted="false">पहला मॉड्यूल बनाएं</string>
+    <string name="appstr_create_create_frontend_app" formatted="false">फ्रंटएंड प्रोजेक्ट</string>
+    <string name="appstr_create_create_gallery_app" formatted="false">मीडिया गैलरी</string>
+    <string name="appstr_create_create_go_app" formatted="false">Go ऐप</string>
+    <string name="appstr_create_create_html_app" formatted="false">HTML ऐप</string>
+    <string name="appstr_create_create_html_app_title" formatted="false">HTML ऐप बनाएं</string>
+    <string name="appstr_create_create_media_app" formatted="false">मीडिया ऐप</string>
+    <string name="appstr_create_create_media_app_title" formatted="false">मीडिया ऐप बनाएं</string>
+    <string name="appstr_create_create_module" formatted="false">मॉड्यूल बनाएं</string>
+    <string name="appstr_create_create_module_hint" formatted="false">कस्टम सुविधाएं जोड़ें</string>
+    <string name="appstr_create_create_multi_web_app" formatted="false">मल्टी-साइट ऐप</string>
+    <string name="appstr_create_create_node_js_app" formatted="false">Node.js ऐप</string>
+    <string name="appstr_create_create_php_app" formatted="false">PHP ऐप</string>
+    <string name="appstr_create_create_project_folder" formatted="false">प्रोजेक्ट फ़ोल्डर बनाएं</string>
+    <string name="appstr_create_create_python_app" formatted="false">Python ऐप</string>
+    <string name="appstr_create_create_web_app" formatted="false">वेब ऐप</string>
+    <string name="appstr_create_create_word_press_app" formatted="false">WordPress ऐप</string>
+    <string name="appstr_create_css_file" formatted="false">CSS फ़ाइल</string>
+    <string name="appstr_create_custom_dialog_text" formatted="false">कस्टम डायलॉग टेक्स्ट</string>
+    <string name="appstr_create_custom_dialog_text_hint" formatted="false">सक्रियण के लिए कस्टम टेक्स्ट</string>
+    <string name="appstr_create_dependency_count" formatted="false">निर्भरताएँ</string>
+    <string name="appstr_create_detected_issues" formatted="false">पता चली चुनौतियाँ</string>
+    <string name="appstr_create_dialog_button_text" formatted="false">बटन टेक्स्ट</string>
+    <string name="appstr_create_dialog_button_text_hint" formatted="false">डिफ़ॉल्ट: सक्रिय करें</string>
+    <string name="appstr_create_dialog_input_label" formatted="false">इनपुट लेबल</string>
+    <string name="appstr_create_dialog_input_label_hint" formatted="false">डिफ़ॉल्ट: कोड</string>
+    <string name="appstr_create_dialog_subtitle" formatted="false">उपशीर्षक</string>
+    <string name="appstr_create_dialog_subtitle_hint" formatted="false">डिफ़ॉल्ट: जारी रखने के लिए कोड डालें</string>
+    <string name="appstr_create_dialog_title" formatted="false">शीर्षक</string>
+    <string name="appstr_create_dialog_title_hint" formatted="false">डिफ़ॉल्ट: ऐप सक्रिय करें</string>
+    <string name="appstr_create_edit_app" formatted="false">ऐप संपादित करें</string>
+    <string name="appstr_create_enable_java_script" formatted="false">JS सक्षम करें</string>
+    <string name="appstr_create_enable_js_hint" formatted="false">JS चलाने की अनुमति दें</string>
+    <string name="appstr_create_enable_local_storage" formatted="false">लोकल स्टोरेज सक्षम</string>
+    <string name="appstr_create_enable_local_storage_hint" formatted="false">localStorage उपयोग की अनुमति</string>
+    <string name="appstr_create_enter_activation_code_to_continue" formatted="false">जारी रखने के लिए कोड डालें</string>
+    <string name="appstr_create_env_downloading" formatted="false">डाउनलोड हो रहा है...</string>
+    <string name="appstr_create_env_installing" formatted="false">इंस्टॉल हो रहा है...</string>
+    <string name="appstr_create_env_not_installed" formatted="false">उपलब्ध</string>
+    <string name="appstr_create_env_ready" formatted="false">तैयार</string>
+    <string name="appstr_create_errors_count" formatted="false">%d त्रुटियाँ</string>
+    <string name="appstr_create_failed" formatted="false">विफल</string>
+    <string name="appstr_create_feature_tip" formatted="false">सुझाव: कोड आदि के लिए संपादित करें</string>
+    <string name="appstr_create_file_info" formatted="false">फ़ाइल जानकारी</string>
+    <string name="appstr_create_file_reference_hint" formatted="false">पाथ ऑटो-प्रोसेस होंगे</string>
+    <string name="appstr_create_folder_import_failed" formatted="false">आयात विफल: %s</string>
+    <string name="appstr_create_folder_import_mode" formatted="false">फ़ोल्डर आयात</string>
+    <string name="appstr_create_folder_importing" formatted="false">फ़ोल्डर आयात हो रहा है...</string>
+    <string name="appstr_create_folder_no_html_warning" formatted="false">HTML फ़ाइल नहीं मिली</string>
+    <string name="appstr_create_folder_select_folder" formatted="false">प्रोजेक्ट फ़ोल्डर चुनें</string>
+    <string name="appstr_create_folder_select_hint" formatted="false">HTML प्रोजेक्ट फ़ोल्डर चुनें</string>
+    <string name="appstr_create_folder_tip" formatted="false">मल्टी-फ़ाइल प्रोजेक्ट्स के लिए उपयोगी</string>
+    <string name="appstr_create_framework" formatted="false">फ़्रेमवर्क</string>
+    <string name="appstr_create_gallery_add_category" formatted="false">श्रेणी जोड़ें</string>
+    <string name="appstr_create_gallery_add_media" formatted="false">मीडिया जोड़ें</string>
+    <string name="appstr_create_gallery_app" formatted="false">मीडिया गैलरी</string>
+    <string name="appstr_create_gallery_auto_play" formatted="false">ऑटो प्ले</string>
+    <string name="appstr_create_gallery_auto_play_hint" formatted="false">प्रवेश पर स्वतः चालू</string>
+    <string name="appstr_create_gallery_background_color" formatted="false">BG रंग</string>
+    <string name="appstr_create_gallery_categories" formatted="false">श्रेणियाँ</string>
+    <string name="appstr_create_gallery_category" formatted="false">श्रेणी</string>
+    <string name="appstr_create_gallery_category_color" formatted="false">श्रेणी रंग</string>
+    <string name="appstr_create_gallery_category_icon" formatted="false">श्रेणी आइकन</string>
+    <string name="appstr_create_gallery_category_name" formatted="false">श्रेणी नाम</string>
+    <string name="appstr_create_gallery_click_to_add" formatted="false">मीडिया जोड़ने के लिए क्लिक करें</string>
+    <string name="appstr_create_gallery_create_title" formatted="false">गैलरी बनाएं</string>
+    <string name="appstr_create_gallery_dimensions" formatted="false">आयाम</string>
+    <string name="appstr_create_gallery_double_tap_hint" formatted="false">सीक करने के लिए डबल टैप</string>
+    <string name="appstr_create_gallery_duration" formatted="false">अवधि</string>
+    <string name="appstr_create_gallery_edit_category" formatted="false">श्रेणी संपादित करें</string>
+    <string name="appstr_create_gallery_empty" formatted="false">कोई मीडिया नहीं</string>
+    <string name="appstr_create_gallery_enable_audio_hint" formatted="false">वीडियो के लिए ध्वनि</string>
+    <string name="appstr_create_gallery_general_settings" formatted="false">सामान्य</string>
+    <string name="appstr_create_gallery_grid_columns" formatted="false">ग्रिड कॉलम</string>
+    <string name="appstr_create_gallery_image_interval" formatted="false">छवि अंतराल</string>
+    <string name="appstr_create_gallery_image_settings" formatted="false">छवि सेटिंग्स</string>
+    <string name="appstr_create_gallery_images" formatted="false">छवियाँ</string>
+    <string name="appstr_create_gallery_item_count" formatted="false">आइटम</string>
+    <string name="appstr_create_gallery_long_press_hint" formatted="false">तेजी से आगे बढ़ाने के लिए दबाएं</string>
+    <string name="appstr_create_gallery_loop_hint" formatted="false">प्लेलिस्ट लूप करें</string>
+    <string name="appstr_create_gallery_media_detail" formatted="false">मीडिया विवरण</string>
+    <string name="appstr_create_gallery_media_list" formatted="false">मीडिया सूची</string>
+    <string name="appstr_create_gallery_mode_sequential" formatted="false">क्रमिक</string>
+    <string name="appstr_create_gallery_mode_shuffle" formatted="false">शफल</string>
+    <string name="appstr_create_gallery_mode_single_loop" formatted="false">सिंगल लूप</string>
+    <string name="appstr_create_gallery_no_category" formatted="false">अवर्गीकृत</string>
+    <string name="appstr_create_gallery_play_mode" formatted="false">प्ले मोड</string>
+    <string name="appstr_create_gallery_player_next" formatted="false">अगला</string>
+    <string name="appstr_create_gallery_player_pause" formatted="false">रोकें</string>
+    <string name="appstr_create_gallery_player_play" formatted="false">चलाएं</string>
+    <string name="appstr_create_gallery_player_previous" formatted="false">पिछला</string>
+    <string name="appstr_create_gallery_player_seek_back" formatted="false">10s पीछे</string>
+    <string name="appstr_create_gallery_player_seek_forward" formatted="false">10s आगे</string>
+    <string name="appstr_create_gallery_player_settings" formatted="false">प्लेयर सेटिंग्स</string>
+    <string name="appstr_create_gallery_player_speed" formatted="false">गति</string>
+    <string name="appstr_create_gallery_remember_position" formatted="false">प्ले जारी रखें</string>
+    <string name="appstr_create_gallery_remember_position_hint" formatted="false">जहाँ छोड़ा था वहीं से शुरू करें</string>
+    <string name="appstr_create_gallery_show_media_info" formatted="false">जानकारी दिखाएं</string>
+    <string name="appstr_create_gallery_show_media_info_hint" formatted="false">नाम और इंडेक्स दिखाएं</string>
+    <string name="appstr_create_gallery_show_thumbnail_bar" formatted="false">थंबनेल बार</string>
+    <string name="appstr_create_gallery_show_thumbnail_bar_hint" formatted="false">नीचे नेविगेशन</string>
+    <string name="appstr_create_gallery_shuffle_on_loop" formatted="false">लूप पर शफल</string>
+    <string name="appstr_create_gallery_shuffle_on_loop_hint" formatted="false">हर लूप पर शफल करें</string>
+    <string name="appstr_create_gallery_size" formatted="false">आकार</string>
+    <string name="appstr_create_gallery_sort_custom" formatted="false">कस्टम सॉर्ट</string>
+    <string name="appstr_create_gallery_sort_date_asc" formatted="false">तिथि ASC</string>
+    <string name="appstr_create_gallery_sort_date_desc" formatted="false">तिथि DESC</string>
+    <string name="appstr_create_gallery_sort_name_asc" formatted="false">नाम ASC</string>
+    <string name="appstr_create_gallery_sort_name_desc" formatted="false">नाम DESC</string>
+    <string name="appstr_create_gallery_sort_order" formatted="false">इसके अनुसार सॉर्ट करें</string>
+    <string name="appstr_create_gallery_sort_type" formatted="false">प्रकार के अनुसार समूह</string>
+    <string name="appstr_create_gallery_support_types" formatted="false">JPG, PNG, GIF, MP4, WebM आदि</string>
+    <string name="appstr_create_gallery_tab_display" formatted="false">डिस्प्ले</string>
+    <string name="appstr_create_gallery_tab_media" formatted="false">मीडिया</string>
+    <string name="appstr_create_gallery_tab_playback" formatted="false">प्लेबैक</string>
+    <string name="appstr_create_gallery_total_size" formatted="false">कुल आकार</string>
+    <string name="appstr_create_gallery_type" formatted="false">प्रकार</string>
+    <string name="appstr_create_gallery_video_auto_next" formatted="false">ऑटो अगला</string>
+    <string name="appstr_create_gallery_video_auto_next_hint" formatted="false">पूरा होने पर अगला वीडियो</string>
+    <string name="appstr_create_gallery_video_settings" formatted="false">वीडियो सेटिंग्स</string>
+    <string name="appstr_create_gallery_videos" formatted="false">वीडियो</string>
+    <string name="appstr_create_gallery_view_grid" formatted="false">ग्रिड</string>
+    <string name="appstr_create_gallery_view_list" formatted="false">सूची</string>
+    <string name="appstr_create_gallery_view_mode" formatted="false">दृश्य मोड</string>
+    <string name="appstr_create_gallery_view_timeline" formatted="false">टाइमलाइन</string>
+    <string name="appstr_create_got_it" formatted="false">समझ गया</string>
+    <string name="appstr_create_high_perf_build_tool" formatted="false">फास्ट बिल्ड टूल</string>
+    <string name="appstr_create_html_app_tip" formatted="false">HTML आवश्यक। CSS/JS वैकल्पिक।</string>
+    <string name="appstr_create_html_file" formatted="false">HTML फ़ाइल</string>
+    <string name="appstr_create_import_frontend_project" formatted="false">फ्रंटएंड आयात</string>
+    <string name="appstr_create_import_logs" formatted="false">लॉग आयात करें</string>
+    <string name="appstr_create_import_project" formatted="false">प्रोजेक्ट आयात</string>
+    <string name="appstr_create_importing" formatted="false">आयात हो रहा है...</string>
+    <string name="appstr_create_input_activation_code" formatted="false">कोड डालें</string>
+    <string name="appstr_create_input_activation_code_hint" formatted="false">कोड दर्ज करें</string>
+    <string name="appstr_create_input_announcement_content" formatted="false">सामग्री दर्ज करें...</string>
+    <string name="appstr_create_input_announcement_title" formatted="false">शीर्षक दर्ज करें</string>
+    <string name="appstr_create_input_app_name" formatted="false">ऐप नाम दर्ज करें</string>
+    <string name="appstr_create_install_advanced_build_tool" formatted="false">esbuild इंस्टॉल करें</string>
+    <string name="appstr_create_installed" formatted="false">इंस्टॉल किया गया</string>
+    <string name="appstr_create_installing_deps" formatted="false">निर्भरताएँ इंस्टॉल हो रही हैं</string>
+    <string name="appstr_create_invalid_time_limit_config" formatted="false">अमान्य समय कॉन्फ़िगरेशन</string>
+    <string name="appstr_create_invalid_usage_limit_config" formatted="false">अमान्य उपयोग कॉन्फ़िगरेशन</string>
+    <string name="appstr_create_js_file" formatted="false">JS फ़ाइल</string>
+    <string name="appstr_create_keep_screen_on_hint" formatted="false">स्क्रीन बंद होने से रोकें</string>
+    <string name="appstr_create_keep_screen_on_label" formatted="false">जागते रहो (Awake)</string>
+    <string name="appstr_create_keyboard_adjust_mode_hint" formatted="false">कीबोर्ड व्यवहार सुझाव</string>
+    <string name="appstr_create_keyboard_adjust_mode_label" formatted="false">कीबोर्ड मोड</string>
+    <string name="appstr_create_keyboard_adjust_nothing" formatted="false">कोई बदलाव नहीं</string>
+    <string name="appstr_create_keyboard_adjust_nothing_hint" formatted="false">पेज कवर (smoother)</string>
+    <string name="appstr_create_keyboard_adjust_resize" formatted="false">रीसाइज़</string>
+    <string name="appstr_create_keyboard_adjust_resize_hint" formatted="false">पेज ऊपर धकेलें</string>
+    <string name="appstr_create_landscape_mode_hint_html" formatted="false">लैंडस्केप डिस्प्ले</string>
+    <string name="appstr_create_landscape_mode_label" formatted="false">लैंडस्केप (Landscape)</string>
+    <string name="appstr_create_logs" formatted="false">लॉग</string>
+    <string name="appstr_create_multi_web_add_site" formatted="false">साइट जोड़ें</string>
+    <string name="appstr_create_multi_web_batch_hint" formatted="false">प्रति पंक्ति एक URL</string>
+    <string name="appstr_create_multi_web_batch_import" formatted="false">बैच आयात</string>
+    <string name="appstr_create_multi_web_batch_import_hint" formatted="false">क्लिपबोर्ड से आयात</string>
+    <string name="appstr_create_multi_web_css_selector" formatted="false">CSS चयनकर्ता (Selector)</string>
+    <string name="appstr_create_multi_web_css_selector_hint" formatted="false">फ़ीड मोड के लिए</string>
+    <string name="appstr_create_multi_web_delete_site" formatted="false">साइट हटाएं</string>
+    <string name="appstr_create_multi_web_disable_site" formatted="false">साइट अक्षम करें</string>
+    <string name="appstr_create_multi_web_display_mode" formatted="false">डिस्प्ले मोड</string>
+    <string name="appstr_create_multi_web_edit_list" formatted="false">सूची संपादित करें</string>
+    <string name="appstr_create_multi_web_edit_site" formatted="false">साइट संपादित करें</string>
+    <string name="appstr_create_multi_web_enable_site" formatted="false">साइट सक्षम करें</string>
+    <string name="appstr_create_multi_web_feed_tip" formatted="false">फ़ीड CSS के माध्यम से लेख लाता है</string>
+    <string name="appstr_create_multi_web_fetching_title" formatted="false">जानकारी ले रहा है...</string>
+    <string name="appstr_create_multi_web_hero_desc" formatted="false">एक साथ कई साइट्स</string>
+    <string name="appstr_create_multi_web_hero_title" formatted="false">मल्टी-साइट हब</string>
+    <string name="appstr_create_multi_web_import_count" formatted="false">%d साइट्स आयात करें</string>
+    <string name="appstr_create_multi_web_import_sites" formatted="false">%d आयात करें</string>
+    <string name="appstr_create_multi_web_mode_cards" formatted="false">कार्ड</string>
+    <string name="appstr_create_multi_web_mode_cards_desc" formatted="false">कार्ड लेआउट</string>
+    <string name="appstr_create_multi_web_mode_drawer" formatted="false">ड्रॉर (Drawer)</string>
+    <string name="appstr_create_multi_web_mode_drawer_desc" formatted="false">साइड नेविगेशन</string>
+    <string name="appstr_create_multi_web_mode_feed" formatted="false">फ़ीड (Feed)</string>
+    <string name="appstr_create_multi_web_mode_feed_desc" formatted="false">न्यूज़/RSS शैली</string>
+    <string name="appstr_create_multi_web_mode_tabs" formatted="false">टैब</string>
+    <string name="appstr_create_multi_web_mode_tabs_desc" formatted="false">नीचे के टैब</string>
+    <string name="appstr_create_multi_web_move_down" formatted="false">नीचे</string>
+    <string name="appstr_create_multi_web_move_up" formatted="false">ऊपर</string>
+    <string name="appstr_create_multi_web_no_sites" formatted="false">कोई साइट नहीं जोड़ी गई</string>
+    <string name="appstr_create_multi_web_paste" formatted="false">पेस्ट</string>
+    <string name="appstr_create_multi_web_preview" formatted="false">पूर्वावलोकन</string>
+    <string name="appstr_create_multi_web_quick_add" formatted="false">त्वरित जोड़ें</string>
+    <string name="appstr_create_multi_web_quick_add_hint" formatted="false">URL पेस्ट करें...</string>
+    <string name="appstr_create_multi_web_site_category" formatted="false">श्रेणी</string>
+    <string name="appstr_create_multi_web_site_count" formatted="false">%d साइट्स</string>
+    <string name="appstr_create_multi_web_site_emoji" formatted="false">इमोजी</string>
+    <string name="appstr_create_multi_web_site_list" formatted="false">साइट सूची</string>
+    <string name="appstr_create_multi_web_site_name" formatted="false">नाम</string>
+    <string name="appstr_create_multi_web_site_url" formatted="false">URL</string>
+    <string name="appstr_create_name" formatted="false">नाम</string>
+    <string name="appstr_create_not_installed" formatted="false">इंस्टॉल नहीं है</string>
+    <string name="appstr_create_note_optional" formatted="false">नोट (वैकल्पिक)</string>
+    <string name="appstr_create_optional_esbuild_hint" formatted="false">स्पीड के लिए esbuild इंस्टॉल करें</string>
+    <string name="appstr_create_orientation_advanced_label" formatted="false">उन्नत</string>
+    <string name="appstr_create_orientation_auto" formatted="false">ऑटो</string>
+    <string name="appstr_create_orientation_auto_desc" formatted="false">स्वतंत्र रोटेशन</string>
+    <string name="appstr_create_orientation_auto_hint" formatted="false">गुरुत्वाकर्षण का पालन करें</string>
+    <string name="appstr_create_orientation_basic_label" formatted="false">बेसिक</string>
+    <string name="appstr_create_orientation_landscape" formatted="false">लैंडस्केप</string>
+    <string name="appstr_create_orientation_landscape_desc" formatted="false">लैंडस्केप लॉक</string>
+    <string name="appstr_create_orientation_mode_hint" formatted="false">रोटेशन सेटिंग</string>
+    <string name="appstr_create_orientation_mode_label" formatted="false">ओरिएंटेशन</string>
+    <string name="appstr_create_orientation_portrait" formatted="false">पोर्ट्रेट</string>
+    <string name="appstr_create_orientation_reverse_landscape" formatted="false">रेव. लैंडस्केप</string>
+    <string name="appstr_create_orientation_reverse_landscape_desc" formatted="false">रेव. लैंडस्केप लॉक</string>
+    <string name="appstr_create_orientation_reverse_portrait" formatted="false">उल्टा पोर्ट्रेट</string>
+    <string name="appstr_create_orientation_reverse_portrait_desc" formatted="false">उल्टा (Upside down)</string>
+    <string name="appstr_create_orientation_reversed_label" formatted="false">उल्टा लॉक</string>
+    <string name="appstr_create_orientation_sensor_label" formatted="false">सेंसर</string>
+    <string name="appstr_create_orientation_sensor_landscape" formatted="false">सेंसर लैंडस्केप</string>
+    <string name="appstr_create_orientation_sensor_landscape_desc" formatted="false">ऑटो लैंडस्केप</string>
+    <string name="appstr_create_orientation_sensor_landscape_hint" formatted="false">L/RL के बीच ऑटो स्विच</string>
+    <string name="appstr_create_orientation_sensor_portrait" formatted="false">सेंसर पोर्ट्रेट</string>
+    <string name="appstr_create_orientation_sensor_portrait_desc" formatted="false">ऑटो पोर्ट्रेट</string>
+    <string name="appstr_create_orientation_sensor_portrait_hint" formatted="false">P/RP के बीच ऑटो स्विच</string>
+    <string name="appstr_create_output_dir" formatted="false">आउटपुट डायरेक्टरी</string>
+    <string name="appstr_create_package_manager" formatted="false">पैकेज मैनेजर</string>
+    <string name="appstr_create_processing_output" formatted="false">बिल्ड प्रोसेसिंग...</string>
+    <string name="appstr_create_project_analysis" formatted="false">प्रोजेक्ट विश्लेषण</string>
+    <string name="appstr_create_project_analysis_result" formatted="false">विश्लेषण परिणाम</string>
+    <string name="appstr_create_project_issues_detected" formatted="false">चुनौतियाँ पहचान ली गई हैं</string>
+    <string name="appstr_create_pure_kotlin_impl" formatted="false">प्योर कोटलिन</string>
+    <string name="appstr_create_ready" formatted="false">तैयार</string>
+    <string name="appstr_create_rebuild_project" formatted="false">फिर से बनाएं</string>
+    <string name="appstr_create_reimport_project" formatted="false">फिर से आयात करें</string>
+    <string name="appstr_create_require_every_launch" formatted="false">हमेशा सत्यापित करें</string>
+    <string name="appstr_create_require_every_launch_hint_off" formatted="false">एक बार सक्रियण</string>
+    <string name="appstr_create_require_every_launch_hint_on" formatted="false">हर बार कोड आवश्यक</string>
+    <string name="appstr_create_reset_env_confirm" formatted="false">बिल्ड टूल्स हटाएं?</string>
+    <string name="appstr_create_reset_environment" formatted="false">एनवायरमेंट रीसेट</string>
+    <string name="appstr_create_scanning_project" formatted="false">स्कैन हो रहा है...</string>
+    <string name="appstr_create_screen_awake_always" formatted="false">हमेशा चालू</string>
+    <string name="appstr_create_screen_awake_always_desc" formatted="false">स्क्रीन बंद न हो</string>
+    <string name="appstr_create_screen_awake_battery_warning" formatted="false">बैटरी अधिक उपयोग होगी</string>
+    <string name="appstr_create_screen_awake_mode_label" formatted="false">जागते रहने का मोड</string>
+    <string name="appstr_create_screen_awake_off" formatted="false">सिस्टम</string>
+    <string name="appstr_create_screen_awake_off_desc" formatted="false">सिस्टम स्लीप का पालन करें</string>
+    <string name="appstr_create_screen_awake_timed" formatted="false">समयबद्ध (Timed)</string>
+    <string name="appstr_create_screen_awake_timed_desc" formatted="false">निर्धारित समय तक</string>
+    <string name="appstr_create_screen_awake_timed_hint" formatted="false">बैटरी और उपयोग में संतुलन</string>
+    <string name="appstr_create_screen_awake_timeout_label" formatted="false">जागने की अवधि</string>
+    <string name="appstr_create_screen_brightness_auto" formatted="false">ऑटो</string>
+    <string name="appstr_create_screen_brightness_label" formatted="false">चमक (Brightness)</string>
+    <string name="appstr_create_screen_brightness_manual" formatted="false">मैनुअल</string>
+    <string name="appstr_create_select_files" formatted="false">फ़ाइलें चुनें</string>
+    <string name="appstr_create_select_files_hint" formatted="false">HTML/CSS/JS चुनें</string>
+    <string name="appstr_create_select_project" formatted="false">प्रोजेक्ट चुनें</string>
+    <string name="appstr_create_select_project_folder" formatted="false">प्रोजेक्ट फ़ोल्डर चुनें</string>
+    <string name="appstr_create_select_project_hint" formatted="false">रूट या बिल्ड आउटपुट चुनें</string>
+    <string name="appstr_create_show_floating_back_button_hint" formatted="false">फ्लोटिंग बैक बटन दिखाएं</string>
+    <string name="appstr_create_show_floating_back_button_label" formatted="false">फ्लोटिंग बैक</string>
+    <string name="appstr_create_storage_usage" formatted="false">स्टोरेज</string>
+    <string name="appstr_create_suggestions" formatted="false">सुझाव</string>
+    <string name="appstr_create_support_vue_react_vite" formatted="false">Vue/React/Vite समर्थित</string>
+    <string name="appstr_create_supported_features" formatted="false">विशेषताएं</string>
+    <string name="appstr_create_tech_description" formatted="false">तकनीकी विवरण</string>
+    <string name="appstr_create_template_cute" formatted="false">प्यारा (Cute)</string>
+    <string name="appstr_create_template_cute_desc" formatted="false">कार्टून शैली</string>
+    <string name="appstr_create_template_dark_desc" formatted="false">डार्क थीम</string>
+    <string name="appstr_create_template_elegant" formatted="false">एलिगेंट</string>
+    <string name="appstr_create_template_elegant_desc" formatted="false">बिज़नेस शैली</string>
+    <string name="appstr_create_template_festive" formatted="false">उत्सव</string>
+    <string name="appstr_create_template_festive_desc" formatted="false">उत्सव शैली</string>
+    <string name="appstr_create_template_glassmorphism_desc" formatted="false">ब्लर प्रभाव</string>
+    <string name="appstr_create_template_gradient_desc" formatted="false">रंगीन ग्रेडिएंट</string>
+    <string name="appstr_create_template_minimal_desc" formatted="false">साफ डिज़ाइन</string>
+    <string name="appstr_create_template_nature_desc" formatted="false">प्रकृति शैली</string>
+    <string name="appstr_create_template_neon" formatted="false">नियॉन (Neon)</string>
+    <string name="appstr_create_template_neon_desc" formatted="false">साइबरपंक शैली</string>
+    <string name="appstr_create_template_xiaohongshu" formatted="false">XHS</string>
+    <string name="appstr_create_template_xiaohongshu_desc" formatted="false">कार्ड शैली</string>
+    <string name="appstr_create_total_files" formatted="false">%d फ़ाइलें</string>
+    <string name="appstr_create_usage_count" formatted="false">उपयोग संख्या</string>
+    <string name="appstr_create_usage_steps" formatted="false">उपयोग के चरण</string>
+    <string name="appstr_create_usage_steps_content" formatted="false">1. PC पर प्रोजेक्ट बनाएं\n2. dist फ़ोल्डर कॉपी करें\n3. आयात करें</string>
+    <string name="appstr_create_use_custom_code" formatted="false">कस्टम कोड का उपयोग करें</string>
+    <string name="appstr_create_validity_days" formatted="false">वैधता (दिन)</string>
+    <string name="appstr_create_version" formatted="false">संस्करण</string>
+    <string name="appstr_create_view_analysis_result" formatted="false">परिणाम देखें</string>
+    <string name="appstr_create_view_details" formatted="false">विवरण</string>
+    <string name="appstr_create_vip_user_only" formatted="false">उदा. केवल VIP के लिए</string>
+    <string name="appstr_create_warnings_count" formatted="false">%d चेतावनियाँ</string>
+    <string name="appstr_create_wp_admin_user" formatted="false">एडमिन यूजर</string>
+    <string name="appstr_create_wp_admin_user_hint" formatted="false">डिफ़ॉल्ट: admin</string>
+    <string name="appstr_create_wp_auto_detect" formatted="false">ऑटो डिटेक्ट</string>
+    <string name="appstr_create_wp_basic_config" formatted="false">बेसिक कॉन्फ़िगरेशन</string>
+    <string name="appstr_create_wp_cache_cleared" formatted="false">WP कैश साफ़</string>
+    <string name="appstr_create_wp_cache_size" formatted="false">कैश आकार</string>
+    <string name="appstr_create_wp_checking_deps" formatted="false">निर्भरता की जाँच...</string>
+    <string name="appstr_create_wp_clear_cache" formatted="false">WP कैश साफ़ करें</string>
+    <string name="appstr_create_wp_create_new_site" formatted="false">नया बनाएं</string>
+    <string name="appstr_create_wp_create_new_site_desc" formatted="false">नई WP साइट</string>
+    <string name="appstr_create_wp_create_title" formatted="false">WP ऐप</string>
+    <string name="appstr_create_wp_creating_project" formatted="false">WP प्रोजेक्ट बनाया जा रहा है...</string>
+    <string name="appstr_create_wp_deps_ready" formatted="false">तैयार है</string>
+    <string name="appstr_create_wp_download_deps" formatted="false">WP निर्भरताएँ डाउनलोड करें</string>
+    <string name="appstr_create_wp_download_desc" formatted="false">PHP और WP फ़ाइलें आवश्यक (~25MB)</string>
+    <string name="appstr_create_wp_download_failed" formatted="false">डाउनलोड विफल</string>
+    <string name="appstr_create_wp_downloading" formatted="false">डाउनलोड हो रहा है</string>
+    <string name="appstr_create_wp_extracting" formatted="false">निकाला जा रहा है</string>
+    <string name="appstr_create_wp_import_full" formatted="false">फुल ZIP आयात करें</string>
+    <string name="appstr_create_wp_import_plugin" formatted="false">प्लगइन आयात करें</string>
+    <string name="appstr_create_wp_import_project" formatted="false">WP प्रोजेक्ट आयात</string>
+    <string name="appstr_create_wp_import_project_desc" formatted="false">WP zip चुनें</string>
+    <string name="appstr_create_wp_import_success" formatted="false">WP आयात सफल</string>
+    <string name="appstr_create_wp_import_theme" formatted="false">थीम आयात करें</string>
+    <string name="appstr_create_wp_landscape_mode" formatted="false">लैंडस्केप</string>
+    <string name="appstr_create_wp_mirror_c_n" formatted="false">CN मिरर</string>
+    <string name="appstr_create_wp_mirror_global" formatted="false">ग्लोबल सोर्स</string>
+    <string name="appstr_create_wp_mirror_source" formatted="false">मिरर सोर्स</string>
+    <string name="appstr_create_wp_or_create_new" formatted="false">या नया बनाएं</string>
+    <string name="appstr_create_wp_project_create_failed" formatted="false">बनाने में विफल</string>
+    <string name="appstr_create_wp_project_ready" formatted="false">WP प्रोजेक्ट तैयार</string>
+    <string name="appstr_create_wp_server_error" formatted="false">PHP सर्वर विफल</string>
+    <string name="appstr_create_wp_settings" formatted="false">WP सेटिंग्स</string>
+    <string name="appstr_create_wp_site_title" formatted="false">साइट शीर्षक</string>
+    <string name="appstr_create_wp_site_title_hint" formatted="false">शीर्षक दर्ज करें</string>
+    <string name="appstr_create_wp_starting_server" formatted="false">PHP सर्वर शुरू हो रहा है...</string>
+</resources>

@@ -69,7 +69,7 @@ fun AiSettingsScreen(
         snackbarHost = { SnackbarHost(snackbarHostState) },
         topBar = {
             TopAppBar(
-                title = { Text(AppStringsProvider.current().aiSettings) },
+                title = { Text(AppStringsProvider.current().settingsEntry) },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, AppStringsProvider.current().back)

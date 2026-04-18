@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="appstr_build_anti_debug_protection" formatted="false">एंटी-डीबग सुरक्षा</string>
+    <string name="appstr_build_anti_debug_protection_hint" formatted="false">डीबगर कनेक्शन का पता लगाएं और रोकें</string>
+    <string name="appstr_build_anti_tamper_protection" formatted="false">एंटी-टैम्पर सुरक्षा</string>
+    <string name="appstr_build_anti_tamper_protection_hint" formatted="false">कोड और संसाधन संशोधनों का पता लगाएं</string>
+    <string name="appstr_build_auto_detect" formatted="false">ऑटो-डिटेक्ट</string>
+    <string name="appstr_build_auto_detect_category_hint" formatted="false">AI को स्वचालित रूप से श्रेणी चुनने दें</string>
+    <string name="appstr_build_bgm_encryption" formatted="false">बैकग्राउंड म्यूजिक</string>
+    <string name="appstr_build_bgm_encryption_hint" formatted="false">BGM फ़ाइलों को एन्क्रिप्ट करें</string>
+    <string name="appstr_build_btn_build" formatted="false">बिल्ड</string>
+    <string name="appstr_build_btn_cancel" formatted="false">रद्द करें</string>
+    <string name="appstr_build_btn_clear_cache" formatted="false">कैश साफ़ करें</string>
+    <string name="appstr_build_btn_confirm" formatted="false">पुष्टि करें</string>
+    <string name="appstr_build_btn_create" formatted="false">ऐप बनाएं</string>
+    <string name="appstr_build_btn_delete" formatted="false">हटाएं</string>
+    <string name="appstr_build_btn_edit" formatted="false">संपादित करें</string>
+    <string name="appstr_build_btn_export" formatted="false">APK एक्सपोर्ट करें</string>
+    <string name="appstr_build_btn_import" formatted="false">आयात करें</string>
+    <string name="appstr_build_btn_launch" formatted="false">लॉन्च करें</string>
+    <string name="appstr_build_btn_ok" formatted="false">ठीक है</string>
+    <string name="appstr_build_btn_preview" formatted="false">पूर्वावलोकन</string>
+    <string name="appstr_build_btn_reset" formatted="false">रीसेट करें</string>
+    <string name="appstr_build_btn_retry" formatted="false">पुनः प्रयास करें</string>
+    <string name="appstr_build_btn_save" formatted="false">सहेजें</string>
+    <string name="appstr_build_btn_shortcut" formatted="false">शॉर्टकट बनाएं</string>
+    <string name="appstr_build_btn_start_build" formatted="false">बिल्ड प्रारंभ करें</string>
+    <string name="appstr_build_config_file_encryption" formatted="false">कॉन्फ़िगरेशन फ़ाइल</string>
+    <string name="appstr_build_config_file_encryption_hint" formatted="false">app_config.json को एन्क्रिप्ट करें</string>
+    <string name="appstr_build_current_signing_status" formatted="false">वर्तमान हस्ताक्षर स्थिति</string>
+    <string name="appstr_build_custom_signing" formatted="false">कस्टम हस्ताक्षर</string>
+    <string name="appstr_build_custom_signing_desc" formatted="false">अपना स्वयं का हस्ताक्षर प्रमाणपत्र आयात करें, ताकि पैक किए गए APK आपके हस्ताक्षर का उपयोग करें</string>
+    <string name="appstr_build_custom_signing_note" formatted="false">कस्टम हस्ताक्षर एक वैश्विक सेटिंग है। आयात करने के बाद, सभी नए पैक किए गए APK हस्ताक्षर के लिए इस प्रमाणपत्र का उपयोग करेंगे।</string>
+    <string name="appstr_build_edit_common_config" formatted="false">सामान्य कॉन्फ़िगरेशन संपादित करें</string>
+    <string name="appstr_build_edit_core_config" formatted="false">कोर कॉन्फ़िगरेशन संपादित करें</string>
+    <string name="appstr_build_encryption_description" formatted="false">एन्क्रिप्टेड संसाधनों को सीधे देखा या निकाला नहीं जा सकता है, जो आपके कोड और सामग्री की प्रभावी रूप से रक्षा करता है। एन्क्रिप्शन AES-256-GCM एल्गोरिदम पर आधारित है, और कुंजी एप्लिकेशन हस्ताक्षर से जुड़ी होती है।</string>
+    <string name="appstr_build_encryption_strength" formatted="false">एन्क्रिप्शन शक्ति</string>
+    <string name="appstr_build_export_keystore" formatted="false">कीस्टोर एक्सपोर्ट करें</string>
+    <string name="appstr_build_export_password" formatted="false">एक्सपोर्ट पासवर्ड</string>
+    <string name="appstr_build_export_password_hint" formatted="false">एक्सपोर्ट फ़ाइल के लिए पासवर्ड सेट करें</string>
+    <string name="appstr_build_help" formatted="false">सहायता</string>
+    <string name="appstr_build_html_css_js_encryption" formatted="false">HTML/CSS/JS</string>
+    <string name="appstr_build_html_css_js_encryption_hint" formatted="false">वेब कोड फ़ाइलों को एन्क्रिप्ट करें</string>
+    <string name="appstr_build_i_understand" formatted="false">मैं समझता/समझती हूँ</string>
+    <string name="appstr_build_import_keystore" formatted="false">कीस्टोर आयात करें</string>
+    <string name="appstr_build_integrity_check" formatted="false">अखंडता जाँच</string>
+    <string name="appstr_build_integrity_check_hint" formatted="false">छेड़छाड़ के लिए APK सत्यापित करें</string>
+    <string name="appstr_build_keystore_export_failed" formatted="false">कीस्टोर एक्सपोर्ट विफल रहा</string>
+    <string name="appstr_build_keystore_export_success" formatted="false">कीस्टोर एक्सपोर्ट सफल रहा</string>
+    <string name="appstr_build_keystore_import_failed" formatted="false">कीस्टोर आयात विफल रहा, कृपया जांचें कि पासवर्ड सही है या नहीं</string>
+    <string name="appstr_build_keystore_import_success" formatted="false">कीस्टोर आयात सफल रहा</string>
+    <string name="appstr_build_keystore_password" formatted="false">कीस्टोर पासवर्ड</string>
+    <string name="appstr_build_keystore_password_hint" formatted="false">कृपया कीस्टोर पासवर्ड दर्ज करें</string>
+    <string name="appstr_build_keystore_remove_confirm" formatted="false">क्या आप वाकई कस्टम हस्ताक्षर प्रमाणपत्र हटाना चाहते हैं? हटाने के बाद, हस्ताक्षर के लिए स्वतः उत्पन्न प्रमाणपत्र का उपयोग किया जाएगा।</string>
+    <string name="appstr_build_keystore_remove_success" formatted="false">कस्टम प्रमाणपत्र हटा दिया गया, स्वतः उत्पन्न प्रमाणपत्र का उपयोग किया जाएगा</string>
+    <string name="appstr_build_media_file_encryption" formatted="false">मीडिया फ़ाइलें</string>
+    <string name="appstr_build_media_file_encryption_hint" formatted="false">चित्र और वीडियो एन्क्रिप्ट करें</string>
+    <string name="appstr_build_pbkdf2_iterations" formatted="false">PBKDF2 पुनरावृत्ति (Iterations)</string>
+    <string name="appstr_build_remove_custom_keystore" formatted="false">कस्टम प्रमाणपत्र हटाएं</string>
+    <string name="appstr_build_security_protection" formatted="false">सुरक्षा संरक्षण</string>
+    <string name="appstr_build_security_warning" formatted="false">सुरक्षा सुरक्षा एमुलेटर या रूट किए गए उपकरणों पर संचालन को प्रभावित कर सकती है</string>
+    <string name="appstr_build_select_module_category" formatted="false">मॉड्यूल श्रेणी चुनें</string>
+    <string name="appstr_build_signing_type_android_key_store" formatted="false">Android कीस्टोर</string>
+    <string name="appstr_build_signing_type_auto_generated" formatted="false">स्वतः उत्पन्न प्रमाणपत्र</string>
+    <string name="appstr_build_signing_type_custom" formatted="false">कस्टम प्रमाणपत्र</string>
+    <string name="appstr_build_splash_encryption" formatted="false">स्प्लैश स्क्रीन</string>
+    <string name="appstr_build_splash_encryption_hint" formatted="false">स्प्लैश स्क्रीन संसाधनों को एन्क्रिप्ट करें</string>
+    <string name="appstr_build_string_obfuscation" formatted="false">स्ट्रिंग अस्पष्टता</string>
+    <string name="appstr_build_string_obfuscation_hint" formatted="false">संवेदनशील स्ट्रिंग्स को अस्पष्ट करें (प्रयोगात्मक)</string>
+    <string name="appstr_build_supported_keystore_formats" formatted="false">.p12 / .pfx / .jks / .keystore प्रारूपों का समर्थन करता है</string>
+    <string name="appstr_build_usage_help" formatted="false">उपयोग सहायता</string>
+</resources>

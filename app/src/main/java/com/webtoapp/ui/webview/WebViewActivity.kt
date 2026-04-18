@@ -402,6 +402,7 @@ class WebViewActivity : AppCompatActivity() {
     private val localHttpServer: LocalHttpServer by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        AppLogger.lifecycle("WebViewActivity", "onCreate", "intent extras=${intent.extras?.keySet()?.joinToString()}")
         // Enable display( content system area)
         try {
             enableEdgeToEdge()

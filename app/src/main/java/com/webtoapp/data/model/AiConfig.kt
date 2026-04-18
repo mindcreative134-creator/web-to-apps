@@ -741,8 +741,8 @@ fun AiFeature.getLocalizedDisplayName(): String {
  */
 fun AiFeature.getLocalizedDescription(): String {
     return when (this) {
-        AiFeature.AI_CODING -> AppStringsProvider.current().aiCodingDesc
-        AiFeature.AI_CODING_IMAGE -> AppStringsProvider.current().aiCodingImageDesc
+        AiFeature.AI_CODING -> AppStringsProvider.current().assistantCodingDesc
+        AiFeature.AI_CODING_IMAGE -> AppStringsProvider.current().assistantCodingImageDesc
         AiFeature.ICON_GENERATION -> AppStringsProvider.current().iconGenerationDesc
         AiFeature.MODULE_DEVELOPMENT -> AppStringsProvider.current().moduleDevelopmentDesc
         AiFeature.LRC_GENERATION -> AppStringsProvider.current().lrcGenerationDesc
