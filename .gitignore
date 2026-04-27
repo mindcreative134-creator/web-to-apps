@@ -111,6 +111,7 @@ server/sql_app.db
 # Logs & Temp files
 *.txt
 *.log
+.kotlin/
 build_output.log
 crash_log.txt
 source_roots.txt
