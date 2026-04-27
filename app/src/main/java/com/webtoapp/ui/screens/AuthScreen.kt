@@ -161,7 +161,7 @@ fun AuthScreen(
                         fontWeight = FontWeight.Medium
                     )
                     Text(
-                        text = "目前云端相关功能（云端构建、云端同步、远程管理等）仍在开发中，当前功能尚不完善，部分服务可能暂时不可用。\n\n我们正在积极开发中，敬请期待后续更新！",
+                        text = AppStringsProvider.current().authCloudServiceNotice,
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
@@ -256,7 +256,7 @@ fun AuthScreen(
             TopAppBar(
                 title = {
                     Text(
-                        if (showForgotPassword) "重置密码" else AppStringsProvider.current().authCloudService,
+                        if (showForgotPassword) AppStringsProvider.current().authResetPasswordTitle else AppStringsProvider.current().authCloudService,
                         style = MaterialTheme.typography.titleLarge,
                         fontWeight = FontWeight.Bold
                     )
@@ -308,19 +308,27 @@ fun AuthScreen(
                 Spacer(modifier = Modifier.height(24.dp))
 
                 // Logo
-                Image(
-                    painter = painterResource(id = R.drawable.ic_cloud_service),
-                    contentDescription = null,
-                    modifier = Modifier.size(72.dp),
-                    colorFilter = androidx.compose.ui.graphics.ColorFilter.tint(
-                        MaterialTheme.colorScheme.onSurface
+                Box(
+                    modifier = Modifier
+                        .size(72.dp)
+                        .background(
+                            color = MaterialTheme.colorScheme.primaryContainer,
+                            shape = androidx.compose.foundation.shape.CircleShape
+                        ),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Icon(
+                        imageVector = Icons.Filled.Cloud,
+                        contentDescription = null,
+                        modifier = Modifier.size(40.dp),
+                        tint = MaterialTheme.colorScheme.onPrimaryContainer
                     )
-                )
+                }
 
                 Spacer(modifier = Modifier.height(12.dp))
 
                 Text(
-                    text = if (showForgotPassword) "输入邮箱，获取验证码重置密码"
+                    text = if (showForgotPassword) AppStringsProvider.current().authResetPasswordDesc
                            else AppStringsProvider.current().authCloudDesc,
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -775,7 +783,7 @@ fun AuthScreen(
                                                 )
                                             } else {
                                                 Text(
-                                                    text = if (codeCountdown > 0) "${codeCountdown}s" else "发送验证码",
+                                                    text = if (codeCountdown > 0) "${codeCountdown}s" else AppStringsProvider.current().authSendCode,
                                                     style = MaterialTheme.typography.labelMedium,
                                                     maxLines = 1
                                                 )
@@ -960,7 +968,7 @@ private fun ForgotPasswordForm(
                     )
                 } else {
                     Text(
-                        text = if (resetCodeCountdown > 0) "${resetCodeCountdown}s" else "发送验证码",
+                        text = if (resetCodeCountdown > 0) "${resetCodeCountdown}s" else AppStringsProvider.current().authSendCode,
                         style = MaterialTheme.typography.labelMedium,
                         maxLines = 1
                     )
@@ -1052,3 +1060,6 @@ private fun FeatureRow(icon: androidx.compose.ui.graphics.vector.ImageVector, te
         )
     }
 }
+
+
+

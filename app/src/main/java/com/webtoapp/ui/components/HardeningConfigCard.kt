@@ -790,3 +790,5 @@ private fun countProtectionLayers(config: AppHardeningConfig): Int {
     if (config.enableSelfDestruct) count++
     return count
 }
+
+

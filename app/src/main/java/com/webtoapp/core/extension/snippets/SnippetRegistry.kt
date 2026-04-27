@@ -49,3 +49,4 @@ object SnippetRegistry {
         getByCategory("events")?.snippets?.find { it.id == "event-mutation" }
     ).filterNotNull()
 }
+

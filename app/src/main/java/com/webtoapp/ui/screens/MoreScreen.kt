@@ -19,8 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
-import androidx.compose.ui.graphics.painter.Painter
-import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
@@ -102,12 +101,12 @@ fun MoreScreen(
                 MoreMenuCard {
                     MoreMenuItem(
                         title = AppStringsProvider.current().menuAiCoding,
-                        icon = painterResource(R.drawable.ic_sidebar_ai_coding),
+                        icon = Icons.Outlined.Code,
                         onClick = onOpenAiCoding
                     )
                     MoreMenuItem(
                         title = AppStringsProvider.current().menuAiSettings,
-                        icon = painterResource(R.drawable.ic_sidebar_ai_settings),
+                        icon = Icons.Outlined.Settings,
                         onClick = onOpenAiSettings
                     )
                 }
@@ -117,27 +116,27 @@ fun MoreScreen(
                 MoreMenuCard {
                     MoreMenuItem(
                         title = AppStringsProvider.current().menuExtensionModules,
-                        icon = painterResource(R.drawable.ic_sidebar_extensions),
+                        icon = Icons.Outlined.Extension,
                         onClick = onOpenExtensionModules
                     )
                     MoreMenuItem(
                         title = AppStringsProvider.current().menuAppModifier,
-                        icon = painterResource(R.drawable.ic_sidebar_app_modifier),
+                        icon = Icons.Outlined.Build,
                         onClick = onOpenAppModifier
                     )
                     MoreMenuItem(
                         title = AppStringsProvider.current().menuLinuxEnvironment,
-                        icon = painterResource(R.drawable.ic_sidebar_linux),
+                        icon = Icons.Outlined.Terminal,
                         onClick = onOpenLinuxEnvironment
                     )
                     MoreMenuItem(
                         title = AppStringsProvider.current().menuRuntimeDeps,
-                        icon = painterResource(R.drawable.ic_sidebar_runtime),
+                        icon = Icons.Outlined.Storage,
                         onClick = onOpenRuntimeDeps
                     )
                     MoreMenuItem(
                         title = AppStringsProvider.current().menuPortManager,
-                        icon = painterResource(R.drawable.ic_sidebar_port),
+                        icon = Icons.Outlined.Router,
                         onClick = onOpenPortManager
                     )
                 }
@@ -147,12 +146,12 @@ fun MoreScreen(
                 MoreMenuCard {
                     MoreMenuItem(
                         title = AppStringsProvider.current().menuBrowserKernel,
-                        icon = painterResource(R.drawable.ic_sidebar_browser),
+                        icon = Icons.Outlined.Language,
                         onClick = onOpenBrowserKernel
                     )
                     MoreMenuItem(
                         title = AppStringsProvider.current().menuHostsAdBlock,
-                        icon = painterResource(R.drawable.ic_sidebar_adblock),
+                        icon = Icons.Outlined.Security,
                         onClick = onOpenHostsAdBlock
                     )
                 }
@@ -162,12 +161,12 @@ fun MoreScreen(
                 MoreMenuCard {
                     MoreMenuItem(
                         title = AppStringsProvider.current().menuStats,
-                        icon = painterResource(R.drawable.ic_sidebar_stats),
+                        icon = Icons.Outlined.BarChart,
                         onClick = onOpenStats
                     )
                     MoreMenuItem(
                         title = stringResource(R.string.language_settings),
-                        icon = painterResource(R.drawable.ic_sidebar_account),
+                        icon = Icons.Outlined.Translate,
                         onClick = { showLanguageDialog = true }
                     )
                 }
@@ -176,7 +175,7 @@ fun MoreScreen(
                 MoreMenuCard {
                     MoreMenuItem(
                         title = AppStringsProvider.current().menuAbout,
-                        icon = painterResource(R.drawable.ic_sidebar_about),
+                        icon = Icons.Outlined.Info,
                         onClick = onOpenAbout
                     )
                 }
@@ -212,7 +211,7 @@ private fun MoreMenuCard(content: @Composable ColumnScope.() -> Unit) {
 @Composable
 private fun MoreMenuItem(
     title: String,
-    icon: Painter,
+    icon: ImageVector,
     onClick: () -> Unit
 ) {
     val interactionSource = remember { MutableInteractionSource() }
@@ -233,7 +232,7 @@ private fun MoreMenuItem(
         verticalAlignment = Alignment.CenterVertically
     ) {
         Icon(
-            painter = icon,
+            imageVector = icon,
             contentDescription = title,
             modifier = Modifier.size(22.dp),
             tint = MaterialTheme.colorScheme.primary
@@ -254,3 +253,5 @@ private fun MoreMenuItem(
         )
     }
 }
+
+

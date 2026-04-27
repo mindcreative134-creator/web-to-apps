@@ -365,3 +365,4 @@ data class ExecutionResult(
 ) {
     val isSuccess: Boolean get() = exitCode == 0
 }
+

@@ -147,3 +147,4 @@ data class SessionStats(
 ) {
     val total: Int get() = totalAdsBlocked + totalTrackersBlocked + totalHttpsUpgrades + totalCookieConsentsBlocked + totalThirdPartyCookiesBlocked
 }
+

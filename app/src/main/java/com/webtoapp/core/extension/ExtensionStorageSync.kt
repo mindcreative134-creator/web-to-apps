@@ -84,3 +84,4 @@ object ExtensionStorageSync {
         store.clear()
     }
 }
+

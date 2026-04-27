@@ -571,3 +571,7 @@ internal fun getFileType(fileName: String): HtmlFileType {
         else -> HtmlFileType.OTHER
     }
 }
+
+
+
+

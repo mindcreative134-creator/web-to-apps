@@ -465,7 +465,7 @@ fun CreateNodeJsAppScreen(
                 TypedSampleProjectsCard(
                     title = AppStringsProvider.current().sampleProjects,
                     subtitle = AppStringsProvider.current().sampleNodeSubtitle,
-                    samples = remember { NodeSampleManager.getSampleProjects() },
+                    samples = remember { NodeSampleManager.getSampleProjects(context) },
                     onSelectSample = { sample ->
                         scope.launch {
                             val result = NodeSampleManager.extractSampleProject(context, sample.id)
@@ -1568,3 +1568,9 @@ private fun NodeJsFrameworkTipsCard(
         }
     }
 }
+
+
+
+
+
+

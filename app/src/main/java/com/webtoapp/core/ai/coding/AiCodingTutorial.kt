@@ -744,3 +744,5 @@ AI对人类文化有广泛的理解，你只需要说出一个它知道的名字
         com.webtoapp.core.i18n.AppStringsProvider.current().quickPrompt8
     )
 }
+
+

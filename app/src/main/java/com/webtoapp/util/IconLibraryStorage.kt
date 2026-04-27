@@ -100,7 +100,7 @@ object IconLibraryStorage {
     suspend fun saveFromUri(
         context: Context,
         uri: Uri,
-        name: String = AppStringsProvider.current().icon
+        name: String = AppStringsProvider.current().aiIcon
     ): IconLibraryItem? = withContext(Dispatchers.IO) {
         try {
             val inputStream = context.contentResolver.openInputStream(uri) ?: return@withContext null
@@ -158,3 +158,5 @@ object IconLibraryStorage {
                lower.endsWith(".jpeg") || lower.endsWith(".webp")
     }
 }
+
+

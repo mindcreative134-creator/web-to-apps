@@ -547,3 +547,4 @@ object ProjectDetector {
         )
     }
 }
+

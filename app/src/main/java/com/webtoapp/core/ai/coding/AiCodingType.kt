@@ -126,3 +126,5 @@ enum class AiCodingType(
         GO -> listOf(AppStringsProvider.current().aiPromptGo1, AppStringsProvider.current().aiPromptGo2)
     }
 }
+
+

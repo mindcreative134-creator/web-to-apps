@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "214494117668",
+    "firebase_url": "https://gen-lang-client-0084337640-default-rtdb.firebaseio.com",
+    "project_id": "gen-lang-client-0084337640",
+    "storage_bucket": "gen-lang-client-0084337640.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:214494117668:android:b6d127d58b3e498ad93db1",
+        "android_client_info": {
+          "package_name": "com.webtoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "214494117668-rqbftvn1moajfa1u57pikrhrmov7s406.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDx3FvN3-uGxV2PsYJrRYRBsBYhTjGy-G8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "214494117668-rqbftvn1moajfa1u57pikrhrmov7s406.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

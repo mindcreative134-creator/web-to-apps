@@ -195,3 +195,4 @@ data class AppTemplate(
     val translateEnabled: Boolean = false,
     val version: Int = 1
 )
+

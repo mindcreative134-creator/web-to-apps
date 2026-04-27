@@ -10,6 +10,8 @@ import com.webtoapp.core.i18n.AppStringsProvider
 import com.webtoapp.core.logging.AppLogger
 import com.webtoapp.core.shell.ShellConfig
 import com.webtoapp.core.shell.ShellRuntimeServices
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.runBlocking
 
 /**
  * ShellActivity onCreate initialize
@@ -24,7 +26,9 @@ object ShellActivityInit {
      */
     fun initLogger(activity: AppCompatActivity) {
         try {
-            val tempConfig = ShellRuntimeServices.shellMode.getConfig()
+            val tempConfig = try {
+                ShellRuntimeServices.shellMode.getConfig()
+            } catch (e: Exception) { null }
             val versionName = try {
                 activity.packageManager.getPackageInfo(activity.packageName, 0).versionName ?: "1.0.0"
             } catch (e: Exception) { "1.0.0" }
@@ -228,3 +232,12 @@ object ShellActivityInit {
         }
     }
 }
+
+
+
+
+
+
+
+
+

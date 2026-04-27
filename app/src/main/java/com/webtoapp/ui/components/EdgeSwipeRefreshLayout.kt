@@ -34,3 +34,4 @@ class EdgeSwipeRefreshLayout @JvmOverloads constructor(
         return super.onInterceptTouchEvent(ev)
     }
 }
+

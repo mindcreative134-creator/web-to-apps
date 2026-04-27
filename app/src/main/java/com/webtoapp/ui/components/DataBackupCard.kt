@@ -17,7 +17,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.res.painterResource
 import com.webtoapp.R
 import com.webtoapp.core.i18n.AppStringsProvider
 import com.webtoapp.core.backup.DataBackupManager
@@ -130,7 +129,7 @@ fun DataBackupCard(
                     contentAlignment = Alignment.Center
                 ) {
                     Icon(
-                        painter = painterResource(R.drawable.ic_about_backup),
+                        Icons.Outlined.Backup,
                         null,
                         tint = Color(0xFF9C27B0),
                         modifier = Modifier.size(22.dp)
@@ -252,3 +251,6 @@ fun DataBackupCard(
         }
     }
 }
+
+
+

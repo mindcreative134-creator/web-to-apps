@@ -74,3 +74,4 @@ class AppUsageTracker(
         activeSessions[appId] = System.currentTimeMillis()
     }
 }
+

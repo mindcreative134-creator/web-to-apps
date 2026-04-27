@@ -137,3 +137,4 @@ data class AutoStartConfig(
     val scheduledRepeat: Boolean = true,
     val bootDelay: Long = 5000L
 )
+

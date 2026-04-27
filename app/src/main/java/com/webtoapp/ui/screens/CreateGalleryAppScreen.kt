@@ -1976,3 +1976,5 @@ private fun MediaPreviewDialog(item: GalleryItem, onDismiss: () -> Unit, onDelet
         dismissButton = { TextButton(onClick = onDelete, colors = ButtonDefaults.textButtonColors(contentColor = MaterialTheme.colorScheme.error)) { Icon(Icons.Default.Delete, null, modifier = Modifier.size(18.dp)); Spacer(Modifier.width(4.dp)); Text(AppStringsProvider.current().delete) } }
     )
 }
+
+

@@ -92,3 +92,4 @@ fun WebApp.getActivationCodeStrings(): List<String> {
     }
     return strings
 }
+

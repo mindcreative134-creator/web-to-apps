@@ -153,3 +153,5 @@ internal fun MoreTabContent(
         onOpenAbout = { navController.navigate(Routes.ABOUT) }
     )
 }
+
+

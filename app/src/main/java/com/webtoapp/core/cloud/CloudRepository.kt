@@ -242,3 +242,5 @@ class CloudRepository(
 
     fun isLoggedIn(): Boolean = tokenManager.getAccessToken() != null
 }
+
+

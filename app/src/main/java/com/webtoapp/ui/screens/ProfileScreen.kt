@@ -368,8 +368,8 @@ fun ProfileScreen(
                     HorizontalDivider(modifier = Modifier.padding(horizontal = 16.dp))
                     MenuItemRow(
                         icon = Icons.Outlined.Lock,
-                        title = "修改密码",
-                        subtitle = "更新您的登录密码",
+                        title = AppStringsProvider.current().authChangePassword,
+                        subtitle = AppStringsProvider.current().authUpdatePasswordDesc,
                         onClick = { showChangePasswordDialog = true }
                     )
                     HorizontalDivider(modifier = Modifier.padding(horizontal = 16.dp))
@@ -405,13 +405,12 @@ fun ProfileScreen(
 
             Spacer(modifier = Modifier.height(8.dp))
 
-            // Note
             TextButton(
                 onClick = { showLogoutAllDialog = true },
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Text(
-                    text = "在所有设备上登出",
+                    text = AppStringsProvider.current().authLogoutAllDevices,
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
@@ -473,9 +472,9 @@ fun ProfileScreen(
         if (showLogoutAllDialog) {
             AlertDialog(
                 onDismissRequest = { showLogoutAllDialog = false },
-                title = { Text("在所有设备上登出") },
+                title = { Text(AppStringsProvider.current().authLogoutAllDevices) },
                 text = {
-                    Text("确定在所有设备上登出吗？所有设备都将需要重新登录。")
+                    Text(AppStringsProvider.current().authLogoutAllConfirm)
                 },
                 confirmButton = {
                     TextButton(
@@ -488,7 +487,7 @@ fun ProfileScreen(
                             contentColor = MaterialTheme.colorScheme.error
                         )
                     ) {
-                        Text("全部登出")
+                        Text(AppStringsProvider.current().authLogoutAllBtn)
                     }
                 },
                 dismissButton = {
@@ -536,7 +535,7 @@ private fun ChangePasswordDialog(
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Icon(Icons.Outlined.Lock, null, modifier = Modifier.size(22.dp))
                 Spacer(modifier = Modifier.width(8.dp))
-                Text("修改密码")
+                Text(AppStringsProvider.current().authChangePassword)
             }
         },
         text = {
@@ -544,7 +543,7 @@ private fun ChangePasswordDialog(
                 PremiumTextField(
                     value = currentPassword,
                     onValueChange = { currentPassword = it },
-                    label = { Text("当前密码") },
+                    label = { Text(AppStringsProvider.current().authCurrentPassword) },
                     modifier = Modifier.fillMaxWidth(),
                     singleLine = true,
                     visualTransformation = PasswordVisualTransformation(),
@@ -554,8 +553,8 @@ private fun ChangePasswordDialog(
                 PremiumTextField(
                     value = newPassword,
                     onValueChange = { newPassword = it },
-                    label = { Text("新密码") },
-                    supportingText = { Text("至少 6 位") },
+                    label = { Text(AppStringsProvider.current().authNewPasswordLabel) },
+                    supportingText = { Text(AppStringsProvider.current().authPasswordMinHint) },
                     modifier = Modifier.fillMaxWidth(),
                     singleLine = true,
                     visualTransformation = PasswordVisualTransformation(),
@@ -565,7 +564,7 @@ private fun ChangePasswordDialog(
                 PremiumTextField(
                     value = confirmNewPassword,
                     onValueChange = { confirmNewPassword = it },
-                    label = { Text("确认新密码") },
+                    label = { Text(AppStringsProvider.current().authConfirmNewPassword) },
                     modifier = Modifier.fillMaxWidth(),
                     singleLine = true,
                     visualTransformation = PasswordVisualTransformation(),
@@ -589,7 +588,7 @@ private fun ChangePasswordDialog(
                     CircularProgressIndicator(modifier = Modifier.size(16.dp), strokeWidth = 2.dp)
                     Spacer(modifier = Modifier.width(8.dp))
                 }
-                Text("确认修改")
+                Text(AppStringsProvider.current().authConfirmChange)
             }
         },
         dismissButton = {
@@ -897,3 +896,6 @@ private fun MenuItemRow(
         )
     }
 }
+
+
+

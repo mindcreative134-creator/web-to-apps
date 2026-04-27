@@ -18,3 +18,4 @@ object CodeSnippets {
 
     fun getPopular(): List<CodeSnippet> = SnippetRegistry.getPopular()
 }
+

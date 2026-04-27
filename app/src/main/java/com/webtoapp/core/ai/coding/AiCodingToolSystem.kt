@@ -750,3 +750,5 @@ sealed class AgentEvent {
     data class Error(val message: String) : AgentEvent()
     data class Completed(val response: String, val finalHtml: String) : AgentEvent()
 }
+
+

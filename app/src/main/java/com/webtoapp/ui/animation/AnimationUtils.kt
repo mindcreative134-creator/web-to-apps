@@ -247,3 +247,4 @@ data class RippleAnimState(
 fun rememberRippleAnimatable(): Animatable<Float, AnimationVector1D> {
     return remember { Animatable(0f) }
 }
+

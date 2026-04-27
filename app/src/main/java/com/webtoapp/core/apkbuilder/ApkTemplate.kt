@@ -517,25 +517,25 @@ data class ApkConfig(
     val zoomEnabled: Boolean = true,
     val desktopMode: Boolean = false,
     val userAgent: String? = null,
-    val userAgentMode: String = "DEFAULT", // User-Agent 模式: DEFAULT, CHROME_MOBILE, CHROME_DESKTOP, SAFARI_MOBILE, SAFARI_DESKTOP, FIREFOX_MOBILE, FIREFOX_DESKTOP, EDGE_MOBILE, EDGE_DESKTOP, CUSTOM
-    val customUserAgent: String? = null, // Custom User-Agent（仅 CUSTOM 模式使用）
+    val userAgentMode: String = "DEFAULT", // User-Agent mode: DEFAULT, CHROME_MOBILE, CHROME_DESKTOP, SAFARI_MOBILE, SAFARI_DESKTOP, FIREFOX_MOBILE, FIREFOX_DESKTOP, EDGE_MOBILE, EDGE_DESKTOP, CUSTOM
+    val customUserAgent: String? = null, // Custom User-Agent (only used in CUSTOM mode)
     val hideToolbar: Boolean = false,
     val hideBrowserToolbar: Boolean = false,
     val showStatusBarInFullscreen: Boolean = false,  // Fullscreen模式下是否显示状态栏
     val showNavigationBarInFullscreen: Boolean = false,  // Fullscreen模式下是否显示导航栏
     val showToolbarInFullscreen: Boolean = false,  // Fullscreen模式下是否显示顶部导航栏
     val landscapeMode: Boolean = false, // [已废弃] 向后兼容
-    val orientationMode: String = "PORTRAIT", // 屏幕方向模式: PORTRAIT, LANDSCAPE, REVERSE_PORTRAIT, REVERSE_LANDSCAPE, SENSOR_PORTRAIT, SENSOR_LANDSCAPE, AUTO
-    val injectScripts: List<com.webtoapp.data.model.UserScript> = emptyList(), // User注入脚本
+    val orientationMode: String = "PORTRAIT", // Orientation mode: PORTRAIT, LANDSCAPE, REVERSE_PORTRAIT, REVERSE_LANDSCAPE, SENSOR_PORTRAIT, SENSOR_LANDSCAPE, AUTO
+    val injectScripts: List<com.webtoapp.data.model.UserScript> = emptyList(), // User injected scripts
     
     // Note: brief English comment.
     val statusBarColorMode: String = "THEME", // THEME, TRANSPARENT, CUSTOM
-    val statusBarColor: String? = null, // Custom状态栏颜色
-    val statusBarDarkIcons: Boolean? = null, // Status bar图标颜色
+    val statusBarColor: String? = null, // Custom status bar color
+    val statusBarDarkIcons: Boolean? = null, // Status bar icon color mode
     val statusBarBackgroundType: String = "COLOR", // COLOR, IMAGE
     val statusBarBackgroundImage: String? = null, // Cropped image path
     val statusBarBackgroundAlpha: Float = 1.0f, // Alpha 0.0-1.0
-    val statusBarHeightDp: Int = 0, // Custom高度dp（0=系统默认）
+    val statusBarHeightDp: Int = 0, // Custom height in dp (0=system default)
     // Note: brief English comment.
     val statusBarColorModeDark: String = "THEME",
     val statusBarColorDark: String? = null,
@@ -543,12 +543,12 @@ data class ApkConfig(
     val statusBarBackgroundTypeDark: String = "COLOR",
     val statusBarBackgroundImageDark: String? = null,
     val statusBarBackgroundAlphaDark: Float = 1.0f,
-    val longPressMenuEnabled: Boolean = true, // Yes否启用长按菜单
+    val longPressMenuEnabled: Boolean = true, // Whether to enable long press menu
     val longPressMenuStyle: String = "FULL", // DISABLED, SIMPLE, FULL
-    val adBlockToggleEnabled: Boolean = false, // Allow用户在运行时切换广告拦截开关
-    val popupBlockerEnabled: Boolean = true, // 启用弹窗拦截器
-    val popupBlockerToggleEnabled: Boolean = false, // Allow用户在运行时切换弹窗拦截开关
-    val openExternalLinks: Boolean = false, // External链接是否在浏览器打开
+    val adBlockToggleEnabled: Boolean = false, // Allow users to toggle ad block at runtime
+    val popupBlockerEnabled: Boolean = true, // Enable popup blocker
+    val popupBlockerToggleEnabled: Boolean = false, // Allow users to toggle popup blocker at runtime
+    val openExternalLinks: Boolean = false, // Whether external links open in browser
     
     // Note: brief English comment.
     val initialScale: Int = 0, // Initial scale (0-200, 0=自动)
@@ -557,18 +557,18 @@ data class ApkConfig(
     val enablePaymentSchemes: Boolean = true, // Enable支付宝/微信等支付 scheme 拦截
     val enableShareBridge: Boolean = true, // Enable navigator.share 桥接
     val enableZoomPolyfill: Boolean = true, // Enable CSS zoom polyfill
-    val enableCrossOriginIsolation: Boolean = false, // 启用跨域隔离（SharedArrayBuffer/FFmpeg.wasm 支持）
-    val disableShields: Boolean = false, // 禁用 BrowserShields（游戏/需要完整网络功能的应用）
-    val keepScreenOn: Boolean = false, // [向后兼容] 保持屏幕常亮
-    val screenAwakeMode: String = "OFF", // 屏幕常亮模式: OFF, ALWAYS, TIMED
-    val screenAwakeTimeoutMinutes: Int = 30, // 定时常亮时长（分钟）
-    val screenBrightness: Int = -1, // 屏幕亮度：-1=跟随系统, 0-100=自定义百分比
-    val keyboardAdjustMode: String = "RESIZE", // 键盘调整模式: RESIZE, NOTHING
-    val showFloatingBackButton: Boolean = true, // 全屏模式下是否显示悬浮返回按钮
-    val swipeRefreshEnabled: Boolean = true, // 下拉刷新
-    val fullscreenEnabled: Boolean = true, // 视频全屏
-    val performanceOptimization: Boolean = false, // 运行时性能优化脚本
-    val pwaOfflineEnabled: Boolean = false, // PWA Service Worker 离线缓存
+    val enableCrossOriginIsolation: Boolean = false, // Enable cross-origin isolation (SharedArrayBuffer/FFmpeg.wasm support)
+    val disableShields: Boolean = false, // Disable BrowserShields (for games/apps needing full network features)
+    val keepScreenOn: Boolean = false, // [Backward compatibility] Keep screen on
+    val screenAwakeMode: String = "OFF", // Screen awake mode: OFF, ALWAYS, TIMED
+    val screenAwakeTimeoutMinutes: Int = 30, // Timed awake duration (minutes)
+    val screenBrightness: Int = -1, // Screen brightness: -1=system, 0-100=custom percentage
+    val keyboardAdjustMode: String = "RESIZE", // Keyboard adjustment mode: RESIZE, NOTHING
+    val showFloatingBackButton: Boolean = true, // Whether to show floating back button in fullscreen
+    val swipeRefreshEnabled: Boolean = true, // Pull to refresh
+    val fullscreenEnabled: Boolean = true, // Video fullscreen
+    val performanceOptimization: Boolean = false, // Runtime performance optimization script
+    val pwaOfflineEnabled: Boolean = false, // PWA Service Worker offline caching
     val pwaOfflineStrategy: String = "NETWORK_FIRST", // CACHE_FIRST, NETWORK_FIRST, STALE_WHILE_REVALIDATE
     
     // Note: brief English comment.
@@ -598,28 +598,28 @@ data class ApkConfig(
     // Note: brief English comment.
     val splashEnabled: Boolean = false,
     val splashType: String = "IMAGE",      // "IMAGE" or "VIDEO"
-    val splashDuration: Int = 3,           // Show时长（秒）
-    val splashClickToSkip: Boolean = true, // Yes否允许点击跳过
-    val splashVideoStartMs: Long = 0,      // Video裁剪起始（毫秒）
-    val splashVideoEndMs: Long = 5000,     // Video裁剪结束（毫秒）
-    val splashLandscape: Boolean = false,  // Yes否横屏显示
-    val splashFillScreen: Boolean = true,  // Yes否自动放大铺满屏幕
-    val splashEnableAudio: Boolean = false, // Yes否启用视频音频
+    val splashDuration: Int = 3,           // Display duration (seconds)
+    val splashClickToSkip: Boolean = true, // Whether to allow clicking to skip
+    val splashVideoStartMs: Long = 0,      // Video clip start (ms)
+    val splashVideoEndMs: Long = 5000,     // Video clip end (ms)
+    val splashLandscape: Boolean = false,  // Whether to display in landscape
+    val splashFillScreen: Boolean = true,  // Whether to scale and fill screen
+    val splashEnableAudio: Boolean = false, // Whether to enable video audio
     
     // Note: brief English comment.
     val appType: String = "WEB",           // "WEB", "IMAGE", "VIDEO", "HTML"
-    val mediaEnableAudio: Boolean = true,  // Video是否启用音频
-    val mediaLoop: Boolean = true,         // Yes否循环播放
-    val mediaAutoPlay: Boolean = true,     // Yes否自动播放
-    val mediaFillScreen: Boolean = true,   // Yes否铺满屏幕
-    val mediaLandscape: Boolean = false,   // Yes否横屏显示
-    val mediaKeepScreenOn: Boolean = true, // 保持屏幕常亮
+    val mediaEnableAudio: Boolean = true,  // Whether to enable audio for video
+    val mediaLoop: Boolean = true,         // Whether to loop playback
+    val mediaAutoPlay: Boolean = true,     // Whether to auto play
+    val mediaFillScreen: Boolean = true,   // Whether to fill screen
+    val mediaLandscape: Boolean = false,   // Whether to display in landscape
+    val mediaKeepScreenOn: Boolean = true, // Keep screen awake
     
     // Note: brief English comment.
-    val htmlEntryFile: String = "index.html",  // HTML入口文件名
-    val htmlEnableJavaScript: Boolean = true,  // Yes否启用JavaScript
-    val htmlEnableLocalStorage: Boolean = true, // Yes否启用本地存储
-    val htmlLandscapeMode: Boolean = false,    // HTML应用横屏模式
+    val htmlEntryFile: String = "index.html",  // HTML entry filename
+    val htmlEnableJavaScript: Boolean = true,  // Whether to enable JavaScript
+    val htmlEnableLocalStorage: Boolean = true, // Whether to enable local storage
+    val htmlLandscapeMode: Boolean = false,    // HTML app landscape mode
     
     // Note: brief English comment.
     val galleryItems: List<GalleryShellItemConfig> = emptyList(),
@@ -635,27 +635,27 @@ data class ApkConfig(
     val galleryVideoAutoNext: Boolean = true,
     
     // Note: brief English comment.
-    val bgmEnabled: Boolean = false,       // Yes否启用背景音乐
-    val bgmPlaylist: List<BgmShellItem> = emptyList(), // Play列表
-    val bgmPlayMode: String = "LOOP",      // Play模式: LOOP, SEQUENTIAL, SHUFFLE
+    val bgmEnabled: Boolean = false,       // Whether to enable background music
+    val bgmPlaylist: List<BgmShellItem> = emptyList(), // Play list
+    val bgmPlayMode: String = "LOOP",      // Play mode: LOOP, SEQUENTIAL, SHUFFLE
     val bgmVolume: Float = 0.5f,           // Volume (0.0-1.0)
-    val bgmAutoPlay: Boolean = true,       // Yes否自动播放
-    val bgmShowLyrics: Boolean = true,     // Yes否显示歌词
-    val bgmLrcTheme: LrcShellTheme? = null, // Lyrics主题
+    val bgmAutoPlay: Boolean = true,       // Whether to auto play
+    val bgmShowLyrics: Boolean = true,     // Whether to show lyrics
+    val bgmLrcTheme: LrcShellTheme? = null, // Lyrics theme
     
     // Note: brief English comment.
     val themeType: String = "AURORA",      // Theme类型
     val darkMode: String = "SYSTEM",       // Dark mode: SYSTEM, LIGHT, DARK
     
     // Note: brief English comment.
-    val translateEnabled: Boolean = false,        // Yes否启用自动翻译
-    val translateTargetLanguage: String = "zh-CN", // 目标语言: zh-CN, en, ja, ar
-    val translateShowButton: Boolean = true,      // Yes否显示翻译按钮
+    val translateEnabled: Boolean = false,        // Whether to enable auto translate
+    val translateTargetLanguage: String = "en", // Target language (en, hi)
+    val translateShowButton: Boolean = true,      // Whether to show translate button
     
     // Note: brief English comment.
-    val extensionModuleIds: List<String> = emptyList(), // Enable的扩展模块ID列表
-    val embeddedExtensionModules: List<EmbeddedExtensionModule> = emptyList(), // 嵌入的扩展模块完整数据
-    val extensionFabIcon: String = "", // 扩展模块悬浮按钮自定义图标
+    val extensionModuleIds: List<String> = emptyList(), // List of enabled extension module IDs
+    val embeddedExtensionModules: List<EmbeddedExtensionModule> = emptyList(), // Embedded extension module data
+    val extensionFabIcon: String = "", // Custom icon for extension floating button
     
     // Note: brief English comment.
     val autoStartEnabled: Boolean = false,
@@ -688,25 +688,25 @@ data class ApkConfig(
     val engineType: String = "SYSTEM_WEBVIEW",  // SYSTEM_WEBVIEW, GECKOVIEW
     
     // Note: brief English comment.
-    val deepLinkEnabled: Boolean = false,       // 是否启用链接打开
-    val deepLinkHosts: List<String> = emptyList(), // 匹配的域名列表
+    val deepLinkEnabled: Boolean = false,       // Whether to enable link opening
+    val deepLinkHosts: List<String> = emptyList(), // List of matching domains
     
     // Note: brief English comment.
-    val wordpressSiteTitle: String = "",       // 站点标题
-    val wordpressPhpPort: Int = 0,             // PHP 服务器端口（0=自动分配）
-    val wordpressLandscapeMode: Boolean = false, // 横屏模式
+    val wordpressSiteTitle: String = "",       // Site title
+    val wordpressPhpPort: Int = 0,             // PHP server port (0=auto)
+    val wordpressLandscapeMode: Boolean = false, // Landscape mode
     
     // Note: brief English comment.
     val nodejsMode: String = "STATIC",         // STATIC, BACKEND, FULLSTACK
-    val nodejsPort: Int = 0,                   // Node.js 服务器端口（0=自动分配）
-    val nodejsEntryFile: String = "",          // 入口文件（backend 模式需要）
-    val nodejsEnvVars: Map<String, String> = emptyMap(), // 环境变量
-    val nodejsLandscapeMode: Boolean = false,  // 横屏模式
+    val nodejsPort: Int = 0,                   // Node.js server port (0=auto)
+    val nodejsEntryFile: String = "",          // Entry file (required for backend)
+    val nodejsEnvVars: Map<String, String> = emptyMap(), // Environment variables
+    val nodejsLandscapeMode: Boolean = false,  // Landscape mode
     
     // Note: brief English comment.
-    val phpAppFramework: String = "",           // 框架名称
-    val phpAppDocumentRoot: String = "",        // Web 根目录
-    val phpAppEntryFile: String = "index.php",  // 入口文件
+    val phpAppFramework: String = "",           // Framework name
+    val phpAppDocumentRoot: String = "",        // Web root directory
+    val phpAppEntryFile: String = "index.php",  // Entry file
     val phpAppPort: Int = 0,                    // PHP 端口
     val phpAppEnvVars: Map<String, String> = emptyMap(),
     val phpAppLandscapeMode: Boolean = false,
@@ -787,3 +787,8 @@ data class EmbeddedUrlMatchRule(
     val isRegex: Boolean = false,
     val exclude: Boolean = false
 )
+
+
+
+
+

@@ -86,3 +86,4 @@ private object CurrentAppStrings : BaseAppStringsDelegate() {
 private class FixedLanguageAppStrings(
     override val currentLanguage: AppLanguage
 ) : BaseAppStringsDelegate()
+

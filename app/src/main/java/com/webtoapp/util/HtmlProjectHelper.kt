@@ -195,3 +195,4 @@ object HtmlProjectHelper {
         files
     }
 }
+

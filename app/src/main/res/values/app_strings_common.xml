@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="appstr_common_about" formatted="false">About</string>
-    <string name="appstr_common_about_app_description" formatted="false">WebToApp is a tool I developed independently that can quickly convert websites, images, and videos into independent Android applications.\n\nIf you have any questions, suggestions, or ideas, feel free to contact me!</string>
+    <string name="appstr_common_about_app_description" formatted="false">WebToApp is a tool I developed independently that can quickly convert websites, images, and videos into independent and secure Android applications.\n\nIf you have any questions, suggestions, or ideas, feel free to contact me!</string>
     <string name="appstr_common_about_this_app" formatted="false">About this App</string>
     <string name="appstr_common_activated" formatted="false">Activated</string>
     <string name="appstr_common_activation_expired" formatted="false">Activation Expired</string>
@@ -155,7 +155,7 @@
     <string name="appstr_common_fix_app_name_spaces" formatted="false">Fix extra spaces in app name</string>
     <string name="appstr_common_fix_background_run_crash" formatted="false">Fix background run crash issue</string>
     <string name="appstr_common_fix_blob_export_failed" formatted="false">Fix Blob format file export failure</string>
-    <string name="appstr_common_fix_core_config_edit_app_type" formatted="false">Fix core config edit失效 issues for some app types</string>
+    <string name="appstr_common_fix_core_config_edit_app_type" formatted="false">Fix core config edit failure issues for some app types</string>
     <string name="appstr_common_fix_device_crash_issue" formatted="false">Fix crash on some devices/emulators</string>
     <string name="appstr_common_fix_download_error" formatted="false">Fix download errors</string>
     <string name="appstr_common_fix_downloader_player_cooperation" formatted="false">Fix downloader and player synergy issue</string>

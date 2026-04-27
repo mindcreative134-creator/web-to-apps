@@ -239,3 +239,4 @@ fun EnhancedOutlinedCard(
         Column { content() }
     }
 }
+

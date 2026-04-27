@@ -712,9 +712,9 @@ object OAuthCompatEngine {
         // IndexedDB.
         try{if(!window.indexedDB)window.indexedDB=window.mozIndexedDB||window.webkitIndexedDB||window.msIndexedDB}catch(e){}
         // Crypto.subtle (MSAL PKCE flow)
-        try{if(!window.crypto||!window.crypto.subtle){
+        try{if(!window.crypto||!window.cryptoScope.subtle){
             if(!window.crypto)window.crypto={};
-            if(!window.crypto.subtle)window.crypto.subtle={
+            if(!window.cryptoScope.subtle)window.cryptoScope.subtle={
                 digest:function(a,d){return Promise.resolve(new ArrayBuffer(32))},
                 generateKey:function(){return Promise.resolve({})},
                 exportKey:function(){return Promise.resolve(new ArrayBuffer(32))}
@@ -739,9 +739,9 @@ object OAuthCompatEngine {
         // Amazon WebView cookie.
         try{Object.defineProperty(navigator,'cookieEnabled',{get:function(){return true},configurable:true})}catch(e){}
         // Amazon Cognito SDK.
-        try{if(!window.crypto||!window.crypto.getRandomValues){
+        try{if(!window.crypto||!window.cryptoScope.getRandomValues){
             if(!window.crypto)window.crypto={};
-            window.crypto.getRandomValues=function(arr){for(var i=0;i<arr.length;i++)arr[i]=Math.floor(Math.random()*256);return arr}
+            window.cryptoScope.getRandomValues=function(arr){for(var i=0;i<arr.length;i++)arr[i]=Math.floor(Math.random()*256);return arr}
         }}catch(e){}
         // localStorage (Amazon session)
         try{if(!window.localStorage){var _s={};window.localStorage={getItem:function(k){return _s[k]||null},setItem:function(k,v){_s[k]=String(v)},removeItem:function(k){delete _s[k]},clear:function(){_s={}},key:function(i){return Object.keys(_s)[i]||null},get length(){return Object.keys(_s).length}}}}catch(e){}
@@ -787,7 +787,7 @@ object OAuthCompatEngine {
         // Reddit use IntersectionObserver.
         try{if(!window.IntersectionObserver){window.IntersectionObserver=function(cb,opt){this.observe=function(){};this.unobserve=function(){};this.disconnect=function(){};this.takeRecords=function(){return[]}}}}catch(e){}
         // Reddit Vault (crypto features)
-        try{if(!window.crypto||!window.crypto.subtle){if(!window.crypto)window.crypto={};if(!window.crypto.subtle)window.crypto.subtle={digest:function(){return Promise.resolve(new ArrayBuffer(32))}}}}catch(e){}
+        try{if(!window.crypto||!window.cryptoScope.subtle){if(!window.crypto)window.crypto={};if(!window.cryptoScope.subtle)window.cryptoScope.subtle={digest:function(){return Promise.resolve(new ArrayBuffer(32))}}}}catch(e){}
     })();""".trimIndent()
 
     private val LINKEDIN_ANTI_DETECTION_JS = """(function(){'use strict';
@@ -905,8 +905,8 @@ object OAuthCompatEngine {
 
     private val SHOPIFY_ANTI_DETECTION_JS = """(function(){'use strict';
         // Shopify Fetch + Crypto.
-        try{if(!window.crypto||!window.crypto.subtle){if(!window.crypto)window.crypto={};
-            window.crypto.subtle={digest:function(){return Promise.resolve(new ArrayBuffer(32))}}}}catch(e){}
+        try{if(!window.crypto||!window.cryptoScope.subtle){if(!window.crypto)window.crypto={};
+            window.cryptoScope.subtle={digest:function(){return Promise.resolve(new ArrayBuffer(32))}}}}catch(e){}
         // Shopify Checkout CSP.
         try{Object.defineProperty(navigator,'cookieEnabled',{get:function(){return true},configurable:true})}catch(e){}
     })();""".trimIndent()
@@ -918,8 +918,8 @@ object OAuthCompatEngine {
 
     private val NOTION_ANTI_DETECTION_JS = """(function(){'use strict';
         // Notion use WASM + Crypto.
-        try{if(!window.crypto||!window.crypto.subtle){if(!window.crypto)window.crypto={};
-            window.crypto.subtle={digest:function(a,d){return Promise.resolve(new ArrayBuffer(32))}}}}catch(e){}
+        try{if(!window.crypto||!window.cryptoScope.subtle){if(!window.crypto)window.crypto={};
+            window.cryptoScope.subtle={digest:function(a,d){return Promise.resolve(new ArrayBuffer(32))}}}}catch(e){}
         // Notion Clipboard API.
         try{if(!navigator.clipboard){Object.defineProperty(navigator,'clipboard',{get:function(){return{
             writeText:function(){return Promise.resolve()},readText:function(){return Promise.resolve('')}
@@ -953,9 +953,9 @@ object OAuthCompatEngine {
         // PayPal postMessage origin Check.
         try{window.postMessage=window.postMessage}catch(e){}
         // Crypto.
-        try{if(!window.crypto||!window.crypto.getRandomValues){
+        try{if(!window.crypto||!window.cryptoScope.getRandomValues){
             if(!window.crypto)window.crypto={};
-            window.crypto.getRandomValues=function(arr){for(var i=0;i<arr.length;i++)arr[i]=Math.floor(Math.random()*256);return arr}
+            window.cryptoScope.getRandomValues=function(arr){for(var i=0;i<arr.length;i++)arr[i]=Math.floor(Math.random()*256);return arr}
         }}catch(e){}
         // PayPal indexedDB.
         try{if(!window.indexedDB)window.indexedDB=window.mozIndexedDB||window.webkitIndexedDB||window.msIndexedDB}catch(e){}
@@ -967,8 +967,8 @@ object OAuthCompatEngine {
         // Stripe Elements IntersectionObserver.
         try{if(!window.IntersectionObserver){window.IntersectionObserver=function(cb,opt){this.observe=function(){};this.unobserve=function(){};this.disconnect=function(){};this.takeRecords=function(){return[]}}}}catch(e){}
         // Stripe 3D Secure iframe.
-        try{if(!window.crypto||!window.crypto.subtle){if(!window.crypto)window.crypto={};
-            window.crypto.subtle={digest:function(){return Promise.resolve(new ArrayBuffer(32))},
+        try{if(!window.crypto||!window.cryptoScope.subtle){if(!window.crypto)window.crypto={};
+            window.cryptoScope.subtle={digest:function(){return Promise.resolve(new ArrayBuffer(32))},
                 generateKey:function(){return Promise.resolve({})},exportKey:function(){return Promise.resolve(new ArrayBuffer(32))}}
         }}catch(e){}
     })();""".trimIndent()
@@ -1013,3 +1013,6 @@ object OAuthCompatEngine {
         try{Object.defineProperty(navigator,'cookieEnabled',{get:function(){return true},configurable:true})}catch(e){}
     })();""".trimIndent()
 }
+
+
+

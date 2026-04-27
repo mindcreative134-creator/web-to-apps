@@ -758,3 +758,4 @@ data class AvatarUploadResult(
     val avatarUrlGithub: String?,
     val avatarUrlGitee: String?
 )
+

@@ -402,3 +402,5 @@ class DexProtector(private val context: Context) {
         return config.toByteArray()
     }
 }
+
+

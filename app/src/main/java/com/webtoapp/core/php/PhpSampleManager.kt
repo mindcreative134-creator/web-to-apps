@@ -10,11 +10,11 @@ import com.webtoapp.core.sample.TypedSampleProject
  */
 object PhpSampleManager {
     
-    fun getSampleProjects(): List<TypedSampleProject> {
-        val suffix = SampleProjectExtractor.getLanguageSuffix()
+    fun getSampleProjects(context: Context): List<TypedSampleProject> {
+        val baseIds = listOf("php-laravel", "php-slim", "php-vanilla")
         return listOf(
             TypedSampleProject(
-                id = "php-laravel$suffix",
+                id = "${baseIds[0]}${SampleProjectExtractor.getLanguageSuffix(context, baseIds[0])}",
                 name = AppStringsProvider.current().samplePhpLaravelName,
                 description = AppStringsProvider.current().samplePhpLaravelDesc,
                 frameworkName = "Laravel",
@@ -23,7 +23,7 @@ object PhpSampleManager {
                 brandColor = 0xFFFF2D20
             ),
             TypedSampleProject(
-                id = "php-slim$suffix",
+                id = "${baseIds[1]}${SampleProjectExtractor.getLanguageSuffix(context, baseIds[1])}",
                 name = AppStringsProvider.current().samplePhpSlimName,
                 description = AppStringsProvider.current().samplePhpSlimDesc,
                 frameworkName = "Slim",
@@ -32,7 +32,7 @@ object PhpSampleManager {
                 brandColor = 0xFF74B72E
             ),
             TypedSampleProject(
-                id = "php-vanilla$suffix",
+                id = "${baseIds[2]}${SampleProjectExtractor.getLanguageSuffix(context, baseIds[2])}",
                 name = AppStringsProvider.current().samplePhpVanillaName,
                 description = AppStringsProvider.current().samplePhpVanillaDesc,
                 frameworkName = "PHP",
@@ -48,3 +48,5 @@ object PhpSampleManager {
         projectId: String
     ): Result<String> = SampleProjectExtractor.extractSampleProject(context, projectId)
 }
+
+

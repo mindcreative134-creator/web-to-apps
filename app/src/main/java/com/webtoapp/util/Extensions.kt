@@ -244,3 +244,4 @@ fun <T> List<T>.safeLast(): T? = lastOrNull()
 inline fun <T> List<T>.forEachBatch(batchSize: Int, action: (List<T>) -> Unit) {
     chunked(batchSize).forEach(action)
 }
+

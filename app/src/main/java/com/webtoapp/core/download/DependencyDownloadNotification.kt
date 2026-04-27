@@ -244,3 +244,4 @@ class DependencyDownloadNotification private constructor(private val context: Co
         notificationManager.cancel(NOTIFICATION_ID)
     }
 }
+

@@ -826,8 +826,8 @@ class WebViewManager(
         val diag = sessionState.diagnostics
 
         return ManagedWebViewClient(
-            shouldInterceptRequestHandler = { view, request, delegate ->
-                handleShouldInterceptRequest(request, delegate.shouldInterceptRequest(view, request), config, diag)
+            shouldInterceptRequestHandler = { _, request ->
+                handleShouldInterceptRequest(request, null, config, diag)
             },
             shouldOverrideUrlLoadingHandler = { view, request ->
                 navigationHandler.handleShouldOverrideUrlLoading(view, request, config, callbacks)
@@ -998,3 +998,12 @@ class WebViewManager(
     }
 
 }
+
+
+
+
+
+
+
+
+

@@ -263,7 +263,7 @@ fun CreateGoAppScreen(
                 TypedSampleProjectsCard(
                     title = AppStringsProvider.current().sampleProjects,
                     subtitle = AppStringsProvider.current().sampleGoSubtitle,
-                    samples = remember { GoSampleManager.getSampleProjects() },
+                    samples = remember(context) { GoSampleManager.getSampleProjects(context) },
                     onSelectSample = { sample ->
                         scope.launch {
                             val result = GoSampleManager.extractSampleProject(context, sample.id)
@@ -920,3 +920,8 @@ private fun formatFileSize(bytes: Long): String {
         else -> "$bytes B"
     }
 }
+
+
+
+
+

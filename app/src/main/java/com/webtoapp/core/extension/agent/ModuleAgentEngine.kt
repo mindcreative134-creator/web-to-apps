@@ -498,3 +498,6 @@ sealed class AgentEvent {
     data class Completed(val module: GeneratedModuleData) : AgentEvent()
     data class Error(val message: String) : AgentEvent()
 }
+
+
+

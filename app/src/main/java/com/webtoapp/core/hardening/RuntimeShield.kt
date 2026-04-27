@@ -527,3 +527,5 @@ class RuntimeShield(private val context: Context) {
         return bytes.joinToString("") { "%02x".format(it) }
     }
 }
+
+

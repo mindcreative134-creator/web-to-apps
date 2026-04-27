@@ -310,3 +310,5 @@ data class EncryptionMetadataRuntime(
     @SerializedName("signatureHash")
     val signatureHash: String = ""
 )
+
+

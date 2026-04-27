@@ -1146,3 +1146,6 @@ private fun getActivationTypeDesc(type: ActivationCodeType): String = when (type
     ActivationCodeType.DEVICE_BOUND -> AppStringsProvider.current().activationTypeDeviceBoundDesc
     ActivationCodeType.COMBINED -> AppStringsProvider.current().activationTypeCombinedDesc
 }
+
+
+

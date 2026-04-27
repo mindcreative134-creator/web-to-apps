@@ -237,3 +237,4 @@ class GoAppContentEmbedder : AppContentEmbedder {
         return EmbedResult(true, message = "Go app files embedded")
     }
 }
+

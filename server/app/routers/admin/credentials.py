@@ -11,7 +11,7 @@ from app.models.credential import Credential
 from app.schemas.common import ApiResponse
 from app.dependencies import get_current_admin
 
-router = APIRouter(prefix="/admin/credentials", tags=["Admin Credentials"])
+router = APIRouter(prefix="/credentials", tags=["Admin Credentials"])
 
 class CredentialBase(BaseModel):
     username: Optional[str] = None

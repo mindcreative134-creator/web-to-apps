@@ -593,3 +593,4 @@ data class ActivationResult(
     val success: Boolean,
     val message: String
 )
+

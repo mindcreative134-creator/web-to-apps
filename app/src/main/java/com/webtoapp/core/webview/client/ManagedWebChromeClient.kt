@@ -100,3 +100,4 @@ internal class ManagedWebChromeClient(
         AppLogger.d("WebViewManager", "onCloseWindow")
     }
 }
+

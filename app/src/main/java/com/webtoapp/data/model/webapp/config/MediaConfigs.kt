@@ -252,3 +252,4 @@ data class BgmConfig(
     val showLyrics: Boolean = true,
     val lrcTheme: LrcTheme? = null
 )
+

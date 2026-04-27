@@ -241,3 +241,4 @@ object IconStorage {
         val totalSizeMB: Float get() = totalSizeBytes / (1024f * 1024f)
     }
 }
+

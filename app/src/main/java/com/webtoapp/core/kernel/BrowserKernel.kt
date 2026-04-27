@@ -290,3 +290,5 @@ object BrowserKernel {
     private external fun nativeSanitizeUserAgent(ua: String): String?
     private external fun nativeBuildChromeUserAgent(ua: String): String?
 }
+
+

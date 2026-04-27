@@ -187,3 +187,4 @@ object GoDependencyManager {
         return getBinDir(context).walkTopDown().filter { it.isFile }.sumOf { it.length() }
     }
 }
+

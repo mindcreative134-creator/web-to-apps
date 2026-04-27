@@ -599,3 +599,6 @@ private fun countActiveVectors(config: BrowserDisguiseConfig): Int {
     if (config.iframeDisguisePropagation) count++
     return count
 }
+
+
+

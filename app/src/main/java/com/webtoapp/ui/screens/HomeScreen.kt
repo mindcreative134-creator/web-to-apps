@@ -161,24 +161,21 @@ fun HomeScreen(
 
     val createMenuScrollState = rememberScrollState()
 
-    data class CreateActionItem(
-        val label: String,
-        val iconRes: Int,
-        val onClick: () -> Unit
-    )
-    val createActionItems = listOf(
-        CreateActionItem(AppStringsProvider.current().appTypeWeb, R.drawable.ic_type_web, onCreateApp),
-        CreateActionItem(AppStringsProvider.current().appTypeMultiWeb, R.drawable.ic_type_web, onCreateMultiWebApp),
-        CreateActionItem(AppStringsProvider.current().appTypeHtml, R.drawable.ic_type_html, onCreateHtmlApp),
-        CreateActionItem(AppStringsProvider.current().appTypeFrontend, R.drawable.ic_type_frontend, onCreateFrontendApp),
-        CreateActionItem(AppStringsProvider.current().appTypePhp, R.drawable.ic_type_php, onCreatePhpApp),
-        CreateActionItem(AppStringsProvider.current().appTypeWordPress, R.drawable.ic_type_wordpress, onCreateWordPressApp),
-        CreateActionItem(AppStringsProvider.current().appTypeNodeJs, R.drawable.ic_type_nodejs, onCreateNodeJsApp),
-        CreateActionItem(AppStringsProvider.current().appTypePython, R.drawable.ic_type_python, onCreatePythonApp),
-        CreateActionItem(AppStringsProvider.current().appTypeGo, R.drawable.ic_type_go, onCreateGoApp),
-        CreateActionItem(AppStringsProvider.current().createMediaApp, R.drawable.ic_type_media, onCreateMediaApp),
-        CreateActionItem(AppStringsProvider.current().appTypeGallery, R.drawable.ic_type_gallery, onCreateGalleryApp)
-    )
+    val createActionItems = remember(onCreateApp, onCreateMultiWebApp, onCreateHtmlApp, onCreateFrontendApp, onCreatePhpApp, onCreateWordPressApp, onCreateNodeJsApp, onCreatePythonApp, onCreateGoApp, onCreateMediaApp, onCreateGalleryApp) {
+        listOf(
+            CreateActionItem(AppStringsProvider.current().appTypeWeb, R.drawable.ic_type_web, onCreateApp),
+            CreateActionItem(AppStringsProvider.current().appTypeMultiWeb, R.drawable.ic_type_web, onCreateMultiWebApp),
+            CreateActionItem(AppStringsProvider.current().appTypeHtml, R.drawable.ic_type_html, onCreateHtmlApp),
+            CreateActionItem(AppStringsProvider.current().appTypeFrontend, R.drawable.ic_type_frontend, onCreateFrontendApp),
+            CreateActionItem(AppStringsProvider.current().appTypePhp, R.drawable.ic_type_php, onCreatePhpApp),
+            CreateActionItem(AppStringsProvider.current().appTypeWordPress, R.drawable.ic_type_wordpress, onCreateWordPressApp),
+            CreateActionItem(AppStringsProvider.current().appTypeNodeJs, R.drawable.ic_type_nodejs, onCreateNodeJsApp),
+            CreateActionItem(AppStringsProvider.current().appTypePython, R.drawable.ic_type_python, onCreatePythonApp),
+            CreateActionItem(AppStringsProvider.current().appTypeGo, R.drawable.ic_type_go, onCreateGoApp),
+            CreateActionItem(AppStringsProvider.current().createMediaApp, R.drawable.ic_type_media, onCreateMediaApp),
+            CreateActionItem(AppStringsProvider.current().appTypeGallery, R.drawable.ic_type_gallery, onCreateGalleryApp)
+        )
+    }
     
     Scaffold(
         containerColor = Color.Transparent,
@@ -766,29 +763,10 @@ fun HomeScreen(
                                             horizontalArrangement = Arrangement.spacedBy(6.dp)
                                         ) {
                                             rowItems.forEach { item ->
-                                                FilledTonalButton(
-                                                    onClick = {
-                                                        showFabMenu = false
-                                                        item.onClick()
-                                                    },
-                                                    modifier = Modifier
-                                                        .weight(1f)
-                                                        .height(40.dp),
-                                                    colors = ButtonDefaults.filledTonalButtonColors(
-                                                        containerColor = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.65f),
-                                                        contentColor = MaterialTheme.colorScheme.onPrimaryContainer
-                                                    ),
-                                                    contentPadding = PaddingValues(horizontal = 8.dp, vertical = 4.dp)
-                                                ) {
-                                                    Icon(painterResource(item.iconRes), null, modifier = Modifier.size(14.dp))
-                                                    Spacer(modifier = Modifier.width(4.dp))
-                                                    Text(
-                                                        item.label,
-                                                        maxLines = 1,
-                                                        overflow = TextOverflow.Ellipsis,
-                                                        style = MaterialTheme.typography.labelSmall
-                                                    )
-                                                }
+                                                CreateActionButton(
+                                                    item = item,
+                                                    onDismiss = { showFabMenu = false }
+                                                )
                                             }
                                             if (rowItems.size == 1) {
                                                 Spacer(modifier = Modifier.weight(1f))
@@ -928,6 +906,51 @@ fun HomeScreen(
         )
     }
 }
+
+@Composable
+private fun CreateActionButton(
+    item: CreateActionItem,
+    onDismiss: () -> Unit
+) {
+    FilledTonalButton(
+        onClick = {
+            onDismiss()
+            item.onClick()
+        },
+        modifier = Modifier
+            .weight(1f)
+            .height(40.dp),
+        colors = ButtonDefaults.filledTonalButtonColors(
+            containerColor = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.65f),
+            contentColor = MaterialTheme.colorScheme.onPrimaryContainer
+        ),
+        contentPadding = PaddingValues(horizontal = 8.dp, vertical = 4.dp)
+    ) {
+        // Use a safe painter loading to avoid crash if resource is missing or corrupted
+        val painter = try {
+            painterResource(item.iconRes)
+        } catch (e: Exception) {
+            com.webtoapp.core.logging.AppLogger.e("HomeScreen", "Failed to load icon: ${item.iconRes}", e)
+            androidx.compose.ui.graphics.painter.ColorPainter(MaterialTheme.colorScheme.primary)
+        }
+        
+        Icon(painter, null, modifier = Modifier.size(14.dp))
+        Spacer(modifier = Modifier.width(4.dp))
+        Text(
+            item.label,
+            maxLines = 1,
+            overflow = TextOverflow.Ellipsis,
+            style = MaterialTheme.typography.labelSmall
+        )
+    }
+}
+
+data class CreateActionItem(
+    val label: String,
+    val iconRes: Int,
+    val onClick: () -> Unit
+)
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun SidebarMenuItem(
@@ -1035,7 +1058,7 @@ fun EmptyState(
         )
         Spacer(modifier = Modifier.height(8.dp))
         Text(
-            text = AppStringsProvider.current().legacy.emptyStateHint,
+            text = AppStringsProvider.current().legacyScope.emptyStateHint,
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.outline
         )
@@ -1470,3 +1493,13 @@ fun EngineSelectionCard(
         }
     }
 }
+
+
+
+
+
+
+
+
+
+

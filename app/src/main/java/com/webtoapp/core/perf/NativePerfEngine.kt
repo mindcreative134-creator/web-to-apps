@@ -414,3 +414,4 @@ object NativePerfEngine {
     private external fun nativeMmapRead(path: String): ByteArray?
     private external fun nativeGetMemoryInfo(): LongArray?
 }
+

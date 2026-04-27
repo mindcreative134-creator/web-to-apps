@@ -281,7 +281,7 @@
     <string name="appstr_create_orientation_reversed_label" formatted="false">Reverse Locked</string>
     <string name="appstr_create_orientation_sensor_label" formatted="false">Sensor Rotation</string>
     <string name="appstr_create_orientation_sensor_landscape" formatted="false">Sensor Landscape</string>
-    <string name="appstr_create_orientation_sensor_landscape_desc" formatted="false">Switch between正向/反向 automatically in landscape</string>
+    <string name="appstr_create_orientation_sensor_landscape_desc" formatted="false">Switch between landscape/reverse automatically depending on sensor</string>
     <string name="appstr_create_orientation_sensor_landscape_hint" formatted="false">Switches between standard and reverse landscape via sensor; great for tablet games</string>
     <string name="appstr_create_orientation_sensor_portrait" formatted="false">Sensor Portrait</string>
     <string name="appstr_create_orientation_sensor_portrait_desc" formatted="false">Switch automatically within portrait bounds</string>

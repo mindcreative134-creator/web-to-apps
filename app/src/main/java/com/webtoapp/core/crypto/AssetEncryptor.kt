@@ -228,3 +228,5 @@ data class EncryptionConfig(
                enableRootDetection || enableEmulatorDetection || enableRuntimeProtection
     }
 }
+
+

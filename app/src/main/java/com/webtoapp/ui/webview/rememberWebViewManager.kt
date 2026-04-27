@@ -15,3 +15,6 @@ internal fun rememberWebViewManager(
         WebViewManager(context, adBlocker)
     }
 }
+
+
+

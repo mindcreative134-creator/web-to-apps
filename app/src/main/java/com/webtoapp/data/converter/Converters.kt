@@ -7,25 +7,25 @@ import com.google.gson.JsonElement
 import com.google.gson.JsonObject
 import com.google.gson.JsonParser
 import com.google.gson.reflect.TypeToken
-import com.webtoapp.data.model.ActivationDialogConfig
-import com.webtoapp.data.model.AdConfig
-import com.webtoapp.data.model.Announcement
-import com.webtoapp.data.model.ApkExportConfig
+import com.webtoapp.data.model.webapp.config.ActivationDialogConfig
+import com.webtoapp.data.model.webapp.config.AdConfig
+import com.webtoapp.data.model.webapp.config.Announcement
+import com.webtoapp.data.model.webapp.config.ApkExportConfig
 import com.webtoapp.data.model.AppType
-import com.webtoapp.data.model.AutoStartConfig
-import com.webtoapp.data.model.BgmConfig
-import com.webtoapp.data.model.GalleryConfig
-import com.webtoapp.data.model.HtmlConfig
-import com.webtoapp.data.model.MediaConfig
-import com.webtoapp.data.model.SplashConfig
-import com.webtoapp.data.model.TranslateConfig
-import com.webtoapp.data.model.WebViewConfig
-import com.webtoapp.data.model.NodeJsConfig
-import com.webtoapp.data.model.WordPressConfig
-import com.webtoapp.data.model.PhpAppConfig
-import com.webtoapp.data.model.PythonAppConfig
-import com.webtoapp.data.model.GoAppConfig
-import com.webtoapp.data.model.MultiWebConfig
+import com.webtoapp.data.model.webapp.config.AutoStartConfig
+import com.webtoapp.data.model.webapp.config.BgmConfig
+import com.webtoapp.data.model.webapp.config.GalleryConfig
+import com.webtoapp.data.model.webapp.config.HtmlConfig
+import com.webtoapp.data.model.webapp.config.MediaConfig
+import com.webtoapp.data.model.webapp.config.SplashConfig
+import com.webtoapp.data.model.webapp.config.TranslateConfig
+import com.webtoapp.data.model.webapp.config.WebViewConfig
+import com.webtoapp.data.model.webapp.config.NodeJsConfig
+import com.webtoapp.data.model.webapp.config.WordPressConfig
+import com.webtoapp.data.model.webapp.config.PhpAppConfig
+import com.webtoapp.data.model.webapp.config.PythonAppConfig
+import com.webtoapp.data.model.webapp.config.GoAppConfig
+import com.webtoapp.data.model.webapp.config.MultiWebConfig
 import com.webtoapp.core.activation.ActivationCode
 import java.lang.reflect.Type
 
@@ -359,3 +359,7 @@ class Converters {
     fun toCloudAppConfig(value: String): com.webtoapp.data.model.CloudAppConfig? = fromJson(value)
 
 }
+
+
+
+

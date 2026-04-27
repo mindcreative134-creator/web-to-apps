@@ -177,3 +177,4 @@ object RuntimeAssetEmbedder {
         return fileCount to totalSize
     }
 }
+

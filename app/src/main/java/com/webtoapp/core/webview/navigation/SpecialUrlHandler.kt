@@ -237,3 +237,4 @@ internal class SpecialUrlHandler(
         return urlPolicy.normalizeHttpUrlForSecurity(trimmed)
     }
 }
+

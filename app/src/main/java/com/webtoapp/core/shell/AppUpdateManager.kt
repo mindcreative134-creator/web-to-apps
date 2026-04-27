@@ -320,3 +320,4 @@ class AppUpdateManager(private val context: Context) {
         unregisterDownloadReceiver()
     }
 }
+

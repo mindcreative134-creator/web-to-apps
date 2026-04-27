@@ -32,6 +32,7 @@ import com.webtoapp.ui.theme.LocalAppTheme
 import kotlin.math.cos
 import kotlin.math.sin
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 
 /**
  * Vue. js icon
@@ -214,7 +215,8 @@ fun SampleProjectsCard(
     onSelectSample: (SampleProject) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    val samples = remember { SampleProjectManager.getSampleProjects() }
+    val context = LocalContext.current
+    val samples = remember(context) { SampleProjectManager.getSampleProjects(context) }
     
     val theme = LocalAppTheme.current
     
@@ -445,3 +447,6 @@ private fun getFrameworkColor(framework: FrontendFramework): Color {
         FrontendFramework.UNKNOWN -> Color.Gray
     }
 }
+
+
+

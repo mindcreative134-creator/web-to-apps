@@ -1,14 +1,550 @@
-<?xml version='1.0' encoding='utf-8'?>
-<resources><string name="appstr_legacy_advanced" formatted="false">高级</string><string name="appstr_legacy_advanced_feature_badge" formatted="false">高级</string><string name="appstr_legacy_agent_state_completed" formatted="false">完成</string><string name="appstr_legacy_agent_state_error" formatted="false">错误</string><string name="appstr_legacy_agent_state_fixing" formatted="false">修复中</string><string name="appstr_legacy_agent_state_generating" formatted="false">生成中</string><string name="appstr_legacy_agent_state_idle" formatted="false">空闲</string><string name="appstr_legacy_agent_state_security_scan" formatted="false">安全扫描</string><string name="appstr_legacy_agent_state_syntax_check" formatted="false">语法检查</string><string name="appstr_legacy_agent_state_thinking" formatted="false">思考中</string><string name="appstr_legacy_agent_state_tool_calling" formatted="false">调用工具</string><string name="appstr_legacy_alias" formatted="false">别名</string><string name="appstr_legacy_alias_optional" formatted="false">别名（可选）</string><string name="appstr_legacy_allow_skip" formatted="false">允许点击跳过</string><string name="appstr_legacy_allow_skip_hint" formatted="false">用户可点击屏幕跳过启动画面</string><string name="appstr_legacy_always_dark" formatted="false">始终深色</string><string name="appstr_legacy_always_light" formatted="false">始终浅色</string><string name="appstr_legacy_always_use_dark_theme" formatted="false">始终使用深色主题</string><string name="appstr_legacy_always_use_light_theme" formatted="false">始终使用浅色主题</string><string name="appstr_legacy_and_more_tracks" formatted="false">还有 %d 首...</string><string name="appstr_legacy_anim_bouncy" formatted="false">弹性活力</string><string name="appstr_legacy_anim_dramatic" formatted="false">戏剧张力</string><string name="appstr_legacy_anim_elegant" formatted="false">优雅缓慢</string><string name="appstr_legacy_anim_playful" formatted="false">俏皮跳跃</string><string name="appstr_legacy_anim_smooth" formatted="false">丝滑流畅</string><string name="appstr_legacy_anim_snappy" formatted="false">干脆利落</string><string name="appstr_legacy_anti_detection_enabled" formatted="false">已启用防检测保护</string><string name="appstr_legacy_apk_architecture" formatted="false">APK 架构</string><string name="appstr_legacy_apk_export_config" formatted="false">APK 导出配置</string><string name="appstr_legacy_app_title" formatted="false">WebToApp</string><string name="appstr_legacy_arch_arm32" formatted="false">仅 32 位</string><string name="appstr_legacy_arch_arm32_desc" formatted="false">兼容老旧设备，APK体积较小</string><string name="appstr_legacy_arch_arm64" formatted="false">仅 64 位</string><string name="appstr_legacy_arch_arm64_desc" formatted="false">适合现代设备，APK体积较小</string><string name="appstr_legacy_arch_universal" formatted="false">通用</string><string name="appstr_legacy_arch_universal_desc" formatted="false">支持所有设备，APK体积较大</string><string name="appstr_legacy_auto_fix_desc" formatted="false">自动修复检测到的语法错误</string><string name="appstr_legacy_auto_switch_by_system" formatted="false">根据系统设置自动切换</string><string name="appstr_legacy_auto_translate_on_load" formatted="false">页面加载后自动翻译</string><string name="appstr_legacy_auto_translate_on_load_hint" formatted="false">页面加载完成后自动执行翻译，无需手动点击按钮</string><string name="appstr_legacy_available_for" formatted="false">可用于</string><string name="appstr_legacy_back" formatted="false">返回</string><string name="appstr_legacy_back_to_modify" formatted="false">返回修改</string><string name="appstr_legacy_background_run_feature" formatted="false">后台运行：退出应用后继续在后台运行</string><string name="appstr_legacy_background_type" formatted="false">背景类型</string><string name="appstr_legacy_basic" formatted="false">基础</string><string name="appstr_legacy_batch_import_btn" formatted="false">导入</string><string name="appstr_legacy_batch_import_from_bookmarks" formatted="false">从书签文件导入</string><string name="appstr_legacy_batch_import_from_text" formatted="false">从文本导入</string><string name="appstr_legacy_batch_import_hint" formatted="false">每行一个URL，格式：URL 或 名称|URL</string><string name="appstr_legacy_batch_import_parsed" formatted="false">已解析 %d 个URL</string><string name="appstr_legacy_batch_import_success" formatted="false">成功导入 %d 个应用</string><string name="appstr_legacy_batch_import_title" formatted="false">批量导入</string><string name="appstr_legacy_bgm_description" formatted="false">为应用添加背景音乐，支持循环或顺序播放</string><string name="appstr_legacy_bgm_title" formatted="false">背景音乐</string><string name="appstr_legacy_brief_describe_scheme" formatted="false">简要描述方案用途</string><string name="appstr_legacy_browse_all" formatted="false">浏览全部</string><string name="appstr_legacy_build_dialog_building" formatted="false">正在构建...</string><string name="appstr_legacy_build_dialog_title" formatted="false">构建 APK</string><string name="appstr_legacy_builtin_bewly_cat" formatted="false">BewlyCat (B站增强)</string><string name="appstr_legacy_builtin_bewly_cat_desc" formatted="false">为 B站提供美观的界面增强，优化首页、搜索、视频页面等</string><string name="appstr_legacy_builtin_bilibili_extractor" formatted="false">B站视频</string><string name="appstr_legacy_builtin_bilibili_extractor_desc" formatted="false">提取B站最高画质视频和音频流</string><string name="appstr_legacy_cannot_open_image" formatted="false">无法打开图片</string><string name="appstr_legacy_cannot_parse_image" formatted="false">无法解析图片</string><string name="appstr_legacy_categories_and_blocks" formatted="false">%d 分类 · %d 代码块</string><string name="appstr_legacy_category_group_appearance" formatted="false">外观样式</string><string name="appstr_legacy_category_group_content" formatted="false">内容处理</string><string name="appstr_legacy_category_group_data" formatted="false">数据工具</string><string name="appstr_legacy_category_group_developer" formatted="false">开发调试</string><string name="appstr_legacy_category_group_function" formatted="false">功能增强</string><string name="appstr_legacy_category_group_life" formatted="false">生活工具</string><string name="appstr_legacy_category_group_media" formatted="false">媒体处理</string><string name="appstr_legacy_category_group_other" formatted="false">其他</string><string name="appstr_legacy_category_group_security" formatted="false">安全隐私</string><string name="appstr_legacy_character_count" formatted="false">个字符</string><string name="appstr_legacy_check_syntax_desc" formatted="false">检查 HTML/CSS/JavaScript 语法错误</string><string name="appstr_legacy_clear_file" formatted="false">清除</string><string name="appstr_legacy_click_button_to_experience" formatted="false">点击下方按钮体验效果</string><string name="appstr_legacy_click_to_configure_ai_model" formatted="false">点击配置 AI 模型</string><string name="appstr_legacy_click_to_select_file" formatted="false">点击选择文件</string><string name="appstr_legacy_click_to_select_or_use_button" formatted="false">点击选择或使用下方按钮</string><string name="appstr_legacy_clone_install" formatted="false">克隆安装</string><string name="appstr_legacy_clone_success" formatted="false">克隆成功，请确认安装</string><string name="appstr_legacy_close_dialog" formatted="false">关闭</string><string name="appstr_legacy_code_block_library" formatted="false">代码块库</string><string name="appstr_legacy_code_block_library_title" formatted="false">代码块库</string><string name="appstr_legacy_code_blocks_count" formatted="false">%d 个代码块</string><string name="appstr_legacy_code_editor_title" formatted="false">代码编辑器</string><string name="appstr_legacy_code_generation_complete" formatted="false">代码生成完成</string><string name="appstr_legacy_coding" formatted="false">编程</string><string name="appstr_legacy_collapse_expand" formatted="false">收起/展开</string><string name="appstr_legacy_common_config" formatted="false">通用配置</string><string name="appstr_legacy_configure_model_hint" formatted="false">请先在 AI 设置中配置支持模块开发功能的模型</string><string name="appstr_legacy_confirm_crop" formatted="false">确认裁剪</string><string name="appstr_legacy_console" formatted="false">控制台</string><string name="appstr_legacy_country_region" formatted="false">国家/地区</string><string name="appstr_legacy_country_region_hint" formatted="false">如：日本、韩国、英国...</string><string name="appstr_legacy_crop_status_bar_bg" formatted="false">裁剪状态栏背景</string><string name="appstr_legacy_dark_mode_preview" formatted="false">深色模式</string><string name="appstr_legacy_day_fri" formatted="false">五</string><string name="appstr_legacy_day_mon" formatted="false">一</string><string name="appstr_legacy_day_sat" formatted="false">六</string><string name="appstr_legacy_day_sun" formatted="false">日</string><string name="appstr_legacy_day_thu" formatted="false">四</string><string name="appstr_legacy_day_tue" formatted="false">二</string><string name="appstr_legacy_day_wed" formatted="false">三</string><string name="appstr_legacy_deep_link_custom_hosts_hint" formatted="false">主域名和 www 子域名会自动匹配，此处可添加其他需要拦截的域名（每行一个）</string><string name="appstr_legacy_deep_link_custom_hosts_label" formatted="false">额外匹配域名</string><string name="appstr_legacy_deep_link_host" formatted="false">匹配域名: %s</string><string name="appstr_legacy_deep_link_setting" formatted="false">链接打开</string><string name="appstr_legacy_deep_link_setting_hint" formatted="false">允许从外部打开匹配的链接</string><string name="appstr_legacy_delete_action" formatted="false">Delete</string><string name="appstr_legacy_delete_confirm_message" formatted="false">确定要删除这个应用吗？</string><string name="appstr_legacy_delete_confirm_title" formatted="false">确认删除</string><string name="appstr_legacy_delete_icon" formatted="false">删除图标</string><string name="appstr_legacy_delete_icon_confirm" formatted="false">确定要从图标库中删除此图标吗？</string><string name="appstr_legacy_dep_dl_eta" formatted="false">剩余时间</string><string name="appstr_legacy_dep_dl_pause" formatted="false">暂停</string><string name="appstr_legacy_dep_dl_paused" formatted="false">已暂停</string><string name="appstr_legacy_dep_dl_resume" formatted="false">继续</string><string name="appstr_legacy_dep_dl_speed" formatted="false">速度</string><string name="appstr_legacy_dep_dl_start_time" formatted="false">开始时间</string><string name="appstr_legacy_dep_dl_url" formatted="false">下载地址</string><string name="appstr_legacy_dependency_count_label" formatted="false">依赖数量</string><string name="appstr_legacy_dependency_count_value" formatted="false">%d 个</string><string name="appstr_legacy_describe_icon" formatted="false">描述你想要的图标</string><string name="appstr_legacy_details" formatted="false">详情</string><string name="appstr_legacy_development_failed" formatted="false">开发失败</string><string name="appstr_legacy_discard_changes" formatted="false">放弃</string><string name="appstr_legacy_disguise_hint" formatted="false">隐藏应用真实身份，防止被识别或卸载</string><string name="appstr_legacy_disguise_warning" formatted="false">ℹ️ 提示：伪装功能需要设备管理器权限才能完全生效。多图标功能在部分设备上可能受限。</string><string name="appstr_legacy_display_frequency" formatted="false">显示频率</string><string name="appstr_legacy_docs_generator_detected" formatted="false">检测到生成器</string><string name="appstr_legacy_docs_project_ready" formatted="false">文档站点已就绪</string><string name="appstr_legacy_docs_routing_mode" formatted="false">路由模式</string><string name="appstr_legacy_docs_select_project" formatted="false">选择文档站点目录</string><string name="appstr_legacy_downloading_version" formatted="false">正在下载 %s ...</string><string name="appstr_legacy_draggable_switch" formatted="false">允许拖动</string><string name="appstr_legacy_edit_frontend_app" formatted="false">编辑前端项目</string><string name="appstr_legacy_edit_html_desc" formatted="false">在指定位置替换、插入或删除代码片段</string><string name="appstr_legacy_empty_state_hint" formatted="false">点击下方按钮创建您的第一个应用</string><string name="appstr_legacy_enable_animation" formatted="false">启用动画</string><string name="appstr_legacy_enable_black_tech" formatted="false">启用黑科技功能</string><string name="appstr_legacy_enable_disguise" formatted="false">启用应用伪装</string><string name="appstr_legacy_encoding_and_size" formatted="false">编码: %s | 大小: %s</string><string name="appstr_legacy_encrypt_level_fast" formatted="false">快速（较低安全性）</string><string name="appstr_legacy_encrypt_level_high" formatted="false">高强度（较慢）</string><string name="appstr_legacy_encrypt_level_paranoid" formatted="false">极高强度（很慢）</string><string name="appstr_legacy_encrypt_level_standard" formatted="false">标准（推荐）</string><string name="appstr_legacy_encryption_enabled" formatted="false">已启用加密保护</string><string name="appstr_legacy_encryption_level" formatted="false">加密级别</string><string name="appstr_legacy_enter_activation_code" formatted="false">输入激活码</string><string name="appstr_legacy_enter_code_to_continue" formatted="false">请输入激活码以继续使用</string><string name="appstr_legacy_enter_scheme_name" formatted="false">输入方案名称</string><string name="appstr_legacy_every_launch" formatted="false">每次启动</string><string name="appstr_legacy_export_data" formatted="false">导出数据</string><string name="appstr_legacy_favicon_fetch_failed" formatted="false">无法获取网站图标</string><string name="appstr_legacy_favicon_fetch_success" formatted="false">已获取网站图标</string><string name="appstr_legacy_feature_auto_detect_framework" formatted="false">自动检测项目类型和框架</string><string name="appstr_legacy_feature_esbuild_optional" formatted="false">esbuild 高性能构建（可选）</string><string name="appstr_legacy_feature_html_optimize" formatted="false">HTML 应用 JS/CSS 压缩优化</string><string name="appstr_legacy_feature_import_built_projects" formatted="false">导入已构建的 Vue/React/Angular 项目</string><string name="appstr_legacy_feature_node_ts_pre_compile" formatted="false">Node.js TypeScript 预编译</string><string name="appstr_legacy_feature_static_assets" formatted="false">静态资源自动处理</string><string name="appstr_legacy_feature_support_vite_webpack" formatted="false">支持 Vite/Webpack 构建输出</string><string name="appstr_legacy_feature_type_script_support" formatted="false">TypeScript 项目支持</string><string name="appstr_legacy_fetch_website_icon" formatted="false">获取图标</string><string name="appstr_legacy_file_created_version" formatted="false">已创建文件: %s (%s)</string><string name="appstr_legacy_file_label" formatted="false">文件: %s</string><string name="appstr_legacy_fix_loose_eq" formatted="false">将 == 替换为 ===</string><string name="appstr_legacy_fix_var_to_let" formatted="false">将 var 替换为 let</string><string name="appstr_legacy_found_results" formatted="false">找到 %d 个结果</string><string name="appstr_legacy_framework_label" formatted="false">框架</string><string name="appstr_legacy_free" formatted="false">免费</string><string name="appstr_legacy_general_chat_desc" formatted="false">通用 AI 对话功能</string><string name="appstr_legacy_generate_icon" formatted="false">生成图标</string><string name="appstr_legacy_generate_image_desc" formatted="false">使用 AI 生成图像并嵌入到 HTML 中作为插图</string><string name="appstr_legacy_generating_code_chars" formatted="false">正在生成代码 (%d 字符)</string><string name="appstr_legacy_generating_html_code" formatted="false">正在生成 HTML 代码...</string><string name="appstr_legacy_generation_cancelled" formatted="false">生成已取消</string><string name="appstr_legacy_generation_complete" formatted="false">生成完成</string><string name="appstr_legacy_generation_failed" formatted="false">生成失败: %s</string><string name="appstr_legacy_generation_result" formatted="false">生成结果</string><string name="appstr_legacy_get_console_logs_desc" formatted="false">获取页面运行时的 console.log 输出和错误信息</string><string name="appstr_legacy_go_back_to_modify" formatted="false">返回修改</string><string name="appstr_legacy_go_binary_size" formatted="false">二进制大小</string><string name="appstr_legacy_go_preview_failed" formatted="false">Go 应用预览启动失败</string><string name="appstr_legacy_go_project_not_found" formatted="false">Go 项目文件不存在</string><string name="appstr_legacy_go_project_ready" formatted="false">Go 服务已就绪</string><string name="appstr_legacy_go_select_binary" formatted="false">选择 Go 二进制文件</string><string name="appstr_legacy_go_select_project" formatted="false">选择 Go 项目目录</string><string name="appstr_legacy_go_starting_preview" formatted="false">正在启动 Go 应用预览...</string><string name="appstr_legacy_got_it_cute" formatted="false">知道啦~ 💕</string><string name="appstr_legacy_hex_color" formatted="false">十六进制颜色</string><string name="appstr_legacy_hex_color_hint" formatted="false">如: FF5722 或 80FF5722</string><string name="appstr_legacy_hide_original_icon" formatted="false">隐藏原始图标</string><string name="appstr_legacy_hide_original_icon_desc" formatted="false">从启动器隐藏原始应用图标</string><string name="appstr_legacy_hosts1_hosts_lite_desc" formatted="false">轻量级广告和跟踪拦截</string><string name="appstr_legacy_hosts_ad_away_desc" formatted="false">AdAway 默认广告拦截列表</string><string name="appstr_legacy_hosts_ad_guard_desc" formatted="false">AdGuard DNS 过滤规则</string><string name="appstr_legacy_hosts_anti_a_d_desc" formatted="false">中文区广告拦截规则</string><string name="appstr_legacy_hosts_steven_black_desc" formatted="false">统一的 hosts 文件，拦截广告和恶意软件</string><string name="appstr_legacy_hot_tag" formatted="false">🔥 热门</string><string name="appstr_legacy_html_code_placeholder" formatted="false">在此输入 HTML 代码...</string><string name="appstr_legacy_i_know" formatted="false">我知道了</string><string name="appstr_legacy_icon" formatted="false">图标</string><string name="appstr_legacy_icon_description_example" formatted="false">例如：一个蓝色渐变的音乐播放器图标</string><string name="appstr_legacy_icon_generation_desc" formatted="false">使用 AI 生成应用图标</string><string name="appstr_legacy_icon_library" formatted="false">图标库</string><string name="appstr_legacy_icon_library_empty" formatted="false">图标库为空</string><string name="appstr_legacy_icon_library_empty_hint" formatted="false">使用AI生成图标后会自动保存到这里</string><string name="appstr_legacy_import_data" formatted="false">导入数据</string><string name="appstr_legacy_in_progress" formatted="false">进行中</string><string name="appstr_legacy_initial_version_release" formatted="false">初始版本发布</string><string name="appstr_legacy_input_java_script" formatted="false">输入 JavaScript...</string><string name="appstr_legacy_insert" formatted="false">插入</string><string name="appstr_legacy_insert_code" formatted="false">插入代码</string><string name="appstr_legacy_install_app" formatted="false">安装</string><string name="appstr_legacy_inter_glow" formatted="false">光晕扩散</string><string name="appstr_legacy_inter_morph" formatted="false">形态变换</string><string name="appstr_legacy_inter_particle" formatted="false">粒子迸发</string><string name="appstr_legacy_inter_ripple" formatted="false">水波涟漪</string><string name="appstr_legacy_inter_scale" formatted="false">缩放脉冲</string><string name="appstr_legacy_inter_shake" formatted="false">微震反馈</string><string name="appstr_legacy_interaction_style_label" formatted="false">交互风格: %s</string><string name="appstr_legacy_isolated_browser_environment" formatted="false">独立浏览器环境：支持指纹伪装、多开隔离</string><string name="appstr_legacy_isolated_environment" formatted="false">独立环境</string><string name="appstr_legacy_isolation_level" formatted="false">隔离级别</string><string name="appstr_legacy_just_now" formatted="false">刚刚</string><string name="appstr_legacy_keep_editing" formatted="false">继续编辑</string><string name="appstr_legacy_label_advanced_config" formatted="false">高级配置</string><string name="appstr_legacy_label_app_info" formatted="false">应用信息</string><string name="appstr_legacy_label_app_name" formatted="false">应用名称</string><string name="appstr_legacy_label_basic_info" formatted="false">基本信息</string><string name="appstr_legacy_label_display_settings" formatted="false">显示设置</string><string name="appstr_legacy_label_icon" formatted="false">应用图标</string><string name="appstr_legacy_label_url" formatted="false">网站地址</string><string name="appstr_legacy_lang_arabic" formatted="false">阿拉伯语</string><string name="appstr_legacy_lang_chinese" formatted="false">中文</string><string name="appstr_legacy_lang_english" formatted="false">英文</string><string name="appstr_legacy_lang_japanese" formatted="false">日文</string><string name="appstr_legacy_launch_time" formatted="false">启动时间</string><string name="appstr_legacy_learn_more" formatted="false">了解更多</string><string name="appstr_legacy_light_mode_preview" formatted="false">浅色模式</string><string name="appstr_legacy_lines" formatted="false">行</string><string name="appstr_legacy_link_address" formatted="false">链接地址（可选）</string><string name="appstr_legacy_link_button_text" formatted="false">链接按钮文字</string><string name="appstr_legacy_link_text" formatted="false">链接文字</string><string name="appstr_legacy_link_url" formatted="false">链接地址（可选）</string><string name="appstr_legacy_load_image_failed" formatted="false">加载图片失败: %s</string><string name="appstr_legacy_loop_playback" formatted="false">循环播放</string><string name="appstr_legacy_lrc_anim_fade" formatted="false">淡入淡出</string><string name="appstr_legacy_lrc_anim_karaoke" formatted="false">卡拉OK高亮</string><string name="appstr_legacy_lrc_anim_none" formatted="false">无动画</string><string name="appstr_legacy_lrc_anim_scale" formatted="false">缩放</string><string name="appstr_legacy_lrc_anim_slide_left" formatted="false">向左滑动</string><string name="appstr_legacy_lrc_anim_slide_up" formatted="false">向上滑动</string><string name="appstr_legacy_lrc_anim_typewriter" formatted="false">打字机</string><string name="appstr_legacy_lrc_generation_desc" formatted="false">AI 生成 LRC 歌词文件</string><string name="appstr_legacy_lrc_pos_bottom" formatted="false">底部</string><string name="appstr_legacy_lrc_pos_center" formatted="false">居中</string><string name="appstr_legacy_lrc_pos_top" formatted="false">顶部</string><string name="appstr_legacy_lrc_theme_classic" formatted="false">经典</string><string name="appstr_legacy_lrc_theme_dark" formatted="false">暗夜</string><string name="appstr_legacy_lrc_theme_default" formatted="false">默认</string><string name="appstr_legacy_lrc_theme_energetic" formatted="false">活力</string><string name="appstr_legacy_lrc_theme_karaoke" formatted="false">卡拉OK</string><string name="appstr_legacy_lrc_theme_minimal" formatted="false">极简</string><string name="appstr_legacy_lrc_theme_neon" formatted="false">霓虹</string><string name="appstr_legacy_lrc_theme_romantic" formatted="false">浪漫</string><string name="appstr_legacy_material_design3_u_i" formatted="false">Material Design 3 界面</string><string name="appstr_legacy_media_content" formatted="false">媒体内容</string><string name="appstr_legacy_model_id" formatted="false">模型 ID</string><string name="appstr_legacy_model_id_hint" formatted="false">例如：gpt-4o-mini</string><string name="appstr_legacy_modify_app" formatted="false">Modify app</string><string name="appstr_legacy_modify_config" formatted="false">修改配置</string><string name="appstr_legacy_more" formatted="false">更多</string><string name="appstr_legacy_my_apps" formatted="false">我的应用</string><string name="appstr_legacy_network_request_failed" formatted="false">网络请求失败</string><string name="appstr_legacy_new_feature_badge" formatted="false">新功能</string><string name="appstr_legacy_new_file" formatted="false">新文件</string><string name="appstr_legacy_new_message" formatted="false">新消息</string><string name="appstr_legacy_next_step" formatted="false">Next</string><string name="appstr_legacy_next_step_time_align" formatted="false">下一步：时间对齐</string><string name="appstr_legacy_no_available_models" formatted="false">暂无可用模型</string><string name="appstr_legacy_no_console_messages" formatted="false">暂无控制台消息</string><string name="appstr_legacy_no_matching_code_blocks" formatted="false">没有找到匹配的代码块</string><string name="appstr_legacy_no_model_configured" formatted="false">未配置模型</string><string name="appstr_legacy_node_preview_failed" formatted="false">Node.js 应用预览启动失败</string><string name="appstr_legacy_node_project_not_found" formatted="false">Node.js 项目文件不存在</string><string name="appstr_legacy_node_starting_preview" formatted="false">正在启动 Node.js 应用预览...</string><string name="appstr_legacy_notes" formatted="false">注意事项</string><string name="appstr_legacy_notes_content" formatted="false">• 需要配置 AI API 密钥才能使用
-• 复杂功能可能需要多次调整
-• 建议在测试页面验证效果</string><string name="appstr_legacy_ok_good" formatted="false">好的 👍</string><string name="appstr_legacy_okay_nature" formatted="false">🌱 好的</string><string name="appstr_legacy_or_write_directly" formatted="false">或直接编写</string><string name="appstr_legacy_orientation_horizontal" formatted="false">水平排列</string><string name="appstr_legacy_orientation_vertical" formatted="false">垂直排列</string><string name="appstr_legacy_original_app" formatted="false">原应用</string><string name="appstr_legacy_original_image" formatted="false">原始图片</string><string name="appstr_legacy_ota_download_complete" formatted="false">下载完成，点击安装</string><string name="appstr_legacy_ota_download_failed" formatted="false">下载失败，请重试</string><string name="appstr_legacy_ota_downloading" formatted="false">正在下载更新...</string><string name="appstr_legacy_ota_installing" formatted="false">正在安装...</string><string name="appstr_legacy_ota_later" formatted="false">稍后</string><string name="appstr_legacy_ota_new_version_found" formatted="false">发现新版本 v%s</string><string name="appstr_legacy_ota_update_channel" formatted="false">应用更新</string><string name="appstr_legacy_ota_update_channel_desc" formatted="false">显示应用更新下载进度和安装通知</string><string name="appstr_legacy_ota_update_now" formatted="false">立即更新</string><string name="appstr_legacy_output_dir_label" formatted="false">输出目录</string><string name="appstr_legacy_package_manager_label" formatted="false">包管理器</string><string name="appstr_legacy_particle" formatted="false">粒子</string><string name="appstr_legacy_perm_group_advanced" formatted="false">高级权限</string><string name="appstr_legacy_perm_group_basic" formatted="false">基础权限</string><string name="appstr_legacy_perm_group_device" formatted="false">设备权限</string><string name="appstr_legacy_perm_group_file" formatted="false">文件权限</string><string name="appstr_legacy_perm_group_interaction" formatted="false">用户交互</string><string name="appstr_legacy_perm_group_media_perm" formatted="false">媒体权限</string><string name="appstr_legacy_perm_group_network" formatted="false">网络权限</string><string name="appstr_legacy_perm_group_storage" formatted="false">存储权限</string><string name="appstr_legacy_please_activate_app" formatted="false">请先激活应用</string><string name="appstr_legacy_popup_announcement" formatted="false">弹窗公告</string><string name="appstr_legacy_pos_bottom_center" formatted="false">下中</string><string name="appstr_legacy_pos_bottom_left" formatted="false">左下</string><string name="appstr_legacy_pos_bottom_right" formatted="false">右下</string><string name="appstr_legacy_pos_middle_center" formatted="false">居中</string><string name="appstr_legacy_pos_middle_left" formatted="false">左中</string><string name="appstr_legacy_pos_middle_right" formatted="false">右中</string><string name="appstr_legacy_pos_top_center" formatted="false">上中</string><string name="appstr_legacy_pos_top_left" formatted="false">左上</string><string name="appstr_legacy_pos_top_right" formatted="false">右上</string><string name="appstr_legacy_preview_announcement" formatted="false">预览公告效果</string><string name="appstr_legacy_preview_announcement_effect" formatted="false">预览公告效果</string><string name="appstr_legacy_preview_lrc_hint" formatted="false">预览生成的 LRC 效果，确认无误后保存</string><string name="appstr_legacy_previous_step" formatted="false">Previous</string><string name="appstr_legacy_project_template_export" formatted="false">项目模板导出</string><string name="appstr_legacy_provider" formatted="false">供应商</string><string name="appstr_legacy_provider_category_aggregator" formatted="false">聚合平台</string><string name="appstr_legacy_provider_category_chinese" formatted="false">国内供应商</string><string name="appstr_legacy_provider_category_custom" formatted="false">自定义</string><string name="appstr_legacy_provider_category_international" formatted="false">国际供应商</string><string name="appstr_legacy_provider_category_recommended" formatted="false">推荐</string><string name="appstr_legacy_provider_category_self_hosted" formatted="false">本地/自托管</string><string name="appstr_legacy_pwa_offline_strategy_label" formatted="false">缓存策略</string><string name="appstr_legacy_pwa_offline_subtitle" formatted="false">注入 Service Worker 缓存层，支持离线浏览已访问页面</string><string name="appstr_legacy_pwa_offline_title" formatted="false">PWA 离线支持</string><string name="appstr_legacy_pwa_strategy_cache_first" formatted="false">缓存优先 — 最快速度加载，内容可能过时</string><string name="appstr_legacy_pwa_strategy_network_first" formatted="false">网络优先（推荐）— 优先使用最新内容，离线时用缓存</string><string name="appstr_legacy_pwa_strategy_stale_while_revalidate" formatted="false">先缓存后更新 — 立即显示缓存，后台静默更新</string><string name="appstr_legacy_py_no_static_content" formatted="false">Python 项目中未找到可显示的静态文件
-（后端应用需要 Python 运行时支持）</string><string name="appstr_legacy_py_preview_failed" formatted="false">Python 应用预览启动失败</string><string name="appstr_legacy_py_project_not_found" formatted="false">Python 项目文件不存在</string><string name="appstr_legacy_py_project_ready" formatted="false">Python 项目已就绪</string><string name="appstr_legacy_py_select_project" formatted="false">选择 Python 项目目录</string><string name="appstr_legacy_py_server_type" formatted="false">服务器类型</string><string name="appstr_legacy_py_starting_preview" formatted="false">正在启动 Python 应用预览...</string><string name="appstr_legacy_quick_experience" formatted="false">快速体验</string><string name="appstr_legacy_quick_experience_frontend" formatted="false">快速体验前端项目导入</string><string name="appstr_legacy_quick_insert_code_snippets" formatted="false">快速插入常用代码片段</string><string name="appstr_legacy_quick_prompt1" formatted="false">创建一个现代简约的个人主页，使用TailwindCSS，包含导航、英雄区、作品展示、联系方式。</string><string name="appstr_legacy_quick_prompt2" formatted="false">做一个玻璃拟态风格的登录页面，深色渐变背景，有邮箱密码输入和社交登录按钮。</string><string name="appstr_legacy_quick_prompt3" formatted="false">创建一个赛博朋克风格的404错误页面，有霓虹效果和故障艺术动画。</string><string name="appstr_legacy_quick_prompt4" formatted="false">做一个音乐播放器界面，暗黑主题，有唱片旋转动画、进度条、播放控制按钮。</string><string name="appstr_legacy_quick_prompt5" formatted="false">创建一个天气卡片组件，根据天气类型显示不同的图标和背景渐变。</string><string name="appstr_legacy_quick_prompt6" formatted="false">做一个响应式的图片画廊，瀑布流布局，点击图片有灯箱效果。</string><string name="appstr_legacy_quick_prompt7" formatted="false">创建一个待办事项应用，有添加、完成、删除功能，数据存储在localStorage。</string><string name="appstr_legacy_quick_prompt8" formatted="false">做一个倒计时页面，显示距离某个日期的天时分秒，有翻牌动画效果。</string><string name="appstr_legacy_random_name" formatted="false">随机</string><string name="appstr_legacy_random_name_tooltip" formatted="false">点击生成随机应用名称</string><string name="appstr_legacy_received_gift" formatted="false">🎁 收到啦</string><string name="appstr_legacy_regenerate" formatted="false">重新生成</string><string name="appstr_legacy_requirement_tips" formatted="false">需求描述技巧</string><string name="appstr_legacy_requirement_tips_content" formatted="false">• 描述具体的功能效果
-• 说明目标网站或页面类型
-• 可以参考示例需求的写法</string><string name="appstr_legacy_resource_encryption" formatted="false">资源加密</string><string name="appstr_legacy_rules_animation" formatted="false">动画效果</string><string name="appstr_legacy_rules_animation_desc" formatted="false">注重动画和交互效果</string><string name="appstr_legacy_rules_chinese" formatted="false">中文对话</string><string name="appstr_legacy_rules_chinese_desc" formatted="false">使用中文进行所有交流</string><string name="appstr_legacy_rules_form" formatted="false">表单页面</string><string name="appstr_legacy_rules_form_desc" formatted="false">适合创建表单和数据收集页面</string><string name="appstr_legacy_rules_game" formatted="false">游戏开发</string><string name="appstr_legacy_rules_game_desc" formatted="false">适合开发小游戏</string><string name="appstr_legacy_run" formatted="false">运行</string><string name="appstr_legacy_safe" formatted="false">安全</string><string name="appstr_legacy_sample_node_express_desc" formatted="false">完整的待办事项应用，支持添加/完成/删除任务，Material Design 风格 UI</string><string name="appstr_legacy_sample_node_express_name" formatted="false">待办事项应用</string><string name="appstr_legacy_sample_node_fastify_desc" formatted="false">实时系统监控仪表盘，显示 CPU/内存/请求统计，深色主题</string><string name="appstr_legacy_sample_node_fastify_name" formatted="false">系统监控仪表盘</string><string name="appstr_legacy_sample_node_koa_desc" formatted="false">Markdown 笔记应用，支持创建/编辑/搜索笔记，实时预览</string><string name="appstr_legacy_sample_node_koa_name" formatted="false">Markdown 笔记</string><string name="appstr_legacy_sample_node_subtitle" formatted="false">快速体验 Node.js 项目导入</string><string name="appstr_legacy_sample_projects" formatted="false">示例项目</string><string name="appstr_legacy_sample_react_todo_desc" formatted="false">React 18 待办事项应用，展示 Hooks 用法</string><string name="appstr_legacy_sample_react_todo_name" formatted="false">React 待办</string><string name="appstr_legacy_sample_vue_counter_desc" formatted="false">Vue 3 响应式计数器示例，展示 Composition API</string><string name="appstr_legacy_sample_vue_counter_name" formatted="false">Vue 计数器</string><string name="appstr_legacy_sample_vue_counter_tag_reactive" formatted="false">响应式</string><string name="appstr_legacy_sample_weather_app_desc" formatted="false">Vite + 原生 JS 天气查询应用，无框架依赖</string><string name="appstr_legacy_sample_weather_app_name" formatted="false">天气应用</string><string name="appstr_legacy_save_lrc" formatted="false">保存 LRC</string><string name="appstr_legacy_save_module_title" formatted="false">保存模块</string><string name="appstr_legacy_saved_icons" formatted="false">已保存的图标</string><string name="appstr_legacy_saved_to_gallery" formatted="false">%s已保存到相册</string><string name="appstr_legacy_saving" formatted="false">保存中...</string><string name="appstr_legacy_screen_control" formatted="false">屏幕控制</string><string name="appstr_legacy_screenshot_capture" formatted="false">截取预览</string><string name="appstr_legacy_screenshot_capturing" formatted="false">正在截取...</string><string name="appstr_legacy_screenshot_refresh" formatted="false">刷新截图</string><string name="appstr_legacy_search" formatted="false">搜索...</string><string name="appstr_legacy_search_apps" formatted="false">搜索应用...</string><string name="appstr_legacy_search_code_blocks" formatted="false">搜索代码块...</string><string name="appstr_legacy_search_code_blocks_placeholder" formatted="false">搜索代码块...</string><string name="appstr_legacy_search_code_snippets" formatted="false">搜索代码块...</string><string name="appstr_legacy_select_all" formatted="false">全选</string><string name="appstr_legacy_select_announcement_style" formatted="false">选择公告样式</string><string name="appstr_legacy_select_capabilities_for_features" formatted="false">选择此能力可用于哪些功能：</string><string name="appstr_legacy_select_color" formatted="false">选择颜色</string><string name="appstr_legacy_select_icon_or_generate" formatted="false">选择图标或使用AI生成新图标</string><string name="appstr_legacy_select_launch_time" formatted="false">选择启动时间</string><string name="appstr_legacy_select_model" formatted="false">选择模型</string><string name="appstr_legacy_select_start_time" formatted="false">选择启动时间</string><string name="appstr_legacy_select_test_page_title" formatted="false">选择测试页面</string><string name="appstr_legacy_select_ui_type" formatted="false">选择 UI 类型</string><string name="appstr_legacy_selected_count" formatted="false">已选 %d 个功能</string><string name="appstr_legacy_selected_duration" formatted="false">已选择: %.1f 秒</string><string name="appstr_legacy_selected_label" formatted="false">已选中</string><string name="appstr_legacy_selected_music_count" formatted="false">已选 %d 首音乐</string><string name="appstr_legacy_sequential_playback" formatted="false">Sequential play</string><string name="appstr_legacy_settings" formatted="false">设置</string><string name="appstr_legacy_share_apk" formatted="false">分享 APK</string><string name="appstr_legacy_share_apk_building" formatted="false">正在构建 APK...</string><string name="appstr_legacy_share_apk_failed" formatted="false">构建 APK 失败: %s</string><string name="appstr_legacy_share_apk_success" formatted="false">APK 已准备好分享</string><string name="appstr_legacy_share_apk_title" formatted="false">分享 %s 应用</string><string name="appstr_legacy_shortcut_created" formatted="false">快捷方式创建成功</string><string name="appstr_legacy_show_emoji" formatted="false">显示表情</string><string name="appstr_legacy_show_once" formatted="false">仅显示一次</string><string name="appstr_legacy_show_once_only" formatted="false">仅显示一次</string><string name="appstr_legacy_show_translate_button" formatted="false">显示翻译按钮</string><string name="appstr_legacy_show_translate_button_hint" formatted="false">在页面右下角显示可拖拽的翻译悬浮按钮</string><string name="appstr_legacy_shuffle_playback" formatted="false">Shuffle play</string><string name="appstr_legacy_sidebar_config" formatted="false">侧边栏配置</string><string name="appstr_legacy_sidebar_left" formatted="false">左侧</string><string name="appstr_legacy_sidebar_right" formatted="false">右侧</string><string name="appstr_legacy_skip" formatted="false">Skip</string><string name="appstr_legacy_solid_color" formatted="false">纯色</string><string name="appstr_legacy_sort_asc" formatted="false">升序</string><string name="appstr_legacy_sort_desc" formatted="false">降序</string><string name="appstr_legacy_standard" formatted="false">标准</string><string name="appstr_legacy_start_test_btn" formatted="false">开始测试</string><string name="appstr_legacy_start_time" formatted="false">启动时间</string><string name="appstr_legacy_status_bar_background" formatted="false">状态栏背景</string><string name="appstr_legacy_store_coming_soon" formatted="false">应用商店即将上线
-发现和分享精彩应用</string><string name="appstr_legacy_store_review_cancel" formatted="false">取消</string><string name="appstr_legacy_store_review_comment_label" formatted="false">评价内容</string><string name="appstr_legacy_store_review_failed" formatted="false">评价提交失败</string><string name="appstr_legacy_store_review_placeholder" formatted="false">写下你的评价...</string><string name="appstr_legacy_store_review_rating_label" formatted="false">评分</string><string name="appstr_legacy_store_review_submit" formatted="false">提交</string><string name="appstr_legacy_store_review_submit_title" formatted="false">提交评价</string><string name="appstr_legacy_store_review_success" formatted="false">评价提交成功</string><string name="appstr_legacy_style_anime" formatted="false">动画</string><string name="appstr_legacy_style_art" formatted="false">艺术流派</string><string name="appstr_legacy_style_book" formatted="false">书籍</string><string name="appstr_legacy_style_brand" formatted="false">品牌</string><string name="appstr_legacy_style_culture" formatted="false">文化风格</string><string name="appstr_legacy_style_era" formatted="false">时代风格</string><string name="appstr_legacy_style_game" formatted="false">游戏</string><string name="appstr_legacy_style_movie" formatted="false">电影</string><string name="appstr_legacy_style_ref_anime" formatted="false">动画</string><string name="appstr_legacy_style_ref_art" formatted="false">艺术流派</string><string name="appstr_legacy_style_ref_book" formatted="false">书籍</string><string name="appstr_legacy_style_ref_brand" formatted="false">品牌</string><string name="appstr_legacy_style_ref_culture" formatted="false">文化风格</string><string name="appstr_legacy_style_ref_era" formatted="false">时代风格</string><string name="appstr_legacy_style_ref_game" formatted="false">游戏</string><string name="appstr_legacy_style_ref_movie" formatted="false">电影</string><string name="appstr_legacy_syntax_correct" formatted="false">语法正确</string><string name="appstr_legacy_system_apps" formatted="false">系统应用</string><string name="appstr_legacy_system_control" formatted="false">系统控制</string><string name="appstr_legacy_system_notification" formatted="false">系统通知</string><string name="appstr_legacy_tap" formatted="false">打点</string><string name="appstr_legacy_tap_to_mark" formatted="false">打点</string><string name="appstr_legacy_tech_description_content" formatted="false">本应用采用第一性原理设计，不依赖传统的 Node.js 运行时：
-
-• 内置打包器：纯 Kotlin 实现，可处理简单项目
-• esbuild：为 Android 编译的原生二进制，高性能
-• 渐进式降级：总能找到可用的构建方案
-
-推荐工作流：在电脑上完成 npm run build，然后导入构建输出。</string><string name="appstr_legacy_template_export" formatted="false">导出为模板</string><string name="appstr_legacy_template_export_success" formatted="false">模板已导出</string><string name="appstr_legacy_template_import" formatted="false">导入模板</string><string name="appstr_legacy_template_import_success" formatted="false">模板导入成功</string><string name="appstr_legacy_test_module_title" formatted="false">测试模块</string><string name="appstr_legacy_test_page_hint_text" formatted="false">💡 测试页面会加载选中的模块，你可以观察模块的实际效果</string><string name="appstr_legacy_thought_analysis" formatted="false">需求分析</string><string name="appstr_legacy_thought_conclusion" formatted="false">总结</string><string name="appstr_legacy_thought_fix" formatted="false">修复问题</string><string name="appstr_legacy_thought_generation" formatted="false">生成代码</string><string name="appstr_legacy_thought_planning" formatted="false">制定计划</string><string name="appstr_legacy_thought_review" formatted="false">代码审查</string><string name="appstr_legacy_thought_tool_call" formatted="false">调用工具</string><string name="appstr_legacy_thought_tool_result" formatted="false">工具结果</string><string name="appstr_legacy_toolbar_config" formatted="false">工具栏配置</string><string name="appstr_legacy_total_duration" formatted="false">总时长: %.1f 秒</string><string name="appstr_legacy_total_lines_count" formatted="false">共 %d 行歌词</string><string name="appstr_legacy_translate_engine" formatted="false">翻译引擎</string><string name="appstr_legacy_translation_desc" formatted="false">网页内容翻译</string><string name="appstr_legacy_trim_range_hint" formatted="false">裁剪范围（拖动选择播放片段）</string><string name="appstr_legacy_ts_bundle_mode" formatted="false">依赖打包</string><string name="appstr_legacy_ts_bundle_mode_hint" formatted="false">将项目和 node_modules 打包为单文件，大幅减小 APK 体积</string><string name="appstr_legacy_ts_pre_compile" formatted="false">TypeScript 预编译</string><string name="appstr_legacy_ts_pre_compile_hint" formatted="false">启动前使用 esbuild 将 TypeScript 编译为 JavaScript，提升运行速度</string><string name="appstr_legacy_typewriter_text1" formatted="false">WebToApp</string><string name="appstr_legacy_typewriter_text2" formatted="false">探索网页与APK的边界</string><string name="appstr_legacy_typewriter_text3" formatted="false">代码的无限可能</string><string name="appstr_legacy_ui_position" formatted="false">显示位置</string><string name="appstr_legacy_ui_type_config" formatted="false">UI 类型配置</string><string name="appstr_legacy_understood" formatted="false">了解了</string><string name="appstr_legacy_url_to_shortcut_basic" formatted="false">URL转快捷方式基本功能</string><string name="appstr_legacy_use_ai_to_generate_icon" formatted="false">使用AI模型生成自定义图标</string><string name="appstr_legacy_use_original_icon" formatted="false">使用原图标</string><string name="appstr_legacy_use_this_icon" formatted="false">使用此图标</string><string name="appstr_legacy_user_apps" formatted="false">用户应用</string><string name="appstr_legacy_validate_code_empty" formatted="false">代码内容不能为空</string><string name="appstr_legacy_validate_config_missing_key" formatted="false">配置项缺少 key</string><string name="appstr_legacy_validate_config_missing_name" formatted="false">配置项缺少显示名称</string><string name="appstr_legacy_validate_config_required" formatted="false">配置项 \'%s\' 为必填项</string><string name="appstr_legacy_validate_config_required_not_set" formatted="false">必填配置项 \'%s\' 未设置值</string><string name="appstr_legacy_validate_name_empty" formatted="false">模块名称不能为空</string><string name="appstr_legacy_version_info_not_found" formatted="false">未找到版本信息</string><string name="appstr_legacy_version_label" formatted="false">版本</string><string name="appstr_legacy_vibration_and_flash" formatted="false">震动与闪光</string><string name="appstr_legacy_video_file_not_exist" formatted="false">视频文件不存在</string><string name="appstr_legacy_video_preview" formatted="false">视频预览</string><string name="appstr_legacy_viewport_custom_width" formatted="false">视口宽度</string><string name="appstr_legacy_viewport_custom_width_hint" formatted="false">输入视口宽度（320-3840 像素）</string><string name="appstr_legacy_viewport_custom_width_presets" formatted="false">预设宽度</string><string name="appstr_legacy_viewport_mode_custom" formatted="false">自定义视口</string><string name="appstr_legacy_viewport_mode_default" formatted="false">标准模式（适合大多数网页）</string><string name="appstr_legacy_viewport_mode_description" formatted="false">解决 Unity/Canvas 游戏显示放大、UI 被裁切的问题</string><string name="appstr_legacy_viewport_mode_desktop" formatted="false">桌面视口（980px 宽度）</string><string name="appstr_legacy_viewport_mode_fit_screen" formatted="false">适配屏幕（Unity/Canvas 游戏推荐）</string><string name="appstr_legacy_viewport_mode_title" formatted="false">视口适配模式</string><string name="appstr_legacy_volume_control" formatted="false">音量控制</string><string name="appstr_legacy_volume_percent" formatted="false">音量: %d%%</string><string name="appstr_legacy_web_to_app_update" formatted="false">WebToApp 更新</string><string name="appstr_legacy_will_test_modules_format" formatted="false">将测试 %d 个模块</string><string name="appstr_legacy_write_code" formatted="false">编写代码</string><string name="appstr_legacy_write_code_hint" formatted="false">直接在应用内编写代码，无需外部文件</string><string name="appstr_legacy_write_html_desc" formatted="false">创建或覆盖完整的 HTML 页面</string></resources>
+<?xml version="1.0" ?>
+<resources>
+    <string name="appstr_legacy_advanced" formatted="false">Advanced</string>
+    <string name="appstr_legacy_advanced_feature_badge" formatted="false">Advanced</string>
+    <string name="appstr_legacy_agent_state_completed" formatted="false">Completed</string>
+    <string name="appstr_legacy_agent_state_error" formatted="false">Error</string>
+    <string name="appstr_legacy_agent_state_fixing" formatted="false">Fixing</string>
+    <string name="appstr_legacy_agent_state_generating" formatted="false">Generating</string>
+    <string name="appstr_legacy_agent_state_idle" formatted="false">Idle</string>
+    <string name="appstr_legacy_agent_state_security_scan" formatted="false">Security Scan</string>
+    <string name="appstr_legacy_agent_state_syntax_check" formatted="false">Syntax Check</string>
+    <string name="appstr_legacy_agent_state_thinking" formatted="false">Thinking</string>
+    <string name="appstr_legacy_agent_state_tool_calling" formatted="false">Calling Tool</string>
+    <string name="appstr_legacy_alias" formatted="false">Alias</string>
+    <string name="appstr_legacy_alias_optional" formatted="false">Alias (Optional)</string>
+    <string name="appstr_legacy_allow_skip" formatted="false">Allow Tap to Skip</string>
+    <string name="appstr_legacy_allow_skip_hint" formatted="false">Users can tap to skip the splash screen</string>
+    <string name="appstr_legacy_always_dark" formatted="false">Always Dark</string>
+    <string name="appstr_legacy_always_light" formatted="false">Always Light</string>
+    <string name="appstr_legacy_always_use_dark_theme" formatted="false">Always use dark theme</string>
+    <string name="appstr_legacy_always_use_light_theme" formatted="false">Always use light theme</string>
+    <string name="appstr_legacy_and_more_tracks" formatted="false">and %d more...</string>
+    <string name="appstr_legacy_anim_bouncy" formatted="false">Bouncy</string>
+    <string name="appstr_legacy_anim_dramatic" formatted="false">Dramatic</string>
+    <string name="appstr_legacy_anim_elegant" formatted="false">Elegant</string>
+    <string name="appstr_legacy_anim_playful" formatted="false">Playful</string>
+    <string name="appstr_legacy_anim_smooth" formatted="false">Smooth</string>
+    <string name="appstr_legacy_anim_snappy" formatted="false">Snappy</string>
+    <string name="appstr_legacy_anti_detection_enabled" formatted="false">Anti-detection protection enabled</string>
+    <string name="appstr_legacy_apk_architecture" formatted="false">APK Architecture</string>
+    <string name="appstr_legacy_apk_export_config" formatted="false">APK Export Config</string>
+    <string name="appstr_legacy_app_title" formatted="false">WebToApp</string>
+    <string name="appstr_legacy_arch_arm32" formatted="false">32-bit Only</string>
+    <string name="appstr_legacy_arch_arm32_desc" formatted="false">Compatible with old devices, smaller APK</string>
+    <string name="appstr_legacy_arch_arm64" formatted="false">64-bit Only</string>
+    <string name="appstr_legacy_arch_arm64_desc" formatted="false">Best for modern devices, smaller APK</string>
+    <string name="appstr_legacy_arch_universal" formatted="false">Universal</string>
+    <string name="appstr_legacy_arch_universal_desc" formatted="false">Supports all devices, larger APK</string>
+    <string name="appstr_legacy_auto_fix_desc" formatted="false">Auto-fix detected syntax errors</string>
+    <string name="appstr_legacy_auto_switch_by_system" formatted="false">Follow System</string>
+    <string name="appstr_legacy_auto_translate_on_load" formatted="false">Auto-translate on load</string>
+    <string name="appstr_legacy_auto_translate_on_load_hint" formatted="false">Execute translation automatically after page loads</string>
+    <string name="appstr_legacy_available_for" formatted="false">Available for</string>
+    <string name="appstr_legacy_back" formatted="false">Back</string>
+    <string name="appstr_legacy_back_to_modify" formatted="false">Back to Modify</string>
+    <string name="appstr_legacy_background_run_feature" formatted="false">Background: Continue running after exit</string>
+    <string name="appstr_legacy_background_type" formatted="false">Background Type</string>
+    <string name="appstr_legacy_basic" formatted="false">Basic</string>
+    <string name="appstr_legacy_batch_import_btn" formatted="false">Import</string>
+    <string name="appstr_legacy_batch_import_from_bookmarks" formatted="false">Import from Bookmarks</string>
+    <string name="appstr_legacy_batch_import_from_text" formatted="false">Import from Text</string>
+    <string name="appstr_legacy_batch_import_hint" formatted="false">One URL per line, format: URL or Name|URL</string>
+    <string name="appstr_legacy_batch_import_parsed" formatted="false">%d URLs parsed</string>
+    <string name="appstr_legacy_batch_import_success" formatted="false">Successfully imported %d apps</string>
+    <string name="appstr_legacy_batch_import_title" formatted="false">Batch Import</string>
+    <string name="appstr_legacy_bgm_description" formatted="false">Add BGM to app; supports loop or sequential play</string>
+    <string name="appstr_legacy_bgm_title" formatted="false">Background Music</string>
+    <string name="appstr_legacy_brief_describe_scheme" formatted="false">Briefly describe scheme purpose</string>
+    <string name="appstr_legacy_browse_all" formatted="false">Browse All</string>
+    <string name="appstr_legacy_build_dialog_building" formatted="false">Building...</string>
+    <string name="appstr_legacy_build_dialog_title" formatted="false">Build APK</string>
+    <string name="appstr_legacy_builtin_bewly_cat" formatted="false">BewlyCat (Bilibili Enhanced)</string>
+    <string name="appstr_legacy_builtin_bewly_cat_desc" formatted="false">Interface enhancements for Bilibili: homepage, search, and video pages</string>
+    <string name="appstr_legacy_builtin_bilibili_extractor" formatted="false">Bilibili Video</string>
+    <string name="appstr_legacy_builtin_bilibili_extractor_desc" formatted="false">Extract highest quality video and audio streams from Bilibili</string>
+    <string name="appstr_legacy_cannot_open_image" formatted="false">Cannot open image</string>
+    <string name="appstr_legacy_cannot_parse_image" formatted="false">Cannot parse image</string>
+    <string name="appstr_legacy_categories_and_blocks" formatted="false">%d categories · %d blocks</string>
+    <string name="appstr_legacy_category_group_appearance" formatted="false">Appearance</string>
+    <string name="appstr_legacy_category_group_content" formatted="false">Content</string>
+    <string name="appstr_legacy_category_group_data" formatted="false">Data Tools</string>
+    <string name="appstr_legacy_category_group_developer" formatted="false">Developer</string>
+    <string name="appstr_legacy_category_group_function" formatted="false">Function</string>
+    <string name="appstr_legacy_category_group_life" formatted="false">Life Tools</string>
+    <string name="appstr_legacy_category_group_media" formatted="false">Media</string>
+    <string name="appstr_legacy_category_group_other" formatted="false">Other</string>
+    <string name="appstr_legacy_category_group_security" formatted="false">Security</string>
+    <string name="appstr_legacy_character_count" formatted="false">characters</string>
+    <string name="appstr_legacy_check_syntax_desc" formatted="false">Check HTML/CSS/JS syntax errors</string>
+    <string name="appstr_legacy_clear_file" formatted="false">Clear</string>
+    <string name="appstr_legacy_click_button_to_experience" formatted="false">Click button below to experience</string>
+    <string name="appstr_legacy_click_to_configure_ai_model" formatted="false">Click to configure AI model</string>
+    <string name="appstr_legacy_click_to_select_file" formatted="false">Click to select file</string>
+    <string name="appstr_legacy_click_to_select_or_use_button" formatted="false">Click to select or use button below</string>
+    <string name="appstr_legacy_clone_install" formatted="false">Clone Install</string>
+    <string name="appstr_legacy_clone_success" formatted="false">Clone successful; please confirm installation</string>
+    <string name="appstr_legacy_close_dialog" formatted="false">Close</string>
+    <string name="appstr_legacy_code_block_library" formatted="false">Block Library</string>
+    <string name="appstr_legacy_code_block_library_title" formatted="false">Code Block Library</string>
+    <string name="appstr_legacy_code_blocks_count" formatted="false">%d blocks</string>
+    <string name="appstr_legacy_code_editor_title" formatted="false">Code Editor</string>
+    <string name="appstr_legacy_code_generation_complete" formatted="false">Code generation complete</string>
+    <string name="appstr_legacy_coding" formatted="false">Coding</string>
+    <string name="appstr_legacy_collapse_expand" formatted="false">Collapse/Expand</string>
+    <string name="appstr_legacy_common_config" formatted="false">Common Config</string>
+    <string name="appstr_legacy_configure_model_hint" formatted="false">Configure a model supporting module dev in AI settings first</string>
+    <string name="appstr_legacy_confirm_crop" formatted="false">Confirm Crop</string>
+    <string name="appstr_legacy_console" formatted="false">Console</string>
+    <string name="appstr_legacy_country_region" formatted="false">Country/Region</string>
+    <string name="appstr_legacy_country_region_hint" formatted="false">e.g., Japan, UK, South Korea...</string>
+    <string name="appstr_legacy_crop_status_bar_bg" formatted="false">Crop Status Bar BG</string>
+    <string name="appstr_legacy_dark_mode_preview" formatted="false">Dark Mode</string>
+    <string name="appstr_legacy_day_fri" formatted="false">Fri</string>
+    <string name="appstr_legacy_day_mon" formatted="false">Mon</string>
+    <string name="appstr_legacy_day_sat" formatted="false">Sat</string>
+    <string name="appstr_legacy_day_sun" formatted="false">Sun</string>
+    <string name="appstr_legacy_day_thu" formatted="false">Thu</string>
+    <string name="appstr_legacy_day_tue" formatted="false">Tue</string>
+    <string name="appstr_legacy_day_wed" formatted="false">Wed</string>
+    <string name="appstr_legacy_deep_link_custom_hosts_hint" formatted="false">Main and www domains auto-match; add extra domains here (one per line)</string>
+    <string name="appstr_legacy_deep_link_custom_hosts_label" formatted="false">Extra Domains</string>
+    <string name="appstr_legacy_deep_link_host" formatted="false">Matched host: %s</string>
+    <string name="appstr_legacy_deep_link_setting" formatted="false">Deep Linking</string>
+    <string name="appstr_legacy_deep_link_setting_hint" formatted="false">Allow opening matched links from external sources</string>
+    <string name="appstr_legacy_delete_action" formatted="false">Delete</string>
+    <string name="appstr_legacy_delete_confirm_message" formatted="false">Are you sure you want to delete this app?</string>
+    <string name="appstr_legacy_delete_confirm_title" formatted="false">Confirm Delete</string>
+    <string name="appstr_legacy_delete_icon" formatted="false">Delete Icon</string>
+    <string name="appstr_legacy_delete_icon_confirm" formatted="false">Remove this icon from library?</string>
+    <string name="appstr_legacy_dep_dl_eta" formatted="false">ETA</string>
+    <string name="appstr_legacy_dep_dl_pause" formatted="false">Pause</string>
+    <string name="appstr_legacy_dep_dl_paused" formatted="false">Paused</string>
+    <string name="appstr_legacy_dep_dl_resume" formatted="false">Resume</string>
+    <string name="appstr_legacy_dep_dl_speed" formatted="false">Speed</string>
+    <string name="appstr_legacy_dep_dl_start_time" formatted="false">Start Time</string>
+    <string name="appstr_legacy_dep_dl_url" formatted="false">Download URL</string>
+    <string name="appstr_legacy_dependency_count_label" formatted="false">Dependency Count</string>
+    <string name="appstr_legacy_dependency_count_value" formatted="false">%d items</string>
+    <string name="appstr_legacy_describe_icon" formatted="false">Describe the icon you want</string>
+    <string name="appstr_legacy_details" formatted="false">Details</string>
+    <string name="appstr_legacy_development_failed" formatted="false">Development Failed</string>
+    <string name="appstr_legacy_discard_changes" formatted="false">Discard</string>
+    <string name="appstr_legacy_disguise_hint" formatted="false">Hide app identity to prevent identification or removal</string>
+    <string name="appstr_legacy_disguise_warning" formatted="false">ℹ️ Note: Disguise requires Device Admin permission. Multi-icon may be limited on some devices.</string>
+    <string name="appstr_legacy_display_frequency" formatted="false">Display Frequency</string>
+    <string name="appstr_legacy_docs_generator_detected" formatted="false">Generator detected</string>
+    <string name="appstr_legacy_docs_project_ready" formatted="false">Docs project ready</string>
+    <string name="appstr_legacy_docs_routing_mode" formatted="false">Routing Mode</string>
+    <string name="appstr_legacy_docs_select_project" formatted="false">Select Docs directory</string>
+    <string name="appstr_legacy_downloading_version" formatted="false">Downloading %s ...</string>
+    <string name="appstr_legacy_draggable_switch" formatted="false">Allow Dragging</string>
+    <string name="appstr_legacy_edit_frontend_app" formatted="false">Edit Frontend Project</string>
+    <string name="appstr_legacy_edit_html_desc" formatted="false">Replace or insert snippets at specific locations</string>
+    <string name="appstr_legacy_empty_state_hint" formatted="false">Tap below to create your first app</string>
+    <string name="appstr_legacy_enable_animation" formatted="false">Enable Animation</string>
+    <string name="appstr_legacy_enable_black_tech" formatted="false">Enable Advanced Features</string>
+    <string name="appstr_legacy_enable_disguise" formatted="false">Enable App Disguise</string>
+    <string name="appstr_legacy_encoding_and_size" formatted="false">Enc: %s | Size: %s</string>
+    <string name="appstr_legacy_encrypt_level_fast" formatted="false">Fast (Lower protection)</string>
+    <string name="appstr_legacy_encrypt_level_high" formatted="false">High (Slower)</string>
+    <string name="appstr_legacy_encrypt_level_paranoid" formatted="false">Paranoid (Very slow)</string>
+    <string name="appstr_legacy_encrypt_level_standard" formatted="false">Standard (Recommended)</string>
+    <string name="appstr_legacy_encryption_enabled" formatted="false">Encryption protection enabled</string>
+    <string name="appstr_legacy_encryption_level" formatted="false">Encryption Level</string>
+    <string name="appstr_legacy_enter_activation_code" formatted="false">Enter Activation Code</string>
+    <string name="appstr_legacy_enter_code_to_continue" formatted="false">Please enter code to continue</string>
+    <string name="appstr_legacy_enter_scheme_name" formatted="false">Enter Scheme Name</string>
+    <string name="appstr_legacy_every_launch" formatted="false">Every Launch</string>
+    <string name="appstr_legacy_export_data" formatted="false">Export Data</string>
+    <string name="appstr_legacy_favicon_fetch_failed" formatted="false">Cannot fetch favicon</string>
+    <string name="appstr_legacy_favicon_fetch_success" formatted="false">Favicon fetched</string>
+    <string name="appstr_legacy_feature_auto_detect_framework" formatted="false">Auto-detect project type and framework</string>
+    <string name="appstr_legacy_feature_esbuild_optional" formatted="false">esbuild high-perf build (optional)</string>
+    <string name="appstr_legacy_feature_html_optimize" formatted="false">HTML app JS/CSS compression</string>
+    <string name="appstr_legacy_feature_import_built_projects" formatted="false">Import built Vue/React/Angular projects</string>
+    <string name="appstr_legacy_feature_node_ts_pre_compile" formatted="false">Node.js TypeScript pre-compilation</string>
+    <string name="appstr_legacy_feature_static_assets" formatted="false">Auto-processed static assets</string>
+    <string name="appstr_legacy_feature_support_vite_webpack" formatted="false">Supports Vite/Webpack build outputs</string>
+    <string name="appstr_legacy_feature_type_script_support" formatted="false">TypeScript support</string>
+    <string name="appstr_legacy_fetch_website_icon" formatted="false">Fetch Icon</string>
+    <string name="appstr_legacy_file_created_version" formatted="false">File created: %s (%s)</string>
+    <string name="appstr_legacy_file_label" formatted="false">File: %s</string>
+    <string name="appstr_legacy_fix_loose_eq" formatted="false">Replace == with ===</string>
+    <string name="appstr_legacy_fix_var_to_let" formatted="false">Replace var with let</string>
+    <string name="appstr_legacy_found_results" formatted="false">Found %d results</string>
+    <string name="appstr_legacy_framework_label" formatted="false">Framework</string>
+    <string name="appstr_legacy_free" formatted="false">Free</string>
+    <string name="appstr_legacy_general_chat_desc" formatted="false">General AI Chat</string>
+    <string name="appstr_legacy_generate_icon" formatted="false">Generate Icon</string>
+    <string name="appstr_legacy_generate_image_desc" formatted="false">Use AI to generate and embed images into HTML</string>
+    <string name="appstr_legacy_generating_code_chars" formatted="false">Generating code (%d chars)</string>
+    <string name="appstr_legacy_generating_html_code" formatted="false">Generating HTML code...</string>
+    <string name="appstr_legacy_generation_cancelled" formatted="false">Generation cancelled</string>
+    <string name="appstr_legacy_generation_complete" formatted="false">Generation complete</string>
+    <string name="appstr_legacy_generation_failed" formatted="false">Generation failed: %s</string>
+    <string name="appstr_legacy_generation_result" formatted="false">Generation Result</string>
+    <string name="appstr_legacy_get_console_logs_desc" formatted="false">Get console.log output and errors</string>
+    <string name="appstr_legacy_go_back_to_modify" formatted="false">Back to Modify</string>
+    <string name="appstr_legacy_go_binary_size" formatted="false">Binary Size</string>
+    <string name="appstr_legacy_go_preview_failed" formatted="false">Go preview failed to start</string>
+    <string name="appstr_legacy_go_project_not_found" formatted="false">Go project file not found</string>
+    <string name="appstr_legacy_go_project_ready" formatted="false">Go service ready</string>
+    <string name="appstr_legacy_go_select_binary" formatted="false">Select Go Binary</string>
+    <string name="appstr_legacy_go_select_project" formatted="false">Select Go project directory</string>
+    <string name="appstr_legacy_go_starting_preview" formatted="false">Starting Go preview...</string>
+    <string name="appstr_legacy_got_it_cute" formatted="false">Got it! 💕</string>
+    <string name="appstr_legacy_hex_color" formatted="false">Hex Color</string>
+    <string name="appstr_legacy_hex_color_hint" formatted="false">e.g., FF5722 or 80FF5722</string>
+    <string name="appstr_legacy_hide_original_icon" formatted="false">Hide Original Icon</string>
+    <string name="appstr_legacy_hide_original_icon_desc" formatted="false">Hide original icon from launcher</string>
+    <string name="appstr_legacy_hosts1_hosts_lite_desc" formatted="false">Lightweight ad and tracker blocking</string>
+    <string name="appstr_legacy_hosts_ad_away_desc" formatted="false">AdAway default blocklist</string>
+    <string name="appstr_legacy_hosts_ad_guard_desc" formatted="false">AdGuard DNS filtering rules</string>
+    <string name="appstr_legacy_hosts_anti_a_d_desc" formatted="false">Regional ad blocking rules</string>
+    <string name="appstr_legacy_hosts_steven_black_desc" formatted="false">Unified hosts file for ads and malware</string>
+    <string name="appstr_legacy_hot_tag" formatted="false">🔥 Hot</string>
+    <string name="appstr_legacy_html_code_placeholder" formatted="false">Enter HTML code here...</string>
+    <string name="appstr_legacy_i_know" formatted="false">I know</string>
+    <string name="appstr_legacy_icon" formatted="false">Icon</string>
+    <string name="appstr_legacy_icon_description_example" formatted="false">e.g., A blue gradient music player icon</string>
+    <string name="appstr_legacy_icon_generation_desc" formatted="false">Use AI to generate app icon</string>
+    <string name="appstr_legacy_icon_library" formatted="false">Icon Library</string>
+    <string name="appstr_legacy_icon_library_empty" formatted="false">Icon library is empty</string>
+    <string name="appstr_legacy_icon_library_empty_hint" formatted="false">AI generated icons will be saved here</string>
+    <string name="appstr_legacy_import_data" formatted="false">Import Data</string>
+    <string name="appstr_legacy_in_progress" formatted="false">In Progress</string>
+    <string name="appstr_legacy_initial_version_release" formatted="false">Initial Release</string>
+    <string name="appstr_legacy_input_java_script" formatted="false">Enter JavaScript...</string>
+    <string name="appstr_legacy_insert" formatted="false">Insert</string>
+    <string name="appstr_legacy_insert_code" formatted="false">Insert Code</string>
+    <string name="appstr_legacy_install_app" formatted="false">Install</string>
+    <string name="appstr_legacy_inter_glow" formatted="false">Glow Diffusion</string>
+    <string name="appstr_legacy_inter_morph" formatted="false">Morphing</string>
+    <string name="appstr_legacy_inter_particle" formatted="false">Particles</string>
+    <string name="appstr_legacy_inter_ripple" formatted="false">Ripple</string>
+    <string name="appstr_legacy_inter_scale" formatted="false">Scale Pulse</string>
+    <string name="appstr_legacy_inter_shake" formatted="false">Micro-shake</string>
+    <string name="appstr_legacy_interaction_style_label" formatted="false">Style: %s</string>
+    <string name="appstr_legacy_isolated_browser_environment" formatted="false">Isolated environment with fingerprint disguise</string>
+    <string name="appstr_legacy_isolated_environment" formatted="false">Isolated Environment</string>
+    <string name="appstr_legacy_isolation_level" formatted="false">Isolation Level</string>
+    <string name="appstr_legacy_just_now" formatted="false">Just now</string>
+    <string name="appstr_legacy_keep_editing" formatted="false">Keep Editing</string>
+    <string name="appstr_legacy_label_advanced_config" formatted="false">Advanced Config</string>
+    <string name="appstr_legacy_label_app_info" formatted="false">App Info</string>
+    <string name="appstr_legacy_label_app_name" formatted="false">App Name</string>
+    <string name="appstr_legacy_label_basic_info" formatted="false">Basic Info</string>
+    <string name="appstr_legacy_label_display_settings" formatted="false">Display Settings</string>
+    <string name="appstr_legacy_label_icon" formatted="false">App Icon</string>
+    <string name="appstr_legacy_label_url" formatted="false">Website URL</string>
+    <string name="appstr_legacy_lang_arabic" formatted="false">Arabic</string>
+    <string name="appstr_legacy_lang_chinese" formatted="false">Chinese</string>
+    <string name="appstr_legacy_lang_english" formatted="false">English</string>
+    <string name="appstr_legacy_lang_japanese" formatted="false">Japanese</string>
+    <string name="appstr_legacy_launch_time" formatted="false">Launch Time</string>
+    <string name="appstr_legacy_learn_more" formatted="false">Learn More</string>
+    <string name="appstr_legacy_light_mode_preview" formatted="false">Light Mode</string>
+    <string name="appstr_legacy_lines" formatted="false">lines</string>
+    <string name="appstr_legacy_link_address" formatted="false">Link Address (Optional)</string>
+    <string name="appstr_legacy_link_button_text" formatted="false">Button Text</string>
+    <string name="appstr_legacy_link_text" formatted="false">Link Text</string>
+    <string name="appstr_legacy_link_url" formatted="false">Link URL (Optional)</string>
+    <string name="appstr_legacy_load_image_failed" formatted="false">Load image failed: %s</string>
+    <string name="appstr_legacy_loop_playback" formatted="false">Loop</string>
+    <string name="appstr_legacy_lrc_anim_fade" formatted="false">Fade In/Out</string>
+    <string name="appstr_legacy_lrc_anim_karaoke" formatted="false">Karaoke Highlight</string>
+    <string name="appstr_legacy_lrc_anim_none" formatted="false">No Animation</string>
+    <string name="appstr_legacy_lrc_anim_scale" formatted="false">Scale</string>
+    <string name="appstr_legacy_lrc_anim_slide_left" formatted="false">Slide Left</string>
+    <string name="appstr_legacy_lrc_anim_slide_up" formatted="false">Slide Up</string>
+    <string name="appstr_legacy_lrc_anim_typewriter" formatted="false">Typewriter</string>
+    <string name="appstr_legacy_lrc_generation_desc" formatted="false">AI generate LRC files</string>
+    <string name="appstr_legacy_lrc_pos_bottom" formatted="false">Bottom</string>
+    <string name="appstr_legacy_lrc_pos_center" formatted="false">Center</string>
+    <string name="appstr_legacy_lrc_pos_top" formatted="false">Top</string>
+    <string name="appstr_legacy_lrc_theme_classic" formatted="false">Classic</string>
+    <string name="appstr_legacy_lrc_theme_dark" formatted="false">Dark</string>
+    <string name="appstr_legacy_lrc_theme_default" formatted="false">Default</string>
+    <string name="appstr_legacy_lrc_theme_energetic" formatted="false">Energetic</string>
+    <string name="appstr_legacy_lrc_theme_karaoke" formatted="false">Karaoke</string>
+    <string name="appstr_legacy_lrc_theme_minimal" formatted="false">Minimal</string>
+    <string name="appstr_legacy_lrc_theme_neon" formatted="false">Neon</string>
+    <string name="appstr_legacy_lrc_theme_romantic" formatted="false">Romantic</string>
+    <string name="appstr_legacy_material_design3_u_i" formatted="false">Material Design 3 UI</string>
+    <string name="appstr_legacy_media_content" formatted="false">Media Content</string>
+    <string name="appstr_legacy_model_id" formatted="false">Model ID</string>
+    <string name="appstr_legacy_model_id_hint" formatted="false">e.g., gpt-4o-mini</string>
+    <string name="appstr_legacy_modify_app" formatted="false">Modify app</string>
+    <string name="appstr_legacy_modify_config" formatted="false">Modify Config</string>
+    <string name="appstr_legacy_more" formatted="false">More</string>
+    <string name="appstr_legacy_my_apps" formatted="false">My Apps</string>
+    <string name="appstr_legacy_network_request_failed" formatted="false">Network request failed</string>
+    <string name="appstr_legacy_new_feature_badge" formatted="false">New</string>
+    <string name="appstr_legacy_new_file" formatted="false">New File</string>
+    <string name="appstr_legacy_new_message" formatted="false">New Message</string>
+    <string name="appstr_legacy_next_step" formatted="false">Next</string>
+    <string name="appstr_legacy_next_step_time_align" formatted="false">Next: Time Alignment</string>
+    <string name="appstr_legacy_no_available_models" formatted="false">No available models</string>
+    <string name="appstr_legacy_no_console_messages" formatted="false">No console messages</string>
+    <string name="appstr_legacy_no_matching_code_blocks" formatted="false">No matching blocks found</string>
+    <string name="appstr_legacy_no_model_configured" formatted="false">No model configured</string>
+    <string name="appstr_legacy_node_preview_failed" formatted="false">Node.js preview failed to start</string>
+    <string name="appstr_legacy_node_project_not_found" formatted="false">Node.js project file not found</string>
+    <string name="appstr_legacy_node_starting_preview" formatted="false">Starting Node.js preview...</string>
+    <string name="appstr_legacy_notes" formatted="false">Notes</string>
+    <string name="appstr_legacy_notes_content" formatted="false">• AI API key required\n• Complex features may need multiple adjustments\n• Verify effects on the test page</string>
+    <string name="appstr_legacy_ok_good" formatted="false">OK 👍</string>
+    <string name="appstr_legacy_okay_nature" formatted="false">🌱 OK</string>
+    <string name="appstr_legacy_or_write_directly" formatted="false">or write directly</string>
+    <string name="appstr_legacy_orientation_horizontal" formatted="false">Horizontal</string>
+    <string name="appstr_legacy_orientation_vertical" formatted="false">Vertical</string>
+    <string name="appstr_legacy_original_app" formatted="false">Original App</string>
+    <string name="appstr_legacy_original_image" formatted="false">Original Image</string>
+    <string name="appstr_legacy_ota_download_complete" formatted="false">Download complete; tap to install</string>
+    <string name="appstr_legacy_ota_download_failed" formatted="false">Download failed; please retry</string>
+    <string name="appstr_legacy_ota_downloading" formatted="false">Downloading update...</string>
+    <string name="appstr_legacy_ota_installing" formatted="false">Installing...</string>
+    <string name="appstr_legacy_ota_later" formatted="false">Later</string>
+    <string name="appstr_legacy_ota_new_version_found" formatted="false">New version v%s found</string>
+    <string name="appstr_legacy_ota_update_channel" formatted="false">App Update</string>
+    <string name="appstr_legacy_ota_update_channel_desc" formatted="false">Download progress and install notifications</string>
+    <string name="appstr_legacy_ota_update_now" formatted="false">Update Now</string>
+    <string name="appstr_legacy_output_dir_label" formatted="false">Output Dir</string>
+    <string name="appstr_legacy_package_manager_label" formatted="false">Package Manager</string>
+    <string name="appstr_legacy_particle" formatted="false">Particle</string>
+    <string name="appstr_legacy_perm_group_advanced" formatted="false">Advanced</string>
+    <string name="appstr_legacy_perm_group_basic" formatted="false">Basic</string>
+    <string name="appstr_legacy_perm_group_device" formatted="false">Device</string>
+    <string name="appstr_legacy_perm_group_file" formatted="false">File</string>
+    <string name="appstr_legacy_perm_group_interaction" formatted="false">Interaction</string>
+    <string name="appstr_legacy_perm_group_media_perm" formatted="false">Media</string>
+    <string name="appstr_legacy_perm_group_network" formatted="false">Network</string>
+    <string name="appstr_legacy_perm_group_storage" formatted="false">Storage</string>
+    <string name="appstr_legacy_please_activate_app" formatted="false">Please activate app first</string>
+    <string name="appstr_legacy_popup_announcement" formatted="false">Popup Announcement</string>
+    <string name="appstr_legacy_pos_bottom_center" formatted="false">Bottom Center</string>
+    <string name="appstr_legacy_pos_bottom_left" formatted="false">Bottom Left</string>
+    <string name="appstr_legacy_pos_bottom_right" formatted="false">Bottom Right</string>
+    <string name="appstr_legacy_pos_middle_center" formatted="false">Center</string>
+    <string name="appstr_legacy_pos_middle_left" formatted="false">Center Left</string>
+    <string name="appstr_legacy_pos_middle_right" formatted="false">Center Right</string>
+    <string name="appstr_legacy_pos_top_center" formatted="false">Top Center</string>
+    <string name="appstr_legacy_pos_top_left" formatted="false">Top Left</string>
+    <string name="appstr_legacy_pos_top_right" formatted="false">Top Right</string>
+    <string name="appstr_legacy_preview_announcement" formatted="false">Preview Announcement</string>
+    <string name="appstr_legacy_preview_announcement_effect" formatted="false">Preview Announcement Effect</string>
+    <string name="appstr_legacy_preview_lrc_hint" formatted="false">Verify LRC effect before saving</string>
+    <string name="appstr_legacy_previous_step" formatted="false">Previous</string>
+    <string name="appstr_legacy_project_template_export" formatted="false">Template Export</string>
+    <string name="appstr_legacy_provider" formatted="false">Provider</string>
+    <string name="appstr_legacy_provider_category_aggregator" formatted="false">Aggregator</string>
+    <string name="appstr_legacy_provider_category_chinese" formatted="false">Regional Providers</string>
+    <string name="appstr_legacy_provider_category_custom" formatted="false">Custom</string>
+    <string name="appstr_legacy_provider_category_international" formatted="false">International Providers</string>
+    <string name="appstr_legacy_provider_category_recommended" formatted="false">Recommended</string>
+    <string name="appstr_legacy_provider_category_self_hosted" formatted="false">Local/Self-hosted</string>
+    <string name="appstr_legacy_pwa_offline_strategy_label" formatted="false">Cache Strategy</string>
+    <string name="appstr_legacy_pwa_offline_subtitle" formatted="false">Inject Service Worker for offline browsing of visited pages</string>
+    <string name="appstr_legacy_pwa_offline_title" formatted="false">PWA Offline Support</string>
+    <string name="appstr_legacy_pwa_strategy_cache_first" formatted="false">Cache First (Fastest load; content may be stale)</string>
+    <string name="appstr_legacy_pwa_strategy_network_first" formatted="false">Network First (Recommended; latest content, offline cache)</string>
+    <string name="appstr_legacy_pwa_strategy_stale_while_revalidate" formatted="false">Stale While Revalidate (Immediate cache; background update)</string>
+    <string name="appstr_legacy_py_no_static_content" formatted="false">No static files found in Python project\n(Backend apps require Python runtime)</string>
+    <string name="appstr_legacy_py_preview_failed" formatted="false">Python preview failed to start</string>
+    <string name="appstr_legacy_py_project_not_found" formatted="false">Python project file not found</string>
+    <string name="appstr_legacy_py_project_ready" formatted="false">Python project ready</string>
+    <string name="appstr_legacy_py_select_project" formatted="false">Select Python project directory</string>
+    <string name="appstr_legacy_py_server_type" formatted="false">Server Type</string>
+    <string name="appstr_legacy_py_starting_preview" formatted="false">Starting Python preview...</string>
+    <string name="appstr_legacy_quick_experience" formatted="false">Quick Experience</string>
+    <string name="appstr_legacy_quick_experience_frontend" formatted="false">Try Frontend Project Import</string>
+    <string name="appstr_legacy_quick_insert_code_snippets" formatted="false">Insert Common Snippets</string>
+    <string name="appstr_legacy_quick_prompt1" formatted="false">Create a modern minimalist homepage with TailwindCSS, including nav, hero, portfolio, and contact sections.</string>
+    <string name="appstr_legacy_quick_prompt2" formatted="false">Make a glassmorphism login page with a dark gradient background and social login buttons.</string>
+    <string name="appstr_legacy_quick_prompt3" formatted="false">Create a cyberpunk 404 error page with neon effects and glitch animations.</string>
+    <string name="appstr_legacy_quick_prompt4" formatted="false">Make a music player UI, dark theme, with vinyl rotation, progress bar, and play controls.</string>
+    <string name="appstr_legacy_quick_prompt5" formatted="false">Create a weather card component showing different icons and backgrounds based on weather type.</string>
+    <string name="appstr_legacy_quick_prompt6" formatted="false">Make a responsive image gallery with masonry layout and lightbox effects.</string>
+    <string name="appstr_legacy_quick_prompt7" formatted="false">Create a TO-DO app with add, complete, and delete features using localStorage.</string>
+    <string name="appstr_legacy_quick_prompt8" formatted="false">Make a countdown page showing days, hours, and minutes with flip animations.</string>
+    <string name="appstr_legacy_random_name" formatted="false">Random</string>
+    <string name="appstr_legacy_random_name_tooltip" formatted="false">Click to generate random app name</string>
+    <string name="appstr_legacy_received_gift" formatted="false">🎁 Received!</string>
+    <string name="appstr_legacy_regenerate" formatted="false">Regenerate</string>
+    <string name="appstr_legacy_requirement_tips" formatted="false">Requirement Tips</string>
+    <string name="appstr_legacy_requirement_tips_content" formatted="false">• Describe specific features\n• State target site/page type\n• Refer to example prompts</string>
+    <string name="appstr_legacy_resource_encryption" formatted="false">Resource Encryption</string>
+    <string name="appstr_legacy_rules_animation" formatted="false">Animation-focused</string>
+    <string name="appstr_legacy_rules_animation_desc" formatted="false">Focus on motion and interaction effects</string>
+    <string name="appstr_legacy_rules_chinese" formatted="false">Regional Chat</string>
+    <string name="appstr_legacy_rules_chinese_desc" formatted="false">Use specific language for interactions</string>
+    <string name="appstr_legacy_rules_form" formatted="false">Form Page</string>
+    <string name="appstr_legacy_rules_form_desc" formatted="false">Suitable for data collection and forms</string>
+    <string name="appstr_legacy_rules_game" formatted="false">Game Dev</string>
+    <string name="appstr_legacy_rules_game_desc" formatted="false">Suitable for mini-game development</string>
+    <string name="appstr_legacy_run" formatted="false">Run</string>
+    <string name="appstr_legacy_safe" formatted="false">Safe</string>
+    <string name="appstr_legacy_sample_node_express_desc" formatted="false">Full TO-DO app with Material Design UI; supports tasks CRUD</string>
+    <string name="appstr_legacy_sample_node_express_name" formatted="false">TO-DO App</string>
+    <string name="appstr_legacy_sample_node_fastify_desc" formatted="false">Real-time system dashboard showing CPU/RAM usage; dark theme</string>
+    <string name="appstr_legacy_sample_node_fastify_name" formatted="false">System Monitoring</string>
+    <string name="appstr_legacy_sample_node_koa_desc" formatted="false">Markdown notes with real-time preview and search features</string>
+    <string name="appstr_legacy_sample_node_koa_name" formatted="false">Markdown Notes</string>
+    <string name="appstr_legacy_sample_node_subtitle" formatted="false">Try Node.js Project Import</string>
+    <string name="appstr_legacy_sample_projects" formatted="false">Sample Projects</string>
+    <string name="appstr_legacy_sample_react_todo_desc" formatted="false">React 18 TO-DO app demonstrating Hooks usage</string>
+    <string name="appstr_legacy_sample_react_todo_name" formatted="false">React Todo</string>
+    <string name="appstr_legacy_sample_vue_counter_desc" formatted="false">Vue 3 responsive counter using Composition API</string>
+    <string name="appstr_legacy_sample_vue_counter_name" formatted="false">Vue Counter</string>
+    <string name="appstr_legacy_sample_vue_counter_tag_reactive" formatted="false">Reactive</string>
+    <string name="appstr_legacy_sample_weather_app_name" formatted="false">Weather App</string>
+    <string name="appstr_legacy_sample_weather_app_desc" formatted="false">Vite + Vanilla JS weather app; framework-free</string>
+    <string name="appstr_legacy_save_lrc" formatted="false">Save LRC</string>
+    <string name="appstr_legacy_save_module_title" formatted="false">Save Module</string>
+    <string name="appstr_legacy_saved_icons" formatted="false">Saved Icons</string>
+    <string name="appstr_legacy_saved_to_gallery" formatted="false">%s saved to gallery</string>
+    <string name="appstr_legacy_saving" formatted="false">Saving...</string>
+    <string name="appstr_legacy_screen_control" formatted="false">Screen Control</string>
+    <string name="appstr_legacy_screenshot_capture" formatted="false">Capture Preview</string>
+    <string name="appstr_legacy_screenshot_capturing" formatted="false">Capturing...</string>
+    <string name="appstr_legacy_screenshot_refresh" formatted="false">Refresh Screenshot</string>
+    <string name="appstr_legacy_search" formatted="false">Search...</string>
+    <string name="appstr_legacy_search_apps" formatted="false">Search apps...</string>
+    <string name="appstr_legacy_search_code_blocks" formatted="false">Search blocks...</string>
+    <string name="appstr_legacy_search_code_blocks_placeholder" formatted="false">Search code blocks...</string>
+    <string name="appstr_legacy_search_code_snippets" formatted="false">Search snippets...</string>
+    <string name="appstr_legacy_select_all" formatted="false">Select All</string>
+    <string name="appstr_legacy_select_announcement_style" formatted="false">Select Style</string>
+    <string name="appstr_legacy_select_capabilities_for_features" formatted="false">Select capability for features:</string>
+    <string name="appstr_legacy_select_color" formatted="false">Select Color</string>
+    <string name="appstr_legacy_select_icon_or_generate" formatted="false">Select icon or use AI to generate new one</string>
+    <string name="appstr_legacy_select_launch_time" formatted="false">Select Launch Time</string>
+    <string name="appstr_legacy_select_model" formatted="false">Select Model</string>
+    <string name="appstr_legacy_select_start_time" formatted="false">Select Start Time</string>
+    <string name="appstr_legacy_select_test_page_title" formatted="false">Select Test Page</string>
+    <string name="appstr_legacy_select_ui_type" formatted="false">Select UI Type</string>
+    <string name="appstr_legacy_selected_count" formatted="false">%d features selected</string>
+    <string name="appstr_legacy_selected_duration" formatted="false">Selected: %.1f s</string>
+    <string name="appstr_legacy_selected_label" formatted="false">Selected</string>
+    <string name="appstr_legacy_selected_music_count" formatted="false">%d songs selected</string>
+    <string name="appstr_legacy_sequential_playback" formatted="false">Sequential play</string>
+    <string name="appstr_legacy_settings" formatted="false">Settings</string>
+    <string name="appstr_legacy_share_apk" formatted="false">Share APK</string>
+    <string name="appstr_legacy_share_apk_building" formatted="false">Building APK...</string>
+    <string name="appstr_legacy_share_apk_failed" formatted="false">Build APK failed: %s</string>
+    <string name="appstr_legacy_share_apk_success" formatted="false">APK ready to share</string>
+    <string name="appstr_legacy_share_apk_title" formatted="false">Share %s</string>
+    <string name="appstr_legacy_shortcut_created" formatted="false">Shortcut created successfully</string>
+    <string name="appstr_legacy_show_emoji" formatted="false">Show Emojis</string>
+    <string name="appstr_legacy_show_once" formatted="false">Show Once</string>
+    <string name="appstr_legacy_show_once_only" formatted="false">Show once only</string>
+    <string name="appstr_legacy_show_translate_button" formatted="false">Show Translate Button</string>
+    <string name="appstr_legacy_show_translate_button_hint" formatted="false">Show draggable floating translation button in bottom-right</string>
+    <string name="appstr_legacy_shuffle_playback" formatted="false">Shuffle play</string>
+    <string name="appstr_legacy_sidebar_config" formatted="false">Sidebar Config</string>
+    <string name="appstr_legacy_sidebar_left" formatted="false">Left</string>
+    <string name="appstr_legacy_sidebar_right" formatted="false">Right</string>
+    <string name="appstr_legacy_skip" formatted="false">Skip</string>
+    <string name="appstr_legacy_solid_color" formatted="false">Solid Color</string>
+    <string name="appstr_legacy_sort_asc" formatted="false">Ascending</string>
+    <string name="appstr_legacy_sort_desc" formatted="false">Descending</string>
+    <string name="appstr_legacy_standard" formatted="false">Standard</string>
+    <string name="appstr_legacy_start_test_btn" formatted="false">Start Test</string>
+    <string name="appstr_legacy_start_time" formatted="false">Start Time</string>
+    <string name="appstr_legacy_status_bar_background" formatted="false">Status Bar BG</string>
+    <string name="appstr_legacy_store_coming_soon" formatted="false">App Store coming soon\nDiscover and share amazing apps</string>
+    <string name="appstr_legacy_store_review_cancel" formatted="false">Cancel</string>
+    <string name="appstr_legacy_store_review_comment_label" formatted="false">Review</string>
+    <string name="appstr_legacy_store_review_failed" formatted="false">Submission failed</string>
+    <string name="appstr_legacy_store_review_placeholder" formatted="false">Write your review...</string>
+    <string name="appstr_legacy_store_review_rating_label" formatted="false">Rating</string>
+    <string name="appstr_legacy_store_review_submit" formatted="false">Submit</string>
+    <string name="appstr_legacy_store_review_submit_title" formatted="false">Submit Review</string>
+    <string name="appstr_legacy_store_review_success" formatted="false">Review submitted</string>
+    <string name="appstr_legacy_style_anime" formatted="false">Anime</string>
+    <string name="appstr_legacy_style_art" formatted="false">Fine Art</string>
+    <string name="appstr_legacy_style_book" formatted="false">Book</string>
+    <string name="appstr_legacy_style_brand" formatted="false">Brand</string>
+    <string name="appstr_legacy_style_culture" formatted="false">Cultural</string>
+    <string name="appstr_legacy_style_era" formatted="false">Era-based</string>
+    <string name="appstr_legacy_style_game" formatted="false">Game</string>
+    <string name="appstr_legacy_style_movie" formatted="false">Movie</string>
+    <string name="appstr_legacy_style_ref_anime" formatted="false">Anime</string>
+    <string name="appstr_legacy_style_ref_art" formatted="false">Fine Art</string>
+    <string name="appstr_legacy_style_ref_book" formatted="false">Book</string>
+    <string name="appstr_legacy_style_ref_brand" formatted="false">Brand</string>
+    <string name="appstr_legacy_style_ref_culture" formatted="false">Cultural</string>
+    <string name="appstr_legacy_style_ref_era" formatted="false">Era-based</string>
+    <string name="appstr_legacy_style_ref_game" formatted="false">Game</string>
+    <string name="appstr_legacy_style_ref_movie" formatted="false">Movie</string>
+    <string name="appstr_legacy_syntax_correct" formatted="false">Syntax correct</string>
+    <string name="appstr_legacy_system_apps" formatted="false">System Apps</string>
+    <string name="appstr_legacy_system_control" formatted="false">System Control</string>
+    <string name="appstr_legacy_system_notification" formatted="false">System Notification</string>
+    <string name="appstr_legacy_tap" formatted="false">Tap</string>
+    <string name="appstr_legacy_tap_to_mark" formatted="false">Tap</string>
+    <string name="appstr_legacy_tech_description_content" formatted="false">First-principles design; independent of Node.js runtime:\n\n• Kotlin packager for simple projects\n• High-perf esbuild native binary\n• Progressive fallback strategy\n\nRun npm run build on PC then import output.</string>
+    <string name="appstr_legacy_template_export" formatted="false">Export Template</string>
+    <string name="appstr_legacy_template_export_success" formatted="false">Template exported</string>
+    <string name="appstr_legacy_template_import" formatted="false">Import Template</string>
+    <string name="appstr_legacy_template_import_success" formatted="false">Template imported successfully</string>
+    <string name="appstr_legacy_test_module_title" formatted="false">Test Module</string>
+    <string name="appstr_legacy_test_page_hint_text" formatted="false">💡 Test page loads selected modules to observe behavior</string>
+    <string name="appstr_legacy_thought_analysis" formatted="false">Requirements Analysis</string>
+    <string name="appstr_legacy_thought_conclusion" formatted="false">Conclusion</string>
+    <string name="appstr_legacy_thought_fix" formatted="false">Fix Issues</string>
+    <string name="appstr_legacy_thought_generation" formatted="false">Generation</string>
+    <string name="appstr_legacy_thought_planning" formatted="false">Planning</string>
+    <string name="appstr_legacy_thought_review" formatted="false">Review</string>
+    <string name="appstr_legacy_thought_tool_call" formatted="false">Tool Call</string>
+    <string name="appstr_legacy_thought_tool_result" formatted="false">Tool Result</string>
+    <string name="appstr_legacy_toolbar_config" formatted="false">Toolbar Config</string>
+    <string name="appstr_legacy_total_duration" formatted="false">Total: %.1f s</string>
+    <string name="appstr_legacy_total_lines_count" formatted="false">Total %d lines</string>
+    <string name="appstr_legacy_translate_engine" formatted="false">Translation Engine</string>
+    <string name="appstr_legacy_translation_desc" formatted="false">Web content translation</string>
+    <string name="appstr_legacy_trim_range_hint" formatted="false">Trim range (drag to select)</string>
+    <string name="appstr_legacy_ts_bundle_mode" formatted="false">Bundle Dependencies</string>
+    <string name="appstr_legacy_ts_bundle_mode_hint" formatted="false">Bundles project and node_modules into one file; reduces APK size</string>
+    <string name="appstr_legacy_ts_pre_compile" formatted="false">TypeScript Pre-compile</string>
+    <string name="appstr_legacy_ts_pre_compile_hint" formatted="false">Compiles TS to JS via esbuild before launch for better performance</string>
+    <string name="appstr_legacy_typewriter_text1" formatted="false">WebToApp</string>
+    <string name="appstr_legacy_typewriter_text2" formatted="false">Bridging Web and APK</string>
+    <string name="appstr_legacy_typewriter_text3" formatted="false">Infinite possibilities</string>
+    <string name="appstr_legacy_ui_position" formatted="false">UI Position</string>
+    <string name="appstr_legacy_ui_type_config" formatted="false">UI Type Config</string>
+    <string name="appstr_legacy_understood" formatted="false">Understood</string>
+    <string name="appstr_legacy_url_to_shortcut_basic" formatted="false">Base URL-to-shortcut conversion</string>
+    <string name="appstr_legacy_use_ai_to_generate_icon" formatted="false">Generate custom icons using AI</string>
+    <string name="appstr_legacy_use_original_icon" formatted="false">Use Original</string>
+    <string name="appstr_legacy_use_this_icon" formatted="false">Use This Icon</string>
+    <string name="appstr_legacy_user_apps" formatted="false">User Apps</string>
+    <string name="appstr_legacy_validate_code_empty" formatted="false">Code cannot be empty</string>
+    <string name="appstr_legacy_validate_config_missing_key" formatted="false">Config item missing key</string>
+    <string name="appstr_legacy_validate_config_missing_name" formatted="false">Config item missing display name</string>
+    <string name="appstr_legacy_validate_config_required" formatted="false">Config item \'%s\' is required</string>
+    <string name="appstr_legacy_validate_config_required_not_set" formatted="false">Required config \'%s\' has no value</string>
+    <string name="appstr_legacy_validate_name_empty" formatted="false">Module name cannot be empty</string>
+    <string name="appstr_legacy_version_info_not_found" formatted="false">Version info not found</string>
+    <string name="appstr_legacy_version_label" formatted="false">Version</string>
+    <string name="appstr_legacy_vibration_and_flash" formatted="false">Vibration &amp; Flash</string>
+    <string name="appstr_legacy_video_file_not_exist" formatted="false">Video file does not exist</string>
+    <string name="appstr_legacy_video_preview" formatted="false">Video Preview</string>
+    <string name="appstr_legacy_viewport_custom_width" formatted="false">Viewport Width</string>
+    <string name="appstr_legacy_viewport_custom_width_hint" formatted="false">Enter width (320-3840 px)</string>
+    <string name="appstr_legacy_viewport_custom_width_presets" formatted="false">Presets</string>
+    <string name="appstr_legacy_viewport_mode_custom" formatted="false">Custom Viewport</string>
+    <string name="appstr_legacy_viewport_mode_default" formatted="false">Standard (Auto-detect)</string>
+    <string name="appstr_legacy_viewport_mode_description" formatted="false">Fixes Canvas/Unity scaling and UI clipping issues</string>
+    <string name="appstr_legacy_viewport_mode_desktop" formatted="false">Desktop (980px)</string>
+    <string name="appstr_legacy_viewport_mode_fit_screen" formatted="false">Fit Screen (Unity/Canvas recommended)</string>
+    <string name="appstr_legacy_viewport_mode_title" formatted="false">Viewport Adaptation</string>
+    <string name="appstr_legacy_volume_control" formatted="false">Volume Control</string>
+    <string name="appstr_legacy_volume_percent" formatted="false">Volume: %d%%</string>
+    <string name="appstr_legacy_web_to_app_update" formatted="false">WebToApp Update</string>
+    <string name="appstr_legacy_will_test_modules_format" formatted="false">Testing %d modules</string>
+    <string name="appstr_legacy_write_code" formatted="false">Write Code</string>
+    <string name="appstr_legacy_write_code_hint" formatted="false">Write code in-app directly</string>
+    <string name="appstr_legacy_write_html_desc" formatted="false">Create or overwrite full HTML pages</string>
+</resources>

@@ -19,3 +19,5 @@ internal object AssetEncryptionSupport {
         return encryptor.encrypt(file.readBytes(), assetName)
     }
 }
+
+

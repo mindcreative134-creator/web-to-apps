@@ -435,7 +435,7 @@ class AutoStartManager(private val context: Context) {
                     Intent().apply {
                         setClassName(
                             "com.miui.securitycenter",
-                            "com.miui.permcenter.autostart.AutoStartManagementActivity"
+                            "com.miui.permcenter.autostartScope.AutoStartManagementActivity"
                         )
                         addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                     }
@@ -444,7 +444,7 @@ class AutoStartManager(private val context: Context) {
                     Intent().apply {
                         setClassName(
                             "com.huawei.systemmanager",
-                            "com.huawei.systemmanager.startupmgr.ui.StartupNormalAppListActivity"
+                            "com.huawei.systemmanager.startupmgr.uiScope.StartupNormalAppListActivity"
                         )
                         addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                     }
@@ -480,7 +480,7 @@ class AutoStartManager(private val context: Context) {
                     Intent().apply {
                         setClassName(
                             "com.samsung.android.lool",
-                            "com.samsung.android.sm.ui.battery.BatteryActivity"
+                            "com.samsung.android.sm.uiScope.battery.BatteryActivity"
                         )
                         addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                     }
@@ -547,3 +547,6 @@ data class ScheduledStartConfig(
     val days: List<Int>,
     val times: List<String> = emptyList()
 )
+
+
+

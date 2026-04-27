@@ -72,3 +72,5 @@ internal fun shouldFallbackToExternalForStrictHost(metricsJson: String?): Boolea
         blank || (height < 900 && textLength < 80 && nodeCount < 120)
     }.getOrDefault(false)
 }
+
+

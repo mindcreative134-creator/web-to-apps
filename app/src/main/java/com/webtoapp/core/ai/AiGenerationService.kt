@@ -297,3 +297,7 @@ class AiGenerationService : Service() {
         notificationManager.notify(NOTIFICATION_ID, createNotification(content))
     }
 }
+
+
+
+

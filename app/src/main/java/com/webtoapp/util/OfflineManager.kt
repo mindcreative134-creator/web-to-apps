@@ -251,3 +251,4 @@ class OfflineManager(private val context: Context) {
         CACHE_ONLY          // Note.
     }
 }
+

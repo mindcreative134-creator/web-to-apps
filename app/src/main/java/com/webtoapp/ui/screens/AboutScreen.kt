@@ -329,7 +329,7 @@ fun AboutScreen(
                                 contentAlignment = Alignment.Center
                             ) {
                                 Icon(
-                                    painter = painterResource(R.drawable.ic_about_update),
+                                    Icons.Outlined.Update,
                                     null,
                                     tint = Color(0xFF2196F3),
                                     modifier = Modifier.size(22.dp)
@@ -458,7 +458,7 @@ fun AboutScreen(
                                     contentAlignment = Alignment.Center
                                 ) {
                                     Icon(
-                                        painter = painterResource(R.drawable.ic_about_heart),
+                                        Icons.Default.Favorite,
                                         null,
                                         tint = Color(0xFFE91E63),
                                         modifier = Modifier.size(22.dp)
@@ -1950,3 +1950,5 @@ private fun LegalSection(
         )
     }
 }
+
+

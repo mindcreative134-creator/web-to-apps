@@ -119,3 +119,4 @@ interface BrowserEngine {
      */
     fun toggleReaderMode(enabled: Boolean) {}
 }
+

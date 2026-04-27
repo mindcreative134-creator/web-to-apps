@@ -953,3 +953,7 @@ private fun StoreModuleInfo.toCommunityDetail() = CommunityModuleDetail(
     createdAt = this.createdAt,
     updatedAt = null
 )
+
+
+
+

@@ -37,7 +37,6 @@ const showMenu = ref(false)
 const languages = [
   { code: 'en', label: 'English' },
   { code: 'hi', label: 'Hindi (हिन्दी)' },
-  { code: 'zh', label: 'Chinese (中文)' },
 ]
 
 const currentLangLabel = computed(() => {

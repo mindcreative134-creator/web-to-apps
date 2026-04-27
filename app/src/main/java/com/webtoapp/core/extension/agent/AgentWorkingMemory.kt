@@ -254,3 +254,4 @@ data class AgentWorkingMemory(
         return toolCallHistory.filter { it.toolName == "syntax_check" }
     }
 }
+

@@ -45,17 +45,17 @@ import com.webtoapp.ui.components.ThemedBackgroundBox
 import com.webtoapp.ui.components.EnhancedElevatedCard
 
 /**
- * create WordPress app
+ * Create WordPress App Screen
  * 
- * Note
- * WordPress Hero area( WP gradient)
- * managementpanel( , current)
- * listpanel( )
- * management config( , )
- * panel( SQLite offlinemode)
- * select
- * select
- * WordPress version
+ * Features:
+ * WordPress Hero area (WP gradient)
+ * Management panel (Creation, current status)
+ * List panel (Templates)
+ * Management config (Site settings, Admin)
+ * Panel (SQLite offline mode)
+ * Category selection
+ * Theme selection
+ * WordPress version detection
  */
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
 @Composable
@@ -72,12 +72,12 @@ fun CreateWordPressAppScreen(
     val scope = rememberCoroutineScope()
     val scrollState = rememberScrollState()
     
-    // WordPress
+    // WordPress theme colors
     val wpBlue = Color(0xFF21759B)
     val wpDarkBlue = Color(0xFF0073AA)
     val wpGray = Color(0xFF464646)
     
-    // App
+    // App configuration state
     var appName by remember { mutableStateOf("") }
     var appIcon by remember { mutableStateOf<Uri?>(null) }
     
@@ -87,30 +87,30 @@ fun CreateWordPressAppScreen(
     var adminEmail by remember { mutableStateOf("") }
     var landscapeMode by remember { mutableStateOf(false) }
     
-    // Note
+    // Permalinks config
     var permalink by remember { mutableStateOf("postname") }
     
-    // Note
-    var siteLanguage by remember { mutableStateOf("zh_CN") }
+    // Site language config
+    var siteLanguage by remember { mutableStateOf("en_US") }
     
-    // /( importmode)
+    // Detected assets (Import mode)
     var detectedThemes by remember { mutableStateOf<List<String>>(emptyList()) }
     var activeTheme by remember { mutableStateOf<String?>(null) }
     var detectedPlugins by remember { mutableStateOf<List<String>>(emptyList()) }
     var wpVersion by remember { mutableStateOf<String?>(null) }
     var isImportMode by remember { mutableStateOf(false) }
     
-    // state
+    // Creation state
     var isCreating by remember { mutableStateOf(false) }
     var creationPhase by remember { mutableStateOf("") }
     var projectId by remember { mutableStateOf<String?>(null) }
     var errorMessage by remember { mutableStateOf<String?>(null) }
     
-    // downloadstate
+    // Download state
     val downloadState by WordPressDependencyManager.downloadState.collectAsStateWithLifecycle()
     var showDownloadDialog by remember { mutableStateOf(false) }
     
-    // fileselect
+    // File selectors
     val iconPickerLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.GetContent()
     ) { uri -> uri?.let { appIcon = it } }
@@ -126,7 +126,7 @@ fun CreateWordPressAppScreen(
                 isImportMode = true
                 
                 try {
-                    // checkanddownload
+                    // Check and download dependencies
                     if (!WordPressDependencyManager.isAllReady(context)) {
                         showDownloadDialog = true
                         val success = WordPressDependencyManager.downloadAllDependencies(context)
@@ -138,23 +138,23 @@ fun CreateWordPressAppScreen(
                         }
                     }
                     
-                    // createitem
+                    // Create project directory
                     creationPhase = AppStringsProvider.current().wpCreatingProject
                     val newProjectId = WordPressManager.createProject(context, siteTitle, adminUser)
                     
                     if (newProjectId != null) {
-                        // import WordPress
+                        // Import full WordPress project
                         val importSuccess = WordPressManager.importFullProject(context, newProjectId, zipUri)
                         if (importSuccess) {
                             projectId = newProjectId
                             creationPhase = AppStringsProvider.current().wpProjectReady
                             
-                            // importitem
+                            // Detect imported content
                             withContext(Dispatchers.IO) {
                                 try {
                                     val projectDir = WordPressManager.getProjectDir(context, newProjectId)
                                     if (projectDir != null) {
-                                        // Note
+                                        // Detect themes
                                         val themesDir = File(projectDir, "wp-content/themes")
                                         if (themesDir.exists() && themesDir.isDirectory) {
                                             detectedThemes = themesDir.listFiles()
@@ -164,7 +164,7 @@ fun CreateWordPressAppScreen(
                                             activeTheme = detectedThemes.firstOrNull { it != "index.php" }
                                         }
                                         
-                                        // Note
+                                        // Detect plugins
                                         val pluginsDir = File(projectDir, "wp-content/plugins")
                                         if (pluginsDir.exists() && pluginsDir.isDirectory) {
                                             detectedPlugins = pluginsDir.listFiles()
@@ -182,7 +182,7 @@ fun CreateWordPressAppScreen(
                                         }
                                     }
                                 } catch (e: Exception) {
-                                    // failed
+                                    // Failed to detect project content
                                 }
                             }
                         } else {
@@ -200,7 +200,7 @@ fun CreateWordPressAppScreen(
         }
     }
     
-    // create
+    // Create new site function
     fun createNewSite() {
         scope.launch {
             isCreating = true
@@ -209,7 +209,7 @@ fun CreateWordPressAppScreen(
             isImportMode = false
             
             try {
-                // checkanddownload
+                // Check and download dependencies
                 if (!WordPressDependencyManager.isAllReady(context)) {
                     showDownloadDialog = true
                     val success = WordPressDependencyManager.downloadAllDependencies(context)
@@ -221,14 +221,14 @@ fun CreateWordPressAppScreen(
                     }
                 }
                 
-                // createitem
+                // Create project directory
                 creationPhase = AppStringsProvider.current().wpCreatingProject
                 val newProjectId = WordPressManager.createProject(context, siteTitle, adminUser)
                 
                 if (newProjectId != null) {
                     projectId = newProjectId
                     creationPhase = AppStringsProvider.current().wpProjectReady
-                    wpVersion = "6.4"  // WP version
+                    wpVersion = "6.4"  // Default WP version
                 } else {
                     errorMessage = AppStringsProvider.current().wpProjectCreateFailed
                 }
@@ -240,7 +240,7 @@ fun CreateWordPressAppScreen(
         }
     }
     
-    // create
+    // Creation validation
     val canCreate = projectId != null
     
     Scaffold(
@@ -292,19 +292,19 @@ fun CreateWordPressAppScreen(
                 .padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            // ========== 1. WordPress Hero area ==========
+            // ========== 1. WordPress Hero Section ==========
             WpHeroSection(
                 wpBlue = wpBlue,
                 wpVersion = wpVersion,
                 isImportMode = isImportMode && projectId != null
             )
             
-            // ========== item ==========
+            // ========== Template Selection ==========
             if (projectId == null && !isCreating) {
                 TypedSampleProjectsCard(
                     title = AppStringsProvider.current().sampleProjects,
                     subtitle = AppStringsProvider.current().sampleWpSubtitle,
-                    samples = remember { WordPressSampleManager.getSampleProjects() },
+                    samples = remember(context) { WordPressSampleManager.getSampleProjects(context) },
                     onSelectSample = { sample ->
                         scope.launch {
                             val result = WordPressSampleManager.extractSampleProject(context, sample.id)
@@ -314,7 +314,7 @@ fun CreateWordPressAppScreen(
                                 errorMessage = null
                                 isImportMode = false
                                 try {
-                                    // checkanddownload
+                                    // Check and download dependencies
                                     if (!WordPressDependencyManager.isAllReady(context)) {
                                         showDownloadDialog = true
                                         val success = WordPressDependencyManager.downloadAllDependencies(context)
@@ -333,7 +333,7 @@ fun CreateWordPressAppScreen(
                                         appName = sample.name
                                         wpVersion = "6.4"
                                         
-                                        // itemin
+                                        // Detect project content
                                         withContext(Dispatchers.IO) {
                                             try {
                                                 val sampleDir = java.io.File(path)
@@ -364,7 +364,7 @@ fun CreateWordPressAppScreen(
                 )
             }
             
-            // ========== 2. config ==========
+            // ========== 2. Configuration ==========
             EnhancedElevatedCard(modifier = Modifier.fillMaxWidth()) {
                 Column(modifier = Modifier.padding(16.dp)) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
@@ -378,7 +378,7 @@ fun CreateWordPressAppScreen(
                     }
                     Spacer(modifier = Modifier.height(16.dp))
                     
-                    // app
+                    // App Name
                     PremiumTextField(
                         value = appName,
                         onValueChange = { appName = it },
@@ -388,7 +388,7 @@ fun CreateWordPressAppScreen(
                     )
                     Spacer(modifier = Modifier.height(12.dp))
                     
-                    // Note
+                    // Site Title
                     PremiumTextField(
                         value = siteTitle,
                         onValueChange = { siteTitle = it },
@@ -399,7 +399,7 @@ fun CreateWordPressAppScreen(
                     )
                     Spacer(modifier = Modifier.height(12.dp))
                     
-                    // mode
+                    // Layout Mode
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.SpaceBetween,
@@ -411,7 +411,7 @@ fun CreateWordPressAppScreen(
                 }
             }
             
-            // ========== 3. iconselect ==========
+            // ========== 3. Icon Selection ==========
             EnhancedElevatedCard(modifier = Modifier.fillMaxWidth()) {
                 Column(modifier = Modifier.padding(16.dp)) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
@@ -740,7 +740,7 @@ private fun WpHeroSection(
                     )
                     Spacer(modifier = Modifier.height(6.dp))
                     FlowRow(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                        // WP version
+                        // WP Version Badge
                         wpVersion?.let { ver ->
                             Surface(
                                 shape = RoundedCornerShape(4.dp),
@@ -782,7 +782,7 @@ private fun WpHeroSection(
                                 fontFamily = FontFamily.Monospace
                             )
                         }
-                        // import/newlabel
+                        // Import Status Label
                         if (isImportMode) {
                             Surface(
                                 shape = RoundedCornerShape(4.dp),
@@ -805,7 +805,7 @@ private fun WpHeroSection(
 }
 
 /**
- * management configcard
+ * Admin Configuration Card
  */
 @Composable
 private fun WpAdminConfigCard(
@@ -880,7 +880,7 @@ private fun WpAdminConfigCard(
 }
 
 /**
- * managementcard
+ * Theme Management Card
  */
 @Composable
 private fun WpThemeCard(
@@ -919,7 +919,7 @@ private fun WpThemeCard(
             Spacer(modifier = Modifier.height(12.dp))
             
             if (themes.isNotEmpty()) {
-                // current
+                // Current Active Theme
                 activeTheme?.let { theme ->
                     Surface(
                         modifier = Modifier.fillMaxWidth(),
@@ -1016,7 +1016,7 @@ private fun WpThemeCard(
 }
 
 /**
- * managementcard
+ * Plugin Management Card
  */
 @Composable
 private fun WpPluginCard(
@@ -1121,7 +1121,7 @@ private fun WpPluginCard(
 }
 
 /**
- * selectcard
+ * Permalink Selection Card
  */
 @Composable
 private fun WpPermalinkCard(
@@ -1184,7 +1184,7 @@ private fun WpPermalinkCard(
 }
 
 /**
- * selectcard
+ * Language Selection Card
  */
 @OptIn(ExperimentalLayoutApi::class, ExperimentalMaterial3Api::class)
 @Composable
@@ -1194,12 +1194,10 @@ private fun WpLanguageCard(
     wpBlue: Color
 ) {
     val languages = listOf(
-        "zh_CN" to "中文（简体）",
+        "hi_IN" to "हिन्दी",
         "en_US" to "English",
-        "zh_TW" to "中文（繁體）",
         "ja" to "日本語",
         "ko_KR" to "한국어",
-        "ar" to "العربية",
         "es_ES" to "Español",
         "fr_FR" to "Français",
         "de_DE" to "Deutsch",
@@ -1237,7 +1235,7 @@ private fun WpLanguageCard(
 }
 
 /**
- * card
+ * Database Info Card
  */
 @Composable
 private fun WpDbInfoCard(wpBlue: Color) {
@@ -1337,3 +1335,6 @@ private fun WpDbInfoCard(wpBlue: Color) {
         }
     }
 }
+
+
+

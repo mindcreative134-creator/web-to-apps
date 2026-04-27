@@ -18,3 +18,4 @@ class LoggingStartup(private val context: Context) {
         AppLogger.shutdown()
     }
 }
+

@@ -521,3 +521,6 @@ private fun isMaximumConfig(config: IsolationConfig): Boolean {
             config.protectWebGL &&
             config.protectFonts
 }
+
+
+

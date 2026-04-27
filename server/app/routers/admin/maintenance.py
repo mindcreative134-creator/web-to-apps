@@ -164,24 +164,49 @@ def system_health_check(
     import time
     import psutil
 
-    # Uptime
-    boot_time = psutil.boot_time()
-    uptime_seconds = int(time.time() - boot_time)
-    days, remainder = divmod(uptime_seconds, 86400)
-    hours, remainder = divmod(remainder, 3600)
-    minutes, _ = divmod(remainder, 60)
-    uptime_str = f"{days}天 {hours}时 {minutes}分"
+    data = {
+        "status": "healthy",
+        "uptime": "-",
+        "db_connections": "0/0",
+        "memory_usage": "-",
+        "cpu_usage": "-",
+        "disk_usage": "-",
+        "database": "connected",
+        "python_pid": os.getpid(),
+    }
 
-    # Memory
-    mem = psutil.virtual_memory()
-    mem_str = f"{mem.used // (1024*1024)}MB / {mem.total // (1024*1024)}MB ({mem.percent}%)"
+    try:
+        # Uptime
+        boot_time = psutil.boot_time()
+        uptime_seconds = int(time.time() - boot_time)
+        days, remainder = divmod(uptime_seconds, 86400)
+        hours, remainder = divmod(remainder, 3600)
+        minutes, _ = divmod(remainder, 60)
+        data["uptime"] = f"{days}d {hours}h {minutes}m"
+    except Exception:
+        data["status"] = "degraded"
 
-    # CPU
-    cpu_percent = psutil.cpu_percent(interval=0.5)
+    try:
+        # Memory
+        mem = psutil.virtual_memory()
+        data["memory_usage"] = f"{mem.used // (1024*1024)}MB / {mem.total // (1024*1024)}MB ({mem.percent}%)"
+    except Exception:
+        data["status"] = "degraded"
 
-    # Disk
-    disk = psutil.disk_usage('/')
-    disk_str = f"{disk.used // (1024*1024*1024)}GB / {disk.total // (1024*1024*1024)}GB ({disk.percent}%)"
+    try:
+        # CPU
+        cpu_percent = psutil.cpu_percent(interval=0.1)
+        data["cpu_usage"] = f"{cpu_percent}%"
+    except Exception:
+        pass
+
+    try:
+        # Disk - Improved Windows handling
+        path = "C:\\" if os.name == 'nt' else '/'
+        disk = psutil.disk_usage(path)
+        data["disk_usage"] = f"{disk.used // (1024*1024*1024)}GB / {disk.total // (1024*1024*1024)}GB ({disk.percent}%)"
+    except Exception:
+        data["status"] = "degraded"
 
     # DB check
     db_ok = True
@@ -190,26 +215,20 @@ def system_health_check(
         db.execute(sa_text("SELECT 1"))
     except Exception:
         db_ok = False
+        data["database"] = "error"
+        data["status"] = "degraded"
 
-    # DB pool info
-    from app.database import engine
-    pool = engine.pool
-    pool_status = {
-        "pool_size": pool.size() if hasattr(pool, 'size') else '-',
-        "checked_in": pool.checkedin() if hasattr(pool, 'checkedin') else '-',
-        "checked_out": pool.checkedout() if hasattr(pool, 'checkedout') else '-',
-    }
+    try:
+        # DB pool info
+        from app.database import engine
+        pool = engine.pool
+        p_size = pool.size() if hasattr(pool, 'size') else '-'
+        p_out = pool.checkedout() if hasattr(pool, 'checkedout') else '-'
+        data["db_connections"] = f"{p_out}/{p_size}"
+    except Exception:
+        pass
 
-    return ApiResponse(data={
-        "status": "healthy" if db_ok else "degraded",
-        "uptime": uptime_str,
-        "db_connections": f"{pool_status['checked_out']}/{pool_status['pool_size']}",
-        "memory_usage": mem_str,
-        "cpu_usage": f"{cpu_percent}%",
-        "disk_usage": disk_str,
-        "database": "connected" if db_ok else "error",
-        "python_pid": os.getpid(),
-    })
+    return ApiResponse(data=data)
 
 
 @router.get("/stats", response_model=ApiResponse)
@@ -235,16 +254,16 @@ def system_stats(
     total_audit_logs = db.query(func.count(AdminAuditLog.id)).scalar() or 0
 
     return ApiResponse(data={
-        "总用户数": total_users,
-        "活跃用户": active_users,
-        "Pro 用户": pro_users,
-        "管理员": admin_users,
-        "云项目": total_projects,
-        "激活码总数": total_codes,
-        "已使用激活码": used_codes,
-        "社区模块": total_modules,
-        "公告数": total_announcements,
-        "审计日志": total_audit_logs,
+        "total_users": total_users,
+        "active_users": active_users,
+        "pro_users": pro_users,
+        "admin_users": admin_users,
+        "cloud_projects": total_projects,
+        "activation_codes": total_codes,
+        "used_codes": used_codes,
+        "community_modules": total_modules,
+        "announcements": total_announcements,
+        "audit_logs": total_audit_logs,
     })
 
 
@@ -280,7 +299,7 @@ def clear_cache(
 
     audit(None, admin.id, "clear_cache", details={"cleared": cleared})
     return ApiResponse(
-        message=f"已清除 {len(cleared)} 类缓存: {', '.join(cleared) or '无'}",
+        message=f"Cleared {len(cleared)} types of cache: {', '.join(cleared) or 'None'}",
         data={"cleared": cleared},
     )
 
@@ -308,7 +327,7 @@ def create_db_backup(
         db_port = parsed.port or 3306
         db_name = parsed.path.lstrip("/")
     except Exception as e:
-        return ApiResponse(success=False, message=f"无法解析数据库连接: {str(e)}")
+        return ApiResponse(success=False, message=f"Unable to parse database connection: {str(e)}")
 
     # Create backup directory
     backup_dir = "/www/wwwroot/webtoapp-api/backups"
@@ -325,7 +344,7 @@ def create_db_backup(
         )
         result = subprocess.run(cmd, shell=True, capture_output=True, text=True, timeout=120)
         if result.returncode != 0:
-            return ApiResponse(success=False, message=f"备份失败: {result.stderr[:200]}")
+            return ApiResponse(success=False, message=f"Backup failed: {result.stderr[:200]}")
 
         file_size = os.path.getsize(backup_file)
         size_str = f"{file_size / (1024*1024):.1f}MB" if file_size > 1024*1024 else f"{file_size // 1024}KB"
@@ -334,13 +353,13 @@ def create_db_backup(
             "file": backup_file, "size": size_str,
         })
         return ApiResponse(
-            message=f"备份完成: {size_str}",
+            message=f"Backup completed: {size_str}",
             data={"file": backup_file, "size": size_str, "timestamp": timestamp},
         )
     except subprocess.TimeoutExpired:
-        return ApiResponse(success=False, message="备份超时 (>120s)")
+        return ApiResponse(success=False, message="Backup timed out (>120s)")
     except Exception as e:
-        return ApiResponse(success=False, message=f"备份异常: {str(e)}")
+        return ApiResponse(success=False, message=f"Backup exception: {str(e)}")
 
 
 BACKUP_DIR = "/www/wwwroot/webtoapp-api/backups"
@@ -441,74 +460,7 @@ def delete_backup(
     size = os.path.getsize(fpath)
     os.remove(fpath)
     audit(None, admin.id, "delete_backup", details={"file": safe_name, "size": size})
-    return ApiResponse(message=f"已删除备份: {safe_name}")
-
-# ═══════════════════════════════════════════
-#  INTELLIGENCE DASHBOARD
-# ═══════════════════════════════════════════
-
-# (overview endpoint consolidated at bottom with advanced modules)
+    return ApiResponse(message=f"Deleted backup: {safe_name}")
 
 
-@router.get("/intelligence/threats")
-def intelligence_threats(
-    n: int = Query(50, ge=1, le=200),
-    admin: User = Depends(get_current_admin),
-):
-    """Detailed threat actor list."""
-    from app.services.intelligence.threat_scorer import threat_scorer
-    return ApiResponse(data=threat_scorer.get_top_threats(n))
-
-
-@router.get("/intelligence/circuits")
-def intelligence_circuits(admin: User = Depends(get_current_admin)):
-    """Circuit breaker status for all downstream services."""
-    from app.services.intelligence.circuit_breaker import circuit_manager
-    return ApiResponse(data=circuit_manager.get_all_status())
-
-
-@router.get("/intelligence/abuse")
-def intelligence_abuse(
-    n: int = Query(50, ge=1, le=200),
-    admin: User = Depends(get_current_admin),
-):
-    """Suspicious community engagement activity."""
-    from app.services.intelligence.abuse_detector import abuse_detector
-    return ApiResponse(data=abuse_detector.get_suspicious_modules(n))
-
-
-@router.get("/intelligence/advanced")
-def intelligence_advanced(admin: User = Depends(get_current_admin)):
-    """
-    Advanced intelligence dashboard — honeypots, fingerprints,
-    Markov model, backpressure, IP reputation, impossible travel.
-    """
-    from app.services.intelligence.advanced import adv_intel
-    return ApiResponse(data=adv_intel.get_full_status())
-
-
-@router.get("/intelligence/overview")
-def intelligence_overview_full(admin: User = Depends(get_current_admin)):
-    """
-    Combined intelligence dashboard — all 9 sub-systems in one response.
-    """
-    from app.services.intelligence.threat_scorer import threat_scorer
-    from app.services.intelligence.circuit_breaker import circuit_manager
-    from app.services.intelligence.abuse_detector import abuse_detector
-    from app.services.intelligence.advanced import adv_intel
-
-    top_threats = threat_scorer.get_top_threats(10)
-
-    return ApiResponse(data={
-        "threats": {
-            "top_actors": top_threats,
-            "critical_count": sum(1 for t in top_threats if t["risk_level"] == "CRITICAL"),
-            "high_count": sum(1 for t in top_threats if t["risk_level"] == "HIGH"),
-        },
-        "circuits": circuit_manager.get_all_status(),
-        "abuse": {
-            "suspicious_modules": abuse_detector.get_suspicious_modules(10),
-        },
-        "advanced": adv_intel.get_full_status(),
-    })
 

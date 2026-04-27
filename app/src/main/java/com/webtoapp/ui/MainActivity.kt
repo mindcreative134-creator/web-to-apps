@@ -3,9 +3,10 @@ package com.webtoapp.ui
 import android.Manifest
 import android.content.Intent
 import com.webtoapp.core.auth.GoogleSignInHelper
-import kotlinx.coroutines.CoroutineScope
+import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
@@ -54,10 +55,12 @@ class MainActivity : ComponentActivity() {
 
     private val shellModeManager: ShellModeManager by inject()
 
-    // Comment
+    // Whether shell check is complete
+    private var shellCheckDone by mutableStateOf(false)
+    // true = show main UI, false = redirecting to ShellActivity
+    private var showMainUI by mutableStateOf(false)
+
     private var showLanguageSelection by mutableStateOf(true)
-    
-    // Comment
     private var showShortcutPermissionDialog by mutableStateOf(false)
     private var shortcutPermissionMessage by mutableStateOf("")
 
@@ -70,130 +73,118 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         AppLogger.lifecycle("MainActivity", "onCreate", "savedInstanceState=${savedInstanceState != null}")
-        
-        // Google OAuth （）
-        handleGoogleOAuthIfNeeded(intent)
-        
-        // Check Shell （）
-        val isShell = try {
-            val result = shellModeManager.isShellMode()
-            AppLogger.d("MainActivity", "Shell mode check: isShellMode=$result")
-            result
-        } catch (e: Exception) {
-            AppLogger.e("MainActivity", "Shell mode check failed", e)
-            false
-        } catch (e: Error) {
-            AppLogger.e("MainActivity", "Shell mode check critical error", Error(e))
-            false
-        }
-        
-        if (isShell) {
-            // Shell ： ShellActivity
-            AppLogger.i("MainActivity", "Entering shell mode, redirecting to ShellActivity")
-            try {
-                startActivity(Intent(this, ShellActivity::class.java))
-                finish()
-                return
-            } catch (e: Exception) {
-                AppLogger.e("MainActivity", "Failed to start ShellActivity", e)
-                // Resume
-            }
-        }
-        AppLogger.i("MainActivity", "Normal mode, showing main UI")
 
-        // Enable（Android 15+ ）
+        // Google OAuth callback
+        handleGoogleOAuthIfNeeded(intent)
+
+        // Apply window flags immediately on main thread (no IO needed)
         try {
             enableEdgeToEdge()
         } catch (e: Exception) {
             AppLogger.w("MainActivity", "enableEdgeToEdge failed", e)
         }
-
-        requestNecessaryPermissions()
-        
-        // Check
-        checkShortcutPermission()
-
-        // Set
         try {
             WindowCompat.setDecorFitsSystemWindows(window, false)
         } catch (e: Exception) {
             AppLogger.w("MainActivity", "setDecorFitsSystemWindows failed", e)
         }
-        
+
+        // Set content immediately so the window is NEVER blank
         setContent {
-            // （，）
             val themeRevealState = rememberThemeRevealState()
-            
+
             WebToAppTheme { isDarkTheme ->
-                // （）
                 val themeColors = MaterialTheme.colorScheme
                 LaunchedEffect(isDarkTheme, themeColors.background) {
                     val windowInsetsController = WindowCompat.getInsetsController(window, window.decorView)
-                    
-                    // —
                     window.statusBarColor = android.graphics.Color.TRANSPARENT
                     windowInsetsController.isAppearanceLightStatusBars = !isDarkTheme
-                    
-                    // Comment
                     window.navigationBarColor = android.graphics.Color.TRANSPARENT
                     windowInsetsController.isAppearanceLightNavigationBars = !isDarkTheme
                 }
-                
-                val languageManager: LanguageManager = koinInject()
-                val hasSelectedLanguage by languageManager.hasSelectedLanguageFlow.collectAsState(initial = true)
-                
-                // ThemeRevealState （HomeScreen ）
+
                 CompositionLocalProvider(
                     LocalThemeRevealState provides themeRevealState
                 ) {
                     Box(modifier = Modifier.fillMaxSize()) {
-                        // Comment
                         Surface(
                             modifier = Modifier.fillMaxSize(),
                             color = MaterialTheme.colorScheme.background
                         ) {
-                            if (!hasSelectedLanguage && showLanguageSelection) {
-                                FirstLaunchLanguageScreen(
-                                    onLanguageSelected = {
-                                        showLanguageSelection = false
-                                    }
-                                )
-                            } else {
-                                AppNavigation()
+                            // Only render main UI after shell check is done
+                            if (shellCheckDone && showMainUI) {
+                                val languageManager: LanguageManager = koinInject()
+                                val hasSelectedLanguage by languageManager.hasSelectedLanguageFlow.collectAsState(initial = true)
+                                if (!hasSelectedLanguage && showLanguageSelection) {
+                                    FirstLaunchLanguageScreen(
+                                        onLanguageSelected = { showLanguageSelection = false }
+                                    )
+                                } else {
+                                    AppNavigation()
+                                }
                             }
+                            // Else: transparent surface while shell check runs (instant, <100ms)
                         }
-                        
-                        // （）
                         CircularRevealOverlay(revealState = themeRevealState)
                     }
                 }
-                
-                // Comment
+
                 if (showShortcutPermissionDialog) {
                     AlertDialog(
                         onDismissRequest = { showShortcutPermissionDialog = false },
                         title = { Text(AppStringsProvider.current().shortcutPermissionTitle) },
                         text = { Text(shortcutPermissionMessage) },
                         confirmButton = {
-                            TextButton(
-                                onClick = {
-                                    showShortcutPermissionDialog = false
-                                    openAppSettings()
-                                }
-                            ) {
+                            TextButton(onClick = {
+                                showShortcutPermissionDialog = false
+                                openAppSettings()
+                            }) {
                                 Text(AppStringsProvider.current().shortcutPermissionGoToSettings)
                             }
                         },
                         dismissButton = {
-                            TextButton(
-                                onClick = { showShortcutPermissionDialog = false }
-                            ) {
+                            TextButton(onClick = { showShortcutPermissionDialog = false }) {
                                 Text(AppStringsProvider.current().shortcutPermissionLater)
                             }
                         }
                     )
                 }
             }
+        }
+
+        // Now check shell mode in the background
+        lifecycleScope.launch {
+            val isShell = try {
+                withContext(Dispatchers.IO) { shellModeManager.isShellMode() }
+            } catch (e: Exception) {
+                AppLogger.e("MainActivity", "Shell mode check failed", e)
+                false
+            } catch (e: Throwable) {
+                AppLogger.e("MainActivity", "Shell mode check critical error", e)
+                false
+            }
+
+            if (isShell) {
+                AppLogger.i("MainActivity", "Entering shell mode, redirecting to ShellActivity")
+                try {
+                    startActivity(Intent(this@MainActivity, ShellActivity::class.java))
+                    finish()
+                } catch (e: Exception) {
+                    AppLogger.e("MainActivity", "Failed to start ShellActivity", e)
+                    // Fall through to normal mode if redirect fails
+                    requestNecessaryPermissions()
+                    checkShortcutPermission()
+                    showMainUI = true
+                    shellCheckDone = true
+                }
+                return@launch
+            }
+
+            AppLogger.i("MainActivity", "Normal mode, showing main UI")
+            requestNecessaryPermissions()
+            checkShortcutPermission()
+            showMainUI = true
+            shellCheckDone = true
         }
     }
 
@@ -320,7 +311,7 @@ class MainActivity : ComponentActivity() {
         if (GoogleSignInHelper.isOAuthCallback(intent)) {
             val uri = intent?.data ?: return
             AppLogger.i("MainActivity", "Handling Google OAuth callback: ${uri.scheme}://${uri.host}")
-            CoroutineScope(Dispatchers.Main).launch {
+            lifecycleScope.launch(Dispatchers.Main) {
                 GoogleSignInHelper.handleOAuthCallback(uri)
             }
         }
@@ -336,3 +327,8 @@ class MainActivity : ComponentActivity() {
         super.onSaveInstanceState(outState)
     }
 }
+
+
+
+
+

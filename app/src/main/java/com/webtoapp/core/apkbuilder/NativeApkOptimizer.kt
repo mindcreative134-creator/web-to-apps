@@ -198,3 +198,4 @@ object NativeApkOptimizer {
     private external fun nativeOptimizeApk(inputPath: String, outputPath: String): OptimizeResult?
     private external fun nativeAnalyzeApkSize(apkPath: String): LongArray?
 }
+

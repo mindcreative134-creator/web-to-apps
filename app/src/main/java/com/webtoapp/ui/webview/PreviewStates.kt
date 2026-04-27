@@ -67,3 +67,4 @@ fun formatWpBytes(bytes: Long): String {
     val exp = (Math.log(bytes.toDouble()) / Math.log(1024.0)).toInt().coerceAtMost(units.size - 1)
     return String.format(java.util.Locale.getDefault(), "%.1f %s", bytes / Math.pow(1024.0, exp.toDouble()), units[exp])
 }
+

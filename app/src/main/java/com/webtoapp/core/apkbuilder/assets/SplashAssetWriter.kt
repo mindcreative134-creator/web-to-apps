@@ -62,3 +62,5 @@ internal object SplashAssetWriter {
         }
     }
 }
+
+

@@ -6,17 +6,15 @@ import org.junit.Test
 class AppLanguageTest {
 
     @Test
-    fun `fromCode resolves supported languages and defaults to chinese`() {
-        assertThat(AppLanguage.fromCode("zh")).isEqualTo(AppLanguage.CHINESE)
+    fun `fromCode resolves supported languages and defaults to english`() {
         assertThat(AppLanguage.fromCode("en")).isEqualTo(AppLanguage.ENGLISH)
-        assertThat(AppLanguage.fromCode("ar")).isEqualTo(AppLanguage.ARABIC)
-        assertThat(AppLanguage.fromCode("unknown")).isEqualTo(AppLanguage.CHINESE)
+        assertThat(AppLanguage.fromCode("hi")).isEqualTo(AppLanguage.HINDI)
+        assertThat(AppLanguage.fromCode("unknown")).isEqualTo(AppLanguage.ENGLISH)
     }
 
     @Test
-    fun `language metadata includes rtl flag and locale information`() {
-        assertThat(AppLanguage.ARABIC.isRtl).isTrue()
-        assertThat(AppLanguage.CHINESE.isRtl).isFalse()
+    fun `language metadata includes locale information`() {
         assertThat(AppLanguage.ENGLISH.locale.language).isEqualTo("en")
+        assertThat(AppLanguage.HINDI.locale.language).isEqualTo("hi")
     }
 }

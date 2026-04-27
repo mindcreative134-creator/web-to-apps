@@ -74,3 +74,4 @@ typealias UpdateTemplate = com.webtoapp.core.cloud.model.UpdateTemplate
 typealias AppUser = com.webtoapp.core.cloud.model.AppUser
 typealias GeoDistribution = com.webtoapp.core.cloud.model.GeoDistribution
 typealias RegionInfo = com.webtoapp.core.cloud.model.RegionInfo
+

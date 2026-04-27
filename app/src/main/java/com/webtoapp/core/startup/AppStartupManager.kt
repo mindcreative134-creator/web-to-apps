@@ -20,7 +20,7 @@ class AppStartupManager(
     fun initialize(appScope: CoroutineScope) {
         loggingStartup.initialize()
         shellRuntimeStartup.initialize()
-        securityStartup.initialize()
+        securityStartup.initialize(appScope)
         legacyHttpUrlMigrationStartup.initialize(appScope)
         runtimeWarmupStartup.initialize()
         backgroundServicesStartup.initialize(appScope)
@@ -54,3 +54,8 @@ class AppStartupManager(
         loggingStartup.shutdown()
     }
 }
+
+
+
+
+

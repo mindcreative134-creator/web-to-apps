@@ -12,3 +12,4 @@ object ExtensionPanelScript {
 
     fun getModuleHelperScript(): String = PanelHelperScript.helperScript
 }
+

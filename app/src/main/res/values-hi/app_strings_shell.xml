@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" ?>
 <resources>
     <string name="appstr_shell_access_days" formatted="false">पहुँच के दिन</string>
     <string name="appstr_shell_access_end_time" formatted="false">पहुँच समाप्ति समय</string>

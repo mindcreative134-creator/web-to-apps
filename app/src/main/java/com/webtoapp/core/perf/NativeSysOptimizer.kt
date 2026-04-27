@@ -160,3 +160,4 @@ object NativeSysOptimizer {
     private external fun nativeGetCpuTopology(): String?
     private external fun nativeGetThermalInfo(): String?
 }
+

@@ -18,28 +18,6 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import java.util.Locale
 
-/**
- * Note.
- */
-enum class AppLanguage(
-    val code: String,
-    val displayName: String,
-    val nativeName: String,
-    val locale: Locale,
-    val isRtl: Boolean = false
-) {
-    ENGLISH("en", "English", "English", Locale.ENGLISH),
-    CHINESE("zh", "Chinese", "中文", Locale.CHINESE),
-    ARABIC("ar", "Arabic", "العربية", Locale("ar"), true),
-    HINDI("hi", "Hindi", "हिन्दी", Locale("hi"));
-
-    companion object {
-        fun fromCode(code: String): AppLanguage {
-            return entries.find { it.code == code } ?: ENGLISH
-        }
-    }
-}
-
 private val Context.languageDataStore by preferencesDataStore(name = "language_settings")
 
 /**

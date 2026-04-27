@@ -240,3 +240,4 @@ object NativeCryptoOptimized {
     private external fun nativeSha256(data: ByteArray): ByteArray?
     private external fun nativeHmacSha256(key: ByteArray, data: ByteArray): ByteArray?
 }
+

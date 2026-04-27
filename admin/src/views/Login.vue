@@ -47,8 +47,7 @@ async function handleLogin() {
   loading.value = true; error.value = ''
   try {
     const res = await authApi.login({ account: email.value, password: password.value })
-    const user = res.user
-    const tokens = res.tokens
+    const { user, tokens } = res.data
 
     // Verify admin permissions
     if (!user.is_admin) {

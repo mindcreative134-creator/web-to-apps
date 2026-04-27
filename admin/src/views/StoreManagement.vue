@@ -378,7 +378,7 @@ async function batchAction(action) {
   } catch { showToast(t('common.failed'), 'error') }
 }
 
-const dateLocaleMap = { en: 'en-US', zh: 'zh-CN', hi: 'hi-IN' }
+const dateLocaleMap = { en: 'en-US', hi: 'hi-IN' }
 function formatDate(d) { return d ? new Date(d).toLocaleString(dateLocaleMap[locale.value] || 'en-US') : '-' }
 
 function typeBadge(t) {
@@ -392,7 +392,6 @@ function typeGradient(t) {
   }[t] || 'linear-gradient(135deg, #6366f1, #4f46e5)'
 }
 function fmtNum(n) {
-  if (locale.value === 'zh' && n >= 10000) return (n / 10000).toFixed(1) + '万'
   if (n >= 1000) return (n / 1000).toFixed(1) + 'k'
   return String(n)
 }

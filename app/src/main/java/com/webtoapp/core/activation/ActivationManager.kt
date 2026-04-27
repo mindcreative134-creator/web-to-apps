@@ -518,3 +518,4 @@ sealed class ActivationResult {
     data object Expired : ActivationResult()
     data object UsageExceeded : ActivationResult()
 }
+

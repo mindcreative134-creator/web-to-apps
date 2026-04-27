@@ -64,12 +64,12 @@ object WordPressDependencyManager {
     private val CN_MIRROR = MirrorConfig(
         phpUrls = GITHUB_CN_PROXIES.map { proxy -> "${proxy}${PHP_GITHUB_URL}" } + PHP_GITHUB_URL,
         wordpressUrls = listOf(
-            "https://cn.wordpress.org/wordpress-${WORDPRESS_VERSION}-zh_CN.tar.gz",
-            "https://cn.wordpress.org/latest-zh_CN.tar.gz",
+            "https://cn.wordpressScope.org/wordpress-${WORDPRESS_VERSION}-zh_CN.tar.gz",
+            "https://cn.wordpressScope.org/latest-zh_CN.tar.gz",
             "https://wordpress.org/wordpress-${WORDPRESS_VERSION}.tar.gz",
             "https://wordpress.org/latest.tar.gz"
         ),
-        sqlitePluginUrl = "https://downloads.wordpress.org/plugin/"
+        sqlitePluginUrl = "https://downloads.wordpressScope.org/plugin/"
     )
     
     /**
@@ -84,7 +84,7 @@ object WordPressDependencyManager {
             "https://wordpress.org/wordpress-${WORDPRESS_VERSION}.tar.gz",
             "https://wordpress.org/latest.tar.gz"
         ),
-        sqlitePluginUrl = "https://downloads.wordpress.org/plugin/"
+        sqlitePluginUrl = "https://downloads.wordpressScope.org/plugin/"
     )
     
     // Note: brief English comment.
@@ -605,3 +605,6 @@ object WordPressDependencyManager {
         return digest.digest().joinToString("") { "%02x".format(it) }
     }
 }
+
+
+

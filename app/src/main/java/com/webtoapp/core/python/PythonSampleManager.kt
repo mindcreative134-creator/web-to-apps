@@ -10,11 +10,11 @@ import com.webtoapp.core.sample.TypedSampleProject
  */
 object PythonSampleManager {
     
-    fun getSampleProjects(): List<TypedSampleProject> {
-        val suffix = SampleProjectExtractor.getLanguageSuffix()
+    fun getSampleProjects(context: Context): List<TypedSampleProject> {
+        val baseIds = listOf("python-flask", "python-fastapi", "python-django")
         return listOf(
             TypedSampleProject(
-                id = "python-flask$suffix",
+                id = "${baseIds[0]}${SampleProjectExtractor.getLanguageSuffix(context, baseIds[0])}",
                 name = AppStringsProvider.current().samplePythonFlaskName,
                 description = AppStringsProvider.current().samplePythonFlaskDesc,
                 frameworkName = "Flask",
@@ -23,7 +23,7 @@ object PythonSampleManager {
                 brandColor = 0xFF333333
             ),
             TypedSampleProject(
-                id = "python-fastapi$suffix",
+                id = "${baseIds[1]}${SampleProjectExtractor.getLanguageSuffix(context, baseIds[1])}",
                 name = AppStringsProvider.current().samplePythonFastapiName,
                 description = AppStringsProvider.current().samplePythonFastapiDesc,
                 frameworkName = "FastAPI",
@@ -32,7 +32,7 @@ object PythonSampleManager {
                 brandColor = 0xFF009688
             ),
             TypedSampleProject(
-                id = "python-django$suffix",
+                id = "${baseIds[2]}${SampleProjectExtractor.getLanguageSuffix(context, baseIds[2])}",
                 name = AppStringsProvider.current().samplePythonDjangoName,
                 description = AppStringsProvider.current().samplePythonDjangoDesc,
                 frameworkName = "Django",
@@ -48,3 +48,5 @@ object PythonSampleManager {
         projectId: String
     ): Result<String> = SampleProjectExtractor.extractSampleProject(context, projectId)
 }
+
+

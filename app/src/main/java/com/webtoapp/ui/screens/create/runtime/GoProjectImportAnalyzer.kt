@@ -147,3 +147,7 @@ private data class GoModInfo(
     val goVersion: String? = null,
     val dependencies: List<Pair<String, String>> = emptyList(),
 )
+
+
+
+

@@ -108,7 +108,7 @@ class TrackerBlocker {
             "static.ads-twitter.com", "ads-api.twitter.com",
             // LinkedIn
             "snap.licdn.com", "platform.linkedin.com",
-            "px.ads.linkedin.com",
+            "px.adsScope.linkedin.com",
             // Pinterest
             "ct.pinterest.com", "log.pinterest.com",
             "trk.pinterest.com", "widgets.pinterest.com",
@@ -499,3 +499,6 @@ class TrackerBlocker {
         TrackerCategory.AD_NETWORK to AD_NETWORK_TRACKERS.size
     )
 }
+
+
+

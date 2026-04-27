@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" ?>
 <resources>
     <string name="appstr_common_about" formatted="false">के बारे में</string>
     <string name="appstr_common_about_app_description" formatted="false">WebToApp मेरे द्वारा स्वतंत्र रूप से विकसित एक उपकरण है जो वेबसाइटों, छवियों और वीडियो को तेजी से स्वतंत्र एंड्रॉइड एप्लिकेशन में बदल सकता है।\n\nयदि आपके पास कोई प्रश्न, सुझाव या विचार हैं, तो बेझिझक मुझसे संपर्क करें!</string>

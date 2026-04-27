@@ -395,3 +395,10 @@ private fun resolveMultiWebPreviewSpec(app: WebApp): AppPreviewSpec {
     val previewUrl = firstSite?.url?.takeIf { it.startsWith("http") }
     return AppPreviewSpec(captureUrl = previewUrl)
 }
+
+
+
+
+
+
+

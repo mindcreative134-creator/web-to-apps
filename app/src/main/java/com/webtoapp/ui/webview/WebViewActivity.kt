@@ -182,7 +182,7 @@ class WebViewActivity : AppCompatActivity() {
         )
     }
 
-    // file URI
+    // File URI
     private var cameraPhotoUri: android.net.Uri? = null
     
     private val fileChooserActivityLauncher = registerForActivityResult(
@@ -212,7 +212,7 @@ class WebViewActivity : AppCompatActivity() {
         cameraPhotoUri = null
     }
     
-    // ( fileselect)
+    // File selection handling
     private var pendingFileChooserParams: android.webkit.WebChromeClient.FileChooserParams? = null
     private val cameraForChooserPermLauncher = registerForActivityResult(
         ActivityResultContracts.RequestPermission()
@@ -381,7 +381,7 @@ class WebViewActivity : AppCompatActivity() {
     }
     
     /**
-     * handle
+     * Handle Geolocation permission request.
      */
     fun handleGeolocationPermission(origin: String?, callback: GeolocationPermissions.Callback?) {
         pendingGeolocationOrigin = origin
@@ -392,7 +392,7 @@ class WebViewActivity : AppCompatActivity() {
         ))
     }
 
-    // Note
+    // Member variables
     private var usageTracker: AppUsageTracker? = null
     private var trackedAppId: Long = -1
     private val webAppRepository: WebAppRepository by inject()
@@ -412,17 +412,17 @@ class WebViewActivity : AppCompatActivity() {
         
         super.onCreate(savedInstanceState)
         
-        // Request( Android 13+) , showdownload
+        // Request notification permission (Android 13+), used for showing download progress
         requestNotificationPermissionIfNeeded()
         
-        // Initialize mode, WebApp configload hideToolbar
-        // ensure mode status bar display
+        // Initialize theme mode, WebApp config may load hideToolbar
+        // Ensure correct status bar display in fullscreen mode
         immersiveFullscreenEnabled = false
         applyImmersiveFullscreen(immersiveFullscreenEnabled)
 
         val appId = intent.getLongExtra(EXTRA_APP_ID, -1)
         
-        // Note
+        // Track usage statistics
         if (appId > 0) {
             trackedAppId = appId
             try {
@@ -434,11 +434,11 @@ class WebViewActivity : AppCompatActivity() {
         }
         val directUrl = intent.getStringExtra(EXTRA_URL)
         
-        // mode
+        // Test mode handling
         val testUrl = intent.getStringExtra(EXTRA_TEST_URL)
         val testModuleIds = intent.getStringArrayListExtra(EXTRA_TEST_MODULE_IDS)
         
-        // previewmode: from JSON WebApp config
+        // Preview mode: initialization from JSON WebApp config
         val previewAppJson = intent.getStringExtra(EXTRA_PREVIEW_APP_JSON)
         val previewApp: com.webtoapp.data.model.WebApp? = if (!previewAppJson.isNullOrBlank()) {
             try {
@@ -480,13 +480,13 @@ class WebViewActivity : AppCompatActivity() {
                     testUrl = testUrl,
                     testModuleIds = testModuleIds,
                     onStatusBarConfigChanged = { colorMode, customColor, darkIcons, showStatusBar, backgroundType, colorModeDark, customColorDark, darkIconsDark, backgroundTypeDark ->
-                        // Update state config
+                        // Update current state config
                         statusBarColorMode = colorMode
                         statusBarCustomColor = customColor
                         statusBarDarkIcons = darkIcons
                         showStatusBarInFullscreen = showStatusBar
                         statusBarBackgroundType = backgroundType
-                        // Update modestatus barconfig
+                        // Update dark mode status bar config
                         statusBarColorModeDark = colorModeDark
                         statusBarCustomColorDark = customColorDark
                         statusBarDarkIconsDark = darkIconsDark
@@ -498,10 +498,10 @@ class WebViewActivity : AppCompatActivity() {
                         // This prevents reopen-after-back pages from staying half-loaded when previous activity paused timers.
                         wv.onResume()
                         wv.resumeTimers()
-                        // download( support Blob/Data URL download)
+                        // Download bridge (supports Blob/Data URL downloads)
                         val downloadBridge = com.webtoapp.core.webview.DownloadBridge(this@WebViewActivity, lifecycleScope)
                         wv.addJavascriptInterface(downloadBridge, com.webtoapp.core.webview.DownloadBridge.JS_INTERFACE_NAME)
-                        // ( modulecall)
+                        // Native bridge (for extension module calls)
                         val nativeBridge = com.webtoapp.core.webview.NativeBridge(this@WebViewActivity, lifecycleScope)
                         wv.addJavascriptInterface(nativeBridge, com.webtoapp.core.webview.NativeBridge.JS_INTERFACE_NAME)
                     },
@@ -526,13 +526,13 @@ class WebViewActivity : AppCompatActivity() {
             }
         }
 
-        // back handle
+        // Back button handling
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 when {
                     customView != null -> hideCustomView()
                     else -> {
-                        // WebView dispatch ESC, JS handle
+                        // Dispatch ESC to WebView for JS handling
                         val wv = webView
                         if (wv != null) {
                             wv.evaluateJavascript("""
@@ -546,10 +546,10 @@ class WebViewActivity : AppCompatActivity() {
                                 })();
                             """.trimIndent()) { result ->
                                 if (result == "true") {
-                                    // JS call preventDefault( ) , execute back
+                                    // JS called preventDefault(), do not execute native back
                                     return@evaluateJavascript
                                 }
-                                // JS intercept, execute back
+                                // JS did not intercept, execute native back handling
                                 // Check if going back would land on about:blank (WebView's
                                 // initial history entry). If so, finish() instead of showing
                                 // the blank page.
@@ -662,16 +662,15 @@ class WebViewActivity : AppCompatActivity() {
     }
 
     override fun onDestroy() {
-        // Note
+        // Track usage close
         if (trackedAppId > 0) usageTracker?.trackClose(trackedAppId)
         
-        // Cookie WebStorage, ensure localStorage/sessionStorage
+        // Flush cookies and web storage to ensure persistence
         android.webkit.CookieManager.getInstance().flush()
         webView?.let { wv ->
             wv.stopLoading()
-            // about: blank
-            // destroy loadUrl( "about: blank") WebView switch origin,
-            // Android version andmapcurrent localStorage, H5
+            // Navigate to about:blank to ensure clear state
+            // Some Android versions map local storage by origin, so clearing ensures H5 isolation
             wv.onPause()
             wv.webChromeClient = null
             (wv.parent as? ViewGroup)?.removeView(wv)
@@ -682,3 +681,14 @@ class WebViewActivity : AppCompatActivity() {
         super.onDestroy()
     }
 }
+
+
+
+
+
+
+
+
+
+
+

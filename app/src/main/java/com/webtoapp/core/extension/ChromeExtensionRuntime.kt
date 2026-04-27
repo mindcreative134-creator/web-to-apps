@@ -638,3 +638,4 @@ fun deriveOriginUrl(urlMatches: List<UrlMatchRule>): String {
         "about:blank"
     }
 }
+

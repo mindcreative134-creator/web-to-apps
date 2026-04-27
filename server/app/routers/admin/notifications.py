@@ -1,6 +1,6 @@
 """Admin: Push notifications and in-app messaging."""
 import logging
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Query
 from pydantic import BaseModel, Field
 from sqlalchemy.orm import Session
 
@@ -94,3 +94,33 @@ def send_user_notification(
           details={"title": req.title})
     db.commit()
     return ApiResponse(message=f"Notification sent to user {target.username}")
+
+
+@router.get("/push/history", response_model=ApiResponse)
+def get_push_history(
+    page: int = Query(1, ge=1),
+    page_size: int = Query(20, ge=1, le=100),
+    db: Session = Depends(get_db),
+    admin: User = Depends(get_current_admin)
+):
+    from app.models.notification import PushHistory
+    total = db.query(PushHistory).count()
+    history = db.query(PushHistory).order_by(PushHistory.created_at.desc())\
+                .offset((page - 1) * page_size).limit(page_size).all()
+    
+    # Map target_id to user info if needed, but for now return raw
+    return ApiResponse(data=history, meta={"total": total})
+
+
+@router.get("/push/stats", response_model=ApiResponse)
+def get_push_stats(db: Session = Depends(get_db), admin: User = Depends(get_current_admin)):
+    from app.models.notification import PushHistory
+    total = db.query(PushHistory).count()
+    sent = db.query(PushHistory).filter(PushHistory.status == "sent").count()
+    failed = db.query(PushHistory).filter(PushHistory.status == "failed").count()
+    return ApiResponse(data={
+        "total": total,
+        "sent": sent,
+        "failed": failed,
+        "success_rate": round(sent / total * 100, 1) if total > 0 else 0
+    })

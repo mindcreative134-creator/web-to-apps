@@ -201,3 +201,6 @@ class AppDisguiseManager(private val context: Context) {
         val estimatedInstallTime: String
     )
 }
+
+
+

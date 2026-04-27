@@ -8,7 +8,6 @@ import com.webtoapp.core.i18n.AppStringsProvider
 enum class ProviderCategory {
     RECOMMENDED,   // Recommended
     INTERNATIONAL, // International providers
-    CHINESE,       // Chinese providers
     AGGREGATOR,    // Aggregators
     SELF_HOSTED,   // Self-hosted
     CUSTOM;        // Custom
@@ -16,7 +15,6 @@ enum class ProviderCategory {
     val displayName: String get() = when (this) {
         RECOMMENDED -> AppStringsProvider.current().providerCategoryRecommended
         INTERNATIONAL -> AppStringsProvider.current().providerCategoryInternational
-        CHINESE -> AppStringsProvider.current().providerCategoryChinese
         AGGREGATOR -> AppStringsProvider.current().providerCategoryAggregator
         SELF_HOSTED -> AppStringsProvider.current().providerCategorySelfHosted
         CUSTOM -> AppStringsProvider.current().providerCategoryCustom
@@ -137,78 +135,78 @@ enum class AiProvider(
         category = ProviderCategory.AGGREGATOR
     ),
     
-    // ==================== Chinese providers ====================
+    // ==================== More International ====================
     DEEPSEEK(
         baseUrl = "https://api.deepseek.com",
         modelsEndpoint = "/v1/models",
         apiKeyUrl = "https://platform.deepseek.com/api_keys",
-        category = ProviderCategory.CHINESE
+        category = ProviderCategory.INTERNATIONAL
     ),
     QWEN(
         baseUrl = "https://dashscope.aliyuncs.com/compatible-mode",
         modelsEndpoint = "/v1/models",
         apiKeyUrl = "https://dashscope.console.aliyun.com/apiKey",
-        category = ProviderCategory.CHINESE
+        category = ProviderCategory.INTERNATIONAL
     ),
     GLM(
         baseUrl = "https://open.bigmodel.cn/api/paas",
         modelsEndpoint = "/v4/models",
         apiKeyUrl = "https://open.bigmodel.cn/usercenter/apikeys",
-        category = ProviderCategory.CHINESE
+        category = ProviderCategory.INTERNATIONAL
     ),
     VOLCANO(
         baseUrl = "https://ark.cn-beijing.volces.com/api",
         modelsEndpoint = "/v3/models",
         apiKeyUrl = "https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey",
-        category = ProviderCategory.CHINESE
+        category = ProviderCategory.INTERNATIONAL
     ),
     MOONSHOT(
         baseUrl = "https://api.moonshot.cn",
         modelsEndpoint = "/v1/models",
         apiKeyUrl = "https://platform.moonshot.cn/console/api-keys",
-        category = ProviderCategory.CHINESE
+        category = ProviderCategory.INTERNATIONAL
     ),
     MINIMAX(
         baseUrl = "https://api.minimax.chat",
         modelsEndpoint = "/v1/models",
         apiKeyUrl = "https://platform.minimaxi.com/user-center/basic-information/interface-key",
-        category = ProviderCategory.CHINESE
+        category = ProviderCategory.INTERNATIONAL
     ),
     SILICONFLOW(
         baseUrl = "https://api.siliconflow.cn",
         modelsEndpoint = "/v1/models",
         apiKeyUrl = "https://cloud.siliconflow.cn/account/ak",
-        category = ProviderCategory.CHINESE
+        category = ProviderCategory.INTERNATIONAL
     ),
     BAICHUAN(
         baseUrl = "https://api.baichuan-ai.com",
         modelsEndpoint = "/v1/models",
         apiKeyUrl = "https://platform.baichuan-ai.com/console/apikey",
-        category = ProviderCategory.CHINESE
+        category = ProviderCategory.INTERNATIONAL
     ),
     YI(
         baseUrl = "https://api.lingyiwanwu.com",
         modelsEndpoint = "/v1/models",
         apiKeyUrl = "https://platform.lingyiwanwu.com/apikeys",
-        category = ProviderCategory.CHINESE
+        category = ProviderCategory.INTERNATIONAL
     ),
     STEPFUN(
         baseUrl = "https://api.stepfun.com",
         modelsEndpoint = "/v1/models",
         apiKeyUrl = "https://platform.stepfun.com/interface-key",
-        category = ProviderCategory.CHINESE
+        category = ProviderCategory.INTERNATIONAL
     ),
     HUNYUAN(
-        baseUrl = "https://api.hunyuan.cloud.tencent.com",
+        baseUrl = "https://api.hunyuan.cloudScope.tencent.com",
         modelsEndpoint = "/v1/models",
-        apiKeyUrl = "https://console.cloud.tencent.com/hunyuan/start",
-        category = ProviderCategory.CHINESE
+        apiKeyUrl = "https://console.cloudScope.tencent.com/hunyuan/start",
+        category = ProviderCategory.INTERNATIONAL
     ),
     SPARK(
         baseUrl = "https://spark-api-open.xf-yun.com",
         modelsEndpoint = "/v1/models",
         apiKeyUrl = "https://console.xfyun.cn/services/bm35",
-        category = ProviderCategory.CHINESE
+        category = ProviderCategory.INTERNATIONAL
     ),
     
     // ==================== Self-hosted ====================
@@ -760,3 +758,5 @@ fun AiProvider.getLocalizedDescription(): String = description
  * Gets the localized AI provider pricing info.
  */
 fun AiProvider.getLocalizedPricing(): String = pricing
+
+

@@ -382,3 +382,4 @@ object ChromeExtensionParser {
             ((buf[offset + 3].toInt() and 0xFF) shl 24)
     }
 }
+

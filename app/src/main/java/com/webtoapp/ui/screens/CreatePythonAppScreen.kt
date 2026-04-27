@@ -271,7 +271,7 @@ fun CreatePythonAppScreen(
                 TypedSampleProjectsCard(
                     title = AppStringsProvider.current().sampleProjects,
                     subtitle = AppStringsProvider.current().samplePythonSubtitle,
-                    samples = remember { PythonSampleManager.getSampleProjects() },
+                    samples = remember(context) { PythonSampleManager.getSampleProjects(context) },
                     onSelectSample = { sample ->
                         scope.launch {
                             val result = PythonSampleManager.extractSampleProject(context, sample.id)
@@ -1044,3 +1044,8 @@ private fun PythonFrameworkTipCard(framework: String?) {
         }
     }
 }
+
+
+
+
+

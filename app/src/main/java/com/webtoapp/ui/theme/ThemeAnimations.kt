@@ -597,3 +597,4 @@ fun getExitTransition(style: AnimationStyle): ExitTransition {
         )
     }
 }
+

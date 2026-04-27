@@ -10,11 +10,11 @@ import com.webtoapp.core.sample.TypedSampleProject
  */
 object GoSampleManager {
     
-    fun getSampleProjects(): List<TypedSampleProject> {
-        val suffix = SampleProjectExtractor.getLanguageSuffix()
+    fun getSampleProjects(context: Context): List<TypedSampleProject> {
+        val baseIds = listOf("go-gin", "go-fiber", "go-echo")
         return listOf(
             TypedSampleProject(
-                id = "go-gin$suffix",
+                id = "${baseIds[0]}${SampleProjectExtractor.getLanguageSuffix(context, baseIds[0])}",
                 name = AppStringsProvider.current().sampleGoGinName,
                 description = AppStringsProvider.current().sampleGoGinDesc,
                 frameworkName = "Gin",
@@ -23,7 +23,7 @@ object GoSampleManager {
                 brandColor = 0xFF0090FF
             ),
             TypedSampleProject(
-                id = "go-fiber$suffix",
+                id = "${baseIds[1]}${SampleProjectExtractor.getLanguageSuffix(context, baseIds[1])}",
                 name = AppStringsProvider.current().sampleGoFiberName,
                 description = AppStringsProvider.current().sampleGoFiberDesc,
                 frameworkName = "Fiber",
@@ -32,7 +32,7 @@ object GoSampleManager {
                 brandColor = 0xFF7B2FBF
             ),
             TypedSampleProject(
-                id = "go-echo$suffix",
+                id = "${baseIds[2]}${SampleProjectExtractor.getLanguageSuffix(context, baseIds[2])}",
                 name = AppStringsProvider.current().sampleGoEchoName,
                 description = AppStringsProvider.current().sampleGoEchoDesc,
                 frameworkName = "Echo",
@@ -48,3 +48,5 @@ object GoSampleManager {
         projectId: String
     ): Result<String> = SampleProjectExtractor.extractSampleProject(context, projectId)
 }
+
+

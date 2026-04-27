@@ -69,7 +69,7 @@ class ShellModeManager(private val context: Context) {
             cachedConfig = try {
             AppLogger.d(TAG, "Attempting to load configuration file: $CONFIG_FILE")
             
-            // 使用 AssetDecryptor 自动处理加密/非加密配置
+            // Use AssetDecryptor to automatically handle encrypted/decrypted config
             val jsonStr = try {
                 assetDecryptor.loadAssetAsString(CONFIG_FILE)
             } catch (e: Exception) {
@@ -94,27 +94,38 @@ class ShellModeManager(private val context: Context) {
                 AppLogger.d(TAG, "Injected scripts: ${config?.webViewConfig?.injectScripts?.size ?: 0}")
                 AppLogger.d(TAG, "Extension modules: extensionModuleIds=${config?.extensionModuleIds?.size ?: 0}, embeddedExtensionModules=${config?.embeddedExtensionModules?.size ?: 0}")
             }
-            // Verify配置有效性
-            // HTML/FRONTEND应用不需要targetUrl，使用嵌入的HTML文件
-            // Media应用也不需要targetUrl，使用嵌入的媒体文件
-            // Gallery应用也不需要targetUrl，使用嵌入的图片/视频列表
-            val isValid = when {
+            // Verify configuration validity
+            // HTML/FRONTEND apps don't need targetUrl, they use embedded HTML files
+            // Media apps don't need targetUrl, they use embedded media files
+            // Gallery apps don't need targetUrl, they use embedded image/video lists
+            val (isValid, reason) = when {
                 normalizedAppType == "HTML" || normalizedAppType == "FRONTEND" -> {
-                    // Verify entryFile 必须有文件名部分（不能只是 .html 或空字符串）
-                    val entryFile = config.htmlConfig.entryFile
-                    entryFile.isNotBlank() && entryFile.substringBeforeLast(".").isNotBlank()
+                    val entryFile = config?.htmlConfig?.entryFile ?: ""
+                    if (entryFile.isBlank()) {
+                        false to "Entry file is blank for $normalizedAppType"
+                    } else if (entryFile.substringBeforeLast(".").isBlank()) {
+                        false to "Invalid entry file format: $entryFile"
+                    } else {
+                        true to ""
+                    }
                 }
-                normalizedAppType == "IMAGE" || normalizedAppType == "VIDEO" -> true // Media应用
-                normalizedAppType == "GALLERY" -> true // Gallery应用（图片/视频画廊）
-                normalizedAppType == "WORDPRESS" -> true // WordPress应用（离线PHP+SQLite）
-                normalizedAppType == "NODEJS_APP" -> true // Node.js应用（Express/Fastify/Nest等后端）
-                normalizedAppType == "PHP_APP" -> true // PHP应用（Laravel/ThinkPHP等）
-                normalizedAppType == "PYTHON_APP" -> true // Python应用（Flask/Django/FastAPI等）
-                normalizedAppType == "GO_APP" -> true // Go应用（Gin/Fiber/Echo等）
-                else -> !config?.targetUrl.isNullOrBlank() // WEB应用需要targetUrl
+                normalizedAppType == "IMAGE" || normalizedAppType == "VIDEO" -> true to ""
+                normalizedAppType == "GALLERY" -> true to ""
+                normalizedAppType == "WORDPRESS" -> true to ""
+                normalizedAppType == "NODEJS_APP" -> true to ""
+                normalizedAppType == "PHP_APP" -> true to ""
+                normalizedAppType == "PYTHON_APP" -> true to ""
+                normalizedAppType == "GO_APP" -> true to ""
+                else -> {
+                    if (config?.targetUrl.isNullOrBlank()) {
+                        false to "Target URL is missing for WEB app"
+                    } else {
+                        true to ""
+                    }
+                }
             }
             if (!isValid) {
-                AppLogger.w(TAG, "Invalid configuration: appType=${config?.appType}, targetUrl=${config?.targetUrl}")
+                AppLogger.w(TAG, "Invalid configuration: $reason (appType=${config?.appType}, targetUrl=${config?.targetUrl})")
                 null
             } else {
                 AppLogger.d(TAG, "Configuration valid, entering Shell mode, appType=${config?.appType}")
@@ -146,7 +157,7 @@ class ShellModeManager(private val context: Context) {
 }
 
 /**
- * Shell 模式配置数据类
+ * Shell Mode Configuration Data Class
  */
 data class ShellConfig(
     @SerializedName("appName")
@@ -164,7 +175,7 @@ data class ShellConfig(
     @SerializedName("versionName")
     val versionName: String = "1.0.0",
 
-    // Activation码配置
+    // Activation code config
     @SerializedName("activationEnabled")
     val activationEnabled: Boolean = false,
 
@@ -186,14 +197,14 @@ data class ShellConfig(
     @SerializedName("activationDialogButtonText")
     val activationDialogButtonText: String = "",
 
-    // Ad拦截配置
+    // Ad blocking config
     @SerializedName("adBlockEnabled")
     val adBlockEnabled: Boolean = false,
 
     @SerializedName("adBlockRules")
     val adBlockRules: List<String> = emptyList(),
 
-    // Announcement配置
+    // Announcement config
     @SerializedName("announcementEnabled")
     val announcementEnabled: Boolean = false,
 
@@ -231,7 +242,7 @@ data class ShellConfig(
     @SerializedName("webViewConfig")
     val webViewConfig: WebViewShellConfig = WebViewShellConfig(),
 
-    // Start画面配置
+    // Splash screen config
     @SerializedName("splashEnabled")
     val splashEnabled: Boolean = false,
 
@@ -244,7 +255,7 @@ data class ShellConfig(
     @SerializedName("splashClickToSkip")
     val splashClickToSkip: Boolean = true,
 
-    // Video裁剪配置
+    // Video crop config
     @SerializedName("splashVideoStartMs")
     val splashVideoStartMs: Long = 0,
 
@@ -260,18 +271,18 @@ data class ShellConfig(
     @SerializedName("splashEnableAudio")
     val splashEnableAudio: Boolean = false,
     
-    // Media应用配置
+    // Media app config
     @SerializedName("appType")
     val appType: String = "WEB",
     
     @SerializedName("mediaConfig")
     val mediaConfig: MediaShellConfig = MediaShellConfig(),
     
-    // HTML应用配置
+    // HTML app config
     @SerializedName("htmlConfig")
     val htmlConfig: HtmlShellConfig = HtmlShellConfig(),
     
-    // Background music配置
+    // Background music config
     @SerializedName("bgmEnabled")
     val bgmEnabled: Boolean = false,
     
@@ -293,14 +304,14 @@ data class ShellConfig(
     @SerializedName("bgmLrcTheme")
     val bgmLrcTheme: LrcShellTheme? = null,
     
-    // Theme配置
+    // Theme config
     @SerializedName("themeType")
     val themeType: String = "AURORA",
     
     @SerializedName("darkMode")
     val darkMode: String = "SYSTEM",
     
-    // Web page自动翻译配置
+    // Web page auto-translate config
     @SerializedName("translateEnabled")
     val translateEnabled: Boolean = false,
     
@@ -310,93 +321,93 @@ data class ShellConfig(
     @SerializedName("translateShowButton")
     val translateShowButton: Boolean = true,
     
-    // 扩展模块配置
+    // Extension module config
     @SerializedName("extensionFabIcon")
     val extensionFabIcon: String = "",
     
     @SerializedName("extensionModuleIds")
     val extensionModuleIds: List<String> = emptyList(),
     
-    // 嵌入的扩展模块完整数据（APK导出时嵌入）
+    // Embedded extension modules (embedded during APK export)
     @SerializedName("embeddedExtensionModules")
     val embeddedExtensionModules: List<EmbeddedShellModule> = emptyList(),
     
-    // 自启动配置
+    // Auto-start config
     @SerializedName("autoStartConfig")
     val autoStartConfig: AutoStartShellConfig? = null,
 
-    // 强制运行配置
+    // Forced run config
     @SerializedName("forcedRunConfig")
     val forcedRunConfig: ForcedRunConfig? = null,
     
-    // 独立环境/多开配置
+    // Isolation configuration
     @SerializedName("isolationEnabled")
     val isolationEnabled: Boolean = false,
     
     @SerializedName("isolationConfig")
     val isolationConfig: IsolationShellConfig? = null,
     
-    // 后台运行配置
+    // Background run config
     @SerializedName("backgroundRunEnabled")
     val backgroundRunEnabled: Boolean = false,
     
     @SerializedName("backgroundRunConfig")
     val backgroundRunConfig: BackgroundRunShellConfig? = null,
     
-    // 黑科技功能配置（独立模块）
+    // Advanced tech config (independent module)
     @SerializedName("blackTechConfig")
     val blackTechConfig: com.webtoapp.core.blacktech.BlackTechConfig? = null,
     
-    // App伪装配置（独立模块）
+    // App disguise config (independent module)
     @SerializedName("disguiseConfig")
     val disguiseConfig: com.webtoapp.core.disguise.DisguiseConfig? = null,
     
     // UI language configuration
     @SerializedName("language")
-    val language: String = "ENGLISH",  // CHINESE, ENGLISH, ARABIC
+    val language: String = "ENGLISH",  // ENGLISH, HINDI
     
-    // Gallery 画廊应用配置
+    // Gallery app config
     @SerializedName("galleryConfig")
     val galleryConfig: GalleryShellConfig = GalleryShellConfig(),
     
-    // WordPress 应用配置
+    // WordPress app config
     @SerializedName("wordpressConfig")
     val wordpressConfig: WordPressShellConfig = WordPressShellConfig(),
     
-    // Node.js 应用配置
+    // Node.js app config
     @SerializedName("nodejsConfig")
     val nodejsConfig: NodeJsShellConfig = NodeJsShellConfig(),
     
-    // Deep link配置
+    // Deep link config
     @SerializedName("deepLinkEnabled")
     val deepLinkEnabled: Boolean = false,
     
     @SerializedName("deepLinkHosts")
     val deepLinkHosts: List<String> = emptyList(),
     
-    // PHP 应用配置
+    // PHP app config
     @SerializedName("phpAppConfig")
     val phpAppConfig: PhpAppShellConfig = PhpAppShellConfig(),
     
-    // Python 应用配置
+    // Python app config
     @SerializedName("pythonAppConfig")
     val pythonAppConfig: PythonAppShellConfig = PythonAppShellConfig(),
     
-    // Go 应用配置
+    // Go app config
     @SerializedName("goAppConfig")
     val goAppConfig: GoAppShellConfig = GoAppShellConfig(),
     
-    // 多站点聚合应用配置
+    // Multi-site aggregation config
     @SerializedName("multiWebConfig")
     val multiWebConfig: MultiWebShellConfig = MultiWebShellConfig(),
     
-    // 云 SDK 配置（导出 APK 内嵌入的云服务参数）
+    // Cloud SDK config (parameters embedded in exported APK)
     @SerializedName("cloudSdkConfig")
     val cloudSdkConfig: CloudSdkConfig = CloudSdkConfig()
 )
 
 /**
- * 嵌入到 Shell APK 中的扩展模块数据
+ * Extension module data embedded in Shell APK
  */
 data class EmbeddedShellModule(
     @SerializedName("id")
@@ -434,12 +445,12 @@ data class EmbeddedShellModule(
 ) {
     companion object {
         private val GSON = com.webtoapp.util.GsonProvider.gson
-        /** URL 匹配 Regex 缓存，避免每次重建 */
+        /** URL matching Regex cache to avoid reconstruction */
         private val regexCache = android.util.LruCache<String, Regex>(32)
     }
     
     /**
-     * 检查 URL 是否匹配此模块
+     * Check if URL matches this module
      */
     fun matchesUrl(url: String): Boolean {
         if (urlMatches.isEmpty()) return true
@@ -447,12 +458,12 @@ data class EmbeddedShellModule(
         val includeRules = urlMatches.filter { !it.exclude }
         val excludeRules = urlMatches.filter { it.exclude }
         
-        // 先检查排除规则
+        // Check exclusion rules first
         for (rule in excludeRules) {
             if (matchRule(url, rule)) return false
         }
         
-        // 如果没有包含规则，默认匹配
+        // If no inclusion rules, match by default
         if (includeRules.isEmpty()) return true
         
         // Check包含规则
@@ -462,18 +473,18 @@ data class EmbeddedShellModule(
     private fun matchRule(url: String, rule: EmbeddedUrlMatch): Boolean {
         return try {
             val cacheKey = if (rule.isRegex) rule.pattern else "glob:${rule.pattern}"
-            val regex = regexCache.get(cacheKey) ?: run {
+            val regex = EmbeddedShellModule.regexCache.get(cacheKey) ?: run {
                 val r = if (rule.isRegex) {
                     Regex(rule.pattern)
                 } else {
-                    // 通配符匹配：* 匹配任意字符
+                    // Glob matching: * matches any characters
                     val regexPattern = rule.pattern
                         .replace(".", "\\.")
                         .replace("*", ".*")
                         .replace("?", ".")
                     Regex(regexPattern, RegexOption.IGNORE_CASE)
                 }
-                regexCache.put(cacheKey, r)
+                EmbeddedShellModule.regexCache.put(cacheKey, r)
                 r
             }
             regex.containsMatchIn(url)
@@ -487,16 +498,16 @@ data class EmbeddedShellModule(
     private var _cachedCode: String? = null
     
     /**
-     * 生成可执行的 JavaScript 代码
-     * 结果会缓存，避免每次页面加载时重复序列化
+     * Generate executable JavaScript code
+     * Results are cached to avoid repeated serialization
      */
     fun generateExecutableCode(): String {
         _cachedCode?.let { return it }
-        val configJson = GSON.toJson(configValues)
+        val configJson = EmbeddedShellModule.GSON.toJson(configValues)
         return """
             (function() {
                 'use strict';
-                // Module配置
+                // Module config
                 const __MODULE_CONFIG__ = $configJson;
                 const __MODULE_INFO__ = {
                     id: '${id.escapeForJsSingleQuote()}',
@@ -504,12 +515,12 @@ data class EmbeddedShellModule(
                     version: '1.0.0'
                 };
                 
-                // Configure访问函数
+                // Configuration access function
                 function getConfig(key, defaultValue) {
                     return __MODULE_CONFIG__[key] !== undefined ? __MODULE_CONFIG__[key] : defaultValue;
                 }
                 
-                // CSS 注入
+                // CSS Injection
                 ${if (cssCode.isNotBlank()) """
                 (function() {
                     const style = document.createElement('style');
@@ -519,7 +530,7 @@ data class EmbeddedShellModule(
                 })();
                 """ else ""}
                 
-                // User代码
+                // User code
                 try {
                     $code
                 } catch(e) {
@@ -531,7 +542,7 @@ data class EmbeddedShellModule(
 }
 
 /**
- * 嵌入的 URL 匹配规则
+ * Embedded URL matching rules
  */
 data class EmbeddedUrlMatch(
     @SerializedName("pattern")
@@ -545,7 +556,7 @@ data class EmbeddedUrlMatch(
 )
 
 /**
- * Gallery 画廊应用 Shell 配置
+ * Gallery App Shell Config
  */
 data class GalleryShellConfig(
     @SerializedName("items")
@@ -583,7 +594,7 @@ data class GalleryShellConfig(
 )
 
 /**
- * Gallery 媒体项 Shell 配置
+ * Gallery Media Item Shell Config
  */
 data class GalleryShellItem(
     @SerializedName("id")
@@ -606,7 +617,7 @@ data class GalleryShellItem(
 )
 
 /**
- * 媒体应用 Shell 配置
+ * Media App Shell Config
  */
 data class MediaShellConfig(
     @SerializedName("enableAudio")
@@ -625,14 +636,14 @@ data class MediaShellConfig(
     val landscape: Boolean = false,
     
     @SerializedName("keepScreenOn")
-    val keepScreenOn: Boolean = true  // 保持屏幕常亮
+    val keepScreenOn: Boolean = true  // Keep screen on
 )
 
 /**
- * HTML应用 Shell 配置
+ * HTML App Shell Config
  */
 /**
- * WordPress 应用 Shell 配置
+ * WordPress App Shell Config
  */
 data class WordPressShellConfig(
     @SerializedName("siteTitle")
@@ -646,30 +657,30 @@ data class WordPressShellConfig(
 )
 
 /**
- * Node.js 应用 Shell 配置
+ * Node.js App Shell Config
  */
 data class NodeJsShellConfig(
     @SerializedName("mode")
     val mode: String = "STATIC",  // STATIC, BACKEND, FULLSTACK
     
     @SerializedName("port")
-    val port: Int = 0,  // Node.js服务器端口（0=自动分配）
+    val port: Int = 0,  // Node.js server port (0 = auto-assign)
     
     @SerializedName("entryFile")
-    val entryFile: String = "",  // 入口文件（backend/fullstack模式需要）
+    val entryFile: String = "",  // Entry file (needed for backend/fullstack)
     
     @SerializedName("envVars")
-    val envVars: Map<String, String> = emptyMap(),  // 环境变量
+    val envVars: Map<String, String> = emptyMap(),  // Env variables
     
     @SerializedName("landscapeMode")
     val landscapeMode: Boolean = false
 )
 
 /**
- * HTML应用 Shell 配置
+ * HTML App Shell Config
  */
 /**
- * PHP 应用 Shell 配置
+ * PHP App Shell Config
  */
 data class PhpAppShellConfig(
     @SerializedName("framework")
@@ -692,7 +703,7 @@ data class PhpAppShellConfig(
 )
 
 /**
- * Python 应用 Shell 配置
+ * Python App Shell Config
  */
 data class PythonAppShellConfig(
     @SerializedName("framework")
@@ -718,7 +729,7 @@ data class PythonAppShellConfig(
 )
 
 /**
- * Go 应用 Shell 配置
+ * Go App Shell Config
  */
 data class GoAppShellConfig(
     @SerializedName("framework")
@@ -741,7 +752,7 @@ data class GoAppShellConfig(
 )
 
 /**
- * 多站点聚合 Shell 配置
+ * Multi-site aggregation Shell configuration
  */
 data class MultiWebShellConfig(
     @SerializedName("sites")
@@ -803,8 +814,8 @@ data class HtmlShellConfig(
     val landscapeMode: Boolean = false
 ) {
     /**
-     * 获取有效的入口文件名
-     * 验证 entryFile 必须有文件名部分（不能只是 .html 或空字符串）
+     * Get valid entry file name
+     * Verifies entryFile must have a filename part (cannot be just .html or empty)
      */
     fun getValidEntryFile(): String {
         return entryFile.takeIf { 
@@ -814,7 +825,7 @@ data class HtmlShellConfig(
 }
 
 /**
- * WebView Shell 配置
+ * WebView Shell configuration
  */
 data class WebViewShellConfig(
     @SerializedName("javaScriptEnabled")
@@ -845,14 +856,11 @@ data class WebViewShellConfig(
     val hideBrowserToolbar: Boolean = false,
     
     @SerializedName("showStatusBarInFullscreen")
-    val showStatusBarInFullscreen: Boolean = false,  // Fullscreen模式下是否显示状态栏
-    
+    val showStatusBarInFullscreen: Boolean = false,  // Whether to show status bar in Fullscreen mode    
     @SerializedName("showNavigationBarInFullscreen")
-    val showNavigationBarInFullscreen: Boolean = false,  // Fullscreen模式下是否显示导航栏
-    
+    val showNavigationBarInFullscreen: Boolean = false,  // Whether to show navigation bar in Fullscreen mode    
     @SerializedName("showToolbarInFullscreen")
-    val showToolbarInFullscreen: Boolean = false,  // Fullscreen模式下是否显示顶部导航栏
-    
+    val showToolbarInFullscreen: Boolean = false,  // Whether to show top toolbar in Fullscreen mode    
     @SerializedName("landscapeMode")
     val landscapeMode: Boolean = false,
     
@@ -866,24 +874,24 @@ data class WebViewShellConfig(
     val statusBarColorMode: String = "THEME", // THEME, TRANSPARENT, CUSTOM
     
     @SerializedName("statusBarColor")
-    val statusBarColor: String? = null, // Custom状态栏颜色（仅 CUSTOM 模式生效）
+    val statusBarColor: String? = null, // Custom status bar color (only in CUSTOM mode)
     
     @SerializedName("statusBarDarkIcons")
-    val statusBarDarkIcons: Boolean? = null, // Status bar图标颜色：true=深色图标，false=浅色图标，null=自动
+    val statusBarDarkIcons: Boolean? = null, // Status bar icon color: true=dark icons, false=light icons, null=auto
     
     @SerializedName("statusBarBackgroundType")
     val statusBarBackgroundType: String = "COLOR", // COLOR, IMAGE
     
     @SerializedName("statusBarBackgroundImage")
-    val statusBarBackgroundImage: String? = null, // Cropped image path（assets中的路径）
+    val statusBarBackgroundImage: String? = null, // Cropped image path (assets path)
     
     @SerializedName("statusBarBackgroundAlpha")
     val statusBarBackgroundAlpha: Float = 1.0f, // Alpha 0.0-1.0
     
     @SerializedName("statusBarHeightDp")
-    val statusBarHeightDp: Int = 0, // Custom高度dp（0=系统默认）
+    val statusBarHeightDp: Int = 0, // Custom height dp (0 = system default)
 
-    // Status bar深色模式配置
+    // Status bar dark mode config
     @SerializedName("statusBarColorModeDark")
     val statusBarColorModeDark: String = "THEME",
 
@@ -903,24 +911,20 @@ data class WebViewShellConfig(
     val statusBarBackgroundAlphaDark: Float = 1.0f,
 
     @SerializedName("longPressMenuEnabled")
-    val longPressMenuEnabled: Boolean = true, // Yes否启用长按菜单
+    val longPressMenuEnabled: Boolean = true, // Enable long-press menu
     
     @SerializedName("longPressMenuStyle")
     val longPressMenuStyle: String = "FULL", // DISABLED, SIMPLE, FULL
     
     @SerializedName("adBlockToggleEnabled")
-    val adBlockToggleEnabled: Boolean = false, // Allow用户在运行时切换广告拦截开关
-    
+    val adBlockToggleEnabled: Boolean = false, // Allow users to toggle ad blocking at runtime    
     @SerializedName("popupBlockerEnabled")
-    val popupBlockerEnabled: Boolean = true, // 启用弹窗拦截器
-    
+    val popupBlockerEnabled: Boolean = true, // Enable popup blocker    
     @SerializedName("popupBlockerToggleEnabled")
-    val popupBlockerToggleEnabled: Boolean = false, // Allow用户在运行时切换弹窗拦截开关
-    
+    val popupBlockerToggleEnabled: Boolean = false, // Allow users to toggle popup blocking at runtime    
     @SerializedName("openExternalLinks")
-    val openExternalLinks: Boolean = false, // External链接是否在浏览器打开
-    
-    // ============ 浏览器兼容性增强配置 ============
+    val openExternalLinks: Boolean = false, // Whether to open external links in browser    
+    // ============ Browser compatibility enhancement configuration ============
     @SerializedName("initialScale")
     val initialScale: Int = 0,
     
@@ -939,45 +943,39 @@ data class WebViewShellConfig(
     @SerializedName("enableZoomPolyfill")
     val enableZoomPolyfill: Boolean = true,
     
-    // ============ 高级功能配置 ============
+    // ============ Advanced features configuration ============
     @SerializedName("enableCrossOriginIsolation")
     val enableCrossOriginIsolation: Boolean = false,
     
     @SerializedName("disableShields")
-    val disableShields: Boolean = true, // 默认禁用 BrowserShields - 避免误杀关键服务 (OAuth/CAPTCHA/错误监控等)
-    
+    val disableShields: Boolean = true, // Disable BrowserShields by default - avoid false positives for OAuth/CAPTCHA etc    
     @SerializedName("keepScreenOn")
-    val keepScreenOn: Boolean = false, // [向后兼容] 保持屏幕常亮
-    
+    val keepScreenOn: Boolean = false, // [Backward compatibility] Keep screen on    
     @SerializedName("screenAwakeMode")
     val screenAwakeMode: String = "OFF", // OFF, ALWAYS, TIMED
     
     @SerializedName("screenAwakeTimeoutMinutes")
-    val screenAwakeTimeoutMinutes: Int = 30, // 定时常亮时长（分钟），仅 TIMED 模式
-    
+    val screenAwakeTimeoutMinutes: Int = 30, // Timeout in minutes, only in TIMED mode    
     @SerializedName("screenBrightness")
-    val screenBrightness: Int = -1, // 屏幕亮度：-1=跟随系统, 0-100=自定义百分比
-    
-    // ============ 悬浮返回按钮 ============
+    val screenBrightness: Int = -1, // Screen brightness: -1=system, 0-100=percentage    
+    // ============ Floating back button ============
     @SerializedName("showFloatingBackButton")
-    val showFloatingBackButton: Boolean = true, // 全屏模式下是否显示悬浮返回按钮
-
-    // ============ 系统导航手势屏蔽 ============
+    val showFloatingBackButton: Boolean = true, // Whether to show floating back button in Fullscreen mode
+    // ============ Block system navigation gesture ============
     @SerializedName("blockSystemNavigationGesture")
-    val blockSystemNavigationGesture: Boolean = false, // 是否屏蔽系统导航手势（全屏模式下生效，默认关闭）
-
-    // ============ 键盘调整模式 ============
+    val blockSystemNavigationGesture: Boolean = false, // Whether to block system navigation gestures (only in Fullscreen)
+    // ============ Keyboard adjust mode ============
     @SerializedName("keyboardAdjustMode")
     val keyboardAdjustMode: String = "RESIZE", // RESIZE, NOTHING
 
-    // ============ 下拉刷新 / 视频全屏 ============
+    // ============ Pull-to-refresh / Video fullscreen ============
     @SerializedName("swipeRefreshEnabled")
     val swipeRefreshEnabled: Boolean = true,
     
     @SerializedName("fullscreenEnabled")
     val fullscreenEnabled: Boolean = true,
 
-    // ============ 性能优化 / PWA 离线 ============
+    // ============ Performance optimization / PWA offline ============
     @SerializedName("performanceOptimization")
     val performanceOptimization: Boolean = false,
     
@@ -987,31 +985,28 @@ data class WebViewShellConfig(
     @SerializedName("pwaOfflineStrategy")
     val pwaOfflineStrategy: String = "NETWORK_FIRST",
 
-    // ============ 网络错误页配置 ============
+    // ============ Network error page config ============
     @SerializedName("errorPageConfig")
     val errorPageConfig: ErrorPageShellConfig = ErrorPageShellConfig(),
 
-    // ============ 悬浮小窗配置 ============
+    // ============ Floating window configuration ============
     @SerializedName("floatingWindowConfig")
     val floatingWindowConfig: FloatingWindowShellConfig = FloatingWindowShellConfig()
 )
 
 /**
- * 悬浮小窗 Shell 配置
+ * Floating window Shell configuration
  */
 data class FloatingWindowShellConfig(
     @SerializedName("enabled")
     val enabled: Boolean = false,
     
     @SerializedName("windowSizePercent")
-    val windowSizePercent: Int = 80,       // [向后兼容] 窗口大小百分比 50-100
-    
+    val windowSizePercent: Int = 80,       // [Backward compatibility] Window size percentage 50-100    
     @SerializedName("widthPercent")
-    val widthPercent: Int = 80,            // 独立宽度百分比 30-100
-    
+    val widthPercent: Int = 80,            // Independent width percentage 30-100    
     @SerializedName("heightPercent")
-    val heightPercent: Int = 80,           // 独立高度百分比 30-100
-    
+    val heightPercent: Int = 80,           // Independent height percentage 30-100    
     @SerializedName("lockAspectRatio")
     val lockAspectRatio: Boolean = true,   // 锁定宽高比
     
@@ -1019,8 +1014,7 @@ data class FloatingWindowShellConfig(
     val opacity: Int = 100,                 // 透明度百分比 30-100
     
     @SerializedName("cornerRadius")
-    val cornerRadius: Int = 16,             // 圆角半径 dp (0-32)
-    
+    val cornerRadius: Int = 16,             // Corner radius dp (0-32)    
     @SerializedName("borderStyle")
     val borderStyle: String = "SUBTLE",     // NONE, SUBTLE, GLOW, ACCENT
     
@@ -1047,7 +1041,7 @@ data class FloatingWindowShellConfig(
 )
 
 /**
- * 网络错误页 Shell 配置
+ * Network error page Shell configuration
  */
 data class ErrorPageShellConfig(
     @SerializedName("mode")
@@ -1067,7 +1061,7 @@ data class ErrorPageShellConfig(
 )
 
 /**
- * Shell 模式用户脚本配置
+ * Shell mode user script configuration
  */
 data class ShellUserScript(
     @SerializedName("name")
@@ -1084,7 +1078,7 @@ data class ShellUserScript(
 )
 
 /**
- * BGM 项（用于 Shell 配置）
+ * BGM Item (for Shell config)
  */
 data class BgmShellItem(
     @SerializedName("id")
@@ -1104,7 +1098,7 @@ data class BgmShellItem(
 )
 
 /**
- * 歌词主题（用于 Shell 配置）
+ * Lyric theme (for Shell config)
  */
 data class LrcShellTheme(
     @SerializedName("id")
@@ -1133,7 +1127,7 @@ data class LrcShellTheme(
 )
 
 /**
- * 自启动配置（用于 Shell 配置）
+ * Auto-start configuration (for Shell config)
  */
 data class AutoStartShellConfig(
     @SerializedName("bootStartEnabled")
@@ -1150,7 +1144,7 @@ data class AutoStartShellConfig(
 )
 
 /**
- * 独立环境/多开配置（用于 Shell 配置）
+ * Isolation Environment / Multi-app Configuration (for Shell config)
  */
 data class IsolationShellConfig(
     @SerializedName("enabled")
@@ -1205,7 +1199,7 @@ data class IsolationShellConfig(
     val customScreenHeight: Int? = null
 ) {
     /**
-     * 转换为 IsolationConfig
+     * Convert to IsolationConfig
      */
     fun toIsolationConfig(): com.webtoapp.core.isolation.IsolationConfig {
         return com.webtoapp.core.isolation.IsolationConfig(
@@ -1264,7 +1258,7 @@ data class IsolationShellConfig(
 }
 
 /**
- * 指纹配置（用于 Shell 配置）
+ * Fingerprint configuration (for Shell config)
  */
 data class FingerprintShellConfig(
     @SerializedName("randomize")
@@ -1284,7 +1278,7 @@ data class FingerprintShellConfig(
 )
 
 /**
- * Header 配置（用于 Shell 配置）
+ * Header configuration (for Shell config)
  */
 data class HeaderShellConfig(
     @SerializedName("enabled")
@@ -1304,7 +1298,7 @@ data class HeaderShellConfig(
 )
 
 /**
- * IP 伪装配置（用于 Shell 配置）
+ * IP Spoofing configuration (for Shell config)
  */
 data class IpSpoofShellConfig(
     @SerializedName("enabled")
@@ -1333,7 +1327,7 @@ data class IpSpoofShellConfig(
 )
 
 /**
- * 后台运行配置（用于 Shell 配置）
+ * Background run configuration (for Shell config)
  */
 data class BackgroundRunShellConfig(
     @SerializedName("notificationTitle")
@@ -1348,4 +1342,10 @@ data class BackgroundRunShellConfig(
     @SerializedName("keepCpuAwake")
     val keepCpuAwake: Boolean = true
 )
+
+
+
+
+
+
 

@@ -1,5 +1,8 @@
 package com.webtoapp.core.forcedrun
 
+import com.webtoapp.core.forcedrun.ProtectionLevel
+import com.webtoapp.core.forcedrun.ForcedRunMode
+
 /**
  * 强制运行模式
  */

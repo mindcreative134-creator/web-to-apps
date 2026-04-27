@@ -267,3 +267,4 @@ data class InstallProgress(
     val currentStep: String = "",
     val progress: Float = 0f
 )
+

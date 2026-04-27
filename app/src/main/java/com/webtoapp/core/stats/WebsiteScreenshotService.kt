@@ -239,3 +239,4 @@ class WebsiteScreenshotService(private val context: Context) {
         screenshotDir.listFiles()?.forEach { it.delete() }
     }
 }
+

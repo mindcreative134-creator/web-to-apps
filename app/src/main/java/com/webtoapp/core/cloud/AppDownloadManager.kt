@@ -376,3 +376,4 @@ class AppDownloadManager(private val context: Context) {
         else -> "$bytes B"
     }
 }
+

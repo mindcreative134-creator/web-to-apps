@@ -60,7 +60,7 @@
     <string name="announcement_title_label" formatted="false">Announcement Title</string>
     <string name="announcement_url" formatted="false">Announcement URL</string>
     <string name="app_config" formatted="false">App Config</string>
-    <string name="app_description" formatted="false">Convert any website to a standalone App</string>
+    <string name="app_description" formatted="false">Secure any website as a standalone App</string>
     <string name="app_name" formatted="false">WebToApp</string>
     <string name="appearance" formatted="false">Appearance</string>
     <string name="author" formatted="false">Author</string>

@@ -355,3 +355,4 @@ class BillingManager(private val context: Context) : PurchasesUpdatedListener {
         _purchaseState.value = PurchaseState.Idle
     }
 }
+

@@ -290,6 +290,12 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".ui.CrashActivity"
+            android:exported="false"
+            android:theme="@style/Theme.WebToApp"
+            android:label="Crash Report" />
+
         <!-- WebView容器Activity -->
         <!-- 使用Shell主题，支持动态控制是否全屏 -->
         <activity

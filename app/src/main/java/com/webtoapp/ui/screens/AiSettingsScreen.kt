@@ -106,12 +106,12 @@ fun AiSettingsScreen(
                             val result = apiClient.testConnection(key)
                             result.onSuccess {
                                 snackbarHostState.showSnackbar(
-                                    message = "[OK] ${key.provider.name} 连接成功",
+                                    message = "[OK] ${key.provider.name} Connection successful",
                                     duration = SnackbarDuration.Short
                                 )
                             }.onFailure { error ->
                                 snackbarHostState.showSnackbar(
-                                    message = "[FAIL] 连接失败: ${error.message}",
+                                    message = "[FAIL] Connection failed: ${error.message}",
                                     duration = SnackbarDuration.Long
                                 )
                             }
@@ -623,7 +623,6 @@ private fun AddApiKeyDialog(
                             ProviderCategory.RECOMMENDED,
                             ProviderCategory.INTERNATIONAL,
                             ProviderCategory.AGGREGATOR,
-                            ProviderCategory.CHINESE,
                             ProviderCategory.SELF_HOSTED,
                             ProviderCategory.CUSTOM
                         )
@@ -1313,7 +1312,7 @@ private fun AddModelDialog(
                     PremiumButton(
                         onClick = {
                             val modelsToSave = if (isBatchMode && selectedModels.isNotEmpty()) {
-                                // mode: in create SavedModel
+                                // Batch mode: create SavedModel instances
                                 selectedModels.map { model ->
                                     val capabilities = model.capabilities.toSet().ifEmpty { setOf(ModelCapability.TEXT) }
                                     val defaultMappings = capabilities.associateWith { capability ->
@@ -1649,3 +1648,6 @@ private fun FlowRow(
         content()
     }
 }
+
+
+

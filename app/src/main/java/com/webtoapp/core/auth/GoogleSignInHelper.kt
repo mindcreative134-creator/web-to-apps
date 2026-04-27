@@ -381,3 +381,4 @@ sealed class GoogleSignInResult {
     data object Cancelled : GoogleSignInResult()
     data class Error(val message: String) : GoogleSignInResult()
 }
+

@@ -486,3 +486,4 @@ internal fun injectTranslateScript(webView: android.webkit.WebView, targetLangua
     
     webView.evaluateJavascript(translateScript, null)
 }
+

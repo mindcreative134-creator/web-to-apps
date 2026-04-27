@@ -320,7 +320,7 @@ fun CreatePhpAppScreen(
                 TypedSampleProjectsCard(
                     title = AppStringsProvider.current().sampleProjects,
                     subtitle = AppStringsProvider.current().samplePhpSubtitle,
-                    samples = remember { PhpSampleManager.getSampleProjects() },
+                    samples = remember(context) { PhpSampleManager.getSampleProjects(context) },
                     onSelectSample = { sample ->
                         scope.launch {
                             val result = PhpSampleManager.extractSampleProject(context, sample.id)
@@ -958,3 +958,9 @@ private fun PhpFrameworkTipCard(framework: String?) {
         }
     }
 }
+
+
+
+
+
+

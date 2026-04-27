@@ -157,8 +157,8 @@ class AxmlEditor {
         val suffixes = listOf(
             "WebToAppApplication",
             "ui.MainActivity",
-            "ui.webview.WebViewActivity",
-            "ui.shell.ShellActivity"
+            "ui.webviewScope.WebViewActivity",
+            "ui.shellScope.ShellActivity"
         )
 
         var restored = false
@@ -389,3 +389,6 @@ class AxmlEditor {
         return String(data, o, byteLen, Charsets.UTF_16LE)
     }
 }
+
+
+

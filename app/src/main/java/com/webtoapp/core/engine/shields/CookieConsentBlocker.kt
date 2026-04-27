@@ -239,3 +239,4 @@ class CookieConsentBlocker {
         """.trimIndent()
     }
 }
+

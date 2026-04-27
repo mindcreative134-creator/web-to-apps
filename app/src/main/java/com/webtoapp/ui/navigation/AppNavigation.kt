@@ -19,3 +19,4 @@ fun AppNavigation() {
         dependencies = dependencies,
     )
 }
+

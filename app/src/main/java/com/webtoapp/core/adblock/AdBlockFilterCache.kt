@@ -407,3 +407,4 @@ object AdBlockFilterCache {
         val scriptletRules: List<Pair<Set<String>, String>>
     )
 }
+

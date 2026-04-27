@@ -754,3 +754,5 @@ data class ModuleStatistics(
     val enabledCount: Int,
     val categoryStats: Map<ModuleCategory, Int>
 )
+
+

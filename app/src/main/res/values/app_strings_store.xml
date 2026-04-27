@@ -120,4 +120,107 @@
     <string name="appstr_store_store_version_code" formatted="false">Version Code</string>
     <string name="appstr_store_store_version_name" formatted="false">Version Name</string>
     <string name="appstr_store_store_website" formatted="false">Official Website</string>
+
+    <!-- App Management Strings -->
+    <string name="appstr_store_mgmt_edit_app_info" formatted="false">Edit app info</string>
+    <string name="appstr_store_mgmt_app_name" formatted="false">App name</string>
+    <string name="appstr_store_mgmt_app_desc" formatted="false">App description</string>
+    <string name="appstr_store_mgmt_category" formatted="false">Category</string>
+    <string name="appstr_store_mgmt_saving" formatted="false">Saving…</string>
+    <string name="appstr_store_mgmt_save" formatted="false">Save</string>
+    <string name="appstr_store_mgmt_delete_app" formatted="false">Delete app</string>
+    <string name="appstr_store_mgmt_delete_confirm_title" formatted="false">Delete 「%s」?</string>
+    <string name="appstr_store_mgmt_delete_confirm_desc" formatted="false">This action cannot be undone. All app data (activation codes, announcements, user data, etc.) will be permanently deleted.</string>
+    <string name="appstr_store_mgmt_deleting" formatted="false">Deleting…</string>
+    <string name="appstr_store_mgmt_confirm_delete" formatted="false">Confirm Delete</string>
+    <string name="appstr_store_mgmt_downloads" formatted="false">Downloads</string>
+    <string name="appstr_store_mgmt_likes" formatted="false">Likes</string>
+    <string name="appstr_store_mgmt_app_info" formatted="false">App Info</string>
+    <string name="appstr_store_mgmt_edit" formatted="false">Edit</string>
+    <string name="appstr_store_mgmt_app_id" formatted="false">App ID</string>
+    <string name="appstr_store_mgmt_version" formatted="false">Version</string>
+    <string name="appstr_store_mgmt_package_name" formatted="false">Package Name</string>
+    <string name="appstr_store_mgmt_publisher" formatted="false">Publisher</string>
+    <string name="appstr_store_mgmt_publish_time" formatted="false">Publish Time</string>
+    <string name="appstr_store_mgmt_danger_zone" formatted="false">Danger Zone</string>
+    <string name="appstr_store_mgmt_delete_warning" formatted="false">All data will be irrecoverable after deletion</string>
+    <string name="appstr_store_mgmt_delete_this_app" formatted="false">Delete this app</string>
+
+    <string name="appstr_store_mgmt_add_activation_code" formatted="false">Add Activation Code</string>
+    <string name="appstr_store_mgmt_template_quick_gen" formatted="false">Select template to generate</string>
+    <string name="appstr_store_mgmt_tpl_numeric" formatted="false">🔢 Numeric</string>
+    <string name="appstr_store_mgmt_tpl_standard" formatted="false">📋 Standard</string>
+    <string name="appstr_store_mgmt_tpl_uuid" formatted="false">🔗 UUID</string>
+    <string name="appstr_store_mgmt_custom_one_per_line" formatted="false">Or custom (one per line)</string>
+    <string name="appstr_store_mgmt_input_codes_hint" formatted="false">Input activation codes…</string>
+    <string name="appstr_store_mgmt_total_count" formatted="false">Total %d</string>
+    <string name="appstr_store_mgmt_adding" formatted="false">Adding…</string>
+    <string name="appstr_store_mgmt_add" formatted="false">Add</string>
+    <string name="appstr_store_mgmt_loading_codes" formatted="false">Loading codes…</string>
+    <string name="appstr_store_mgmt_activation_settings" formatted="false">Activation Settings</string>
+    <string name="appstr_store_mgmt_enable_activation" formatted="false">Enable Activation</string>
+    <string name="appstr_store_mgmt_enable_activation_desc" formatted="false">Users must enter code to use</string>
+    <string name="appstr_store_mgmt_device_binding" formatted="false">Device Binding</string>
+    <string name="appstr_store_mgmt_device_binding_desc" formatted="false">Bind each code to one device</string>
+    <string name="appstr_store_mgmt_total_codes" formatted="false">Total Codes</string>
+    <string name="appstr_store_mgmt_used" formatted="false">Used</string>
+    <string name="appstr_store_mgmt_unused" formatted="false">Unused</string>
+
+    <string name="appstr_store_mgmt_publish_announcement" formatted="false">Publish Announcement</string>
+    <string name="appstr_store_mgmt_select_template" formatted="false">Select Template</string>
+    <string name="appstr_store_mgmt_tpl_maintenance" formatted="false">System Maintenance</string>
+    <string name="appstr_store_mgmt_tpl_feature" formatted="false">Feature Update</string>
+    <string name="appstr_store_mgmt_tpl_security" formatted="false">Security Alert</string>
+    <string name="appstr_store_mgmt_tpl_event" formatted="false">Event Notice</string>
+    <string name="appstr_store_mgmt_anno_title" formatted="false">Title</string>
+    <string name="appstr_store_mgmt_anno_content" formatted="false">Content</string>
+    <string name="appstr_store_mgmt_type_notice" formatted="false">ℹ️ Notice</string>
+    <string name="appstr_store_mgmt_type_warning" formatted="false">⚠️ Warning</string>
+    <string name="appstr_store_mgmt_type_event" formatted="false">🎁 Event</string>
+    <string name="appstr_store_mgmt_pin_to_top" formatted="false">📌 Pin to Top</string>
+    <string name="appstr_store_mgmt_publishing" formatted="false">Publishing…</string>
+    <string name="appstr_store_mgmt_publish" formatted="false">Publish</string>
+    <string name="appstr_store_mgmt_publish_new_anno" formatted="false">Publish New Announcement</string>
+    <string name="appstr_store_mgmt_loading_annos" formatted="false">Loading announcements…</string>
+    <string name="appstr_store_mgmt_no_announcements" formatted="false">No announcements</string>
+    <string name="appstr_store_mgmt_views" formatted="false">Views</string>
+
+    <string name="appstr_store_mgmt_push_update" formatted="false">Push Update</string>
+    <string name="appstr_store_mgmt_update_template" formatted="false">Update Template</string>
+    <string name="appstr_store_mgmt_tpl_simple" formatted="false">📝 Simple</string>
+    <string name="appstr_store_mgmt_tpl_simple_desc" formatted="false">List update log</string>
+    <string name="appstr_store_mgmt_tpl_dialog" formatted="false">💬 Dialog</string>
+    <string name="appstr_store_mgmt_tpl_dialog_desc" formatted="false">Popup window</string>
+    <string name="appstr_store_mgmt_tpl_fullscreen" formatted="false">🖥 Fullscreen</string>
+    <string name="appstr_store_mgmt_tpl_fullscreen_desc" formatted="false">Full card</string>
+    <string name="appstr_store_mgmt_version_name" formatted="false">Version Name</string>
+    <string name="appstr_store_mgmt_version_code" formatted="false">Version Code</string>
+    <string name="appstr_store_mgmt_update_title" formatted="false">Update Title</string>
+    <string name="appstr_store_mgmt_update_content" formatted="false">Update Content</string>
+    <string name="appstr_store_mgmt_associated_app" formatted="false">Associated App</string>
+    <string name="appstr_store_mgmt_select_source_app" formatted="false">Select a published app as update source</string>
+    <string name="appstr_store_mgmt_no_other_apps" formatted="false">No other published apps</string>
+    <string name="appstr_store_mgmt_app_stats_format" formatted="false">v%1$s · %2$d downloads</string>
+    <string name="appstr_store_mgmt_force_update" formatted="false">⚠️ Force Update</string>
+    <string name="appstr_store_mgmt_optional_update" formatted="false">Optional Update</string>
+    <string name="appstr_store_mgmt_force_update_desc" formatted="false">Users must update to continue</string>
+    <string name="appstr_store_mgmt_optional_update_desc" formatted="false">Users can choose to update later</string>
+    <string name="appstr_store_mgmt_r2_cdn" formatted="false">🚀 R2 CDN Acceleration</string>
+    <string name="appstr_store_mgmt_r2_storage" formatted="false">☁️ R2 Cloud Storage</string>
+    <string name="appstr_store_mgmt_r2_cdn_desc" formatted="false">APK via global CDN</string>
+    <string name="appstr_store_mgmt_r2_storage_desc" formatted="false">Enable R2 for faster downloads</string>
+    <string name="appstr_store_mgmt_pushing" formatted="false">Pushing…</string>
+    <string name="appstr_store_mgmt_loading_update_config" formatted="false">Loading update config…</string>
+    <string name="appstr_store_mgmt_current_update_config" formatted="false">Current Update Config</string>
+    <string name="appstr_store_mgmt_target_version" formatted="false">Target Version</string>
+    <string name="appstr_store_mgmt_source_app" formatted="false">Source App</string>
+    <string name="appstr_store_mgmt_no_update_config" formatted="false">No update push configured</string>
+
+    <string name="appstr_store_mgmt_loading_users" formatted="false">Loading users…</string>
+    <string name="appstr_store_mgmt_total_users" formatted="false">Total Users</string>
+    <string name="appstr_store_mgmt_active_users" formatted="false">Active</string>
+    <string name="appstr_store_mgmt_geo_dist" formatted="false">🌍 Geo Distribution</string>
+    <string name="appstr_store_mgmt_user_list" formatted="false">👤 User List</string>
+    <string name="appstr_store_mgmt_no_user_data" formatted="false">No user data yet</string>
+    <string name="appstr_store_mgmt_activated" formatted="false">✓ Activated</string>
 </resources>

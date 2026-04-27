@@ -33,12 +33,23 @@ object SampleProjectExtractor {
     /**
      * Note: brief English comment.
      */
-    fun getLanguageSuffix(): String {
-        return when (AppStringsProvider.currentLanguage) {
-            AppLanguage.CHINESE -> ""
-            AppLanguage.ENGLISH -> "-en"
-            AppLanguage.ARABIC -> "-ar"
+    fun getLanguageSuffix(context: Context, baseId: String): String {
+        val lang = AppStringsProvider.currentLanguage
+        val suffix = when (lang) {
+            AppLanguage.ENGLISH -> ""
             AppLanguage.HINDI -> "-hi"
+            AppLanguage.CHINESE -> "-zh"
+            AppLanguage.ARABIC -> "-ar"
+        }
+        
+        if (suffix.isEmpty()) return ""
+        
+        // Fallback check: if localized assets don't exist, use English (empty suffix)
+        return try {
+            val assets = context.assets.list("$SAMPLES_DIR/$baseId$suffix")
+            if (assets.isNullOrEmpty()) "" else suffix
+        } catch (e: Exception) {
+            ""
         }
     }
     
@@ -143,3 +154,5 @@ object SampleProjectExtractor {
         }
     }
 }
+
+

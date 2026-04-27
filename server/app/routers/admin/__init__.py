@@ -1,12 +1,5 @@
 """
 Admin sub-package — modular admin endpoints.
-
-P1 FIX #9: Split monolithic admin.py (794 lines) into focused modules:
-  - dashboard.py: Dashboard stats and metrics
-  - users.py: User management CRUD
-  - moderation.py: Community moderation (approve/reject modules, reports)
-  - notifications.py: Push notifications and in-app messaging
-  - maintenance.py: Audit log, cleanup tasks, data exports
 """
 from fastapi import APIRouter
 
@@ -19,6 +12,9 @@ from app.routers.admin.store_management import router as store_management_router
 from app.routers.admin.analytics import router as analytics_router
 from app.routers.admin.activation import router as activation_router
 from app.routers.admin.credentials import router as credentials_router
+from app.routers.admin.remote_config import router as remote_config_router
+from app.routers.admin.intelligence import router as intelligence_router
+from app.routers.admin.announcements import router as announcements_router
 
 router = APIRouter(prefix="/admin", tags=["Admin"])
 
@@ -31,3 +27,6 @@ router.include_router(store_management_router)
 router.include_router(analytics_router)
 router.include_router(activation_router)
 router.include_router(credentials_router)
+router.include_router(remote_config_router)
+router.include_router(intelligence_router)
+router.include_router(announcements_router)

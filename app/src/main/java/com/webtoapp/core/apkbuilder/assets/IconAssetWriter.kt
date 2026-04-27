@@ -114,3 +114,4 @@ internal class IconAssetWriter(
         else -> 0xFFFFFFFF.toInt()
     }
 }
+

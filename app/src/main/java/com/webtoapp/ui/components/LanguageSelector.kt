@@ -35,7 +35,7 @@ fun LanguageSelectorButton(
     val languageManager: LanguageManager = koinInject()
     val scope = rememberCoroutineScope()
     
-    val currentLanguage by languageManager.currentLanguageFlow.collectAsState(initial = AppLanguage.CHINESE)
+    val currentLanguage by languageManager.currentLanguageFlow.collectAsState(initial = AppLanguage.ENGLISH)
     var showDialog by remember { mutableStateOf(false) }
     
     // selectbutton
@@ -190,8 +190,7 @@ fun FirstLaunchLanguageScreen(
             AppStringsProvider.forLanguage(language).confirm
         } ?: listOf(
             AppLanguage.ENGLISH,
-            AppLanguage.CHINESE,
-            AppLanguage.ARABIC
+            AppLanguage.HINDI
         ).joinToString(" / ") { language ->
             AppStringsProvider.forLanguage(language).confirm
         }
@@ -243,7 +242,7 @@ fun FirstLaunchLanguageScreen(
             
             // welcome
             Text(
-                text = "Welcome / 欢迎 / مرحبا",
+                text = "Welcome / स्वागत है",
                 style = if (isTv) MaterialTheme.typography.headlineSmall else MaterialTheme.typography.headlineMedium,
                 fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.Center
@@ -252,7 +251,7 @@ fun FirstLaunchLanguageScreen(
             Spacer(modifier = Modifier.height(8.dp))
             
             Text(
-                text = "Select Language / 选择语言 / اختر اللغة",
+                text = "Select Language / भाषा चुनें",
                 style = MaterialTheme.typography.bodyLarge,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 textAlign = TextAlign.Center
@@ -385,7 +384,7 @@ fun LanguageSettingsCard(
     val languageManager: LanguageManager = koinInject()
     val scope = rememberCoroutineScope()
     
-    val currentLanguage by languageManager.currentLanguageFlow.collectAsState(initial = AppLanguage.CHINESE)
+    val currentLanguage by languageManager.currentLanguageFlow.collectAsState(initial = AppLanguage.ENGLISH)
     var expanded by remember { mutableStateOf(false) }
     
     EnhancedElevatedCard(
@@ -465,3 +464,5 @@ fun LanguageSettingsCard(
         }
     }
 }
+
+

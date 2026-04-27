@@ -235,3 +235,4 @@ class AuthRepository(
         return apiClient.bindEmail(email, verificationCode)
     }
 }
+

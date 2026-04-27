@@ -161,3 +161,5 @@ class HttpsUpgrader {
     /** 获取失败域名数量 */
     fun getFailedDomainCount(): Int = failedDomains.size
 }
+
+

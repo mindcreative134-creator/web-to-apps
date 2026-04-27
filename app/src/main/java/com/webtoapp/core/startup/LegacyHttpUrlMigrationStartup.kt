@@ -47,3 +47,4 @@ class LegacyHttpUrlMigrationStartup(
         private const val KEY_HTTP_URL_MIGRATED = "legacy_http_url_migrated_v1"
     }
 }
+

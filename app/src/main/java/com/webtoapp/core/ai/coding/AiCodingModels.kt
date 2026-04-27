@@ -423,3 +423,5 @@ fun StyleReferenceCategory.getLocalizedDisplayName(): String {
         StyleReferenceCategory.CULTURE -> com.webtoapp.core.i18n.AppStringsProvider.current().styleCulture
     }
 }
+
+

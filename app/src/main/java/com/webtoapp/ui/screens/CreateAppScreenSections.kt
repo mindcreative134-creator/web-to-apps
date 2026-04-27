@@ -1048,3 +1048,6 @@ fun TranslateCard(
         }
     }
 }
+
+
+

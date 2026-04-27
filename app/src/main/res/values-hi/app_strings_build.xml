@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" ?>
 <resources>
     <string name="appstr_build_anti_debug_protection" formatted="false">एंटी-डीबग सुरक्षा</string>
     <string name="appstr_build_anti_debug_protection_hint" formatted="false">डीबगर कनेक्शन का पता लगाएं और रोकें</string>

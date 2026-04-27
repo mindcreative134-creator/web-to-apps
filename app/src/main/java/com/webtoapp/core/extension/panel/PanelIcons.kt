@@ -36,3 +36,4 @@ internal object PanelIcons {
         return fabIcon
     }
 }
+

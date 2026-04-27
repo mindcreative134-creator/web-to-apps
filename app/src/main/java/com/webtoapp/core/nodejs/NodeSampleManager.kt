@@ -10,11 +10,11 @@ import com.webtoapp.core.sample.TypedSampleProject
  */
 object NodeSampleManager {
     
-    fun getSampleProjects(): List<TypedSampleProject> {
-        val suffix = SampleProjectExtractor.getLanguageSuffix()
+    fun getSampleProjects(context: Context): List<TypedSampleProject> {
+        val baseIds = listOf("nodejs-express", "nodejs-fastify", "nodejs-koa")
         return listOf(
             TypedSampleProject(
-                id = "nodejs-express$suffix",
+                id = "${baseIds[0]}${SampleProjectExtractor.getLanguageSuffix(context, baseIds[0])}",
                 name = AppStringsProvider.current().sampleNodeExpressName,
                 description = AppStringsProvider.current().sampleNodeExpressDesc,
                 frameworkName = "Express",
@@ -23,7 +23,7 @@ object NodeSampleManager {
                 brandColor = 0xFF259D3D
             ),
             TypedSampleProject(
-                id = "nodejs-fastify$suffix",
+                id = "${baseIds[1]}${SampleProjectExtractor.getLanguageSuffix(context, baseIds[1])}",
                 name = AppStringsProvider.current().sampleNodeFastifyName,
                 description = AppStringsProvider.current().sampleNodeFastifyDesc,
                 frameworkName = "Fastify",
@@ -32,7 +32,7 @@ object NodeSampleManager {
                 brandColor = 0xFF000000
             ),
             TypedSampleProject(
-                id = "nodejs-koa$suffix",
+                id = "${baseIds[2]}${SampleProjectExtractor.getLanguageSuffix(context, baseIds[2])}",
                 name = AppStringsProvider.current().sampleNodeKoaName,
                 description = AppStringsProvider.current().sampleNodeKoaDesc,
                 frameworkName = "Koa",
@@ -48,3 +48,5 @@ object NodeSampleManager {
         projectId: String
     ): Result<String> = SampleProjectExtractor.extractSampleProject(context, projectId)
 }
+
+

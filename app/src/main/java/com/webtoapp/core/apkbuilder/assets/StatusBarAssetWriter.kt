@@ -33,3 +33,4 @@ internal object StatusBarAssetWriter {
         }
     }
 }
+

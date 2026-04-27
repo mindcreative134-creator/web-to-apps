@@ -640,3 +640,6 @@ private fun LrcLineEditor(
         }
     }
 }
+
+
+

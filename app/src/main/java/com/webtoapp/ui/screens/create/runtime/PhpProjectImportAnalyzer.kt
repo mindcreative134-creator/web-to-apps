@@ -163,3 +163,6 @@ private data class ComposerInfo(
     val devDependencies: Map<String, String> = emptyMap(),
     val phpVersion: String? = null,
 )
+
+
+

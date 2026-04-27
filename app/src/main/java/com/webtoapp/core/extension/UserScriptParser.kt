@@ -224,3 +224,4 @@ object UserScriptParser {
         return METADATA_BLOCK_REGEX.replace(scriptContent, "").trim()
     }
 }
+

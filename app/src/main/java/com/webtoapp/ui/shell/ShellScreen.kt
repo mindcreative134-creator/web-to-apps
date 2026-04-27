@@ -25,6 +25,7 @@ import com.webtoapp.core.forcedrun.ForcedRunConfig
 import com.webtoapp.util.TvUtils
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
 
 /**
  * Shell mode Composable
@@ -109,7 +110,7 @@ fun ShellScreen(
             } catch (e: Exception) { false }
             
             val exists = hasEncrypted || hasNormal
-            AppLogger.d("ShellActivity", "同步检查: 启动画面媒体 encrypted=$hasEncrypted, normal=$hasNormal, exists=$exists")
+            AppLogger.d("ShellActivity", "Sync check: Splash media encrypted=$hasEncrypted, normal=$hasNormal, exists=$exists")
             exists
         } else false
     }
@@ -140,14 +141,13 @@ fun ShellScreen(
     DisposableEffect(config.language) {
         try {
             val appLanguage = when (config.language.uppercase()) {
-                "ENGLISH" -> com.webtoapp.core.i18n.AppLanguage.ENGLISH
-                "ARABIC" -> com.webtoapp.core.i18n.AppLanguage.ARABIC
-                else -> com.webtoapp.core.i18n.AppLanguage.CHINESE
+                "HINDI" -> com.webtoapp.core.i18n.AppLanguage.HINDI
+                else -> com.webtoapp.core.i18n.AppLanguage.ENGLISH
             }
             AppStringsProvider.setRuntimeLanguage(appLanguage)
-            AppLogger.d("ShellActivity", "设置界面语言: ${config.language} -> $appLanguage")
+            AppLogger.d("ShellActivity", "Set interface language: ${config.language} -> $appLanguage")
         } catch (e: Exception) {
-            AppLogger.e("ShellActivity", "设置语言失败", e)
+            AppLogger.e("ShellActivity", "Failed to set language", e)
         }
 
         onDispose {
@@ -391,7 +391,9 @@ fun ShellScreen(
                         linkUrl = config.announcementLink.ifEmpty { null },
                         showOnce = config.announcementShowOnce
                     )
-                    showAnnouncementDialog = kotlinx.coroutines.runBlocking { announcement.shouldShowAnnouncement(-1L, ann) }
+                    scope.launch {
+                        showAnnouncementDialog = announcement.shouldShowAnnouncement(-1L, ann)
+                    }
                 }
             }
         )
@@ -504,3 +506,9 @@ fun ShellScreen(
     
     } // close Box
 }
+
+
+
+
+
+

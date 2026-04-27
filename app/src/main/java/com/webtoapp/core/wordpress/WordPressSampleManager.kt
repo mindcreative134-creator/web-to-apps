@@ -10,11 +10,11 @@ import com.webtoapp.core.sample.TypedSampleProject
  */
 object WordPressSampleManager {
     
-    fun getSampleProjects(): List<TypedSampleProject> {
-        val suffix = SampleProjectExtractor.getLanguageSuffix()
+    fun getSampleProjects(context: Context): List<TypedSampleProject> {
+        val baseIds = listOf("wp-blog", "wp-woocommerce", "wp-portfolio")
         return listOf(
             TypedSampleProject(
-                id = "wp-blog$suffix",
+                id = "${baseIds[0]}${SampleProjectExtractor.getLanguageSuffix(context, baseIds[0])}",
                 name = AppStringsProvider.current().sampleWpBlogName,
                 description = AppStringsProvider.current().sampleWpBlogDesc,
                 frameworkName = "WordPress",
@@ -23,7 +23,7 @@ object WordPressSampleManager {
                 brandColor = 0xFF21759B
             ),
             TypedSampleProject(
-                id = "wp-woocommerce$suffix",
+                id = "${baseIds[1]}${SampleProjectExtractor.getLanguageSuffix(context, baseIds[1])}",
                 name = AppStringsProvider.current().sampleWpWooName,
                 description = AppStringsProvider.current().sampleWpWooDesc,
                 frameworkName = "WooCommerce",
@@ -32,7 +32,7 @@ object WordPressSampleManager {
                 brandColor = 0xFF96588A
             ),
             TypedSampleProject(
-                id = "wp-portfolio$suffix",
+                id = "${baseIds[2]}${SampleProjectExtractor.getLanguageSuffix(context, baseIds[2])}",
                 name = AppStringsProvider.current().sampleWpPortfolioName,
                 description = AppStringsProvider.current().sampleWpPortfolioDesc,
                 frameworkName = "WordPress",
@@ -48,3 +48,5 @@ object WordPressSampleManager {
         projectId: String
     ): Result<String> = SampleProjectExtractor.extractSampleProject(context, projectId)
 }
+
+

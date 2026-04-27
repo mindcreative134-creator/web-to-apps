@@ -396,3 +396,5 @@ fun ProviderIcon(
 fun filterModelsForModuleDevelopment(models: List<SavedModel>): List<SavedModel> {
     return models.filter { it.supportsFeature(AiFeature.MODULE_DEVELOPMENT) }
 }
+
+

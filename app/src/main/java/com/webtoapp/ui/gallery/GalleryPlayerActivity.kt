@@ -122,3 +122,4 @@ class GalleryPlayerActivity : ComponentActivity() {
         window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
     }
 }
+

@@ -130,3 +130,4 @@ val LrcAlignIcon: ImageVector
     }.build().also { _lrcAlignIcon = it }
 
 private var _lrcAlignIcon: ImageVector? = null
+

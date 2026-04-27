@@ -14,17 +14,18 @@ import com.webtoapp.core.i18n.LanguageManager
 import com.webtoapp.data.model.*
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.CancellationException
 
 /**
- * 增强版 Agent 引擎
+ * Enhanced Agent Engine
  * 
- * 核心 Agent 实现，支持：
- * - 流式输出 (developWithStream)
- * - ReAct 循环
- * - 工具链调用
- * - 自动修复（最多3次，使用迭代而非递归）
- * - 上下文保持
- * - 超时保护
+ * Core Agent implementation, supporting:
+ * - Streaming output (developWithStream)
+ * - ReAct loop
+ * - Toolchain calling
+ * - Auto-fix (up to 3 times, using iteration instead of recursion)
+ * - Context maintenance
+ * - Timeout protection
  * 
  * Requirements: 2.1, 2.6, 5.2
  */
@@ -32,10 +33,10 @@ class EnhancedAgentEngine(private val context: Context) {
     
     companion object {
         private const val TAG = "EnhancedAgentEngine"
-        private const val STREAM_TIMEOUT_MS = 120_000L  // 2分钟超时
+        private const val STREAM_TIMEOUT_MS = 120_000L  // 2 minutes timeout
         private const val MAX_FIX_ATTEMPTS = 3
         
-        // 代码块解析
+        // Code block parsing
         private val JSON_BLOCK_REGEX = Regex("```json\\s*([\\s\\S]*?)\\s*```")
         private val JS_BLOCK_REGEX = Regex("```(?:javascript|js)\\s*([\\s\\S]*?)\\s*```")
         private val CSS_BLOCK_REGEX = Regex("```css\\s*([\\s\\S]*?)\\s*```")
@@ -55,13 +56,13 @@ class EnhancedAgentEngine(private val context: Context) {
     val currentState: StateFlow<AgentState> = _currentState.asStateFlow()
     
     /**
-     * 使用流式输出进行模块开发
+     * Use streaming output for module development
      * 
-     * @param requirement 用户需求描述
-     * @param model 指定使用的模型（可选）
-     * @param category 模块分类（可选）
-     * @param existingCode 现有代码（用于修改）
-     * @return Flow<AgentStreamEvent> 流式事件流
+     * @param requirement User requirement description
+     * @param model Specified model (optional)
+     * @param category Module category (optional)
+     * @param existingCode Existing code (for modification)
+     * @return Flow<AgentStreamEvent> Streaming event flow
      */
     fun developWithStream(
         requirement: String,
@@ -69,7 +70,7 @@ class EnhancedAgentEngine(private val context: Context) {
         category: ModuleCategory? = null,
         existingCode: String? = null
     ): Flow<AgentStreamEvent> = flow {
-        // Initialize工作记忆
+        // Initialize working memory
         workingMemory.currentRequirement = requirement
         workingMemory.addUserMessage(requirement)
         workingMemory.resetFixAttempts()  // Reset修复计数
@@ -97,15 +98,15 @@ class EnhancedAgentEngine(private val context: Context) {
                 return@flow
             }
             
-            // Start开发流程
+            // Start development process
             emit(AgentStreamEvent.StateChange(AgentState.THINKING))
             _currentState.value = AgentState.THINKING
             
-            // Build系统提示词和消息
+            // Build system prompt and messages
             val systemPrompt = buildSystemPrompt(category, existingCode)
             val messages = buildMessages(systemPrompt, requirement, category, existingCode)
             
-            // 使用流式 API 调用（带超时保护）
+            // Use streaming API call (with timeout protection)
             emit(AgentStreamEvent.StateChange(AgentState.GENERATING))
             _currentState.value = AgentState.GENERATING
             
@@ -153,20 +154,20 @@ class EnhancedAgentEngine(private val context: Context) {
             
             if (!streamCompleted || contentBuilder.isEmpty()) {
                 emit(AgentStreamEvent.Error(
-                    message = "AI 响应为空，请重试",
+                    message = "AI response is empty, please try again",
                     code = "EMPTY_RESPONSE",
                     recoverable = true
                 ))
                 return@flow
             }
             
-            // 流完成，处理生成的内容
+            // Stream complete, process generated content
             val responseText = contentBuilder.toString()
             processGeneratedContentIterative(responseText, apiKey, selectedModel)
                 .collect { agentEvent -> emit(agentEvent) }
-            
+                
         } catch (e: CancellationException) {
-            throw e  // 重新抛出取消异常
+            throw e  // Re-throw cancellation exception
         } catch (e: Exception) {
             AppLogger.e(TAG, "Error in developWithStream", e)
             emit(AgentStreamEvent.StateChange(AgentState.ERROR))
@@ -181,15 +182,15 @@ class EnhancedAgentEngine(private val context: Context) {
 
     
     /**
-     * 处理生成的内容（迭代版本，避免递归 Flow 问题）
-     * 解析模块、执行语法检查、自动修复
+     * Process generated content (iterative version to avoid recursive Flow issues)
+     * Parse modules, execute syntax check, auto-fix
      */
     private fun processGeneratedContentIterative(
         responseText: String,
         apiKey: ApiKeyConfig,
         savedModel: SavedModel
     ): Flow<AgentStreamEvent> = flow {
-        // Parse生成的模块
+        // Parse generated module
         val parsedModule = parseGeneratedModule(responseText)
         if (parsedModule == null) {
             emit(AgentStreamEvent.Error(
@@ -203,12 +204,12 @@ class EnhancedAgentEngine(private val context: Context) {
         workingMemory.updateModule(currentModule)
         emit(AgentStreamEvent.ModuleGenerated(currentModule))
         
-        // 语法检查和自动修复循环（迭代而非递归）
+        // Syntax check and auto-fix loop (iterative instead of recursive)
         var fixAttempt = 0
         var syntaxValid = false
         
         while (fixAttempt <= MAX_FIX_ATTEMPTS && !syntaxValid) {
-            // Execute语法检查
+            // Execute syntax check
             emit(AgentStreamEvent.StateChange(AgentState.SYNTAX_CHECKING))
             _currentState.value = AgentState.SYNTAX_CHECKING
             
@@ -233,11 +234,11 @@ class EnhancedAgentEngine(private val context: Context) {
                 syntaxValid = true
                 AppLogger.w(TAG, "Syntax check passed")
             } else {
-                // 语法有错误，尝试修复
+                // Syntax error, attempt fix
                 fixAttempt++
                 
                 if (fixAttempt > MAX_FIX_ATTEMPTS) {
-                    // 达到最大修复次数
+                    // Maximum fix attempts reached
                     val errorMessage = buildAutoFixLimitErrorMessage(syntaxCheck)
                     emit(AgentStreamEvent.Error(
                         message = errorMessage,
@@ -249,7 +250,7 @@ class EnhancedAgentEngine(private val context: Context) {
                 
                 AppLogger.w(TAG, "Syntax errors found, attempting fix $fixAttempt/$MAX_FIX_ATTEMPTS")
                 
-                // 尝试修复
+                // Attempt fix
                 emit(AgentStreamEvent.StateChange(AgentState.FIXING))
                 _currentState.value = AgentState.FIXING
                 
@@ -260,7 +261,7 @@ class EnhancedAgentEngine(private val context: Context) {
                     workingMemory.updateModule(currentModule)
                     emit(AgentStreamEvent.ModuleGenerated(currentModule))
                 } else {
-                    // 修复失败
+                    // Fix failed
                     emit(AgentStreamEvent.Error(
                         message = AppStringsProvider.current().agentAutoFixFailed,
                         code = "AUTO_FIX_FAILED",
@@ -271,7 +272,7 @@ class EnhancedAgentEngine(private val context: Context) {
             }
         }
         
-        // Execute安全扫描
+        // Execute security scan
         emit(AgentStreamEvent.StateChange(AgentState.SECURITY_SCANNING))
         _currentState.value = AgentState.SECURITY_SCANNING
         
@@ -300,7 +301,7 @@ class EnhancedAgentEngine(private val context: Context) {
         emit(AgentStreamEvent.StateChange(AgentState.COMPLETED))
         _currentState.value = AgentState.COMPLETED
         
-        // Save到对话历史
+        // Save to conversation history
         workingMemory.addAssistantMessage(
             content = AppStringsProvider.current().agentModuleGenerated.replace("%s", finalModule.name),
             generatedModule = finalModule
@@ -310,9 +311,9 @@ class EnhancedAgentEngine(private val context: Context) {
     }
     
     /**
-     * 尝试修复语法错误（单次修复，不递归，支持多语言）
+     * Attempt to fix syntax errors (single fix, non-recursive, localized support)
      * 
-     * @return 修复后的模块，如果修复失败返回 null
+     * @return Fixed module, or null if fix failed
      */
     private suspend fun tryFixSyntaxErrors(
         module: GeneratedModuleData,
@@ -352,7 +353,7 @@ class EnhancedAgentEngine(private val context: Context) {
             if (response.isSuccess) {
                 val fixedCode = response.getOrNull() ?: return null
                 
-                // 提取代码块
+                // Extract code blocks
                 val code = JS_BLOCK_REGEX.find(fixedCode)?.groupValues?.get(1) ?: fixedCode
                 
                 if (code.isBlank()) return null
@@ -372,18 +373,18 @@ class EnhancedAgentEngine(private val context: Context) {
     }
     
     /**
-     * 构建自动修复达到限制的错误消息
+     * Build error message for auto-fix limit reached
      */
     private fun buildAutoFixLimitErrorMessage(syntaxResult: SyntaxCheckResult): String {
         val errorSummary = syntaxResult.errors.take(3).joinToString("\n") { error ->
-            "  - 第 ${error.line} 行: ${error.message}"
+            "  - Line ${error.line}: ${error.message}"
         }
         val moreErrors = if (syntaxResult.errors.size > 3) {
-            "\n  ... 还有 ${syntaxResult.errors.size - 3} 个错误"
+            "\n  ... and ${syntaxResult.errors.size - 3} more errors"
         } else ""
         
         return """
-已达到最大自动修复次数 (${MAX_FIX_ATTEMPTS}次)，代码仍有语法错误，请手动修复：
+Maximum auto-fix attempts reached (${MAX_FIX_ATTEMPTS}), code still has syntax errors, please fix manually:
 $errorSummary$moreErrors
         """.trimIndent()
     }
@@ -469,63 +470,39 @@ $errorSummary$moreErrors
 
     
     /**
-     * 构建系统提示词（支持多语言）
+     * Build system prompt (supports English/Hindi)
      */
     private suspend fun buildSystemPrompt(category: ModuleCategory?, existingCode: String?): String {
-        // Get当前语言
+        // Get current language
         val currentLanguage = languageManager.getCurrentLanguage()
         
-        val categoryHint = category?.let {
+        val categoryHint: String = category?.let {
             when (currentLanguage) {
-                AppLanguage.CHINESE -> """
-## 目标分类
-用户希望创建「${it.getDisplayName()}」类型的模块。
-分类说明：${it.getDescription()}
-                """.trimIndent()
-                AppLanguage.ENGLISH -> """
-## Target Category
-User wants to create a "${it.getDisplayName()}" type module.
-Category description: ${it.getDescription()}
-                """.trimIndent()
-                AppLanguage.ARABIC -> """
-## الفئة المستهدفة
-يريد المستخدم إنشاء وحدة من نوع "${it.getDisplayName()}".
-وصف الفئة: ${it.getDescription()}
-                """.trimIndent()
                 AppLanguage.HINDI -> """
 ## लक्षित श्रेणी
 उपयोगकर्ता "${it.getDisplayName()}" प्रकार का मॉड्यूल बनाना चाहता है।
 श्रेणी विवरण: ${it.getDescription()}
                 """.trimIndent()
+                else -> """
+## Target Category
+User wants to create a "${it.getDisplayName()}" type module.
+Category description: ${it.getDescription()}
+                """.trimIndent()
             }
         } ?: ""
         
-        val existingCodeHint = existingCode?.let {
+        val existingCodeHint: String = existingCode?.let {
             when (currentLanguage) {
-                AppLanguage.CHINESE -> """
-## 现有代码
-用户提供了现有代码，请在此基础上进行修改或优化：
-```javascript
-$it
-```
-                """.trimIndent()
-                AppLanguage.ENGLISH -> """
-## Existing Code
-User provided existing code, please modify or optimize based on this:
-```javascript
-$it
-```
-                """.trimIndent()
-                AppLanguage.ARABIC -> """
-## الكود الحالي
-قدم المستخدم كودًا موجودًا، يرجى التعديل أو التحسين بناءً على هذا:
-```javascript
-$it
-```
-                """.trimIndent()
                 AppLanguage.HINDI -> """
 ## मौजूदा कोड
 उपयोगकर्ता ने मौजूदा कोड प्रदान किया है, कृपया इसके आधार पर संशोधित या अनुकूलित करें:
+```javascript
+$it
+```
+                """.trimIndent()
+                else -> """
+## Existing Code
+User provided existing code, please modify or optimize based on this:
 ```javascript
 $it
 ```
@@ -582,24 +559,24 @@ $it
     }
     
     /**
-     * 解析生成的模块
+     * Parse generated module
      */
     private fun parseGeneratedModule(response: String): GeneratedModuleData? {
         return try {
-            // 尝试提取 JSON 块
+            // Attempt to extract JSON block
             val jsonMatch = JSON_BLOCK_REGEX.find(response)
             
             val jsonStr = if (jsonMatch != null) {
                 jsonMatch.groupValues[1]
             } else {
-                // 尝试直接解析
+                // Attempt direct parse
                 response.trim()
             }
             
             val json = JsonParser.parseString(jsonStr).asJsonObject
             
             GeneratedModuleData(
-                name = json.get("name")?.asString ?: "AI 生成模块",
+                name = json.get("name")?.asString ?: "AI Generated Module",
                 description = json.get("description")?.asString ?: "",
                 icon = json.get("icon")?.asString ?: "🤖",
                 category = json.get("category")?.asString ?: "OTHER",
@@ -676,7 +653,7 @@ $it
             emit(AgentStreamEvent.ToolComplete(completedInfo))
             workingMemory.updateToolCallResult(toolInfo.callId, result)
             
-            // 如果工具执行失败，停止链式执行
+            // If tool execution fails, stop chain execution
             if (!result.success) {
                 emit(AgentStreamEvent.Error(
                     message = String.format(AppStringsProvider.current().agentToolFailed, request.toolName, result.error),
@@ -688,10 +665,15 @@ $it
     }.flowOn(Dispatchers.IO)
     
     /**
-     * 重置引擎状态
+     * Reset engine state
      */
     fun reset() {
         workingMemory.reset()
         _currentState.value = AgentState.IDLE
     }
 }
+
+
+
+
+

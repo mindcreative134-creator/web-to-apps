@@ -362,3 +362,4 @@ class ReaderMode {
             .replace("'", "&#39;")
     }
 }
+

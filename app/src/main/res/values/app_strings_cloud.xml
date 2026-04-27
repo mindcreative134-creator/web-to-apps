@@ -43,7 +43,17 @@
     <string name="appstr_cloud_auth_menu_devices_max" formatted="false">Max bound devices</string>
     <string name="appstr_cloud_auth_menu_security" formatted="false">Security Settings</string>
     <string name="appstr_cloud_auth_menu_security_desc" formatted="false">Change password, manage devices</string>
+    <string name="appstr_cloud_auth_change_password" formatted="false">Change Password</string>
+    <string name="appstr_cloud_auth_update_password_desc" formatted="false">Update your login password</string>
+    <string name="appstr_cloud_auth_current_password" formatted="false">Current Password</string>
     <string name="appstr_cloud_auth_new_password" formatted="false">New Password</string>
+    <string name="appstr_cloud_auth_confirm_new_password" formatted="false">Confirm New Password</string>
+    <string name="appstr_cloud_auth_confirm_change" formatted="false">Confirm Change</string>
+    <string name="appstr_cloud_auth_logout_all_devices" formatted="false">Log out on all devices</string>
+    <string name="appstr_cloud_auth_logout_all_confirm" formatted="false">Are you sure you want to log out from all devices? All sessions will be terminated.</string>
+    <string name="appstr_cloud_auth_logout_all_btn" formatted="false">Logout All</string>
+    <string name="appstr_cloud_auth_password_min_hint" formatted="false">At least 6 characters</string>
+    <string name="appstr_cloud_auth_new_password_label" formatted="false">New Password</string>
     <string name="appstr_cloud_auth_no_account" formatted="false">Don\'t have an account?</string>
     <string name="appstr_cloud_auth_or" formatted="false">  OR  </string>
     <string name="appstr_cloud_auth_password" formatted="false">Password</string>

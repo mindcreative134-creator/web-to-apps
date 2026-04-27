@@ -12,7 +12,7 @@ import android.webkit.WebViewClient
 import androidx.annotation.RequiresApi
 
 internal class ManagedWebViewClient(
-    private val shouldInterceptRequestHandler: (WebView?, WebResourceRequest?, WebViewClient) -> WebResourceResponse?,
+    private val shouldInterceptRequestHandler: (WebView?, WebResourceRequest?) -> WebResourceResponse?,
     private val shouldOverrideUrlLoadingHandler: (WebView?, WebResourceRequest?) -> Boolean,
     private val onPageStartedHandler: (WebView?, String?, Bitmap?) -> Unit,
     private val onPageCommitVisibleHandler: (WebView?, String?) -> Unit,
@@ -26,7 +26,7 @@ internal class ManagedWebViewClient(
     override fun shouldInterceptRequest(
         view: WebView?,
         request: WebResourceRequest?
-    ): WebResourceResponse? = shouldInterceptRequestHandler(view, request, this)
+    ): WebResourceResponse? = shouldInterceptRequestHandler(view, request)
 
     override fun shouldOverrideUrlLoading(
         view: WebView?,

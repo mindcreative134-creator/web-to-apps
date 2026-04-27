@@ -637,3 +637,7 @@ private fun shareModuleFile(context: Context, module: ExtensionModule) {
         Toast.makeText(context, AppStringsProvider.current().shareFailed.format(e.message), Toast.LENGTH_SHORT).show()
     }
 }
+
+
+
+

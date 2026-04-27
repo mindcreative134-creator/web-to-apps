@@ -103,3 +103,4 @@ class ExtensionPopupManager(
         AppLogger.d(TAG, "Popup WebView destroyed for: $extensionId")
     }
 }
+

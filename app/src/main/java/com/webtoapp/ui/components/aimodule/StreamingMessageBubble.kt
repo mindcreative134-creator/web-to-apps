@@ -459,3 +459,4 @@ private fun parseMarkdownToAnnotatedString(text: String, baseColor: Color): Anno
         }
     }
 }
+

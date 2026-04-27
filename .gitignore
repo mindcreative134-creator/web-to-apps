@@ -103,3 +103,31 @@ __pycache__/
 
 # Project docs (local only)
 skills.md
+
+# Database
+server/sql_app.db
+*.db
+
+# Logs & Temp files
+*.txt
+*.log
+build_output.log
+crash_log.txt
+source_roots.txt
+sourcesets_output.txt
+strings_tail.txt
+truly_missing.txt
+compile_info.txt
+missing_final.txt
+missing_refs.txt
+build_errors.txt
+build_log.txt
+build_output.txt
+build_output_utf8.txt
+
+# Scripts
+fix_compile_errors.py
+server/drop_announcements.py
+
+# Assets
+app/schemas/com.securex.data.database.AppDatabase/

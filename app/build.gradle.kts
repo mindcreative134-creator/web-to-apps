@@ -111,15 +111,27 @@ fun parseStringXml(file: File): Map<String, String> {
 val generatedAppStringsDir = layout.buildDirectory.dir("generated/source/appStrings/main/kotlin")
 
 val generateAppStringsAccessors = tasks.register("generateAppStringsAccessors") {
-    val valuesDir = project.file("src/main/res/values")
-    val valuesZhDir = project.file("src/main/res/values-zh")
+    val resDir = project.file("src/main/res")
+    val valuesDir = File(resDir, "values")
+    val hiDir = File(resDir, "values-hi")
+    val zhDir = File(resDir, "values-zh")
+    val arDir = File(resDir, "values-ar")
+    
     inputs.files(fileTree(valuesDir) { include("app_strings_*.xml") })
-    inputs.files(fileTree(valuesZhDir) { include("app_strings_*.xml") })
-    inputs.files(fileTree(project.file("src/main/res/values-ar")) { include("app_strings_*.xml") })
-    inputs.files(fileTree(project.file("src/main/res/values-hi")) { include("app_strings_*.xml") })
+    inputs.files(fileTree(hiDir) { include("app_strings_*.xml") })
+    inputs.files(fileTree(zhDir) { include("app_strings_*.xml") })
+    inputs.files(fileTree(arDir) { include("app_strings_*.xml") })
     outputs.dir(generatedAppStringsDir)
 
     doLast {
+        val languages = listOf("en", "hi", "zh", "ar")
+        val langDirs = mapOf(
+            "en" to valuesDir,
+            "hi" to hiDir,
+            "zh" to zhDir,
+            "ar" to arDir
+        )
+
         val groups = fileTree(valuesDir)
             .matching { include("app_strings_*.xml") }
             .files
@@ -128,42 +140,31 @@ val generateAppStringsAccessors = tasks.register("generateAppStringsAccessors") 
                 val groupId = defaultFile.name.removePrefix("app_strings_").removeSuffix(".xml")
                 val prefix = "appstr_${groupId}_"
                 
-                // defaultFile is in src/main/res/values and is now English (after translation)
-                val enMap = parseStringXml(defaultFile)
+                val langMaps = languages.associateWith { lang ->
+                    val file = File(langDirs[lang], defaultFile.name)
+                    if (file.exists()) {
+                        parseStringXml(file)
+                    } else {
+                        // Fallback to English if translation is missing
+                        parseStringXml(defaultFile)
+                    }
+                }
                 
-                val zhFile = project.file("src/main/res/values-zh/${defaultFile.name}")
-                val arFile = project.file("src/main/res/values-ar/${defaultFile.name}")
-                val hiFile = project.file("src/main/res/values-hi/${defaultFile.name}")
-                
-                require(zhFile.exists()) { "Missing Chinese locale file for ${defaultFile.name}" }
-                require(arFile.exists()) { "Missing Arabic locale file for ${defaultFile.name}" }
-                require(hiFile.exists()) { "Missing Hindi locale file for ${defaultFile.name}" }
-                
-                val zhMap = parseStringXml(zhFile)
-                val arMap = parseStringXml(arFile)
-                val hiMap = parseStringXml(hiFile)
-                
-                require(enMap.keys == zhMap.keys) { "Key mismatch between values and values-zh for ${defaultFile.name}" }
-                require(enMap.keys == arMap.keys) { "Key mismatch between values and values-ar for ${defaultFile.name}" }
-                require(enMap.keys == hiMap.keys) { "Key mismatch between values and values-hi for ${defaultFile.name}" }
-
+                val enMap = langMaps.getValue("en")
                 val properties = enMap.keys.sorted().map { key ->
                     require(key.startsWith(prefix)) { "Unexpected key '$key' in ${defaultFile.name}" }
                     AppStringsProperty(
                         propertyName = snakeToCamel(key.removePrefix(prefix)),
-                        translations = mapOf(
-                            "zh" to zhMap.getValue(key),
-                            "en" to enMap.getValue(key),
-                            "ar" to arMap.getValue(key),
-                            "hi" to hiMap.getValue(key)
-                        )
+                        translations = languages.associateWith { lang ->
+                            langMaps.getValue(lang)[key] ?: enMap.getValue(key)
+                        }
                     )
                 }
                 AppStringsGroup(groupId = groupId, properties = properties)
             }
 
         val outputFile = generatedAppStringsDir.get()
-            .file("com/webtoapp/core/i18n/generated/GeneratedAppStrings.kt")
+            .file("com.webtoapp/core/i18n/generated/GeneratedAppStrings.kt")
             .asFile
         outputFile.parentFile.mkdirs()
 
@@ -187,7 +188,7 @@ val generateAppStringsAccessors = tasks.register("generateAppStringsAccessors") 
                 appendLine("public interface GeneratedAppStrings : $superInterfaces {")
                 groups.forEach { group ->
                     val interfaceName = "${snakeToPascal(group.groupId)}AppStrings"
-                    val propertyName = snakeToCamel(group.groupId)
+                    val propertyName = "${snakeToCamel(group.groupId)}Scope"
                     appendLine("    public val $propertyName: $interfaceName")
                     appendLine("        get() = this")
                 }
@@ -200,10 +201,11 @@ val generateAppStringsAccessors = tasks.register("generateAppStringsAccessors") 
                     group.properties.forEach { property ->
                         appendLine("    override val ${property.propertyName}: String")
                         appendLine("        get() = when (currentLanguage) {")
-                        appendLine("            AppLanguage.CHINESE -> ${kotlinStringLiteral(property.translations.getValue("zh"))}")
                         appendLine("            AppLanguage.ENGLISH -> ${kotlinStringLiteral(property.translations.getValue("en"))}")
-                        appendLine("            AppLanguage.ARABIC -> ${kotlinStringLiteral(property.translations.getValue("ar"))}")
                         appendLine("            AppLanguage.HINDI -> ${kotlinStringLiteral(property.translations.getValue("hi"))}")
+                        appendLine("            AppLanguage.CHINESE -> ${kotlinStringLiteral(property.translations.getValue("zh"))}")
+                        appendLine("            AppLanguage.ARABIC -> ${kotlinStringLiteral(property.translations.getValue("ar"))}")
+                        appendLine("            else -> ${kotlinStringLiteral(property.translations.getValue("en"))}")
                         appendLine("        }")
                         appendLine()
                     }

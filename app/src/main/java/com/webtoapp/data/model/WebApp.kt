@@ -6,21 +6,24 @@ import androidx.room.Index
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
 import com.webtoapp.data.converter.Converters
-
-enum class AppType {
-    WEB,
-    IMAGE,
-    VIDEO,
-    HTML,
-    GALLERY,
-    FRONTEND,
-    WORDPRESS,
-    NODEJS_APP,
-    PHP_APP,
-    PYTHON_APP,
-    GO_APP,
-    MULTI_WEB
-}
+import com.webtoapp.data.model.webapp.config.AdConfig
+import com.webtoapp.data.model.webapp.config.Announcement
+import com.webtoapp.data.model.webapp.config.ApkExportConfig
+import com.webtoapp.data.model.webapp.config.AutoStartConfig
+import com.webtoapp.data.model.webapp.config.BgmConfig
+import com.webtoapp.data.model.webapp.config.GalleryConfig
+import com.webtoapp.data.model.webapp.config.HtmlConfig
+import com.webtoapp.data.model.webapp.config.MediaConfig
+import com.webtoapp.data.model.webapp.config.SplashConfig
+import com.webtoapp.data.model.webapp.config.TranslateConfig
+import com.webtoapp.data.model.webapp.config.WebViewConfig
+import com.webtoapp.data.model.webapp.config.NodeJsConfig
+import com.webtoapp.data.model.webapp.config.WordPressConfig
+import com.webtoapp.data.model.webapp.config.PhpAppConfig
+import com.webtoapp.data.model.webapp.config.PythonAppConfig
+import com.webtoapp.data.model.webapp.config.GoAppConfig
+import com.webtoapp.data.model.webapp.config.MultiWebConfig
+import com.webtoapp.data.model.webapp.config.ActivationDialogConfig
 
 @Entity(
     tableName = "web_apps",
@@ -84,3 +87,7 @@ data class WebApp(
     val createdAt: Long = System.currentTimeMillis(),
     val updatedAt: Long = System.currentTimeMillis()
 )
+
+
+
+

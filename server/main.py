@@ -58,12 +58,14 @@ def api_v1_root():
         "docs": "/docs"
     }
 
-from app.routers.admin.credentials import router as credentials_router
+from app.routers.projects import router as projects_router
+from app.routers.sdk import router as sdk_router
 
 # Include routers
 app.include_router(auth_router, prefix="/api/v1")
 app.include_router(admin_router, prefix="/api/v1")
-app.include_router(credentials_router, prefix="/api/v1")
+app.include_router(projects_router, prefix="/api/v1")
+app.include_router(sdk_router, prefix="/api/v1")
 
 if __name__ == "__main__":
     import uvicorn

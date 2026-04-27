@@ -405,3 +405,5 @@ fun ByteArray.sha256(): ByteArray {
     val digest = java.security.MessageDigest.getInstance("SHA-256")
     return digest.digest(this)
 }
+
+

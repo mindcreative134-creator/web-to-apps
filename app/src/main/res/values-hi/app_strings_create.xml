@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" ?>
 <resources>
     <string name="appstr_create_about_file_reference" formatted="false">फ़ाइल संदर्भ के बारे में</string>
     <string name="appstr_create_activate" formatted="false">सक्रिय करें</string>

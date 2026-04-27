@@ -8,6 +8,7 @@ import com.webtoapp.core.ai.AiConfigManager
 import com.webtoapp.core.ai.ToolStreamEvent
 import com.webtoapp.core.ai.ToolCallInfo
 import com.webtoapp.core.i18n.AppStringsProvider
+import com.webtoapp.core.i18n.AppLanguage
 import com.webtoapp.data.model.*
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
@@ -1767,20 +1768,30 @@ class AiCodingAgent(private val context: Context) {
         val hasGenerateImage = enabledTools.any { it.name == "generate_image" }
         val hasExistingCode = !currentHtml.isNullOrBlank()
         val currentLang = AppStringsProvider.currentLanguage
-        val isEnglish = currentLang == com.webtoapp.core.i18n.AppLanguage.ENGLISH
-        val isArabic = currentLang == com.webtoapp.core.i18n.AppLanguage.ARABIC
+        val isHindi = currentLang == AppLanguage.HINDI
+        val isArabic = currentLang == AppLanguage.ARABIC
+        val isChinese = currentLang == AppLanguage.CHINESE
+        val isEnglish = currentLang == AppLanguage.ENGLISH
         
         return buildString {
-            if (isArabic) {
-                appendLine("أنت خبير تطوير واجهات أمامية للجوال، تقوم بإنشاء صفحات HTML في WebView لتطبيقات الجوال. تنفذ العمليات عبر استدعاء الأدوات.")
-            } else if (isEnglish) {
-                appendLine("You are a mobile frontend expert, creating HTML pages in mobile APP WebView. You execute operations through tool calls.")
+            if (isHindi) {
+                appendLine("आप एक मोबाइल फ्रंटएंड विशेषज्ञ हैं, जो मोबाइल ऐप वेबव्यू में HTML पेज बना रहे हैं। आप टूल कॉल के माध्यम से संचालन निष्पादित करते हैं।")
+            } else if (isArabic) {
+                appendLine("أنت خبير في الواجهة الأمامية للجوال، تقوم بإنشاء صفحات HTML في WebView لتطبيق الجوال. يمكنك تنفيذ العمليات من خلال استدعاءات الأدوات.")
+            } else if (isChinese) {
+                appendLine("你是一名移动端前端专家，正在为移动应用 WebView 开发 HTML 页面。你通过工具调用来执行操作。")
             } else {
-                appendLine("你是移动端前端开发专家，在手机 APP WebView 中创建 HTML 页面。你通过工具调用来执行操作。")
+                appendLine("You are a mobile frontend expert, creating HTML pages in mobile APP WebView. You execute operations through tool calls.")
             }
             appendLine()
             
-            if (isArabic) {
+            if (isHindi) {
+                appendLine("# व्यवहार के नियम")
+                appendLine("1. जब उपयोगकर्ता वेबपेज बनाने/संशोधित करने के लिए कहे, तो तुरंत निष्पादित करने के लिए टूल कॉल करें, केवल योजना का वर्णन न करें")
+                appendLine("2. कोड पूर्ण होना चाहिए, ... या टिप्पणियों के साथ किसी भी हिस्से को कभी न छोड़ें")
+                appendLine("3. जब उपयोगकर्ता चैट करता है या प्रश्न पूछता है, तो सीधे पाठ के साथ उत्तर दें, किसी टूल कॉल की आवश्यकता नहीं है")
+                appendLine("4. टेक्स्ट प्रतिक्रियाओं के लिए मार्कडाउन प्रारूप का उपयोग करें")
+            } else if (isArabic) {
                 appendLine("# قواعد السلوك")
                 appendLine("1. عندما يطلب المستخدم إنشاء/تعديل صفحة ويب، نفذ الأدوات فوراً ولا تصف الخطة فقط")
                 appendLine("2. الكود يجب أن يكون كاملاً، لا تحذف أي جزء باستخدام ... أو التعليقات")
@@ -1801,7 +1812,12 @@ class AiCodingAgent(private val context: Context) {
             }
             appendLine()
             
-            if (isArabic) {
+            if (isHindi) {
+                appendLine("# वर्कफ़्लो")
+                appendLine()
+                appendLine("## नया पेज बनाएं")
+                appendLine("→ सीधे पूर्ण HTML कोड के साथ write_html को कॉल करें")
+            } else if (isArabic) {
                 appendLine("# سير العمل")
                 appendLine()
                 appendLine("## إنشاء صفحة جديدة")
@@ -1820,7 +1836,17 @@ class AiCodingAgent(private val context: Context) {
             appendLine()
             
             if (hasEditHtml || hasReadCode) {
-                if (isArabic) {
+                if (isHindi) {
+                    appendLine("## मौजूदा पेज को संशोधित करें")
+                    if (hasReadCode && hasEditHtml) {
+                        appendLine("→ पहले मौजूदा कोड देखने के लिए read_current_code को कॉल करें")
+                        appendLine("→ छोटे बदलाव: edit_html का उपयोग करें (लक्ष्य मौजूदा कोड से बिल्कुल मेल खाना चाहिए)")
+                        appendLine("→ बड़ा पुनर्लेखन: पूर्ण नया कोड आउटपुट करने के लिए write_html का उपयोग करें")
+                    } else if (hasEditHtml) {
+                        appendLine("→ छोटे बदलाव: edit_html का उपयोग करें")
+                        appendLine("→ बड़ा पुनर्लेखन: write_html का उपयोग करें")
+                    }
+                } else if (isArabic) {
                     appendLine("## تعديل صفحة موجودة")
                     if (hasReadCode && hasEditHtml) {
                         appendLine("→ استدعِ read_current_code أولاً لعرض الكود الحالي")
@@ -1855,7 +1881,11 @@ class AiCodingAgent(private val context: Context) {
             }
             
             if (hasCheckSyntax) {
-                if (isArabic) {
+                if (isHindi) {
+                    appendLine("## डिबगिंग")
+                    appendLine("→ कोड लिखने के बाद, सिंटैक्स त्रुटियों की जांच के लिए check_syntax को कॉल करें")
+                    appendLine("→ यदि उपयोगकर्ता त्रुटियों की रिपोर्ट करता है, तो ठीक करने से पहले कोड और कंसोल लॉग पढ़ें")
+                } else if (isArabic) {
                     appendLine("## تصحيح الأخطاء")
                     appendLine("→ استدعِ check_syntax للتحقق من أخطاء الصياغة")
                     appendLine("→ إصلاح باستخدام edit_html أو write_html بناءً على النتائج")
@@ -1872,7 +1902,10 @@ class AiCodingAgent(private val context: Context) {
             }
             
             if (hasGenerateImage) {
-                if (isArabic) {
+                if (isHindi) {
+                    appendLine("## इमेज जेनरेशन")
+                    appendLine("→ generate_image को कॉल करें, लौटाया गया base64 सीधे <img src=\"data:image/png;base64,...\"> में उपयोग किया जा सकता है")
+                } else if (isArabic) {
                     appendLine("## توليد الصور")
                     appendLine("→ استدعِ generate_image، النتيجة base64 يمكن استخدامها مباشرة في <img src=\"data:image/png;base64,...\">")
                 } else if (isEnglish) {
@@ -1908,7 +1941,13 @@ class AiCodingAgent(private val context: Context) {
             
             if (hasExistingCode) {
                 val html = currentHtml!! // safe: hasExistingCode guarantees non-null
-                if (isArabic) {
+                if (isHindi) {
+                    appendLine("# मौजूदा कोड स्थिति")
+                    appendLine("उपयोगकर्ता के पास मौजूदा HTML कोड (${html.length} वर्ण, ${html.lines().size} पंक्तियाँ) है।")
+                    if (hasReadCode) {
+                        appendLine("संशोधित करने से पहले, पूर्ण कोड देखने के लिए read_current_code को कॉल करें।")
+                    }
+                } else if (isArabic) {
                     appendLine("# حالة الكود الحالي")
                     appendLine("المستخدم لديه كود HTML (${html.length} حرف، ${html.lines().size} سطر).")
                     if (hasReadCode) {
@@ -1942,7 +1981,10 @@ class AiCodingAgent(private val context: Context) {
                 }
                 appendLine()
             } else {
-                if (isArabic) {
+                if (isHindi) {
+                    appendLine("# मौजूदा कोड स्थिति")
+                    appendLine("वर्तमान में कोई कोड नहीं है, स्क्रैच से बनाना होगा।")
+                } else if (isArabic) {
                     appendLine("# حالة الكود الحالي")
                     appendLine("لا يوجد كود حالياً، يجب الإنشاء من الصفر.")
                 } else if (isEnglish) {
@@ -2104,57 +2146,80 @@ class AiCodingAgent(private val context: Context) {
      * HTML.
      * SimplePrompts.
      */
-    private fun buildSimpleSystemPrompt(config: SessionConfig?, currentHtml: String?): String {
+        private fun buildSimpleSystemPrompt(config: SessionConfig?, currentHtml: String?): String {
         val currentLang = AppStringsProvider.currentLanguage
-        val isEnglish = currentLang == com.webtoapp.core.i18n.AppLanguage.ENGLISH
-        val isArabic = currentLang == com.webtoapp.core.i18n.AppLanguage.ARABIC
+        val isHindi = currentLang == AppLanguage.HINDI
+        val isArabic = currentLang == AppLanguage.ARABIC
+        val isChinese = currentLang == AppLanguage.CHINESE
+        val isEnglish = currentLang == AppLanguage.ENGLISH
         
         return buildString {
-            if (isArabic) {
-                appendLine("أنت خبير تطوير واجهات أمامية للجوال، تقوم بإنشاء صفحات HTML في WebView لتطبيقات الجوال.")
-                appendLine()
-                appendLine("# قواعد السلوك")
-                appendLine("1. عندما يطلب المستخدم إنشاء/تعديل صفحة ويب، أخرج كود HTML الكامل مباشرة بدءاً من <!DOCTYPE html>")
-                appendLine("2. لا تغلف الكود في كتل \\`\\`\\`html")
-                appendLine("3. يمكن إضافة شرح مختصر قبل وبعد الكود")
-                appendLine("4. أجب بتنسيق Markdown للدردشة والأسئلة")
-                appendLine()
-                appendLine("# معايير الكود")
-                appendLine("- ملف HTML واحد، CSS في <style>، JS في <script>")
-                appendLine("- يجب تضمين: <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">")
-                appendLine("- استخدم وحدات نسبية (vw/vh/%/rem)، تجنب العرض الثابت بالبكسل")
-                appendLine("- منطقة لمس العناصر القابلة للنقر بحد أدنى 44x44px")
-                appendLine("- الكود يجب أن يكون كاملاً، لا تحذف أي جزء")
-            } else if (isEnglish) {
+            if (isHindi) {
+                appendLine("आप एक मोबाइल फ्रंटएंड विशेषज्ञ हैं, जो मोबाइल ऐप वेबव्यू में HTML पेज बना रहे हैं।")
+            } else if (isArabic) {
+                appendLine("أنت خبير في الواجهة الأمامية للجوال، تقوم بإنشاء صفحات HTML في WebView لتطبيق الجوال.")
+            } else if (isChinese) {
+                appendLine("你是一名移动端前端专家，正在为移动应用 WebView 开发 HTML 页面。")
+            } else {
                 appendLine("You are a mobile frontend expert, creating HTML pages in mobile APP WebView.")
-                appendLine()
+            }
+            appendLine()
+            
+            if (isHindi) {
+                appendLine("# व्यवहार के नियम")
+                appendLine("1. जब उपयोगकर्ता वेबपेज बनाने/संशोधित करने के लिए कहे, तो सीधे <!DOCTYPE html> से शुरू होने वाला पूर्ण HTML कोड आउटपुट करें")
+                appendLine("2. कोड को ```html कोड ब्लॉक में न लपेटें")
+                appendLine("3. कोड से पहले और बाद में संक्षिप्त विवरण ठीक हैं")
+                appendLine("4. चैट और प्रश्नों के लिए मार्कडाउन प्रारूप के साथ उत्तर दें")
+            } else if (isArabic) {
+                appendLine("# قواعد السلوك")
+                appendLine("1. عندما يطلب المستخدم إنشاء/تعديل صفحة ويب، قم بإخراج كود HTML كامل يبدأ بـ <!DOCTYPE html> مباشرة")
+                appendLine("2. لا تضع الكود في كتل كود ```html")
+                appendLine("3. التفسيرات الموجزة قبل وبعد الكود جيدة")
+                appendLine("4. أجب بتنسيق Markdown للدردشة والأسئلة")
+            } else if (isChinese) {
+                appendLine("# 行为规则")
+                appendLine("1. 当用户要求创建/修改网页时，直接输出以 <!DOCTYPE html> 开头的完整 HTML 代码")
+                appendLine("2. 不要将代码包裹在 ```html 代码块中")
+                appendLine("3. 代码前后可以有简短的文字说明")
+                appendLine("4. 对于闲聊或提问，使用 Markdown 格式回答")
+            } else {
                 appendLine("# Behavior Rules")
                 appendLine("1. When user asks to create/modify a webpage, directly output complete HTML code starting with <!DOCTYPE html>")
-                appendLine("2. Do not wrap code in \\`\\`\\`html code blocks")
+                appendLine("2. Do not wrap code in ```html code blocks")
                 appendLine("3. Brief explanations before and after code are fine")
                 appendLine("4. Answer with Markdown format for chat and questions")
-                appendLine()
+            }
+            appendLine()
+            
+            if (isHindi) {
+                appendLine("# कोड मानक")
+                appendLine("- सिंगल-फाइल HTML, <style> में CSS, <script> टैग में JS")
+                appendLine("- इसमें शामिल होना चाहिए: <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">")
+                appendLine("- सापेक्ष इकाइयों (vw/vh/%/rem) का उपयोग करें, निश्चित पिक्सेल चौड़ाई से बचें")
+                appendLine("- क्लिक करने योग्य तत्वों का न्यूनतम 44x44px स्पर्श क्षेत्र")
+                appendLine("- कोड पूर्ण होना चाहिए, ... या टिप्पणियों के साथ किसी भी हिस्से को कभी न छोड़ें")
+            } else if (isArabic) {
+                appendLine("# معايير الكود")
+                appendLine("- HTML بملف واحد، CSS في <style>، وJS في علامات <script>")
+                appendLine("- يجب أن يتضمن: <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">")
+                appendLine("- استخدم وحدات نسبية (vw/vh/%/rem)، وتجنب عرض البكسل الثابت")
+                appendLine("- الحد الأدنى لمنطقة اللمس للعناصر القابلة للنقر هو 44x44 بكسل")
+                appendLine("- يجب أن يكون الكود كاملاً، لا تحذف أي جزء باستخدام ... أو التعليقات")
+            } else if (isChinese) {
+                appendLine("# 代码标准")
+                appendLine("- 单文件 HTML，CSS 写在 <style> 中，JS 写在 <script> 标签中")
+                appendLine("- 必须包含：<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">")
+                appendLine("- 使用相对单位 (vw/vh/%/rem)，避免固定像素宽度")
+                appendLine("- 可点击元素的触摸区域至少为 44x44px")
+                appendLine("- 代码必须完整，严禁使用 ... 或注释省略任何内容")
+            } else {
                 appendLine("# Code Standards")
                 appendLine("- Single-file HTML, CSS in <style>, JS in <script> tags")
                 appendLine("- Must include: <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">")
                 appendLine("- Use relative units (vw/vh/%/rem), avoid fixed pixel widths")
                 appendLine("- Clickable elements minimum 44x44px touch area")
                 appendLine("- Code must be complete, never omit any part")
-            } else {
-                appendLine("你是移动端前端开发专家，在手机 APP WebView 中创建 HTML 页面。")
-                appendLine()
-                appendLine("# 行为规则")
-                appendLine("1. 用户要求创建/修改网页时，直接输出完整 HTML 代码，以 <!DOCTYPE html> 开头")
-                appendLine("2. 禁止使用 \\`\\`\\`html 代码块包裹代码")
-                appendLine("3. 代码前后可有简短说明文字")
-                appendLine("4. 闲聊或提问时用 Markdown 格式文字回答")
-                appendLine()
-                appendLine("# 代码规范")
-                appendLine("- 单文件 HTML，CSS 在 <style>、JS 在 <script> 标签内")
-                appendLine("- 必须包含: <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">")
-                appendLine("- 使用相对单位 (vw/vh/%/rem)，禁止固定像素宽度")
-                appendLine("- 可点击元素最小 44x44px 触摸区域")
-                appendLine("- 代码完整，禁止用 ... 或注释省略任何部分")
             }
             appendLine()
             
@@ -2339,3 +2404,6 @@ sealed class HtmlAgentEvent {
     // Error
     data class Error(val message: String) : HtmlAgentEvent()
 }
+
+
+

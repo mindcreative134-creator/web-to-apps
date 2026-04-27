@@ -65,3 +65,5 @@ internal fun parseVersionedList(lines: Sequence<String>): List<Pair<String, Stri
 internal fun formatProjectName(projectDir: File, fallback: String?): String {
     return fallback?.takeIf { it.isNotBlank() } ?: projectDir.name
 }
+
+

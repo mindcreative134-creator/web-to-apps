@@ -91,3 +91,4 @@ object AppColors {
     /** Telegram blue */
     val TelegramBlue = Color(0xFF12B7F5)
 }
+

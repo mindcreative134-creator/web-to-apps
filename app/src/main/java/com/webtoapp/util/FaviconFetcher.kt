@@ -286,3 +286,5 @@ object FaviconFetcher {
         }
     }
 }
+
+

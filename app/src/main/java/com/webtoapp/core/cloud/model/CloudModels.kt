@@ -742,3 +742,4 @@ data class RegionInfo(
     val count: Int,
     val percentage: Float,
 )
+

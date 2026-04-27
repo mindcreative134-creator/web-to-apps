@@ -13,6 +13,7 @@ import java.io.File
 import java.io.FileReader
 import java.net.InetSocketAddress
 import java.net.Socket
+import kotlinx.coroutines.*
 import java.util.concurrent.atomic.AtomicBoolean
 import java.util.concurrent.atomic.AtomicInteger
 
@@ -123,7 +124,7 @@ class RuntimeProtection(private val context: Context) {
             maxLevel = maxOf(maxLevel, THREAT_HIGH)
         }
         
-        // 2. Frida 检测
+        // 2. Frida 检测 (Run synchronously since we are already in performCheck which should be called from background if possible)
         val fridaResult = detectFrida()
         if (fridaResult.detected) {
             threats.add(ThreatInfo("frida", fridaResult.details, THREAT_CRITICAL))
@@ -558,3 +559,4 @@ data class DetectionResult(
     val detected: Boolean,
     val details: String
 )
+

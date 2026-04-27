@@ -21,3 +21,4 @@ data class CodeSnippet(
     val code: String,
     val tags: List<String> = emptyList()
 )
+

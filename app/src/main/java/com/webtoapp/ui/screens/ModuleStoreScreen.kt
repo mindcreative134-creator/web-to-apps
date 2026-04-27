@@ -380,3 +380,7 @@ private fun ModuleStoreCard(module: StoreModuleInfo, onInstall: () -> Unit) {
         }
     }
 }
+
+
+
+

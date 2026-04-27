@@ -44,3 +44,4 @@ class ShareBridge(private val context: Context) {
     @JavascriptInterface
     fun canShare(): Boolean = true
 }
+

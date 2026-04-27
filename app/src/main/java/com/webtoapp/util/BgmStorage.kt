@@ -443,3 +443,5 @@ object BgmStorage {
         return if (lrcFile.exists()) loadLrcFromFile(lrcFile) else null
     }
 }
+
+

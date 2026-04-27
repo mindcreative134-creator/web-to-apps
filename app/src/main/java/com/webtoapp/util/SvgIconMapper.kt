@@ -235,3 +235,4 @@ object SvgIconMapper {
         return value.isNotBlank() && value.any { it.code > 127 }
     }
 }
+

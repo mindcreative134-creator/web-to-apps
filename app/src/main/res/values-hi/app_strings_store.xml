@@ -1,3 +1,123 @@
-<?xml version='1.0' encoding='utf-8'?>
-<resources><string name="appstr_store_store_add_screenshot" formatted="false">请添加至少一张截图</string><string name="appstr_store_store_all_categories" formatted="false">全部</string><string name="appstr_store_store_apk_links" formatted="false">APK 下载链接</string><string name="appstr_store_store_app_desc" formatted="false">应用描述</string><string name="appstr_store_store_app_name" formatted="false">应用名称</string><string name="appstr_store_store_apps_count" formatted="false">应用数量</string><string name="appstr_store_store_average_rating" formatted="false">平均评分</string><string name="appstr_store_store_basic_info" formatted="false">基本信息</string><string name="appstr_store_store_be_first_to_review" formatted="false">成为第一个评价的人</string><string name="appstr_store_store_cancel" formatted="false">取消</string><string name="appstr_store_store_cancel_download" formatted="false">取消下载</string><string name="appstr_store_store_cat_business" formatted="false">商务</string><string name="appstr_store_store_cat_education" formatted="false">教育</string><string name="appstr_store_store_cat_entertainment" formatted="false">娱乐</string><string name="appstr_store_store_cat_finance" formatted="false">财务</string><string name="appstr_store_store_cat_health" formatted="false">健康</string><string name="appstr_store_store_cat_lifestyle" formatted="false">生活</string><string name="appstr_store_store_cat_news" formatted="false">资讯</string><string name="appstr_store_store_cat_other" formatted="false">其他</string><string name="appstr_store_store_cat_productivity" formatted="false">效率</string><string name="appstr_store_store_cat_social" formatted="false">社交</string><string name="appstr_store_store_cat_tools" formatted="false">工具</string><string name="appstr_store_store_category" formatted="false">分类</string><string name="appstr_store_store_clear_history" formatted="false">清除记录</string><string name="appstr_store_store_confirm_delist_title" formatted="false">确认下架</string><string name="appstr_store_store_confirm_delisting" formatted="false">确定要下架此应用吗？</string><string name="appstr_store_store_confirm_unpublish" formatted="false">确认下架</string><string name="appstr_store_store_contact_info" formatted="false">联系信息</string><string name="appstr_store_store_delete" formatted="false">删除</string><string name="appstr_store_store_desc_and_tags" formatted="false">描述和标签</string><string name="appstr_store_store_description" formatted="false">应用介绍</string><string name="appstr_store_store_developer_info" formatted="false">开发者信息</string><string name="appstr_store_store_download_btn" formatted="false">下载安装</string><string name="appstr_store_store_download_failed" formatted="false">下载失败</string><string name="appstr_store_store_download_manager" formatted="false">下载管理</string><string name="appstr_store_store_downloaded_apps" formatted="false">已下载应用</string><string name="appstr_store_store_downloading" formatted="false">下载中...</string><string name="appstr_store_store_downloading_label" formatted="false">下载中</string><string name="appstr_store_store_downloads" formatted="false">下载量</string><string name="appstr_store_store_email" formatted="false">联系邮箱</string><string name="appstr_store_store_empty" formatted="false">暂无应用
-快来发布第一个吧</string><string name="appstr_store_store_fetching_link" formatted="false">获取下载链接...</string><string name="appstr_store_store_fill_required" formatted="false">请填写应用名称和描述</string><string name="appstr_store_store_get" formatted="false">获取</string><string name="appstr_store_store_get_download_link" formatted="false">获取下载链接</string><string name="appstr_store_store_group_chat" formatted="false">群聊</string><string name="appstr_store_store_icon_url" formatted="false">图标 URL</string><string name="appstr_store_store_install" formatted="false">安装</string><string name="appstr_store_store_install_app" formatted="false">安装应用</string><string name="appstr_store_store_install_failed" formatted="false">安装失败</string><string name="appstr_store_store_install_success" formatted="false">安装成功</string><string name="appstr_store_store_installed" formatted="false">已安装</string><string name="appstr_store_store_likes" formatted="false">点赞</string><string name="appstr_store_store_load_failed" formatted="false">加载失败</string><string name="appstr_store_store_load_more" formatted="false">加载更多</string><string name="appstr_store_store_loading_apps" formatted="false">正在加载应用...</string><string name="appstr_store_store_loading_modules" formatted="false">正在加载模块...</string><string name="appstr_store_store_module_desc" formatted="false">模块描述</string><string name="appstr_store_store_module_disable" formatted="false">停用</string><string name="appstr_store_store_module_enable" formatted="false">启用</string><string name="appstr_store_store_module_install_success" formatted="false">模块安装成功</string><string name="appstr_store_store_module_name" formatted="false">模块名称</string><string name="appstr_store_store_module_publish_subtitle" formatted="false">将你的扩展模块分享到模块市场，让更多人使用</string><string name="appstr_store_store_module_publish_success" formatted="false">模块发布成功！等待审核后将在市场上线</string><string name="appstr_store_store_module_share_code" formatted="false">模块分享码</string><string name="appstr_store_store_modules_enabled" formatted="false">已启用模块</string><string name="appstr_store_store_modules_installed" formatted="false">已安装模块</string><string name="appstr_store_store_my_apps" formatted="false">我的应用</string><string name="appstr_store_store_my_modules" formatted="false">我的模块</string><string name="appstr_store_store_no_content_for_modules" formatted="false">暂无可用模块</string><string name="appstr_store_store_no_content_try_again" formatted="false">暂无内容，请稍后再试</string><string name="appstr_store_store_no_download_history" formatted="false">暂无下载记录</string><string name="appstr_store_store_no_download_history_desc" formatted="false">下载的应用将显示在这里</string><string name="appstr_store_store_no_download_link" formatted="false">暂无下载链接</string><string name="appstr_store_store_no_downloaded_apps" formatted="false">没有已下载的应用</string><string name="appstr_store_store_no_downloads" formatted="false">暂无下载任务</string><string name="appstr_store_store_no_module_history" formatted="false">暂无模块记录</string><string name="appstr_store_store_no_module_history_desc" formatted="false">安装的模块将显示在这里</string><string name="appstr_store_store_no_published_apps" formatted="false">还没有发布过应用</string><string name="appstr_store_store_no_published_modules" formatted="false">还没有发布过模块</string><string name="appstr_store_store_no_reviews_yet" formatted="false">暂无评价</string><string name="appstr_store_store_package_name" formatted="false">包名</string><string name="appstr_store_store_phone" formatted="false">联系电话</string><string name="appstr_store_store_preparing_download" formatted="false">正在准备下载...</string><string name="appstr_store_store_privacy_policy" formatted="false">隐私政策</string><string name="appstr_store_store_publish_app" formatted="false">发布应用</string><string name="appstr_store_store_publish_failed" formatted="false">发布失败</string><string name="appstr_store_store_publish_form_subtitle" formatted="false">填写以下信息将应用发布到商店</string><string name="appstr_store_store_publish_module" formatted="false">发布模块</string><string name="appstr_store_store_publish_success" formatted="false">🎉 应用发布成功!</string><string name="appstr_store_store_publishing" formatted="false">发布中...</string><string name="appstr_store_store_redownload" formatted="false">重新下载</string><string name="appstr_store_store_report" formatted="false">举报</string><string name="appstr_store_store_report_app_title" formatted="false">举报应用</string><string name="appstr_store_store_report_desc_optional" formatted="false">详细说明（可选）</string><string name="appstr_store_store_report_failed" formatted="false">举报提交失败</string><string name="appstr_store_store_report_reason_copyright" formatted="false">侵犯版权</string><string name="appstr_store_store_report_reason_inappropriate" formatted="false">不当内容</string><string name="appstr_store_store_report_reason_malicious" formatted="false">恶意软件</string><string name="appstr_store_store_report_reason_other" formatted="false">其他</string><string name="appstr_store_store_report_reason_spam" formatted="false">垃圾内容</string><string name="appstr_store_store_report_select_reason" formatted="false">请选择举报原因</string><string name="appstr_store_store_report_submit" formatted="false">提交举报</string><string name="appstr_store_store_report_success" formatted="false">举报提交成功</string><string name="appstr_store_store_reviews" formatted="false">评价</string><string name="appstr_store_store_screenshot" formatted="false">截图</string><string name="appstr_store_store_screenshot_url" formatted="false">截图 URL</string><string name="appstr_store_store_screenshots" formatted="false">应用截图</string><string name="appstr_store_store_screenshots_added" formatted="false">已添加 %d 张截图</string><string name="appstr_store_store_search_placeholder" formatted="false">搜索应用...</string><string name="appstr_store_store_sort_downloads" formatted="false">下载</string><string name="appstr_store_store_sort_likes" formatted="false">点赞</string><string name="appstr_store_store_sort_newest" formatted="false">最新</string><string name="appstr_store_store_sort_rating" formatted="false">评分</string><string name="appstr_store_store_tags" formatted="false">标签</string><string name="appstr_store_store_total_downloads" formatted="false">总下载量</string><string name="appstr_store_store_total_likes" formatted="false">总点赞数</string><string name="appstr_store_store_version_code" formatted="false">版本号</string><string name="appstr_store_store_version_name" formatted="false">版本名</string><string name="appstr_store_store_website" formatted="false">官网</string></resources>
+<?xml version="1.0" ?>
+<resources>
+    <string name="appstr_store_store_add_screenshot" formatted="false">Please add at least one screenshot</string>
+    <string name="appstr_store_store_all_categories" formatted="false">All</string>
+    <string name="appstr_store_store_apk_links" formatted="false">APK Download Links</string>
+    <string name="appstr_store_store_app_desc" formatted="false">App Description</string>
+    <string name="appstr_store_store_app_name" formatted="false">App Name</string>
+    <string name="appstr_store_store_apps_count" formatted="false">App Count</string>
+    <string name="appstr_store_store_average_rating" formatted="false">Avg Rating</string>
+    <string name="appstr_store_store_basic_info" formatted="false">Basic Info</string>
+    <string name="appstr_store_store_be_first_to_review" formatted="false">Be the first to review</string>
+    <string name="appstr_store_store_cancel" formatted="false">Cancel</string>
+    <string name="appstr_store_store_cancel_download" formatted="false">Cancel Download</string>
+    <string name="appstr_store_store_cat_business" formatted="false">Business</string>
+    <string name="appstr_store_store_cat_education" formatted="false">Education</string>
+    <string name="appstr_store_store_cat_entertainment" formatted="false">Entertainment</string>
+    <string name="appstr_store_store_cat_finance" formatted="false">Finance</string>
+    <string name="appstr_store_store_cat_health" formatted="false">Health</string>
+    <string name="appstr_store_store_cat_lifestyle" formatted="false">Lifestyle</string>
+    <string name="appstr_store_store_cat_news" formatted="false">News</string>
+    <string name="appstr_store_store_cat_other" formatted="false">Other</string>
+    <string name="appstr_store_store_cat_productivity" formatted="false">Productivity</string>
+    <string name="appstr_store_store_cat_social" formatted="false">Social</string>
+    <string name="appstr_store_store_cat_tools" formatted="false">Tools</string>
+    <string name="appstr_store_store_category" formatted="false">Category</string>
+    <string name="appstr_store_store_clear_history" formatted="false">Clear History</string>
+    <string name="appstr_store_store_confirm_delist_title" formatted="false">Confirm Delisting</string>
+    <string name="appstr_store_store_confirm_delisting" formatted="false">Are you sure you want to delist this app?</string>
+    <string name="appstr_store_store_confirm_unpublish" formatted="false">Confirm Unpublish</string>
+    <string name="appstr_store_store_contact_info" formatted="false">Contact Info</string>
+    <string name="appstr_store_store_delete" formatted="false">Delete</string>
+    <string name="appstr_store_store_desc_and_tags" formatted="false">Description &amp; Tags</string>
+    <string name="appstr_store_store_description" formatted="false">App Description</string>
+    <string name="appstr_store_store_developer_info" formatted="false">Developer Info</string>
+    <string name="appstr_store_store_download_btn" formatted="false">Download &amp; Install</string>
+    <string name="appstr_store_store_download_failed" formatted="false">Download Failed</string>
+    <string name="appstr_store_store_download_manager" formatted="false">Download Manager</string>
+    <string name="appstr_store_store_downloaded_apps" formatted="false">Downloaded Apps</string>
+    <string name="appstr_store_store_downloading" formatted="false">Downloading...</string>
+    <string name="appstr_store_store_downloading_label" formatted="false">Downloading</string>
+    <string name="appstr_store_store_downloads" formatted="false">Downloads</string>
+    <string name="appstr_store_store_email" formatted="false">Contact Email</string>
+    <string name="appstr_store_store_empty" formatted="false">No apps yet.\nBe the first to publish!</string>
+    <string name="appstr_store_store_fetching_link" formatted="false">Fetching download link...</string>
+    <string name="appstr_store_store_fill_required" formatted="false">Please fill in app name and description</string>
+    <string name="appstr_store_store_get" formatted="false">Get</string>
+    <string name="appstr_store_store_get_download_link" formatted="false">Get Download Link</string>
+    <string name="appstr_store_store_group_chat" formatted="false">Group Chat</string>
+    <string name="appstr_store_store_icon_url" formatted="false">Icon URL</string>
+    <string name="appstr_store_store_install" formatted="false">Install</string>
+    <string name="appstr_store_store_install_app" formatted="false">Install App</string>
+    <string name="appstr_store_store_install_failed" formatted="false">Install Failed</string>
+    <string name="appstr_store_store_install_success" formatted="false">Install Success</string>
+    <string name="appstr_store_store_installed" formatted="false">Installed</string>
+    <string name="appstr_store_store_likes" formatted="false">Likes</string>
+    <string name="appstr_store_store_load_failed" formatted="false">Load Failed</string>
+    <string name="appstr_store_store_load_more" formatted="false">Load More</string>
+    <string name="appstr_store_store_loading_apps" formatted="false">Loading apps...</string>
+    <string name="appstr_store_store_loading_modules" formatted="false">Loading modules...</string>
+    <string name="appstr_store_store_module_desc" formatted="false">Module Description</string>
+    <string name="appstr_store_store_module_disable" formatted="false">Disable</string>
+    <string name="appstr_store_store_module_enable" formatted="false">Enable</string>
+    <string name="appstr_store_store_module_install_success" formatted="false">Module installed successfully</string>
+    <string name="appstr_store_store_module_name" formatted="false">Module Name</string>
+    <string name="appstr_store_store_module_publish_subtitle" formatted="false">Share your extension module to the marketplace</string>
+    <string name="appstr_store_store_module_publish_success" formatted="false">Module published! It will be live after review.</string>
+    <string name="appstr_store_store_module_share_code" formatted="false">Module Share Code</string>
+    <string name="appstr_store_store_modules_enabled" formatted="false">Enabled Modules</string>
+    <string name="appstr_store_store_modules_installed" formatted="false">Installed Modules</string>
+    <string name="appstr_store_store_my_apps" formatted="false">My Apps</string>
+    <string name="appstr_store_store_my_modules" formatted="false">My Modules</string>
+    <string name="appstr_store_store_no_content_for_modules" formatted="false">No modules available</string>
+    <string name="appstr_store_store_no_content_try_again" formatted="false">No content found, please try again later</string>
+    <string name="appstr_store_store_no_download_history" formatted="false">No download history</string>
+    <string name="appstr_store_store_no_download_history_desc" formatted="false">Downloaded apps will appear here</string>
+    <string name="appstr_store_store_no_download_link" formatted="false">No download link</string>
+    <string name="appstr_store_store_no_downloaded_apps" formatted="false">No downloaded apps</string>
+    <string name="appstr_store_store_no_downloads" formatted="false">No download tasks</string>
+    <string name="appstr_store_store_no_module_history" formatted="false">No module records</string>
+    <string name="appstr_store_store_no_module_history_desc" formatted="false">Installed modules will appear here</string>
+    <string name="appstr_store_store_no_published_apps" formatted="false">No apps published yet</string>
+    <string name="appstr_store_store_no_published_modules" formatted="false">No modules published yet</string>
+    <string name="appstr_store_store_no_reviews_yet" formatted="false">No reviews yet</string>
+    <string name="appstr_store_store_package_name" formatted="false">Package Name</string>
+    <string name="appstr_store_store_phone" formatted="false">Contact Phone</string>
+    <string name="appstr_store_store_preparing_download" formatted="false">Preparing download...</string>
+    <string name="appstr_store_store_privacy_policy" formatted="false">Privacy Policy</string>
+    <string name="appstr_store_store_publish_app" formatted="false">Publish App</string>
+    <string name="appstr_store_store_publish_failed" formatted="false">Publish Failed</string>
+    <string name="appstr_store_store_publish_form_subtitle" formatted="false">Fill in the details to publish your app to the store</string>
+    <string name="appstr_store_store_publish_module" formatted="false">Publish Module</string>
+    <string name="appstr_store_store_publish_success" formatted="false">🎉 App published successfully!</string>
+    <string name="appstr_store_store_publishing" formatted="false">Publishing...</string>
+    <string name="appstr_store_store_redownload" formatted="false">Redownload</string>
+    <string name="appstr_store_store_report" formatted="false">Report</string>
+    <string name="appstr_store_store_report_app_title" formatted="false">Report App</string>
+    <string name="appstr_store_store_report_desc_optional" formatted="false">Detailed Description (Optional)</string>
+    <string name="appstr_store_store_report_failed" formatted="false">Report submission failed</string>
+    <string name="appstr_store_store_report_reason_copyright" formatted="false">Copyright Infringement</string>
+    <string name="appstr_store_store_report_reason_inappropriate" formatted="false">Inappropriate Content</string>
+    <string name="appstr_store_store_report_reason_malicious" formatted="false">Malicious Software</string>
+    <string name="appstr_store_store_report_reason_other" formatted="false">Other</string>
+    <string name="appstr_store_store_report_reason_spam" formatted="false">Spam</string>
+    <string name="appstr_store_store_report_select_reason" formatted="false">Please select a reason</string>
+    <string name="appstr_store_store_report_submit" formatted="false">Submit Report</string>
+    <string name="appstr_store_store_report_success" formatted="false">Report submitted successfully</string>
+    <string name="appstr_store_store_reviews" formatted="false">Reviews</string>
+    <string name="appstr_store_store_screenshot" formatted="false">Screenshot</string>
+    <string name="appstr_store_store_screenshot_url" formatted="false">Screenshot URL</string>
+    <string name="appstr_store_store_screenshots" formatted="false">App Screenshots</string>
+    <string name="appstr_store_store_screenshots_added" formatted="false">%d screenshots added</string>
+    <string name="appstr_store_store_search_placeholder" formatted="false">Search apps...</string>
+    <string name="appstr_store_store_sort_downloads" formatted="false">Downloads</string>
+    <string name="appstr_store_store_sort_likes" formatted="false">Likes</string>
+    <string name="appstr_store_store_sort_newest" formatted="false">Newest</string>
+    <string name="appstr_store_store_sort_rating" formatted="false">Rating</string>
+    <string name="appstr_store_store_tags" formatted="false">Tags</string>
+    <string name="appstr_store_store_total_downloads" formatted="false">Total Downloads</string>
+    <string name="appstr_store_store_total_likes" formatted="false">Total Likes</string>
+    <string name="appstr_store_store_version_code" formatted="false">Version Code</string>
+    <string name="appstr_store_store_version_name" formatted="false">Version Name</string>
+    <string name="appstr_store_store_website" formatted="false">Official Website</string>
+</resources>

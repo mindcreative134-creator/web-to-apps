@@ -302,3 +302,4 @@ self.addEventListener('fetch', event => {
         </html>
     """.trimIndent()
 }
+

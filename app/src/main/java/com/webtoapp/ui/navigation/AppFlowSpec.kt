@@ -81,3 +81,4 @@ internal data class AppFlowSpec(
             requireNotNull(specs[appType]) { "缺少 AppType=$appType 的导航映射" }
     }
 }
+

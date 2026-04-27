@@ -17,3 +17,5 @@ data class ImportedProject<T : ProjectImportAnalysis>(
 )
 
 class ProjectImportException(message: String) : IllegalStateException(message)
+
+

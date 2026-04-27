@@ -257,14 +257,14 @@ const membershipLabel = computed(() => {
   if (p?.startsWith('pro') || p === 'lifetime') return 'Pro'
   return ''
 })
-// 选择非 free 套餐时自动勾选会员标识
+// Automatically check membership when a non-free plan is selected
 watch(() => editForm.value.pro_plan, (plan) => {
   if (plan && plan !== 'free') editForm.value.is_pro = true
   else editForm.value.is_pro = false
 })
 function fmtDate(d) { 
   if (!d) return ''
-  const loc = locale.value === 'zh' ? 'zh-CN' : (locale.value === 'hi' ? 'hi-IN' : 'en-US')
+  const loc = locale.value === 'hi' ? 'hi-IN' : 'en-US'
   return new Date(d).toLocaleString(loc, { month:'short', day:'numeric', hour:'2-digit', minute:'2-digit' }) 
 }
 

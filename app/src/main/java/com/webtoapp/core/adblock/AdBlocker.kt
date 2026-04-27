@@ -506,7 +506,7 @@ class AdBlocker {
             "||logs.applovin.com^",
             "||ms.applovin.com^",
             "||ads.inmobi.com^",
-            "||config.uca.cloud.unity3d.com^\$third-party",
+            "||config.uca.cloudScope.unity3d.com^\$third-party",
             "||ads.mopub.com^",
             "||art.mopub.com^",
             // ── Exception rules — NEVER block these ──
@@ -2095,3 +2095,7 @@ data class HostsSource(
     val url: String,
     val description: String
 )
+
+
+
+

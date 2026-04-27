@@ -66,3 +66,4 @@ internal fun NavGraphBuilder.addAccountRoutes(
         )
     }
 }
+

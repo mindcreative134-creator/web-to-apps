@@ -38,3 +38,7 @@ fun ErrorPageConfigCard(
 ) {
     SystemErrorPageConfigCard(config = config, onConfigChange = onConfigChange)
 }
+
+
+
+

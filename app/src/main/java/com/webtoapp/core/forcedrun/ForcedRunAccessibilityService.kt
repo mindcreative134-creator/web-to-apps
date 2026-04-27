@@ -685,3 +685,4 @@ class ForcedRunAccessibilityService : AccessibilityService() {
         handler.removeCallbacksAndMessages(null)
     }
 }
+

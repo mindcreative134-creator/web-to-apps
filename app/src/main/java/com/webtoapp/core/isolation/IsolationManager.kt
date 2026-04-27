@@ -248,3 +248,4 @@ class IsolationManager(private val context: Context) {
         AppLogger.w(TAG, "指纹已重新生成")
     }
 }
+

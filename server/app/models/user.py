@@ -14,7 +14,7 @@ from app.database import Base
 class User(Base):
     __tablename__ = "users"
 
-    id = Column(BigInteger, primary_key=True, autoincrement=True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
     email = Column(String(255), nullable=False, unique=True, index=True)
     username = Column(String(50), nullable=False, unique=True)
     hashed_password = Column(String(255))
@@ -49,11 +49,13 @@ class User(Base):
     encrypted_password = Column(String(500), nullable=True)
 
     # Online time tracking
-    total_online_seconds = Column(BigInteger, default=0)
+    total_online_seconds = Column(Integer, default=0)
     last_heartbeat_at = Column(DateTime, nullable=True)
 
     # Google login
     google_email = Column(String(255), nullable=True)
+
+    verification_code = Column(String(10), nullable=True)
 
     created_at = Column(DateTime, default=func.now())
     updated_at = Column(DateTime, default=func.now(), onupdate=func.now())
@@ -66,8 +68,8 @@ class User(Base):
 
 class UserDevice(Base):
     __tablename__ = "user_devices"
-    id = Column(BigInteger, primary_key=True, autoincrement=True)
-    user_id = Column(BigInteger, ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    user_id = Column(Integer, ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
     device_id = Column(String(100), unique=True, index=True)
     device_name = Column(String(100))
     device_os = Column(String(50))
@@ -80,8 +82,8 @@ class UserDevice(Base):
 
 class LoginLog(Base):
     __tablename__ = "login_logs"
-    id = Column(BigInteger, primary_key=True, autoincrement=True)
-    user_id = Column(BigInteger, ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    user_id = Column(Integer, ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
     login_type = Column(String(50), default="password")
     ip_address = Column(String(45), default=None)
     country = Column(String(100), default=None)

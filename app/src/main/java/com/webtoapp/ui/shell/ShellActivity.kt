@@ -112,7 +112,7 @@ class ShellActivity : AppCompatActivity() {
         forcedRunConfig = config
         forceHideSystemUi = active && config?.blockSystemUI == true
         
-        AppLogger.d("ShellActivity", "强制运行状态变化: active=$active, protection=${config?.protectionLevel}")
+        AppLogger.d("ShellActivity", "Forced run state changed: active=$active, protection=${config?.protectionLevel}")
         
         if (active) {
             // Note
@@ -236,19 +236,42 @@ class ShellActivity : AppCompatActivity() {
         // Enable display( content system area)
         try {
             enableEdgeToEdge()
-            com.webtoapp.core.shell.ShellLogger.d("ShellActivity", "enableEdgeToEdge 成功")
+            com.webtoapp.core.shell.ShellLogger.d("ShellActivity", "enableEdgeToEdge success")
         } catch (e: Exception) {
             AppLogger.w("ShellActivity", "enableEdgeToEdge failed", e)
-            com.webtoapp.core.shell.ShellLogger.w("ShellActivity", "enableEdgeToEdge 失败", e)
+            com.webtoapp.core.shell.ShellLogger.w("ShellActivity", "enableEdgeToEdge failed", e)
         }
         
         super.onCreate(savedInstanceState)
 
-        val shellModeManager = ShellRuntimeServices.shellMode
         AppLogger.i("ShellActivity", "initLogger done")
+        if (!ShellRuntimeServices.isInitialized()) {
+             AppLogger.e("ShellActivity", "ShellRuntimeServices still not initialized after initLogger, attempting to show error screen")
+             try {
+                setContent {
+                    ShellTheme {
+                        com.webtoapp.ui.shared.ErrorScreen(
+                            message = "Application services failed to initialize. Please check logs.",
+                            onRetry = { recreate() },
+                            onExit = { finish() }
+                        )
+                    }
+                }
+             } catch (e: Exception) {
+                AppLogger.e("ShellActivity", "Critical failure showing error screen", e)
+                finish()
+             }
+             return
+        }
+        val shellModeManager = ShellRuntimeServices.shellMode
 
         val config = try {
-            shellModeManager.getConfig()
+            if (ShellRuntimeServices.isInitialized()) {
+                ShellRuntimeServices.shellMode.getConfig()
+            } else {
+                AppLogger.e("ShellActivity", "ShellRuntimeServices not initialized at config load")
+                null
+            }
         } catch (e: Exception) {
             AppLogger.e("ShellActivity", "Failed to load config", e)
             null
@@ -271,11 +294,16 @@ class ShellActivity : AppCompatActivity() {
                             )
                         }
                     }
-                } else {
-                    // Fail-safe for non-shell mode or uninitialized state
                     AppLogger.e("ShellActivity", "Shell mode check failed or config missing in non-shell mode")
-                    // If it's the main app and somehow config is missing, we might want to finish or show generic error
-                    finish()
+                    setContent {
+                        ShellTheme {
+                            com.webtoapp.ui.shared.ErrorScreen(
+                                message = "Configuration file (app_config.json) is missing or invalid.",
+                                onRetry = { recreate() },
+                                onExit = { finish() }
+                            )
+                        }
+                    }
                 }
             } catch (e: Exception) {
                 AppLogger.e("ShellActivity", "Critical failure in error handling", e)
@@ -284,7 +312,7 @@ class ShellActivity : AppCompatActivity() {
             return
         }
         
-        com.webtoapp.core.shell.ShellLogger.i("ShellActivity", "配置加载成功: ${config.appName}")
+        com.webtoapp.core.shell.ShellLogger.i("ShellActivity", "Config loaded successfully: ${config.appName}")
         AppLogger.d("ShellActivity", "WebView UA config from shell: userAgentMode=${config.webViewConfig.userAgentMode}, customUserAgent=${config.webViewConfig.customUserAgent}, userAgent=${config.webViewConfig.userAgent}")
         
         // initialize SDK( updatecheck, announcement, remoteconfig, )
@@ -298,10 +326,10 @@ class ShellActivity : AppCompatActivity() {
         forcedRunConfig = config.forcedRunConfig
         
         // config
-        com.webtoapp.core.shell.ShellLogger.logFeature("Config", "加载配置", buildString {
-            append("强制运行=${config.forcedRunConfig?.enabled ?: false}, ")
-            append("后台运行=${config.backgroundRunEnabled}, ")
-            append("独立环境=${config.isolationEnabled}")
+        com.webtoapp.core.shell.ShellLogger.logFeature("Config", "Load config", buildString {
+            append("Forced run=${config.forcedRunConfig?.enabled ?: false}, ")
+            append("Background run=${config.backgroundRunEnabled}, ")
+            append("Isolation=${config.isolationEnabled}")
         })
         
         // initialize system( ShellActivityInit. kt)
@@ -314,13 +342,13 @@ class ShellActivity : AppCompatActivity() {
         // Request( Android 13+)
         try {
             permissionDelegate.requestNotificationPermissionIfNeeded()
-            com.webtoapp.core.shell.ShellLogger.d("ShellActivity", "通知权限请求完成")
+            com.webtoapp.core.shell.ShellLogger.d("ShellActivity", "Notification permission request completed")
         } catch (e: Exception) {
-            com.webtoapp.core.shell.ShellLogger.e("ShellActivity", "通知权限请求失败", e)
+            com.webtoapp.core.shell.ShellLogger.e("ShellActivity", "Notification permission request failed", e)
         }
         
         // status barconfig
-        com.webtoapp.core.shell.ShellLogger.d("ShellActivity", "开始读取状态栏配置")
+        com.webtoapp.core.shell.ShellLogger.d("ShellActivity", "Starting to read status bar config")
         statusBarColorMode = config.webViewConfig.statusBarColorMode
         statusBarCustomColor = config.webViewConfig.statusBarColor
         statusBarDarkIcons = config.webViewConfig.statusBarDarkIcons
@@ -341,7 +369,7 @@ class ShellActivity : AppCompatActivity() {
         keyboardAdjustMode = try {
             KeyboardAdjustMode.valueOf(config.webViewConfig.keyboardAdjustMode)
         } catch (e: Exception) {
-            com.webtoapp.core.shell.ShellLogger.w("ShellActivity", "键盘调整模式解析失败: ${config.webViewConfig.keyboardAdjustMode}, 使用默认值 RESIZE")
+            com.webtoapp.core.shell.ShellLogger.w("ShellActivity", "Keyboard adjust mode parse failed: ${config.webViewConfig.keyboardAdjustMode}, using default RESIZE")
             KeyboardAdjustMode.RESIZE
         }
 
@@ -361,9 +389,9 @@ class ShellActivity : AppCompatActivity() {
         immersiveFullscreenEnabled = config.webViewConfig.hideToolbar
         try {
             applyImmersiveFullscreen(immersiveFullscreenEnabled, isDarkTheme = currentIsDarkTheme)
-            com.webtoapp.core.shell.ShellLogger.d("ShellActivity", "沉浸式全屏模式: $immersiveFullscreenEnabled, isDark=$currentIsDarkTheme")
+            com.webtoapp.core.shell.ShellLogger.d("ShellActivity", "Immersive fullscreen mode: $immersiveFullscreenEnabled, isDark=$currentIsDarkTheme")
         } catch (e: Exception) {
-            com.webtoapp.core.shell.ShellLogger.e("ShellActivity", "应用沉浸式全屏失败", e)
+            com.webtoapp.core.shell.ShellLogger.e("ShellActivity", "Apply immersive fullscreen failed", e)
         }
         
         // ( support mode)
@@ -371,7 +399,7 @@ class ShellActivity : AppCompatActivity() {
         when (shellAwakeMode) {
             "ALWAYS" -> {
                 window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
-                com.webtoapp.core.shell.ShellLogger.d("ShellActivity", "屏幕常亮: 始终常亮模式")
+                com.webtoapp.core.shell.ShellLogger.d("ShellActivity", "Screen always on: Always keep screen on mode")
             }
             "TIMED" -> {
                 window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
@@ -379,15 +407,15 @@ class ShellActivity : AppCompatActivity() {
                 val timeoutMs = (if (timeoutMinutes > 0) timeoutMinutes else 30) * 60 * 1000L
                 android.os.Handler(mainLooper).postDelayed({
                     window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
-                    com.webtoapp.core.shell.ShellLogger.d("ShellActivity", "屏幕常亮: 定时 ${timeoutMinutes} 分钟已到，恢复系统息屏")
+                    com.webtoapp.core.shell.ShellLogger.d("ShellActivity", "Screen always on: Timed ${timeoutMinutes} minutes reached, restoring system sleep")
                 }, timeoutMs)
-                com.webtoapp.core.shell.ShellLogger.d("ShellActivity", "屏幕常亮: 定时模式 ${timeoutMinutes} 分钟")
+                com.webtoapp.core.shell.ShellLogger.d("ShellActivity", "Screen always on: Timed mode ${timeoutMinutes} minutes")
             }
             else -> {
                 // OFF or: keepScreenOn
                 if (config.webViewConfig.keepScreenOn) {
                     window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
-                    com.webtoapp.core.shell.ShellLogger.d("ShellActivity", "屏幕常亮: 已启用（向后兼容模式）")
+                    com.webtoapp.core.shell.ShellLogger.d("ShellActivity", "Screen always on: Enabled (backwards compatibility mode)")
                 }
             }
         }
@@ -398,13 +426,13 @@ class ShellActivity : AppCompatActivity() {
             val lp = window.attributes
             lp.screenBrightness = shellBrightness / 100f
             window.attributes = lp
-            com.webtoapp.core.shell.ShellLogger.d("ShellActivity", "屏幕亮度: ${shellBrightness}%")
+            com.webtoapp.core.shell.ShellLogger.d("ShellActivity", "Screen brightness: ${shellBrightness}%")
         }
         
         // floating windowmode
         val floatingWindowConfig = config.webViewConfig.floatingWindowConfig
         if (floatingWindowConfig.enabled) {
-            com.webtoapp.core.shell.ShellLogger.i("ShellActivity", "悬浮窗配置: size=${floatingWindowConfig.windowSizePercent}%, opacity=${floatingWindowConfig.opacity}%")
+            com.webtoapp.core.shell.ShellLogger.i("ShellActivity", "Floating window config: size=${floatingWindowConfig.windowSizePercent}%, opacity=${floatingWindowConfig.opacity}%")
             if (FloatingWindowService.canDrawOverlays(this)) {
                 // Note
                 val fwConfig = com.webtoapp.data.model.FloatingWindowConfig(
@@ -426,10 +454,10 @@ class ShellActivity : AppCompatActivity() {
                 } else {
                     startService(intent)
                 }
-                com.webtoapp.core.shell.ShellLogger.i("ShellActivity", "悬浮窗服务已启动")
+                com.webtoapp.core.shell.ShellLogger.i("ShellActivity", "Floating window service started")
             } else {
                 // , user
-                com.webtoapp.core.shell.ShellLogger.w("ShellActivity", "悬浮窗权限未授予，引导用户授权")
+                com.webtoapp.core.shell.ShellLogger.w("ShellActivity", "Floating window permission not granted, guiding user to authorize")
                 Toast.makeText(this, AppStringsProvider.current().floatingWindowPermissionRequired, Toast.LENGTH_LONG).show()
                 FloatingWindowService.requestOverlayPermission(this)
             }
@@ -443,10 +471,10 @@ class ShellActivity : AppCompatActivity() {
                 validateDeepLinkUrl(safeUrl, config.deepLinkHosts, config.targetUrl)
             } else safeUrl
             deepLinkUrl.value = validatedUrl
-            com.webtoapp.core.shell.ShellLogger.i("ShellActivity", "收到 Deep Link: $validatedUrl (原始: $intentUrl)")
+            com.webtoapp.core.shell.ShellLogger.i("ShellActivity", "Received Deep Link: $validatedUrl (Original: $intentUrl)")
         }
         
-        com.webtoapp.core.shell.ShellLogger.i("ShellActivity", "setContent 开始，主题=${config.themeType}")
+        com.webtoapp.core.shell.ShellLogger.i("ShellActivity", "setContent starting, theme=${config.themeType}")
         
         setContent {
             ShellTheme(
@@ -477,7 +505,7 @@ class ShellActivity : AppCompatActivity() {
                     onWebViewCreated = { wv ->
                         try {
                             webView = wv
-                            com.webtoapp.core.shell.ShellLogger.i("ShellActivity", "WebView 创建成功")
+                            com.webtoapp.core.shell.ShellLogger.i("ShellActivity", "WebView created successfully")
                             // Note
                             translateBridge = TranslateBridge(wv, lifecycleScope)
                             wv.addJavascriptInterface(translateBridge!!, TranslateBridge.JS_INTERFACE_NAME)
@@ -487,9 +515,9 @@ class ShellActivity : AppCompatActivity() {
                             // ( modulecall)
                             val nativeBridge = com.webtoapp.core.webview.NativeBridge(this@ShellActivity, lifecycleScope)
                             wv.addJavascriptInterface(nativeBridge, com.webtoapp.core.webview.NativeBridge.JS_INTERFACE_NAME)
-                            com.webtoapp.core.shell.ShellLogger.d("ShellActivity", "JS 桥接接口注册完成")
+                            com.webtoapp.core.shell.ShellLogger.d("ShellActivity", "JS bridge interfaces registration complete")
                         } catch (e: Exception) {
-                            com.webtoapp.core.shell.ShellLogger.e("ShellActivity", "WebView 初始化失败", e)
+                            com.webtoapp.core.shell.ShellLogger.e("ShellActivity", "WebView initialization failed", e)
                         }
                     },
                     onFileChooser = { callback, params ->
@@ -575,7 +603,7 @@ class ShellActivity : AppCompatActivity() {
             deepLinkUrl.value = validatedUrl
             // Directly load URL in existing WebView
             webView?.loadUrl(validatedUrl)
-            com.webtoapp.core.shell.ShellLogger.i("ShellActivity", "onNewIntent Deep Link: $validatedUrl (原始: $url)")
+            com.webtoapp.core.shell.ShellLogger.i("ShellActivity", "onNewIntent Deep Link: $validatedUrl (Original: $url)")
         }
     }
     
@@ -646,3 +674,10 @@ class ShellActivity : AppCompatActivity() {
 }
 
 // ShellScreen composable ShellScreen. kt
+
+
+
+
+
+
+

@@ -22,17 +22,15 @@ class ShellRuntimeStartup(
             adBlocker = adBlocker,
         )
 
-        try {
-            val isShell = shellModeManager.isShellMode()
-            AppLogger.i("WebToAppApplication", "Shell mode pre-check: $isShell")
-        } catch (e: Exception) {
-            AppLogger.e("WebToAppApplication", "Shell mode pre-check failed", e)
-        } catch (e: Error) {
-            AppLogger.e("WebToAppApplication", "Shell mode pre-check critical error", Error(e))
-        }
+        AppLogger.i("WebToAppApplication", "ShellRuntimeServices initialized")
     }
 
     fun shutdown() {
         ShellRuntimeServices.reset()
     }
 }
+
+
+
+
+
