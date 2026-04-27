@@ -6,6 +6,7 @@ from typing import List, Optional
 from pydantic import BaseModel
 from datetime import datetime
 
+from app.models.user import User
 from app.database import get_db
 from app.models.credential import Credential
 from app.schemas.common import ApiResponse
@@ -31,12 +32,12 @@ def generate_random_password(length=16):
     alphabet = string.ascii_letters + string.digits + string.punctuation
     return ''.join(secrets.choice(alphabet) for _ in range(length))
 
-@router.get("/", response_model=ApiResponse)
+@router.get("/", response_model=ApiResponse[List[CredentialOut]])
 def list_credentials(db: Session = Depends(get_db), current_admin: User = Depends(get_current_admin)):
     creds = db.query(Credential).order_by(Credential.created_at.desc()).all()
     return ApiResponse(data=creds)
 
-@router.post("/", response_model=ApiResponse)
+@router.post("/", response_model=ApiResponse[CredentialOut])
 def create_credential(payload: CredentialCreate, db: Session = Depends(get_db), current_admin: User = Depends(get_current_admin)):
     username = payload.username
     if not username:

@@ -763,7 +763,7 @@ fun HomeScreen(
                                             horizontalArrangement = Arrangement.spacedBy(6.dp)
                                         ) {
                                             rowItems.forEach { item ->
-                                                CreateActionButton(
+                                                this@Row.CreateActionButton(
                                                     item = item,
                                                     onDismiss = { showFabMenu = false }
                                                 )
@@ -908,7 +908,7 @@ fun HomeScreen(
 }
 
 @Composable
-private fun CreateActionButton(
+private fun RowScope.CreateActionButton(
     item: CreateActionItem,
     onDismiss: () -> Unit
 ) {
@@ -926,11 +926,20 @@ private fun CreateActionButton(
         ),
         contentPadding = PaddingValues(horizontal = 8.dp, vertical = 4.dp)
     ) {
-        // Use a safe painter loading to avoid crash if resource is missing or corrupted
-        val painter = try {
+        val context = LocalContext.current
+        val resourceExists = remember(item.iconRes) {
+            if (item.iconRes == 0) return@remember false
+            try {
+                context.resources.getResourceName(item.iconRes)
+                true
+            } catch (e: android.content.res.Resources.NotFoundException) {
+                false
+            }
+        }
+
+        val painter = if (resourceExists) {
             painterResource(item.iconRes)
-        } catch (e: Exception) {
-            com.webtoapp.core.logging.AppLogger.e("HomeScreen", "Failed to load icon: ${item.iconRes}", e)
+        } else {
             androidx.compose.ui.graphics.painter.ColorPainter(MaterialTheme.colorScheme.primary)
         }
         

@@ -15,6 +15,7 @@ from app.routers.admin.credentials import router as credentials_router
 from app.routers.admin.remote_config import router as remote_config_router
 from app.routers.admin.intelligence import router as intelligence_router
 from app.routers.admin.announcements import router as announcements_router
+from app.routers.admin.app_versions import router as app_versions_router
 
 router = APIRouter(prefix="/admin", tags=["Admin"])
 
@@ -30,3 +31,4 @@ router.include_router(credentials_router)
 router.include_router(remote_config_router)
 router.include_router(intelligence_router)
 router.include_router(announcements_router)
+router.include_router(app_versions_router)

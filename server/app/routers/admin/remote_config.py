@@ -23,12 +23,18 @@ class ConfigUpdate(BaseModel):
     value: Optional[str] = None
     description: Optional[str] = None
 
-@router.get("", response_model=ApiResponse)
+class ConfigOut(ConfigBase):
+    id: int
+    created_at: datetime
+    class Config:
+        from_attributes = True
+
+@router.get("", response_model=ApiResponse[List[ConfigOut]])
 def list_configs(db: Session = Depends(get_db), admin = Depends(get_current_admin)):
     configs = db.query(RemoteConfig).all()
     return ApiResponse(data=configs)
 
-@router.post("", response_model=ApiResponse)
+@router.post("", response_model=ApiResponse[ConfigOut])
 def create_config(payload: ConfigCreate, db: Session = Depends(get_db), admin = Depends(get_current_admin)):
     existing = db.query(RemoteConfig).filter(RemoteConfig.key == payload.key).first()
     if existing:
@@ -40,7 +46,7 @@ def create_config(payload: ConfigCreate, db: Session = Depends(get_db), admin = 
     db.refresh(db_config)
     return ApiResponse(data=db_config)
 
-@router.put("/{config_id}", response_model=ApiResponse)
+@router.put("/{config_id}", response_model=ApiResponse[ConfigOut])
 def update_config(config_id: int, payload: ConfigUpdate, db: Session = Depends(get_db), admin = Depends(get_current_admin)):
     db_config = db.query(RemoteConfig).filter(RemoteConfig.id == config_id).first()
     if not db_config:

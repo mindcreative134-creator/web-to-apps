@@ -45,7 +45,7 @@ def generate_code(length=12):
     chars = string.ascii_uppercase + string.digits
     return "-".join(["".join(secrets.choice(chars) for _ in range(4)) for _ in range(3)])
 
-@router.get("/list", response_model=ApiResponse)
+@router.get("/list", response_model=ApiResponse[List[CodeOut]])
 def list_codes(
     page: int = Query(1, ge=1),
     page_size: int = Query(20, ge=1, le=100),
@@ -151,4 +151,4 @@ def delete_code(
     
     db.delete(db_code)
     db.commit()
-    return {"message": "Code deleted successfully"}
+    return ApiResponse(message="Code deleted successfully")
